@@ -1,0 +1,438 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style.css" type="text/css" rel="stylesheet">
+<TITLE>攻撃速度計算（TC2 PVP TEST暫定版）</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899201</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<div class="block02">
+<br>
+<font size="3">
+<center><font size="5"><b>攻撃速度計算</b></font>（TC2 PVP TEST暫定版）</center>
+<HR>
+<script language="javascript">
+<!--
+//speed
+var sokudo;
+sokudo = new Array(30);
+sokudo[0] = 1.25;  //1.25sec
+sokudo[1] = 1.50;  //1.50sec
+sokudo[2] = 1.75;  //1.75sec
+sokudo[3] = 2.00;  //2.00sec
+sokudo[4] = 2.25;  //2.25sec
+sokudo[5] = 2.50;  //2.50sec
+sokudo[6] = 2.75;  //2.75sec
+sokudo[7] = 3.00;  //3.00sec
+sokudo[8] = 3.25;  //3.25sec
+sokudo[9] = 3.50;  //3.50sec
+sokudo[10] = 3.75; //3.75sec
+sokudo[11] = 4.00; //4.00sec
+sokudo[12] = 4.25; //4.25sec
+sokudo[13] = 4.50; //4.00sec
+sokudo[14] = 4.75; //4.75sec
+sokudo[15] = 5.00; //5.00sec
+sokudo[16] = 5.25; //5.25sec
+sokudo[17] = 5.50; //5.50sec
+sokudo[18] = 5.75; //5.75sec
+sokudo[19] = 6.00; //6.00sec
+sokudo[20] = 6.25; //6.25sec
+sokudo[21] = 6.50; //6.50sec
+sokudo[22] = 6.75; //6.75sec
+sokudo[23] = 7.00; //7.00sec
+sokudo[24] = 7.25; //7.25sec
+sokudo[25] = 7.50; //7.50sec
+sokudo[26] = 7.75; //7.75sec
+sokudo[27] = 8.00; //8.00sec
+sokudo[28] = 8.25; //8.25sec
+sokudo[29] = 8.50; //8.50sec
+//speed
+
+//wepspd
+var speed;
+speed = new Array(83);
+speed[0] = 2.50;  //
+speed[1] = 3.50;  //Bone harvester
+speed[2] = 3.75;  //Broadsword
+speed[3] = 2.75;  //Crescent blade
+speed[4] = 3.00;  //Cutlass
+speed[5] = 2.75;  //Katana
+speed[6] = 4.00;  //Longsword
+speed[7] = 3.25;  //Scimitar
+speed[8] = 4.25;  //Viking sword
+speed[9] = 2.75;  //Butcher knife
+speed[10] = 2.75; //Cleaver
+speed[11] = 2.75; //Skinning knife
+speed[12] = 3.50; //Pickaxe
+speed[13] = 4.25; //Bardiche
+speed[14] = 3.25; //Bladed staff
+speed[15] = 4.75; //Halberd
+speed[16] = 3.75; //Scythe
+speed[17] = 3.25; //Axe
+speed[18] = 3.75; //Battle axe
+speed[19] = 3.75; //Double axe
+speed[20] = 3.75; //Executioner's axe
+speed[21] = 4.00; //Large battle axe
+speed[22] = 3.75; //Two handed axe
+speed[23] = 3.00; //Hatchet
+speed[24] = 2.50; //Dagger
+speed[25] = 2.50; //Kryss
+speed[26] = 4.75; //Lance
+speed[27] = 3.00; //Warfork
+speed[28] = 2.75; //Double bladed staff
+speed[29] = 3.25; //Pike
+speed[30] = 2.50; //Short spear
+speed[31] = 3.00; //Spear
+speed[32] = 3.00; //Pitch fork
+speed[33] = 4.25; //Hammer pick
+speed[34] = 3.25; //Mace
+speed[35] = 3.75; //Maul
+speed[36] = 4.00; //Scepter
+speed[37] = 3.75; //War axe
+speed[38] = 4.50; //War mace
+speed[39] = 4.25; //War hammer
+speed[40] = 3.75; //Sledge hammer
+speed[41] = 3.75; //Smith's hammer
+speed[42] = 3.25; //Black staff
+speed[43] = 3.00; //Club
+speed[44] = 3.25; //Crook
+speed[45] = 3.75; //Gnarled staff
+speed[46] = 2.75; //Quarter staff
+speed[47] = 3.25; //Wand
+speed[48] = 4.75; //Bow
+speed[49] = 4.50; //Composite bow
+speed[50] = 5.00; //Crossbow
+speed[51] = 5.25; //Heavy crossbow
+speed[52] = 3.00; //Rep cross
+speed[53] = 3.75; //No-dachi
+speed[54] = 3.00; //Wakizashi
+speed[55] = 3.75; //Lajatang
+speed[56] = 3.25; //Daisho
+speed[57] = 2.50; //Tekagi
+speed[58] = 2.50; //Kama
+speed[59] = 2.50; //Sai
+speed[60] = 2.50; //Bokuto
+speed[61] = 2.75; //Nunchaku
+speed[62] = 2.75; //Tessen
+speed[63] = 2.75; //Tetsubo
+speed[64] = 4.75; //Yumi
+speed[65] = 3.00; //Radient scimitar
+speed[66] = 2.75; //War cleaver
+speed[67] = 3.00; //Elven spellblade
+speed[68] = 2.75; //Assassin spike
+speed[69] = 3.00; //Leaf blade
+speed[70] = 3.50; //Rune blade
+speed[71] = 3.00; //Elven Machete
+speed[72] = 4.25; //Ornate axe(old)
+speed[73] = 3.75; //Ornate axe(now)
+speed[74] = 3.25; //Diamond mace
+speed[75] = 2.75; //Wild staff
+speed[76] = 4.25; //Elven composite bow
+speed[77] = 3.25; //Magical shortbow
+speed[78] = 2.50; //bear hand
+//speed
+
+
+            
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.speed01.value = 0.0;
+  form.speed02.value = 0.0;
+  form.weapon1.value = 0.0;
+  form.spdb.value = 0.0;
+
+return true;
+}
+
+//計算
+function keisan1(form)
+{
+var form = document.form_keisan;
+  spd = form.weapon1.options[form.weapon1.selectedIndex].value;
+  speed01 = speed[spd];
+
+  spdb = form.spdb.options[form.spdb.selectedIndex].value;
+
+  speed02 = Math.floor(Math.min(20.0, spdb) + Math.max(Math.min(15.0, (spdb - 20.0) * 0.75),0.0) + Math.max(Math.min(20.0 * 2.0 / 3.0 ,(spdb - 40.0) * 2.0 / 3.0),0.0 )
+ + Math.max(Math.min(10.0, (spdb - 60.0) * 0.50), 0.0) + Math.max(Math.min(20.0 * 1.0 / 3.0, (spdb - 80.0) * 1.0 / 3.0), 0.0) + Math.max(0.0,(spdb - 100.0) * 1.0 / 4.0));
+
+  form.speed02.value = speed02;
+
+  dist = new Array(6);
+
+    for (i=0; i<6; i++)
+    {
+    dist[i] = speed01 - 0.25 * i;
+    }
+
+    form.dist00.value = dist[0];
+    form.dist01.value = dist[1];
+    form.dist02.value = dist[2];
+    form.dist03.value = dist[3];
+    form.dist04.value = dist[4];
+    form.dist05.value = dist[5];
+
+
+  stam = new Array(6);
+    for (i=0; i<6; i++)
+    {
+       stam[i] = Math.max(0.0, 40.0 * i - speed02);
+    }
+
+    form.stam00.value = stam[0];
+    form.stam01.value = stam[1];
+    form.stam02.value = stam[2];
+    form.stam03.value = stam[3];
+    form.stam04.value = stam[4];
+    form.stam05.value = stam[5];
+
+return true;
+}
+//-->
+</script>
+
+<form name="form_keisan">
+宝珠の守人で追加された武器にも対応しています。武器・防具および特殊効果等を加味した速度増加（0％～120％まで）を選択してください。
+<br>速度増加は、TC2 PVP TESTではStamina値のように機能しています。ただし、武器ダメージや抵抗値の計算のように、速度増加の数値が高くなると
+換算されるStamina値も多くなりますが、その増え方はだんだん鈍ります。
+「（速度＋）から換算されたStamina値」と「キャラクターのStamina値」の合計が40の倍数となるごとに、攻撃間隔が0.25秒短縮されます。
+
+<p>武器および「速度＋」のプロパティを選択すると、その武器の攻撃間隔と速度＋を補正したあとに必要なStamina値が表に示されます。
+<br>PVP TEST Centerでは、速度＋85と速度＋100の時に端数処理の影響でStamina換算値が１少なくなっていますが、ここでは端数処理の影響を
+取り除いています。
+</p>
+
+ステータスのStaminaは攻撃(武器直接・魔法直接等)によるダメージで減少します。
+<br><font color="#ff0000">Stamina減少量＝(Damage/直前のHP)×(直前のStamina)－5</font>　(端数切り上げ)
+<p>
+武器選択　
+      <select name="weapon1" SIZE="1" onchange="keisan1(form)">
+<option value="0">--Sword系片手--
+<option value="1">Bone harvester
+<option value="2">Broadsword
+<option value="3">Crescent blade
+<option value="4">Cutlass
+<option value="5">Katana
+<option value="6">Longsword
+<option value="7">Scimitar
+<option value="8">Viking sword
+<option value="9">Butcher knife
+<option value="10">Cleaver
+<option value="11">Skinning knife
+<option value="12">Pickaxe
+<option value="0">--Sword系両手--
+<option value="13">Bardiche
+<option value="14">Bladed staff
+<option value="15">Halberd
+<option value="16">Scythe
+<option value="17">Axe
+<option value="18">Battle axe
+<option value="19">Double axe
+<option value="20">Executioner's axe
+<option value="21">Large battle axe
+<option value="22">Two handed axe
+<option value="23">Hatchet
+<option value="0">--Fencing系--
+<option value="24">Dagger
+<option value="25">Kryss
+<option value="26">Lance
+<option value="27">Warfork
+<option value="28">Double bladed staff
+<option value="29">Pike
+<option value="30">Short spear
+<option value="31">Spear
+<option value="32">Pitch fork
+<option value="0">--Mace系--
+<option value="33">Hammer pick
+<option value="34">Mace
+<option value="35">Maul
+<option value="36">Scepter
+<option value="37">War axe
+<option value="38">War mace
+<option value="39">War hammer
+<option value="40">Sledge hammer
+<option value="41">Smith's hammer
+<option value="42">Black staff
+<option value="43">Club
+<option value="44">Crook
+<option value="45">Gnarled staff
+<option value="46">Quarter staff
+<option value="47">Wand
+<option value="0">--Archery系--
+<option value="48">Bow
+<option value="49">Composite bow
+<option value="50">Crossbow
+<option value="51">Heavy crossbow
+<option value="52">Repeating crossbow
+<option value="0">--武刀の天地追加--
+<option value="53">No-dachi
+<option value="54">Wakizashi
+<option value="55">Lajatang
+<option value="56">Daisho
+<option value="57">Tekagi
+<option value="58">Kama
+<option value="59">Sai
+<option value="60">Bokuto
+<option value="61">Nunchaku
+<option value="62">Tessen
+<option value="63">Tetsubo
+<option value="64">Yumi
+<option value="0">--宝珠の守人追加--
+<option value="65">Radient scimitar
+<option value="66">War cleaver
+<option value="67">Elven spellblade
+<option value="68">Assassin spike
+<option value="69">Leaf blade
+<option value="70">Rune blade
+<option value="71">Elven Machete
+<option value="73">Ornate axe
+<option value="74">Diamond mace
+<option value="75">Wild staff
+<option value="76">Elven composite bow
+<option value="77">Magical shortbow
+<option value="78">素手
+  </select>
+</p>
+<table align="center" class="table05">
+ <tr>
+  <td align="center" width="180">「速度＋」装備品合計</td>
+  <td align="center" width="180">補正後「速度＋」<br>（Stamina換算値）</td>
+ </tr>
+ <tr>
+  <td align="right" width="120">
+  <select name="spdb" SIZE="1" onchange="keisan1(form)">
+<option value="0" selected>0
+<option value="5">5
+<option value="10">10
+<option value="15">15
+<option value="20">20
+<option value="25">25
+<option value="30">30
+<option value="35">35
+<option value="40">40
+<option value="45">45
+<option value="50">50
+<option value="55">55
+<option value="60">60
+<option value="65">65
+<option value="70">70
+<option value="75">75
+<option value="80">80
+<option value="85">85
+<option value="90">90
+<option value="95">95
+<option value="100">100
+<option value="105">105
+<option value="110">110
+<option value="115">115
+<option value="120">120
+  </select>
+　％　　
+</td>
+ <td align="left" width="120">→　　　　　　<INPUT readonly TYPE="text" NAME="speed02" SIZE="3"></td>
+ </tr>
+</table>
+<br>
+<table align="center" class="table04">
+ <tr>
+   <td align="center" bgcolor="#ffffcc" width="120">攻撃間隔(秒)</td>
+   <td align="center" bgcolor="#99ccff" width="55">基本値<br><INPUT readonly TYPE="text" NAME="dist00" SIZE="4"></td>
+   <td align="center" bgcolor="#99ffff" width="55"><INPUT readonly TYPE="text" NAME="dist01" SIZE="4"></td>
+   <td align="center" bgcolor="#99ffcc" width="55"><INPUT readonly TYPE="text" NAME="dist02" SIZE="4"></td>
+   <td align="center" bgcolor="#ffffaa" width="55"><INPUT readonly TYPE="text" NAME="dist03" SIZE="4"></td>
+   <td align="center" bgcolor="#ffccaa" width="55"><INPUT readonly TYPE="text" NAME="dist04" SIZE="4"></td>
+   <td align="center" bgcolor="#ffbbbb" width="55"><INPUT readonly TYPE="text" NAME="dist05" SIZE="4"></td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ffffcc" width="120">Stamina<br>(Status+速度換算)</td>
+   <td align="center" bgcolor="#99ccff">0</td>
+   <td align="center" bgcolor="#99ffff">40</td>
+   <td align="center" bgcolor="#99ffcc">80</td>
+   <td align="center" bgcolor="#ffffaa">120</td>
+   <td align="center" bgcolor="#ffccaa">160</td>
+   <td align="center" bgcolor="#ffbbbb">200</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ffffcc" width="120">Stamina<br>(Status値)</td>
+   <td align="center" bgcolor="#99ccff"><INPUT readonly TYPE="text" NAME="stam00" SIZE="3"></td>
+   <td align="center" bgcolor="#99ffff"><INPUT readonly TYPE="text" NAME="stam01" SIZE="3"></td>
+   <td align="center" bgcolor="#99ffcc"><INPUT readonly TYPE="text" NAME="stam02" SIZE="3"></td>
+   <td align="center" bgcolor="#ffffaa"><INPUT readonly TYPE="text" NAME="stam03" SIZE="3"></td>
+   <td align="center" bgcolor="#ffccaa"><INPUT readonly TYPE="text" NAME="stam04" SIZE="3"></td>
+   <td align="center" bgcolor="#ffbbbb"><INPUT readonly TYPE="text" NAME="stam05" SIZE="3"></td>
+ </tr>
+</table>
+</form>
+</p>
+<p>武器速度一覧
+<table align="center" class="table04">
+ <tr>
+   <td align="center" bgcolor="#99ffcc" width="110">基本攻撃間隔(秒)</td>
+   <td align="center" bgcolor="#ffff99" width="380">対応武器名</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#9999ff">5.25</td>
+   <td align="left" bgcolor="#ffffcc" width="380">Heavy crossbow</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#9999ff">5.00</td>
+   <td align="left" bgcolor="#ffffcc" width="380">Lance, Crossbow</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ccff">4.75</td>
+   <td align="left" bgcolor="#ffffcc" width="380">Halberd, Yumi, Composite bow, Bow</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ccff">4.50</td>
+   <td align="left" bgcolor="#ffffcc" width="380">War mace</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffff">4.25</td>
+   <td align="left" bgcolor="#ffffcc" width="380">Elven composite bow, Hammer pick, War hammer, Viking sword, Bardiche</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffff">4.00</td>
+   <td align="left" bgcolor="#ffffcc" width="380">Large battle axe, Long sword, Scepter</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffcc">3.75</td>
+   <td align="left" bgcolor="#ffffcc" width="380">Battle axe, Two handed axe, Ornate axe, No-dachi, Scythe, Lajatang, Maul, 
+Broadsword, Double axe, Executioner's axe, War axe, Gnarled staff, Sledge hammer, Smith's hammer</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffcc">3.50</td>
+   <td align="left" bgcolor="#ffffcc" width="380">Rune blade, Pick axe, Bone harvester</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ff99">3.25</td>
+   <td align="left" bgcolor="#ffffcc" width="380">Scimitar, Axe, Bladed staff, Pike, Diamond mace, Magical shortbow, Black staff, Daisho, Mace, Crook, Wand</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ccff99">3.00</td>
+   <td align="left" bgcolor="#ffffcc" width="380">Elven Machete, Hatchet, Repeating Crossbow, Leaf blade, Spear, Radient scimitar, War fork, Pitchfork, 
+Elven spellblade, Wakizashi, Cutlass, Club</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ffff99">2.75</td>
+   <td align="left" bgcolor="#ffffcc" width="380">Tetsubo, Katana, Cleaver, Crescent blade, Nunchaku, War cleaver, Quarter staff, 
+Wild staff, Butcher knife, Skinning knife, Assassin spike, Tessen</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ffcc99">2.50</td>
+   <td align="left" bgcolor="#ffffcc" width="380">Bokuto, Tekagi, Kryss, Kama, Sai, Short spear, Dagger, Kama, Sai, Short spear, 素手</td>
+ </tr>
+</table>
+</p>
+<p align="center"><img src="hosei_p40a2.gif" alt=""><br>速度＋をStaminaに換算するときの参考図</p>
+
+</font>
+</div>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

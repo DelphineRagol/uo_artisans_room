@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>Publish69 メモ</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899147</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<h2>Publish69 メモ</h2>
+<HR>
+
+<h3>１．Magic reflection</h3>
+
+Publish69における、Magic reflectionの変更点をまとめます。
+
+<h4>（１）属性抵抗値の変化</h4>
+
+<table class="table01">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="120">&nbsp;</td>
+    <td align="center" width="160">Publish68</td>
+    <td align="center" width="160">Publish69</td>
+  </tr>
+  <tr bgcolor="#c0c0c0">
+    <td align="center">物理抵抗</td>
+    <td align="center">-25～-20</td>
+    <td align="center"><font color="#ff0000">-20～-15</font></td>
+  </tr>
+  <tr bgcolor="#ffcccc">
+    <td align="center">炎抵抗</td>
+    <td align="center">+10</td>
+    <td align="center">+10</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">冷気抵抗</td>
+    <td align="center">+10</td>
+    <td align="center">+10</td>
+  </tr>
+  <tr bgcolor="#ccffcc">
+    <td align="center">毒抵抗</td>
+    <td align="center">+10</td>
+    <td align="center">+10</td>
+  </tr>
+  <tr bgcolor="#ffccff">
+    <td align="center">エネルギー抵抗</td>
+    <td align="center">+10</td>
+    <td align="center">+10</td>
+  </tr>
+  <tr bgcolor="#f0f0f0">
+    <td>その他</td>
+    <td align="left">物理抵抗値の減少値は書写スキルによる。</td>
+    <td align="left"><font color="#ff0000">物理抵抗値の上限が5低下する</font>
+<br>物理抵抗値の減少値は書写スキルによる。
+</td>
+  </tr>
+</table>
+<br class="cle">
+
+<h4>（２）攻撃魔法の反射</h4>
+
+magic reflectionを詠唱すると、magery, inscribe, resisting spellsスキルに応じたリフレクションパワーを得ます。
+<br>この状態で攻撃魔法を受けるとき、リフレクションパワーが攻撃魔法の強さ（実際の威力ではない）を下回らない限り、
+魔法効果を詠唱者に反射することができます。
+<br>ただし、リフレクションパワーは反射した攻撃魔法の強さに応じて減少します。
+
+<h4>リフレクションパワーの算出</h4>
+
+A　：　mageryとinscribeによる影響
+
+<p>([magery/2]+[inscribe/2])/60
+<br>ただし、Inscribeスキルが50.0以上でのみ有効。[ ]内は端数切捨</p>
+
+B　：　resisting spellsによる影響
+
+<p>0.6 + 5.4 × ( [resisting spells] / 120 )
+<br>[ ]内は端数切捨</p>
+
+リフレクションパワー＝(A×B)×10（％）
+<br>リフレクションパワーは100％が最大です。
+
+<table bgcolor="#ddddff" class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td width="120">magery+inscribe<br>＼<br>resistspell</td>
+    <td width="60">60</td>
+    <td width="60">90</td>
+    <td width="60">120</td>
+    <td width="60">150</td>
+    <td width="60">180</td>
+    <td width="60">200</td>
+    <td width="60">220</td>
+  </tr>
+  <tr>
+    <td bgcolor="#f0f0f0">0</td>
+    <td>3%</td>
+    <td>4%</td>
+    <td>6%</td>
+    <td>7%</td>
+    <td>9%</td>
+    <td>10%</td>
+    <td>11%</td>
+  </tr>
+  <tr>
+    <td bgcolor="#f0f0f0">20</td>
+    <td>7%</td>
+    <td>11%</td>
+    <td>15%</td>
+    <td>18%</td>
+    <td>22%</td>
+    <td>25%</td>
+    <td>27%</td>
+  </tr>
+  <tr>
+    <td bgcolor="#f0f0f0">40</td>
+    <td>12%</td>
+    <td>18%</td>
+    <td>24%</td>
+    <td>30%</td>
+    <td>36%</td>
+    <td>40%</td>
+    <td>44%</td>
+  </tr>
+  <tr>
+    <td bgcolor="#f0f0f0">60</td>
+    <td>16%</td>
+    <td>24%</td>
+    <td>33%</td>
+    <td>41%</td>
+    <td>49%</td>
+    <td>55%</td>
+    <td>60%</td>
+  </tr>
+  <tr>
+    <td bgcolor="#f0f0f0">80</td>
+    <td>21%</td>
+    <td>31%</td>
+    <td>42%</td>
+    <td>52%</td>
+    <td>63%</td>
+    <td>70%</td>
+    <td>77%</td>
+  </tr>
+  <tr>
+    <td bgcolor="#f0f0f0">100</td>
+    <td>25%</td>
+    <td>38%</td>
+    <td>51%</td>
+    <td>63%</td>
+    <td>76%</td>
+    <td>85%</td>
+    <td>93%</td>
+  </tr>
+  <tr>
+    <td bgcolor="#f0f0f0">120</td>
+    <td>30%</td>
+    <td>45%</td>
+    <td>60%</td>
+    <td>75%</td>
+    <td>90%</td>
+    <td>100%</td>
+    <td>100%</td>
+  </tr>
+</table>
+
+<h4>攻撃魔法の強さ（リフレクションパワーの減少量）</h4>
+
+<h4>magery魔法</h4>
+<ul class="list02">
+<li>10％　：　Clumsy, Feeblemind, Weakness, Magic Arrow</li>
+<li>20％　：　Harm</li>
+<li>30％　：　Poison, Fireball</li>
+<li>40％　：　Curse, Mana Drain, Lightning</li>
+<li>50％　：　Paralyze, Mind Blast</li>
+<li>60％　：　Explosion, Energy Bolt</li>
+<li>70％　：　Mana Vampire</li>
+<li>100％　：　Flame Strike</li>
+</ul>
+
+<h4>necromancy魔法</h4>
+<ul class="list02">
+<li>20％　：　Pain Spike</li>
+<li>30％　：　Corpse Skin</li>
+<li>40％　：　Mind Rot</li>
+<li>50％　：　Poison Strike</li>
+<li>60％　：　Strangle</li>
+<li>70％　：　Evil Omen</li>
+</ul>
+
+<h4>mysticism魔法</h4>
+<ul class="list02">
+<li>10％　：　Mether Bolt</li>
+<li>30％　：　Sleep, Eagle Strike</li>
+<li>60％　：　Bombard</li>
+<li>70％　：　Purge Magic, Spell Plague</li>
+</ul>
+
+<h4>リフレクションパワーの回復と再使用制限</h4>
+
+リフレクションパワーが失われると、魔法を反射することができなくなります（抵抗値変化は有効）。再度魔法を反射できるようにするには、
+<br>magic reflectionを詠唱しなおす必要があります。
+<br>ただし、リフレクションパワーを得た後、一度魔法を反射してから30秒間は、magic reflectionを詠唱しなおしても
+<br>リフレクションパワーを得ることはできません。
+
+<h4>magic reflectionの解除</h4>
+
+自身でmagic reflectionの効果を解除するには、リフレクションパワーが残っている状態でmagic reflectionを詠唱する必要があります。
+<br>リフレクションパワーが失われた状態でmagic reflectionを詠唱した場合、リフレクションパワーが得られます。
+
+
+<h3>２．Cleansing wind</h3>
+
+cleansing windの回復量は毒だけでなくプレイヤーにかけられたマイナス効果（Curseなど）も考慮したものとなります。
+<br>マイナス効果にはぞれぞれCurse Powerが設定されており、Curse Powerが大きいほど回復量のペナルティが大きくなります。
+
+<h4>魔法などのCurse Power</h4>
+
+<ul class="list02">
+  <li>1　：　Clumsy, Feeblemind, Weakness</li>
+  <li>2　：　</li>
+  <li>3　：　Corpse skin, Evil Omen, Sleep</li>
+  <li>4　：　Curse, Bloodoath</li>
+  <li>5　：　Paralyse, Mindrot</li>
+  <li>6　：　Mortal</li>
+  <li>7　：　Strangle, Spell Plague</li>
+  <li>8　：　</li>
+  <li>9　：　</li>
+  <li>10　：　Mass Curse</li>
+</ul>
+
+<h4>毒とCurse Powerを考慮した回復量</h4>
+
+Cleansing windの回復量は、毒とCurse Powerにより2段階で減少します。
+
+<h4>（１）Curse Powerによる一定値の減少</h4>
+
+減少量は、回復するキャラクターにかけられた総Curse Powerの3倍です。
+<br>回復するキャラクターにCurseとParalyzeがかけられていた場合、総Curse Power＝9の3倍となる27が基本の回復量から差し引かれます。
+
+<h4>（２）毒およびCurse Powerによる一定率の減少</h4>
+
+（１）で差し引かれた回復量の（総Curse Power＋毒レベル×15）％だけ、さらに差し引きます。
+<br>（１）の条件にさらにLevel2毒が追加された場合、（１）で差し引かれた回復量の39％をさらに差し引きます。
+
+<br>（１）および（２）により回復量が0以下となる場合、Curse効果は解除されず、HP回復量はCurse効果を考慮しない値となります。
+
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

@@ -1,0 +1,1852 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>Imbuing＆Reforge - 装備品作成</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898857</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+
+ {//functionの宣言。受けとったIDは変数targetIDに格納。
+  if( document.getElementById(targetID))
+   { //指定のIDのついたオブジェクトがあったら処理する
+     //指定されたIDのstyle.displayがnoneなら
+    for (i=1; i<4; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {//blockに変更する
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+
+
+<h2>Imbuing＆Reforge（練成と改良） - 装備品作成</h2>
+<HR>
+
+練成による装備品の作成にあたって、覚えておくとよいことをまとめました。
+<br>なお、練成と関連して、Publish74より導入されたRunic toolによるアイテム改良、Publish81より導入された防具強化材についても触れています。
+
+<table class="table03">
+  <tr>
+    <td align="center" width="80"><a href="#" onClick="showHide('cat_1');return false;"><img src="wep02.gif" alt="" class="img01"><br>武器</td>
+    <td align="center" width="80"><a href="#" onClick="showHide('cat_2');return false;"><img src="plate05.gif" alt="" class="img01"><br>防具</td>
+    <td align="center" width="80"><a href="#" onClick="showHide('cat_3');return false;"><img src="shield01.gif" alt="" class="img01"><br>盾</td>
+  </tr>
+</table>
+
+<div id="cat_1" style="display: none">
+<h3>１．武器</h3>
+
+<h4>（１）知識</h4>
+
+武器の仕様の中で、少々複雑な速度およびマナ／ライフリーチについて、表にまとめました。練成の際の参考になると思います。
+<br>上のスイッチを押すと、表示／非表示の順で変わります。
+
+
+<h4>1.25秒間隔で攻撃するためのスタミナおよび速度</h4>
+「―」は、速度の上限（60％）でも、達成できない領域になります。
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="80" rowspan="2">スタミナ</td>
+  <td width="480" colspan="6">武器基本速度</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>2.50s</td>
+  <td>2.75s</td>
+  <td>3.00s</td>
+  <td>3.25s</td>
+  <td>3.50s</td>
+  <td>3.75s</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>90～</td>
+  <td bgcolor="#a0ffc0">+20%～</td>
+  <td bgcolor="#ffffa0">+35%～</td>
+  <td bgcolor="#ffb0a0">+55%～</td>
+  <td>―</td>
+  <td>―</td>
+  <td>―</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>120～</td>
+  <td bgcolor="#a0d0ff">+5%～</td>
+  <td bgcolor="#a0ffc0">+20%～</td>
+  <td bgcolor="#ffffa0">+35%～</td>
+  <td bgcolor="#ffb0a0">+55%～</td>
+  <td>―</td>
+  <td>―</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>150～</td>
+  <td>0%</td>
+  <td bgcolor="#a0d0ff">+5%～</td>
+  <td bgcolor="#a0ffc0">+20%～</td>
+  <td bgcolor="#ffffa0">+35%～</td>
+  <td bgcolor="#ffb0a0">+55%～</td>
+  <td>―</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>180～</td>
+  <td>0%</td>
+  <td>0%</td>
+  <td bgcolor="#a0d0ff">+5%～</td>
+  <td bgcolor="#a0ffc0">+20%～</td>
+  <td bgcolor="#ffffa0">+35%～</td>
+  <td bgcolor="#ffb0a0">+55%～</td>
+ </tr>
+</table>
+
+<h4>速度を考慮した武器の基本速度</h4>
+
+マナ／ライフリーチの表示値計算に使います。
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="80" rowspan="2">速度</td>
+  <td width="480" colspan="6">武器基本速度</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>2.50s</td>
+  <td>2.75s</td>
+  <td>3.00s</td>
+  <td>3.25s</td>
+  <td>3.50s</td>
+  <td>3.75s</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>+5%</td>
+  <td bgcolor="#ffffa0">2.25s</td>
+  <td bgcolor="#d0ffa0">2.50s</td>
+  <td bgcolor="#b0ffa0">2.75s</td>
+  <td bgcolor="#a0ffc0">3.00s</td>
+  <td bgcolor="#a0ffff">3.25s</td>
+  <td bgcolor="#a0d0ff">3.50s</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>+10%</td>
+  <td bgcolor="#ffffa0">2.25s</td>
+  <td bgcolor="#d0ffa0">2.50s</td>
+  <td bgcolor="#d0ffa0">2.50s</td>
+  <td bgcolor="#b0ffa0">2.75s</td>
+  <td bgcolor="#a0ffc0">3.00s</td>
+  <td bgcolor="#a0ffff">3.25s</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>+15%</td>
+  <td bgcolor="#ffd0a0">2.00s</td>
+  <td bgcolor="#ffffa0">2.25s</td>
+  <td bgcolor="#d0ffa0">2.50s</td>
+  <td bgcolor="#b0ffa0">2.75s</td>
+  <td bgcolor="#a0ffc0">3.00s</td>
+  <td bgcolor="#a0ffff">3.25s</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>+20%</td>
+  <td bgcolor="#ffd0a0">2.00s</td>
+  <td bgcolor="#ffffa0">2.25s</td>
+  <td bgcolor="#d0ffa0">2.50s</td>
+  <td bgcolor="#d0ffa0">2.50s</td>
+  <td bgcolor="#b0ffa0">2.75s</td>
+  <td bgcolor="#a0ffc0">3.00s</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>+25%</td>
+  <td bgcolor="#ffd0a0">2.00s</td>
+  <td bgcolor="#ffd0a0">2.00s</td>
+  <td bgcolor="#ffffa0">2.25s</td>
+  <td bgcolor="#d0ffa0">2.50s</td>
+  <td bgcolor="#b0ffa0">2.75s</td>
+  <td bgcolor="#a0ffc0">3.00s</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>+30%</td>
+  <td bgcolor="#ffb0a0">1.75s</td>
+  <td bgcolor="#ffd0a0">2.00s</td>
+  <td bgcolor="#ffffa0">2.25s</td>
+  <td bgcolor="#d0ffa0">2.50s</td>
+  <td bgcolor="#d0ffa0">2.50s</td>
+  <td bgcolor="#b0ffa0">2.75s</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td><b>+35%</b></td>
+  <td bgcolor="#ffb0a0">1.75s</td>
+  <td bgcolor="#ffd0a0">2.00s</td>
+  <td bgcolor="#ffd0a0">2.00s</td>
+  <td bgcolor="#ffffa0">2.25s</td>
+  <td bgcolor="#d0ffa0">2.50s</td>
+  <td bgcolor="#b0ffa0">2.75s</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td><b>+40%</b></td>
+  <td bgcolor="#ffb0a0">1.75s</td>
+  <td bgcolor="#ffb0a0">1.75s</td>
+  <td bgcolor="#ffd0a0">2.00s</td>
+  <td bgcolor="#ffffa0">2.25s</td>
+  <td bgcolor="#d0ffa0">2.50s</td>
+  <td bgcolor="#d0ffa0">2.50s</td>
+ </tr>
+</table>
+
+<h4>マナ／ライフリーチの表示値</h4>
+投擲および弓系武器の表示値は、下表の半分となります。
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="80" rowspan="2">強度</td>
+  <td width="480" colspan="6">武器基本速度（速度考慮）</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>2.00s</td>
+  <td>2.25s</td>
+  <td>2.50s</td>
+  <td>2.75s</td>
+  <td>3.00s</td>
+  <td>3.25s</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>20</td>
+  <td bgcolor="#a0ffff">40%</td>
+  <td bgcolor="#a0ffff">45%</td>
+  <td bgcolor="#a0ffc0">50%</td>
+  <td bgcolor="#a0ffc0">55%</td>
+  <td bgcolor="#b0ffa0">60%</td>
+  <td bgcolor="#b0ffa0">65%</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>22</td>
+  <td bgcolor="#a0ffff">44%</td>
+  <td bgcolor="#a0ffff">49%</td>
+  <td bgcolor="#a0ffc0">55%</td>
+  <td bgcolor="#b0ffa0">60%</td>
+  <td bgcolor="#b0ffa0">66%</td>
+  <td bgcolor="#d0ffa0">71%</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>25</td>
+  <td bgcolor="#a0ffc0">50%</td>
+  <td bgcolor="#a0ffc0">56%</td>
+  <td bgcolor="#b0ffa0">62%</td>
+  <td bgcolor="#b0ffa0">68%</td>
+  <td bgcolor="#d0ffa0">75%</td>
+  <td bgcolor="#ffffa0">81%</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td><b>30</b></td>
+  <td bgcolor="#b0ffa0">60%</td>
+  <td bgcolor="#b0ffa0">67%</td>
+  <td bgcolor="#d0ffa0">75%</td>
+  <td bgcolor="#ffffa0">82%</td>
+  <td bgcolor="#ffd0a0">90%</td>
+  <td bgcolor="#ffd0a0">97%</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td><b>35</b></td>
+  <td bgcolor="#d0ffa0">70%</td>
+  <td bgcolor="#d0ffa0">78%</td>
+  <td bgcolor="#ffffa0">87%</td>
+  <td bgcolor="#ffd0a0">96%</td>
+  <td bgcolor="#ffb0a0">100%</td>
+  <td bgcolor="#ffb0a0">100%</td>
+ </tr>
+
+</table>
+
+
+<h4>（２）武器作成例　</h4>
+
+実際に作成した武器のプロパティ画像と作成手順を示します。
+
+
+<img src="imbuing_06-03.gif" alt="" class="img04" width="213">
+<ul class="list03">
+ <li>1. 通常の作成道具で、高品質武器を作成する</li>
+ <li>2. Powder of Fortifyingを必要な分だけ使用する</li>
+ <li>3. スタミナリーチ、回避低下、マナリーチ、ライフリーチを順次練成する</li>
+ <li>4. Dullcopperで強化する</li>
+</ul>
+
+<p>メモ</p>
+<ul class="list03">
+ <li>1. 作成したアイテムの耐久値を確認し、高いものを選別するとよい</li>
+ <li>2. この画像では、Powder of Fortifyingを使用していない</li>
+ <li>3. 使用する魔法素材および宝石を確認し、高価な材料を使うプロパティを優先的に練成するとよい
+<br>練成するプロパティは、対象となるモンスターや使用者等の条件で変化する</li>
+ <li>4. Dullcopperで強化すると耐久値が2倍となる。しかし、強化に失敗して失われる場合もあるので注意
+<br>2. の時点で耐久値を255まで上げておけば、強化する必要はなくなる</li>
+</ul>
+
+<br class="cle">
+<img src="imbuing_06-04.gif" alt="" class="img04" width="213">
+<ul class="list03">
+ <li>1. 通常の作成道具で、高品質武器を作成する</li>
+ <li>2. Runic hammerを使って武器を改良し、速度+30％を付加</li>
+ <li>3. Powder of Fortifyingを必要な分だけ使用する</li>
+ <li>4. スタミナリーチ、マナリーチ、ライフリーチ、武器ダメージを練成する</li>
+ <li>5. Dullcopperで強化する</li>
+</ul>
+
+<p>メモ</p>
+<ul class="list03">
+ <li>2. 使用した道具はdullcopper runic。改良のオプションは、パワフル製造＋1ワード保証＋ワード種選択（疾風の／速攻）</li>
+ <li>4. 使用する魔法素材および宝石を確認し、高価な材料を使うプロパティを優先的に練成するとよい。
+<br>スタミナリーチの練成成功率を100％にするため、最初に、武器ダメージ+1％を練成し、総強度率を下げた。
+<br>高価な材料を無駄にしないために、上記の方法をとることも有効。</li>
+</ul>
+<br class="cle">
+
+<img src="imbuing_06-05.gif" alt="" class="img04" width="213">
+<ul class="list03">
+ <li>1. 通常の作成道具で、高品質武器を作成する</li>
+ <li>2. Runic hammerを使って武器を改良し、攻撃属性を付加</li>
+ <li>3. Powder of Fortifyingを必要な分だけ使用する</li>
+ <li>4. スタミナリーチ、マナリーチ、ライフリーチ、回避低下を練成する</li>
+</ul>
+
+<p>メモ</p>
+<ul class="list03">
+ <li>2. 使用した道具はshadow runic。改良のオプションは、パワフル製造＋1ワード保証＋ワード種選択（匠の／上質）</li>
+ <li>4. 攻撃属性は練成のプロパティ数に数えられないため、武器ダメージのほかに4プロパティ練成することができる</li>
+</ul>
+<br class="cle">
+
+
+<h4>（３）アイテム改良　</h4>
+（２）のアイテム画像にもあるように、低級のRunic toolでアイテム改良で必要なプロパティをあらかじめ付加しておき、
+<br>そのあと、他のプロパティを練成で付加することも可能です。
+<br>一部のプロパティについて、低級Runic toolで狙える強度を表にしてみました。
+
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="120" rowspan="3">プロパティ</td>
+  <td width="140" rowspan="3">ワード</td>
+  <td width="360" colspan="6">使用toolおよびオプション</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td colspan="2"><img src="du-runic.gif" alt="dull" class="img01"></td>
+  <td colspan="2"><img src="sh-runic.gif" alt="shadow" class="img01"><img src="oak-runic.gif" alt="oak" class="img01"><img src="oak-flet.gif" alt="oak" class="img01"></td>
+  <td colspan="2"><img src="co-runic.gif" alt="copper" class="img01"></td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>なし</td>
+  <td>Pow</td>
+  <td>なし</td>
+  <td>Pow</td>
+  <td>なし</td>
+  <td>Pow</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>マナリーチ</td>
+  <td>悟りの／魔力<br>言霊の／魔術<br>夢魔の／吸血</td>
+  <td>15</td>
+  <td>25</td>
+  <td>25</td>
+  <td>25</td>
+  <td><b>30</b></td>
+  <td><b>35</b></td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>ライフリーチ</td>
+  <td>豪傑の／剛力<br>夢魔の／吸血</td>
+  <td>15</td>
+  <td>25</td>
+  <td>25</td>
+  <td>25</td>
+  <td><b>30</b></td>
+  <td><b>35</b></td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>スタミナリーチ</td>
+  <td>疾風の／速攻<br>夢魔の／吸血</td>
+  <td>30%</td>
+  <td>50%</td>
+  <td>50%</td>
+  <td><b>60%</b></td>
+  <td><b>70%</b></td>
+  <td><b>70%</b></td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>命中低下</td>
+  <td>堅牢なる／イージス</td>
+  <td>30%</td>
+  <td>50%</td>
+  <td>50%</td>
+  <td><b>60%</b></td>
+  <td><b>70%</b></td>
+  <td><b>70%</b></td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>回避低下</td>
+  <td>なし</td>
+  <td>30%</td>
+  <td>40%</td>
+  <td>50%</td>
+  <td>50%</td>
+  <td>50%</td>
+  <td><b>60%</b></td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>速度</td>
+  <td>疾風の／速攻</td>
+  <td>20%</td>
+  <td>30%</td>
+  <td>30%</td>
+  <td>30%</td>
+  <td><b>35%</b></td>
+  <td><b>40%</b></td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>攻撃属性</td>
+  <td>匠の／上質</td>
+  <td>60%</td>
+  <td>70%</td>
+  <td>80%</td>
+  <td>100%</td>
+  <td>100%</td>
+  <td>100%</td>
+ </tr>
+</table>
+表に記載されていないプロパティは、<a href="memo_pub74_03.html">アイテム改良～改良オプションとプロパティの強度</a>で確認できます。
+
+</div>
+
+<div id="cat_2" style="display: none">
+<h3>２．鎧</h3>
+
+
+<h4>（１）抵抗値練成に関する仕様</h4>
+
+抵抗値を練成する際に気をつけておきたいことをまとめました。
+
+<h4>練成できる抵抗値の範囲</h4>
+
+防具を作成したときの抵抗値は、基本抵抗値、素材効果、そして品質効果の合計値となります。
+<br>防具に抵抗値を練成するとき、その数値は防具の基本抵抗値を基準として+1～15％の範囲となります。
+<br>たとえば、画像のHorned Leather Gorgetに物理抵抗を練成するとき、基本値2％に1～15％を加算した3～17％の範囲となり、
+<br>作成時に付加されていた品質効果および素材効果は失われます。
+
+<br><img src="imbuing_06-02.gif" alt="" class="img04">
+
+
+<table bgcolor="#f0f0f0" class="table01">
+ <tr>
+  <td align="center" width="140" colspan="2">&nbsp;</td>
+  <td align="center" width="60">基本値</td>
+  <td align="center" width="60">品質</td>
+  <td align="center" width="60">素材</td>
+  <td align="center" width="60">練成</td>
+  <td align="center" width="60">合計</td>
+ </tr>
+
+ <tr>
+  <td align="center" rowspan="2">物理抵抗</td>
+  <td align="center">作成時</td>
+  <td align="center" bgcolor="#ddffff">2</td>
+  <td align="center" bgcolor="#c0c0c0">1</td>
+  <td align="center" bgcolor="#ffcc99">2</td>
+  <td align="center" bgcolor="#ffff66">-</td>
+  <td align="center" bgcolor="#f0f0f0">5</td>
+ </tr>
+
+ <tr>
+  <td align="center">練成時</td>
+  <td align="center" bgcolor="#ddffff">2</td>
+  <td align="center" bgcolor="#c0c0c0">-</td>
+  <td align="center" bgcolor="#ffcc99">-</td>
+  <td align="center" bgcolor="#ffff66">1～15</td>
+  <td align="center" bgcolor="#f0f0f0">3～17</td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+
+<h4>練成前強化と練成後強化</h4>
+
+Horned leather等の素材効果は、装備品に練成する前または後どちらでも付加することができます。
+<br>練成前強化より練成後強化のほうが強力な装備品となりますが、それなりのリスクを伴います。
+
+<p>練成前強化</p>
+特殊素材で作成した場合もこちらに含まれます。
+<br>練成する属性に付加されていた品質効果および素材効果は失われます。
+
+
+<br><table bgcolor="#f0f0f0" class="table01">
+ <tr>
+  <td align="center" width="140">&nbsp;</td>
+  <td align="center" width="60">基本値</td>
+  <td align="center" width="60">品質</td>
+  <td align="center" width="60">素材</td>
+  <td align="center" width="60">練成</td>
+  <td align="center" width="60">合計</td>
+ </tr>
+
+ <tr>
+  <td align="center">物理抵抗</td>
+  <td align="center" bgcolor="#ddffff">2</td>
+  <td align="center" bgcolor="#c0c0c0">-</td>
+  <td align="center" bgcolor="#ffcc99">-</td>
+  <td align="center" bgcolor="#ffff66">1～15</td>
+  <td align="center" bgcolor="#f0f0f0">3～17</td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+<p>練成後強化</p>
+普通の素材で作成し、属性抵抗値を練成したあとに特殊素材で強化します。
+<br>練成する属性に付加された品質効果は失われます。
+<br>強化に失敗して装備品を失う可能性もあります。
+
+<br><table bgcolor="#f0f0f0" class="table01">
+ <tr>
+  <td align="center" width="140">&nbsp;</td>
+  <td align="center" width="60">基本値</td>
+  <td align="center" width="60">品質</td>
+  <td align="center" width="60">練成</td>
+  <td align="center" width="60">素材</td>
+  <td align="center" width="60">合計</td>
+ </tr>
+
+ <tr>
+  <td align="center">物理抵抗</td>
+  <td align="center" bgcolor="#ddffff">2</td>
+  <td align="center" bgcolor="#c0c0c0">-</td>
+  <td align="center" bgcolor="#ffff66">1～15</td>
+  <td align="center" bgcolor="#ffcc99">2</td>
+  <td align="center" bgcolor="#f0f0f0">5～19</td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+<h4>防具作成のコツ</h4>
+
+
+品質または素材効果による抵抗値増加は、作成者が練成前に吟味できるところです。
+<br>全身の防具セットを作成する場合、品質効果および素材効果が0またはそれに近いものを選別することで、
+抵抗値に練成する回数を減らすことも可能です。
+<br>画像の防具では、品質＋素材効果が物理抵抗で最も小さくなっており、
+抵抗値を練成した場合のロスが最も少ない属性となります。
+<img src="imbuing_06-02.gif" alt="" class="img04">
+
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="140">条件</td>
+  <td bgcolor="#d0d0d0" width="70">物理抵抗</td>
+  <td bgcolor="#ffc080" width="70">炎抵抗</td>
+  <td bgcolor="#80c0ff" width="70">冷気抵抗</td>
+  <td bgcolor="#80ffc0" width="70">毒抵抗</td>
+  <td bgcolor="#ffc0ff" width="70">エネ抵抗</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">作成時抵抗値</td>
+  <td bgcolor="#d0d0d0">5%</td>
+  <td bgcolor="#ffc080">9%</td>
+  <td bgcolor="#80c0ff">11%</td>
+  <td bgcolor="#80ffc0">15%</td>
+  <td bgcolor="#ffc0ff">10%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">基本値</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">4%</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">3%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">素材効果</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">4%</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">3%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">品質効果</td>
+  <td bgcolor="#d0d0d0">1%</td>
+  <td bgcolor="#ffc080">1%</td>
+  <td bgcolor="#80c0ff">5%</td>
+  <td bgcolor="#80ffc0">9%</td>
+  <td bgcolor="#ffc0ff">4%</td>
+ </tr>
+</table>
+<br class="cle">
+
+<h4>練成する属性抵抗と有効な素材効果</h4>
+
+特殊素材製のアイテムに抵抗値を1箇所練成するとき、有効となる素材効果を表にまとめます。
+
+<p>インゴット・花崗岩</p>
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="90">条件</td>
+  <td bgcolor="#f0f0f0" width="90">素材</td>
+  <td bgcolor="#d0d0d0" width="70">物理抵抗</td>
+  <td bgcolor="#ffc080" width="70">炎抵抗</td>
+  <td bgcolor="#80c0ff" width="70">冷気抵抗</td>
+  <td bgcolor="#80ffc0" width="70">毒抵抗</td>
+  <td bgcolor="#ffc0ff" width="70">エネ抵抗</td>
+  <td bgcolor="#f0f0f0" width="70">合計</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff" rowspan="4">物理に<br>練成</td>
+  <td bgcolor="#a0a0a0">shadow</td>
+  <td bgcolor="#d0d0d0">--</td>
+  <td bgcolor="#ffc080">2%</td>
+  <td bgcolor="#80c0ff">0%</td>
+  <td bgcolor="#80ffc0">0%</td>
+  <td bgcolor="#ffc0ff">7%</td>
+  <td bgcolor="#ddddff">9%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffa0a0">agapite</td>
+  <td bgcolor="#d0d0d0">--</td>
+  <td bgcolor="#ffc080">7%</td>
+  <td bgcolor="#80c0ff">2%</td>
+  <td bgcolor="#80ffc0">2%</td>
+  <td bgcolor="#ffc0ff">2%</td>
+  <td bgcolor="#ddddff"><b>13%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#80ff80">verite</td>
+  <td bgcolor="#d0d0d0">--</td>
+  <td bgcolor="#ffc080">4%</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">4%</td>
+  <td bgcolor="#ffc0ff">1%</td>
+  <td bgcolor="#ddddff">12%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#80c0ff">valorite</td>
+  <td bgcolor="#d0d0d0">--</td>
+  <td bgcolor="#ffc080">0%</td>
+  <td bgcolor="#80c0ff">4%</td>
+  <td bgcolor="#80ffc0">4%</td>
+  <td bgcolor="#ffc0ff">4%</td>
+  <td bgcolor="#ddddff">12%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff" rowspan="4">炎に<br>練成</td>
+  <td bgcolor="#a0a0a0">shadow</td>
+  <td bgcolor="#d0d0d0">3%</td>
+  <td bgcolor="#ffc080">--</td>
+  <td bgcolor="#80c0ff">0%</td>
+  <td bgcolor="#80ffc0">0%</td>
+  <td bgcolor="#ffc0ff">7%</td>
+  <td bgcolor="#eeeeff">10%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffa0a0">agapite</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">--</td>
+  <td bgcolor="#80c0ff">2%</td>
+  <td bgcolor="#80ffc0">2%</td>
+  <td bgcolor="#ffc0ff">2%</td>
+  <td bgcolor="#eeeeff">8%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#80ff80">verite</td>
+  <td bgcolor="#d0d0d0">4%</td>
+  <td bgcolor="#ffc080">--</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">4%</td>
+  <td bgcolor="#ffc0ff">1%</td>
+  <td bgcolor="#eeeeff">12%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#80c0ff">valorite</td>
+  <td bgcolor="#d0d0d0">5%</td>
+  <td bgcolor="#ffc080">--</td>
+  <td bgcolor="#80c0ff">4%</td>
+  <td bgcolor="#80ffc0">4%</td>
+  <td bgcolor="#ffc0ff">4%</td>
+  <td bgcolor="#eeeeff"><b>17%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff" rowspan="4">冷気に<br>練成</td>
+  <td bgcolor="#a0a0a0">shadow</td>
+  <td bgcolor="#d0d0d0">3%</td>
+  <td bgcolor="#ffc080">2%</td>
+  <td bgcolor="#80c0ff">--</td>
+  <td bgcolor="#80ffc0">0%</td>
+  <td bgcolor="#ffc0ff">7%</td>
+  <td bgcolor="#ddddff">12%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffa0a0">agapite</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">7%</td>
+  <td bgcolor="#80c0ff">--</td>
+  <td bgcolor="#80ffc0">2%</td>
+  <td bgcolor="#ffc0ff">2%</td>
+  <td bgcolor="#ddddff"><b>13%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#80ff80">verite</td>
+  <td bgcolor="#d0d0d0">4%</td>
+  <td bgcolor="#ffc080">4%</td>
+  <td bgcolor="#80c0ff">--</td>
+  <td bgcolor="#80ffc0">4%</td>
+  <td bgcolor="#ffc0ff">1%</td>
+  <td bgcolor="#ddddff"><b>13%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#80c0ff">valorite</td>
+  <td bgcolor="#d0d0d0">5%</td>
+  <td bgcolor="#ffc080">0%</td>
+  <td bgcolor="#80c0ff">--</td>
+  <td bgcolor="#80ffc0">4%</td>
+  <td bgcolor="#ffc0ff">4%</td>
+  <td bgcolor="#ddddff"><b>13%</b></td>
+ </tr>
+
+ <tr>
+  <td bgcolor="#eeeeff" rowspan="4">毒に<br>練成</td>
+  <td bgcolor="#a0a0a0">shadow</td>
+  <td bgcolor="#d0d0d0">3%</td>
+  <td bgcolor="#ffc080">2%</td>
+  <td bgcolor="#80c0ff">0%</td>
+  <td bgcolor="#80ffc0">--</td>
+  <td bgcolor="#ffc0ff">7%</td>
+  <td bgcolor="#eeeeff">12%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffa0a0">agapite</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">7%</td>
+  <td bgcolor="#80c0ff">2%</td>
+  <td bgcolor="#80ffc0">--</td>
+  <td bgcolor="#ffc0ff">2%</td>
+  <td bgcolor="#eeeeff"><b>13%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#80ff80">verite</td>
+  <td bgcolor="#d0d0d0">4%</td>
+  <td bgcolor="#ffc080">4%</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">--</td>
+  <td bgcolor="#ffc0ff">1%</td>
+  <td bgcolor="#eeeeff">12%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#80c0ff">valorite</td>
+  <td bgcolor="#d0d0d0">5%</td>
+  <td bgcolor="#ffc080">0%</td>
+  <td bgcolor="#80c0ff">4%</td>
+  <td bgcolor="#80ffc0">--</td>
+  <td bgcolor="#ffc0ff">4%</td>
+  <td bgcolor="#eeeeff"><b>13%</b></td>
+ </tr>
+
+ <tr>
+  <td bgcolor="#ddddff" rowspan="4">エネに<br>練成</td>
+  <td bgcolor="#a0a0a0">shadow</td>
+  <td bgcolor="#d0d0d0">3%</td>
+  <td bgcolor="#ffc080">2%</td>
+  <td bgcolor="#80c0ff">0%</td>
+  <td bgcolor="#80ffc0">0%</td>
+  <td bgcolor="#ffc0ff">--</td>
+  <td bgcolor="#ddddff">5%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffa0a0">agapite</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">7%</td>
+  <td bgcolor="#80c0ff">2%</td>
+  <td bgcolor="#80ffc0">2%</td>
+  <td bgcolor="#ffc0ff">--</td>
+  <td bgcolor="#ddddff">13%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#80ff80">verite</td>
+  <td bgcolor="#d0d0d0">4%</td>
+  <td bgcolor="#ffc080">4%</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">4%</td>
+  <td bgcolor="#ffc0ff">--</td>
+  <td bgcolor="#ddddff"><b>15%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#80c0ff">valorite</td>
+  <td bgcolor="#d0d0d0">5%</td>
+  <td bgcolor="#ffc080">0%</td>
+  <td bgcolor="#80c0ff">4%</td>
+  <td bgcolor="#80ffc0">4%</td>
+  <td bgcolor="#ffc0ff">--</td>
+  <td bgcolor="#ddddff">13%</td>
+ </tr>
+
+</table>
+
+<p>皮</p>
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="90">条件</td>
+  <td bgcolor="#f0f0f0" width="90">素材</td>
+  <td bgcolor="#d0d0d0" width="70">物理抵抗</td>
+  <td bgcolor="#ffc080" width="70">炎抵抗</td>
+  <td bgcolor="#80c0ff" width="70">冷気抵抗</td>
+  <td bgcolor="#80ffc0" width="70">毒抵抗</td>
+  <td bgcolor="#ffc0ff" width="70">エネ抵抗</td>
+  <td bgcolor="#f0f0f0" width="70">合計</td>
+ </tr>
+
+ <tr>
+  <td bgcolor="#ddddff" rowspan="2">物理に<br>練成</td>
+  <td bgcolor="#ff9999">horned</td>
+  <td bgcolor="#d0d0d0">--</td>
+  <td bgcolor="#ffc080">4%</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">3%</td>
+  <td bgcolor="#ddddff"><b>13%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#66cc66">barbed</td>
+  <td bgcolor="#d0d0d0">--</td>
+  <td bgcolor="#ffc080">2%</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">5%</td>
+  <td bgcolor="#ddddff"><b>13%</b></td>
+ </tr>
+
+ <tr>
+  <td bgcolor="#eeeeff" rowspan="2">炎に<br>練成</td>
+  <td bgcolor="#ff9999">horned</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">--</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">3%</td>
+  <td bgcolor="#eeeeff">11%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#66cc66">barbed</td>
+  <td bgcolor="#d0d0d0">3%</td>
+  <td bgcolor="#ffc080">--</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">5%</td>
+  <td bgcolor="#eeeeff"><b>14%</b></td>
+ </tr>
+
+ <tr>
+  <td bgcolor="#ddddff" rowspan="2">冷気に<br>練成</td>
+  <td bgcolor="#ff9999">horned</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">4%</td>
+  <td bgcolor="#80c0ff">--</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">3%</td>
+  <td bgcolor="#ddddff">12%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#66cc66">barbed</td>
+  <td bgcolor="#d0d0d0">3%</td>
+  <td bgcolor="#ffc080">2%</td>
+  <td bgcolor="#80c0ff">--</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">5%</td>
+  <td bgcolor="#ddddff"><b>13%</b></td>
+ </tr>
+
+ <tr>
+  <td bgcolor="#eeeeff" rowspan="2">毒に<br>練成</td>
+  <td bgcolor="#ff9999">horned</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">4%</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">--</td>
+  <td bgcolor="#ffc0ff">3%</td>
+  <td bgcolor="#eeeeff">12%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#66cc66">barbed</td>
+  <td bgcolor="#d0d0d0">3%</td>
+  <td bgcolor="#ffc080">2%</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">--</td>
+  <td bgcolor="#ffc0ff">5%</td>
+  <td bgcolor="#eeeeff"><b>13%</b></td>
+ </tr>
+
+ <tr>
+  <td bgcolor="#ddddff" rowspan="2">エネに<br>練成</td>
+  <td bgcolor="#ff9999">horned</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">4%</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">--</td>
+  <td bgcolor="#ddddff"><b>12%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#66cc66">barbed</td>
+  <td bgcolor="#d0d0d0">3%</td>
+  <td bgcolor="#ffc080">2%</td>
+  <td bgcolor="#80c0ff">3%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">--</td>
+  <td bgcolor="#ddddff">11%</td>
+ </tr>
+</table>
+
+<p>木材（heartwood, bloodwoodはプロパティ数に計上されるプロパティが付加されます）</p>
+
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="90">条件</td>
+  <td bgcolor="#f0f0f0" width="90">素材</td>
+  <td bgcolor="#d0d0d0" width="70">物理抵抗</td>
+  <td bgcolor="#ffc080" width="70">炎抵抗</td>
+  <td bgcolor="#80c0ff" width="70">冷気抵抗</td>
+  <td bgcolor="#80ffc0" width="70">毒抵抗</td>
+  <td bgcolor="#ffc0ff" width="70">エネ抵抗</td>
+  <td bgcolor="#f0f0f0" width="70">合計</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff" rowspan="3">物理に<br>練成</td>
+  <td bgcolor="#70d070">heartwood</td>
+  <td bgcolor="#d0d0d0">--</td>
+  <td bgcolor="#ffc080">3%</td>
+  <td bgcolor="#80c0ff">2%</td>
+  <td bgcolor="#80ffc0">7%</td>
+  <td bgcolor="#ffc0ff">2%</td>
+  <td bgcolor="#ddddff">14%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#c09090">bloodwood</td>
+  <td bgcolor="#d0d0d0">--</td>
+  <td bgcolor="#ffc080">8%</td>
+  <td bgcolor="#80c0ff">1%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">3%</td>
+  <td bgcolor="#ddddff">15%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#c0e0e0">frostwood</td>
+  <td bgcolor="#d0d0d0">--</td>
+  <td bgcolor="#ffc080">1%</td>
+  <td bgcolor="#80c0ff">8%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">4%</td>
+  <td bgcolor="#ddddff"><b>16%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff" rowspan="3">炎に<br>練成</td>
+  <td bgcolor="#70d070">heartwood</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">--</td>
+  <td bgcolor="#80c0ff">2%</td>
+  <td bgcolor="#80ffc0">7%</td>
+  <td bgcolor="#ffc0ff">2%</td>
+  <td bgcolor="#eeeeff">13%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#c09090">bloodwood</td>
+  <td bgcolor="#d0d0d0">3%</td>
+  <td bgcolor="#ffc080">--</td>
+  <td bgcolor="#80c0ff">1%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">3%</td>
+  <td bgcolor="#eeeeff">10%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#c0e0e0">frostwood</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">--</td>
+  <td bgcolor="#80c0ff">8%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">4%</td>
+  <td bgcolor="#eeeeff"><b>17%</b></td>
+ </tr>
+
+ <tr>
+  <td bgcolor="#ddddff" rowspan="3">冷気に<br>練成</td>
+  <td bgcolor="#70d070">heartwood</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">3%</td>
+  <td bgcolor="#80c0ff">--</td>
+  <td bgcolor="#80ffc0">7%</td>
+  <td bgcolor="#ffc0ff">2%</td>
+  <td bgcolor="#ddddff">14%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#c09090">bloodwood</td>
+  <td bgcolor="#d0d0d0">3%</td>
+  <td bgcolor="#ffc080">8%</td>
+  <td bgcolor="#80c0ff">--</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">3%</td>
+  <td bgcolor="#ddddff"><b>17%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#c0e0e0">frostwood</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">1%</td>
+  <td bgcolor="#80c0ff">--</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">4%</td>
+  <td bgcolor="#ddddff">10%</td>
+ </tr>
+
+ <tr>
+  <td bgcolor="#eeeeff" rowspan="3">毒に<br>練成</td>
+  <td bgcolor="#70d070">heartwood</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">3%</td>
+  <td bgcolor="#80c0ff">2%</td>
+  <td bgcolor="#80ffc0">--</td>
+  <td bgcolor="#ffc0ff">2%</td>
+  <td bgcolor="#eeeeff">9%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#c09090">bloodwood</td>
+  <td bgcolor="#d0d0d0">3%</td>
+  <td bgcolor="#ffc080">8%</td>
+  <td bgcolor="#80c0ff">1%</td>
+  <td bgcolor="#80ffc0">--</td>
+  <td bgcolor="#ffc0ff">3%</td>
+  <td bgcolor="#eeeeff"><b>15%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#c0e0e0">frostwood</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">1%</td>
+  <td bgcolor="#80c0ff">8%</td>
+  <td bgcolor="#80ffc0">--</td>
+  <td bgcolor="#ffc0ff">4%</td>
+  <td bgcolor="#eeeeff"><b>15%</b></td>
+ </tr>
+
+ <tr>
+  <td bgcolor="#ddddff" rowspan="3">エネに<br>練成</td>
+  <td bgcolor="#70d070">heartwood</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">3%</td>
+  <td bgcolor="#80c0ff">2%</td>
+  <td bgcolor="#80ffc0">7%</td>
+  <td bgcolor="#ffc0ff">--</td>
+  <td bgcolor="#ddddff">14%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#c09090">bloodwood</td>
+  <td bgcolor="#d0d0d0">3%</td>
+  <td bgcolor="#ffc080">8%</td>
+  <td bgcolor="#80c0ff">1%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">--</td>
+  <td bgcolor="#ddddff"><b>15%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#c0e0e0">frostwood</td>
+  <td bgcolor="#d0d0d0">2%</td>
+  <td bgcolor="#ffc080">1%</td>
+  <td bgcolor="#80c0ff">8%</td>
+  <td bgcolor="#80ffc0">3%</td>
+  <td bgcolor="#ffc0ff">--</td>
+  <td bgcolor="#ddddff">14%</td>
+ </tr>
+
+</table>
+
+<h4>（２）防具作成例　</h4>
+
+<h4>作成例1 ― 帽子＋革鎧 計6パーツ　ALL70～75</h4>
+
+作成例1では、抵抗値を中心に作成の流れを解説します。
+<br>まず、目標抵抗値と基本抵抗値の合計の差を確認します。これを素材効果、品質効果、練成で賄うことになります。
+
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="140">条件</td>
+  <td bgcolor="#d0d0d0" width="70">物理抵抗</td>
+  <td bgcolor="#ffc080" width="70">炎抵抗</td>
+  <td bgcolor="#80c0ff" width="70">冷気抵抗</td>
+  <td bgcolor="#80ffc0" width="70">毒抵抗</td>
+  <td bgcolor="#ffc0ff" width="70">エネ抵抗</td>
+  <td bgcolor="#f0f0f0" width="70">合計</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">目標抵抗値</td>
+  <td bgcolor="#d0d0d0">70%</td>
+  <td bgcolor="#ffc080">70%</td>
+  <td bgcolor="#80c0ff">70%</td>
+  <td bgcolor="#80ffc0">70%</td>
+  <td bgcolor="#ffc0ff">75%</td>
+  <td bgcolor="#f0f0f0">355%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">基本抵抗値合計</td>
+  <td bgcolor="#d0d0d0">10%</td>
+  <td bgcolor="#ffc080">25%</td>
+  <td bgcolor="#80c0ff">24%</td>
+  <td bgcolor="#80ffc0">20%</td>
+  <td bgcolor="#ffc0ff">20%</td>
+  <td bgcolor="#f0f0f0">99%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">残り</td>
+  <td bgcolor="#d0d0d0">60%</td>
+  <td bgcolor="#ffc080">45%</td>
+  <td bgcolor="#80c0ff">46%</td>
+  <td bgcolor="#80ffc0">50%</td>
+  <td bgcolor="#ffc0ff">55%</td>
+  <td bgcolor="#f0f0f0">256%</td>
+ </tr>
+</table>
+<br class="cle">
+
+まず、帽子、作成に多くの素材を消費する胴および足を作成し、下表に示す抵抗値のパーツを選別しました。
+<br>抵抗値を練成する属性は、<b>作成時点の抵抗値ではなく基本抵抗値に修正</b>します。
+<br>また、抵抗値の練成強度は、希少材料の消費を抑えるため、基本抵抗値＋14％までとしています。
+<br>抵抗値の不足分をみて、残りのパーツにどの属性抵抗値を練成するかおおよそ決めておきます。
+
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="140">3パーツまで</td>
+  <td bgcolor="#d0d0d0" width="70">物理抵抗</td>
+  <td bgcolor="#ffc080" width="70">炎抵抗</td>
+  <td bgcolor="#80c0ff" width="70">冷気抵抗</td>
+  <td bgcolor="#80ffc0" width="70">毒抵抗</td>
+  <td bgcolor="#ffc0ff" width="70">エネ抵抗</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">1：帽子</td>
+  <td bgcolor="#d0d0d0">6%</td>
+  <td bgcolor="#ffc080">9%</td>
+  <td bgcolor="#80c0ff">10%</td>
+  <td bgcolor="#80ffc0">14%</td>
+  <td bgcolor="#ffc0ff"><b>5%</b></td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">2：胴 horned</td>
+  <td bgcolor="#d0d0d0"><s>5%</s> <b>2%</b></td>
+  <td bgcolor="#ffc080">12%</td>
+  <td bgcolor="#80c0ff">14%</td>
+  <td bgcolor="#80ffc0">9%</td>
+  <td bgcolor="#ffc0ff">10%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">3：足 horned</td>
+  <td bgcolor="#d0d0d0">10%</td>
+  <td bgcolor="#ffc080">13</td>
+  <td bgcolor="#80c0ff"><s>7%</s> <b>3%</b></td>
+  <td bgcolor="#80ffc0">10%</td>
+  <td bgcolor="#ffc0ff">10%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">練成回数</td>
+  <td bgcolor="#d0d0d0">1 (+14%)</td>
+  <td bgcolor="#ffc080">0</td>
+  <td bgcolor="#80c0ff">1 (+14%)</td>
+  <td bgcolor="#80ffc0">0</td>
+  <td bgcolor="#ffc0ff">1 (+14%)</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">3パーツ合計</td>
+  <td bgcolor="#d0d0d0">32%</td>
+  <td bgcolor="#ffc080">34%</td>
+  <td bgcolor="#80c0ff">41%</td>
+  <td bgcolor="#80ffc0">33%</td>
+  <td bgcolor="#ffc0ff">39%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">残り</td>
+  <td bgcolor="#d0d0d0">38%</td>
+  <td bgcolor="#ffc080">36%</td>
+  <td bgcolor="#80c0ff">29%</td>
+  <td bgcolor="#80ffc0">37%</td>
+  <td bgcolor="#ffc0ff">36%</td>
+ </tr>
+</table>
+
+
+4パーツ目以降、首、腕、手を作成しました。残り2パーツに物理抵抗を練成して、物理抵抗の合計が70％以上となるように、
+<br>4パーツ目は、物理抵抗が6％を超えるものを選別しました。
+<br>後半のパーツになると、単純に表示抵抗値を確認するだけでなく、残りパーツの作りやすさも考えながら選別することが重要です。
+<br>今回は、物理抵抗9％のパーツを選別できたので、物理抵抗の練成強度も希少材料を使わない範囲まで下げることができます。
+
+
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="140">&nbsp;</td>
+  <td bgcolor="#d0d0d0" width="70">物理抵抗</td>
+  <td bgcolor="#ffc080" width="70">炎抵抗</td>
+  <td bgcolor="#80c0ff" width="70">冷気抵抗</td>
+  <td bgcolor="#80ffc0" width="70">毒抵抗</td>
+  <td bgcolor="#ffc0ff" width="70">エネ抵抗</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">3パーツ合計</td>
+  <td bgcolor="#d0d0d0">32%</td>
+  <td bgcolor="#ffc080">34%</td>
+  <td bgcolor="#80c0ff">41%</td>
+  <td bgcolor="#80ffc0">33%</td>
+  <td bgcolor="#ffc0ff">39%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">4：首 horned</td>
+  <td bgcolor="#d0d0d0">9%</td>
+  <td bgcolor="#ffc080">13%</td>
+  <td bgcolor="#80c0ff">11</td>
+  <td bgcolor="#80ffc0"><s>6%</s> <b>3%</b></td>
+  <td bgcolor="#ffc0ff">11%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">5：腕 </td>
+  <td bgcolor="#d0d0d0"><b>2%</b></td>
+  <td bgcolor="#ffc080"></td>
+  <td bgcolor="#80c0ff"></td>
+  <td bgcolor="#80ffc0"></td>
+  <td bgcolor="#ffc0ff"></td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">6：手 </td>
+  <td bgcolor="#d0d0d0"><b>2%</b></td>
+  <td bgcolor="#ffc080"></td>
+  <td bgcolor="#80c0ff"></td>
+  <td bgcolor="#80ffc0"></td>
+  <td bgcolor="#ffc0ff"></td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">練成回数</td>
+  <td bgcolor="#d0d0d0">2 (+28%)</td>
+  <td bgcolor="#ffc080">0</td>
+  <td bgcolor="#80c0ff">0</td>
+  <td bgcolor="#80ffc0">1 (+14%)</td>
+  <td bgcolor="#ffc0ff">0</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">合計</td>
+  <td bgcolor="#d0d0d0">73%</td>
+  <td bgcolor="#ffc080">47%</td>
+  <td bgcolor="#80c0ff">52%</td>
+  <td bgcolor="#80ffc0">50%</td>
+  <td bgcolor="#ffc0ff">50%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">残り</td>
+  <td bgcolor="#d0d0d0">--</td>
+  <td bgcolor="#ffc080">23%</td>
+  <td bgcolor="#80c0ff">18%</td>
+  <td bgcolor="#80ffc0">20%</td>
+  <td bgcolor="#ffc0ff">25%</td>
+ </tr>
+</table>
+
+<br>5、6パーツ目で物理以外の属性抵抗を必要な分確保できれば完成です。
+
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="140">&nbsp;</td>
+  <td bgcolor="#d0d0d0" width="70">物理抵抗</td>
+  <td bgcolor="#ffc080" width="70">炎抵抗</td>
+  <td bgcolor="#80c0ff" width="70">冷気抵抗</td>
+  <td bgcolor="#80ffc0" width="70">毒抵抗</td>
+  <td bgcolor="#ffc0ff" width="70">エネ抵抗</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">4パーツ終了時合計<br>確定分含む</td>
+  <td bgcolor="#d0d0d0">73%</td>
+  <td bgcolor="#ffc080">47%</td>
+  <td bgcolor="#80c0ff">52%</td>
+  <td bgcolor="#80ffc0">50%</td>
+  <td bgcolor="#ffc0ff">50%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">5：腕 barbed</td>
+  <td bgcolor="#d0d0d0">--</td>
+  <td bgcolor="#ffc080">9%</td>
+  <td bgcolor="#80c0ff">9%</td>
+  <td bgcolor="#80ffc0">11%</td>
+  <td bgcolor="#ffc0ff">15%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">6：手 horned</td>
+  <td bgcolor="#d0d0d0">--</td>
+  <td bgcolor="#ffc080">14%</td>
+  <td bgcolor="#80c0ff">10</td>
+  <td bgcolor="#80ffc0">9%</td>
+  <td bgcolor="#ffc0ff">12%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">抵抗値合計</td>
+  <td bgcolor="#d0d0d0">73%</td>
+  <td bgcolor="#ffc080">70%</td>
+  <td bgcolor="#80c0ff">71%</td>
+  <td bgcolor="#80ffc0">70%</td>
+  <td bgcolor="#ffc0ff">77%</td>
+ </tr>
+</table>
+
+最終的な結果は、下表のようになりました。
+<br>抵抗値の練成回数は、全パーツ1回なので、残り4プロパティを練成することが可能です。
+<br>固定装備があったり抵抗値変化の魔法を前提とする場合も、残りのパーツ数や目標抵抗値が変わるだけです。
+
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="60"></td>
+  <td bgcolor="#d0d0d0" width="40">AR</td>
+  <td bgcolor="#ffc080" width="40">FR</td>
+  <td bgcolor="#80c0ff" width="40">CR</td>
+  <td bgcolor="#80ffc0" width="40">PR</td>
+  <td bgcolor="#ffc0ff" width="40">ER</td>
+  <td bgcolor="#f0f0f0" width="50">抵抗</td>
+  <td bgcolor="#f0f0f0" width="50">LMC</td>
+  <td bgcolor="#f0f0f0" width="50">Mana</td>
+  <td bgcolor="#f0f0f0" width="50">ManaR</td>
+  <td bgcolor="#f0f0f0" width="50">LRC</td>
+  <td bgcolor="#ffffcc" width="60">練成強度<br>不安定度</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">帽子</td>
+  <td bgcolor="#d0d0d0">6</td>
+  <td bgcolor="#ffc080">9</td>
+  <td bgcolor="#80c0ff">10</td>
+  <td bgcolor="#80ffc0">14</td>
+  <td bgcolor="#ffc0ff"><b>5</b></td>
+  <td bgcolor="#f0f0f0">+12</td>
+  <td bgcolor="#f0f0f0">-7</td>
+  <td bgcolor="#f0f0f0">+7</td>
+  <td bgcolor="#f0f0f0">1</td>
+  <td bgcolor="#f0f0f0">-17</td>
+  <td bgcolor="#ffffcc">407</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">首</td>
+  <td bgcolor="#d0d0d0">9</td>
+  <td bgcolor="#ffc080">13</td>
+  <td bgcolor="#80c0ff">11</td>
+  <td bgcolor="#80ffc0"><b>3</b></td>
+  <td bgcolor="#ffc0ff">11</td>
+  <td bgcolor="#f0f0f0">+14</td>
+  <td bgcolor="#f0f0f0">-6</td>
+  <td bgcolor="#f0f0f0">+7</td>
+  <td bgcolor="#f0f0f0">1</td>
+  <td bgcolor="#f0f0f0">-17</td>
+  <td bgcolor="#ffffcc">406</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">手</td>
+  <td bgcolor="#d0d0d0"><b>2</b></td>
+  <td bgcolor="#ffc080">14</td>
+  <td bgcolor="#80c0ff">10</td>
+  <td bgcolor="#80ffc0">9</td>
+  <td bgcolor="#ffc0ff">12</td>
+  <td bgcolor="#f0f0f0">+13</td>
+  <td bgcolor="#f0f0f0">-6</td>
+  <td bgcolor="#f0f0f0">+7</td>
+  <td bgcolor="#f0f0f0">1</td>
+  <td bgcolor="#f0f0f0">-17</td>
+  <td bgcolor="#ffffcc">399</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">腕</td>
+  <td bgcolor="#d0d0d0"><b>2</b></td>
+  <td bgcolor="#ffc080">9</td>
+  <td bgcolor="#80c0ff">9</td>
+  <td bgcolor="#80ffc0">11</td>
+  <td bgcolor="#ffc0ff">15</td>
+  <td bgcolor="#f0f0f0">+13</td>
+  <td bgcolor="#f0f0f0">-7</td>
+  <td bgcolor="#f0f0f0">+7</td>
+  <td bgcolor="#f0f0f0">1</td>
+  <td bgcolor="#f0f0f0">-17</td>
+  <td bgcolor="#ffffcc">413</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">足</td>
+  <td bgcolor="#d0d0d0">10</td>
+  <td bgcolor="#ffc080">13</td>
+  <td bgcolor="#80c0ff"><b>3</b></td>
+  <td bgcolor="#80ffc0">10</td>
+  <td bgcolor="#ffc0ff">10</td>
+  <td bgcolor="#f0f0f0">+13</td>
+  <td bgcolor="#f0f0f0">-7</td>
+  <td bgcolor="#f0f0f0">+7</td>
+  <td bgcolor="#f0f0f0">1</td>
+  <td bgcolor="#f0f0f0">-17</td>
+  <td bgcolor="#ffffcc">413</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">胴</td>
+  <td bgcolor="#d0d0d0"><b>2</b></td>
+  <td bgcolor="#ffc080">12</td>
+  <td bgcolor="#80c0ff">14</td>
+  <td bgcolor="#80ffc0">9</td>
+  <td bgcolor="#ffc0ff">10</td>
+  <td bgcolor="#f0f0f0">+13</td>
+  <td bgcolor="#f0f0f0">-7</td>
+  <td bgcolor="#f0f0f0">+7</td>
+  <td bgcolor="#f0f0f0">1</td>
+  <td bgcolor="#f0f0f0">-17</td>
+  <td bgcolor="#ffffcc">413</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">練成回数</td>
+  <td bgcolor="#d0d0d0">3<br>(+39%)</td>
+  <td bgcolor="#ffc080">0</td>
+  <td bgcolor="#80c0ff">1<br>(+13%)</td>
+  <td bgcolor="#80ffc0">1<br>(+14%)</td>
+  <td bgcolor="#ffc0ff">1<br>(+12%)</td>
+  <td bgcolor="#f0f0f0"></td>
+  <td bgcolor="#f0f0f0"></td>
+  <td bgcolor="#f0f0f0"></td>
+  <td bgcolor="#f0f0f0"></td>
+  <td bgcolor="#f0f0f0"></td>
+  <td bgcolor="#ffffcc"></td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">合計</td>
+  <td bgcolor="#d0d0d0">70%</td>
+  <td bgcolor="#ffc080">70%</td>
+  <td bgcolor="#80c0ff">70%</td>
+  <td bgcolor="#80ffc0">70%</td>
+  <td bgcolor="#ffc0ff">75%</td>
+  <td bgcolor="#f0f0f0"></td>
+  <td bgcolor="#f0f0f0">-40</td>
+  <td bgcolor="#f0f0f0">+42</td>
+  <td bgcolor="#f0f0f0">+6</td>
+  <td bgcolor="#f0f0f0">-102</td>
+  <td bgcolor="#ffffcc"></td>
+ </tr>
+</table>
+
+
+<h4>作成例2 ― 帽子＋革鎧 計6パーツ　改良によるマナ回復セット</h4>
+
+<img src="imbuing_06-06.gif" alt="" class="img04" width="142">
+作成例2では、改良を生かした防具セット作成の流れを解説します。作成例1のような抵抗値に関する解説はしませんが、全抵抗値最大を目標にしています。
+<br>マナ回復は、練成で付加しようとすると1パーツあたり2が最大で、そのとき、 seed of renewal [復活の種]を10個使用します。
+<br>しかし、改良で防具にステータス回復系を付加する場合、左の画像のように3までは比較的簡単に付加することができます。
+<br>このことを利用して作成した防具セットを紹介します。
+<br class="cle">
+
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="60"></td>
+  <td bgcolor="#d0d0d0" width="40">AR</td>
+  <td bgcolor="#ffc080" width="40">FR</td>
+  <td bgcolor="#80c0ff" width="40">CR</td>
+  <td bgcolor="#80ffc0" width="40">PR</td>
+  <td bgcolor="#ffc0ff" width="40">ER</td>
+  <td bgcolor="#f0f0f0" width="50">LMC</td>
+  <td bgcolor="#f0f0f0" width="50">Mana</td>
+  <td bgcolor="#f0f0f0" width="50">ManaR</td>
+  <td bgcolor="#f0f0f0" width="50">LRC</td>
+  <td bgcolor="#ffffcc" width="60">練成強度<br>不安定度</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">帽子</td>
+  <td bgcolor="#d0d0d0"><b>14%</b></td>
+  <td bgcolor="#ffc080">9%</td>
+  <td bgcolor="#80c0ff">13%</td>
+  <td bgcolor="#80ffc0">12%</td>
+  <td bgcolor="#ffc0ff">10%</td>
+  <td bgcolor="#f0f0f0">-7</td>
+  <td bgcolor="#f0f0f0">6</td>
+  <td bgcolor="#f0f0f0">3</td>
+  <td bgcolor="#f0f0f0">-15</td>
+  <td bgcolor="#ffffcc">496</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">首</td>
+  <td bgcolor="#d0d0d0"><b>16%</b></td>
+  <td bgcolor="#ffc080">12%</td>
+  <td bgcolor="#80c0ff">10</td>
+  <td bgcolor="#80ffc0">10%</td>
+  <td bgcolor="#ffc0ff">11%</td>
+  <td bgcolor="#f0f0f0">-7</td>
+  <td bgcolor="#f0f0f0">6</td>
+  <td bgcolor="#f0f0f0">3</td>
+  <td bgcolor="#f0f0f0">-15</td>
+  <td bgcolor="#ffffcc">496</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">手</td>
+  <td bgcolor="#d0d0d0">11%</td>
+  <td bgcolor="#ffc080"><b>19%</b></td>
+  <td bgcolor="#80c0ff">10</td>
+  <td bgcolor="#80ffc0">8%</td>
+  <td bgcolor="#ffc0ff">13%</td>
+  <td bgcolor="#f0f0f0">-6</td>
+  <td bgcolor="#f0f0f0">6</td>
+  <td bgcolor="#f0f0f0">3</td>
+  <td bgcolor="#f0f0f0">-17</td>
+  <td bgcolor="#ffffcc">499</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">腕</td>
+  <td bgcolor="#d0d0d0">11%</td>
+  <td bgcolor="#ffc080">9%</td>
+  <td bgcolor="#80c0ff">9%</td>
+  <td bgcolor="#80ffc0"><b>18%</b></td>
+  <td bgcolor="#ffc0ff">12%</td>
+  <td bgcolor="#f0f0f0">-7</td>
+  <td bgcolor="#f0f0f0">8</td>
+  <td bgcolor="#f0f0f0">2</td>
+  <td bgcolor="#f0f0f0">-18</td>
+  <td bgcolor="#ffffcc">496</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">足</td>
+  <td bgcolor="#d0d0d0">8%</td>
+  <td bgcolor="#ffc080">9</td>
+  <td bgcolor="#80c0ff"><b>18%</b></td>
+  <td bgcolor="#80ffc0">13%</td>
+  <td bgcolor="#ffc0ff">12%</td>
+  <td bgcolor="#f0f0f0">-6</td>
+  <td bgcolor="#f0f0f0">6</td>
+  <td bgcolor="#f0f0f0">3</td>
+  <td bgcolor="#f0f0f0">-17</td>
+  <td bgcolor="#ffffcc">499</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">胴</td>
+  <td bgcolor="#d0d0d0">10%</td>
+  <td bgcolor="#ffc080">12%</td>
+  <td bgcolor="#80c0ff">10%</td>
+  <td bgcolor="#80ffc0">9%</td>
+  <td bgcolor="#ffc0ff"><b>17%</b></td>
+  <td bgcolor="#f0f0f0">-7</td>
+  <td bgcolor="#f0f0f0">8</td>
+  <td bgcolor="#f0f0f0">2</td>
+  <td bgcolor="#f0f0f0">-18</td>
+  <td bgcolor="#ffffcc">489</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">合計</td>
+  <td bgcolor="#d0d0d0">70%</td>
+  <td bgcolor="#ffc080">70%</td>
+  <td bgcolor="#80c0ff">70%</td>
+  <td bgcolor="#80ffc0">70%</td>
+  <td bgcolor="#ffc0ff">75%</td>
+  <td bgcolor="#f0f0f0">-40</td>
+  <td bgcolor="#f0f0f0">40</td>
+  <td bgcolor="#f0f0f0">16</td>
+  <td bgcolor="#f0f0f0">-100</td>
+  <td bgcolor="#ffffcc"></td>
+ </tr>
+</table>
+
+<br>セット作成の流れは、以下のとおりです。
+
+<p>1. 布製の帽子および改良用の革鎧パーツを作成する</p>
+
+改良の仕様上、革鎧は普通の革で作成しなければなりません。
+
+<p>2. 改良で「マナ回復：3」を付加する</p>
+
+マナ回復が付加されるワードを指定して、あとは運次第です。
+
+<p>3. 革鎧パーツを特殊素材で強化し、数種類のパーツを確保する</p>
+
+マナ回復：3が付加されても、強化に失敗する可能性があります。
+<br>帽子は、特殊素材がないため、マナ回復：3が付加されればOKです。
+<br>全抵抗値最大も狙う場合、2～3パーツは改良品ではないパーツにすることをお勧めします。
+
+<p>4. 改良品の装備部位以外の防具パーツを作成する</p>
+
+全抵抗値最大にできるように、作ったパーツを選別します。
+
+<p>5. 抵抗値、その他のプロパティを練成する</p>
+
+マナ回復：3は、合計強度（不安定度）150％使用するため、他のプロパティの強度を抑える必要があります。
+<br>セット全体で、うまく調整してください。
+
+
+<h4>（３）アイテム改良</h4>
+（２）のアイテム画像にもあるように、低級のRunic toolでアイテム改良で必要なプロパティをあらかじめ付加しておき、
+<br>そのあと、他のプロパティを練成で付加することも可能です。
+<br>一部のプロパティについて、低級Runic toolで狙える強度を表にしてみました。
+
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="120" rowspan="3">プロパティ</td>
+  <td width="140" rowspan="3">ワード</td>
+  <td width="360" colspan="6">使用toolおよびオプション</td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td colspan="2"><img src="du-runic.gif" alt="dull" class="img01"></td>
+  <td colspan="2"><img src="sh-runic.gif" alt="shadow" class="img01"><img src="sp-runic.gif" alt="oak" class="img01"><img src="oak-runic.gif" alt="oak" class="img01"></td>
+  <td colspan="2"><img src="co-runic.gif" alt="copper" class="img01"></td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td>なし</td>
+  <td>Pow</td>
+  <td>なし</td>
+  <td>Pow</td>
+  <td>なし</td>
+  <td>Pow</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>マナコスト</td>
+  <td>悟りの／魔力<br>言霊の／魔術</td>
+  <td>-4%</td>
+  <td>-8%</td>
+  <td>-8%</td>
+  <td>-8%</td>
+  <td><b>-10%</b></td>
+  <td><b>-10%</b></td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>マナ回復</td>
+  <td>悟りの／魔力<br>言霊の／魔術<br>息吹の／再生</td>
+  <td>2</td>
+  <td><b>3</b></td>
+  <td><b>3</b></td>
+  <td><b>3</b></td>
+  <td><b>4</b></td>
+  <td><b>4</b></td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>ヒットポイント変換</td>
+  <td>豪傑の／剛力<br>息吹の／再生</td>
+  <td>9%</td>
+  <td>12%</td>
+  <td>12%</td>
+  <td>15%</td>
+  <td>15%</td>
+  <td>15%</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>命中</td>
+  <td>流血の／殲滅</td>
+  <td>4%</td>
+  <td>4%</td>
+  <td>5%</td>
+  <td>5%</td>
+  <td>(5%)</td>
+  <td>(5%)</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>回避</td>
+  <td>堅牢なる／イージス</td>
+  <td>4%</td>
+  <td>4%</td>
+  <td>5%</td>
+  <td>5%</td>
+  <td>5%</td>
+  <td>5%</td>
+ </tr>
+</table>
+表に記載されていないプロパティは、<a href="reforging_note_01.html">アイテム改良～改良オプションとプロパティの強度</a>で確認できます。
+<br>Copper runic以上のランクでは、流血の／殲滅のワードを選択することはできません。
+
+
+<h4>（４）強化材の使いこなし</h4>
+
+Publish81より導入された防具強化材により、プレイヤーの属性抵抗値上限または回避上限を上昇
+（回避上限または属性抵抗値上限の低下）できるようになりました。
+<br>効果の内容をおさらいし、うまく使いこなしましょう。
+
+<ul class="list02">
+効果の内容
+ <li>パーツ毎で最後に使用した強化材の効果が適用される</li>
+ <li>シャイン○○ : 抵抗上限減少（-1％×1～5箇所）、回避上限上昇（1～5％）</li>
+ <li>ハード○○ : 抵抗上限上昇（+1％×1～5箇所）、回避上限減少（1～5％）</li>
+ <li>抵抗上限変化の限界　：　1属性につき±5％</li>
+ <li>回避上限変化の限界　：　±25％</li>
+</ul>
+
+<p>使用例　：　物理属性の攻撃をする相手に特化する場合</p>
+
+<font color="#ff0000">ある抵抗の上限を△％上昇（下降）するには、少なくとも△パーツ必要です。</font>
+<br>ここでは、5パーツを物理抵抗上限の上昇に使い、上限を+5％（75％）しました。
+<br>このとき、装備品の物理抵抗合計を75％以上にしておく必要があります。
+
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="60"></td>
+  <td bgcolor="#d0d0d0" width="60">AR上限</td>
+  <td bgcolor="#ffc080" width="60">FR上限</td>
+  <td bgcolor="#80c0ff" width="60">CR上限</td>
+  <td bgcolor="#80ffc0" width="60">PR上限</td>
+  <td bgcolor="#ffc0ff" width="60">ER上限</td>
+  <td bgcolor="#f0f0f0" width="60">回避上限</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">兜</td>
+  <td bgcolor="#d0d0d0">&nbsp;</td>
+  <td bgcolor="#ffc080">&nbsp;</td>
+  <td bgcolor="#80c0ff">&nbsp;</td>
+  <td bgcolor="#80ffc0">&nbsp;</td>
+  <td bgcolor="#ffc0ff">&nbsp;</td>
+  <td bgcolor="#f0f0f0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">首</td>
+  <td bgcolor="#d0d0d0">+1</td>
+  <td bgcolor="#ffc080">&nbsp;</td>
+  <td bgcolor="#80c0ff">&nbsp;</td>
+  <td bgcolor="#80ffc0">&nbsp;</td>
+  <td bgcolor="#ffc0ff">&nbsp;</td>
+  <td bgcolor="#f0f0f0">-1</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">手</td>
+  <td bgcolor="#d0d0d0">+1</td>
+  <td bgcolor="#ffc080">&nbsp;</td>
+  <td bgcolor="#80c0ff">&nbsp;</td>
+  <td bgcolor="#80ffc0">&nbsp;</td>
+  <td bgcolor="#ffc0ff">&nbsp;</td>
+  <td bgcolor="#f0f0f0">-1</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">腕</td>
+  <td bgcolor="#d0d0d0">+1</td>
+  <td bgcolor="#ffc080">&nbsp;</td>
+  <td bgcolor="#80c0ff">&nbsp;</td>
+  <td bgcolor="#80ffc0">&nbsp;</td>
+  <td bgcolor="#ffc0ff">&nbsp;</td>
+  <td bgcolor="#f0f0f0">-1</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">足</td>
+  <td bgcolor="#d0d0d0">+1</td>
+  <td bgcolor="#ffc080">&nbsp;</td>
+  <td bgcolor="#80c0ff">&nbsp;</td>
+  <td bgcolor="#80ffc0">&nbsp;</td>
+  <td bgcolor="#ffc0ff">&nbsp;</td>
+  <td bgcolor="#f0f0f0">-1</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">胴</td>
+  <td bgcolor="#d0d0d0">+1</td>
+  <td bgcolor="#ffc080">&nbsp;</td>
+  <td bgcolor="#80c0ff">&nbsp;</td>
+  <td bgcolor="#80ffc0">&nbsp;</td>
+  <td bgcolor="#ffc0ff">&nbsp;</td>
+  <td bgcolor="#f0f0f0">-1</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">合計</td>
+  <td bgcolor="#d0d0d0">+5</td>
+  <td bgcolor="#ffc080">&nbsp;</td>
+  <td bgcolor="#80c0ff">&nbsp;</td>
+  <td bgcolor="#80ffc0">&nbsp;</td>
+  <td bgcolor="#ffc0ff">&nbsp;</td>
+  <td bgcolor="#f0f0f0">-5</td>
+ </tr>
+</table>
+
+<p>使用例　：　抵抗強化と回避強化を組み合わせた場合</p>
+
+抵抗上限と回避上限をできるだけ両立させた例です。
+<br>今の仕様では、ある属性抵抗の上限を+5％、別の属性の上限を-5％することはできません。
+
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="60"></td>
+  <td bgcolor="#d0d0d0" width="60">AR上限</td>
+  <td bgcolor="#ffc080" width="60">FR上限</td>
+  <td bgcolor="#80c0ff" width="60">CR上限</td>
+  <td bgcolor="#80ffc0" width="60">PR上限</td>
+  <td bgcolor="#ffc0ff" width="60">ER上限</td>
+  <td bgcolor="#f0f0f0" width="60">回避上限</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">兜</td>
+  <td bgcolor="#d0d0d0">+1</td>
+  <td bgcolor="#ffc080">+1</td>
+  <td bgcolor="#80c0ff">&nbsp;</td>
+  <td bgcolor="#80ffc0">&nbsp;</td>
+  <td bgcolor="#ffc0ff">+1</td>
+  <td bgcolor="#f0f0f0">-3</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">首</td>
+  <td bgcolor="#d0d0d0">+1</td>
+  <td bgcolor="#ffc080">+1</td>
+  <td bgcolor="#80c0ff">&nbsp;</td>
+  <td bgcolor="#80ffc0">&nbsp;</td>
+  <td bgcolor="#ffc0ff">+1</td>
+  <td bgcolor="#f0f0f0">-3</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">手</td>
+  <td bgcolor="#d0d0d0">+1</td>
+  <td bgcolor="#ffc080">+1</td>
+  <td bgcolor="#80c0ff">&nbsp;</td>
+  <td bgcolor="#80ffc0">&nbsp;</td>
+  <td bgcolor="#ffc0ff">+1</td>
+  <td bgcolor="#f0f0f0">-3</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">腕</td>
+  <td bgcolor="#d0d0d0">&nbsp;</td>
+  <td bgcolor="#ffc080">&nbsp;</td>
+  <td bgcolor="#80c0ff">-1</td>
+  <td bgcolor="#80ffc0">-1</td>
+  <td bgcolor="#ffc0ff">&nbsp;</td>
+  <td bgcolor="#f0f0f0">+2</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">足</td>
+  <td bgcolor="#d0d0d0">&nbsp;</td>
+  <td bgcolor="#ffc080">&nbsp;</td>
+  <td bgcolor="#80c0ff">-1</td>
+  <td bgcolor="#80ffc0">-1</td>
+  <td bgcolor="#ffc0ff">&nbsp;</td>
+  <td bgcolor="#f0f0f0">+2</td>
+ </tr>
+ <tr>
+  <td bgcolor="#eeeeff">胴</td>
+  <td bgcolor="#d0d0d0">&nbsp;</td>
+  <td bgcolor="#ffc080">&nbsp;</td>
+  <td bgcolor="#80c0ff">-1</td>
+  <td bgcolor="#80ffc0">-1</td>
+  <td bgcolor="#ffc0ff">&nbsp;</td>
+  <td bgcolor="#f0f0f0">+2</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ddddff">合計</td>
+  <td bgcolor="#d0d0d0">+3</td>
+  <td bgcolor="#ffc080">+3</td>
+  <td bgcolor="#80c0ff">-3</td>
+  <td bgcolor="#80ffc0">-3</td>
+  <td bgcolor="#ffc0ff">+3</td>
+  <td bgcolor="#f0f0f0">-3</td>
+ </tr>
+</table>
+
+</div>
+
+<div id="cat_3" style="display: none">
+
+<h3>３．盾</h3>
+
+盾は練成できるプロパティの種類が少なく、その中でも実用的なプロパティは、詠唱可、ファストキャストおよび回避くらいしかないため、
+<br>上級のRunic toolを使った改良で、ほぼ完成したものを作るのがよさそうです。
+
+<p>下の画像は、左からgold runic, agapite runic, verite runicで改良した盾です。
+<br>goldおよびagapiteでは2ワード固定＋パワフル製造、verite runicでは1ワード固定(疾風の／速攻)＋1ワード保証＋パワフル製造のオプションを
+使用しています。
+<br>これらには、回避プロパティを追加で練成することも可能です。
+</p>
+<img src="imbuing_06-07.gif" alt="" class="img01">
+<img src="imbuing_06-08.gif" alt="" class="img01">
+<img src="imbuing_06-09.gif" alt="" class="img01">
+
+</div>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

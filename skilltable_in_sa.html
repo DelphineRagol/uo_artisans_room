@@ -1,0 +1,1599 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>書写作成難易度表</TITLE>
+</HEAD>
+<body><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898556</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<h2>書写作成難易度表</h2>
+<HR>
+
+<script language="javascript">
+<!--
+//Soubi
+var soubi;
+soubi=new Array(56);
+soubi[0] =  -25000002; //0_2
+soubi[1] =  -10800002
+soubi[2] =  3500002;
+soubi[3] =  17800002;
+soubi[4] =  32100002;
+soubi[5] =  46400002;
+soubi[6] =  60700002;
+soubi[7] =  75000002;
+soubi[8] =  39600100; //0_100
+soubi[9] =  19600100;
+soubi[10] =  19600100;
+soubi[11] =  19600100;
+soubi[12] =  19600100;
+soubi[13] =  39600100;
+soubi[14] =  69600100;
+soubi[15] =  29600100;
+soubi[16] =  19600100;
+soubi[17] =  49600100;
+soubi[18] =  64600100;
+soubi[19] =  29600100;
+soubi[20] =  98600100;
+soubi[21] =  79600100;
+soubi[22] =  59600100;
+soubi[23] =  79600100;
+soubi[24] =  79600100;
+soubi[25] =  45000002; //0_2
+soubi[26] =  45000002;
+soubi[27] =  45000002;
+soubi[28] =  65000002;
+soubi[29] =  50000001; //0_1
+soubi[30] =  85000002; //scrappers0_2
+soubi[31] =  75050002; //spellbookeng50_2
+soubi[32] =  50000001; //0_1
+soubi[33] =  50000001; //0_1
+soubi[34] =  50050002; //blankscroll50_2
+soubi[35] =  75050002; //scrollbinder50_2
+soubi[36] =  50050002; //100pagebook50_2
+soubi[37] =  50050002; //200pagebook50_2
+soubi[38] =  -25000002; //0_2
+soubi[39] =  -25000002; //0_2
+soubi[40] =  -10800002
+soubi[41] =  -10800002
+soubi[42] =  3500002;
+soubi[43] =  3500002;
+soubi[44] =  17800002;
+soubi[45] =  17800002;
+soubi[46] =  32100002;
+soubi[47] =  32100002;
+soubi[48] =  46400002;
+soubi[49] =  46400002;
+soubi[50] =  60700002;
+soubi[51] =  60700002;
+soubi[52] =  75000002;
+soubi[53] =  75000002;
+soubi[54] =  95000010;
+soubi[55] =  90000001.67;
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.skill.value = 0.0;
+  exb1 = 0.0;
+  crb1 = 0.0;
+
+return true;
+}
+
+//計算
+
+function keisan1(form)
+{
+var form = document.form_keisan;
+  skill = form.skill.value;
+  exb1 = form.exb1.options[form.exb1.selectedIndex].value;
+  crb1 = form.crb1.options[form.crb1.selectedIndex].value;
+
+  pmt1 = new Array(56);
+
+    for (i=0; i<56; i++)
+    {
+    pmt1[i] = Math.floor(soubi[i]/100000) / 10.0;
+    }
+
+  pmt2 = new Array(56);
+
+    for (i=0; i<56; i++)
+    {
+    pmt2[i] = Math.floor(Math.abs((soubi[i] % 100000)) / 1000.0);
+    }
+
+  pmt3 = new Array(56);
+
+    for (i=0; i<56; i++)
+    {
+    pmt3[i] = Math.abs((soubi[i] % 1000)) / 1.0;
+    }
+
+  rate = new Array(112);
+
+    for (i=0; i<56; i++)
+    {
+    rate[2*i] = Math.round(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] + 1.0 * crb1)) * 10 ) / 10;
+    rate[2*i+1] = Math.round(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] - 60.0 + 1.0 * exb1
+                + Math.min(15.0 , Math.max(0.0 , (skill - 95.0) * 3.0)))) * 10 ) / 10;
+    if(skill - pmt1[i]<0)
+    {
+    rate[2*i] = 0.0;
+    rate[2*i+1] = 0.0;
+    }
+    }
+
+
+    form.rate000.value = rate[0];
+    form.rate002.value = rate[2];
+    form.rate004.value = rate[4];
+    form.rate006.value = rate[6];
+    form.rate008.value = rate[8];
+    form.rate010.value = rate[10];
+    form.rate012.value = rate[12];
+    form.rate014.value = rate[14];
+    form.rate016.value = rate[16];
+    form.rate018.value = rate[18];
+    form.rate020.value = rate[20];
+    form.rate022.value = rate[22];
+    form.rate024.value = rate[24];
+    form.rate026.value = rate[26];
+    form.rate028.value = rate[28];
+    form.rate030.value = rate[30];
+    form.rate032.value = rate[32];
+    form.rate034.value = rate[34];
+    form.rate036.value = rate[36];
+    form.rate038.value = rate[38];
+    form.rate040.value = rate[40];
+    form.rate042.value = rate[42];
+    form.rate044.value = rate[44];
+    form.rate046.value = rate[46];
+    form.rate048.value = rate[48];
+    form.rate050.value = rate[50];
+    form.rate052.value = rate[52];
+    form.rate054.value = rate[54];
+    form.rate055.value = rate[55];
+    form.rate056.value = rate[56];
+    form.rate058.value = rate[58];
+    form.rate059.value = rate[59];
+    form.rate060.value = rate[60];
+    form.rate062.value = rate[62];
+    form.rate064.value = rate[64];
+    form.rate065.value = rate[65];
+    form.rate066.value = rate[66];
+    form.rate067.value = rate[67];
+    form.rate068.value = rate[68];
+    form.rate070.value = rate[70];
+    form.rate072.value = rate[72];
+    form.rate074.value = rate[74];
+    form.rate076.value = rate[76];
+    form.rate078.value = rate[78];
+    form.rate080.value = rate[80];
+    form.rate082.value = rate[82];
+    form.rate084.value = rate[84];
+    form.rate086.value = rate[86];
+    form.rate088.value = rate[88];
+    form.rate090.value = rate[90];
+    form.rate092.value = rate[92];
+    form.rate094.value = rate[94];
+    form.rate096.value = rate[96];
+    form.rate098.value = rate[98];
+    form.rate100.value = rate[100];
+    form.rate102.value = rate[102];
+    form.rate104.value = rate[104];
+    form.rate106.value = rate[106];
+    form.rate108.value = rate[108];
+    form.rate110.value = rate[110];
+    form.sk0.value = skill;
+    form.sk1.value = skill;
+    form.sk2.value = skill;
+    form.sk3.value = skill;
+    form.sk4.value = skill;
+    form.sk5.value = skill;
+    form.sk6.value = skill;
+    form.sk7.value = skill;
+    form.sk8.value = skill;
+    form.sk9.value = skill;
+    form.sk10.value = skill;
+return true;
+}
+//-->
+</script>
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+
+ {//functionの宣言。受けとったIDは変数targetIDに格納。
+  if( document.getElementById(targetID))
+   { //指定のIDのついたオブジェクトがあったら処理する
+     //指定されたIDのstyle.displayがnoneなら
+    for (i=1; i<8; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {//blockに変更する
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+
+<form name="form_keisan">
+<p>書写スキルで作ることができるアイテムの作成難易度表です。下のカテゴリ画像をクリックすると、そのカテゴリが表示／非表示されます。</p>
+<p>スキル　：　<INPUT TYPE="text" NAME="skill" SIZE="4" value="100">（手入力）
+<br>成功率補正のタリスマンを装備している場合は、こちらも選択してください。
+<br>
+書写：高品質成功率ボーナス
+<select name="exb1" size="1">
+<option value="0">----
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+</select>
+％、
+成功率ボーナス
+<select name="crb1" size="1">
+<option value="0">----
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+</select>
+％
+
+<br><input type="button" value="高品質および作成成功率計算" onclick="keisan1(form)">
+
+
+<table class="table03">
+  <tr>
+    <td align="center" width="70"><a href="#" onClick="showHide('cat_1');return false;"><img src="magery1-1.gif" alt="circle1" class="img01"><br>1st,2nd</a></td>
+    <td align="center" width="70"><a href="#" onClick="showHide('cat_2');return false;"><img src="magery3-1.gif" alt="circle1" class="img01"><br>3rd,4th</a></td>
+    <td align="center" width="70"><a href="#" onClick="showHide('cat_3');return false;"><img src="magery5-1.gif" alt="circle1" class="img01"><br>5th,6th</a></td>
+    <td align="center" width="70"><a href="#" onClick="showHide('cat_4');return false;"><img src="magery7-1.gif" alt="circle1" class="img01"><br>7th,8th</a></td>
+    <td align="center" width="70"><a href="#" onClick="showHide('cat_5');return false;"><img src="animatedead.gif" alt="Necromancy" class="img01"><br>霊媒</a></td>
+    <td align="center" width="70"><a href="#" onClick="showHide('cat_6');return false;"><img src="spellbook.gif" alt="その他" class="img01"><br>その他</a></td>
+    <td align="center" width="70"><a href="#" onClick="showHide('cat_7');return false;"><img src="nether_bolt.gif" alt="mysticism" class="img01"><br>神秘</a></td>
+  </tr>
+</table>
+
+<div id="cat_1" style="display: none">
+
+<h4>（１）第１サークル（消費マナ4、作成する魔法が入ったMagery用のスペルブックが必要）</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk0" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery1-1.gif" alt="" class="img01"><br>clumsy</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01">blood moss×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1</td>
+   <td align="center" rowspan="8">-25.0</td>
+   <td align="center" rowspan="8"><INPUT readonly type="text" NAME="rate000" SIZE="4"></td>
+   <td align="center" rowspan="8">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery1-2.gif" alt="" class="img01"><br>create food</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="ginseng.gif" alt="" class="img01"> ginseng×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery1-3.gif" alt="" class="img01"><br>feeblemind</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="ginseng.gif" alt="" class="img01"> ginseng×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery1-4.gif" alt="" class="img01"><br>heal</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="ginseng.gif" alt="" class="img01"> ginseng×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery1-5.gif" alt="" class="img01"><br>magic arrow</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery1-6.gif" alt="" class="img01"><br>night sight</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery1-7.gif" alt="" class="img01"><br>reactive armor</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery1-8.gif" alt="" class="img01"><br>weaken</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1</td>
+ </tr>
+
+</table>
+<br class="cle">
+
+<h4>（２）第２サークル（消費マナ6、作成する魔法が入ったMagery用のスペルブックが必要）</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk1" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery2-1.gif" alt="" class="img01"><br>agility</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01">blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01">　mandrake×1</td>
+   <td align="center" rowspan="8">-10.8</td>
+   <td align="center" rowspan="8"><INPUT readonly type="text" NAME="rate002" SIZE="4"></td>
+   <td align="center" rowspan="8">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery2-2.gif" alt="" class="img01"><br>cunning</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery2-3.gif" alt="" class="img01"><br>cure</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="ginseng.gif" alt="" class="img01"> ginseng×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery2-4.gif" alt="" class="img01"><br>harm</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery2-5.gif" alt="" class="img01"><br>magic trap</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery2-6.gif" alt="" class="img01"><br>magic untrap</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery2-7.gif" alt="" class="img01"><br>protection</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="ginseng.gif" alt="" class="img01"> ginseng×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery2-8.gif" alt="" class="img01"><br>strength</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+</div>
+
+<div id="cat_2" style="display: none">
+
+<h4>（３）第３サークル（消費マナ9、作成する魔法が入ったMagery用のスペルブックが必要）</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk2" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery3-1.gif" alt="" class="img01"><br>bless</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1</td>
+   <td align="center" rowspan="8">3.5</td>
+   <td align="center" rowspan="8"><INPUT readonly type="text" NAME="rate004" SIZE="4"></td>
+   <td align="center" rowspan="8">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery3-2.gif" alt="" class="img01"><br>fireball</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery3-3.gif" alt="" class="img01"><br>magic lock</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery3-4.gif" alt="" class="img01"><br>poison</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery3-5.gif" alt="" class="img01"><br>telekinesis</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery3-6.gif" alt="" class="img01"><br>teleport</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery3-7.gif" alt="" class="img01"><br>unlock</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery3-8.gif" alt="" class="img01"><br>wall of stone</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+
+<h4>（４）第４サークル（消費マナ11、作成する魔法が入ったMagery用のスペルブックが必要）</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk3" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery4-1.gif" alt="" class="img01"><br>arch cure</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="ginseng.gif" alt="" class="img01"> ginseng×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1</td>
+   <td align="center" rowspan="8">17.8</td>
+   <td align="center" rowspan="8"><INPUT readonly type="text" NAME="rate006" SIZE="4"></td>
+   <td align="center" rowspan="8">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery4-2.gif" alt="" class="img01"><br>arch protection</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="ginseng.gif" alt="" class="img01"> ginseng×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery4-3.gif" alt="" class="img01"><br>curse</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery4-4.gif" alt="" class="img01"><br>fire field</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery4-5.gif" alt="" class="img01"><br>greater heal</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="ginseng.gif" alt="" class="img01"> ginseng×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery4-6.gif" alt="" class="img01"><br>lightning</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery4-7.gif" alt="" class="img01"><br>mana drain</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery4-8.gif" alt="" class="img01"><br>recall</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_3" style="display: none">
+
+<h4>（５）第５サークル（消費マナ14、作成する魔法が入ったMagery用のスペルブックが必要）</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk4" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery5-1.gif" alt="" class="img01"><br>blade spirits</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1</td>
+   <td align="center" rowspan="8">32.1</td>
+   <td align="center" rowspan="8"><INPUT readonly type="text" NAME="rate008" SIZE="4"></td>
+   <td align="center" rowspan="8">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery5-2.gif" alt="" class="img01"><br>dispel field</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery5-3.gif" alt="" class="img01"><br>incognito</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery5-4.gif" alt="" class="img01"><br>magic reflection</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery5-5.gif" alt="" class="img01"><br>mind blast</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery5-6.gif" alt="" class="img01"><br>paralyze</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery5-7.gif" alt="" class="img01"><br>poison field</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery5-8.gif" alt="" class="img01"><br>summon creature</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+
+<h4>（６）第６サークル（消費マナ20、作成する魔法が入ったMagery用のスペルブックが必要）</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk5" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery6-1.gif" alt="" class="img01"><br>dispel</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   <td align="center" rowspan="8">46.4</td>
+   <td align="center" rowspan="8"><INPUT readonly type="text" NAME="rate010" SIZE="4"></td>
+   <td align="center" rowspan="8">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery6-2.gif" alt="" class="img01"><br>energy bolt</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery6-3.gif" alt="" class="img01"><br>explosion</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery6-4.gif" alt="" class="img01"><br>invisibility</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery6-5.gif" alt="" class="img01"><br>mark</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery6-6.gif" alt="" class="img01"><br>mass curse</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery6-7.gif" alt="" class="img01"><br>paralyze field</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="ginseng.gif" alt="" class="img01"> ginseng×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery6-8.gif" alt="" class="img01"><br>reveal</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_4" style="display: none">
+
+<h4>（７）第７サークル（消費マナ40、作成する魔法が入ったMagery用のスペルブックが必要）</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk6" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery7-1.gif" alt="" class="img01"><br>chain lightning</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   <td align="center" rowspan="8">60.7</td>
+   <td align="center" rowspan="8"><INPUT readonly type="text" NAME="rate012" SIZE="4"></td>
+   <td align="center" rowspan="8">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery7-2.gif" alt="" class="img01"><br>energy field</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery7-3.gif" alt="" class="img01"><br>flamestrike</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery7-4.gif" alt="" class="img01"><br>gate travel</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1
+</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery7-5.gif" alt="" class="img01"><br>mana vampire</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery7-6.gif" alt="" class="img01"><br>mass dispel</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1
+</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery7-7.gif" alt="" class="img01"><br>meteor swarm</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery7-8.gif" alt="" class="img01"><br>polymorph</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+
+<h4>（８）第８サークル（消費マナ50、作成する魔法が入ったMagery用のスペルブックが必要）</h4>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk7" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery8-1.gif" alt="" class="img01"><br>earth quake</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="ginseng.gif" alt="" class="img01"> ginseng×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   <td align="center" rowspan="8">75.0</td>
+   <td align="center" rowspan="8"><INPUT readonly type="text" NAME="rate014" SIZE="4"></td>
+   <td align="center" rowspan="8">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery8-2.gif" alt="" class="img01"><br>energy vortex</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery8-3.gif" alt="" class="img01"><br>resurrection</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="garlic.gif" alt="" class="img01"> garlic×1
+<br><img src="ginseng.gif" alt="" class="img01"> ginseng×1
+</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery8-4.gif" alt="" class="img01"><br>summon air elemental</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery8-5.gif" alt="" class="img01"><br>summon daemon</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery8-6.gif" alt="" class="img01"><br>summon earth elemental</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magery8-7.gif" alt="" class="img01"><br>summon fire elemental</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magery8-8.gif" alt="" class="img01"><br>summon water elemental</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_5" style="display: none">
+
+<h4>（９）ネクロマンサーの魔法（作成する魔法が入ったNecromancy用のスペルブックが必要です）</h4>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk8" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="animatedead.gif" alt="" class="img01"><br>animate dead</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="gravedust.gif" alt="" class="img01"> grave dust×1
+<br><img src="daemonblood.gif" alt="" class="img01"> daemon blood×1
+<br>23 mana</td>
+   <td align="center">39.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate016" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="bloodooth.gif" alt="" class="img01"><br>blood oath</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="daemonblood.gif" alt="" class="img01"> daemon blood×1
+<br>13 mana</td>
+   <td align="center">19.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate018" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="corpseskin.gif" alt="" class="img01"><br>corpse skin</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="batwing.gif" alt="" class="img01"> bat wing×1
+<br><img src="gravedust.gif" alt="" class="img01"> grave dust×1
+<br>11 mana</td>
+   <td align="center">19.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate020" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="curseweapon.gif" alt="" class="img01"><br>curse weapon</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="pigiron.gif" alt="" class="img01"> pig iron×1
+<br>7 mana</td>
+   <td align="center">19.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate022" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="evilomen.gif" alt="" class="img01"><br>evil omen</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="batwing.gif" alt="" class="img01"> bat wing×1
+<br><img src="noxcrystal.gif" alt="" class="img01"> nox crystal×1
+<br>11 mana</td>
+   <td align="center">19.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate024" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="horrific.gif" alt="" class="img01"><br>horrific beast</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="batwing.gif" alt="" class="img01"> bat wing×1
+<br><img src="daemonblood.gif" alt="" class="img01"> daemon blood×1
+<br>11 mana</td>
+   <td align="center">39.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate026" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="lichform.gif" alt="" class="img01"><br>lich form</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="gravedust.gif" alt="" class="img01"> grave dust×1
+<br><img src="daemonblood.gif" alt="" class="img01"> daemon blood×1
+<br><img src="noxcrystal.gif" alt="" class="img01"> nox crystal×1
+<br>23 mana</td>
+   <td align="center">69.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate028" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="mindrot.gif" alt="" class="img01"><br>mind rot</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="batwing.gif" alt="" class="img01"> bat wing×1
+<br><img src="daemonblood.gif" alt="" class="img01"> daemon blood×1
+<br><img src="pigiron.gif" alt="" class="img01"> pig iron×1
+<br>17 mana</td>
+   <td align="center">29.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate030" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="painspike.gif" alt="" class="img01"><br>pain spike</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="gravedust.gif" alt="" class="img01"> grave dust×1
+<br><img src="pigiron.gif" alt="" class="img01"> pig iron×1
+<br>5 mana</td>
+   <td align="center">19.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate032" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="poisonstrike.gif" alt="" class="img01"><br>poison strike</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="noxcrystal.gif" alt="" class="img01"> nox crystal×1
+<br>17 mana</td>
+   <td align="center">49.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate034" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="strangle.gif" alt="" class="img01"><br>strangle</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="daemonblood.gif" alt="" class="img01"> daemon blood×1
+<br><img src="noxcrystal.gif" alt="" class="img01"> nox crystal×1
+<br>29 mana</td>
+   <td align="center">64.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate036" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="familiar.gif" alt="" class="img01"><br>summon familiar</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="batwing.gif" alt="" class="img01"> bat wing×1
+<br><img src="gravedust.gif" alt="" class="img01"> grave dust×1
+<br><img src="daemonblood.gif" alt="" class="img01"> daemon blood×1
+<br>17 mana</td>
+   <td align="center">29.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate038" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="vampiric.gif" alt="" class="img01"><br>vampiric embrace</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="batwing.gif" alt="" class="img01"> bat wing×1
+<br><img src="noxcrystal.gif" alt="" class="img01"> nox crystal×1
+<br><img src="pigiron.gif" alt="" class="img01"> pig iron×1
+<br>23 mana</td>
+   <td align="center">98.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate040" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="vengeful.gif" alt="" class="img01"><br>vengeful spirit</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="batwing.gif" alt="" class="img01"> bat wing×1
+<br><img src="gravedust.gif" alt="" class="img01"> grave dust×1
+<br><img src="pigiron.gif" alt="" class="img01"> pig iron×1
+<br>41 mana</td>
+   <td align="center">79.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate042" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="wither.gif" alt="" class="img01"><br>wither</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="gravedust.gif" alt="" class="img01"> grave dust×1
+<br><img src="noxcrystal.gif" alt="" class="img01"> nox crystal×1
+<br><img src="pigiron.gif" alt="" class="img01"> pig iron×1
+<br>23 mana</td>
+   <td align="center">59.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate044" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="wraithform.gif" alt="" class="img01"><br>wraith form</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="noxcrystal.gif" alt="" class="img01"> nox crystal×1
+<br><img src="pigiron.gif" alt="" class="img01"> pig iron×1
+<br>17 mana</td>
+   <td align="center">79.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate046" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="exorcism.gif" alt="" class="img01"><br>exorcism</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="gravedust.gif" alt="" class="img01"> grave dust×1
+<br><img src="noxcrystal.gif" alt="" class="img01"> nox crystal×1
+<br>40 mana</td>
+   <td align="center">79.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate048" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+</div>
+
+<div id="cat_6" style="display: none">
+<h4>（10）その他</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk9" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="e-switch.gif" alt="" class="img01"><br>enchanted switch<br>[魔法の小枝]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="switch_tree.gif" alt="" class="img01"> switch×1
+</td>
+   <td align="center">45.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate050" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="runedprism.gif" alt="" class="img01"><br>runed prism<br>[ルーンプリズム]</td>
+   <td align="center"><img src="runedprism.gif" alt="" class="img01">　hollow prism×1
+<br><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+</td>
+   <td align="center">45.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate052" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="runebook.gif" alt="" class="img01"><br>runebook<br>[ルーンブック]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×8
+<br><img src="rune_fel.gif" alt="" class="img01"> unmarked rune×1
+<br><img src="magery4-8.gif" alt="" class="img01"> recall×1
+<br><img src="magery7-4.gif" alt="" class="img01"> gate travel×1
+</td>
+   <td align="center">45.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate054" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate055" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="bulkbook.gif" alt="" class="img01"><br>bulk order book<br>[バルクオーダーブック]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×10
+</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate056" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="spellbook.gif" alt="" class="img01"><br>spellbook<br>[スペルブック]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×10
+</td>
+   <td align="center">50.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate058" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate059" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="scrapper.gif" alt="" class="img01"><br>Scrapper's compendium<br>[猛攻のスペルブック]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×100
+<br><img src="dreadhornmane.gif" alt="" class="img01">　dread horn mane×1
+<br><img src="taint.gif" alt="" class="img01">　taint×10
+<br><img src="corruption.gif" alt="" class="img01">　corruption×10</td>
+   <td align="center">85.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate060" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="spellbookengrave.gif" alt="" class="img01"><br>spellbook engraving tool<br>[スペルブック刻印ツール]</td>
+   <td align="center"><img src="feather.gif" alt="" class="img01"> feather×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×7</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate062" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="mysticismbook.gif" alt="" class="img01"><br>Mysticism spellbook<br>[神秘の呪文書]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×10
+</td>
+   <td align="center">50.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate064" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate065" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="necrobook.gif" alt="" class="img01"><br>Necromancer spellbook<br>[霊媒の書]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×10
+</td>
+   <td align="center">50.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate066" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate067" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="exodus_summoning_rite.gif" alt="" class="img01"><br>exodus summoning rite<br>[エクソダス召喚の魔書]</td>
+   <td align="center"><img src="taint.gif" alt="" class="img01"> taint×5
+<br><img src="daemonbone.gif" alt="" class="img01"> daemonbone×5
+<br><img src="magery8-5.gif" alt="" class="img01"> summon daemon×1
+<br><img src="daemonblood.gif" alt="" class="img01"> daemon blood×5
+</td>
+   <td align="center">95.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate108" SIZE="4"></td>
+   <td align="center"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><br>Prophetic Manuscript<br>[予言の写本]</td>
+   <td align="center">Actique Parchment×10
+<br>Antique Documents Kit×1
+<br><img src="wood_pulp.gif" alt="" class="img01"> wood pulp×10
+<br><img src="beeswax.gif" alt="" class="img01"> beeswax×4</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate110" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"><br>blank scroll<br>[白紙のスクロール]</td>
+   <td align="center"><img src="wood_pulp.gif" alt="" class="img01"> wood pulp×1</td>
+   <td align="center">50.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate068" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="scroll_binder.gif" alt="" class="img01"><br>scroll binder<br>[スクロールシート]</td>
+   <td align="center"><img src="wood_pulp.gif" alt="" class="img01"> wood pulp×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate070" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="book_100page.gif" alt="" class="img01"><br>book(100gage)<br>[本(100ページ)]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×40
+<br><img src="beeswax.gif" alt="" class="img01"> beeswax×2
+</td>
+   <td align="center">50.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate072" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="book_200page.gif" alt="" class="img01"><br>book(200gage)<br>[本(200ページ)]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×80
+<br><img src="beeswax.gif" alt="" class="img01"> beeswax×4
+</td>
+   <td align="center">50.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate074" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+
+<div id="cat_7" style="display: none">
+<h4>（11）神秘呪文（作成する魔法が入ったMysticism用のスペルブックが必要です）</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk10" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="nether_bolt.gif" alt="" class="img01"><br>nether bolt<br>[地底の矢]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="blackpearl.gif" alt="" class="img01"> black pearl×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1
+<br>4 mana</td>
+   <td align="center">-25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate076" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="scr_healing_stone.gif" alt="" class="img01"><br>healing stone<br>[回復の石]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bone.gif" alt="" class="img01">　bone×1
+<br><img src="garlic.gif" alt="" class="img01">　garlic×1
+<br><img src="ginseng.gif" alt="" class="img01">　ginseng×1
+<br><img src="spidersilk.gif" alt="" class="img01">　spider silk×1
+<br>4 mana</td>
+   <td align="center">-25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate078" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="purge_magic.gif" alt="" class="img01"><br>purge magic<br>[加護解除]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="fertile_dirt.gif" alt="" class="img01">　fertile dirt×1
+<br><img src="garlic.gif" alt="" class="img01">　garlic×1
+<br><img src="mandrake.gif" alt="" class="img01">　mandrake×1
+<br><img src="surash.gif" alt="" class="img01">　sulfurous ash×1
+<br>6 mana</td>
+   <td align="center">-10.8</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate080" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="enchant.gif" alt="" class="img01"><br>enchant<br>[魔武器化]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="spidersilk.gif" alt="" class="img01">　spider silk×1
+<br><img src="mandrake.gif" alt="" class="img01">　mandrake×1
+<br><img src="surash.gif" alt="" class="img01">　sulfurous ash×1
+<br>6 mana</td>
+   <td align="center">-10.8</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate082" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="sleep.gif" alt="" class="img01"><br>sleep<br>[睡魔の誘い]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="nightshade.gif" alt="" class="img01">　nightshade×1
+<br><img src="spidersilk.gif" alt="" class="img01">　spider silk×1
+<br><img src="blackpearl.gif" alt="" class="img01">　black pearl×1
+<br>9 mana</td>
+   <td align="center">3.5</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate084" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="eagle_strike.gif" alt="" class="img01"><br>eagle strike<br>[雷撃の鷹]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01">　blood moss×1
+<br><img src="bone.gif" alt="" class="img01">　bone×1
+<br><img src="spidersilk.gif" alt="" class="img01">　spider silk×1
+<br><img src="mandrake.gif" alt="" class="img01">　mandrake×1
+<br>9 mana</td>
+   <td align="center">3.5</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate086" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="animated_weapon.gif" alt="" class="img01"><br>animated weapon<br>[自立の刃]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bone.gif" alt="" class="img01">　bone×1
+<br><img src="blackpearl.gif" alt="" class="img01">　black pearl×1
+<br><img src="mandrake.gif" alt="" class="img01">　mandrake×1
+<br><img src="nightshade.gif" alt="" class="img01">　nightshade×1
+<br>11 mana</td>
+   <td align="center">17.8</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate088" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="stone_form.gif" alt="" class="img01"><br>stone form<br>[石の守り]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01">　blood moss×1
+<br><img src="fertile_dirt.gif" alt="" class="img01">　fertile dirt×1
+<br><img src="garlic.gif" alt="" class="img01">　garlic×1
+<br>11 mana</td>
+   <td align="center">17.8</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate090" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="spell_trigger.gif" alt="" class="img01"><br>spell trigger<br>[封呪の石]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="dragon_blood.gif" alt="" class="img01">　dragon's blood×1
+<br><img src="garlic.gif" alt="" class="img01">　garlic×1
+<br><img src="mandrake.gif" alt="" class="img01">　mandrake×1
+<br><img src="spidersilk.gif" alt="" class="img01">　spider silk×1
+<br>14 mana</td>
+   <td align="center">32.1</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate092" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="mass_sleep.gif" alt="" class="img01"><br>mass sleep<br>[眠りの霧]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="ginseng.gif" alt="" class="img01">　ginseng×1
+<br><img src="nightshade.gif" alt="" class="img01">　nightshade×1
+<br><img src="spidersilk.gif" alt="" class="img01">　spider silk×1
+<br>14 mana</td>
+   <td align="center">32.1</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate094" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="cleansing_winds.gif" alt="" class="img01"><br>cleansing winds<br>[癒しの風]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="dragon_blood.gif" alt="" class="img01">　dragon's blood×1
+<br><img src="garlic.gif" alt="" class="img01">　garlic×1
+<br><img src="ginseng.gif" alt="" class="img01">　ginseng×1
+<br><img src="mandrake.gif" alt="" class="img01">　mandrake×1
+<br>20 mana</td>
+   <td align="center">46.4</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate096" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="bombard.gif" alt="" class="img01"><br>bombard<br>[巨岩の砲撃]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="dragon_blood.gif" alt="" class="img01">　dragon's blood×1
+<br><img src="bloodmoss.gif" alt="" class="img01">　blood moss×1
+<br><img src="garlic.gif" alt="" class="img01">　garlic×1
+<br><img src="surash.gif" alt="" class="img01">　sulfurous ash×1
+<br>20 mana</td>
+   <td align="center">46.4</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate098" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="spell_plague.gif" alt="" class="img01"><br>spell plague<br>[呪詛の炎]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="daemonbone.gif" alt="" class="img01">　daemon bone×1
+<br><img src="dragon_blood.gif" alt="" class="img01">　dragon's blood×1
+<br><img src="nightshade.gif" alt="" class="img01">　nightshade×1
+<br><img src="surash.gif" alt="" class="img01">　sulfurous ash×1
+<br>40 mana</td>
+   <td align="center">60.7</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate100" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="hail_storm.gif" alt="" class="img01"><br>hail storm<br>[冷気の嵐]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="dragon_blood.gif" alt="" class="img01">　dragon's blood×1
+<br><img src="bloodmoss.gif" alt="" class="img01">　blood moss×1
+<br><img src="blackpearl.gif" alt="" class="img01">　black pearl×1
+<br><img src="mandrake.gif" alt="" class="img01">　mandrake×1
+<br>40 mana</td>
+   <td align="center">60.7</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate102" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="nether_cyclone.gif" alt="" class="img01"><br>nether cyclone<br>[地底の疾風]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="bloodmoss.gif" alt="" class="img01">　blood moss×1
+<br><img src="mandrake.gif" alt="" class="img01">　mandrake×1
+<br><img src="nightshade.gif" alt="" class="img01">　nightshade×1
+<br><img src="surash.gif" alt="" class="img01">　sulfurous ash×1
+<br>50 mana</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate104" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="rising_colossus.gif" alt="" class="img01"><br>rising colossus<br>[巨像召喚]</td>
+   <td align="center"><img src="blankscroll.gif" alt="" class="img01"> blank scroll×1
+<br><img src="daemonbone.gif" alt="" class="img01">　daemon bone×1
+<br><img src="dragon_blood.gif" alt="" class="img01">　dragon's blood×1
+<br><img src="fertile_dirt.gif" alt="" class="img01">　fertile dirt×1
+<br><img src="nightshade.gif" alt="" class="img01">　nightshade×1
+<br>50 mana</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate106" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+
+</form>
+</BODY>
+</HTML>
+
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

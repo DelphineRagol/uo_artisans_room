@@ -1,0 +1,621 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>攻撃速度計算（UOSA版）</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898915</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<h2>攻撃速度計算（UOSA版）</h2>
+<HR>
+<script language="javascript">
+<!--
+//wepspd
+var speed;
+speed = new Array(16);
+
+speed[0] = 5.00;  //
+speed[1] = 4.75;  //
+speed[2] = 4.50;  //
+speed[3] = 4.25;  //
+speed[4] = 4.00;  //
+speed[5] = 3.75;  //
+speed[6] = 3.50;  //
+speed[7] = 3.25;  //
+speed[8] = 3.00;  //
+speed[9] = 2.75;  //
+speed[10] = 2.50; //
+speed[11] = 2.25; //
+speed[12] = 2.00; //
+speed[13] = 2.75; //
+speed[14] = 3.25; //
+speed[15] = 4.00; //
+//speed
+
+
+
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.speed01.value = 0.0;
+  form.weapon1.value = 0.0;
+  form.base00.value = 0.0;
+
+return true;
+}
+
+//計算
+function keisan1(form)
+{
+var form = document.form_keisan;
+  spd = form.weapon1.options[form.weapon1.selectedIndex].value;
+  speed01 = speed[spd];
+
+       if((speed01 * 4.0) % 4.0 == 0.0)
+         {
+           form.speed01.value = speed01 + ".00";
+         }
+       else if((speed01 * 4.0) % 4.0 == 2.0)
+         {
+           form.speed01.value = speed01 + "0";
+         }
+       else
+         {
+           form.speed01.value = speed01;
+         }
+
+  base00 = form.base00.value;
+
+  base = new Array(13);
+    for (i=0; i<13; i++)
+    {
+    base[i] = base00 * 1.0 + i * 5.0;
+    }
+
+  form.base01.value = base[1];
+  form.base02.value = base[2];
+  form.base03.value = base[3];
+  form.base04.value = base[4];
+  form.base05.value = base[5];
+  form.base06.value = base[6];
+  form.base07.value = base[7];
+  form.base08.value = base[8];
+  form.base09.value = base[9];
+  form.base10.value = base[10];
+  form.base11.value = base[11];
+  form.base12.value = base[12];
+
+
+  dist = new Array(104);
+
+    for (i=0; i<8; i++)
+    {
+      for (j=0; j<13; j++)
+      {
+
+     if(spd<13){
+       dist[8*j+i] = Math.max(1.25, Math.floor((speed01 - 0.25 * i) / (1.0 + Math.min(60.0, base[j]) / 100.0) * 4.0) / 4.0);
+         }
+     else{
+       dist[8*j+i] = Math.max(1.25, Math.floor((speed01 - 0.25 * i) / (1.0 + Math.min(60.0, base[j]) / 100.0) * 4.0) / 4.0);
+         }
+
+       if(dist[8*j+i]==1.25)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(255,160,160)";
+         }
+       else if(dist[8*j+i]==1.50)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(255,176,160)";
+         }
+       else if(dist[8*j+i]==1.75)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(255,192,160)";
+         }
+       else if(dist[8*j+i]==2.00)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(255,208,160)";
+         }
+       else if(dist[8*j+i]==2.25)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(255,224,160)";
+         }
+       else if(dist[8*j+i]==2.50)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(255,255,160)";
+         }
+       else if(dist[8*j+i]==2.75)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(224,255,160)";
+         }
+       else if(dist[8*j+i]==3.00)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(208,255,160)";
+         }
+       else if(dist[8*j+i]==3.25)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(184,255,160)";
+         }
+       else if(dist[8*j+i]==3.50)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(160,255,160)";
+         }
+       else if(dist[8*j+i]==3.75)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(160,255,208)";
+         }
+       else if(dist[8*j+i]==4.00)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(160,255,255)";
+         }
+       else if(dist[8*j+i]==4.25)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(160,224,255)";
+         }
+       else if(dist[8*j+i]==4.50)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(160,192,255)";
+         }
+       else if(dist[8*j+i]==4.75)
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(160,160,255)";
+         }
+       else
+         {
+            document.getElementById("distance").rows[j+1].cells[i+1].style.backgroundColor="rgb(144,144,255)";
+         }
+
+
+       if((dist[8*j+i] * 4.0) % 4.0 == 0.0)
+         {
+            dist[8*j+i] = dist[8*j+i] + ".00";
+         }
+       else if((dist[8*j+i] * 4.0) % 4.0 == 2.0)
+         {
+            dist[8*j+i] = dist[8*j+i] + "0";
+         }
+       else
+         {
+            dist[8*j+i] = dist[8*j+i];
+         }
+
+      }
+    }
+
+  form.dist00.value = dist[0];
+  form.dist01.value = dist[1];
+  form.dist02.value = dist[2];
+  form.dist03.value = dist[3];
+  form.dist04.value = dist[4];
+  form.dist05.value = dist[5];
+  form.dist06.value = dist[6];
+  form.dist07.value = dist[7];
+  form.dist08.value = dist[8];
+  form.dist09.value = dist[9];
+  form.dist10.value = dist[10];
+  form.dist11.value = dist[11];
+  form.dist12.value = dist[12];
+  form.dist13.value = dist[13];
+  form.dist14.value = dist[14];
+  form.dist15.value = dist[15];
+  form.dist16.value = dist[16];
+  form.dist17.value = dist[17];
+  form.dist18.value = dist[18];
+  form.dist19.value = dist[19];
+  form.dist20.value = dist[20];
+  form.dist21.value = dist[21];
+  form.dist22.value = dist[22];
+  form.dist23.value = dist[23];
+  form.dist24.value = dist[24];
+  form.dist25.value = dist[25];
+  form.dist26.value = dist[26];
+  form.dist27.value = dist[27];
+  form.dist28.value = dist[28];
+  form.dist29.value = dist[29];
+  form.dist30.value = dist[30];
+  form.dist31.value = dist[31];
+  form.dist32.value = dist[32];
+  form.dist33.value = dist[33];
+  form.dist34.value = dist[34];
+  form.dist35.value = dist[35];
+  form.dist36.value = dist[36];
+  form.dist37.value = dist[37];
+  form.dist38.value = dist[38];
+  form.dist39.value = dist[39];
+  form.dist40.value = dist[40];
+  form.dist41.value = dist[41];
+  form.dist42.value = dist[42];
+  form.dist43.value = dist[43];
+  form.dist44.value = dist[44];
+  form.dist45.value = dist[45];
+  form.dist46.value = dist[46];
+  form.dist47.value = dist[47];
+  form.dist48.value = dist[48];
+  form.dist49.value = dist[49];
+  form.dist50.value = dist[50];
+  form.dist51.value = dist[51];
+  form.dist52.value = dist[52];
+  form.dist53.value = dist[53];
+  form.dist54.value = dist[54];
+  form.dist55.value = dist[55];
+  form.dist56.value = dist[56];
+  form.dist57.value = dist[57];
+  form.dist58.value = dist[58];
+  form.dist59.value = dist[59];
+  form.dist60.value = dist[60];
+  form.dist61.value = dist[61];
+  form.dist62.value = dist[62];
+  form.dist63.value = dist[63];
+  form.dist64.value = dist[64];
+  form.dist65.value = dist[65];
+  form.dist66.value = dist[66];
+  form.dist67.value = dist[67];
+  form.dist68.value = dist[68];
+  form.dist69.value = dist[69];
+  form.dist70.value = dist[70];
+  form.dist71.value = dist[71];
+  form.dist72.value = dist[72];
+  form.dist73.value = dist[73];
+  form.dist74.value = dist[74];
+  form.dist75.value = dist[75];
+  form.dist76.value = dist[76];
+  form.dist77.value = dist[77];
+  form.dist78.value = dist[78];
+  form.dist79.value = dist[79];
+  form.dist80.value = dist[80];
+  form.dist81.value = dist[81];
+  form.dist82.value = dist[82];
+  form.dist83.value = dist[83];
+  form.dist84.value = dist[84];
+  form.dist85.value = dist[85];
+  form.dist86.value = dist[86];
+  form.dist87.value = dist[87];
+  form.dist88.value = dist[88];
+  form.dist89.value = dist[89];
+  form.dist90.value = dist[90];
+  form.dist91.value = dist[91];
+  form.dist92.value = dist[92];
+  form.dist93.value = dist[93];
+  form.dist94.value = dist[94];
+  form.dist95.value = dist[95];
+  form.dist96.value = dist[96];
+  form.dist97.value = dist[97];
+  form.dist98.value = dist[98];
+  form.dist99.value = dist[99];
+  form.dist100.value = dist[100];
+  form.dist101.value = dist[101];
+  form.dist102.value = dist[102];
+  form.dist103.value = dist[103];
+
+return true;
+}
+//-->
+</script>
+
+<form name="form_keisan">
+
+<h4>使い方</h4>
+
+ <ul class="list02">
+   <li>武器選択で確認したい武器を選択します。</li>
+   <li>表内の速度は、1行目（デフォルトは0％）を基準として、5％刻みで表示されます。なお、1行目の数値は変更可能です。</li>
+   <li><s>UOSAで登場した投擲系武器(boomerang, cyclone, soul glaive)は、投げた武器が手元に戻るまでの時間として0.75秒(Recovery time)を加算しています。
+<br>そのため、最短で2.00secの攻撃間隔となります。</s>
+<br>Publish68.3より、投擲武器のRecovery timeはなくなりました。</li>
+ </ul>
+
+<h4>武器選択</h4>
+　　　
+<select name="weapon1" SIZE="1" onchange="keisan1(form)">
+<option value="0">----Sword系片手----
+<option value="8">Bone harvester [ボーンハーベスター]
+<option value="7">Broadsword [ブロードソード]
+<option value="10">Cutlass [カットラス]
+<option value="10">Katana [刀]
+<option value="6">Longsword [ロングソード]
+<option value="8">Scimitar [シミター]
+<option value="5">Viking sword [バイキングソード]
+<option value="11">Butcher knife [肉切り包丁]
+<option value="10">Cleaver [包丁]
+<option value="11">Skinning knife [皮はぎナイフ]
+<option value="8">Pickaxe [ツルハシ]
+<option value="0">----Sword系両手----
+<option value="0">The Redeemer [聖者の剣]
+<option value="10">Crescent blade [クレセントブレード]
+<option value="5">Bardiche [バルディッシュ]
+<option value="8">Bladed staff [ブレードスタッフ]
+<option value="4">Halberd [ハルバード]
+<option value="6">Scythe [サイズ]
+<option value="8">Axe [アックス]
+<option value="6">Battle axe [戦闘斧]
+<option value="7">Double axe [ダブルアックス]
+<option value="7">Executioner's axe [処刑斧]
+<option value="5">Large battle axe [戦闘大斧]
+<option value="6">Two handed axe [両手斧]
+<option value="9">Hatchet [手斧]
+<option value="0">----Fencing系----
+<option value="12">Dagger [ダガー]
+<option value="12">Kryss [クリス]
+<option value="2">Lance [ランス]
+<option value="10">Warfork [ウォーフォーク]
+<option value="11">Double bladed staff [ダブルブレード]
+<option value="8">Pike [パイク]
+<option value="12">Short spear [ショートスピア]
+<option value="9">Spear [スピア]
+<option value="10">Pitch fork [くまで]
+<option value="0">----Mace系----
+<option value="7">Hammer pick [ハンマーピック]
+<option value="9">Mace [メイス]
+<option value="6">Maul [モール]
+<option value="6">Scepter [セプター]
+<option value="8">War axe [ウォーアックス]
+<option value="5">War mace [ウォーメイス]
+<option value="5">War hammer [ウォーハンマー]
+<option value="7">Sledge hammer [スレッジハンマー]
+<option value="7">Smith's hammer [鍛冶ハンマー]
+<option value="9">Black staff [ブラックスタッフ]
+<option value="10">Club [こん棒]
+<option value="9">Crook [牧羊の杖]
+<option value="7">Gnarled staff [自然木の杖]
+<option value="11">Quarter staff [クォータースタッフ]
+<option value="9">Wand [ワンド]
+<option value="0">----Archery系----
+<option value="3">Bow [弓]
+<option value="4">Composite bow [コンポジットボウ]
+<option value="2">Crossbow [クロスボウ]
+<option value="0">Heavy crossbow [ヘビークロスボウ]
+<option value="9">Repeating crossbow [リピーティングクロスボウ]
+<option value="0">----武刀の天地追加----
+<option value="6">No-dachi [野太刀]
+<option value="10">Wakizashi [脇差]
+<option value="6">Lajatang [ラジャタン]
+<option value="9">Daisho [大小]
+<option value="12">Tekagi [手鉤]
+<option value="12">Kama [鎌]
+<option value="12">Sai [サイ]
+<option value="12">Bokuto [木刀]
+<option value="10">Nunchaku [ヌンチャク]
+<option value="12">Tessen [鉄扇]
+<option value="10">Tetsubo [鉄棒]
+<option value="7">Yumi [和弓]
+<option value="0">----宝珠の守人追加----
+<option value="10">Radient scimitar [三日月刀]
+<option value="11">War cleaver [クリーバー]
+<option value="10">Elven spellblade [エルフの呪刀]
+<option value="12">Assassin spike [暗殺剣]
+<option value="9">Leaf blade [リーフブレード]
+<option value="8">Rune blade [ルーンブレード]
+<option value="9">Elven Machete [エルフの山刀]
+<option value="6">Ornate axe [装飾仕上げの斧]
+<option value="7">Diamond mace [ダイアモンドメイス]
+<option value="11">Wild staff [ワイルドスタッフ]
+<option value="5">Elven composite longbow [エルフ式ロングボウ]
+<option value="8">Magical shortbow [マジカルショートボウ]
+<option value="0">----Stygian Abyss追加----
+<option value="8">Gargish bone harvester [ガーグボーンハーベスター]
+<option value="10">Gargish katana [ガーゴイル刀]
+<option value="9">Gargish daisho [ガーゴイル大小]
+<option value="5">Gargish bardiche [ガーグバルディッシュ]
+<option value="11">Gargish butcher knife [ガーグ肉切り包丁]
+<option value="10">Gargish cleaver [ガーグクリーバー]
+<option value="6">Dread sword [ドレッドソード]
+<option value="6">Gargish talwar [タルワール]
+<option value="8">Dual short axes [デュアルアックス]
+<option value="8">Gargish axe [ガーゴイル斧]
+<option value="6">Gargish battle axe [ガーゴイル戦闘斧]
+<option value="12">Gargish dagger [ガーゴイルダガー]
+<option value="12">Gargish kryss [ガーゴイルクリス]
+<option value="12">Blood blade [ブラッドブレード]
+<option value="11">Short blade [ショートブレード]
+<option value="12">Gargish tekagi [ガーゴイル手鉤]
+<option value="11">Dual pointed spear [デュアルスピア]
+<option value="10">Gargish warfork [ガーグウォーフォーク]
+<option value="8">Gargish pike [ガーゴイルパイク]
+<option value="2">Gargish lance [ガーゴイルランス]
+<option value="9">Disc mace [ディスクメイス]
+<option value="6">Gargish maul [ガーゴイルモール]
+<option value="5">Gargish war hammer [ガーグウォーハンマー]
+<option value="12">Gargish tessen [ガーゴイル鉄扇]
+<option value="13">Boomerang [ブーメラン]
+<option value="14">Cyclone [サイクロン]
+<option value="15">Soul glaive [ソウルグレイブ]
+<option value="7">Serpentstone staff [サーペントの石杖]
+<option value="5">Stone war sword [ウォーソード]
+<option value="9">Glass sword [グラスソード]
+<option value="11">Glass staff [グラススタッフ]
+<option value="8">素手
+  </select>
+
+　→　
+武器攻撃間隔　：　<INPUT class="read" readonly TYPE="text" NAME="speed01" SIZE="4">　sec
+
+
+<br>
+<table id="distance" class="table02">
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center" width="70">スタミナ→<br>＼<br>↓速度＋</td>
+   <td align="center" width="70">0～29</td>
+   <td align="center" width="70">30～59</td>
+   <td align="center" width="70">60～89</td>
+   <td align="center" width="70">90～119</td>
+   <td align="center" width="70">120～149</td>
+   <td align="center" width="70">150～179</td>
+   <td align="center" width="70">180～209</td>
+   <td align="center" width="70">210～239</td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" NAME="base00" value="0" SIZE=4 onchange="keisan1(form)">％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist00" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist01" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist02" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist03" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist04" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist05" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist06" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist07" SIZE=4></td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="base01" SIZE=4>％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist08" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist09" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist10" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist11" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist12" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist13" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist14" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist15" SIZE=4></td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="base02" SIZE=4>％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist16" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist17" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist18" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist19" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist20" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist21" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist22" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist23" SIZE=4></td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="base03" SIZE=4>％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist24" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist25" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist26" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist27" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist28" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist29" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist30" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist31" SIZE=4></td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="base04" SIZE=4>％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist32" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist33" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist34" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist35" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist36" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist37" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist38" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist39" SIZE=4></td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="base05" SIZE=4>％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist40" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist41" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist42" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist43" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist44" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist45" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist46" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist47" SIZE=4></td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="base06" SIZE=4>％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist48" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist49" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist50" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist51" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist52" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist53" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist54" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist55" SIZE=4></td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="base07" SIZE=4>％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist56" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist57" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist58" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist59" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist60" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist61" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist62" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist63" SIZE=4></td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="base08" SIZE=4>％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist64" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist65" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist66" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist67" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist68" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist69" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist70" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist71" SIZE=4></td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="base09" SIZE=4>％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist72" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist73" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist74" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist75" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist76" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist77" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist78" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist79" SIZE=4></td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="base10" SIZE=4>％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist80" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist81" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist82" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist83" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist84" SIZE=3></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist85" SIZE=3></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist86" SIZE=3></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist87" SIZE=3></td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="base11" SIZE=4>％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist88" SIZE=3></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist89" SIZE=3></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist90" SIZE=3></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist91" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist92" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist93" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist94" SIZE=3></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist95" SIZE=3></td>
+ </tr>
+
+ <tr bgcolor="#f0f0f0">
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="base12" SIZE=4>％</td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist96" SIZE=3></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist97" SIZE=3></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist98" SIZE=3></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist99" SIZE=3></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist100" SIZE=3></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist101" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist102" SIZE=4></td>
+   <td align="center"><INPUT TYPE="text" readonly="readonly" class="read" NAME="dist103" SIZE=4></td>
+ </tr>
+
+</table>
+
+基本攻撃間隔＝武器攻撃間隔－0.25×[Stamina／30]　　[ ]は端数切捨, 最小値1.25sec
+
+<p>最終攻撃間隔＝｛基本攻撃間隔／（１＋速度／100）｝　　｛　｝は0.25秒単位で端数切捨, 最小値1.25sec</p>
+
+<p>ステータスのStaminaは攻撃(武器直接・魔法直接等)によるダメージで減少するので、いつも同じ攻撃間隔になるとは限りません。
+<br><font color="#ff0000">Stamina減少量＝(Damage/直前のHP)×(直前のStamina)－｛(スタミナ減少抵抗）－5｝）</font>　(端数切り上げ)
+</p>
+
+</form>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

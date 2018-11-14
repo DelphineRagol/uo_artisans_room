@@ -1,0 +1,1362 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>新マジックアイテム抽出計算</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898848</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<h2>新マジックアイテム抽出計算（仮）</h2>
+<HR>
+
+Publish73より導入された新マジックアイテムを抽出するときの参考に作成しました。
+<br>キャラクター、抽出に使用する施設、付加されるマジック効果を選択および入力します。
+<br>クリーンアップブリタニアで得られるポイントからも、マジック総強度率の範囲を推定することができます。使わない場合は、ポイントを0にしてください。
+<br>2通りの計算で整合が取れない場合、クリーンアップによる推定値で抽出結果を判定します。
+<br>なお、新マジックでの素材補正やプロパティ数補正について、確かなことはまだわかっていませんので、ここでは考慮していません。
+<br>アイテムのランク（アーティファクト（上級）など）による抽出補正は、Publish74よりなくなっています。
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+function keisan0(form)
+{
+  form_keisan.prop1.value = 0.0;
+  form_keisan.prop2.value = 0.0;
+  form_keisan.prop3.value = 0.0;
+  form_keisan.prop4.value = 0.0;
+  form_keisan.prop5.value = 0.0;
+  form_keisan.prop6.value = 0.0;
+  form_keisan.prop7.value = 0.0;
+  form_keisan.prop8.value = 0.0;
+  form_keisan.prop9.value = 0.0;
+  form_keisan.prop0.value = 0.0;
+  form_keisan.neg.value = 0.0;
+  form_keisan.rat1.value = 0.0;
+  form_keisan.rat2.value = 0.0;
+  form_keisan.rat3.value = 0.0;
+  form_keisan.rat4.value = 0.0;
+  form_keisan.rat5.value = 0.0;
+  form_keisan.rat6.value = 0.0;
+  form_keisan.rat7.value = 0.0;
+  form_keisan.rat8.value = 0.0;
+  form_keisan.rat9.value = 0.0;
+  form_keisan.rat0.value = 0.0;
+  form_keisan.rat_lk.value = 0.0;
+  form_keisan.hose.value = 0.0;
+  form_keisan.rat.value = 0.0;
+  form_keisan.cupo.value = 0.0;
+  form_keisan.mat1.value = 0.0;
+  form_keisan.plt.value = 0.0;
+  form_keisan.cur1.value = 0.0;
+  form_keisan.cur2.value = 0.0;
+  return true;
+}
+
+//計算
+function keisan1(form)
+{
+var form = document.form_keisan;
+
+  prop1 = form_keisan.prop1.options[form.prop1.selectedIndex].value;
+  prop2 = form_keisan.prop2.options[form.prop2.selectedIndex].value;
+  prop3 = form_keisan.prop3.options[form.prop3.selectedIndex].value;
+  prop4 = form_keisan.prop4.options[form.prop4.selectedIndex].value;
+  prop5 = form_keisan.prop5.options[form.prop5.selectedIndex].value;
+  prop6 = form_keisan.prop6.options[form.prop6.selectedIndex].value;
+  prop7 = form_keisan.prop7.options[form.prop7.selectedIndex].value;
+  prop8 = form_keisan.prop8.options[form.prop8.selectedIndex].value;
+  rat9 = form_keisan.prop9.options[form.prop9.selectedIndex].value;
+  rat0 = form_keisan.prop0.options[form.prop0.selectedIndex].value;
+  neg = form_keisan.neg.options[form.neg.selectedIndex].value;
+  kyo1 = form_keisan.kyo1.value;
+  kyo2 = form_keisan.kyo2.value;
+  kyo3 = form_keisan.kyo3.value;
+  kyo4 = form_keisan.kyo4.value;
+  kyo5 = form_keisan.kyo5.value;
+  kyo6 = form_keisan.kyo6.value;
+  kyo7 = form_keisan.kyo7.value;
+  kyo8 = form_keisan.kyo8.value;
+  cupo = form_keisan.cupo.value;
+  dur = form_keisan.dur.value;
+  rat = 0.0;
+  cupo = form_keisan.cupo.value;
+  mat1 = form_keisan.mat1.options[form.mat1.selectedIndex].value;
+  plt = form_keisan.plt.value;
+
+
+  if(prop1 == 0)
+   {
+    rat1 = 0.0;
+   }
+  else if(prop1 == 1)
+   {
+    rat1 = 100.0;
+   }
+  else if(prop1 == 2)
+   {
+    rat1 = Math.floor(100 * kyo1 / 2);
+   }
+  else if(prop1 == 3)
+   {
+    rat1 = Math.floor(100 * kyo1 / 3);
+   }
+  else if(prop1 == 4)
+   {
+    rat1 = Math.floor(100 * kyo1 / 5);
+   }
+  else if(prop1 == 5)
+   {
+    rat1 = Math.floor(100 * kyo1 / 6);
+   }
+  else if(prop1 == 6)
+   {
+    rat1 = Math.floor(100 * kyo1 / 8);
+   }
+  else if(prop1 == 7)
+   {
+    rat1 = Math.floor(100 * kyo1 / 10);
+   }
+  else if(prop1 == 8)
+   {
+    rat1 = Math.floor(100 * kyo1 / 12);
+   }
+  else if(prop1 == 9)
+   {
+    rat1 = Math.floor(100 * kyo1 / 15);
+   }
+  else if(prop1 == 10)
+   {
+    rat1 = Math.floor(100 * kyo1 / 20);
+   }
+  else if(prop1 == 11)
+   {
+    rat1 = Math.floor(100 * (30.0 - kyo1) / 10);
+   }
+  else if(prop1 == 12)
+   {
+    rat1 = Math.floor(100 * kyo1 / 25);
+   }
+  else if(prop1 == 13)
+   {
+    rat1 = Math.floor(100 * kyo1 / 30);
+   }
+  else if(prop1 == 14)
+   {
+    rat1 = Math.floor(100 * kyo1 / 50);
+   }
+  else if(prop1 == 15)
+   {
+    rat1 = Math.floor(100 * (kyo1 - 10.0) / 40);
+   }
+  else
+   {
+    rat1 = Math.floor(kyo1);
+}
+    rat1 = Math.min(200.0, rat1);
+rat = eval(rat + rat1);
+
+  if(prop2 == 0)
+   {
+    rat2 = 0.0;
+   }
+  else if(prop2 == 1)
+   {
+    rat2 = 100.0;
+   }
+  else if(prop2 == 2)
+   {
+    rat2 = Math.floor(100 * kyo2 / 2);
+   }
+  else if(prop2 == 3)
+   {
+    rat2 = Math.floor(100 * kyo2 / 3);
+   }
+  else if(prop2 == 4)
+   {
+    rat2 = Math.floor(100 * kyo2 / 5);
+   }
+  else if(prop2 == 5)
+   {
+    rat2 = Math.floor(100 * kyo2 / 6);
+   }
+  else if(prop2 == 6)
+   {
+    rat2 = Math.floor(100 * kyo2 / 8);
+   }
+  else if(prop2 == 7)
+   {
+    rat2 = Math.floor(100 * kyo2 / 10);
+   }
+  else if(prop2 == 8)
+   {
+    rat2 = Math.floor(100 * kyo2 / 12);
+   }
+  else if(prop2 == 9)
+   {
+    rat2 = Math.floor(100 * kyo2 / 15);
+   }
+  else if(prop2 == 10)
+   {
+    rat2 = Math.floor(100 * kyo2 / 20);
+   }
+  else if(prop2 == 11)
+   {
+    rat2 = Math.floor(100 * (30.0 - kyo2) / 10);
+   }
+  else if(prop2 == 12)
+   {
+    rat2 = Math.floor(100 * kyo2 / 25);
+   }
+  else if(prop2 == 13)
+   {
+    rat2 = Math.floor(100 * kyo2 / 30);
+   }
+  else if(prop2 == 14)
+   {
+    rat2 = Math.floor(100 * kyo2 / 50);
+   }
+  else if(prop2 == 15)
+   {
+    rat2 = Math.floor(100 * (kyo2 - 10.0) / 40);
+   }
+  else
+   {
+    rat2 = Math.floor(kyo2);
+   }
+    rat2 = Math.min(200.0, rat2);
+rat = eval(rat + rat2);
+
+  if(prop3 == 0)
+   {
+    rat3 = 0.0;
+   }
+  else if(prop3 == 1)
+   {
+    rat3 = 100.0;
+   }
+  else if(prop3 == 2)
+   {
+    rat3 = Math.floor(100 * kyo3 / 2);
+   }
+  else if(prop3 == 3)
+   {
+    rat3 = Math.floor(100 * kyo3 / 3);
+   }
+  else if(prop3 == 4)
+   {
+    rat3 = Math.floor(100 * kyo3 / 5);
+   }
+  else if(prop3 == 5)
+   {
+    rat3 = Math.floor(100 * kyo3 / 6);
+   }
+  else if(prop3 == 6)
+   {
+    rat3 = Math.floor(100 * kyo3 / 8);
+   }
+  else if(prop3 == 7)
+   {
+    rat3 = Math.floor(100 * kyo3 / 10);
+   }
+  else if(prop3 == 8)
+   {
+    rat3 = Math.floor(100 * kyo3 / 12);
+   }
+  else if(prop3 == 9)
+   {
+    rat3 = Math.floor(100 * kyo3 / 15);
+   }
+  else if(prop3 == 10)
+   {
+    rat3 = Math.floor(100 * kyo3 / 20);
+   }
+  else if(prop3 == 11)
+   {
+    rat3 = Math.floor(100 * (30.0 - kyo3) / 10);
+   }
+  else if(prop3 == 12)
+   {
+    rat3 = Math.floor(100 * kyo3 / 25);
+   }
+  else if(prop3 == 13)
+   {
+    rat3 = Math.floor(100 * kyo3 / 30);
+   }
+  else if(prop3 == 14)
+   {
+    rat3 = Math.floor(100 * kyo3 / 50);
+   }
+  else if(prop3 == 15)
+   {
+    rat3 = Math.floor(100 * (kyo3 - 10.0) / 40);
+   }
+  else
+   {
+    rat3 = Math.floor(kyo3);
+   }
+    rat3 = Math.min(200.0, rat3);
+rat = eval(rat + rat3);
+
+  if(prop4 == 0)
+   {
+    rat4 = 0.0;
+   }
+  else if(prop4 == 1)
+   {
+    rat4 = 100.0;
+   }
+  else if(prop4 == 2)
+   {
+    rat4 = Math.floor(100 * kyo4 / 2);
+   }
+  else if(prop4 == 3)
+   {
+    rat4 = Math.floor(100 * kyo4 / 3);
+   }
+  else if(prop4 == 4)
+   {
+    rat4 = Math.floor(100 * kyo4 / 5);
+   }
+  else if(prop4 == 5)
+   {
+    rat4 = Math.floor(100 * kyo4 / 6);
+   }
+  else if(prop4 == 6)
+   {
+    rat4 = Math.floor(100 * kyo4 / 8);
+   }
+  else if(prop4 == 7)
+   {
+    rat4 = Math.floor(100 * kyo4 / 10);
+   }
+  else if(prop4 == 8)
+   {
+    rat4 = Math.floor(100 * kyo4 / 12);
+   }
+  else if(prop4 == 9)
+   {
+    rat4 = Math.floor(100 * kyo4 / 15);
+   }
+  else if(prop4 == 10)
+   {
+    rat4 = Math.floor(100 * kyo4 / 20);
+   }
+  else if(prop4 == 11)
+   {
+    rat4 = Math.floor(100 * (30.0 - kyo4) / 10);
+   }
+  else if(prop4 == 12)
+   {
+    rat4 = Math.floor(100 * kyo4 / 25);
+   }
+  else if(prop4 == 13)
+   {
+    rat4 = Math.floor(100 * kyo4 / 30);
+   }
+  else if(prop4 == 14)
+   {
+    rat4 = Math.floor(100 * kyo4 / 50);
+   }
+  else if(prop4 == 15)
+   {
+    rat4 = Math.floor(100 * (kyo4 - 10.0) / 40);
+   }
+  else
+   {
+    rat4 = Math.floor(kyo4);
+   }
+    rat4 = Math.min(200.0, rat4);
+rat = eval(rat + rat4);
+
+  if(prop5 == 0)
+   {
+    rat5 = 0.0;
+   }
+  else if(prop5 == 1)
+   {
+    rat5 = 100.0;
+   }
+  else if(prop5 == 2)
+   {
+    rat5 = Math.floor(100 * kyo5 / 2);
+   }
+  else if(prop5 == 3)
+   {
+    rat5 = Math.floor(100 * kyo5 / 3);
+   }
+  else if(prop5 == 4)
+   {
+    rat5 = Math.floor(100 * kyo5 / 5);
+   }
+  else if(prop5 == 5)
+   {
+    rat5 = Math.floor(100 * kyo5 / 6);
+   }
+  else if(prop5 == 6)
+   {
+    rat5 = Math.floor(100 * kyo5 / 8);
+   }
+  else if(prop5 == 7)
+   {
+    rat5 = Math.floor(100 * kyo5 / 10);
+   }
+  else if(prop5 == 8)
+   {
+    rat5 = Math.floor(100 * kyo5 / 12);
+   }
+  else if(prop5 == 9)
+   {
+    rat5 = Math.floor(100 * kyo5 / 15);
+   }
+  else if(prop5 == 10)
+   {
+    rat5 = Math.floor(100 * kyo5 / 20);
+   }
+  else if(prop5 == 11)
+   {
+    rat5 = Math.floor(100 * (30.0 - kyo5) / 10);
+   }
+  else if(prop5 == 12)
+   {
+    rat5 = Math.floor(100 * kyo5 / 25);
+   }
+  else if(prop5 == 13)
+   {
+    rat5 = Math.floor(100 * kyo5 / 30);
+   }
+  else if(prop5 == 14)
+   {
+    rat5 = Math.floor(100 * kyo5 / 50);
+   }
+  else if(prop5 == 15)
+   {
+    rat5 = Math.floor(100 * (kyo5 - 10.0) / 40);
+   }
+  else
+   {
+    rat5 = Math.floor(kyo5);
+   }
+rat = eval(rat + rat5);
+rat5 = Math.min(200.0, rat5);
+
+  if(prop6 == 0)
+   {
+    rat6 = 0.0;
+   }
+  else if(prop6 == 1)
+   {
+    rat6 = 100.0;
+   }
+  else if(prop6 == 2)
+   {
+    rat6 = Math.floor(100 * kyo6 / 2);
+   }
+  else if(prop6 == 3)
+   {
+    rat6 = Math.floor(100 * kyo6 / 3);
+   }
+  else if(prop6 == 4)
+   {
+    rat6 = Math.floor(100 * kyo6 / 5);
+   }
+  else if(prop6 == 5)
+   {
+    rat6 = Math.floor(100 * kyo6 / 6);
+   }
+  else if(prop6 == 6)
+   {
+    rat6 = Math.floor(100 * kyo6 / 8);
+   }
+  else if(prop6 == 7)
+   {
+    rat6 = Math.floor(100 * kyo6 / 10);
+   }
+  else if(prop6 == 8)
+   {
+    rat6 = Math.floor(100 * kyo6 / 12);
+   }
+  else if(prop6 == 9)
+   {
+    rat6 = Math.floor(100 * kyo6 / 15);
+   }
+  else if(prop6 == 10)
+   {
+    rat6 = Math.floor(100 * kyo6 / 20);
+   }
+  else if(prop6 == 11)
+   {
+    rat6 = Math.floor(100 * (30.0 - kyo6) / 10);
+   }
+  else if(prop6 == 12)
+   {
+    rat6 = Math.floor(100 * kyo6 / 25);
+   }
+  else if(prop6 == 13)
+   {
+    rat6 = Math.floor(100 * kyo6 / 30);
+   }
+  else if(prop6 == 14)
+   {
+    rat6 = Math.floor(100 * kyo6 / 50);
+   }
+  else if(prop6 == 15)
+   {
+    rat6 = Math.floor(100 * (kyo6 - 10.0) / 40);
+   }
+  else
+   {
+    rat6 = Math.floor(kyo6);
+   }
+    rat6 = Math.min(200.0, rat6);
+rat = eval(rat + rat6);
+
+
+  if(prop7 == 0)
+   {
+    rat7 = 0.0;
+   }
+  else if(prop7 == 1)
+   {
+    rat7 = 100.0;
+   }
+  else if(prop7 == 2)
+   {
+    rat7 = Math.floor(100 * kyo7 / 2);
+   }
+  else if(prop7 == 3)
+   {
+    rat7 = Math.floor(100 * kyo7 / 3);
+   }
+  else if(prop7 == 4)
+   {
+    rat7 = Math.floor(100 * kyo7 / 5);
+   }
+  else if(prop7 == 5)
+   {
+    rat7 = Math.floor(100 * kyo7 / 6);
+   }
+  else if(prop7 == 6)
+   {
+    rat7 = Math.floor(100 * kyo7 / 8);
+   }
+  else if(prop7 == 7)
+   {
+    rat7 = Math.floor(100 * kyo7 / 10);
+   }
+  else if(prop7 == 8)
+   {
+    rat7 = Math.floor(100 * kyo7 / 12);
+   }
+  else if(prop7 == 9)
+   {
+    rat7 = Math.floor(100 * kyo7 / 15);
+   }
+  else if(prop7 == 10)
+   {
+    rat7 = Math.floor(100 * kyo7 / 20);
+   }
+  else if(prop7 == 11)
+   {
+    rat7 = Math.floor(100 * (30.0 - kyo7) / 10);
+   }
+  else if(prop7 == 12)
+   {
+    rat7 = Math.floor(100 * kyo7 / 25);
+   }
+  else if(prop7 == 13)
+   {
+    rat7 = Math.floor(100 * kyo7 / 30);
+   }
+  else if(prop7 == 14)
+   {
+    rat7 = Math.floor(100 * kyo7 / 50);
+   }
+  else if(prop7 == 15)
+   {
+    rat7 = Math.floor(100 * (kyo7 - 10.0) / 40);
+   }
+  else
+   {
+    rat7 = Math.floor(kyo7);
+   }
+    rat7 = Math.min(200.0, rat7);
+rat = eval(rat + rat7);
+
+
+  if(prop8 == 0)
+   {
+    rat8 = 0.0;
+   }
+  else if(prop8 == 1)
+   {
+    rat8 = 100.0;
+   }
+  else if(prop8 == 2)
+   {
+    rat8 = Math.floor(100 * kyo8 / 2);
+   }
+  else if(prop8 == 3)
+   {
+    rat8 = Math.floor(100 * kyo8 / 3);
+   }
+  else if(prop8 == 4)
+   {
+    rat8 = Math.floor(100 * kyo8 / 5);
+   }
+  else if(prop8 == 5)
+   {
+    rat8 = Math.floor(100 * kyo8 / 6);
+   }
+  else if(prop8 == 6)
+   {
+    rat8 = Math.floor(100 * kyo8 / 8);
+   }
+  else if(prop8 == 7)
+   {
+    rat8 = Math.floor(100 * kyo8 / 10);
+   }
+  else if(prop8 == 8)
+   {
+    rat8 = Math.floor(100 * kyo8 / 12);
+   }
+  else if(prop8 == 9)
+   {
+    rat8 = Math.floor(100 * kyo8 / 15);
+   }
+  else if(prop8 == 10)
+   {
+    rat8 = Math.floor(100 * kyo8 / 20);
+   }
+  else if(prop8 == 11)
+   {
+    rat8 = Math.floor(100 * (30.0 - kyo8) / 10);
+   }
+  else if(prop8 == 12)
+   {
+    rat8 = Math.floor(100 * kyo8 / 25);
+   }
+  else if(prop8 == 13)
+   {
+    rat8 = Math.floor(100 * kyo8 / 30);
+   }
+  else if(prop8 == 14)
+   {
+    rat8 = Math.floor(100 * kyo8 / 50);
+   }
+  else if(prop8 == 15)
+   {
+    rat8 = Math.floor(100 * (kyo8 - 10.0) / 40);
+   }
+  else
+   {
+    rat8 = Math.floor(kyo8);
+   }
+    rat8 = Math.min(200.0, rat8);
+rat = eval(rat + rat8);
+
+rat = eval(rat - neg * 1);
+
+
+dur = Math.min(100.0, dur * 4);
+
+hose = Math.max(0.0, dur);
+
+if(cupo==0)
+{
+cup1 = 0;
+cup2 = 0;
+cur1 = 0;
+cur2 = 0;
+}
+else
+{
+cup1 = Math.max(0.0, cupo - mat1 * plt / 100);
+cup2 = cup1 + 1.0;
+cur1 = Math.ceil( Math.sqrt(cup1 / 25.0) * 500.0);
+cur2 = Math.ceil( Math.sqrt(cup2 / 25.0) * 500.0) - 1.0;
+}
+
+
+if(cur1==0||(rat>=cur1&&rat<=cur2))
+ {
+ rat = Math.floor(rat * hose / 100.0);
+ }
+
+else
+ {
+ rat = cur1;
+ rat = eval(rat + rat9 * 1 + rat0 * 1);
+ rat = Math.floor(rat * hose / 100.0);
+ }
+
+ if(rat<1)
+{
+  document.zai = "抽出不可";
+}
+ else if(rat<50)
+{
+  document.zai = "Magical Residue × 1";
+}
+ else if(rat<100)
+{
+  document.zai = "Magical Residue × 2～3";
+}
+ else if(rat<150)
+{
+  document.zai = "Magical Residue × 3～4";
+}
+ else if(rat<200)
+{
+  document.zai = "Magical Residue × 4～5";
+}
+ else if(rat<300)
+{
+  document.zai = "Enchanted Essence × 1～2";
+}
+ else if(rat<400)
+{
+  document.zai = "Enchanted Essence × 2～3";
+}
+ else if(rat<451)
+{
+  document.zai = "Enchanted Essence × 3～4";
+}
+ else
+{
+  document.zai = "Relic Fragment × 1～2";
+}
+
+  form.zai.value = document.zai;
+
+form.rat1.value = rat1;
+form.rat2.value = rat2;
+form.rat3.value = rat3;
+form.rat4.value = rat4;
+form.rat5.value = rat5;
+form.rat6.value = rat6;
+form.rat7.value = rat7;
+form.rat8.value = rat8;
+form.rat9.value = rat9;
+form.rat0.value = rat0;
+form.hose.value = hose;
+form.rat.value = rat;
+form.rat_lk.value = neg * (-1);
+
+form.cur1.value = cur1;
+form.cur2.value = cur2;
+
+return true;
+}
+// -->
+ </script>
+
+<form name="form_keisan">
+
+<h4>キャラクター・施設の特性</h4>
+
+<table class="table02">
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="220">キャラクター・施設</td>
+    <td align="center" width="120">強度率加算（％）</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center"><select name="prop9" size="1">
+<option value="0">Human
+<option value="0">Elf
+<option value="20">Gargoyle
+</select>
+</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat9" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center"><select name="prop0" size="1">
+<option value="0">普通のSoul Forge
+<option value="10">Royal CityのSoul Forge
+<option value="30">Queen's Soul Forge
+</select>
+</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat0" size="4" value="0">％</td>
+  </tr>
+
+</table>
+
+
+<h4>アイテムの特性</h4>
+
+
+<table class="table02">
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="220">プロパティ選択</td>
+    <td align="center" width="120">プロパティ強度</td>
+    <td align="center" width="120">強度率（％）</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">
+<select name="prop1" SIZE="1">
+<option value="0">---プロパティ選択---
+<option value="0">---ステータス---
+<option value="6">STR
+<option value="6">DEX
+<option value="6">INT
+<option value="4">ヒットポイント
+<option value="6">スタミナ
+<option value="6">マナ
+<option value="2">ヒットポイント回復
+<option value="2">マナ回復
+<option value="3">スタミナ回復
+<option value="5">HP変換(属性表記なし)
+<option value="7">HP変換(属性)
+<option value="10">マナ変換
+<option value="0">---詠唱---
+<option value="1">ファストキャスト(強度省略)
+<option value="1">詠唱可(強度省略)
+<option value="1">瞑想可(強度省略)
+<option value="2">詠唱集中
+<option value="10">秘薬コスト(－は省略)
+<option value="6">マナコスト(－は省略)
+<option value="3">キャストリカバリ
+<option value="8">魔法ダメージ
+<option value="11">魔道武器(－は省略)
+<option value="0">---戦闘---
+<option value="12">武器ダメージ(盾,アクセサリ)
+<option value="14">武器ダメージ(武器)
+<option value="13">速度
+<option value="9">命中
+<option value="9">回避
+<option value="1">ベストウェポンスキル(強度省略)
+<option value="0">---追加効果---
+<option value="10">破片残留
+<option value="12">追加効果：マナリーチ(強度)
+<option value="12">追加効果：ライフリーチ(強度)
+<option value="14">追加効果：スタミナリーチ
+<option value="14">追加効果：魔法
+<option value="14">追加効果：エリア攻撃
+<option value="14">追加効果：命中低下
+<option value="14">追加効果：回避低下
+<option value="15">遠距離ボーナス
+<option value="9">属性抵抗
+<option value="0">---その他---
+<option value="16">幸運
+<option value="16">耐久性
+<option value="16">装備条件(－は省略)
+<option value="4">自己修復
+<option value="9">物理ダメージ反射
+<option value="12">ポーション強化
+<option value="9">スキル
+<option value="1">特効(強度省略)
+<option value="1">好戦(強度省略)
+<option value="1">吸血(強度省略)
+<option value="1">麻痺カウンター(強度省略)
+<option value="1">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo1" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat1" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">
+<select name="prop2" SIZE="1">
+<option value="0">---プロパティ選択---
+<option value="0">---ステータス---
+<option value="6">STR
+<option value="6">DEX
+<option value="6">INT
+<option value="4">ヒットポイント
+<option value="6">スタミナ
+<option value="6">マナ
+<option value="2">ヒットポイント回復
+<option value="2">マナ回復
+<option value="3">スタミナ回復
+<option value="5">HP変換(属性表記なし)
+<option value="7">HP変換(属性)
+<option value="10">マナ変換
+<option value="0">---詠唱---
+<option value="1">ファストキャスト(強度省略)
+<option value="1">詠唱可(強度省略)
+<option value="1">瞑想可(強度省略)
+<option value="2">詠唱集中
+<option value="10">秘薬コスト(－は省略)
+<option value="6">マナコスト(－は省略)
+<option value="3">キャストリカバリ
+<option value="8">魔法ダメージ
+<option value="11">魔道武器(－は省略)
+<option value="0">---戦闘---
+<option value="12">武器ダメージ(盾,アクセサリ)
+<option value="14">武器ダメージ(武器)
+<option value="13">速度
+<option value="9">命中
+<option value="9">回避
+<option value="1">ベストウェポンスキル(強度省略)
+<option value="0">---追加効果---
+<option value="10">破片残留
+<option value="12">追加効果：マナリーチ(強度)
+<option value="12">追加効果：ライフリーチ(強度)
+<option value="14">追加効果：スタミナリーチ
+<option value="14">追加効果：魔法
+<option value="14">追加効果：エリア攻撃
+<option value="14">追加効果：命中低下
+<option value="14">追加効果：回避低下
+<option value="15">遠距離ボーナス
+<option value="9">属性抵抗
+<option value="0">---その他---
+<option value="16">幸運
+<option value="16">耐久性
+<option value="16">装備条件(－は省略)
+<option value="4">自己修復
+<option value="9">物理ダメージ反射
+<option value="12">ポーション強化
+<option value="9">スキル
+<option value="1">特効(強度省略)
+<option value="1">好戦(強度省略)
+<option value="1">吸血(強度省略)
+<option value="1">麻痺カウンター(強度省略)
+<option value="1">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo2" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat2" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">
+<select name="prop3" SIZE="1">
+<option value="0">---プロパティ選択---
+<option value="0">---ステータス---
+<option value="6">STR
+<option value="6">DEX
+<option value="6">INT
+<option value="4">ヒットポイント
+<option value="6">スタミナ
+<option value="6">マナ
+<option value="2">ヒットポイント回復
+<option value="2">マナ回復
+<option value="3">スタミナ回復
+<option value="5">HP変換(属性表記なし)
+<option value="7">HP変換(属性)
+<option value="10">マナ変換
+<option value="0">---詠唱---
+<option value="1">ファストキャスト(強度省略)
+<option value="1">詠唱可(強度省略)
+<option value="1">瞑想可(強度省略)
+<option value="2">詠唱集中
+<option value="10">秘薬コスト(－は省略)
+<option value="6">マナコスト(－は省略)
+<option value="3">キャストリカバリ
+<option value="8">魔法ダメージ
+<option value="11">魔道武器(－は省略)
+<option value="0">---戦闘---
+<option value="12">武器ダメージ(盾,アクセサリ)
+<option value="14">武器ダメージ(武器)
+<option value="13">速度
+<option value="9">命中
+<option value="9">回避
+<option value="1">ベストウェポンスキル(強度省略)
+<option value="0">---追加効果---
+<option value="10">破片残留
+<option value="12">追加効果：マナリーチ(強度)
+<option value="12">追加効果：ライフリーチ(強度)
+<option value="14">追加効果：スタミナリーチ
+<option value="14">追加効果：魔法
+<option value="14">追加効果：エリア攻撃
+<option value="14">追加効果：命中低下
+<option value="14">追加効果：回避低下
+<option value="15">遠距離ボーナス
+<option value="9">属性抵抗
+<option value="0">---その他---
+<option value="16">幸運
+<option value="16">耐久性
+<option value="16">装備条件(－は省略)
+<option value="4">自己修復
+<option value="9">物理ダメージ反射
+<option value="12">ポーション強化
+<option value="9">スキル
+<option value="1">特効(強度省略)
+<option value="1">好戦(強度省略)
+<option value="1">吸血(強度省略)
+<option value="1">麻痺カウンター(強度省略)
+<option value="1">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo3" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat3" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">
+<select name="prop4" SIZE="1">
+<option value="0">---プロパティ選択---
+<option value="0">---ステータス---
+<option value="6">STR
+<option value="6">DEX
+<option value="6">INT
+<option value="4">ヒットポイント
+<option value="6">スタミナ
+<option value="6">マナ
+<option value="2">ヒットポイント回復
+<option value="2">マナ回復
+<option value="3">スタミナ回復
+<option value="5">HP変換(属性表記なし)
+<option value="7">HP変換(属性)
+<option value="10">マナ変換
+<option value="0">---詠唱---
+<option value="1">ファストキャスト(強度省略)
+<option value="1">詠唱可(強度省略)
+<option value="1">瞑想可(強度省略)
+<option value="2">詠唱集中
+<option value="10">秘薬コスト(－は省略)
+<option value="6">マナコスト(－は省略)
+<option value="3">キャストリカバリ
+<option value="8">魔法ダメージ
+<option value="11">魔道武器(－は省略)
+<option value="0">---戦闘---
+<option value="12">武器ダメージ(盾,アクセサリ)
+<option value="14">武器ダメージ(武器)
+<option value="13">速度
+<option value="9">命中
+<option value="9">回避
+<option value="1">ベストウェポンスキル(強度省略)
+<option value="0">---追加効果---
+<option value="10">破片残留
+<option value="12">追加効果：マナリーチ(強度)
+<option value="12">追加効果：ライフリーチ(強度)
+<option value="14">追加効果：スタミナリーチ
+<option value="14">追加効果：魔法
+<option value="14">追加効果：エリア攻撃
+<option value="14">追加効果：命中低下
+<option value="14">追加効果：回避低下
+<option value="15">遠距離ボーナス
+<option value="9">属性抵抗
+<option value="0">---その他---
+<option value="16">幸運
+<option value="16">耐久性
+<option value="16">装備条件(－は省略)
+<option value="4">自己修復
+<option value="9">物理ダメージ反射
+<option value="12">ポーション強化
+<option value="9">スキル
+<option value="1">特効(強度省略)
+<option value="1">好戦(強度省略)
+<option value="1">吸血(強度省略)
+<option value="1">麻痺カウンター(強度省略)
+<option value="1">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo4" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat4" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">
+<select name="prop5" SIZE="1">
+<option value="0">---プロパティ選択---
+<option value="0">---ステータス---
+<option value="6">STR
+<option value="6">DEX
+<option value="6">INT
+<option value="4">ヒットポイント
+<option value="6">スタミナ
+<option value="6">マナ
+<option value="2">ヒットポイント回復
+<option value="2">マナ回復
+<option value="3">スタミナ回復
+<option value="5">HP変換(属性表記なし)
+<option value="7">HP変換(属性)
+<option value="10">マナ変換
+<option value="0">---詠唱---
+<option value="1">ファストキャスト(強度省略)
+<option value="1">詠唱可(強度省略)
+<option value="1">瞑想可(強度省略)
+<option value="2">詠唱集中
+<option value="10">秘薬コスト(－は省略)
+<option value="6">マナコスト(－は省略)
+<option value="3">キャストリカバリ
+<option value="8">魔法ダメージ
+<option value="11">魔道武器(－は省略)
+<option value="0">---戦闘---
+<option value="12">武器ダメージ(盾,アクセサリ)
+<option value="14">武器ダメージ(武器)
+<option value="13">速度
+<option value="9">命中
+<option value="9">回避
+<option value="1">ベストウェポンスキル(強度省略)
+<option value="0">---追加効果---
+<option value="10">破片残留
+<option value="12">追加効果：マナリーチ(強度)
+<option value="12">追加効果：ライフリーチ(強度)
+<option value="14">追加効果：スタミナリーチ
+<option value="14">追加効果：魔法
+<option value="14">追加効果：エリア攻撃
+<option value="14">追加効果：命中低下
+<option value="14">追加効果：回避低下
+<option value="15">遠距離ボーナス
+<option value="9">属性抵抗
+<option value="0">---その他---
+<option value="16">幸運
+<option value="16">耐久性
+<option value="16">装備条件(－は省略)
+<option value="4">自己修復
+<option value="9">物理ダメージ反射
+<option value="12">ポーション強化
+<option value="9">スキル
+<option value="1">特効(強度省略)
+<option value="1">好戦(強度省略)
+<option value="1">吸血(強度省略)
+<option value="1">麻痺カウンター(強度省略)
+<option value="1">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo5" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat5" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">
+<select name="prop6" SIZE="1">
+<option value="0">---プロパティ選択---
+<option value="0">---ステータス---
+<option value="6">STR
+<option value="6">DEX
+<option value="6">INT
+<option value="4">ヒットポイント
+<option value="6">スタミナ
+<option value="6">マナ
+<option value="2">ヒットポイント回復
+<option value="2">マナ回復
+<option value="3">スタミナ回復
+<option value="5">HP変換(属性表記なし)
+<option value="7">HP変換(属性)
+<option value="10">マナ変換
+<option value="0">---詠唱---
+<option value="1">ファストキャスト(強度省略)
+<option value="1">詠唱可(強度省略)
+<option value="1">瞑想可(強度省略)
+<option value="2">詠唱集中
+<option value="10">秘薬コスト(－は省略)
+<option value="6">マナコスト(－は省略)
+<option value="3">キャストリカバリ
+<option value="8">魔法ダメージ
+<option value="11">魔道武器(－は省略)
+<option value="0">---戦闘---
+<option value="12">武器ダメージ(盾,アクセサリ)
+<option value="14">武器ダメージ(武器)
+<option value="13">速度
+<option value="9">命中
+<option value="9">回避
+<option value="1">ベストウェポンスキル(強度省略)
+<option value="0">---追加効果---
+<option value="10">破片残留
+<option value="12">追加効果：マナリーチ(強度)
+<option value="12">追加効果：ライフリーチ(強度)
+<option value="14">追加効果：スタミナリーチ
+<option value="14">追加効果：魔法
+<option value="14">追加効果：エリア攻撃
+<option value="14">追加効果：命中低下
+<option value="14">追加効果：回避低下
+<option value="15">遠距離ボーナス
+<option value="9">属性抵抗
+<option value="0">---その他---
+<option value="16">幸運
+<option value="16">耐久性
+<option value="16">装備条件(－は省略)
+<option value="4">自己修復
+<option value="9">物理ダメージ反射
+<option value="12">ポーション強化
+<option value="9">スキル
+<option value="1">特効(強度省略)
+<option value="1">好戦(強度省略)
+<option value="1">吸血(強度省略)
+<option value="1">麻痺カウンター(強度省略)
+<option value="1">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo6" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat6" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">
+<select name="prop7" SIZE="1">
+<option value="0">---プロパティ選択---
+<option value="0">---ステータス---
+<option value="6">STR
+<option value="6">DEX
+<option value="6">INT
+<option value="4">ヒットポイント
+<option value="6">スタミナ
+<option value="6">マナ
+<option value="2">ヒットポイント回復
+<option value="2">マナ回復
+<option value="3">スタミナ回復
+<option value="5">HP変換(属性表記なし)
+<option value="7">HP変換(属性)
+<option value="10">マナ変換
+<option value="0">---詠唱---
+<option value="1">ファストキャスト(強度省略)
+<option value="1">詠唱可(強度省略)
+<option value="1">瞑想可(強度省略)
+<option value="2">詠唱集中
+<option value="10">秘薬コスト(－は省略)
+<option value="6">マナコスト(－は省略)
+<option value="3">キャストリカバリ
+<option value="8">魔法ダメージ
+<option value="11">魔道武器(－は省略)
+<option value="0">---戦闘---
+<option value="12">武器ダメージ(盾,アクセサリ)
+<option value="14">武器ダメージ(武器)
+<option value="13">速度
+<option value="9">命中
+<option value="9">回避
+<option value="1">ベストウェポンスキル(強度省略)
+<option value="0">---追加効果---
+<option value="10">破片残留
+<option value="12">追加効果：マナリーチ(強度)
+<option value="12">追加効果：ライフリーチ(強度)
+<option value="14">追加効果：スタミナリーチ
+<option value="14">追加効果：魔法
+<option value="14">追加効果：エリア攻撃
+<option value="14">追加効果：命中低下
+<option value="14">追加効果：回避低下
+<option value="15">遠距離ボーナス
+<option value="9">属性抵抗
+<option value="0">---その他---
+<option value="16">幸運
+<option value="16">耐久性
+<option value="16">装備条件(－は省略)
+<option value="4">自己修復
+<option value="9">物理ダメージ反射
+<option value="12">ポーション強化
+<option value="9">スキル
+<option value="1">特効(強度省略)
+<option value="1">好戦(強度省略)
+<option value="1">吸血(強度省略)
+<option value="1">麻痺カウンター(強度省略)
+<option value="1">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo7" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat7" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">
+<select name="prop8" SIZE="1">
+<option value="0">---プロパティ選択---
+<option value="0">---ステータス---
+<option value="6">STR
+<option value="6">DEX
+<option value="6">INT
+<option value="4">ヒットポイント
+<option value="6">スタミナ
+<option value="6">マナ
+<option value="2">ヒットポイント回復
+<option value="2">マナ回復
+<option value="3">スタミナ回復
+<option value="5">HP変換(属性表記なし)
+<option value="7">HP変換(属性)
+<option value="10">マナ変換
+<option value="0">---詠唱---
+<option value="1">ファストキャスト(強度省略)
+<option value="1">詠唱可(強度省略)
+<option value="1">瞑想可(強度省略)
+<option value="2">詠唱集中
+<option value="10">秘薬コスト(－は省略)
+<option value="6">マナコスト(－は省略)
+<option value="3">キャストリカバリ
+<option value="8">魔法ダメージ
+<option value="11">魔道武器(－は省略)
+<option value="0">---戦闘---
+<option value="12">武器ダメージ(盾,アクセサリ)
+<option value="14">武器ダメージ(武器)
+<option value="13">速度
+<option value="9">命中
+<option value="9">回避
+<option value="1">ベストウェポンスキル(強度省略)
+<option value="0">---追加効果---
+<option value="10">破片残留
+<option value="12">追加効果：マナリーチ(強度)
+<option value="12">追加効果：ライフリーチ(強度)
+<option value="14">追加効果：スタミナリーチ
+<option value="14">追加効果：魔法
+<option value="14">追加効果：エリア攻撃
+<option value="14">追加効果：命中低下
+<option value="14">追加効果：回避低下
+<option value="15">遠距離ボーナス
+<option value="9">属性抵抗
+<option value="0">---その他---
+<option value="16">幸運
+<option value="16">耐久性
+<option value="16">装備条件(－は省略)
+<option value="4">自己修復
+<option value="9">物理ダメージ反射
+<option value="12">ポーション強化
+<option value="9">スキル
+<option value="1">特効(強度省略)
+<option value="1">好戦(強度省略)
+<option value="1">吸血(強度省略)
+<option value="1">麻痺カウンター(強度省略)
+<option value="1">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo8" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat8" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">幸運　：　-100</td>
+    <td align="center"><select name="neg" SIZE="1">
+<option value="0">なし
+<option value="100">あり
+</select>
+</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat_lk" size="5" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ffffcc">
+    <td align="center">耐久値　：　<INPUT type="text" name="dur" size="4" value="25"></td>
+    <td align="center">&nbsp;</td>
+    <td align="center">×<INPUT class="readtext" readonly type="text" name="hose" size="4" value="0">％</td>
+  </tr>
+
+</table>
+
+<h4>クリーンアップポイント</h4>
+
+<ul class="list03">
+  <li>クリーンアップポイント　：　<INPUT type="text" name="cupo" size="4" value="0"></li>
+  <li>装備品の素材　：　<select name="mat1" SIZE="1">
+<option value="0">---素材選択---
+<option value="10">インゴット
+<option value="10">革
+<option value="5">布
+<option value="5">木材
+<option value="5">岩
+</select>
+×<INPUT type="text" name="plt" size="4" value="0"></li>
+<li>マジック総強度率　：　<INPUT class="readtext" readonly type="text" name="cur1" size="4" value="0">～<INPUT class="readtext" readonly type="text" name="cur2" size="4" value="0">％</li>
+</ul>
+
+<input type="button" value="プロパティ・全強度計算" onclick="keisan1(form)">　<INPUT TYPE="reset" value="リセット">
+
+<h4>抽出結果の推定</h4>
+
+<ul class="list03">
+  <li>抽出評価値　：　<INPUT class="readtext" readonly type="text" name="rat" size="4" value="0">％</li>
+  <li>魔法素材　：　<INPUT class="readtext" readonly type="text" name="zai" size="30"></li>
+</ul>
+
+</form>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

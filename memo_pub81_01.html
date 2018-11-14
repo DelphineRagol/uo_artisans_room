@@ -1,0 +1,1011 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>Publish81 メモ</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899079</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<h3>防具の仕様変更他（4/6 更新版）</h3>
+
+<h3>不具合？</h3>
+<ul class="list02">
+  <li>TC1シャードで入手できる防具強化の素材に不具合があり、Shielding[上質]以上のランクを強化材にすると2ランク上となります。
+<br>そのため、Fortification [特等]およびInvulnerability [究極]ランクの素材を強化材にしようとすると、それ以降の操作が全くできなくなります。
+<br>不具合は解消されていませんが、Fortification [特等]およびInvulnerability [究極]ランクの素材も最高ランクの強化材となり、操作不能とはならなくなりました（<font color="#ff0000">4/6　継続中</font>）。
+</li>
+
+  <li>1つのパーツに強化材を使用したときの抵抗上限と回避上限の関係が、発表された仕様と異なっています（<font color="#ff0000">4/9　確認</font>）
+<br>抵抗上限±1％　：　回避上限－＋2％
+<br>抵抗上限±2％　：　回避上限－＋3％（仕様では4％？）
+<br>抵抗上限±3％　：　回避上限－＋4％（仕様では6％？）
+<br>抵抗上限±4％　：　回避上限－＋5％（仕様では8％？）
+<br>抵抗上限±5％　：　回避上限－＋6％（仕様では10％？）
+<br><font color="#ff0000">開発者のコメントを確認すると、抵抗上限と回避上限の変化量の比は１：１となるようです。</font>
+</li>
+
+  <li>回避の上限が75％となっています（<font color="#ff0000">4/9　確認</font>）
+<br><font color="#ff0000">開発者のコメントを確認すると、抵抗上限と回避上限の変化量が調整されるのに伴い、回避の上限は70％となるようです。</font>
+</li>
+
+  <li>セキュアにしたmetal chest, bag, pouchの1層目に置いていた、polishやscour等の強化材料が、サーバーダウンからの復帰時に消滅していた
+<br>他大工で作成できるコンテナでは、下記のものが同様の挙動を示した（<font color="#ff0000">解消されました</font>）。</li>
+  <ul class="list01">
+    <li>small crate[小型木箱]</li>
+    <li>large crate[木箱]</li>
+    <li>wooden chest[ウッドチェスト]</li>
+    <li>plain wooden chest[和だんす]</li>
+    <li>ornate wooden chest[民芸調たんす]</li>
+    <li>gilded wooden chest[飾り金具のたんす]</li>
+    <li>tall cabinet[大型キャビネット]</li>
+    <li>short cabinet[ローキャビネット]</li>
+    <li>rarewood chest[レアウッドチェスト]</li>
+    <li>decorative box[装飾箱]</li>
+  </ul>
+
+  <li>Stone Formによる抵抗値上限の変化と強化材による抵抗値上限の変化が合わさらず、強化材による抵抗値上限の変化が優先して適用される（<font color="#ff0000">4/6　継続中</font>）</li>
+  <li>Vulture helm, Winged helm, Raven helmに木製用の強化材を使用することができない（<font color="#ff0000">4/6の更新で解消されました</font>）</li>
+</ul>
+
+<h3>１. ダメージによるスタミナ減少量の調整</h3>
+防具の系統に応じて、ダメージを受けたときのスタミナ減少量に差がつくようになります。
+<br>スタミナ減少に関する防具のカテゴリは下記の4種類で、上にあるものほどダメージを受けたときのスタミナ減少量が小さくなります。
+<ul class="list02">
+ <li>金属および鱗製の鎧（Ringmail, Chainmail, Platemail, Samurai plate, Scale armor）：減少抵抗=7</li>
+ <li>鋲革、骨、木および石製の鎧（Stud, Bone, Hide armor, Woodland armor, Stone armor）：減少抵抗=3.5</li>
+ <li>布および革製鎧（Cloth, Leather, Leaf armor）、ガーゴイルネックレスおよびイヤリング：減少抵抗=2</li>
+ <li>装備なし：減少抵抗=0</li>
+ <li><font color="#ff0000">注意："瞑想可"プロパティがついた防具は布および革と同じ扱いとなります</font></li>
+</ul>
+
+頭、首、腕、手、足、胴（ガーゴイルの場合、頭および手の代わりにイヤリングおよびキルト）のうち、上位5パーツ分の効果が有効です。
+<br>また、人間には種族ボーナスとして、装備とは別枠の減少抵抗が付いています
+<br>下の図は、今回の仕様案における、ダメージとスタミナ減少を表したものです（HP=100, Stamina=100, 5パーツ装備時）。
+<br><img src="stamina_reduce_pub81tc-2.gif" alt="" class="img01" width="480" height="360">
+
+<p>スタミナ減少量（概算）＝{S * D / 100 + 5 - P}
+<br>P : 5パーツ分の減少抵抗の合計（0～35）
+<br>D : ダメージ量とその直前のHPの比（0～100％）　HPが丁度0になるときは100％
+<br>S : ダメージ直前のスタミナ値
+</p>
+
+HP=100、スタミナ=180で装備系統毎にダメージを受けた場合のスタミナ減少量(5パーツ装備時)
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+   <td width="100">ダメージ</td>
+   <td width="60">3</td>
+   <td width="60">5</td>
+   <td width="60">10</td>
+   <td width="60">20</td>
+   <td width="60">40</td>
+   <td width="60">60</td>
+   <td width="60">100</td>
+  </tr>
+ <tr bgcolor="#ddffff">
+   <td width="100">金属</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">6</td>
+   <td width="60">42</td>
+   <td width="60">78</td>
+   <td width="60">150</td>
+  </tr>
+ <tr bgcolor="#eeffff">
+   <td width="100">木</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">6</td>
+   <td width="60">24</td>
+   <td width="60">60</td>
+   <td width="60">96</td>
+   <td width="60">168</td>
+  </tr>
+ <tr bgcolor="#ddffff">
+   <td width="100">鋲革</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">6</td>
+   <td width="60">24</td>
+   <td width="60">60</td>
+   <td width="60">96</td>
+   <td width="60">168</td>
+  </tr>
+ <tr bgcolor="#eeffff">
+   <td width="100">革</td>
+   <td width="60">1</td>
+   <td width="60">4</td>
+   <td width="60">13</td>
+   <td width="60">31</td>
+   <td width="60">67</td>
+   <td width="60">103</td>
+   <td width="60">175</td>
+  </tr>
+ <tr bgcolor="#ddffff">
+   <td width="100">なし</td>
+   <td width="60">11</td>
+   <td width="60">14</td>
+   <td width="60">23</td>
+   <td width="60">41</td>
+   <td width="60">77</td>
+   <td width="60">113</td>
+   <td width="60">180</td>
+  </tr>
+</table>
+
+HP=100、スタミナ=30で装備系統毎にダメージを受けた場合のスタミナ減少量
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+   <td width="100">ダメージ</td>
+   <td width="60">3</td>
+   <td width="60">5</td>
+   <td width="60">10</td>
+   <td width="60">20</td>
+   <td width="60">40</td>
+   <td width="60">60</td>
+   <td width="60">100</td>
+  </tr>
+ <tr bgcolor="#ddffff">
+   <td width="100">金属</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+  </tr>
+ <tr bgcolor="#eeffff">
+   <td width="100">木</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">6</td>
+   <td width="60">18</td>
+  </tr>
+ <tr bgcolor="#ddffff">
+   <td width="100">鋲革</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">6</td>
+   <td width="60">18</td>
+  </tr>
+ <tr bgcolor="#eeffff">
+   <td width="100">革</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">0</td>
+   <td width="60">1</td>
+   <td width="60">7</td>
+   <td width="60">13</td>
+   <td width="60">25</td>
+  </tr>
+ <tr bgcolor="#ddffff">
+   <td width="100">なし</td>
+   <td width="60">6</td>
+   <td width="60">7</td>
+   <td width="60">8</td>
+   <td width="60">11</td>
+   <td width="60">17</td>
+   <td width="60">23</td>
+   <td width="60">30</td>
+  </tr>
+</table>
+
+<h3>２. マナコスト効果の追加</h3>
+
+下記の系統で"瞑想可"が付加されていない防具を装備したキャラクターは、マナコストの効果を得ます。
+<br>この効果は、ダメージによるスタミナ減少量の調整と同じく、5パーツ分累積されます。
+<br><font color="#ff0000">さらに、マジックプロパティのマナコストの上限（-40％）には影響せず、最大でマナコスト-55％となります。</font>
+<ul class="list02">
+ <li>金属および鱗製の鎧：1％</li>
+ <li>石製、鋲革および骨製の鎧：3％</li>
+</ul>
+
+<h3>３. 強化材の追加</h3>
+
+<h4>材料1（NPCから購入するもの）</h4>
+<ul class="list02">
+ <li><img src="malleable_alloy.gif" alt="" class="img01"> malleable alloy [鍛冶合金]　：　NPC Blacksmith</li>
+ <li><img src="leather_braid.gif" alt="" class="img01"> leather braid [皮ひも]　：　NPC Weaver</li>
+ <li><img src="solvent_flask.gif" alt="" class="img01"> solvent flask [溶剤フラスコ]　：　NPC Carpenter</li>
+</ul>
+
+<h4>材料2（NPCから購入できないもの）</h4>
+トレジャーハント、宝箱のサルベージ（SOS）、商船、海賊船、街のコンテナからの盗み、Championボスから入手します。
+
+<ul class="list02">
+ <li><img src="polish_blacksmith.gif" alt="" class="img01"> polish [シャインメッキ]　：　鍛冶回避用（Plate, Chainmail, Ringmail, Samurai plate, Gargish plate, Dragon）</li>
+ <li><img src="scour_blacksmith.gif" alt="" class="img01"> scour [ハードメッキ]　：　鍛冶抵抗用（Plate, Chainmail, Ringmail, Samurai plate, Gargish plate, Dragon）</li>
+ <li><img src="wash_tailoring.gif" alt="" class="img01"> wash [シャインコート剤]　：　裁縫回避用（Stud, Bone, Hide, Stud samurai）</li>
+ <li><img src="cure_tailoring.gif" alt="" class="img01"> cure [ハードコート剤]　：　裁縫抵抗用（Stud, Bone, Hide, Stud samurai）</li>
+ <li><img src="gloss_carpentry.gif" alt="" class="img01"> gloss [シャインワックス]　：　大工回避用（Woodland, Gargish stone）</li>
+ <li><img src="varnish_carpentry.gif" alt="" class="img01"> varnish [ハードワックス]　：　大工抵抗用（Woodland, Gargish stone）</li>
+</ul>
+
+上記の材料には<s>7つ</s>5つのランクが設けられています。
+
+<ul class="list02">
+ <li>Defense [良質]</li>
+ <li><s>Shielding [上質]</s></li>
+ <li><s>Guarding [本格]</s></li>
+ <li>Protection [高級]</li>
+ <li>Hardening [優良]</li>
+ <li>Fortification [特等]</li>
+ <li>Invulnerability [究極]</li>
+</ul>
+
+<h4>強化材の作成</h4>
+varnish [ハードワックス]などの材料は、スキルが100.0以上なければ扱うことはできません。
+強化材は、同じスキルを必要とする材料1と2を組み合わせて作成します。ただし、作成にはスキルが100.0以上必要です。
+
+<ul class="list03">
+ <li><img src="polish_blacksmith.gif" alt="" class="img01">×1＋<img src="malleable_alloy.gif" alt="" class="img01">×20　→　<img src="polished_plating.gif" alt="" class="img01"> polished plating [シャインメッキ 板金]
+ <li><img src="scour_blacksmith.gif" alt="" class="img01">×1＋<img src="malleable_alloy.gif" alt="" class="img01">×20　→　<img src="scoured_plating.gif" alt="" class="img01"> scoured plating [ハードメッキ 板金]
+ <li><img src="wash_tailoring.gif" alt="" class="img01">×1＋<img src="leather_braid.gif" alt="" class="img01">×20　→　<img src="washed_thread.gif" alt="" class="img01"> washed thread [シャインコート 糸]
+ <li><img src="cure_tailoring.gif" alt="" class="img01">×1＋<img src="leather_braid.gif" alt="" class="img01">×20　→　<img src="cured_thread.gif" alt="" class="img01"> cured thread [ハードコート 糸]
+ <li><img src="varnish_carpentry.gif" alt="" class="img01">×1＋<img src="solvent_flask.gif" alt="" class="img01">×20　→　<img src="varnished_resin.gif" alt="" class="img01"> varnished resin [シャインワックス 樹脂]
+ <li><img src="gloss_carpentry.gif" alt="" class="img01">×1＋<img src="solvent_flask.gif" alt="" class="img01">×20　→　<img src="glazed_resin.gif" alt="" class="img01"> glazed resin [ハードワックス 樹脂]
+</ul>
+
+<h4>強化材の使用</h4>
+強化材は、その適用対象に応じて、鍛冶屋、裁縫屋および大工屋で使用します。
+<br>強化材と強化したい防具を持って行き、強化材を使用すると、材料のランクに応じた効果が得られます。
+<br>なお、1つの防具に対するメッキの回数に制限はなく、最後に使った強化材の効果のみが有効です。
+<br>また、強化材を使用した防具には、瞑想可を練成することはできなくなります。
+<br>左は、シャインメッキ[良質]を使用したとき、右は、ハードメッキ[高級]を使用した防具のプロパティ画像です（画像は旧仕様のものです）。
+<br>シャインメッキでは、回避上限が上がり、ある属性の抵抗上限が下がることが確認できます。抵抗1箇所上限+1につき、回避上限-2
+<br>ハードメッキでは、ある属性の抵抗上限が上がり、回避上限が上がることが確認できます。回避上限+2につき、抵抗1箇所上限-1
+<br>
+<img src="polished_plating_lv1.gif" alt="" class="img01" width="210" height="168">
+<img src="scoured_plating_lv4.gif" alt="" class="img01" width="210" height="168">
+
+<p><font color="#ff0000">4/6変更</font></p>
+
+強化材を防具に使用したとき、下のオプション画面が表示されるようになりました。
+<br>抵抗値上限を変更したい属性を任意で選択できるようになります。
+
+強化材のランクと抵抗上限の変更箇所
+
+<ul class="list02">
+ <li>Defense [良質] : 上限変更1箇所</li>
+ <li>Protection [高級] : 上限変更2箇所、2箇所目は30％の確率</li>
+ <li>Hardening [優良] : 上限変更3箇所、3箇所目は30％の確率</li>
+ <li>Fortification [特等] : 上限変更4箇所、4箇所目は30％の確率</li>
+ <li>Invulnerability [究極] : 上限変更5箇所、5箇所目は15％の確率</li>
+</ul>
+
+
+<br><img src="refinement_option_01.gif" alt="" class="img01">
+
+
+<p>下の表は、強化材を使ったとき、属性抵抗上限値が変化する順番をまとめたものです（<font color="#ff0000">4／6　上記の仕様に変更されました</font>）。
+<br>炎抵抗だけ上限を上げたい場合、炎抵抗が最初に変化するRingmail系やDragon系の防具にハードメッキを施すのがよく、回避上限の低下も抑えられます。
+<br>物理抵抗に影響させないように回避上限を上げたい場合、物理が最後に変化するDragon系にシャインメッキを施すのがよいことになります。</p>
+
+なお、Plate系の兜は、plate helm, close helm, norse helm, helmet, bascinet
+<br>Samurai Plate系の兜は、hatsuburi, jingasa, battle kabuto
+<br>Bone系の兜は、bone helm, orc helm
+<br>となっています。
+<br>
+<table class="table02">
+  <tr>
+    <td bgcolor="#f0f0f0" rowspan="2" width="130">装備品の系統</td>
+    <td bgcolor="#f0f0f0" colspan="5" width="320">上限が変わる抵抗値の順番</td>
+  </tr>
+  <tr>
+    <td bgcolor="#f0f0f0">1</td>
+    <td bgcolor="#f0f0f0">2</td>
+    <td bgcolor="#f0f0f0">3</td>
+    <td bgcolor="#f0f0f0">4</td>
+    <td bgcolor="#f0f0f0">5</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#dddddd">Platemail</td>
+    <td bgcolor="#d0d0d0">AR</td>
+    <td bgcolor="#ffc080">FR</td>
+    <td bgcolor="#80c0ff">CR</td>
+    <td bgcolor="#80ffc0">PR</td>
+    <td bgcolor="#ffc0ff">ER</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#dddddd">Chainmail</td>
+    <td bgcolor="#80c0ff">CR</td>
+    <td bgcolor="#ffc080">FR</td>
+    <td bgcolor="#d0d0d0">AR</td>
+    <td bgcolor="#80ffc0">PR</td>
+    <td bgcolor="#ffc0ff">ER</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#dddddd">Ringmail</td>
+    <td bgcolor="#ffc080">FR</td>
+    <td bgcolor="#d0d0d0">AR</td>
+    <td bgcolor="#80c0ff">CR</td>
+    <td bgcolor="#80ffc0">PR</td>
+    <td bgcolor="#ffc0ff">ER</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#dddddd">Dragon</td>
+    <td bgcolor="#ffc080">FR</td>
+    <td bgcolor="#ffc0ff">ER</td>
+    <td bgcolor="#80ffc0">PR</td>
+    <td bgcolor="#80c0ff">CR</td>
+    <td bgcolor="#d0d0d0">AR</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#dddddd">Samurai Plate</td>
+    <td bgcolor="#d0d0d0">AR</td>
+    <td bgcolor="#ffc080">FR</td>
+    <td bgcolor="#80c0ff">CR</td>
+    <td bgcolor="#ffc0ff">ER</td>
+    <td bgcolor="#80ffc0">PR</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#dddddd">Gargish Plate</td>
+    <td bgcolor="#d0d0d0">AR</td>
+    <td bgcolor="#ffc080">FR</td>
+    <td bgcolor="#80c0ff">CR</td>
+    <td bgcolor="#80ffc0">PR</td>
+    <td bgcolor="#ffc0ff">ER</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#ddaa99">Stud</td>
+    <td bgcolor="#d0d0d0">AR</td>
+    <td bgcolor="#ffc080">FR</td>
+    <td bgcolor="#80c0ff">CR</td>
+    <td bgcolor="#80ffc0">PR</td>
+    <td bgcolor="#ffc0ff">ER</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#ddaa99">Bone</td>
+    <td bgcolor="#80ffc0">PR</td>
+    <td bgcolor="#80c0ff">CR</td>
+    <td bgcolor="#ffc0ff">ER</td>
+    <td bgcolor="#d0d0d0">AR</td>
+    <td bgcolor="#ffc080">FR</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#ddaa99">Samurai Stud</td>
+    <td bgcolor="#d0d0d0">AR</td>
+    <td bgcolor="#ffc080">FR</td>
+    <td bgcolor="#80c0ff">CR</td>
+    <td bgcolor="#ffc0ff">ER</td>
+    <td bgcolor="#80ffc0">PR</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#ddaa99">Hide</td>
+    <td bgcolor="#ffc0ff">ER</td>
+    <td bgcolor="#80ffc0">PR</td>
+    <td bgcolor="#80c0ff">CR</td>
+    <td bgcolor="#ffc080">FR</td>
+    <td bgcolor="#d0d0d0">AR</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#ccffcc">Woodland</td>
+    <td bgcolor="#80ffc0">PR</td>
+    <td bgcolor="#80c0ff">CR</td>
+    <td bgcolor="#d0d0d0">AR</td>
+    <td bgcolor="#ffc0ff">ER</td>
+    <td bgcolor="#ffc080">FR</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#ccffcc">gargish Stone</td>
+    <td bgcolor="#80c0ff">CR</td>
+    <td bgcolor="#ffc0ff">ER</td>
+    <td bgcolor="#80ffc0">PR</td>
+    <td bgcolor="#d0d0d0">AR</td>
+    <td bgcolor="#ffc080">FR</td>
+  </tr>
+</table>
+
+
+<p>下の表は、強化材のランクごとに抵抗値の上限が変化した属性の種類をまとめたものです。
+<br>高いランクほど、上限が変わる抵抗の種類が多くなります。</p>
+NPC売りのringmail tunicにメッキを繰り返した結果(各ランク100回)
+
+<br>
+<table class="table02">
+  <tr>
+    <td bgcolor="#f0f0f0" rowspan="2" width="150">強化材ランク</td>
+    <td bgcolor="#f0f0f0" colspan="5" width="300">上限が変わる抵抗の種類</td>
+  </tr>
+  <tr>
+    <td bgcolor="#ddddff">1</td>
+    <td bgcolor="#ccffff">2</td>
+    <td bgcolor="#ccffcc">3</td>
+    <td bgcolor="#ffffcc">4</td>
+    <td bgcolor="#ffcc99">5</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#ddddff">Defense [良質]</td>
+    <td bgcolor="#ddddff">100</td>
+    <td bgcolor="#ccffff">0</td>
+    <td bgcolor="#ccffcc">0</td>
+    <td bgcolor="#ffffcc">0</td>
+    <td bgcolor="#ffcc99">0</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#eeeeff">Protection [高級]</td>
+    <td bgcolor="#ddddff">60</td>
+    <td bgcolor="#ccffff">40</td>
+    <td bgcolor="#ccffcc">0</td>
+    <td bgcolor="#ffffcc">0</td>
+    <td bgcolor="#ffcc99">0</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#ddddff">Hardening [優良]</td>
+    <td bgcolor="#ddddff">0</td>
+    <td bgcolor="#ccffff">67</td>
+    <td bgcolor="#ccffcc">33</td>
+    <td bgcolor="#ffffcc">0</td>
+    <td bgcolor="#ffcc99">0</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#eeeeff">Fortification [特等]</td>
+    <td bgcolor="#ddddff">0</td>
+    <td bgcolor="#ccffff">0</td>
+    <td bgcolor="#ccffcc">66</td>
+    <td bgcolor="#ffffcc">34</td>
+    <td bgcolor="#ffcc99">0</td>
+  </tr>
+
+  <tr>
+    <td bgcolor="#ddddff">Invulnerability [究極]</td>
+    <td bgcolor="#ddddff">0</td>
+    <td bgcolor="#ccffff">0</td>
+    <td bgcolor="#ccffcc">0</td>
+    <td bgcolor="#ffffcc">85</td>
+    <td bgcolor="#ffcc99">15</td>
+  </tr>
+
+</table>
+
+<h4>４．瞑想可プロパティの付加および除去</h4>
+
+2013/4/6
+<br>TC1シャードが更新され、もともと瞑想不可の防具に瞑想可を練成することができなくなりました。
+<br>その代わりに、Mage Guild Masterに25万gp払うことで、以下の変更ができるようになりました。
+
+<ul class="list02">
+  <li>「瞑想可」が付加された防具から「瞑想可」を除去　：　制限なし</li>
+  <li>瞑想不可の防具に「瞑想可」を付加　：　マジックプロパティ数が4以下の一般アイテムのみ。Artifact相当のアイテムは不可</li>
+</ul>
+
+<ul class="list04">
+ <li>NPC Mage guildmaster をクリックし、「瞑想可特性を変更する」を選択</li>
+ <li>特性を変更したい防具を選択すると、25万gpを要求してくるので、銀行にお金を用意しておく</li>
+ <li>先ほど選択した防具をNPCに渡すと、「瞑想可」が除去または付加される</li>
+</ul>
+
+<br><img src="remove_mage_armor_3.jpg" alt="" class="img01">
+ <img src="remove_mage_armor.gif" alt="" class="img01">
+ <img src="remove_mage_armor_2.gif" alt="" class="img01" width="210" height="154">
+
+
+<h3>５．スタミナリーチの変更</h3>
+
+従来は与えたダメージだけスタミナが回復しましたが、Publish81では、与えたダメージおよびキャラクターの最大スタミナに応じて
+回復量が変わるようになります。
+<br>簡単に調べてみた結果をグラフにすると、下図のようになりました。
+<br>与えたダメージが同じ場合、スタミナ100未満では回復量の差はなく、それ以上で少しずつ回復量が多くなります。
+<br>また、与えたダメージが大きいほど、回復量とダメージの比率が下がる傾向となっています。
+<br><img src="stamina_leech_pub81tc.gif" alt="" class="img01" width="441" height="300">
+
+
+<h3>６．装備品練成の変更</h3>
+
+両手武器および弓を練成するときの不安定度上限が下表のように変更になります。従来は片手武器と同じとなっていました。
+<br>なお、プロパティ数の上限は5で変わりません。
+<br>両手武器に片手使用可のプロパティを練成することができるようになります。
+<br>必要材料は弓系と同じく、レリックの破片×5、琥珀×10、均衡のエッセンス×10ですが、使用する不安定度は、弓系と異なり100％となっています。
+<br>また、改良で片手使用可を付けることはできないようです。
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="130">装備品の系統</td>
+    <td align="center" width="110">NPC販売品<br>戦利品</td>
+    <td align="center" width="110">PC製 標準品質</td>
+    <td align="center" width="110">PC製 高品質</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center"><img src="wep01.gif" alt="" class="img01"><br>片手武器</td>
+    <td align="center">450％</td>
+    <td align="center">450％</td>
+    <td align="center"><font color="#ff0000">500％</font></td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center"><img src="wep15.gif" alt="" class="img01"><br>両手武器</td>
+    <td align="center">550％</td>
+    <td align="center">550％</td>
+    <td align="center"><font color="#ff0000">600％</font></td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center"><img src="wep49.gif" alt="" class="img01"><br>弓系武器</td>
+    <td align="center">500％</td>
+    <td align="center">500％</td>
+    <td align="center"><font color="#ff0000">550％</font></td>
+  </tr>
+</table>
+
+<br class="cle">
+瞑想可は、不安定度0％となりますが、プロパティを1つ消費します。
+
+
+<h3>７．スタミナ回復ポーションの効果変更</h3>
+
+refresh potion[スタミナ回復薬]は、スタミナ最大値の25％分のスタミナを回復させる効果、
+<br>greater refreshment potion[スタミナ回復薬 - 強]は、スタミナ最大値の50％分のスタミナを回復させる効果
+<br>に変更されます。
+<br>ポーション強化およびAlchemyスキルによる影響はあり、最大でポーション強化+80％の効果（GRPで90％のスタミナ回復）となります。
+
+
+<h3>８．素材効果の変更</h3>
+
+インゴット、花崗岩、革および鱗の素材効果（防具および盾）が変更されます。
+<br>現仕様での効果は、<a href="enhance02.html">特殊素材の効果</a>にあるとおりです。
+<br>また、鱗で作成された防具は、ルニックツールによる改良が可能となっています。
+<br>4/6更新　黄色鱗も改良できることを確認。ただし、改良で幸運+は付加されない。
+
+<h4>インゴット</h4>
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="60">素材</td>
+  <td bgcolor="#c0c0a0" width="60">Dull</td>
+  <td bgcolor="#202020" width="60"><font color="#ffff00">Shadow</font></td>
+  <td bgcolor="#d0a040" width="60">Copper</td>
+  <td bgcolor="#604000" width="60"><font color="#ffff00">Bronze</font></td>
+  <td bgcolor="#ffe080" width="60">Gold</td>
+  <td bgcolor="#ffa0a0" width="60">Agapite</td>
+  <td bgcolor="#80ff80" width="60">Verite</td>
+  <td bgcolor="#80c0ff" width="60">Valorite</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">画像</td>
+  <td bgcolor="#f0f0f0"><img src="dull-ingot.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="sha-ingot.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="cop-ingot.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="bro-ingot.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="gold-ingot.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="aga-ingot.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="ver-ingot.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="val-ingot.gif" alt="" class="img01"></td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td bgcolor="#c0c0a0">65.0</td>
+  <td bgcolor="#202020"><font color="#ffff00">70.0</font></td>
+  <td bgcolor="#d0a040">75.0</td>
+  <td bgcolor="#604000"><font color="#ffff00">80.0</font></td>
+  <td bgcolor="#ffe080">85.0</td>
+  <td bgcolor="#ffa0a0">90.0</td>
+  <td bgcolor="#80ff80">95.0</td>
+  <td bgcolor="#80c0ff">99.0</td>
+ </tr>
+ <tr>
+  <td bgcolor="#004000" colspan="9"><font color="#c0ff00">抵抗値強化</font></td>
+ </tr>
+ <tr>
+  <td bgcolor="#d0d0d0">物理<br>抵抗</td>
+  <td bgcolor="#e0e0c0">+10％<br><s>+6%</s></td>
+  <td bgcolor="#606060"><font color="#c0ff00">+3％<br><s>+2%</s></font></td>
+  <td bgcolor="#e0c080">+2％<br><s>+1%</s></td>
+  <td bgcolor="#a06020"><font color="#c0ff00">+3％</font></td>
+  <td bgcolor="#fff0c0">+2％<br><s>+1%</s></td>
+  <td bgcolor="#ffc0c0">+2％</td>
+  <td bgcolor="#c0ffc0">+4％<br><s>+3%</s></td>
+  <td bgcolor="#c0e0ff">+5％<br><s>+4%</s></td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffc080">炎<br>抵抗</td>
+  <td bgcolor="#e0e0c0">&nbsp;</td>
+  <td bgcolor="#606060"><font color="#c0ff00">+2％<br><s>+1%</s></font></td>
+  <td bgcolor="#e0c080">+2％<br><s>+1%</s></td>
+  <td bgcolor="#a06020">&nbsp;</td>
+  <td bgcolor="#fff0c0">+2％<br><s>+1%</s></td>
+  <td bgcolor="#ffc0c0">+7％<br><s>+3%</s></td>
+  <td bgcolor="#c0ffc0">+4％<br><s>+3%</s></td>
+  <td bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+ <tr>
+  <td bgcolor="#80c0ff">冷気<br>抵抗</td>
+  <td bgcolor="#e0e0c0">&nbsp;</td>
+  <td bgcolor="#606060">&nbsp;</td>
+  <td bgcolor="#e0c080">&nbsp;</td>
+  <td bgcolor="#a06020"><font color="#c0ff00">+7％<br><s>+5%</s></font></td>
+  <td bgcolor="#fff0c0">+3％<br><s>+3%</s></td>
+  <td bgcolor="#ffc0c0">+2％</td>
+  <td bgcolor="#c0ffc0">+3％<br><s>+2%</s></td>
+  <td bgcolor="#c0e0ff">+4％<br><s>+3%</s></td>
+ </tr>
+ <tr>
+  <td bgcolor="#80ffc0">毒<br>抵抗</td>
+  <td bgcolor="#e0e0c0">&nbsp;</td>
+  <td bgcolor="#606060">&nbsp;</td>
+  <td bgcolor="#e0c080">+7％<br><s>+5%</s></td>
+  <td bgcolor="#a06020"><font color="#c0ff00">+2％<br><s>+1%</s></font></td>
+  <td bgcolor="#fff0c0">&nbsp;</td>
+  <td bgcolor="#ffc0c0">+2％</td>
+  <td bgcolor="#c0ffc0">+4％<br><s>+3%</s></td>
+  <td bgcolor="#c0e0ff">+4％<br><s>+3%</s></td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffc0ff">エネ<br>抵抗</td>
+  <td bgcolor="#e0e0c0">&nbsp;</td>
+  <td bgcolor="#606060"><font color="#c0ff00">+7％<br><s>+5%</s></font></td>
+  <td bgcolor="#e0c080">+2％</td>
+  <td bgcolor="#a06020"><font color="#c0ff00">+2％<br><s>+1%</s></font></td>
+  <td bgcolor="#fff0c0">+3％<br><s>+2%</s></td>
+  <td bgcolor="#ffc0c0">+2％</td>
+  <td bgcolor="#c0ffc0">+1％</td>
+  <td bgcolor="#c0e0ff">+4％<br><s>+3%</s></td>
+ </tr>
+ <tr>
+  <td bgcolor="#004000" colspan="9"><font color="#c0ff00">その他効果</font></td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">耐久値</td>
+  <td bgcolor="#e0e0c0">+50%</td>
+  <td bgcolor="#606060"><font color="#c0ff00">+100%</font></td>
+  <td bgcolor="#e0c080">&nbsp;</td>
+  <td bgcolor="#a06020">&nbsp;</td>
+  <td bgcolor="#fff0c0">&nbsp;</td>
+  <td bgcolor="#ffc0c0">&nbsp;</td>
+  <td bgcolor="#c0ffc0">&nbsp;</td>
+  <td bgcolor="#c0e0ff">+50%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">装備<br>条件</td>
+  <td bgcolor="#e0e0c0">-20%</td>
+  <td bgcolor="#606060">&nbsp;</td>
+  <td bgcolor="#e0c080">&nbsp;</td>
+  <td bgcolor="#a06020">&nbsp;</td>
+  <td bgcolor="#fff0c0">-30%</td>
+  <td bgcolor="#ffc0c0">&nbsp;</td>
+  <td bgcolor="#c0ffc0">&nbsp;</td>
+  <td bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">運</td>
+  <td bgcolor="#e0e0c0">&nbsp;</td>
+  <td bgcolor="#606060">&nbsp;</td>
+  <td bgcolor="#e0c080">&nbsp;</td>
+  <td bgcolor="#a06020">&nbsp;</td>
+  <td bgcolor="#fff0c0">+40</td>
+  <td bgcolor="#ffc0c0">&nbsp;</td>
+  <td bgcolor="#c0ffc0">&nbsp;</td>
+  <td bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+</table>
+
+<br class="cle">
+
+<h4>花崗岩</h4>
+<table class="table02">
+ <tr>
+  <td bgcolor="#f0f0f0" width="60">素材</td>
+  <td bgcolor="#c0c0a0" width="60">Dull</td>
+  <td bgcolor="#202020" width="60"><font color="#ffff00">Shadow</font></td>
+  <td bgcolor="#d0a040" width="60">Copper</td>
+  <td bgcolor="#604000" width="60"><font color="#ffff00">Bronze</font></td>
+  <td bgcolor="#ffe080" width="60">Gold</td>
+  <td bgcolor="#ffa0a0" width="60">Agapite</td>
+  <td bgcolor="#80ff80" width="60">Verite</td>
+  <td bgcolor="#80c0ff" width="60">Valorite</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">画像</td>
+  <td bgcolor="#f0f0f0"><img src="dul_granite.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="sha_granite.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="cop_granite.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="bro_granite.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="gol_granite.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="aga_granite.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="ver_granite.gif" alt="" class="img01"></td>
+  <td bgcolor="#f0f0f0"><img src="val_granite.gif" alt="" class="img01"></td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td bgcolor="#f0f0f0" colspan="8">大工100.0（石工を行うには、大工スキルが100必要）</td>
+ </tr>
+ <tr>
+  <td bgcolor="#004000" colspan="9"><font color="#c0ff00">抵抗値強化</font></td>
+ </tr>
+ <tr>
+  <td bgcolor="#d0d0d0">物理<br>抵抗</td>
+  <td bgcolor="#e0e0c0">+10％<br><s>+6%</s></td>
+  <td bgcolor="#606060"><font color="#c0ff00">+3％<br><s>+2%</s></font></td>
+  <td bgcolor="#e0c080">+2％<br><s>+1%</s></td>
+  <td bgcolor="#a06020"><font color="#c0ff00">+3％</font></td>
+  <td bgcolor="#fff0c0">+2％<br><s>+1%</s></td>
+  <td bgcolor="#ffc0c0">+2％</td>
+  <td bgcolor="#c0ffc0">+4％<br><s>+3%</s></td>
+  <td bgcolor="#c0e0ff">+5％<br><s>+4%</s></td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffc080">炎<br>抵抗</td>
+  <td bgcolor="#e0e0c0">&nbsp;</td>
+  <td bgcolor="#606060"><font color="#c0ff00">+2％<br><s>+1%</s></font></td>
+  <td bgcolor="#e0c080">+2％<br><s>+1%</s></td>
+  <td bgcolor="#a06020">&nbsp;</td>
+  <td bgcolor="#fff0c0">+2％<br><s>+1%</s></td>
+  <td bgcolor="#ffc0c0">+7％<br><s>+3%</s></td>
+  <td bgcolor="#c0ffc0">+4％<br><s>+3%</s></td>
+  <td bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+ <tr>
+  <td bgcolor="#80c0ff">冷気<br>抵抗</td>
+  <td bgcolor="#e0e0c0">&nbsp;</td>
+  <td bgcolor="#606060">&nbsp;</td>
+  <td bgcolor="#e0c080">&nbsp;</td>
+  <td bgcolor="#a06020"><font color="#c0ff00">+7％<br><s>+5%</s></font></td>
+  <td bgcolor="#fff0c0">+3％<br><s>+3%</s></td>
+  <td bgcolor="#ffc0c0">+2％</td>
+  <td bgcolor="#c0ffc0">+3％<br><s>+2%</s></td>
+  <td bgcolor="#c0e0ff">+4％<br><s>+3%</s></td>
+ </tr>
+ <tr>
+  <td bgcolor="#80ffc0">毒<br>抵抗</td>
+  <td bgcolor="#e0e0c0">&nbsp;</td>
+  <td bgcolor="#606060">&nbsp;</td>
+  <td bgcolor="#e0c080">+7％<br><s>+5%</s></td>
+  <td bgcolor="#a06020"><font color="#c0ff00">+2％<br><s>+1%</s></font></td>
+  <td bgcolor="#fff0c0">&nbsp;</td>
+  <td bgcolor="#ffc0c0">+2％</td>
+  <td bgcolor="#c0ffc0">+4％<br><s>+3%</s></td>
+  <td bgcolor="#c0e0ff">+4％<br><s>+3%</s></td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffc0ff">エネ<br>抵抗</td>
+  <td bgcolor="#e0e0c0">&nbsp;</td>
+  <td bgcolor="#606060"><font color="#c0ff00">+7％<br><s>+5%</s></font></td>
+  <td bgcolor="#e0c080">+2％</td>
+  <td bgcolor="#a06020"><font color="#c0ff00">+2％<br><s>+1%</s></font></td>
+  <td bgcolor="#fff0c0">+3％<br><s>+2%</s></td>
+  <td bgcolor="#ffc0c0">+2％</td>
+  <td bgcolor="#c0ffc0">+1％</td>
+  <td bgcolor="#c0e0ff">+4％<br><s>+3%</s></td>
+ </tr>
+ <tr>
+  <td bgcolor="#004000" colspan="9"><font color="#c0ff00">その他効果</font></td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">耐久値</td>
+  <td bgcolor="#e0e0c0">+50%</td>
+  <td bgcolor="#606060"><font color="#c0ff00">+100%</font></td>
+  <td bgcolor="#e0c080">&nbsp;</td>
+  <td bgcolor="#a06020">&nbsp;</td>
+  <td bgcolor="#fff0c0">&nbsp;</td>
+  <td bgcolor="#ffc0c0">&nbsp;</td>
+  <td bgcolor="#c0ffc0">&nbsp;</td>
+  <td bgcolor="#c0e0ff">+50%</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">装備<br>条件</td>
+  <td bgcolor="#e0e0c0">-20%</td>
+  <td bgcolor="#606060">&nbsp;</td>
+  <td bgcolor="#e0c080">&nbsp;</td>
+  <td bgcolor="#a06020">&nbsp;</td>
+  <td bgcolor="#fff0c0">-30%</td>
+  <td bgcolor="#ffc0c0">&nbsp;</td>
+  <td bgcolor="#c0ffc0">&nbsp;</td>
+  <td bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">運</td>
+  <td bgcolor="#e0e0c0">&nbsp;</td>
+  <td bgcolor="#606060">&nbsp;</td>
+  <td bgcolor="#e0c080">&nbsp;</td>
+  <td bgcolor="#a06020">&nbsp;</td>
+  <td bgcolor="#fff0c0">+40</td>
+  <td bgcolor="#ffc0c0">&nbsp;</td>
+  <td bgcolor="#c0ffc0">&nbsp;</td>
+  <td bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+</table>
+
+<br class="cle">
+
+<h4>革</h4>
+
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="60">&nbsp;</td>
+  <td align="center" bgcolor="#4080c0" width="75">Spined</td>
+  <td align="center" bgcolor="#ff6060" width="75">Horned</td>
+  <td align="center" bgcolor="#006000" width="75"><font color="#c0ff00">Barbed</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">画像</td>
+  <td align="center" bgcolor="#f0f0f0"><img src="spined.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="horned.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="barbed.gif" alt="" class="img01"></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td align="center" bgcolor="#6699ff">65.0</td>
+  <td align="center" bgcolor="#ff9999">80.0</td>
+  <td align="center" bgcolor="#66cc66">99.0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="4"><font color="#c0ff00">抵抗値強化</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0d0d0">物理<br>抵抗</td>
+  <td align="center" bgcolor="#6699ff">+9％<br><s>+5%</s></td>
+  <td align="center" bgcolor="#ff9999">+2％</td>
+  <td align="center" bgcolor="#66cc66">+3％<br><s>+2%</s></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc080">炎<br>抵抗</td>
+  <td align="center" bgcolor="#6699ff">&nbsp;</td>
+  <td align="center" bgcolor="#ff9999">+4％<br><s>+3%</s></td>
+  <td align="center" bgcolor="#66cc66">+2％<br><s>+1%</s></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">冷気<br>抵抗</td>
+  <td align="center" bgcolor="#6699ff">&nbsp;</td>
+  <td align="center" bgcolor="#ff9999">+3％<br><s>+2%</s></td>
+  <td align="center" bgcolor="#66cc66">+3％<br><s>+2%</s></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ffc0">毒<br>抵抗</td>
+  <td align="center" bgcolor="#6699ff">&nbsp;</td>
+  <td align="center" bgcolor="#ff9999">+3％<br><s>+2%</s></td>
+  <td align="center" bgcolor="#66cc66">+3％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc0ff">エネ<br>抵抗</td>
+  <td align="center" bgcolor="#6699ff">&nbsp;</td>
+  <td align="center" bgcolor="#ff9999">+3％<br><s>+2%</s></td>
+  <td align="center" bgcolor="#66cc66">+5％<br><s>+4%</s></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="4"><font color="#c0ff00">その他効果</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">運</td>
+  <td align="center" bgcolor="#6699ff">+40</td>
+  <td align="center" bgcolor="#ff9999">&nbsp;</td>
+  <td align="center" bgcolor="#66cc66">&nbsp;</td>
+ </tr>
+</table>
+
+<br class="cle">
+
+<h4>鱗</h4>
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="60">素材</td>
+  <td align="center" bgcolor="#ff6060" width="70">Red</td>
+  <td align="center" bgcolor="#ffff60" width="70">Yellow</td>
+  <td align="center" bgcolor="#60ff60" width="70">Green</td>
+  <td align="center" bgcolor="#aaaaff" width="70">Blue</td>
+  <td align="center" bgcolor="#ffffff" width="70">White</td>
+  <td align="center" bgcolor="#606060" width="70"><font color="#c0ff00">Black</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">画像</td>
+  <td align="center" bgcolor="#f0f0f0"><img src="redscale.gif"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="yelscale.gif"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="grescale.gif"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="bluscale.gif"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="whiscale.gif"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="blascale.gif"></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td align="center" bgcolor="#f0f0f0" colspan="6">なし</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="7"><font color="#c0ff00">抵抗値強化</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0d0d0">物理<br>抵抗</td>
+  <td align="center" bgcolor="#ff6060">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#ffff60">-3％</td>
+  <td align="center" bgcolor="#60ff60">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#aaaaff">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#ffffff">-3％</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+11％<br><s>+10%</s></font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc080">炎<br>抵抗</td>
+  <td align="center" bgcolor="#ff6060">+11％<br><s>+10%</s></td>
+  <td align="center" bgcolor="#ffff60">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#60ff60">-3％</td>
+  <td align="center" bgcolor="#aaaaff">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#ffffff">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+1％<br><s>+0%</s></font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">冷気<br>抵抗</td>
+  <td align="center" bgcolor="#ff6060">-3％</td>
+  <td align="center" bgcolor="#ffff60">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#60ff60">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#aaaaff">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#ffffff">+11％<br><s>+10%</s></td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+1％<br><s>+0%</s></font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ffc0">毒<br>抵抗</td>
+  <td align="center" bgcolor="#ff6060">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#ffff60">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#60ff60">+11％<br><s>+10%</s></td>
+  <td align="center" bgcolor="#aaaaff">-3％</td>
+  <td align="center" bgcolor="#ffffff">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+1％<br><s>+0%</s></font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc0ff">エネ<br>抵抗</td>
+  <td align="center" bgcolor="#ff6060">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#ffff60">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#60ff60">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#aaaaff">+11％<br><s>+10%</s></td>
+  <td align="center" bgcolor="#ffffff">+1％<br><s>+0%</s></td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">-3％</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="7"><font color="#c0ff00">その他効果</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">運</td>
+  <td align="center" bgcolor="#ff6060">&nbsp;</td>
+  <td align="center" bgcolor="#ffff60">+40<br><s>+20</s></td>
+  <td align="center" bgcolor="#60ff60">&nbsp;</td>
+  <td align="center" bgcolor="#aaaaff">&nbsp;</td>
+  <td align="center" bgcolor="#ffffff">&nbsp;</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">&nbsp;</font></td>
+ </tr>
+</table>
+
+<h3>９．その他の変更（生産関連）</h3>
+
+<ul class="list02">
+  <li>leaf gorget[リーフネックガード]のエネルギー抵抗が他のパーツと同じように4％となります（現在は2％）</li>
+  <li>鍛冶スキルで作成したアイテムをインゴットに戻すとき、採掘スキルまたは鍛冶スキルどちらか高いほう（上限105）が適用されます。
+<br>ただし、Dullcopperなどの特殊素材に戻すときは、それらを扱うだけのスキルが必要です。</li>
+</ul>
+
+
+<h3>ステータスウィンドウ</h3>
+
+client_tc.exeで起動したときのステータスウィンドウです。
+<br>ハードメッキを施した防具を6パーツ装備していますが、抵抗上限は75(ElfのERは80)まで上がり、回避は-5（45-50）まで下がります。
+<br>シャインメッキを施した防具を装備した場合、抵抗上限は65(ElfのERは70)まで下がり、回避は95(45+50)まで上がります。
+<br><img src="pub81tc_statuswindow.jpg" alt="" class="img01">
+
+
+</body>
+</html>
+
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

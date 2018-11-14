@@ -1,0 +1,710 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>武器強化計算（大工・弓作成）</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898903</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<script language="javascript">
+<!--
+//Arm Damage
+var dam;
+dam=new Array(7);
+dam[0] = 0;    //None
+dam[1] = 5;    //Oak
+dam[2] = 0;    //Ash
+dam[3] = 10;    //Yew
+dam[4] = 0;    //Heart
+dam[5] = 0;    //Blood
+dam[6] = 12;    //Frost
+//Arm Damage         
+
+//arm hci
+var hci;
+hci=new Array(7);
+hci[0] = 0;    //None
+hci[1] = 0;    //Oak
+hci[2] = 0;    //Ash
+hci[3] = 5;    //Yew
+hci[4] = 0;    //Heart
+hci[5] = 0;    //Blood
+hci[6] = 0;    //Frost
+//arm hci         
+
+//arm spd
+var spd;
+spd=new Array(7);
+spd[0] = 0;    //None
+spd[1] = 0;    //Oak
+spd[2] = 10;    //Ash
+spd[3] = 0;    //Yew
+spd[4] = 0;    //Heart
+spd[5] = 0;    //Blood
+spd[6] = 0;    //Frost
+//arm spd
+
+//arm lifeleech
+var lle;
+lle=new Array(7);
+lle[0] = 0;    //None
+lle[1] = 0;    //Oak
+lle[2] = 0;    //Ash
+lle[3] = 0;    //Yew
+lle[4] = 0;    //Heart
+lle[5] = 8;    //Blood
+lle[6] = 0;    //Frost
+//arm lifeleech
+
+//arm cra
+var cra;
+cra=new Array(7);
+cra[0] = 0;    //None
+cra[1] = 0;    //Oak
+cra[2] = 0;    //Ash
+cra[3] = 0;    //Yew
+cra[4] = 0;    //Heart
+cra[5] = 0;    //Blood
+cra[6] = 40;    //Frost
+//arm cra
+
+//arm luck
+var mlr;
+mlr=new Array(7);
+mlr[0] = 0;    //None
+mlr[1] = 40;   //Oak
+mlr[2] = 0;    //Ash
+mlr[3] = 0;    //Yew
+mlr[4] = 0;    //Heart
+mlr[5] = 0;    //Blood
+mlr[6] = 0;    //Frost
+//arm luck
+
+//arm require
+var mrr;
+mrr=new Array(7);
+mrr[0] = 0;    //None
+mrr[1] = 0;    //Oak
+mrr[2] = 20;   //Ash
+mrr[3] = 0;    //Yew
+mrr[4] = 0;    //Heart
+mrr[5] = 0;    //Blood
+mrr[6] = 0;    //Frost
+//arm require
+
+//arm dur
+var mdr;
+mdr=new Array(7);
+mdr[0] = 0;    //None
+mdr[1] = 50;   //Oak
+mdr[2] = 0;    //Ash
+mdr[3] = 0;    //Yew
+mdr[4] = 0;    //Heart
+mdr[5] = 0;    //Blood
+mdr[6] = 0;    //Frost
+//arm dur
+
+//arm hpr
+var mhr;
+mhr=new Array(7);
+mhr[0] = 0;     //None
+mhr[1] = 0;     //Oak
+mhr[2] = 0;     //Ash
+mhr[3] = 0;     //Yew
+mhr[4] = 0;     //Heart
+mhr[5] = 2;     //Blood
+mhr[6] = 0;     //Frost
+//arm hpre
+
+//arm other
+var mor;
+mor=new Array(7);
+mor[0] = 0;     //None
+mor[1] = 0;     //Oak
+mor[2] = 1;     //Ash
+mor[3] = 0;     //Yew
+mor[4] = 1;     //Heart
+mor[5] = 0;     //Blood
+mor[6] = 0;     //Frost
+//arm mor
+
+
+
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.sozai.value = 0;
+  form.skill.value = 0;
+  form.skill2.value = 0;
+  form.dam.value = 0;
+  form.hci.value = 0;
+  form.spd.value = 0;
+  form.lle.value = 0;
+  form.cra.value = 0;
+  form.luck.value = 0;
+  form.dur.value = 0;
+
+  form.dam3.value = 0;
+  form.hci3.value = 0;
+  form.spd3.value = 0;
+  form.lle3.value = 0;
+  form.cra3.value = 0;
+  form.luck3.value = 0;
+  form.dur3.value = 0;
+
+  form.suc.value = 0;
+  form.fai.value = 0;
+  form.des.value = 0;
+  form.rsuc.value = 0;
+  return true;
+}
+
+//計算
+
+function keisan1(form)
+{
+var form = document.form_keisan;
+  soz1 = form.sozai.options[form.sozai.selectedIndex].value;
+  skill = form.skill.options[form.skill.selectedIndex].value;
+  skill2 = form.skill2.options[form.skill2.selectedIndex].value;
+  hosei = Math.floor(skill * 1.0 + skill2 * 1.0);
+  dam0 = dam[soz1];
+  hci0 = hci[soz1];
+  spd0 = spd[soz1];
+  lle0 = lle[soz1];
+  cra0 = cra[soz1];
+  mlr1 = mlr[soz1];
+  mhr1 = mhr[soz1];
+  mrr1 = mrr[soz1];
+  mdr1 = mdr[soz1];
+  mor1 = mor[soz1];
+
+  dam1 = form.dam.value;
+  hci1 = form.hci.value;
+  spd1 = form.spd.options[form.spd.selectedIndex].value;
+  lle1 = form.lle.value;
+  cra1 = form.cra.options[form.cra.selectedIndex].value;
+  luk1 = form.luck.value;
+  dur1 = form.dur.value;
+
+  luck2 = luk1 * 1 + mlr1;
+   if(luk1<0||luk1>120){
+  luck2 = 0;
+}
+  form.luck3.value = luck2;
+
+
+  dur2 = Math.floor(dur1 * (1 + mdr1 / 100));
+   if(dur1<=0||dur1>255){
+  dur2 = 0;
+}
+  form.dur3.value = dur2;
+
+
+     dam2 = dam0 * 1 + dam1 * 1;
+     hci2 = hci0 * 1 + hci1 * 1;
+     spd2 = spd0 * 1 + spd1 * 1;
+
+if(lle1==0){
+     lle2 = lle0 * 1;
+    }
+
+else{
+     lle2 = lle1 * 1;
+    }
+
+     cra2 = Math.min(100, cra1 * 1 + cra0 * 1);
+
+     form.dam3.value = dam2;
+     form.hci3.value = hci2;
+     form.spd3.value = spd2;
+     form.lle3.value = lle2;
+     form.cra3.value = cra2;
+
+
+     if(dam0>0){
+
+          su0 = hosei / 100 + 0.80 - dam1 / 500;
+
+       }
+
+     else{
+
+          su0 = 1.0;
+
+       }
+
+
+     if(hci0>0){
+
+          su1 = hosei / 100 + 0.80 - hci1 / 150;
+
+       }
+
+     else{
+
+          su1 = 1.0;
+
+       }
+
+     if(spd0>0){
+
+         su2 = hosei / 100 + 0.80 - spd1 / 200;
+
+       }
+
+     else{
+
+          su2 = 1.0;
+
+       }
+
+
+     if(lle0>0){
+
+         su3 = hosei / 100 + 0.80 - lle1  / 200;
+
+       }
+
+     else{
+
+          su3 = 1.0;
+
+       }
+
+     if(cra0>0){
+
+         su4 = hosei / 100 + 0.80 - cra1 / 400;
+
+       }
+
+     else{
+
+          su4 = 1.0;
+
+       }
+
+     if(mlr1>0){
+
+         su5 = hosei / 100 + 0.70 - Math.floor(luk1 / 2) / 100;
+
+       }
+
+     else{
+
+          su5 = 1.0;
+
+       }
+
+     if(mrr1>0){
+
+         su6 = hosei / 100 + 0.80;
+
+       }
+
+     else{
+
+          su6 = 1.0;
+
+       }
+
+     if(mdr1>0){
+
+         su7 = hosei / 100 + 0.80 - Math.floor(dur1 / 40) / 100;
+
+       }
+
+     else{
+
+          su7 = 1.0;
+
+       }
+
+
+     if(mhr1>0){
+
+         su8 = hosei / 100 + 0.80;
+
+       }
+
+     else{
+
+          su8 = 1.0;
+
+       }
+
+
+     if(mor1>0){
+
+         su9 = hosei / 100 + 0.80;
+
+       }
+
+     else{
+
+          su9 = 1.0;
+
+       }
+
+
+
+
+
+     kkk = new Array(10);
+     kkk[0] = su0;
+     kkk[1] = su1;
+     kkk[2] = su2;
+     kkk[3] = su3;
+     kkk[4] = su4;
+     kkk[5] = su5;
+     kkk[6] = su6;
+     kkk[7] = su7;
+     kkk[8] = su8;
+     kkk[9] = su9;
+
+	for (i=0; i<10; i++)
+	{
+		for (j=0; j<10-i; j++)
+		{
+			if (kkk[j] > kkk[j+1])
+			{
+				n = kkk[j];
+				kkk[j]  = kkk[j+1];
+				kkk[j+1] = n;
+			}
+		}
+	}
+
+     suc1 = kkk[0];
+     suc2 = kkk[1];
+     suc3 = kkk[2];
+     suc4 = kkk[3];
+     suc5 = kkk[4];
+     suc6 = kkk[5];
+     suc7 = kkk[6];
+     suc8 = kkk[7];
+     suc9 = kkk[8];
+     suc10 = kkk[9];
+
+     if(suc1==1.0){
+     des1 = 0.0;
+     }
+     else{
+     des1 = 0.9 - suc1;
+     }
+
+     if(suc2==1.0){
+     des2 = 0.0;
+     }
+     else{
+     des2 = 0.9 - suc2;
+     }
+
+     if(suc3==1.0){
+     des3 = 0.0;
+     }
+     else{
+     des3 = 0.9 - suc3;
+     }
+
+     if(suc4==1.0){
+     des4 = 0.0;
+     }
+     else{
+     des4 = 0.9 - suc4;
+     }
+
+     if(suc5==1.0){
+     des5 = 0.0;
+     }
+     else{
+     des5 = 0.9 - suc5;
+     }
+
+     if(suc6==1.0){
+     des6 = 0.0;
+     }
+     else{
+     des6 = 0.9 - suc6;
+     }
+
+     if(suc7==1.0){
+     des7 = 0.0;
+     }
+     else{
+     des7 = 0.9 - suc7;
+     }
+
+     if(suc8==1.0){
+     des8 = 0.0;
+     }
+     else{
+     des8 = 0.9 - suc8;
+     }
+
+     if(suc9==1.0){
+     des9 = 0.0;
+     }
+     else{
+     des9 = 0.9 - suc9;
+     }
+
+     if(suc10==1.0){
+     des10 = 0.0;
+     }
+     else{
+     des10 = 0.9 - suc10;
+     }
+
+    suc0 = Math.floor(100 * suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * suc7 * suc8 * suc9 * suc10);
+
+    desa = des1;
+    desb = suc1 * des2;
+    desc = suc1 * suc2 * des3;
+    desd = suc1 * suc2 * suc3 * des4;
+    dese = suc1 * suc2 * suc3 * suc4 * des5;
+    desf = suc1 * suc2 * suc3 * suc4 * suc5 * des6;
+    desg = suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * des7;
+    desh = suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * suc7 * des8;
+    desi = suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * suc7 * suc8 * des9;
+    desj = suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * suc7 * suc8 * suc9 * des10;
+
+    des0 = Math.ceil(100 * (desa + desb + desc + desd + dese + desf + desg + desh + desi + desj));
+
+    fai0 = 100 - suc0 - des0;
+    rsuc0 = Math.round(100 * suc0 / (suc0 + des0));
+    form.suc.value = suc0;
+    form.des.value = des0;
+    form.fai.value = fai0;
+    form.rsuc.value = rsuc0;
+  return true;
+}
+
+
+//-->
+</script>
+
+<h2>武器強化計算（木製武器）</h2>
+<hr>
+
+ここでは、自分の所持している武器を強化することで武器の特性値がどのように変わるか、
+さらに、強化のおおよその成功率が計算できます。
+
+<form name="form_keisan">
+
+
+<h3>使用素材とスキル</h3>
+
+<ul class="list03">
+
+<li>大工／弓作成スキル　：　<select name="skill" size="1">
+<option value="0">100.0未満
+<option value="1">100.0
+</select></li>
+
+<li>練成スキル　：　<select name="skill2" size="1">
+<option value="0">100未満またはガーゴイル以外
+<option value="1">100.0～109.9
+<option value="2">110.0～119.9
+<option value="3">120.0
+</select></li>
+
+
+<li>特殊素材選択　：　<select name="sozai" size="1">
+<option value="0">-----素材[木材]------
+<option value="1">Oak [スキル65～]
+<option value="2">Ash [スキル75～]
+<option value="3">Yew [スキル85～]
+<option value="4">Heartwood [スキル95～]
+<option value="5">Bloodwood [スキル95～]
+<option value="6">Frostwood [スキル95～]
+</select></li>
+
+<li><input type="button" value="強化成功率計算" onclick="keisan1(form)"></li>
+
+</ul>
+<h3>強化前後の特性値 　 <INPUT TYPE="RESET" NAME="Reset" VALUE="Reset"></h3>
+
+もともと武器に付加されないプロパティ（装備条件、HP回復、重量）は省略します。ライフリーチは武器の基本速度に依存しない1～25の強度で入力してください。
+
+<table class="table02">
+ <tr>
+    <td align="center" bgcolor="#f0f0f0" width="75">&nbsp;</td>
+    <td align="center" bgcolor="#a0eecc" width="65">武器<br>ダメージ</td>
+    <td align="center" bgcolor="#a0eecc" width="65">命中</td>
+    <td align="center" bgcolor="#a0eecc" width="65">速度</td>
+    <td align="center" bgcolor="#ffffd0" width="65">幸運</td>
+    <td align="center" bgcolor="#ffcc99" width="65">ライフ<br>リーチ<br>[1～25]</td>
+    <td align="center" bgcolor="#80c0ff" width="65">冷気<br>属性</td>
+    <td align="center" bgcolor="#ffffd0" width="65">耐久</td>
+ </tr>
+
+ <tr>
+    <td align="center" bgcolor="#f0f0f0">強化前</td>
+    <td align="center" bgcolor="#a0eecc"><INPUT TYPE="text" NAME="dam" SIZE="2" value="0">%</td>
+    <td align="center" bgcolor="#a0eecc"><INPUT TYPE="text" NAME="hci" SIZE="2" value="0">%</td>
+    <td align="center" bgcolor="#a0eecc"><select name="spd" SIZE="1">
+<option value="0">0%
+<option value="5">5%
+<option value="10">10%
+<option value="15">15%
+<option value="20">20%
+<option value="25">25%
+<option value="30">30%
+<option value="35">35%
+    </select></td>
+    <td align="center" bgcolor="#ffffd0"><INPUT TYPE="text" NAME="luck" SIZE="3" value="0"></td>
+    <td align="center" bgcolor="#ffcc99"><INPUT TYPE="text" NAME="lle" SIZE="3" value="0"></td>
+    <td align="center" bgcolor="#80c0ff"><select name="cra" SIZE="1">
+<option value="0">0
+<option value="10">10
+<option value="20">20
+<option value="30">30
+<option value="40">40
+<option value="50">50
+<option value="60">60
+<option value="70">70
+<option value="80">80
+<option value="90">90
+<option value="100">100
+    </select></td>
+    <td align="center" bgcolor="#ffffd0"><INPUT TYPE="text" NAME="dur" SIZE="3" value="0"></td>
+ </tr>
+
+ <tr>
+    <td align="center" bgcolor="#f0f0f0">強化後</td>
+    <td align="center" bgcolor="#a0eecc"><input readonly type="text" name="dam3" size="2" value="0">%</td>
+    <td align="center" bgcolor="#a0eecc"><input readonly type="text" name="hci3" size="2" value="0">%</td>
+    <td align="center" bgcolor="#a0eecc"><input readonly type="text" name="spd3" size="2" value="0">%</td>
+    <td align="center" bgcolor="#ffffd0"><input readonly type="text" name="luck3" size="3" value="0"></td>
+    <td align="center" bgcolor="#ffcc99"><input readonly type="text" name="lle3" size="2" value="0"></td>
+    <td align="center" bgcolor="#80c0ff"><input readonly type="text" name="cra3" size="3" value="0"></td>
+    <td align="center" bgcolor="#ffffd0"><input readonly type="text" name="dur3" size="3" value="0"></td>
+ </tr>
+
+</table>
+
+<h3>強化成功率</h3>
+
+ <table class="table02">
+  <tr>
+   <td align="center" bgcolor="#80c0ff" width="100">成功率</td>
+   <td align="center" bgcolor="#ffff80" width="100">失敗率</td>
+   <td align="center" bgcolor="#ffc080" width="100">破壊率</td>
+   <td align="center" bgcolor="#f0f0f0" width="100">実成功率</td>
+  </tr>
+  <tr>
+   <td align="center" bgcolor="#a0e0ff"><input readonly type="text" class="readtext" name="suc" size="3" value="0">％</td>
+   <td align="center" bgcolor="#ffffc0"><input readonly type="text" class="readtext" name="fai" size="3" value="0">％</td>
+   <td align="center" bgcolor="#ffe0a0"><input readonly type="text" class="readtext" name="des" size="3" value="0">％</td>
+   <td align="center" bgcolor="#ffffff"><input readonly type="text" class="readtext" name="rsuc" size="3" value="0">％</td>
+  </tr>
+ </table>
+
+</form>
+
+<h3>注意事項</h3>
+<ul class="list02">
+<li>未強化武器の特性値(武器ダメージ、命中、速度など)を選択または入力してください。</li>
+<li>使用素材は、Oak, Ash, Yew, Heartwood, Bloodwood, Frostwoodの計6種類から選択します。</li>
+<li>大工または弓工スキルが100の場合、プロパティごとの強化成功率が1％加算されます。</li>
+<li>ガーゴイルで練成スキルが100.0以上の場合、プロパティごとの強化成功率が(1＋超過分/100)％加算されます（スキル120で＋3％）。</li>
+<li>「強化成功率計算」ボタンを押すと、強化後の特性値および強化成功率が計算されます。</li>
+<li>ライフリーチは、強化前にマジックプロパティとして付加された武器に加算されません
+<br>（ライフリーチ：N％ が付加されたものをBloodwoodで強化しても、ライフリーチは加算されません）</li>
+<li>冷気属性攻撃は、他の属性が全て「物理属性」であるものとして強化後の数値を出しています。
+<li>新しく付加されるようになったプロパティの成功率は、暫定的に下のようにしております。
+  <ul class="list03">
+     <li>武器ダメージ・・・成功率＝[80－(強化前の武器ダメージ)/ 5]％、破壊率＝[10＋(強化前の武器ダメージ)/ 5]％</li>
+     <li>命中・・・成功率＝[80－（強化前の命中）/1.5]　％、破壊率＝[10＋（強化前の命中）/1.5]％</li>
+     <li>速度・・・成功率＝[80－（強化前の速度）/2]　％、破壊率＝[10＋（強化前の速度）/2]％</li>
+     <li>ライフリーチ・・・成功率＝[80－（強化前の強度）/2]　％、破壊率＝[10＋（強化前の強度）/2]％</li>
+     <li>重量・・・成功率＝80％固定、破壊率＝10％固定</li>
+     <li>Heartwoodのランダム付加・・・成功率＝80％固定、破壊率＝10％固定</li>
+  </ul>
+</ul>
+
+<h3>参考　：　素材による特性値の変化量</h3>
+
+
+<table class="table02">
+
+ <tr>
+    <td align="center" bgcolor="#f0f0f0" width="80"><font size="2">素材</font></td>
+    <td align="center" bgcolor="#f0f0f0" width="60"><font size="2">必要<br>スキル</font></td>
+    <td align="center" bgcolor="#f0f0f0" width="90"><font size="2">攻撃属性</font></td>
+    <td align="center" bgcolor="#f0f0f0" width="90"><font size="2">武器<br>ダメージ</font></td>
+    <td align="center" bgcolor="#f0f0f0" width="240"><font size="2">その他</font></td>
+ </tr>
+
+   <tr>
+    <td align="center" bgcolor="#d0c070"><img src="oak-board.gif" alt="oak" class="img01"><br>oak</td>
+    <td align="center" bgcolor="#d0c070"><font size="2">65.0</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">&nbsp;</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">+5%</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">耐久値+50%, 幸運+40</font></td>
+   </tr>
+
+   <tr>
+    <td align="center" bgcolor="#d8d8b0"><img src="ash-board.gif" alt="ash" class="img01"><br>ash</td>
+    <td align="center" bgcolor="#d8d8b0"><font size="2">75.0</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">&nbsp;</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">&nbsp;</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">速度+10%, 装備条件-20%, 重量-25%</font></td>
+   </tr>
+
+   <tr>
+    <td align="center" bgcolor="#e0cc40"><img src="yew-board.gif" alt="yew" class="img01"><br>yew</td>
+    <td align="center" bgcolor="#e0cc40"><font size="2">85.0</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">&nbsp;</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">+10%</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">命中+5%</font></td>
+   </tr>
+
+   <tr>
+    <td align="center" bgcolor="#70d070"><img src="heart-board.gif" alt="heartwood" class="img01"><br>heartwood</td>
+    <td align="center" bgcolor="#70d070"><font size="2">95.0</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">&nbsp;</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">&nbsp;</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">下記参照</font></td>
+   </tr>
+
+   <tr>
+    <td align="center" bgcolor="#c09090"><img src="blood-board.gif" alt="bloodwood" class="img01"><br>bloodwood</td>
+    <td align="center" bgcolor="#c09090"><font size="2">95.0</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">&nbsp;</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">&nbsp;</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">HP回復2, ライフリーチ強度8</font></td>
+   </tr>
+
+   <tr>
+    <td align="center" bgcolor="#c0e0e0"><img src="frost-board.gif" alt="frostwood" class="img01"><br>frostwood</td>
+    <td align="center" bgcolor="#c0e0e0"><font size="2">95.0</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">冷気+40%</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">+12%</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">&nbsp;</font></td>
+   </tr>
+
+ </table>
+
+
+※<font color="#ff0000">Bloodwoodに付加されるライフリーチはマジック品で付加されている強度が優先されます。</font>
+<br>そのため、ライフリーチが付加されている装備品を強化してもライフリーチの強度は増加しません。
+ 
+<ul class="list01">
+Heartwoodで付加されるプロパティと強度（以下のうち1つが付加されます）
+     <li>幸運 40</li>
+     <li>耐久値＋50％</li>
+     <li>速度＋10％</li>
+     <li>装備条件－20％</li>
+     <li>重量－25％</li>
+     <li>命中＋5％</li>
+     <li>ライフリーチ 強度5</li>
+</ul>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

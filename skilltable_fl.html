@@ -1,0 +1,575 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>弓工作成難易度表</TITLE>
+</HEAD>
+<body><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898551</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<h2>弓工作成難易度表</h2>
+<HR>
+<script language="javascript">
+<!--
+//Soubi
+var soubi;
+soubi=new Array(26);
+soubi[0] = 5015;
+soubi[1] = 5015;
+soubi[2] = 5015;
+soubi[3] = 50005015;
+soubi[4] = 30005015;
+soubi[5] = 60005015;
+soubi[6] = 80005015;
+soubi[7] = 70005015;
+soubi[8] = 90005015;
+soubi[9] = 90005015;
+soubi[10] = 95005015;
+soubi[11] = 85005015;
+soubi[12] = 80000024;
+soubi[13] = 80000024;
+soubi[14] = 80000024;
+soubi[15] = 80000024;
+soubi[16] = 80000024;
+soubi[17] = 75000024;
+soubi[18] = 75000024;
+soubi[19] = 75000024;
+soubi[20] = 75000024;
+soubi[21] = 75000024;
+soubi[22] = 75000024;
+soubi[23] = 75000024;
+soubi[24] = 75000024;
+soubi[25] = 90005024;
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.skill.value = 0.0;
+  exb1 = 0.0;
+  crb1 = 0.0;
+
+return true;
+}
+
+//計算
+
+function keisan1(form)
+{
+var form = document.form_keisan;
+  skill = form.skill.value;
+  exb1 = form.exb1.options[form.exb1.selectedIndex].value;
+  crb1 = form.crb1.options[form.crb1.selectedIndex].value;
+
+  pmt1 = new Array(26);
+
+    for (i=0; i<26; i++)
+    {
+    pmt1[i] = Math.floor(soubi[i]/100000) / 10.0;
+    }
+
+  pmt2 = new Array(26);
+
+    for (i=0; i<26; i++)
+    {
+    pmt2[i] = Math.floor((soubi[i] % 100000) / 100.0);
+    }
+
+  pmt3 = new Array(26);
+
+    for (i=0; i<26; i++)
+    {
+    pmt3[i] = (soubi[i] % 100) / 12.0;
+    }
+
+
+  rate = new Array(52);
+
+    for (i=0; i<26; i++)
+    {
+    rate[2*i] = Math.floor(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] + 1.0 * crb1)) * 10 ) / 10;
+    rate[2*i+1] = Math.floor(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] - 60.0 + 1.0 * exb1
+                + Math.min(15.0 , Math.max(0.0 , (skill - 95.0) * 3.0)))) * 10 ) / 10;
+    if(skill - pmt1[i]<0)
+    {
+    rate[2*i] = 0.0;
+    rate[2*i+1] = 0.0;
+    }
+    }
+
+    form.rate00.value = rate[0];
+    form.rate02.value = rate[2];
+    form.rate04.value = rate[4];
+    form.rate06.value = rate[6];
+    form.rate07.value = rate[7];
+    form.rate08.value = rate[8];
+    form.rate09.value = rate[9];
+    form.rate10.value = rate[10];
+    form.rate11.value = rate[11];
+    form.rate12.value = rate[12];
+    form.rate13.value = rate[13];
+    form.rate14.value = rate[14];
+    form.rate15.value = rate[15];
+    form.rate16.value = rate[16];
+    form.rate17.value = rate[17];
+    form.rate18.value = rate[18];
+    form.rate19.value = rate[19];
+    form.rate20.value = rate[20];
+    form.rate21.value = rate[21];
+    form.rate22.value = rate[22];
+    form.rate23.value = rate[23];
+    form.rate24.value = rate[24];
+    form.rate26.value = rate[26];
+    form.rate28.value = rate[28];
+    form.rate30.value = rate[30];
+    form.rate32.value = rate[32];
+    form.rate34.value = rate[34];
+    form.rate35.value = rate[35];
+    form.rate36.value = rate[36];
+    form.rate37.value = rate[37];
+    form.rate38.value = rate[38];
+    form.rate39.value = rate[39];
+    form.rate40.value = rate[40];
+    form.rate41.value = rate[41];
+    form.rate42.value = rate[42];
+    form.rate43.value = rate[43];
+    form.rate44.value = rate[44];
+    form.rate45.value = rate[45];
+    form.rate46.value = rate[46];
+    form.rate47.value = rate[47];
+    form.rate48.value = rate[48];
+    form.rate49.value = rate[49];
+    form.rate50.value = rate[50];
+    form.sk0.value = skill;
+    form.sk1.value = skill;
+    form.sk2.value = skill;
+    form.sk3.value = skill;
+return true;
+}
+//-->
+</script>
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+
+ {//functionの宣言。受けとったIDは変数targetIDに格納。
+  if( document.getElementById(targetID))
+   { //指定のIDのついたオブジェクトがあったら処理する
+     //指定されたIDのstyle.displayがnoneなら
+    for (i=1; i<5; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {//blockに変更する
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+
+<form name="form_keisan">
+<p>弓工スキルで作ることができる装備品の作成難易度表です。下のカテゴリ画像をクリックすると、そのカテゴリが表示／非表示されます。</p>
+<p>スキル　：　<INPUT TYPE="text" NAME="skill" SIZE="4" value="100">（手入力）
+<br>成功率補正のタリスマンを装備している場合は、こちらも選択してください。
+<br>
+弓工　：　高品質成功率ボーナス
+<select name="exb1" size="1">
+<option value="0">----
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+</select>
+％、　
+成功率ボーナス
+<select name="crb1" size="1">
+<option value="0">----
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+</select>
+％
+</p>
+<input type="button" value="高品質および作成成功率計算" onclick="keisan1(form)">
+
+
+<table class="table03">
+  <tr>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_1');return false;"><img src="shaft.gif" alt="材料" class="img01"></a><br>材料</td>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_2');return false;"><img src="arrow.gif" alt="矢" class="img01"></a><br>矢</td>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_3');return false;"><img src="wep49.gif" alt="弓、一般" class="img01"></a><br>弓一般</td>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_4');return false;"><img src="mischief.gif" alt="弓、レシピ" class="img01"></a><br>弓レシピ</td>
+  </tr>
+</table>
+<div id="cat_1" style="display: none">
+<h4>（１）材料</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk0" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="kindling.gif" alt="" class="img01"><br>kindling<br>[焚き木]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×1</td>
+   <td align="center">0.0</td>
+   <td align="center">100％</td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="shaft.gif" alt="" class="img01"><br>shaft<br>[シャフト]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate00" SIZE="4">％</td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="elven_fletching.gif" alt="elven fletching" class="img01"><br>elven fletching<br>[エルフの矢羽]</td>
+   <td align="center"><img src="faery_dust.gif" alt="faery dust" class="img01">faery dust×1
+<br><img src="feather.gif" alt="feather" class="img01">feather×20</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate50" SIZE="4">％</td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_2" style="display: none">
+<h4>（２）矢</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk1" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="arrow.gif" alt="" class="img01"><br>arrow<br>[矢]</td>
+   <td align="center"><img src="shaft.gif" alt="" class="img01">shaft×1<br><img src="feather.gif" alt="" class="img01">feather×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate02" SIZE="4">％</td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="bowbolt.gif" alt="" class="img01"><br>Crossbow bolt<br>[クロスボウボルト]</td>
+   <td align="center"><img src="shaft.gif" alt="" class="img01">shaft×1<br><img src="feather.gif" alt="" class="img01">feather×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate04" SIZE="4">％</td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="fukiyadart.gif" alt="" class="img01"><br>fukiya dart<br>[吹き矢針]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×1</td>
+   <td align="center">50.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate06" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate07" SIZE="4">％</td>
+   </tr>
+
+</table>
+<br class="cle">
+</div>
+
+
+<div id="cat_3" style="display: none">
+<h4>（３）弓（一般武器）</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk2" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="wep49.gif" alt="" class="img01"><br>bow<br>[弓]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×7</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate08" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate09" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="wep50.gif" alt="" class="img01"><br>crossbow<br>[クロスボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×7</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate10" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate11" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="wep52.gif" alt="" class="img01"><br>heavy crossbow<br>[ヘビークロスボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×10</td>
+   <td align="center">80.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate12" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate13" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="wep51.gif" alt="" class="img01"><br>composite bow<br>[コンポジットボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×7</td>
+   <td align="center">70.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate14" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate15" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="wep53.gif" alt="" class="img01"><br>repeating crossbow<br>[リピーティングクロスボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×10</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate16" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate17" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="yumi.gif" alt="" class="img01"><br>yumi<br>[和弓]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×10</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate18" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate19" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="elvencomposite.gif" alt="" class="img01"><br>elven composite longbow<br>[エルフ式ロングボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×20</td>
+   <td align="center">95.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate20" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate21" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magicalshortbow.gif" alt="" class="img01"><br>magical shortbow<br>[マジカルショートボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×15</td>
+   <td align="center">85.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate22" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate23" SIZE="4">％</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+</div>
+<div id="cat_4" style="display: none">
+<h4>（４）弓（レシピ）</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="240" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk3" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="grippedbow.gif" alt="" class="img01"><br>Blight Gripped Longbow<br>[病毒のロングボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×20
+<br><img src="lard.gif" alt="" class="img01">　lard of paroxysmus×1
+<br><img src="blight.gif" alt="" class="img01">　blight×10
+<br><img src="corruption.gif" alt="" class="img01">　corruption×10
+</td>
+   <td align="center">習得：75.0<br>作成：80.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate24" SIZE="4">％</td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="faeriefire.gif" alt="" class="img01"><br>Faerie Fire<br>[妖精の炎]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×20
+<br><img src="lard.gif" alt="" class="img01">　lard of paroxysmus×1
+<br><img src="putrefaction.gif" alt="" class="img01">　putrefaction×10
+<br><img src="taint.gif" alt="" class="img01">　taint×10
+</td>
+   <td align="center">習得：75.0<br>作成：80.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate26" SIZE="4">％</td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="silvanibow.gif" alt="" class="img01"><br>Silvani's Feywood Bow<br>[シルヴァーニの妖弓]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×20
+<br><img src="lard.gif" alt="" class="img01">　lard of paroxysmus×1
+<br><img src="scourge.gif" alt="" class="img01">　scourge×10
+<br><img src="muculent.gif" alt="" class="img01">　muculent×10
+</td>
+   <td align="center">習得：75.0<br>作成：80.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate28" SIZE="4">％</td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="mischief.gif" alt="" class="img01"><br>Mischief Maker<br>[氷の災い]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×15
+<br><img src="dreadhornmane.gif" alt="" class="img01">　dreadhorn mane×1
+<br><img src="corruption.gif" alt="" class="img01">　corruption×10
+<br><img src="putrefaction.gif" alt="" class="img01">　putrefaction×10
+</td>
+   <td align="center">習得：75.0<br>作成：80.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate30" SIZE="4">％</td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="nightreaper.gif" alt="" class="img01"><br>The Night Reaper<br>[ナイトリーパー]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×10
+<br><img src="dreadhornmane.gif" alt="" class="img01">　dreadhorn mane×1
+<br><img src="blight.gif" alt="" class="img01">　blight×10
+<br><img src="scourge.gif" alt="" class="img01">　scourge×10
+</td>
+   <td align="center">習得：75.0<br>作成：80.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate32" SIZE="4">％</td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="elvencomposite.gif" alt="" class="img01"><br>barbed longbow<br>[イバラのロングボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×20
+<br><img src="fireruby.gif" alt="" class="img01">　fire ruby×1
+</td>
+   <td align="center">習得：70.0<br>作成：75.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate34" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate35" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="elvencomposite.gif" alt="" class="img01"><br>slayer longbow<br>[スレイヤーロングボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×20
+<br><img src="brilliantamber.gif" alt="" class="img01">　brilliant amber×1
+</td>
+   <td align="center">習得：70.0<br>作成：75.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate36" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate37" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="elvencomposite.gif" alt="" class="img01"><br>frozen longbow<br>[重撃ロングボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×20
+<br><img src="turquoise.gif" alt="" class="img01">　turquoise×1
+</td>
+   <td align="center">習得：70.0<br>作成：75.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate38" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate39" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="elvencomposite.gif" alt="" class="img01"><br>longbow of might<br>[力のロングボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×20
+<br><img src="bluediamond.gif" alt="" class="img01">　blue diamond×1
+</td>
+   <td align="center">習得：70.0<br>作成：75.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate40" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate41" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magicalshortbow.gif" alt="" class="img01"><br>ranger's shortbow<br>[レンジャーショートボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×15
+<br><img src="perfectemerald.gif" alt="" class="img01">　perfect emerald×1
+</td>
+   <td align="center">習得：70.0<br>作成：75.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate42" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate43" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="magicalshortbow.gif" alt="" class="img01"><br>lightweight shortbow<br>[軽快ショートボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×15
+<br><img src="whitepearl.gif" alt="" class="img01">　white pearl×1
+</td>
+   <td align="center">習得：70.0<br>作成：75.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate44" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate45" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magicalshortbow.gif" alt="" class="img01"><br>mystical shortbow<br>[神秘のショートボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×15
+<br><img src="ecrucitrine.gif" alt="" class="img01">　ecru citrine×1
+</td>
+   <td align="center">習得：70.0<br>作成：75.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate46" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate47" SIZE="4">％</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="magicalshortbow.gif" alt="" class="img01"><br>assassin's shortbow<br>[暗殺者のショートボウ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×15
+<br><img src="darksapphire.gif" alt="" class="img01">　dark sapphire×1
+</td>
+   <td align="center">習得：70.0<br>作成：75.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate48" SIZE="4">％</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate49" SIZE="4">％</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+</div>
+
+</form>
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

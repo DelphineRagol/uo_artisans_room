@@ -1,0 +1,907 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>石工作成難易度表</TITLE>
+</HEAD>
+<body><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898543</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<h2>石工作成難易度表</h2>
+<HR>
+
+<script language="javascript">
+<!--
+//Soubi
+var soubi;
+soubi=new Array(500);
+
+soubi[0] = 5250006;
+soubi[1] = 5250006;
+soubi[2] = 8200006;
+soubi[3] = 8200006;
+soubi[4] = 8300006;
+soubi[5] = 8200006;
+soubi[6] = 8000006;
+soubi[7] = 6000006;
+soubi[8] = 6000006;
+
+soubi[50] = 5500006;
+soubi[51] = 6500006;
+soubi[52] = 7500006;
+soubi[53] = 9475006;
+
+soubi[100] = 6000006;
+soubi[101] = 6000006;
+soubi[102] = 6000006;
+soubi[103] = 7000006;
+soubi[104] = 10004606;
+soubi[105] = 10004606;
+
+soubi[150] = 7800005;
+soubi[151] = 9475006;
+soubi[152] = 9475006;
+
+soubi[200] = 5630006;
+soubi[201] = 5500006;
+soubi[202] = 5880006;
+soubi[203] = 4890006;
+soubi[204] = 5630006;
+soubi[205] = 5500006;
+soubi[206] = 5880006;
+soubi[207] = 4890006;
+soubi[208] = 5500006;
+soubi[209] = 6000006;
+
+soubi[250] = 5500006;
+
+soubi[300] = 6000006;
+soubi[301] = 6000006;
+soubi[302] = 6000006;
+soubi[303] = 6000006;
+soubi[304] = 6000006;
+soubi[305] = 6000006;
+soubi[306] = 6000006;
+soubi[307] = 6000006;
+soubi[308] = 6000006;
+
+soubi[350] = 6000006;
+soubi[351] = 6000006;
+soubi[352] = 6000006;
+soubi[353] = 6000006;
+soubi[354] = 6000006;
+soubi[355] = 6000006;
+
+soubi[400] = 6000006;
+soubi[401] = 6000006;
+soubi[402] = 6000006;
+
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.skill.value = 0.0;
+  exb1 = 0.0;
+  crb1 = 0.0;
+
+return true;
+}
+
+//計算
+
+function keisan1(form)
+{
+var form = document.form_keisan;
+  skill = form.skill.value;
+  exb1 = form.exb1.options[form.exb1.selectedIndex].value;
+  crb1 = form.crb1.options[form.crb1.selectedIndex].value;
+
+  pmt1 = new Array(500);
+
+    for (i=0; i<500; i++)
+    {
+    pmt1[i] = Math.floor(soubi[i]/10000) / 10.0;
+    }
+
+  pmt2 = new Array(500);
+
+    for (i=0; i<500; i++)
+    {
+    pmt2[i] = Math.floor(Math.abs((soubi[i] % 10000)) / 100.0);
+    }
+
+  pmt3 = new Array(500);
+
+    for (i=0; i<500; i++)
+    {
+    pmt3[i] = Math.abs((soubi[i] % 100)) / 3.0;
+    }
+
+
+  rate = new Array(1000);
+
+    for (i=0; i<500; i++)
+    {
+    rate[2*i] = Math.round(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] + 1.0 * crb1)) * 10 ) / 10;
+    rate[2*i+1] = Math.round(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] - 60.0 + 1.0 * exb1
+                + Math.min(15.0 , Math.max(0.0 , (skill - 95.0) * 3.0)))) * 10 ) / 10;
+    if(skill<100.0)
+    {
+    rate[2*i] = 0.0;
+    rate[2*i+1] = 0.0;
+    }
+    }
+
+
+    form.rate000.value = rate[0];
+    form.rate002.value = rate[2];
+    form.rate004.value = rate[4];
+    form.rate006.value = rate[6];
+    form.rate008.value = rate[8];
+    form.rate010.value = rate[10];
+    form.rate012.value = rate[12];
+    form.rate014.value = rate[14];
+    form.rate016.value = rate[16];
+    form.rate100.value = rate[100];
+    form.rate102.value = rate[102];
+    form.rate104.value = rate[104];
+    form.rate106.value = rate[106];
+    form.rate200.value = rate[200];
+    form.rate202.value = rate[202];
+    form.rate204.value = rate[204];
+    form.rate206.value = rate[206];
+    form.rate208.value = rate[208];
+    form.rate209.value = rate[209];
+    form.rate210.value = rate[210];
+    form.rate211.value = rate[211];
+    form.rate300.value = rate[300];
+    form.rate302.value = rate[302];
+    form.rate304.value = rate[304];
+    form.rate400.value = rate[400];
+    form.rate401.value = rate[401];
+    form.rate402.value = rate[402];
+    form.rate403.value = rate[403];
+    form.rate404.value = rate[404];
+    form.rate405.value = rate[405];
+    form.rate406.value = rate[406];
+    form.rate407.value = rate[407];
+    form.rate408.value = rate[408];
+    form.rate409.value = rate[409];
+    form.rate410.value = rate[410];
+    form.rate411.value = rate[411];
+    form.rate412.value = rate[412];
+    form.rate413.value = rate[413];
+    form.rate414.value = rate[414];
+    form.rate415.value = rate[415];
+    form.rate416.value = rate[416];
+    form.rate417.value = rate[417];
+    form.rate418.value = rate[418];
+    form.rate419.value = rate[419];
+    form.rate500.value = rate[500];
+    form.rate501.value = rate[501];
+    form.rate600.value = rate[600];
+    form.rate602.value = rate[602];
+    form.rate604.value = rate[604];
+    form.rate606.value = rate[606];
+    form.rate608.value = rate[608];
+    form.rate610.value = rate[610];
+    form.rate612.value = rate[612];
+    form.rate614.value = rate[614];
+    form.rate616.value = rate[616];
+    form.rate700.value = rate[700];
+    form.rate702.value = rate[702];
+    form.rate704.value = rate[704];
+    form.rate706.value = rate[706];
+    form.rate708.value = rate[708];
+    form.rate710.value = rate[710];
+    form.rate800.value = rate[800];
+    form.rate802.value = rate[802];
+    form.rate804.value = rate[804];
+    form.sk0.value = skill;
+    form.sk1.value = skill;
+    form.sk2.value = skill;
+    form.sk3.value = skill;
+    form.sk4.value = skill;
+    form.sk5.value = skill;
+    form.sk6.value = skill;
+    form.sk7.value = skill;
+    form.sk8.value = skill;
+return true;
+}
+//-->
+</script>
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+
+ {//functionの宣言。受けとったIDは変数targetIDに格納。
+  if( document.getElementById(targetID))
+   { //指定のIDのついたオブジェクトがあったら処理する
+     //指定されたIDのstyle.displayがnoneなら
+    for (i=1; i<10; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {//blockに変更する
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+
+<form name="form_keisan">
+<p>大工スキルで作ることができる石工アイテムの作成難易度表です。下のカテゴリ画像をクリックすると、そのカテゴリが表示／非表示されます。</p>
+<p>スキル　：　<INPUT TYPE="text" NAME="skill" SIZE="4" value="100">（手入力、Woodworker's Bench [木工作業台]による補正も考慮）
+<br>成功率補正のタリスマンを装備している場合は、こちらも選択してください。
+<br>
+大工　：　高品質成功率ボーナス
+<select name="exb1" size="1">
+<option value="0">----
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+</select>
+％、
+成功率ボーナス
+<select name="crb1" size="1">
+<option value="0">----
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+</select>
+％
+
+
+<input type="button" value="高品質および作成成功率計算" onclick="keisan1(form)">
+
+
+<table class="table03">
+  <tr>
+    <td align="center" width="55"><a href="#" onClick="showHide('cat_1');return false;"><img src="vase01.gif" alt="装飾品" class="img01"></a><br>装飾品</td>
+    <td align="center" width="55"><a href="#" onClick="showHide('cat_2');return false;"><img src="stonechair.gif" alt="家具" class="img01"></a><br>家具</td>
+    <td align="center" width="55"><a href="#" onClick="showHide('cat_3');return false;"><img src="pegasus.gif" alt="石像" class="img01"></a><br>石像</td>
+    <td align="center" width="55"><a href="#" onClick="showHide('cat_4');return false;"><img src="stoneanvil.gif" alt="調度品全般" class="img01"></a><br>調度品全般</td>
+    <td align="center" width="55"><a href="#" onClick="showHide('cat_5');return false;"><img src="large_stone_shield.gif" alt="石鎧" class="img01"></a><br>石鎧</td>
+    <td align="center" width="55"><a href="#" onClick="showHide('cat_6');return false;"><img src="stone_war_sword.gif" alt="石武器" class="img01"></a><br>石武器</td>
+    <td align="center" width="55"><a href="#" onClick="showHide('cat_7');return false;"><img src="deed.gif" alt="石壁" class="img01"><br>石壁</a></td>
+    <td align="center" width="55"><a href="#" onClick="showHide('cat_8');return false;"><img src="deed.gif" alt="石階段" class="img01"><br>石階段</a></td>
+    <td align="center" width="55"><a href="#" onClick="showHide('cat_9');return false;"><img src="deed.gif" alt="石床" class="img01"><br>石床</a></td>
+  </tr>
+</table>
+
+
+<div id="cat_1" style="display: none">
+
+<h4>（１）装飾品</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="220" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk0" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="vase01.gif" alt="" class="img01"><br>vase<br>[花瓶]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×1</td>
+   <td align="center">52.5</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate000" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="vase02.gif" alt="" class="img01"><br>large vase<br>[大きな花瓶]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×3</td>
+   <td align="center">52.5</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate002" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="smallurn.gif" alt="" class="img01"><br>small urn<br>[小型の壺]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×3</td>
+   <td align="center">82.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate004" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="towersculp.gif" alt="" class="img01"><br>tower sculpture<br>[彫刻塔]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×3</td>
+   <td align="center">82.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate006" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gargish_painting.gif" alt="" class="img01"><br>gargish painting<br>[ガーゴイルの絵画]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×3</td>
+   <td align="center">83.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate008" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="gargish_sculpture.gif" alt="" class="img01"><br>gargish sculpture<br>[ガーゴイルの彫刻像]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×4</td>
+   <td align="center">82.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate010" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gargish_vase.gif" alt="" class="img01"><br>gargish vase<br>[ガーゴイルの花瓶]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×4</td>
+   <td align="center">80.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate012" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="tall_18th_vase.gif" alt="" class="img01"><br>Tall 18th Anniversary Vase<br>[18周年記念花瓶(大)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×6</td>
+   <td align="center">60.0<br><img src="recipescroll.gif" alt="recipe" class="img01">18th</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate014" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="short_18th_vase.gif" alt="" class="img01"><br>Short 18th Anniversary Vase<br>[18周年記念花瓶(小)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×6</td>
+   <td align="center">60.0<br><img src="recipescroll.gif" alt="recipe" class="img01">18th</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate016" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_2" style="display: none">
+
+<h4>（２）家具</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk1" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="stonechair.gif" alt="" class="img01"><br>stone chair<br>[石の椅子]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×4</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate100" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="m-table.gif" alt="" class="img01"><br>medium stone table<br>[中型の石テーブル(東/南)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×6</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate102" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="l-table.gif" alt="" class="img01"><br>large stone table<br>[大型の石テーブル(東/南)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×9</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate104" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="ritual_table.gif" alt="" class="img01"><br>ritual table<br>[儀式用テーブル]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×8</td>
+   <td align="center">94.7<br>GTP</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate106" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_3" style="display: none">
+
+<h4>（３）石像</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk2" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="statue01.gif" alt="" class="img01"><br>small statue (south)<br>[小像(南)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×3</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate200" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="statue02.gif" alt="" class="img01"><br>small statue (north)<br>[小像(北)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×3</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate202" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="statue03.gif" alt="" class="img01"><br>small statue (south)<br>[小像(東)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×3</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate204" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="pegasus.gif" alt="" class="img01"><br>pegasus statuette<br>[ペガサス像]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×4</td>
+   <td align="center">70.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate206" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="gargoyle_statue.gif" alt="" class="img01"><br>gargoyle statue<br>[ガーゴイル像]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×20</td>
+   <td align="center">91.0<br>GTP</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate208" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate209" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gryphon_statue.gif" alt="" class="img01"><br>gryphon statue<br>[グリフォン像]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×16</td>
+   <td align="center">91.0<br>GTP</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate210" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate211" SIZE="4"></td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_4" style="display: none">
+
+<h4>（４）調度品－全般</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk3" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="stoneanvil.gif" alt="" class="img01"><br>stone anvil (south/east)<br>[石の金床(南/東)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×20</td>
+   <td align="center">78.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate300" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="large_gargish_bed.gif" alt="" class="img01"><br>large gargish bed (south/east)<br>[ガーゴイルベッド(南/東)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×100
+<br><img src="cloth5.gif" alt="cloth" class="img01">cloth×100</td>
+   <td align="center">94.7<br>裁縫75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate302" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="gargish_cot.gif" alt="" class="img01"><br>gargish cot (south/east)<br>[ガーゴイル簡易寝台(南/東)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×100
+<br><img src="cloth5.gif" alt="cloth" class="img01">cloth×100</td>
+   <td align="center">94.7<br>裁縫75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate304" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_5" style="display: none">
+
+<h4>（５）石鎧</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk4" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gargish_stone_arms_fem.gif" alt="" class="img01"><br>gargish stone arms<br>[ストーンアーム]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×8</td>
+   <td align="center">56.3<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate400" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate401" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="gargish_stone_chest_fem.gif" alt="" class="img01"><br>gargish stone chest<br>[ストーンアーマー]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×12</td>
+   <td align="center">55.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate402" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate403" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gargish_stone_legs_fem.gif" alt="" class="img01"><br>gargish stone leggings<br>[ストーンレッグ]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×10</td>
+   <td align="center">58.8<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate404" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate405" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="gargish_stone_kilt_fem.gif" alt="" class="img01"><br>gargish stone kilt<br>[ストーンキルト]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×6</td>
+   <td align="center">48.9<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate406" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate407" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gargish_stone_arms.gif" alt="" class="img01"><br>gargish stone arms<br>[ストーンアーム]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×8</td>
+   <td align="center">56.3<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate408" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate409" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="gargish_stone_chest.gif" alt="" class="img01"><br>gargish stone chest<br>[ストーンアーマー]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×12</td>
+   <td align="center">55.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate410" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate411" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gargish_stone_legs.gif" alt="" class="img01"><br>gargish stone leggings<br>[ストーンレッグ]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×10</td>
+   <td align="center">58.8<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate412" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate413" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="gargish_stone_kilt.gif" alt="" class="img01"><br>gargish stone kilt<br>[ストーンキルト]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×6</td>
+   <td align="center">48.9<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate414" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate415" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="large_stone_shield.gif" alt="" class="img01"><br>large stone shield<br>[ストーンシールド]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×16</td>
+   <td align="center">55.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate416" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate417" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="gargish_stone_amulet.gif" alt="" class="img01"><br>gargish stone amulet<br>[ガーゴイルストーンアミュレット]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×3</td>
+   <td align="center">60.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate418" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate419" SIZE="4"></td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_6" style="display: none">
+
+<h4>（６）石武器</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk5" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="stone_war_sword.gif" alt="" class="img01"><br>stone war sword<br>[ウォーソード]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×18</td>
+   <td align="center">55.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate500" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate501" SIZE="4"></td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_7" style="display: none">
+
+<h4>（７）石壁</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="180" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk6" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="rough_windowless.gif" alt="" class="img01"><br>Rough Windowless<br>[窓なしラフ]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×10</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate600" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="rough_window.gif" alt="" class="img01"><br>Rough Window<br>[ラフ窓]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×10</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate602" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="rough_arch.gif" alt="" class="img01"><br>Rough Arch<br>[ラフアーチ]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×5</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate604" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="rough_pillar.gif" alt="" class="img01"><br>Rough Pillar<br>[ラフピラー]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×3</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate606" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="rough_rounded_arch.gif" alt="" class="img01"><br>Rough Rounded Arch<br>[ラフ丸アーチ]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×5</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate608" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="rough_small_arch.gif" alt="" class="img01"><br>Rough Small Arch<br>[ラフスモールアーチ]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×3</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate610" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="rough_angled_pillar.gif" alt="" class="img01"><br>Rough Angled Pillar<br>[ラフ角度付きピラー]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×5</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate612" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="short_rough.gif" alt="" class="img01"><br>Short Rough<br>[ラフショート]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×3</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate614" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="stone_door_s.gif" alt="" class="img01"> 　 <img src="stone_door_e.gif" alt="" class="img01"><br>Stone Door(S/E)<br>[石のドア(S／E) ]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×10</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate616" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_8" style="display: none">
+
+<h4>（８）石階段</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="180" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk7" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="rough_block.gif" alt="" class="img01"><br>Rough Block<br>[ラフブロック]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×5</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate700" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="rough_steps.gif" alt="" class="img01"><br>Rough Steps<br>[ラフ階段]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×5</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate702" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="rough_corner_steps.gif" alt="" class="img01"><br>Rough Corner Steps<br>[ラフ階段角]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×5</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate704" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="rough_rounded_corner_steps.gif" alt="" class="img01"><br>Rough Rounded Corner Steps<br>[ラフ階段丸角]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×5</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate706" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="rough_inset_steps.gif" alt="" class="img01"><br>Rough Inset Steps<br>[ラフはめ込み階段]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×5</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate708" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="rough_rounded_inset_steps.gif" alt="" class="img01"><br>Rough Rounded Inset Steps<br>[ラフはめ込み丸階段]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×5</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate710" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_9" style="display: none">
+
+<h4>（９）石床</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="180" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk8" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="light_paver.gif" alt="" class="img01"><br>Light Paver<br>[敷石(明)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×5</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate800" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="medium_paver.gif" alt="" class="img01"><br>Medium Paver<br>[敷石(中)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×5</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate802" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="dark_paver.gif" alt="" class="img01"><br>Dark Paver<br>[敷石(暗)]</td>
+   <td align="center"><img src="granite.gif" alt="" class="img01">stone×5</td>
+   <td align="center">60.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate804" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+
+</form>
+</BODY>
+</HTML>
+
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

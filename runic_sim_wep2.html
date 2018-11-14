@@ -1,0 +1,1012 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>Runic toolシミュレータ：弓工・投擲武器</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899158</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<h2>Runic toolシミュレータ：弓工・投擲武器</h2>
+<hr>
+<script language="javascript">
+<!--
+function sim0(form)
+{
+var form = document.form_sim;
+  form.hq01.value = 0;
+  form.runic.value = 0;
+  form.koka1.value = 0;
+  form.koka2.value = 0;
+  form.koka3.value = 0;
+  form.koka4.value = 0;
+  form.kyo1.value = 0;
+  form.kyo2.value = 0;
+  form.kyo3.value = 0;
+  form.kyo4.value = 0;
+  return true;
+}
+
+function sim1(form)
+{
+var form = document.form_sim;
+ runic1 = form.runic.options[form.runic.selectedIndex].value;
+var eff;
+ eff = new Array();
+var sel;
+ sel = new Array();
+var rmi;
+ rmi = new Array(13)
+ rmi[0] = 0;
+ rmi[1] = 40;
+ rmi[2] = 45;
+ rmi[3] = 50;
+ rmi[4] = 55;
+ rmi[5] = 60;
+ rmi[6] = 65;
+ rmi[7] = 70;
+ rmi[8] = 85;
+ rmi[9] = 25;
+ rmi[10] = 35;
+ rmi[11] = 45;
+ rmi[12] = 50;
+var rma;
+ rma = new Array(13)
+ rma[0] = 0;
+ rma[1] = 100;
+ rma[2] = 100;
+ rma[3] = 100;
+ rma[4] = 100;
+ rma[5] = 100;
+ rma[6] = 100;
+ rma[7] = 100;
+ rma[8] = 100;
+ rma[9] = 50;
+ rma[10] = 75;
+ rma[11] = 90;
+ rma[12] = 100;
+
+var koka;
+ koka = new Array(24);
+ koka[0] = "武器ダメージ";
+ koka[1] = "幸運";
+ koka[2] = "付加魔法";
+ koka[3] = "属性エリア";
+ koka[4] = "追加効果　：　命中低下";
+ koka[5] = "追加効果　：　回避低下";
+ koka[6] = "追加効果　：　スタミナリーチ";
+ koka[7] = "追加効果　：　ライフリーチ";
+ koka[8] = "追加効果　：　マナリーチ";
+ koka[9] = "追加効果　：　遠距離ボーナス";
+ koka[10] = "物理抵抗";
+ koka[11] = "炎抵抗";
+ koka[12] = "冷気抵抗";
+ koka[13] = "毒抵抗";
+ koka[14] = "エネルギー抵抗";
+ koka[15] = "命中";
+ koka[16] = "回避";
+ koka[17] = "魔道武器";
+ koka[18] = "速度";
+ koka[19] = "詠唱可＋ファストキャスト-1";
+ koka[20] = "ファストキャスト1";
+ koka[21] = "バランスド";
+ koka[22] = "属性攻撃配分";
+ koka[23] = "特効";
+
+  chn = 3;
+  sco = 0;
+  for(i=1; i<chn; i++)
+ {
+    if(document.form_sim.elements[i].checked)
+     {
+      sco += eval(document.form_sim.elements[i].value);
+     }
+ }
+
+  bod = sco;
+
+var ans; 
+ ans = new Array();
+ ans[1] = Math.floor(100 * Math.random());
+ ans[2] = Math.floor(100 * Math.random());
+ ans[3] = Math.floor(100 * Math.random());
+ ans[4] = Math.floor(100 * Math.random());
+ pow = new Array();
+ for(j=1 ; j<=4 ; j++ ){
+     pow[j] = rmi[runic1] + ans[j] * (rma[runic1] - rmi[runic1]) / 100;
+}
+
+ do{
+ eff[1] = Math.floor(160 * Math.random());
+    if(eff[1]<24)
+    {
+ sel[1] = 0;
+    }
+    else if(eff[1]<32)
+    {
+ sel[1] = 1;
+    }
+    else if(eff[1]<40)
+    {
+ sel[1] = 2;
+    }
+    else if(eff[1]<41)
+    {
+ sel[1] = 3;
+    }
+    else if(eff[1]<45)
+    {
+ sel[1] = 4;
+    }
+    else if(eff[1]<53)
+    {
+ sel[1] = 5;
+    }
+    else if(eff[1]<61)
+    {
+ sel[1] = 6;
+    }
+    else if(eff[1]<69)
+    {
+ sel[1] = 7;
+    }
+    else if(eff[1]<77)
+    {
+ sel[1] = 8;
+    }
+    else if(eff[1]<85)
+    {
+ sel[1] = 9;
+    }
+    else if(eff[1]<87)
+    {
+ sel[1] = 10;
+    }
+    else if(eff[1]<89)
+    {
+ sel[1] = 11;
+    }
+    else if(eff[1]<91)
+    {
+ sel[1] = 12;
+    }
+    else if(eff[1]<93)
+    {
+ sel[1] = 13;
+    }
+    else if(eff[1]<95)
+    {
+ sel[1] = 14;
+    }
+    else if(eff[1]<103)
+    {
+ sel[1] = 15;
+    }
+    else if(eff[1]<104)
+    {
+ sel[1] = 16;
+    }
+    else if(eff[1]<112)
+    {
+ sel[1] = 17;
+    }
+    else if(eff[1]<120)
+    {
+ sel[1] = 18;
+    }
+    else if(eff[1]<128)
+    {
+ sel[1] = 19;
+    }
+    else if(eff[1]<136)
+    {
+ sel[1] = 20;
+    }
+    else if(eff[1]<144)
+    {
+ sel[1] = 21;
+    }
+    else if(eff[1]<152)
+    {
+ sel[1] = 22;
+    }
+    else
+    {
+ sel[1] = 23;
+    }
+
+}
+ while(sel[1]==0&&pow[1]<bod);
+
+ do{
+ eff[2] = Math.floor(160 * Math.random());
+    if(eff[2]<24)
+    {
+ sel[2] = 0;
+    }
+    else if(eff[2]<32)
+    {
+ sel[2] = 1;
+    }
+    else if(eff[2]<40)
+    {
+ sel[2] = 2;
+    }
+    else if(eff[2]<41)
+    {
+ sel[2] = 3;
+    }
+    else if(eff[2]<45)
+    {
+ sel[2] = 4;
+    }
+    else if(eff[2]<53)
+    {
+ sel[2] = 5;
+    }
+    else if(eff[2]<61)
+    {
+ sel[2] = 6;
+    }
+    else if(eff[2]<69)
+    {
+ sel[2] = 7;
+    }
+    else if(eff[2]<77)
+    {
+ sel[2] = 8;
+    }
+    else if(eff[2]<85)
+    {
+ sel[2] = 9;
+    }
+    else if(eff[2]<87)
+    {
+ sel[2] = 10;
+    }
+    else if(eff[2]<89)
+    {
+ sel[2] = 11;
+    }
+    else if(eff[2]<91)
+    {
+ sel[2] = 12;
+    }
+    else if(eff[2]<93)
+    {
+ sel[2] = 13;
+    }
+    else if(eff[2]<95)
+    {
+ sel[2] = 14;
+    }
+    else if(eff[2]<103)
+    {
+ sel[2] = 15;
+    }
+    else if(eff[2]<104)
+    {
+ sel[2] = 16;
+    }
+    else if(eff[2]<112)
+    {
+ sel[2] = 17;
+    }
+    else if(eff[2]<120)
+    {
+ sel[2] = 18;
+    }
+    else if(eff[2]<128)
+    {
+ sel[2] = 19;
+    }
+    else if(eff[2]<136)
+    {
+ sel[2] = 20;
+    }
+    else if(eff[2]<144)
+    {
+ sel[2] = 21;
+    }
+    else if(eff[2]<152)
+    {
+ sel[2] = 22;
+    }
+    else
+    {
+ sel[2] = 23;
+    }
+
+ }
+ while(sel[2]==sel[1]||sel[2]==0&&pow[2]<bod);
+
+ do{
+ eff[3] = Math.floor(160 * Math.random());
+    if(eff[3]<24)
+    {
+ sel[3] = 0;
+    }
+    else if(eff[3]<32)
+    {
+ sel[3] = 1;
+    }
+    else if(eff[3]<40)
+    {
+ sel[3] = 2;
+    }
+    else if(eff[3]<41)
+    {
+ sel[3] = 3;
+    }
+    else if(eff[3]<45)
+    {
+ sel[3] = 4;
+    }
+    else if(eff[3]<53)
+    {
+ sel[3] = 5;
+    }
+    else if(eff[3]<61)
+    {
+ sel[3] = 6;
+    }
+    else if(eff[3]<69)
+    {
+ sel[3] = 7;
+    }
+    else if(eff[3]<77)
+    {
+ sel[3] = 8;
+    }
+    else if(eff[3]<85)
+    {
+ sel[3] = 9;
+    }
+    else if(eff[3]<87)
+    {
+ sel[3] = 10;
+    }
+    else if(eff[3]<89)
+    {
+ sel[3] = 11;
+    }
+    else if(eff[3]<91)
+    {
+ sel[3] = 12;
+    }
+    else if(eff[3]<93)
+    {
+ sel[3] = 13;
+    }
+    else if(eff[3]<95)
+    {
+ sel[3] = 14;
+    }
+    else if(eff[3]<103)
+    {
+ sel[3] = 15;
+    }
+    else if(eff[3]<104)
+    {
+ sel[3] = 16;
+    }
+    else if(eff[3]<112)
+    {
+ sel[3] = 17;
+    }
+    else if(eff[3]<120)
+    {
+ sel[3] = 18;
+    }
+    else if(eff[3]<128)
+    {
+ sel[3] = 19;
+    }
+    else if(eff[3]<136)
+    {
+ sel[3] = 20;
+    }
+    else if(eff[3]<144)
+    {
+ sel[3] = 21;
+    }
+    else if(eff[3]<152)
+    {
+ sel[3] = 22;
+    }
+    else
+    {
+ sel[3] = 23;
+    }
+
+ }
+ while(sel[3]==sel[1] || sel[3]==sel[2] || sel[3]==0&&pow[3]<bod);
+
+ do{
+ eff[4] = Math.floor(160 * Math.random());
+    if(eff[4]<24)
+    {
+ sel[4] = 0;
+    }
+    else if(eff[4]<32)
+    {
+ sel[4] = 1;
+    }
+    else if(eff[4]<40)
+    {
+ sel[4] = 2;
+    }
+    else if(eff[4]<41)
+    {
+ sel[4] = 3;
+    }
+    else if(eff[4]<45)
+    {
+ sel[4] = 4;
+    }
+    else if(eff[4]<53)
+    {
+ sel[4] = 5;
+    }
+    else if(eff[4]<61)
+    {
+ sel[4] = 6;
+    }
+    else if(eff[4]<69)
+    {
+ sel[4] = 7;
+    }
+    else if(eff[4]<77)
+    {
+ sel[4] = 8;
+    }
+    else if(eff[4]<85)
+    {
+ sel[4] = 9;
+    }
+    else if(eff[4]<87)
+    {
+ sel[4] = 10;
+    }
+    else if(eff[4]<89)
+    {
+ sel[4] = 11;
+    }
+    else if(eff[4]<91)
+    {
+ sel[4] = 12;
+    }
+    else if(eff[4]<93)
+    {
+ sel[4] = 13;
+    }
+    else if(eff[4]<95)
+    {
+ sel[4] = 14;
+    }
+    else if(eff[4]<103)
+    {
+ sel[4] = 15;
+    }
+    else if(eff[4]<104)
+    {
+ sel[4] = 16;
+    }
+    else if(eff[4]<112)
+    {
+ sel[4] = 17;
+    }
+    else if(eff[4]<120)
+    {
+ sel[4] = 18;
+    }
+    else if(eff[4]<128)
+    {
+ sel[4] = 19;
+    }
+    else if(eff[4]<136)
+    {
+ sel[4] = 20;
+    }
+    else if(eff[4]<144)
+    {
+ sel[4] = 21;
+    }
+    else if(eff[4]<152)
+    {
+ sel[4] = 22;
+    }
+    else
+    {
+ sel[4] = 23;
+    }
+
+ }
+ while(sel[4]==sel[1] || sel[4]==sel[2] || sel[4]==sel[3] || sel[4]==0&&pow[4]<bod);
+
+
+ do{
+ eff[5] = Math.floor(160 * Math.random());
+    if(eff[5]<24)
+    {
+ sel[5] = 0;
+    }
+    else if(eff[5]<32)
+    {
+ sel[5] = 1;
+    }
+    else if(eff[5]<40)
+    {
+ sel[5] = 2;
+    }
+    else if(eff[5]<41)
+    {
+ sel[5] = 3;
+    }
+    else if(eff[5]<45)
+    {
+ sel[5] = 4;
+    }
+    else if(eff[5]<53)
+    {
+ sel[5] = 5;
+    }
+    else if(eff[5]<61)
+    {
+ sel[5] = 6;
+    }
+    else if(eff[5]<69)
+    {
+ sel[5] = 7;
+    }
+    else if(eff[5]<77)
+    {
+ sel[5] = 8;
+    }
+    else if(eff[5]<85)
+    {
+ sel[5] = 9;
+    }
+    else if(eff[5]<87)
+    {
+ sel[5] = 10;
+    }
+    else if(eff[5]<89)
+    {
+ sel[5] = 11;
+    }
+    else if(eff[5]<91)
+    {
+ sel[5] = 12;
+    }
+    else if(eff[5]<93)
+    {
+ sel[5] = 13;
+    }
+    else if(eff[5]<95)
+    {
+ sel[5] = 14;
+    }
+    else if(eff[5]<103)
+    {
+ sel[5] = 15;
+    }
+    else if(eff[5]<104)
+    {
+ sel[5] = 16;
+    }
+    else if(eff[5]<112)
+    {
+ sel[5] = 17;
+    }
+    else if(eff[5]<120)
+    {
+ sel[5] = 18;
+    }
+    else if(eff[5]<128)
+    {
+ sel[5] = 19;
+    }
+    else if(eff[5]<136)
+    {
+ sel[5] = 20;
+    }
+    else if(eff[5]<144)
+    {
+ sel[5] = 21;
+    }
+    else if(eff[5]<152)
+    {
+ sel[5] = 22;
+    }
+    else
+    {
+ sel[5] = 23;
+    }
+
+ }
+ while(sel[5]==sel[1] || sel[5]==sel[2] || sel[5]==sel[3] || sel[5]==sel[4] || sel[5]==0&&pow[5]<bod);
+
+
+ ar = new Array();
+
+ kyo = new Array();
+
+ for(j=1 ; j<=5 ; j++ ){
+
+ if(sel[j]==0){
+  kyo[j] = "+" + Math.round(pow[j]/2) + "％";
+}
+
+ else if(sel[j]==1){
+  kyo[j] = Math.round(pow[j] * 1.2);
+}
+
+ else if(sel[j]<=6){
+   if(pow[j]<=50){
+  kyo[j] = Math.round(pow[j]/4) * 2.0 + "％";
+ }
+   else{
+  kyo[j] = Math.round((pow[j] - 1) / 4) * 2.0 + "％";
+ }
+}
+
+ else if(sel[j]<=8){
+   if(pow[j]<=50){
+  kyo[j] = Math.round(pow[j]/4) * 1.0;
+ }
+   else{
+  kyo[j] = Math.round((pow[j] - 1) / 4) * 1.0;
+ }
+}
+
+
+ else if(sel[j]==9){
+  kyo[j] = (Math.round(pow[j]/2.5) + 10.0) + "％";
+}
+
+ else if(sel[j]<=14){
+  kyo[j] = "+" + Math.round(pow[j] * 18 / 100) + "％";
+}
+
+
+ else if(sel[j]<=16){
+  kyo[j] = (Math.round(pow[j]/4)) + "％";
+}
+
+
+ else if(sel[j]==17){
+   if(pow[j]<=75){
+  kyo[j] = -30.0 + Math.round(pow[j]/10);
+ }
+   else{
+  kyo[j] = -30.0 + Math.round((pow[j] - 1)/10);
+ }
+}
+
+ else if(sel[j]==18){
+   if(pow[j]<=75){
+  kyo[j] = "+" + Math.round(6.0 * pow[j]/100) * 5.0 + "％";
+ }
+   else{
+  kyo[j] = "+" + Math.round(6.0 * (pow[j] - 1)/100) * 5.0 + "％";
+ }
+}
+
+ else{
+  kyo[j] = "";
+}
+
+}
+
+
+ for(j=1 ; j<=5 ; j++ ){
+  if(sel[j]==23){
+   tok1 = Math.floor(900 * Math.random());
+
+    if(tok1<3){
+    koka[sel[j]] = "特効　：　爬虫類"
+  }
+    else if(tok1<6){
+    koka[sel[j]] = "特効　：　鋏角類"
+  }
+    else if(tok1<9){
+    koka[sel[j]] = "特効　：　悪魔族"
+  }
+    else if(tok1<12){
+    koka[sel[j]] = "特効　：　エレメンタル族"
+  }
+    else if(tok1<15){
+    koka[sel[j]] = "特効　：　亜人種"
+  }
+    else if(tok1<18){
+    koka[sel[j]] = "特効　：　アンデッド族"
+  }
+    else if(tok1<67){
+    koka[sel[j]] = "特効　：　ドラゴン"
+  }
+    else if(tok1<116){
+    koka[sel[j]] = "特効　：　スネーク"
+  }
+    else if(tok1<165){
+    koka[sel[j]] = "特効　：　リザードマン"
+  }
+    else if(tok1<214){
+    koka[sel[j]] = "特効　：　オフィディアン"
+  }
+    else if(tok1<263){
+    koka[sel[j]] = "特効　：　スコーピオン"
+  }
+    else if(tok1<312){
+    koka[sel[j]] = "特効　：　スパイダー"
+  }
+    else if(tok1<361){
+    koka[sel[j]] = "特効　：　テラサン"
+  }
+    else if(tok1<410){
+    koka[sel[j]] = "特効　：　ガーゴイル"
+  }
+    else if(tok1<459){
+    koka[sel[j]] = "特効　：　ブラッドエレメンタル"
+  }
+    else if(tok1<508){
+    koka[sel[j]] = "特効　：　アースエレメンタル"
+  }
+    else if(tok1<557){
+    koka[sel[j]] = "特効　：　エアエレメンタル"
+  }
+    else if(tok1<606){
+    koka[sel[j]] = "特効　：　ファイアエレメンタル"
+  }
+    else if(tok1<655){
+    koka[sel[j]] = "特効　：　ウォーターエレメンタル"
+  }
+    else if(tok1<704){
+    koka[sel[j]] = "特効　：　ポイズンエレメンタル"
+  }
+    else if(tok1<753){
+    koka[sel[j]] = "特効　：　スノーエレメンタル"
+  }
+    else if(tok1<802){
+    koka[sel[j]] = "特効　：　オーガ"
+  }
+    else if(tok1<851){
+    koka[sel[j]] = "特効　：　トロル"
+  }
+    else{
+    koka[sel[j]] = "特効　：　オーク"
+  }
+}
+
+  if(sel[j]==2){
+   mag1 = Math.floor(5 * Math.random());
+
+    if(mag1==0){
+    koka[sel[j]] = "追加効果　：　Magic arrow"
+  }
+    else if(mag1==1){
+    koka[sel[j]] = "追加効果　：　Harm"
+  }
+    else if(mag1==2){
+    koka[sel[j]] = "追加効果　：　Fireball"
+  }
+    else if(mag1==3){
+    koka[sel[j]] = "追加効果　：　Lightning"
+  }
+    else{
+    koka[sel[j]] = "追加効果　：　Dispel"
+  }
+}
+
+  if(sel[j]==3){
+   mag2 = Math.floor(5 * Math.random());
+
+    if(mag2==0){
+    koka[sel[j]] = "追加効果　：　物理エリア"
+  }
+    else if(mag2==1){
+    koka[sel[j]] = "追加効果　：　炎エリア"
+  }
+    else if(mag2==2){
+    koka[sel[j]] = "追加効果　：　冷気エリア"
+  }
+    else if(mag2==3){
+    koka[sel[j]] = "追加効果　：　毒エリア"
+  }
+    else{
+    koka[sel[j]] = "追加効果　：　エネルギーエリア"
+  }
+}
+
+  if(sel[j]==22){
+   mag3 = Math.floor(100 * Math.random());
+
+    if(mag3==0){
+    koka[sel[j]] = "属性攻撃100％(1属性)"
+  }
+    else{
+    koka[sel[j]] = "属性攻撃配分"
+  }
+}
+
+}
+
+ document.koka1 = koka[sel[1]];
+ document.koka2 = koka[sel[2]];
+ document.koka3 = koka[sel[3]];
+ document.koka4 = koka[sel[4]];
+ document.koka5 = koka[sel[5]];
+
+
+ han = Math.floor(100 * Math.random())
+  if(runic1==1 || runic1==9){
+   if(han<50){
+   document.koka2 = "";
+   document.koka3 = "";
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[2] = "";
+   kyo[3] = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+   else{
+   document.koka3 = "";
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[3] = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+}
+
+  if(runic1==2){
+   document.koka3 = "";
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[3] = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+
+    if(runic1==3 || runic1==10){
+   if(han<50){
+   document.koka3 = "";
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[3] = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+   else{
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+}
+
+  if(runic1==4 || runic1==11){
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+
+    if(runic1==5){
+   if(han<50){
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+   else{
+   document.koka5 = "";
+   kyo[5] = "";
+}
+}
+
+  if(runic1==6 || runic1==12){
+   document.koka5 = "";
+   kyo[5] = "";
+}
+
+  if(runic1==7){
+   if(han<50){
+   document.koka5 = "";
+   kyo[5] = "";
+}
+}
+
+
+
+ form.koka1.value = document.koka1;
+ form.koka2.value = document.koka2;
+ form.koka3.value = document.koka3;
+ form.koka4.value = document.koka4;
+ form.koka5.value = document.koka5;
+ form.kyo1.value = kyo[1];
+ form.kyo2.value = kyo[2];
+ form.kyo3.value = kyo[3];
+ form.kyo4.value = kyo[4];
+ form.kyo5.value = kyo[5];
+
+
+ return true;
+}
+//-->
+</script>
+
+<form name="form_sim">
+<div class="div02">
+<select name="runic" size="1">
+<option value="0">----runic tool選択----
+<option value="1">Dullcopper runicr
+<option value="2">Shadow runic
+<option value="3">Copper runic
+<option value="4">Bronze runic
+<option value="5">Gold runic
+<option value="6">Agapite runic
+<option value="7">Verite runic
+<option value="8">Valorite runic
+<option value="9">Oak runic
+<option value="10">Ash runic
+<option value="11">Yew runic
+<option value="12">Heartwood runic
+</select>
+　　
+<INPUT Type="radio" name="hq01" value="0.0">　標準品質
+　／　<INPUT Type="radio" name="hq01" value="70.0" checked>　高品質
+
+<br><input type="button" value="武器作成" onclick="sim1(form)"></div>
+
+<table class="table02">
+  <tr bgcolor="ffffcc">
+   <td align="center" width="250">付加されたマジック効果</td>
+   <td align="center" width="90">効果の強度</td>
+  </tr>
+  <tr bgcolor="ccccff">
+   <td align="center"><input class="readtext" readonly type="text" name="koka1" size="32" value="効果"></td>
+   <td align="center"><input class="readtext" readonly type="text" name="kyo1" size="6" value="強度"></td>
+  </tr>
+  <tr bgcolor="ddddff">
+   <td align="center"><input class="readtext" readonly type="text" name="koka2" size="32" value="効果"></td>
+   <td align="center"><input class="readtext" readonly type="text" name="kyo2" size="6" value="強度"></td>
+  </tr>
+  <tr bgcolor="ccccff">
+   <td align="center"><input class="readtext" readonly type="text" name="koka3" size="32" value="効果"></td>
+   <td align="center"><input class="readtext" readonly type="text" name="kyo3" size="6" value="強度"></td>
+  </tr>
+  <tr bgcolor="ddddff">
+   <td align="center"><input class="readtext" readonly type="text" name="koka4" size="32" value="効果"></td>
+   <td align="center"><input class="readtext" readonly type="text" name="kyo4" size="6" value="強度"></td>
+  </tr>
+  <tr bgcolor="ccccff">
+   <td align="center"><input class="readtext" readonly type="text" name="koka5" size="32" value="効果"></td>
+   <td align="center"><input class="readtext" readonly type="text" name="kyo5" size="6" value="強度"></td>
+  </tr>
+</table>
+</form>
+Publish52以降の仕様に対応するシミュレータです。ライフリーチおよびマナリーチは％表記ではなく1～25の強度表示にしています（実際は武器速度が考慮される）。
+<br>Runic toolで付加されるマジック効果の強度率。付加プロパティ数は以前と変わりません。
+<ul class="list01">
+  <li>Dullcopper　：　40～100％</li>
+  <li>Shadow　：　45～100％</li>
+  <li>Copper　：　50～100％</li>
+  <li>Bronze　：　55～100％</li>
+  <li>Gold　：　60～100％</li>
+  <li>Agapite　：　65～100％</li>
+  <li>Verite　：　70～100％</li>
+  <li>Valorite　：　85～100％</li>
+  <li>Oak　：　25～50％（Publish52より変更）</li>
+  <li>Ash　：　35～75％</li>
+  <li>Yew　：　45～90％</li>
+  <li>Heartwood　：　50～100％</li>
+</ul>
+"高品質"を選択した場合、武器ダメージ+35％未満は表示されません。
+
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

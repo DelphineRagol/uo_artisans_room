@@ -1,0 +1,2968 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>Artifact装備品データ</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898975</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<h2>Artifact装備品データ</h2>
+
+<hr>
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+
+ {//functionの宣言。受けとったIDは変数targetIDに格納。
+  if( document.getElementById(targetID))
+   { //指定のIDのついたオブジェクトがあったら処理する
+     //指定されたIDのstyle.displayがnoneなら
+    for (i=1; i<9; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {//blockに変更する
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+
+<a href="#" onClick="showHide('cat_1');return false;"><img src="icon_doom.gif" alt="Doom" class="img01" width="47" height="55"></a>
+<a href="#" onClick="showHide('cat_2');return false;"><img src="icon_tokuno.gif" alt="Tokuno" class="img01" width="61" height="56"></a>,
+<a href="#" onClick="showHide('cat_3');return false;"><img src="virtue.gif" alt="背徳の洞窟" class="img01"></a>,
+<a href="#" onClick="showHide('cat_4');return false;"><img src="icon_paragon.gif" alt="パラゴンなど" class="img01" width="57" height="51"></a>,
+<a href="#" onClick="showHide('cat_5');return false;"><img src="icon_uoml.gif" alt="UOML" class="img01" width="58" height="51"></a>,
+<a href="#" onClick="showHide('cat_6');return false;"><img src="icon_uosa.gif" alt="UOSA" class="img01" width="57" height="62"></a>,
+<a href="#" onClick="showHide('cat_8');return false;"><img src="icon_uohs.gif" alt="UOHS/Treasure" class="img01"></a>,
+<a href="#" onClick="showHide('cat_7');return false;"><img src="icon_faction.gif" alt="派閥" class="img01"></a>,
+<div id="cat_1" style="display: none">
+
+<h3>Doom</h3>
+
+<table class="table02">
+ <tr bgcolor="f0f0f0">
+  <td width="100">画像</td>
+  <td width="200">名称</td>
+  <td width="220">付加プロパティ</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="righteous.gif" alt="Blade of the Righteous" class="img01"></td>
+  <td><span title="1hand&#10;15-16D&#10;3.5sec&#10;ignore/concussion">Blade of the Righteous<br>[公正の剣]</span></td>
+  <td>特効　：　悪魔族
+<br>ライフリーチ　：　87％
+<br>ヒットポイント　：　+10
+<br>武器ダメージ　：　+35％
+<br>ベストウェポンスキル
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="titanhammer.gif" alt="Titan's Hammer" class="img01"</td>
+  <td><span title="2hand&#10;17-18D&#10;3.75sec&#10;whirl/crushing">Titan's Hammer<br>[タイタンハンマー]</span></td>
+  <td>エネルギーエリア　：　100％
+<br>STR　：　15
+<br>命中　：　+15％
+<br>武器ダメージ　：　+50％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="zyronic.gif" alt="Zyronic Claw" class="img01"></td>
+  <td><span title="2hand&#10;15-17D&#10;3.25sec&#10;bleed/mortal">Zyronic Claw<br>[ザイロニッククロー]</span></td>
+  <td>マナリーチ　：　81％
+<br>特効　：　エレメンタル族
+<br>命中　：　+30％
+<br>武器ダメージ　：　+50％
+<br>攻撃属性　：　20/20/20/20/20
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="heavenaxe.gif" alt="axe of the heavens" class="img01"></td>
+  <td><span title="2hand&#10;15-17D&#10;3.25sec&#10;double str/whirl">Axe of the Heavens<br>[ヘブンアックス]</span></td>
+  <td>Lightning　：　50％
+<br>命中　：　+15％
+<br>回避　：　+15％
+<br>武器ダメージ　：　+50％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="insanity.gif" alt="Blade of Insanity" class="img01"></td>
+  <td><span title="1hand&#10;11-13D&#10;2.5sec&#10;double str/ignore">Blade of Insanity<br>[狂乱の剣]</span></td>
+  <td>スタミナリーチ　：　100％
+<br>スタミナ回復　：　2
+<br>速度　：　+30％
+<br>武器ダメージ　：　+50％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="bonecrush.gif" alt="Bone Crusher" class="img01"></td>
+  <td><span title="1hand&#10;16-17D&#10;4sec&#10;crushing/bleed">Bone Crusher<br>[ボーンクラッシャー]</span></td>
+  <td>回避低下　：　50％
+<br>STR　：　10
+<br>武器ダメージ　：　+75％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="breathofdead.gif" alt="Breath of the Dead" class="img01"></td>
+  <td><span title="1hand&#10;13-15D&#10;3sec&#10;paralyzing/mortal">Breath of the Dead<br>[死者の息吹]</span></td>
+  <td>ライフリーチ　：　100％
+<br>Harm　：　25％
+<br>魔法ダメージ　：　+5％
+<br>武器ダメージ　：　+50％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="driad.gif" alt="Dryad Bow" class="img01"></td>
+  <td><span title="2hand&#10;15-19D&#10;4.25sec&#10;paralyzing/mortal">Dryad Bow<br>[ドライアドボウ]</span>
+<br><img src="book02.gif" title="スキル&#10;Peacemaking&#10;Ninjitsu&#10;Chivalry&#10;Archery&#10;Resistance&#10;Healing" class="img01"></td>
+  <td>スキル　：　+5 or +10
+<br>自己修復　：　5
+<br>速度　：　+50％
+<br>武器ダメージ　：　+35％
+<br>毒抵抗　：　15％
+<br>修理　：　弓工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="frostbringer.gif" alt="Frost Bringer" class="img01"></td>
+  <td><span title="2hand&#10;15-19D&#10;4.25sec&#10;paralyzing/mortal">Frost Bringer<br>[フロストブリンガー]</span></td>
+  <td>Dispel　：　50％
+<br>スタミナ回復　：　10
+<br>武器ダメージ　：　+50％
+<br>攻撃属性　：　0/0/100/0/0
+<br>修理　：　弓工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="legacyofdl.gif" alt="Legacy of the Dread Lord" class="img01"></td>
+  <td><span title="2hand&#10;17-18D&#10;3.75sec&#10;paralyzing/dismount">Legacy of the Dread Lord</span></td>
+  <td>詠唱可
+<br>キャストリカバリ　：　3
+<br>速度　：　+30％
+<br>武器ダメージ　：　+50％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="serpents.gif" alt="Serpent's Fang" class="img01"></td>
+  <td><span title="1hand&#10;10-12D&#10;2sec&#10;ignore/infecting">Serpent's Fang<br>[サーペンツファング]</span></td>
+  <td>毒エリア　：　100％
+<br>命中　：　+15％
+<br>武器ダメージ　：　+50％
+<br>毒抵抗　：　15～20％
+<br>攻撃属性　：　25/0/0/75/0
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="magistaff.gif" alt="Staff of the Magi" class="img01"></td>
+  <td><span title="2hand&#10;13-16D&#10;2.75sec&#10;paralyzing/whirl">Staff of the Magi<br>[魔術師の杖]</span></td>
+  <td>魔道武器　：　-0
+<br>詠唱可
+<br>ファストキャスト　：　1
+<br>武器ダメージ　：　+50％
+<br>攻撃属性　：　0/0/0/0/100
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="berserker.gif" alt="The Beserker's Maul" class="img01"></td>
+  <td><span title="1hand&#10;14-16D&#10;3.5sec&#10;crushing/concussion">The Beserker's Maul<br>[バーサーカーモール]</span></td>
+  <td>速度　：　+75％
+<br>武器ダメージ　：　+50％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="dragonslayer.gif" alt="The Dragon Slayer" class="img01"></td>
+  <td><span title="1hand&#10;17-18D&#10;4.5sec&#10;dismount/concussion">The Dragon Slayer<br>[ドラゴンスレイヤー]</span></td>
+  <td>特効　：　ドラゴン
+<br>幸運　：　110
+<br>武器ダメージ　：　+50％
+<br>炎抵抗　：　20％
+<br>ベストウェポンスキル
+<br>攻撃属性　：　0/0/0/0/100
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="taskmaster.gif" alt="The Taskmaster" class="img01"></td>
+  <td><span title="1hand&#10;12-13D&#10;2.5sec&#10;bleed/disarm">The Taskmaster<br>[タスクマスター]</span></td>
+  <td>毒エリア　：　100％
+<br>DEX　：　5
+<br>命中　：　+15％
+<br>武器ダメージ　：　+50％
+<br>攻撃属性　：　0/0/0/100/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="inquisitor.gif" alt="The Inquisitor's Resolution" class="img01"></td>
+  <td><span title="plate gloves&#10;瞑想不可">The Inquisitor's Resolution<br>[裁きの手]</span></td>
+  <td>キャストリカバリ　：　3
+<br>マナコスト　：　-8％
+<br>抵抗値　：　5/3/22/3/17
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="fortunearmor.gif" alt="Armor of Fortune" class="img01"></td>
+  <td><span title="studded tunic&#10;瞑想不可">Armor of Fortune<br>[フォーチュンアーマー]</span></td>
+  <td>幸運　：　200
+<br>回避　：　+15％
+<br>秘薬コスト　：　-40％
+<br>抵抗値　：　2/4/3/3/4
+<br>瞑想可 
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="devine.gif" alt="Divine Countenance" class="img01"></td>
+  <td><span title="tribal mask&#10;瞑想可">Divine Countenance</span></td>
+  <td>INT　：　8
+<br>マナ回復　：　2
+<br>物理ダメージ反射　：　15％
+<br>マナコスト　：　-8％
+<br>抵抗値　：　6/9/0/4/25
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="gauntlet.gif" alt="Gauntlets of Nobility" class="img01"></td>
+  <td><span title="ring gloves&#10;瞑想不可">Gauntlets of Nobility<br>[ノーブルガントレット]</span></td>
+  <td>STR　：　8
+<br>幸運　：　100
+<br>武器ダメージ　：　+20％
+<br>抵抗値　：　18/3/1/20/3
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="magihat.gif" alt="Hat of the Magi" class="img01"></td>
+  <td><span title="wizard hat&#10;瞑想可">Hat of the Magi<br>[魔術師の帽子]</span></td>
+  <td>INT　：　8
+<br>マナ回復　：　4
+<br>魔法ダメージ　：　+10％
+<br>抵抗値　：　0/5/9/20/20
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="insight.gif" alt="Helm of Insight" class="img01"></td>
+  <td><span title="plate helm&#10;瞑想不可">Helm of Insight<br>[インサイトヘルム]</span></td>
+  <td>INT　：　8
+<br>マナ　：　+15
+<br>マナ回復　：　2
+<br>マナコスト　：　-8％
+<br>抵抗値　：　5/3/2/3/17
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="holyplate.gif" alt="Holy Knight's Breastplate" class="img01"></td>
+  <td><span title="plate tunic&#10;瞑想不可">Holy Knight's Breastplate<br>[ホーリーナイトアーマー]</span></td>
+  <td>ヒットポイント　：+10
+<br>物理ダメージ反射　：　15％
+<br>抵抗値　：　35/3/2/3/2
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="headdress.gif" alt="Hunter's Headdress" class="img01"></td>
+  <td><span title="deer mask&#10;瞑想可">Hunter's Headdress<br>[狩人のマスク]</span></td>
+  <td>Archery　：　+20
+<br>DEX　：　8
+<br>Night sight
+<br>命中　：　+15％
+<br>抵抗値　：　2/6/23/1/7
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="jackal.gif" alt="Jackal's Collar" class="img01"></td>
+  <td><span title="plate gorget&#10;瞑想不可">Jackal's Collar<br>[ジャッカルカラー]</span></td>
+  <td>DEX　：　15
+<br>ヒットポイント回復　：　2
+<br>抵抗値　：　5/23/17/3/2
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="legofbane.gif" alt="Leggings of Bane" class="img01"></td>
+  <td><span title="chain legs&#10;瞑想不可">Leggings of Bane<br>[ベインレッグ]</span></td>
+  <td>スタミナ　：　+8
+<br>命中　：　+20％
+<br>抵抗値　：　4/4/4/36/2
+<br>耐久性　：　+100％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="midnight.gif" alt="Midnight Bracers" class="img01"></td>
+  <td><span title="bone arms&#10;瞑想不可">Midnight Bracers<br>[ミッドナイトブレイサー]</span></td>
+  <td>Necromancy　：　+20 
+<br>魔法ダメージ　：　+10％ 
+<br>抵抗値　：　23/3/4/2/4
+<br>瞑想可
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="ornate.gif" alt="Ornate Crown of the Horrower" class="img01"></td>
+  <td><span title="bone helm&#10;瞑想不可">Ornate Crown of the Horrower<br>[Harrowerの装飾王冠]</span></td>
+  <td>ヒットポイント回復　：　2
+<br>スタミナ回復　：　3
+<br>武器ダメージ　：　+25％
+<br>抵抗値　：　3/3/4/17/4
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="dancer.gif" alt="Shadow Dancer Leggings" class="img01"></td>
+  <td><span title="leather legs&#10;瞑想可">Shadow Dancer Leggings<br>[シャドウダンサーレッグ]</span></td>
+  <td>Stealth　：　+20
+<br>Stealing　：　+20
+<br>抵抗値　：　17/4/3/18/18
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="totem.gif" alt="Spirit of the Totem" class="img01"></td>
+  <td><span title="bear mask&#10;瞑想可">Spirit of the Totem<br>[トーテムの精霊]</span></td>
+  <td>STR　：　20
+<br>物理ダメージ反射　：　15％
+<br>命中　：　+15％
+<br>抵抗値　：　20/3/8/4/4
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="firetunic.gif" alt="Tunic of Fire" class="img01"></td>
+  <td><span title="chain tunic&#10;瞑想不可">Tunic of Fire<br>[ファイアチュニック]</span></td>
+  <td>自己修復　：　5
+<br>Night sight
+<br>物理ダメージ反射　：　15％
+<br>抵抗値　：　24/34/4/1/2
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="fallenking.gif" alt="Voice of the Fallen King" class="img01"></td>
+  <td><span title="leather gorget&#10;瞑想可">Voice of the Fallen King</span></td>
+  <td>STR　：　8
+<br>ヒットポイント回復　：　5
+<br>スタミナ回復　：　3
+<br>抵抗値　：　2/4/18/2/18
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="aegis.gif" alt="Aegis" class="img01"></td>
+  <td><span title="heater shield">Aegis<br>[イージス]</span></td>
+  <td>自己修復　：　5 
+<br>物理ダメージ反射　：　15％ 
+<br>回避　：　+15％ 
+<br>マナコスト　：　-8％ 
+<br>抵抗値　：　15/1/0/0/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="arcane.gif" alt="Arcane Shield" class="img01"></td>
+  <td><span title="tear kite">Arcane Shield<br>[アーケインシールド]</span></td>
+  <td>詠唱可
+<br>Night sight
+<br>回避　：　+15％
+<br>ファストキャスト　：　1
+<br>抵抗値　：　0/0/0/0/1
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="health.gif" alt="Bracelet of Health" class="img01"></td>
+  <td><span title="">Bracelet of Health<br>[ヘルスブレスレット]</span></td>
+  <td>ヒットポイント　：　+5
+<br>ヒットポイント回復　：　10
+<br>抵抗値　：　0/0/0/0/0
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="ornament.gif" alt="Ornament of the Magician" class="img01"></td>
+  <td><span title="">Ornament of the Magician<br>[魔法士の腕輪]</span></td>
+  <td>キャストリカバリ　：　3
+<br>ファストキャスト　：　2
+<br>マナコスト　：　-10％
+<br>秘薬コスト　：　-20％
+<br>抵抗値　：　0/0/0/0/15
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="element.gif" alt="Ring of the Elements" class="img01"></td>
+  <td><span title="">Ring of the Elements<br>[万有の指輪]</span></td>
+  <td>幸運　：　100
+<br>抵抗値　：　0/16/16/16/16
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="vile.gif" alt="Ring of the Vile" class="img01"></td>
+  <td><span title="">Ring of the Vile<br>[ヴァイルリング]</span></td>
+  <td>DEX　：　8
+<br>スタミナ回復　：　6
+<br>命中　：　+15％
+<br>抵抗値　：　0/0/0/20/0
+</td>
+ </tr>
+
+</table>
+
+</div>
+
+<div id="cat_2" style="display: none">
+
+<h3>Tokuno</h3>
+
+<table class="table02">
+ <tr bgcolor="f0f0f0">
+  <td width="100">画像</td>
+  <td width="200">名称</td>
+  <td width="220">付加プロパティ</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="no-dachi.gif" alt="no-dachi" class="img01"></td>
+  <td><span title="2hand&#10;16-18D&#10;3.5sec&#10;crushing/riding swipe">Sword of The Stampede<br>[駆逐の太刀]</span></td>
+  <td>Harm　：　100％
+<br>命中　：　+10％
+<br>武器ダメージ　：　+60％
+<br>攻撃属性　：　0/0/100/0/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="kama.gif" alt="kama" class="img01"></td>
+  <td><span title="2hand&#10;9-11D&#10;2sec&#10;whirl/defense mas.">Darkened Sky<br>[雷雲]</span></td>
+  <td>Lightning　：　60％
+<br>速度　：　+25％
+<br>武器ダメージ　：　+50％
+<br>攻撃属性　：　0/0/50/0/50
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="daisho.gif" alt="daisho" class="img01"></td>
+  <td><span title="2hand&#10;13-15D&#10;2.75sec&#10;whirl/double str.">Swords of Prosperity<br>[隆盛剣]</span></td>
+  <td>詠唱可
+<br>魔道武器　：　-0
+<br>幸運　：　200
+<br>ファストキャスト　：　1
+<br>攻撃属性　：　0/100/0/0/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="tessen.gif" alt="tessen" class="img01"></td>
+  <td><span title="2hand&#10;9-11D&#10;2sec&#10;whirl/defense mas.">Wind's Edge<br>[ウインズエッジ]</span></td>
+  <td>マナリーチ　：　25％ 
+<br>回避　：　+10％ 
+<br>速度　：　+50％ 
+<br>武器ダメージ　：　+50％
+<br>攻撃属性　：　0/0/0/0/100
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="yumi.gif" alt="yumi" class="img01"></td>
+  <td><span title="2hand&#10;16-20D&#10;4.5sec&#10;armor pierce/double shot">The Horselord<br>[騎馬大将の弓]</span></td>
+  <td>特効　：　エレメンタル族
+<br>特効　：　爬虫類
+<br>DEX　：　5
+<br>マナ回復　：　1
+<br>幸運　：　125
+<br>武器ダメージ　：　+50％
+<br>修理　：　弓工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="p-do.gif" alt="plate do" class="img01"></td>
+  <td><span title="plate do&#10;瞑想不可">Rune Beetle Carapace<br>[ルーンビートル胴]</span></td>
+  <td>マナ　：　+10
+<br>マナ回復　：　3
+<br>マナコスト　：　-15％
+<br>抵抗値　：　5/3/14/3/14
+<br>装備条件　：　-100％
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="kasa.gif" alt="kasa" class="img01"></td>
+  <td><span title="kasa&#10;瞑想可">Kasa of The Raj-In<br>[ラジンの笠]</span></td>
+  <td>魔法ダメージ　：　+12％
+<br>抵抗値　：　12/17/21/17/17
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="l_n-mitts.gif" alt="leather ninja mitts" class="img01"></td>
+  <td><span title="leather ninja mitts&#10;瞑想可">Stormgrip<br>[ストームグリップ]</span></td>
+  <td>INT　：　8
+<br>幸運　：　125
+<br>武器ダメージ　：　+25％
+<br>抵抗値　：　10/4/18/3/18
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="tafbook.gif" alt="spellbook" class="img01"></td>
+  <td><span title="spellbook">Tome of Lost Knowledge<br>[失われし知識の書]</span></td>
+  <td>INT　：　8
+<br>Magery　：　+15
+<br>魔法ダメージ　：　+15％
+<br>マナコスト　：　-15％
+</td>
+ </tr>
+</table>
+
+<table class="table02">
+ <tr bgcolor="f0f0f0">
+  <td width="100">画像</td>
+  <td width="200">名称</td>
+  <td width="220">付加プロパティ</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="no-dachi.gif" alt="no-dachi" class="img01"></td>
+  <td><span title="2hand&#10;16-18D&#10;3.5sec&#10;crushing/riding swipe">The Destroyer<br>[破砕の太刀]</span></td>
+  <td>スタミナリーチ　：　40％
+<br>STR　：　6
+<br>命中　：　+10％
+<br>武器ダメージ　：　+50％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="sai.gif" alt="sai" class="img01"></td>
+  <td><span title="2hand&#10;9-11D&#10;2sec&#10;block/armor pierce">Demon forks<br>[デーモンフォーク]</span></td>
+  <td>物理ダメージ反射　：　10％
+<br>回避　：　＋10％
+<br>武器ダメージ　：　＋35％
+<br>炎抵抗　：　10％
+<br>毒抵抗　：　10％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="nunchaku.gif" alt="nunchaku" class="img01"></td>
+  <td><span title="2hand&#10;11-13D&#10;2.5sec&#10;block/feint">Dragon Nunchaku<br>[ドラゴンヌンチャク]</span></td>
+  <td>自己修復　：　3
+<br>Fireball　：　50％
+<br>速度　：　+20％
+<br>武器ダメージ　：　+40％
+<br>炎抵抗　：　5％
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="tetsubo.gif" alt="tetsubo" class="img01"></td>
+  <td><span title="2hand&#10;12-14D&#10;2.5sec&#10;f-whirl/crushing">Exiler<br>[流人の金棒]</span></td>
+  <td>特効　：　悪魔族
+<br>Dispel　：　33％
+<br>速度　：　+20％
+<br>武器ダメージ　：　+40％
+<br>攻撃属性　：　0/0/0/0/100
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="tessen.gif" alt="tessen" class="img01"></td>
+  <td><span title="2hand&#10;9-11D&#10;2sec&#10;whirl/defense mas.">Pilfered Dancer Fans<br>[酔舞扇]</span></td>
+  <td>詠唱可
+<br>回避　：　+5％
+<br>キャストリカバリ　：　2
+<br>速度　：　+20％
+<br>武器ダメージ　：　+20％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="yumi.gif" alt="yumi" class="img01"></td>
+  <td><span title="2hand&#10;16-20D&#10;4.5sec&#10;armor pierce/double shot">Hanzo's Bow<br>[半蔵の弓]</span></td>
+  <td>Ninjitsu　：　+10
+<br>ライフリーチ　：　45％
+<br>自己修復　：　3
+<br>武器ダメージ　：　+50％
+<br>修理　：　弓工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="bokuto.gif" alt="bokuto" class="img01"></td>
+  <td><span title="1hand&#10;9-11D&#10;2sec&#10;feint/nerve">Peasant's Bokuto<br>[素朴な木刀]</span></td>
+  <td>回避低下　：　30％
+<br>特効　：　スネーク
+<br>自己修復　：　3
+<br>速度　：　+10％
+<br>武器ダメージ　：　+35％
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="tome.gif" alt="spellbook" class="img01"></td>
+  <td><span title="spellbook">Tome of Enlightenment<br>[啓発の書]</span></td>
+  <td>INT　：　5
+<br>魔法ダメージ　：　+10％
+<br>ファストキャスト　：　1
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="l_n-mitts.gif" alt="leather ninja mitts" class="img01"></td>
+  <td><span title="leather ninja mitts&#10;瞑想可">Gloves of the Sun<br>[太陽のグローブ]</span></td>
+  <td>ヒットポイント回復　：　2 
+<br>Night sight 
+<br>マナコスト　：　-5％ 
+<br>秘薬コスト　：　-18％
+<br>抵抗値　：　2/24/3/3/3
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="p_b-kabuto.gif" alt="plate battle kabuto" class="img01"></td>
+  <td><span title="plate battle kabuto&#10;瞑想不可">Daimyo's Helm<br>[大名兜]</span></td>
+  <td>自己修復　：　3
+<br>速度　：　+10％
+<br>抵抗値　：　6/2/10/2/3
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="p-do.gif" alt="plate do" class="img01"></td>
+  <td><span title="plate do&#10;瞑想不可">Ancient Samurai Do<br>[古代の侍胴]</span></td>
+  <td>Parrying　：　+10
+<br>抵抗値　：　15/12/10/11/8
+<br>装備条件　：　-100％
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="p-suneate.gif" alt="plate suneate" class="img01"></td>
+  <td><span title="plate suneate&#10;瞑想不可">Legs of Stability<br>[不動のすね当]</span></td>
+  <td>自己修復　：　3
+<br>スタミナ　：　+5
+<br>抵抗値　：　20/3/2/18/2
+<br>装備条件　：　-100％
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="kasa.gif" alt="kasa" class="img01"></td>
+  <td><span title="kasa&#10;瞑想可">Ancient Farmer Kasa<br>[農夫の古式笠]</span></td>
+  <td>Animal lore　：　+5 
+<br>STR　：　5 
+<br>スタミナ　：　+5 
+<br>スタミナ回復　：　5
+<br>抵抗値　：　0/5/19/5/5
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="l-hirosode.gif" alt="leather hirosode" class="img01"></td>
+  <td><span title="leather hirosode&#10;瞑想可">Arms of Tactical Excellence<br>[傑人の広袖]</span></td>
+  <td>Tactics　：　+12
+<br>DEX　：　5
+<br>抵抗値　：　2/9/13/8/13
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="blacklotus.gif" alt="cloth ninja hood" class="img01"></td>
+  <td><span title="cloth ninja hood&#10;瞑想可">Black Lotus Hood<br>[黒蓮頭巾]</span></td>
+  <td>自己修復　：　5
+<br>命中　：　+6％
+<br>マナコスト　：　-6％
+<br>抵抗値　：　0/11/15/11/11
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="leurocian_mempo.gif" alt="leather mempo" class="img01"></td>
+  <td><span title="">Leurocian's Mempo of Fortune</span></td>
+  <td>マナ回復　：　1
+<br>幸運　：　300
+<br>抵抗値　：　15/10/10/10/15
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+</table>
+
+</div>
+
+<div id="cat_3" style="display: none">
+
+<h3>UO 10th Artifact</h3>
+
+<table class="table02">
+ <tr bgcolor="f0f0f0">
+  <td width="100">画像</td>
+  <td width="200">名称</td>
+  <td width="220">付加プロパティ</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="katrina_crook.gif" alt="crook" class="img01"></td>
+  <td><span title="2hand&#10;13-15D&#10;2.75sec&#10;crushing/dismount">Katrina's Crook<br>[カトリーナの牧羊の杖]</span></td>
+  <td>ライフリーチ　：　55％ 
+<br>マナリーチ　：　55％
+<br>スタミナリーチ　：　40％
+<br>武器ダメージ　：　+60％
+<br>物理抵抗　：　15％
+<br>[補強不可]
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="jaana_staff.gif" alt="gnarled staff" class="img01"></td>
+  <td><span title="2hand&#10;15-17D&#10;3.25sec&#10;concussion/paralyzing">Jaana's Staff<br>[イアナの杖]</span></td>
+  <td>魔道武器　：　-20
+<br>詠唱可
+<br>幸運　：　220
+<br>回避　：　+15％
+<br>[補強不可]
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="dragon_end.gif" alt="longsword" class="img01"></td>
+  <td><span title="1hand&#10;15-16D&#10;3.5sec&#10;ignore/concussion">Dragon's End<br>[ドラゴンズエンド]</span></td>
+  <td>特効　：　ドラゴン
+<br>命中　：　+10％
+<br>武器ダメージ　：　+60％
+<br>炎抵抗　：　20％
+<br>攻撃属性　：　0/0/100/0/0
+<br>[補強不可]
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="blackthorn_exmplar.gif" alt="chaos shield" class="img01"></td>
+  <td><span title="chaos shield">Lord Blackthorn's Exemplar</span></td>
+  <td>抵抗値　：　6/10/10/15/10
+<br>[補強不可]
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="sentinel_guard.gif" alt="order shield" class="img01"></td>
+  <td><span title="order shield">Sentinel's Guard<br>[センチネルガード]</span></td>
+  <td>抵抗値　：　16/10/10/5/10
+<br>[補強不可]
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="arm_compassion.gif" alt="arm compassion" class="img01"></td>
+  <td><span title="arm compassion&#10;瞑想不可">Arms of Compassion<br>[慈悲の腕当て]</span></td>
+  <td>Blessed
+<br>抵抗値　：　8/11/6/8/7
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="legs_honor.gif" alt="leg honor" class="img01"></td>
+  <td><span title="leg honor&#10;瞑想不可">Legs of Honor<br>[名誉の足鎧]</span></td>
+  <td>Blessed
+<br>抵抗値　：　8/7/10/7/8
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="breastplate_justice.gif" alt="breastplate justice" class="img01"></td>
+  <td><span title="breastplate justice&#10;瞑想不可">Breastplate of Justice<br>[正義の胸当て]</span></td>
+  <td>Blessed
+<br>抵抗値　：　10/7/8/7/8
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="gorget_honesty.gif" alt="gorget honesty" class="img01"></td>
+  <td><span title="gorget honesty&#10;瞑想不可">Gorget of Honesty<br>[誠実の首当て]</span></td>
+  <td>Blessed
+<br>抵抗値　：　7/7/9/5/7
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="gauntlet_valor.gif" alt="gauntlet valor" class="img01"></td>
+  <td><span title="gauntlet valor&#10;瞑想不可">Gauntlets of Valor<br>[武勇の籠手]</span></td>
+  <td>Blessed
+<br>抵抗値　：　6/6/8/9/6
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="helm_spirituality.gif" alt="helm spirituality" class="img01"></td>
+  <td><span title="helm spirituality&#10;瞑想不可">Helm of Spirituality<br>[霊性の兜]</span></td>
+  <td>Blessed
+<br>抵抗値　：　8/8/7/9/8
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="sollerets_sacrifice.gif" alt="sollerets sacrifice" class="img01"></td>
+  <td><span title="sollerets sacrifice">Sollerets of Sacrifice<br>[献身の鉄靴]</span></td>
+  <td>Blessed
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="ankh_pendant.gif" alt="Ankh Pendant" class="img01"></td>
+  <td><span title="Ankh Pendant&#10;瞑想可">Ankh Pendant<br>[アンクペンダント]</span></td>
+  <td>
+</td>
+ </tr>
+
+</table>
+
+Ankh Pendant
+<br>Trammel/Feluccaの徳の神殿でマントラを唱えると、徳の原理に伴うステータス回復効果が得られる。
+<br>実ログイン時間で60分継続。
+<br>霊性　：　HP/Stam/Mana回復＋1（各々25％の確率で＋2になる）
+<br>献身　：　HP/Stam回復＋1（50％の確率でどちらかが＋2になる）
+<br>正義　：　Stam/Mana回復＋1（50％の確率でどちかが＋2になる）
+<br>名誉　：　HP/Mana回復＋1（50％の確率でどちらかが＋2になる）
+<br>慈悲　：　HP回復＋2
+<br>武勇　：　Stam回復＋2
+<br>誠実　：　Mana回復＋2
+<br>謙譲　：　HP/Stam/Manaのどれか回復＋3
+
+
+</div>
+
+<div id="cat_4" style="display: none">
+
+<h3>Minor Artifact</h3>
+
+<table class="table02">
+ <tr bgcolor="f0f0f0">
+  <td width="100">画像</td>
+  <td width="200">名称</td>
+  <td width="220">付加プロパティ</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="coldblood.gif" alt="cold blood&#10;Lv6 treasure" class="img01"></td>
+  <td><span title="1hand&#10;11-13D&#10;2.50sec&#10;bleed/infecting">Cold Blood<br>[コールドブラッド]</span></td>
+  <td>ヒットポイント　：　+6
+<br>スタミナ　：　+6
+<br>マナ　：　+6
+<br>速度　：　+40％
+<br>攻撃属性　：　0/0/100/0/0
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="maf04.gif" alt="Captain Quacklebush's Cutlass&#10;Lv6&#10;Leviathan" class="img01"></td>
+  <td><span title="1hand&#10;11-13D&#10;2.50sec&#10;bleed/shadow str.">Captain Quacklebush's Cutlass</span></td>
+  <td>DEX　：　5
+<br>命中　：　+10％
+<br>速度　：　+20％
+<br>武器ダメージ　：　+50％
+<br>ベストウェポンスキル
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="maf14.gif" alt="Dread Pirate Hat&#10;Lv6&#10;Leviathan" class="img01"></td>
+  <td><span title="tricorn hat&#10;瞑想可">Dread Pirate Hat</span>
+<br><img src="book02.gif" title="anatomy&#10;tactics&#10;swordsmanship&#10;fencing&#10;macing&#10;archery&#10;wrestling" class="img01"></td>
+  <td>スキル　：　+10
+<br>DEX　：　8
+<br>Night sight
+<br>命中　：　+10％
+<br>属性抵抗　：　0/5/14/10/5
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="pixieswatter.gif" alt="Pixie Swatter&#10;paragon" class="img01"></td>
+  <td><span title="1hand&#10;14-17D&#10;3.50sec&#10;crushing/mortal">Pixie Swatter<br>[ピクシーたたき]</span></td>
+  <td>特効　：　妖精族
+<br>毒エリア　：　75％
+<br>速度　：　+0％
+<br>炎抵抗　：　12％
+<br>エネルギー抵抗　：　12％
+<br>ベストウェポンスキル
+<br>攻撃属性　：　0/100/0/0/0
+<br>修理　：　鍛冶
+</td>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="wrath_dryad.gif" alt="Wrath od the Dryad&#10;paragon" class="img01"></td>
+  <td><span title="2hand&#10;15-17D&#10;3.25sec&#10;concussion/paralyzing">Wrath of the Dryad<br>[ドライアドの怒り]</span></td>
+  <td>マナリーチ　：　81％
+<br>Lightning　：　33％ 
+<br>命中　：　+15％ 
+<br>武器ダメージ　：　+40％ 
+<br>攻撃属性　：　0/0/0/100/0
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="maf03.gif" alt="Bow of Juka King&#10;paragon" class="img01"></td>
+  <td><span title="2hand&#10;15-19D&#10;4.25sec&#10;paralyzing/mortal">Bow of Juka King<br>[ジュカ王の弓]</span></td>
+  <td>特効　：　爬虫類
+<br>命中　：　+15％
+<br>武器ダメージ　：　+40％
+<br>修理　：　弓工
+</td>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="maf10.gif" alt="Staff of Power&#10;paragon" class="img01"></td>
+  <td><span title="2hand&#10;13-16D&#10;2.75sec&#10;paralyzing/whirl">Staff of Power<br>[パワースタッフ]</span></td>
+  <td>魔道武器　：　-15
+<br>詠唱可
+<br>魔法ダメージ　：　+5％
+<br>キャストリカバリ　：　2
+<br>マナコスト　：　-5％
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="maf13.gif" alt="Orcish Visage&#10;paragon" class="img01"></td>
+  <td><span title="orc helm&#10;瞑想不可">Orcish Visage</span></td>
+  <td>自己修復　：　3 
+<br>STR　：　10
+<br>スタミナ　：　+5
+<br>属性抵抗　：　8/5/3/3/5
+<br>修理　：　裁縫
+</td>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="maf15.gif" alt="Gloves of the Pugilist&#10;paragon" class="img01"></td>
+  <td><span title="leather gloves&#10;瞑想可">Gloves of the Pugilist<br>[ボクサーグローブ]</span></td>
+  <td>Wrestling　：　+10
+<br>DEX　：　8 
+<br>武器ダメージ　：　+15％
+<br>属性抵抗　：　18/4/3/3/3
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="maf17.gif" alt="Shield of Invulnerability&#10;paragon" class="img01"></td>
+  <td><span title="order shield">Shield of Invulnerability<br>[不死身の盾]</span></td>
+  <td>詠唱可
+<br>物理ダメージ反射　：　10％
+<br>回避　：　+15％
+<br>属性抵抗　：　8/0/0/0/0
+<br>装備条件　：　-100％
+<br>修理　：　鍛冶
+</td>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="h_of_lion.gif" alt="Heart of the Lion&#10;Lv6 treasure&#10;paragon" class="img01"></td>
+  <td><span title="platetunic&#10;瞑想不可">Heart of the Lion<br>[ライオンハート]</span></td>
+  <td>幸運　：　95 
+<br>回避　：　+15％
+<br>属性抵抗　：　15/10/10/10/10
+<br>装備条件　：　-100％
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="maf01.gif" alt="Arctic Death Dealer&#10;Lv6 treasure&#10;paragon&#10;leviathan" class="img01"></td>
+  <td><span title="1hand&#10;16-17D&#10;4sec&#10;crushing/bleed">Arctic Death Dealer</span></td>
+  <td>Harm　：　33％
+<br>命中低下　：　40％
+<br>速度　：　+20％
+<br>武器ダメージ　：　+40％
+<br>冷気抵抗　：　10％
+<br>攻撃属性　：　50/0/50/0/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="maf02.gif" alt="Blaze of Death&#10;Lv6 treasure&#10;paragon&#10;leviathan" class="img01"></td>
+  <td><span title="2hand&#10;18-19D&#10;4.25sec&#10;whirl/concussion">Blaze of Death</span></td>
+  <td>炎エリア　：　50％
+<br>Fireball　：　50％
+<br>速度　：　+25％
+<br>武器ダメージ　：　+35％
+<br>炎抵抗　：　10％
+<br>攻撃属性　：　50/50/0/0/0
+<br>装備条件　：　-100％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="maf03.gif" alt="Cavorting Club&#10;Lv6 treasure&#10;paragon&#10;leviathan" class="img01"></td>
+  <td><span title="1hand&#10;11-13D&#10;2.5sec&#10;dismount/shadow str.">Cavorting Club</span></td>
+  <td>自己修復　：　3
+<br>速度　：　+35％
+<br>武器ダメージ　：　+35％
+<br>炎抵抗　：　8％
+<br>冷気抵抗　：　8％
+<br>毒抵抗　：　8％
+<br>エネルギー抵抗　：　8％
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="maf06.gif" alt="Enchanted Titan Leg Bone&#10;Lv6 treasure&#10;paragon&#10;leviathan" class="img01"></td>
+  <td><span title="2hand&#10;10-13D&#10;2sec&#10;shadow str./mortal">Enchanted Titan Leg Bone</span></td>
+  <td>回避低下　：　40％
+<br>Lightning　：　40％
+<br>命中　：　+10％
+<br>武器ダメージ　：　+20％
+<br>物理抵抗　：　10％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="maf07.gif" alt="Luna Lance&#10;Lv6 treasure&#10;paragon&#10;leviathan" class="img01"></td>
+  <td><span title="1hand&#10;17-18D&#10;4.5sec&#10;dismount/concussion">Luna Lance<br>[ルナ ランス]</span></td>
+  <td>Chivalry　：　+10
+<br>STR　：　5
+<br>速度　：　+20％
+<br>武器ダメージ　：　+35％
+<br>ベストウェポンスキル
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="maf08.gif" alt="Night's Kiss&#10;Lv6 treasure&#10;paragon&#10;leviathan" class="img01"></td>
+  <td><span title="1hand&#10;10-11D&#10;2sec&#10;infecting/shadow str.">Night's Kiss<br>[ナイトキス]</span></td>
+  <td>ライフリーチ　：　30％
+<br>特効　：　亜人種
+<br>速度　：　+30％
+<br>武器ダメージ　：　+35％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="maf09.gif" alt="Nox Ranger's Heavy Crossbow&#10;Lv6 treasure&#10;paragon&#10;leviathan" class="img01"></td>
+  <td><span title="2hand&#10;20-24D&#10;5sec&#10;moving shot/dismount">Nox Ranger's Heavy Crossbow</span></td>
+  <td>スタミナリーチ　：　40％
+<br>詠唱可
+<br>速度　：　+30％
+<br>武器ダメージ　：　+20％
+<br>毒抵抗　：　10％
+<br>攻撃属性　：　50/0/0/50/0
+<br>修理　：　弓工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="maf11.gif" alt="Burglar's Bandana&#10;Lv6 treasure&#10;paragon&#10;leviathan" class="img01"></td>
+  <td><span title="bandana&#10;瞑想可">Burglar's Bandana<br>[夜盗のバンダナ]</span></td>
+  <td>Snooping　：　+10 
+<br>Stealth　：　+10 
+<br>Stealing　：　+10 
+<br>DEX　：　5
+<br>属性抵抗　：　10/5/7/10/10
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="maf12.gif" alt="Polar Bear Mask&#10;Lv6 treasure&#10;paragon&#10;leviathan" class="img01"></td>
+  <td><span title="bear mask&#10;瞑想可">Polar Bear Mask<br>[白熊マスク]</span></td>
+  <td>自己修復　：　3 
+<br>ヒットポイント回復　：　2 
+<br>Night sight 
+<br>属性抵抗　：　15/3/21/4/4
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="maf16.gif" alt="Violet Courage&#10;Lv6 treasure&#10;paragon&#10;leviathan" class="img01"></td>
+  <td><span title="plate armor&#10;瞑想不可">Violet Courage</span></td>
+  <td>幸運　：　95 
+<br>回避　：　+15％
+<br>属性抵抗　：　14/12/12/8/9
+<br>装備条件　：　-100％
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="maf18.gif" alt="Alchemist's Bauble&#10;Lv6 treasure&#10;paragon&#10;leviathan" class="img01"></td>
+  <td><span title="">Alchemist's Bauble</span></td>
+  <td>Magery　：　+10 
+<br>ポーション強化　：　30％ 
+<br>秘薬コスト　：　-20％ 
+<br>毒抵抗　：　10％
+</td>
+ </tr>
+
+</table>
+
+</div>
+
+<div id="cat_5" style="display: none">
+
+<h3>UOML Minor Artifact, Peerless Boss</h3>
+
+<table class="table02">
+ <tr bgcolor="f0f0f0">
+  <td width="100">画像</td>
+  <td width="200">名称</td>
+  <td width="220">付加プロパティ</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="soulseeker.gif" alt="" class="img01"></td>
+  <td><span title="radient scimitar&#10;1hand&#10;12-14D&#10;2.5sec&#10;whirl/bladeweave">Soul Seeker<br>[ソウルシーカー]</span></td>
+  <td>スタミナリーチ　：　40％
+<br>マナリーチ　：　30％
+<br>ライフリーチ　：　30％
+<br>特効　：　亜人種
+<br>速度　：　+60％
+<br>攻撃属性　：　0/0/100/0/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="raedsglory.gif" alt="" class="img01"></td>
+  <td><span title="war cleaver&#10;2hand&#10;9-11D&#10;2.25sec&#10;disarm/bladeweave">Raed's Glory</span></td>
+  <td>ライフリーチ　：　35％
+<br>詠唱可
+<br>マナ　：　+8
+<br>速度　：　+20％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="fleshripper.gif" alt="" class="img01"></td>
+  <td><span title="assassin spike&#10;1hand&#10;10-12D&#10;2sec&#10;infecting/shadow str.">Flesh Ripper<br>[フレッシュリッパー]</span></td>
+  <td>Anatomy　：　+10
+<br>特効　：　メイジ
+<br>STR　：　5
+<br>命中　：　+15％
+<br>速度　：　+40％
+<br>ベストウェポンスキル
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="bladedance.gif" alt="" class="img01"></td>
+  <td><span title="rune blade&#10;2hand&#10;15-17D&#10;3sec&#10;disarm/bladeweave">Blade Dance<br>[ブレードダンス]</span></td>
+  <td>マナリーチ　：　30％
+<br>詠唱可
+<br>マナ　：　+8
+<br>武器ダメージ　：　+30％
+<br>ベストウェポンスキル
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="righteousanger.gif" alt="" class="img01"></td>
+  <td><span title="elven machete&#10;1hand&#10;13-15D&#10;2.75sec&#10;defense mastery/blade weave">Righteous Anger<br>[公正なる怒り]</span></td>
+  <td>命中　：　+15％
+<br>回避　：　+5％
+<br>速度　：　+35％
+<br>武器ダメージ　：　+40％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="talonbite.gif" alt="" class="img01"></td>
+  <td><span title="ornate axe&#10;2hand&#10;18-20D&#10;3.5sec&#10;disarm/crushing">Talon Bite<br>[タロンバイト]</span></td>
+  <td>Tactics　：　+10
+<br>Harm　：　33％
+<br>DEX　：　8
+<br>速度　：　+20％
+<br>武器ダメージ　：　+35％
+<br>ベストウェポンスキル
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="bonesmasher.gif" alt="" class="img01"></td>
+  <td><span title="diamond mace&#10;1hand&#10;14-17D&#10;3sec&#10;concussion/crushing">Bonesmasher[ボーンスマッシャー]</span></td>
+  <td>Mace fighting　：　+10
+<br>スタミナリーチ　：　40％
+<br>自己修復　：　2
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="boomstick.gif" alt="" class="img01"></td>
+  <td><span title="wild staff&#10;1hand&#10;10-12D&#10;2.25sec&#10;block/force of nature">Boomstick<br>[ブームスティック]</span></td>
+  <td>詠唱可
+<br>マナ回復　：　3
+<br>ファストキャスト　：　1 
+<br>秘薬コスト　：　-20％
+<br>カオスダメージ　：　100％
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="windsong.gif" alt="" class="img01"></td>
+  <td><span title="magical shortbow&#10;2hand&#10;9-13D&#10;3sec&#10;lightning arrow/psychic attack">Windsong<br>[ウィンドソング]</span></td>
+  <td>遠距離ボーナス　：　25％
+<br>自己修復　：　3
+<br>武器ダメージ　：　+35％
+<br>修理　：　弓工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="wildfirebow.gif" alt="" class="img01"></td>
+  <td><span title="elven composite longbow&#10;2hand&#10;12-16D&#10;4sec&#10;force arrow/serpent arrow">Wildfire Bow<br>[ワイルドファイアボウ]</span></td>
+  <td>Archery　：　+10
+<br>遠距離ボーナス　：　15％
+<br>炎抵抗　：　25％
+<br>攻撃属性　：　0/100/0/0/0
+<br>修理　：　弓工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="chain02.gif" alt="" class="img01"></td>
+  <td><span title="chain legs&#10;瞑想不可">Fey Leggings<br>[妖精のレギンズ]</span></td>
+  <td>エルフ専用 
+<br>ヒットポイント　：　+6
+<br>回避　：　+20％
+<br>属性抵抗　：　12/8/7/4/19
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="chain02.gif" alt="" class="img01"></td>
+  <td><span title="chain legs&#10;瞑想不可">Fey Leggings<br>[妖精のレギンズ]</span></td>
+  <td>ヒットポイント　：　+6
+<br>回避　：　+20％
+<br>属性抵抗　：　14/9/9/1/17
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="aegisofgrace_2.gif" alt="" class="img01"></td>
+  <td><span title="circlet&#10;瞑想可">Aegis Of Grace<br>[恵みの護り]</span></td>
+  <td>Resistance　：　＋10
+<br>自己修復　：　2
+<br>回避　：　+20％
+<br>属性抵抗　：　10/9/7/7/15
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="brightsightlenses.gif" alt="" class="img01"></td>
+  <td><span title="elven lens&#10;瞑想可">Brightsight Lenses</span></td>
+  <td>自己修復　：　3
+<br>マナ回復　：　3
+<br>Night sight
+<br>属性抵抗　：　9/29/7/8/7
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="helmofswiftness_2.gif" alt="" class="img01"></td>
+  <td><span title="">Helm of Swiftness</span></td>
+  <td>INT　：　5
+<br>キャストリカバリ　：　2
+<br>ファストキャスト　：　1
+<br>属性抵抗　：　6/5/6/6/8
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="quiver_elem.gif" alt="" class="img01"></td>
+  <td><span title="">Quiver of the Elements<br>[万有の矢筒]</span></td>
+  <td>ダメージ修正　：　10％
+<br>カオスダメージ　：　100％
+<br>コンテンツ　：　1種類
+<br>最大装填本数　：　500本
+<br>矢重量軽減　：　50％
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="quiver_rage.gif" alt="" class="img01"></td>
+  <td><span title="">Quiver of Rage<br>[憤怒の矢筒]</span></td>
+  <td>ダメージ修正　：　10％
+<br>攻撃属性　：　20/20/20/20/20
+<br>コンテンツ　：　1種類
+<br>最大装填本数　：　500本
+<br>矢重量軽減　：　25％
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="bloodwoodspirit.gif" alt="" class="img01"></td>
+  <td><span title="">Bloodwood Spirit<br>[ブラッドウッドスピリット]</span></td>
+  <td>Damage removal
+<br>Spirit Speak　：　+10
+<br>Necromancy　：　+5
+<br>～プロテクト　：　5～60％
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="totemofvoid.gif" alt="" class="img01"></td>
+  <td><span title="">Totem of the Void<br>[ボイドのトーテム]</span></td>
+  <td>～ Summoning
+<br>～プロテクト　：　5～60％
+<br>ヒットポイント回復　：　2
+<br>マナコスト　：　-10％
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="robe_eclipse.gif" alt="" class="img01"></td>
+  <td><span title="">Robe of the Eclipse<br>[天体食のローブ]</span></td>
+  <td>幸運　：　95
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="robe_equinox.gif" alt="" class="img01"></td>
+  <td><span title="">Robe of the Equinox<br>[分点のローブ]</span></td>
+  <td>エルフ専用
+<br>幸運　：　95
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="padsofcusidhe.gif" alt="" class="img01"></td>
+  <td><span title="">Pads of the Cu Sidhe<br>[Cu Sidhe騎乗靴]</span></td>
+  <td>人間がCu Sidheに騎乗可能
+</td>
+ </tr>
+
+</table>
+
+<table class="table02">
+ <tr bgcolor="f0f0f0">
+  <td width="100">画像</td>
+  <td width="200">名称</td>
+  <td width="220">付加プロパティ</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="crimson_cincture.gif" alt="" class="img01"></td>
+  <td><span title="half apron&#10;全peerless boss">Crimson Cincture</span></td>
+  <td>DEX　：　5
+<br>ヒットポイント　：　+10
+<br>ヒットポイント回復　：　2
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="crystalline_ring.gif" alt="" class="img01"></td>
+  <td><span title="ring&#10;Shimmering Effusion">Crystalline Ring<br>[水晶の指輪]</span></td>
+  <td>Magery　：　+20
+<br>Focus　：　+20
+<br>ヒットポイント回復　：　5
+<br>マナ回復　：　3
+<br>魔法ダメージ　：　+20％
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="dreads_revenge.gif" alt="" class="img01"></td>
+  <td><span title="kryss&#10;1hand&#10;10-12D&#10;2sec&#10;ignore/infecting&#10;Dread Horn">Dread's Revenge<br>[ドレッドリベンジ]</span></td>
+  <td>Fencing　：　+20
+<br>毒エリア　：　30％
+<br>命中　：　+15％
+<br>速度　：　+50％
+<br>攻撃属性　：　0/0/0/100/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="melisande_hatchet.gif" alt="hatchet" class="img01"></td>
+  <td><span title="hatchet&#10;2hand&#10;13-15D&#10;2.75sec&#10;ignore/disarm&#10;Lady Melisande">Melisande's Corroded Hatche<br>[メリサンドの腐敗ハチェット]</span></td>
+  <td>Lumberjacking　：　+5 
+<br>自己修復　：　4 
+<br>詠唱可 
+<br>速度　：　+15％ 
+<br>武器ダメージ　：　-50％
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="scepter_chief.gif" alt="" class="img01"></td>
+  <td><span title="scepter&#10;1hand&#10;14-17D&#10;3.50sec&#10;crushing/mortal&#10;Chief Paroxysmus">Scepter Of The Chief</span></td>
+  <td>Dispel　：　100％
+<br>マナリーチ　：　100％
+<br>ヒットポイント回復　：　2
+<br>物理ダメージ反射　：　15％
+<br>武器ダメージ　：　+45％
+<br>攻撃属性　：　0/0/0/100/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="markoftravesty.gif" alt="" class="img01"></td>
+  <td><span title="tribal mask&#10;瞑想可&#10;Travesty">Mark of Travesty<br>[トラベスティーのマスク]</span></td>
+  <td>スキル1　：　+10
+<br>スキル2　：　+10
+<br>自己修復　：　3
+<br>マナ　：　+8
+<br>ヒットポイント回復　：　3
+<br>属性抵抗　：　8/5/11/20/15
+<br>修理　：　裁縫
+</td>
+ </tr>
+</table>
+
+スキル1/スキル2 の組合わせ
+<br>Magery / Evaluating Intelligence, Necromancy / Spiritspeak
+<br>Discordance / Musicianship, Provocation / Musicianship
+<br>Swordsmanship / Tactics, Fencing / Tactics
+<br>Mace fighting / Tactics, Archery / Tactics
+<br>Animal lore / Animal taming, Chivalry / Resistance
+<br>Bushido / Parrying, Stealing / Stealth
+<br>Ninjitsu / Stealth
+</div>
+
+
+<div id="cat_7" style="display: none">
+
+<h3>派閥 Artifact</h3>
+
+<table class="table02">
+ <tr bgcolor="f0f0f0">
+  <td width="100">画像</td>
+  <td width="200">名称</td>
+  <td width="220">付加プロパティ</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="p-do.gif" alt="plate do" class="img01"></td>
+  <td><span title="plate do&#10;瞑想不可">Rune Beetle Carapace<br>[ルーンビートル胴]</span></td>
+  <td>Faction rank 1
+<br>マナ　：　+10
+<br>マナ回復　：　3
+<br>マナコスト　：　-15％
+<br>抵抗値　：　8/6/17/6/17
+<br>装備条件　：　-100％
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="kasa.gif" alt="kasa" class="img01"></td>
+  <td><span title="kasa&#10;瞑想可">Kasa of The Raj-In<br>[ラジンの笠]</span></td>
+  <td>Faction rank 1
+<br>魔法ダメージ　：　+12％
+<br>回避　：　+10％
+<br>抵抗値　：　12/17/21/17/17
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="l_n-mitts.gif" alt="leather ninja mitts" class="img01"></td>
+  <td><span title="leather ninja mitts&#10;瞑想可">Stormgrip<br>[ストームグリップ]</span></td>
+  <td>Faction rank 1
+<br>INT　：　8
+<br>幸運　：　125
+<br>武器ダメージ　：　+25％
+<br>命中　：　+10％
+<br>抵抗値　：　10/4/18/3/18
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="chain02.gif" alt="" class="img01"></td>
+  <td><span title="chain legs&#10;瞑想不可">Fey Leggings<br>[妖精のレギンズ]</span></td>
+  <td>Faction rank 1
+<br>ヒットポイント　：　+6
+<br>回避　：　+20％
+<br>属性抵抗　：　15/11/10/4/22
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="vile.gif" alt="Ring of the Vile" class="img01"></td>
+  <td><span title="">Ring of the Vile<br>[ヴァイルリング]</span></td>
+  <td>Faction rank 4
+<br>DEX　：　8
+<br>スタミナ回復　：　6
+<br>命中　：　+25％
+<br>抵抗値　：　0/0/0/20/0
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="crimson_cincture.gif" alt="" class="img01"></td>
+  <td><span title="half apron">Crimson Cincture</span></td>
+  <td>Faction rank 4
+<br>DEX　：　10
+<br>ヒットポイント　：　+10
+<br>ヒットポイント回復　：　2
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="h_of_lion.gif" alt="Heart of the Lion&#10;Lv6 treasure&#10;paragon" class="img01"></td>
+  <td><span title="platetunic&#10;瞑想不可">Heart of the Lion<br>[ライオンハート]</span></td>
+  <td>Faction rank 4
+<br>幸運　：　95 
+<br>回避　：　+15％
+<br>属性抵抗　：　20/15/15/15/15
+<br>装備条件　：　-100％
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="headdress.gif" alt="Hunter's Headdress" class="img01"></td>
+  <td><span title="deer mask&#10;瞑想可">Hunter's Headdress<br>[狩人のマスク]</span></td>
+  <td>Faction rank 4
+<br>Archery　：　+20
+<br>DEX　：　8
+<br>Night sight
+<br>命中　：　+15％
+<br>抵抗値　：　10/10/15/10/10
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="tafbook.gif" alt="spellbook" class="img01"></td>
+  <td><span title="spellbook">Tome of Lost Knowledge<br>[失われし知識の書]</span></td>
+  <td>Faction rank 7
+<br>INT　：　8
+<br>Magery　：　+15
+<br>マナ回復　：　3
+<br>魔法ダメージ　：　+15％
+<br>マナコスト　：　-15％
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="talisman01.gif" alt="" class="img01"></td>
+  <td><span title="">A Primer On Arms Damage Removal<br>[図書館タリスマン　武器入門]</span></td>
+  <td>Faction rank 7
+<br>Damage Removal
+<br>STR　：　1
+<br>ヒットポイント回復　：　2
+<br>命中　：　+10％
+<br>武器ダメージ　：　+20％
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="glass08.gif" alt="spellbook" class="img01"></td>
+  <td><span title="spellbook">Wizard's Crystal Reading Glasses<br>[ウィザードクリスタルグラス]</span></td>
+  <td>Faction rank 7
+<br>マナ　：　+10
+<br>マナ回復　：　3
+<br>魔法ダメージ　：　+15％
+<br>抵抗値　：　10/10/10/10/10
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="totem.gif" alt="Spirit of the Totem" class="img01"></td>
+  <td><span title="bear mask&#10;瞑想可">Spirit of the Totem<br>[トーテムの精霊]</span></td>
+  <td>Faction rank 7
+<br>STR　：　20
+<br>物理ダメージ反射　：　15％
+<br>命中　：　+15％
+<br>抵抗値　：　20/10/10/10/10
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="crystalline_ring.gif" alt="" class="img01"></td>
+  <td><span title="ring">Crystalline Ring<br>[水晶の指輪]</span></td>
+  <td>Faction rank 9
+<br>Magery　：　+20
+<br>Focus　：　+20
+<br>ヒットポイント回復　：　5
+<br>マナ回復　：　3
+<br>魔法ダメージ　：　+20％
+<br>キャストリカバリ　：　3
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="glass08.gif" alt="spellbook" class="img01"></td>
+  <td><span title="elven lens">Folded Steel Reading Glasses</span></td>
+  <td>Faction rank 9
+<br>STR　：　8 
+<br>Night sight 
+<br>回避　：　+25％
+<br>抵抗値　：　20/10/10/10/10
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="vesper_museum06.gif" alt="spellbook" class="img01"></td>
+  <td><span title="spellbook">Clainin's Spellbook</span></td>
+  <td>Faction rank 9
+<br>マナ回復　：　3
+<br>幸運　：　80
+<br>マナコスト　：　-10％
+<br>秘薬コスト　：　-15％
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="vesper_museum05.gif" alt="" class="img01"></td>
+  <td><span title="order shield">Order Shield</span></td>
+  <td>Faction rank 9
+<br>詠唱可 
+<br>幸運　：　80 
+<br>命中　：　+15％ 
+<br>回避　：　+15％ 
+<br>抵抗値　：　1/0/0/0/0
+<br>装備条件　：　-45％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="ornament.gif" alt="Ornament of the Magician" class="img01"></td>
+  <td><span title="">Ornament of the Magician<br>[魔法士の腕輪]</span></td>
+  <td>Faction rank 10
+<br>マナ回復　：　3
+<br>キャストリカバリ　：　3
+<br>ファストキャスト　：　2
+<br>マナコスト　：　-10％
+<br>秘薬コスト　：　-20％
+<br>抵抗値　：　0/0/0/0/15
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="inquisitor.gif" alt="The Inquisitor's Resolution" class="img01"></td>
+  <td><span title="plate gloves&#10;瞑想不可">The Inquisitor's Resolution<br>[裁きの手]</span></td>
+  <td>Faction rank 10
+<br>キャストリカバリ　：　3
+<br>マナコスト　：　-8％
+<br>抵抗値　：　10/10/20/10/10
+<br>瞑想可
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="glass04.gif" alt="spellbook" class="img01"></td>
+  <td><span title="elven lens">Mace And Shield Reading Glasses</span></td>
+  <td>Faction rank 10
+<br>回避低下　：　30％
+<br>STR　：　10
+<br>DEX　：　5
+<br>武器ダメージ　：　+10％ 
+<br>抵抗値　：　25/10/10/10/10
+<br>修理　：　細工
+</td>
+ </tr>
+
+</table>
+
+</div>
+
+<div id="cat_6" style="display: none">
+
+<h3>UOSA Artifact
+
+<table class="table02">
+ <tr bgcolor="f0f0f0">
+  <td width="100">画像</td>
+  <td width="200">名称</td>
+  <td width="220">付加プロパティ</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="raptor_claw.gif" alt="" class="img01"></td>
+  <td><span title="boomerang&#10;1hand&#10;8-12D&#10;2sec&#10;mystic arc/concussion">Raptor's Claw<br>[Raptorの爪]</span></td>
+  <td>ガーゴイル専用
+<br>スタミナリーチ　：　40％
+<br>特効　：　アンデッド族
+<br>命中　：　+12％
+<br>速度　：　+30％
+<br>武器ダメージ　：　+35％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="storm_caller.gif" alt="" class="img01"></td>
+  <td><span title="boomerang&#10;1hand&#10;8-12D&#10;2sec&#10;mystic arc/concussion">Storm Caller<br>[ストームコーラー]</span></td>
+  <td>ガーゴイル専用
+<br>回避低下　：　30％
+<br>Lightning　：　40％
+<br>好戦
+<br>STR　：　5
+<br>速度　：　+30％
+<br>武器ダメージ　：　+40％
+<br>攻撃属性　：　20/20/20/20/20
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="stone_slith_claw.gif" alt="" class="img01"></td>
+  <td><span title="cyclone&#10;1hand&#10;13-17D&#10;3sec&#10;moving shot/infused throw">Stone Slith's Claw<br>[Stone Slithの爪]</span></td>
+  <td>ガーゴイル専用
+<br>Harm　：　40％
+<br>回避低下　：　40％
+<br>特効　：　悪魔族
+<br>速度　：　+25％
+<br>武器ダメージ　：　+45％
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="banshee_call.gif" alt="" class="img01"></td>
+  <td><span title="cyclone&#10;1hand&#10;13-17D&#10;3sec&#10;moving shot/infused throw">Banshee's Call<br>[死霊の叫び声]</span></td>
+  <td>ガーゴイル専用
+<br>遠距離ボーナス　：　35％
+<br>Harm　：　40％
+<br>ライフリーチ　：　45％
+<br>STR　：　5
+<br>速度　：　+30％
+<br>武器ダメージ　：　+50％
+<br>攻撃属性　：　0/0/100/0/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="valkyrie_glaive.gif" alt="" class="img01"></td>
+  <td><span title="soul glaive&#10;1hand&#10;18-22D&#10;4sec&#10;ignore/mortal">Valkyrie's Glaive<br>[ヴァルキリーグレイブ]</span></td>
+  <td>ガーゴイル専用
+<br>特効　：　アンデッド族
+<br>Fireball　：　40％
+<br>詠唱可
+<br>STR　：　5
+<br>速度　：　+20％
+<br>武器ダメージ　：　+20％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="blade_of_battle.gif" alt="" class="img01"></td>
+  <td><span title="shortblade&#10;1hand&#10;9-13D&#10;2sec&#10;ignore/mortal">Blade of Battle<br>[バトルブレード]</span></td>
+  <td>ガーゴイル専用
+<br>回避低下　：　40％
+<br>好戦
+<br>命中　：　+15％
+<br>回避　：　+10％
+<br>速度　：　+25％
+<br>武器ダメージ　：　+50％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="channeler_defender.gif" alt="" class="img01"></td>
+  <td><span title="glass sword&#10;1hand&#10;13-15D&#10;2.75sec&#10;bleed/mortal">Channeler's Defender<br>[霊媒師の守護]</span></td>
+  <td>ガーゴイル専用
+<br>命中低下　：　60％
+<br>詠唱可
+<br>命中　：　+5％
+<br>回避　：　+10％
+<br>キャストリカバリ　：　1
+<br>マナコスト　：　-5％
+<br>速度　：　+20％
+<br>攻撃属性　：　0/0/0/0/100
+<br>修理　：　硝工（錬金）
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="sword_shattered_hopes.gif" alt="" class="img01"></td>
+  <td><span title="glass sword&#10;1hand&#10;13-15D&#10;2.75sec&#10;bleed/mortal">Sword of Shattered Hopes<br>[砕かれた希望の剣]</span></td>
+  <td>ガーゴイル専用
+<br>Dispel　：　25％
+<br>武器粉砕　：　20％
+<br>速度　：　+30％
+<br>武器ダメージ　：　+50％
+<br>炎抵抗　：　15％
+<br>修理　：　硝工（錬金）
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="standard_chaos.gif" alt="" class="img01"></td>
+  <td><span title="dual pointed spear&#10;2hand&#10;12-13D&#10;2.25sec&#10;double str./disarm">Standard of Chaos<br>[カオスの槍]</span></td>
+  <td>ガーゴイル専用
+<br>Lightning　：　10％
+<br>Harm　：　30％
+<br>回避低下　：　40％
+<br>Fireball　：　20％
+<br>ファストキャスト　：　1
+<br>速度　：　+30％
+<br>武器ダメージ　：　-40％
+<br>カオスダメージ　：　100％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="standard_chaos_2.gif" alt="" class="img01"></td>
+  <td><span title="double bladed staff&#10;2hand&#10;12-13D&#10;2.25sec&#10;double str./infecting">Standard of Chaos<br>[カオスの槍]</span></td>
+  <td>Lightning　：　10％
+<br>Harm　：　30％
+<br>回避低下　：　40％
+<br>Fireball　：　20％
+<br>ファストキャスト　：　1
+<br>速度　：　+30％
+<br>武器ダメージ　：　-40％
+<br>カオスダメージ　：　100％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="abyssal_blade.gif" alt="" class="img01"></td>
+  <td><span title="stone war sword&#10;1hand&#10;15-17D&#10;3.75sec&#10;ignore/paralyzing">Abyssal Blade<br>[アビスブレード]</span></td>
+  <td>ガーゴイル専用
+<br>マナ吸収　：　50％
+<br>スタミナ吸収　：　50％
+<br>スタミナリーチ　：　60％
+<br>マナリーチ　：　60％
+<br>速度　：　+20％
+<br>武器ダメージ　：　+60％
+<br>カオスダメージ　：　100％
+<br>修理　：　石工（大工）
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="axes_fury.gif" alt="" class="img01"></td>
+  <td><span title="dual short axes&#10;2hand&#10;14-16D&#10;3sec&#10;double str./infecting">Axes of Fury[憤怒の斧]</span></td>
+  <td>ガーゴイル専用
+<br>ヒットポイント変換[毒]　：　10％
+<br>回避低下　：　30％
+<br>Magic arrow　：　40％
+<br>ヒットポイント回復　：　3
+<br>速度　：　+10％
+<br>武器ダメージ　：　+50％
+<br>炎抵抗　：　10％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="stone_dragon_tooth.gif" alt="" class="img01"></td>
+  <td><span title="gargish dagger&#10;1hand&#10;10-11D&#10;2sec&#10;infecting/shadow str.">Stone Dragon's Tooth<br>[ストーンドラゴンの牙]</span></td>
+  <td>ガーゴイル専用
+<br>マナ吸収　：　50％
+<br>スタミナ吸収　：　50％
+<br>スタミナリーチ　：　60％
+<br>マナリーチ　：　60％
+<br>速度　：　+20％
+<br>武器ダメージ　：　+60％
+<br>カオスダメージ　：　100％
+<br>攻撃属性　：　0/0/0/100/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="legacy_despair.gif" alt="" class="img01"></td>
+  <td><span title="dread sword&#10;2hand&#10;15-16D&#10;3.5sec&#10;crushing/concussion">Legacy of Despair<br>[絶望の名残]</span></td>
+  <td>ガーゴイル専用
+<br>カース　：　10％
+<br>命中低下　：　50％
+<br>回避低下　：　50％
+<br>速度　：　+30％
+<br>武器ダメージ　：　+60％
+<br>攻撃属性　：　0/0/75/25/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="petrified_snake.gif" alt="" class="img01"></td>
+  <td><span title="serpentstone staff&#10;2hand&#10;15-17D&#10;3.25sec&#10;crushing/dismount">Petrified Snake<br>[ストーンスネーク]</span></td>
+  <td>ガーゴイル専用
+<br>ヒットポイント変換[毒]　：　20％
+<br>特効　：　爬虫類
+<br>Magic arrow　：　30％
+<br>回避低下　：　30％
+<br>速度　：　+30％
+<br>武器ダメージ　：　+50％
+<br>毒抵抗　：　10％
+<br>攻撃属性　：　0/0/0/100/0
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="death_head.gif" alt="" class="img01"></td>
+  <td><span title="disc mace&#10;1hand&#10;12-14D&#10;2.75sec&#10;ignore/disarm">Death's Head<br>[デスヘッド]</span></td>
+  <td>ガーゴイル専用
+<br>スタミナ吸収　：　10％
+<br>Lightning　：　45％
+<br>回避低下　：　30％
+<br>速度　：　+20％
+<br>武器ダメージ　：　+45％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="staff_resonance.gif" alt="" class="img01"></td>
+  <td><span title="glass staff&#10;2hand&#10;11-14D&#10;2.25sec&#10;double str./mortal">Staff of Resonance<br>[共振の杖]</span>
+<br><img src="book02.gif" title="詠唱保護の属性が物理以外の場合、攻撃属性はその属性が100％となる。&#10;詠唱保護の属性が物理の場合、ランダムとなる。" class="img01"></td>
+  <td>ガーゴイル専用
+<br>詠唱保護 [属性]　：　20％
+<br>魔道武器　：　-10
+<br>Harm　：　50％
+<br>詠唱可
+<br>回避　：　+10％
+<br>マナコスト　：　-5％
+<br>速度　：　+20％
+<br>武器ダメージ　：　-40％
+<br>炎抵抗　：　10％
+<br>[属性攻撃]　：　100％
+<br>修理　：　硝工（錬金）
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="staff_shattered_dreams.gif" alt="" class="img01"></td>
+  <td><span title="glass staff&#10;2hand&#10;11-14D&#10;2.25sec&#10;double str./mortal">Staff of Shattered Dreams<br>[砕かれた夢の杖]</span></td>
+  <td>ガーゴイル専用
+<br>詠唱可
+<br>Dispel　：　25％
+<br>破片残留　：　20％
+<br>ファストキャスト　：　-1
+<br>武器ダメージ　：　+50％
+<br>炎抵抗　：　15％
+<br>修理　：　硝工（錬金）
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="light_in_the_void.gif" alt="" class="img01"></td>
+  <td><span title="gargish talwar&#10;2hand&#10;16-18D&#10;3.50sec&#10;whirl/dismount">Light in the Void<br>[ボイドの閃光]</span></td>
+  <td>ガーゴイル専用
+<br>特効　：　アンデッド族
+<br>回避低下　：　30％
+<br>Lightning　：　45％
+<br>STR　：　8
+<br>命中　：　+10％
+<br>ファストキャスト　：　1
+<br>速度　：　+20％
+<br>武器ダメージ　：　+35％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="staff_shattered_dreams.gif" alt="" class="img01"></td>
+  <td><span title="cutlass&#10;1hand&#10;11-13D&#10;2.50sec&#10;bleed/shadow str.">Vampiric Essence<br>[吸血のエッセンス]</span></td>
+  <td>吸血
+<br>ライフリーチ　：　100％
+<br>Harm　：　50％
+<br>速度　：　+20％
+<br>武器ダメージ　：　+50％
+<br>攻撃属性　：　0/0/100/0/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="life_siphon.gif" alt="" class="img01"></td>
+  <td><span title="bloodblade&#10;1hand&#10;10-12D&#10;2sec&#10;bleed/paralyzing">Life Syphon<br>[ライフサイフォン]</span></td>
+  <td>ガーゴイル専用
+<br>吸血
+<br>ライフリーチ　：　100％
+<br>Harm　：　30％
+<br>ヒットポイント　：　+10
+<br>速度　：　+25％
+<br>武器ダメージ　：　+50％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="draconi_wrath.gif" alt="" class="img01"></td>
+  <td><span title="katana&#10;1hand&#10;11-13D&#10;2.50sec&#10;double str./ignore">Draconi's Wrath<br>[ドラコーニの憤激]</span></td>
+  <td>ヒットポイント変換(炎)　：　20％
+<br>Fireball　：　60％
+<br>命中　：　+15％
+<br>武器ダメージ　：　+50％
+<br>ベストウェポンスキル
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="mangler.gif" alt="" class="img01"></td>
+  <td><span title="broadsword&#10;1hand&#10;14-15D&#10;3.25sec&#10;crushing/ignore">Mangler<br>[マングラー]</span></td>
+  <td>マナリーチ　：　50％
+<br>回避低下　：　30％
+<br>Harm　：　50％
+<br>速度　：　+25％
+<br>武器ダメージ　：　+50％
+<br>ベストウェポンスキル
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="axe_abandon.gif" alt="" class="img01"></td>
+  <td><span title="large battle axe&#10;2hand&#10;16-17D&#10;3.75sec&#10;whirl/bleed">Axe of Abandon<br>[奔放の斧]</span></td>
+  <td>回避低下　：　40％
+<br>好戦
+<br>命中　：　+15％
+<br>回避　：　+10％
+<br>ファストキャスト　：　1
+<br>速度　：　+30％
+<br>武器ダメージ　：　+50％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="cavalry_folly.gif" alt="" class="img01"></td>
+  <td><span title="bladed staff&#10;2hand&#10;14-16D&#10;3sec&#10;ignore/dismount">Cavalry's Folly<br>[キャバリーフォリー]</span></td>
+  <td>Fireball  :　40％
+<br>回避低下　：　40％
+<br>ヒットポイント回復　：　2
+<br>命中　：　+10％
+<br>速度　：　+35％
+<br>武器ダメージ　：　+45％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="demon_hunter_standard.gif" alt="" class="img01"></td>
+  <td><span title="spear&#10;2hand&#10;13-15D&#10;2.75sec&#10;ignore/paralyzing">Demon Hunter's Standard<br>[デーモンハンター]</span></td>
+  <td>スタミナリーチ　：　50％
+<br>回避低下　：　30％
+<br>Lightning　：　40％
+<br>特効　：　悪魔族
+<br>ファストキャスト　：　1
+<br>速度　：　+25％
+<br>武器ダメージ　：　+50％
+<br>カオスダメージ　：　100％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="claw_of_the_berserker.gif" alt="" class="img01"></td>
+  <td><span title="tekagi&#10;2hand&#10;10-12D&#10;2sec&#10;dualwield/talon str.">Claw of the Berserker<br>[バーサーカークロー]</span></td>
+  <td>回避低下　：　50％
+<br>Lightning  :　45％
+<br>好戦
+<br>ファストキャスト　：　1
+<br>速度　：　+25％
+<br>武器ダメージ　：　+60％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="jade_war_axe.gif" alt="" class="img01"></td>
+  <td><span title="war axe&#10;1hand&#10;14-15D&#10;3.25sec&#10;ignore/bleed">Jade War Axe<br>[ヒスイのウォーアックス]</span></td>
+  <td>ヒットポイント変換[炎]　：　10％
+<br>特効　：　爬虫類
+<br>Fireball　：　30％
+<br>回避低下　：　60％
+<br>速度　：　+20％
+<br>武器ダメージ　：　+50％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="the_impaler_pick.gif" alt="" class="img01"></td>
+  <td><span title="hammerpick&#10;1hand&#10;15-17D&#10;3.75sec&#10;ignore/mortal">The Impaler's Pick<br>[Impalerの爪]</span></td>
+  <td>特効　：　亜人種
+<br>Lightning  :　40％
+<br>回避低下　：　40％
+<br>マナダウン　：　10％
+<br>速度　：　+30％
+<br>武器ダメージ　：　+45％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="resonant_staff_enlightenment.gif" alt="" class="img01"></td>
+  <td><span title="quarter staff&#10;2hand&#10;11-14D&#10;2.25sec&#10;double str./concussion">Resonant Staff of Enlightenment<br>[啓発の共鳴杖]</span>
+<br><img src="book02.gif" title="詠唱保護の属性が物理以外の場合、攻撃属性はその属性が100％となる。&#10;詠唱保護の属性が物理の場合、ランダムとなる。" class="img01"></td>
+  <td>詠唱保護 属性　：　20％
+<br>詠唱可
+<br>Magic Arrow　：　40％
+<br>魔道武器　：　-10
+<br>INT　：　5
+<br>回避　：　+10％
+<br>マナコスト　：　-5％
+<br>速度　：　+20％
+<br>武器ダメージ　：　-40％
+<br>属性　：　100％（合計）
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="ironwood_composite_bow.gif" alt="" class="img01"></td>
+  <td><span title="composite bow&#10;2hand&#10;13-17D&#10;4sec&#10;ignore/moving shot">Ironwood Composite Bow<br>[アイアンウッドコンポジット]</span></td>
+  <td>特効　：　妖精族
+<br>遠距離ボーナス  :　30％
+<br>回避低下　：　30％
+<br>Fireball　：　40％
+<br>DEX　：　5
+<br>速度　：　+25％
+<br>武器ダメージ　：　+45％
+<br>修理　：　弓工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="ethernal_guardian_staff.gif" alt="" class="img01"></td>
+  <td><span title="gnarled staff&#10;2hand&#10;15-17D&#10;3.25sec&#10;concussion/paralyzing">Ethernal Guardian Staff<br>[エターナルガーディアンの杖]</span></td>
+  <td>Mysticism　：　+15
+<br>詠唱可
+<br>魔法ダメージ　：　+10％
+<br>マナコスト　：　-5％
+<br>回避低下　：　30％
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="fallen_mystic_spellbook.gif" alt="" class="img01"></td>
+  <td><span title="spellbook">Fallen Mystic's Spellbook<br>[堕ちた神秘秘術の書]</span></td>
+  <td>Blessed
+<br>Mysticism　：　+10
+<br>特効　：　妖精族
+<br>マナ回復　：　1
+<br>魔法ダメージ　：　+10％
+<br>キャストリカバリ　：　1
+<br>ファストキャスト　：　1
+<br>マナコスト　：　-5％
+<br>秘薬コスト　：　-10％
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="sign_chaos.gif" alt="" class="img01"></td>
+  <td><span title="gargish chaos shield">Sign of Chaos<br>[カオスサイン]</span></td>
+  <td>ガーゴイル専用
+<br>マナ変換　：　20％
+<br>命中　：　+5％
+<br>回避　：　+10％
+<br>ファストキャスト　：　1
+<br>抵抗値　：　3/2/2/2/2
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="sign_chaos_2.gif" alt="" class="img01"></td>
+  <td><span title="chaos shield">Sign of Chaos<br>[カオスサイン]</span></td>
+  <td>マナ変換　：　20％
+<br>命中　：　+5％
+<br>回避　：　+10％
+<br>ファストキャスト　：　1
+<br>抵抗値　：　3/2/2/2/2
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="sign_order_2.gif" alt="" class="img01"></td>
+  <td><span title="gargish order shield">Sign of Order<br>[オーダーサイン]</span></td>
+  <td>ガーゴイル専用
+<br>Chivalry　：　+10
+<br>命中　：　+5％
+<br>回避　：　+10％
+<br>キャストリカバリ　：　1
+<br>ファストキャスト　：　1
+<br>抵抗値　：　1/0/5/5/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="sign_order.gif" alt="" class="img01"></td>
+  <td><span title="order shield">Sign of Order<br>[オーダーサイン]</span></td>
+  <td>Chivalry　：　+10
+<br>命中　：　+5％
+<br>回避　：　+10％
+<br>キャストリカバリ　：　1
+<br>ファストキャスト　：　1
+<br>抵抗値　：　1/0/5/5/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="pillar_strength.gif" alt="" class="img01"></td>
+  <td><span title="gargish stone shield">Pillar of Strength<br>[ストレングスピラー]</span></td>
+  <td>ガーゴイル専用
+<br>STR　：　10
+<br>ヒットポイント　：　+10
+<br>武器ダメージ　：　+20％
+<br>抵抗値　：　10/0/0/1/0
+<br>修理　：　石工（大工）
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="dragon_hide_shield.gif" alt="" class="img01"></td>
+  <td><span title="medium plate shield">Dragon Hide Shield<br>[ドラゴンシールド]</span></td>
+  <td>ガーゴイル専用
+<br>ヒットポイント変換(炎)　：　20％
+<br>ヒットポイント回復　：　2
+<br>詠唱可
+<br>回避　：　+10％
+<br>抵抗値　：　0/15/0/-4/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="mystic_guard.gif" alt="" class="img01"></td>
+  <td><span title="gargish wooden shield">Mystic Guard<br>[ミスティックガード]</span></td>
+  <td>ガーゴイル専用
+<br>マナ変換　：　30％
+<br>詠唱可
+<br>回避　：　+10％
+<br>キャストリカバリ　：　2
+<br>抵抗値　：　10/0/0/0/1
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="boura_tail_shield.gif" alt="" class="img01"></td>
+  <td><span title="tear kite">Boura Tail Shield<br>[ボウラテールの盾]</span></td>
+  <td>麻痺カウンター
+<br>物理ダメージ反射　：　10％
+<br>抵抗値　：　8/0/0/0/1
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="defender_of_the_magus.gif" alt="" class="img01"></td>
+  <td><span title="metal shield">Defender of the Magus<br>[魔術師の守護]</span></td>
+  <td>詠唱保護 <font color="#ff0000">属性</font>　：　10％
+<br>詠唱可
+<br>回避　：　+10％
+<br>キャストリカバリ　：　1
+<br><font color="#ff0000">属性</font>抵抗　：　10％
+<br>炎抵抗　：　1％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="wall_of_hungry_mouths.gif" alt="" class="img01"></td>
+  <td><span title="heater shield">Wall of Hungry Months<br>[飢餓の壁]</span></td>
+  <td>ヒットポイント変換[エネ]　：　20％
+<br>ヒットポイント変換[毒]　：　20％
+<br>ヒットポイント変換[冷気]　：　20％
+<br>ヒットポイント変換[炎]　：　20％
+<br>抵抗値　：　5/1/0/0/0
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="crown_arcane_temperament.gif" alt="" class="img01"></td>
+  <td><span title="circlet">Crown of Arcane Temperament<br>[アーケインクラウン]</span></td>
+  <td>詠唱集中　：　2％
+<br>マナ　：　+8
+<br>マナ回復　：　3
+<br>魔法ダメージ　：　+8％
+<br>マナコスト　：　-6％
+<br>抵抗値　：　10/14/4/12/7
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="night_eyes.gif" alt="" class="img01"></td>
+  <td><span title="elven lens">Night Eyes<br>[ナイトアイ]</span></td>
+  <td>Night Sight
+<br>回避　：　+10％
+<br>キャストリカバリ　：　3
+<br>抵抗値　：　10/10/10/10/10
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="cast-off_zombie_skin.gif" alt="" class="img01"></td>
+  <td><span title="gargish leather sleeves">Cast-off Zombie Skin<br>[ゾンビの生皮]</span></td>
+  <td>ガーゴイル専用
+<br>Spirit Speak　：　+5
+<br>Necromancy　：　+5
+<br>マナコスト　：　-5％
+<br>秘薬コスト　：　-8％
+<br>抵抗値　：　13/-2/17/18/6
+<br>カルマ減少　：　+5％
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="spined_bloodworm_bracers.gif" alt="" class="img01"></td>
+  <td><span title="gargish cloth sleeves">Spined Bloodworm Bracers<br>[ブラッドワームのトゲ腕輪]</span></td>
+  <td>ガーゴイル専用
+<br>ヒットポイント変換　：　10％
+<br>ヒットポイント回復　：　2
+<br>スタミナ回復　：　2
+<br>物理ダメージ反射　：　30％
+<br>武器ダメージ　：　+10％
+<br>抵抗値　：　11/10/15/15/10
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="breastplate_berserker.gif" alt="" class="img01"></td>
+  <td><span title="gargish platemail">Breastplate of the Berserker<br>[バーサーカーアーマー]</span></td>
+  <td>ガーゴイル専用
+<br>ヒットポイント　：　+5
+<br>スタミナ回復　：　3
+<br>マナコスト　：　-4％
+<br>速度　：　+10％
+<br>武器ダメージ　：　+15％
+<br>抵抗値　：　18/16/5/11/5
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="protector_battle_mage_2.gif" alt="" class="img01"></td>
+  <td><span title="leather tunic">Protector of the Batle Mage<br>[バトルメイジプロテクター]</span></td>
+  <td>詠唱集中　：　3％
+<br>マナ回復　：　2
+<br>魔法ダメージ　：　+5％
+<br>マナコスト　：　-8％
+<br>秘薬コスト　：　-10％
+<br>抵抗値　：　10/16/10/8/8
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="basilisk_hide_breastplate_2.gif" alt="" class="img01"></td>
+  <td><span title="scale armor">Basilisk Hide Breastplate<br>[バシリスクアーマー]</span></td>
+  <td>ヒットポイント変換　：　10％
+<br>DEX　：　5
+<br>ヒットポイント回復　：　2
+<br>スタミナ回復　：　2
+<br>マナ回復　：　1
+<br>回避　：　+5％
+<br>マナコスト　：　-5％
+<br>抵抗値　：　12/14/6/11/5
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="mantle_fallen.gif" alt="" class="img01"></td>
+  <td><span title="cloth shirt">Mantle of the Fallen<br>[堕落のマント]</span></td>
+  <td>ガーゴイル専用
+<br>詠唱集中　：　3％
+<br>魔法ダメージ　：　+5％
+<br>マナ回復　：　1
+<br>INT　：　8
+<br>マナ　：　+8
+<br>秘薬コスト　：　-25％
+<br>抵抗値　：　5/8/11/12/8
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="giant_steps.gif" alt="" class="img01"></td>
+  <td><span title="gargish stone legs">Giant Steps<br>[ジャイアントステップ]</span></td>
+  <td>ガーゴイル専用
+<br>STR　：　5
+<br>DEX　：　5
+<br>ヒットポイント　：　+5
+<br>ヒットポイント回復　：　2
+<br>武器ダメージ　：　+10％
+<br>抵抗値　：　18/16/4/8/12
+<br>修理　：　石工（大工）
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="summoner_kilt.gif" alt="" class="img01"></td>
+  <td><span title="gargish cloth kilt">Summoner's Kilt<br>[召喚術士のキルト]</span></td>
+  <td>ガーゴイル専用
+<br>詠唱集中　：　2％
+<br>マナ　：　+5
+<br>マナ回復　：　2
+<br>魔法ダメージ　：　+5％
+<br>マナコスト　：　-8％
+<br>秘薬コスト　：　-10％
+<br>抵抗値　：　5/7/21/6/21
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="void_infused_kilt.gif" alt="" class="img01"></td>
+  <td><span title="gargish plate kilt">Void Infused Kilt<br>[虚無のキルト]</span></td>
+  <td>ガーゴイル専用
+<br>ヒットポイント変換　：　10％
+<br>STR　：　5
+<br>DEX　：　5
+<br>スタミナ回復　：　1
+<br>マナ回復　：　1
+<br>命中　：　+5％
+<br>抵抗値　：　13/12/8/9/9
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="animated_legs_insane_tinker.gif" alt="" class="img01"></td>
+  <td><span title="plate legs">Animated legs of the Insane Tinker<br>[狂える細工師の動く足]</span></td>
+  <td>DEX　：　5
+<br>スタミナ回復　：　2
+<br>速度　：　+10％
+<br>武器ダメージ　：　+10％
+<br>抵抗値　：　17/15/7/15/2
+<br>装備条件　：　-50％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td>&nbsp;</td>
+  <td><span title="gargish earring">Dragon Jade Earring<br>[竜ヒスイのイヤリング]</span></td>
+  <td>ガーゴイル専用
+<br>ヒットポイント変換[炎]　：　10％
+<br>ヒットポイント回復　：　2
+<br>スタミナ回復　：　3
+<br>マナコスト　：　-5％
+<br>STR　：　5
+<br>DEX　：　5
+<br>抵抗値　：　9/16/13/5/3
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="obsidian_earring.gif" alt="" class="img01"></td>
+  <td><span title="gargish earring">Obsidian Earrings<br>[黒曜石イヤリング]</span></td>
+  <td>ガーゴイル専用
+<br>詠唱集中　：　4％
+<br>マナ回復　：　2
+<br>魔法ダメージ　：　+8％
+<br>マナ　：　+8
+<br>スタミナ回復　：　2
+<br>抵抗値　：　4/10/10/3/13
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="torc_guardians.gif" alt="" class="img01"></td>
+  <td><span title="necklace">Torc of the Guardians<br>[ガーディアントルク]</span></td>
+  <td>ガーゴイル専用
+<br>マナコスト　：　-5％
+<br>マナ回復　：　2
+<br>スタミナ回復　：　2
+<br>STR　：　5
+<br>DEX　：　5
+<br>INT　：　5
+<br>抵抗値　：　5/5/5/5/5
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td>&nbsp;</td>
+  <td><span title="necklace">Lavaliere<br>[ラヴァリエール]</span></td>
+  <td>ヒットポイント変換[物理]　：　20％
+<br>回避　：　+10％
+<br>マナコスト　：　-10％
+<br>秘薬コスト　：　-20％
+<br>物理抵抗　：　15％
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="tangle.gif" alt="" class="img01"></td>
+  <td><span title="half apron">Tangler<br>[タングル]</span></td>
+  <td>INT　：　10
+<br>マナ回復　：　2
+<br>回避　：　+5％
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="shroud_condemned.gif" alt="" class="img01"></td>
+  <td><span title="robe">Shroud of the Condemned<br>[罪人の衣]</span></td>
+  <td>INT　：　5
+<br>ヒットポイント　：　+3
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="demon_bridle_ring.gif" alt="" class="img01"></td>
+  <td><span title="ring">Demon Bridle Ring<br>[封魔の指輪]</span></td>
+  <td>ヒットポイント回復　：　1
+<br>マナ回復　：　1
+<br>回避　：　+10％
+<br>キャストリカバリ　：　2
+<br>ファストキャスト　：　1
+<br>マナコスト　：　-4％
+<br>炎抵抗　：　5％
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="burning_amber.gif" alt="" class="img01"></td>
+  <td><span title="ring">Burning Amber<br>[バーニングアンバー]</span></td>
+  <td>DEX　：　5
+<br>マナ回復　：　2
+<br>キャストリカバリ　：　3
+<br>炎抵抗　：　20％
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="venom.gif" alt="" class="img01"></td>
+  <td><span title="bracelet">Venom<br>[ヴェノム]</span></td>
+  <td>魔法ダメージ　：　+10％
+<br>キャストリカバリ　：　1
+<br>ファストキャスト　：　2
+<br>毒抵抗　：　20％
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="token_holy_favor.gif" alt="" class="img01"></td>
+  <td><span title="bracelet">Token of Holy Favor<br>[聖なる支援の証]</span></td>
+  <td>ヒットポイント　：　+5
+<br>命中　：　+10％
+<br>回避　：　+10％
+<br>魔法ダメージ　：　+4％
+<br>キャストリカバリ　：　2
+<br>ファストキャスト　：　1
+<br>抵抗値　：　0/0/5/5/0
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="slither.gif" alt="" class="img01"></td>
+  <td><span title="talisman">Slither<br>[スリサー]</span></td>
+  <td>ヒットポイント　：　+10％
+<br>ヒットポイント回復　：　2
+<br>回避　：　+10％
+</td>
+ </tr>
+
+</table>
+</div>
+
+<div id="cat_8" style="display: none">
+
+<h3>UOHS, Treasure</h3>
+
+<table class="table02">
+ <tr bgcolor="f0f0f0">
+  <td width="100">画像</td>
+  <td width="200">名称</td>
+  <td width="220">付加プロパティ</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="runed_sash_warding.gif" alt="" class="img01"></td>
+  <td><span title="body sash">runed sash of warding<br>[保護のルーンサッシュ]</span>
+<br><img src="book02.gif" title="裁縫で修理" class="img01"></td>
+  <td>チャージ　：　50
+<br>補強不可
+<br>武器or呪文ダメージ保護
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="surge_shield_2.gif" alt="" class="img01"></td>
+  <td><span title="body sash">surge shield<br>[サージシールド]</span>
+<br><img src="book02.gif" title="A,B,Cの効果のうち各1つ付加&#10;5％の属性抵抗はランダム" class="img01"></td>
+  <td>チャージ　：　50
+<br>補強不可
+<br>A　ヒットポイント回復活性
+<br>A　スタミナ回復活性
+<br>A　マナ回復活性
+<br>B　詠唱可
+<br>B　ファストキャスト　：　1
+<br>C　命中　：　5％
+<br>C　マナコスト　：　-4％
+<br>属性抵抗　：　5％
+<br>冷気抵抗　：　1％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="surge_shield_3.gif" alt="" class="img01"></td>
+  <td><span title="body sash">surge shield<br>[サージシールド]</span>
+<br><img src="book02.gif" title="Aの効果のうち各1つ付加&#10;5％の属性抵抗はランダム" class="img01"></td>
+  <td>チャージ　：　50
+<br>補強不可
+<br>A　ヒットポイント回復活性
+<br>A　スタミナ回復活性
+<br>A　マナ回復活性
+<br>属性抵抗　：　5％
+<br>冷気抵抗　：　1％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="mana_phasing_orb.gif" alt="" class="img01"></td>
+  <td><span title="body sash">Mana Phasing Orb<br>[マナ同調のオーブ]</span>
+<br><img src="book02.gif" title="A,B,Cの効果のうち各1つ付加&#10;細工で修理" class="img01"></td>
+  <td>チャージ　：　50
+<br>補強不可
+<br>マナ同調
+<br>A　ヒットポイント回復活性
+<br>A　スタミナ回復活性
+<br>A　マナ回復活性
+<br>B　命中　：　5％
+<br>B　回避　：　5％
+<br>マナコスト　：　-6％
+<br>C　武器ダメージ　：　+15％
+<br>C　魔法ダメージ　：　+5％
+<br>C　秘薬コスト　：　-10％
+<br>修理　：　細工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="runed_driftwood_bow.gif" alt="" class="img01"></td>
+  <td><span title="bow&#10;2hand&#10;15-19D&#10;4.25sec&#10;paralyzing/mortal">Runed Driftwood Bow<br>[ルーンドリフトウッドボウ]</span></td>
+  <td>回避低下　：　40％
+<br>Lightning　：　40％
+<br>速度　：　+30％
+<br>武器ダメージ　：　+50％
+<br>矢弾コスト　：　-15％
+<br>修理　：　弓工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="bronzed_armor_valkyrie.gif" alt="" class="img01"></td>
+  <td><span title="leather bustier&#10;瞑想可">Bronzed Armor of the valkyrie<br>[ヴァルキリーブロンズアーマー]</span></td>
+  <td>STR　：　5
+<br>DEX　：　5
+<br>ヒットポイント　：　+5
+<br>スタミナ　：　+5
+<br>スタミナ回復　：　3
+<br>マナコスト　：　-10％
+<br>抵抗値　：　11/14/8/11/8
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="enchanted_kelp_woven_leggings.gif" alt="" class="img01"></td>
+  <td><span title="leather leggings&#10;瞑想可">Enchanted Kelp Woven Leggings<br>[魔法のケルプレッグ]</span></td>
+  <td>詠唱集中　：　4％
+<br>ヒットポイント　：　+5
+<br>マナ　：　+8
+<br>マナ回復　：　2
+<br>魔法ダメージ　：　+8％
+<br>秘薬コスト　：　-15％
+<br>抵抗値　：　5/13/12/8/14
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="wand_thundering_glory.gif" alt="" class="img01"></td>
+  <td><span title="wand&#10;1hand&#10;9-11D&#10;2.75sec&#10;disarm/dismount">Illustrious Wand of Thundering Glory<br>[グロリアスサンダー]</span></td>
+  <td>条件　：　UOHS
+<br>詠唱可
+<br>Lightning　：　40％
+<br>命中　：　+5％
+<br>速度　：　+10％
+<br>武器ダメージ　：　+50％
+<br>カオスダメージ　：　100％
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="rune_engraved_peg_leg.gif" alt="" class="img01"></td>
+  <td><span title="clab&#10;1hand&#10;11-13D&#10;2.5sec&#10;dismount/shadow str.">Rune Engraved Peg Leg<br>[ルーンペグレッグ]</span></td>
+  <td>条件　：　UOHS
+<br>回避低下　：　40％
+<br>Lightning　：　40％
+<br>ヒットポイント回復　：　3
+<br>命中　：　+5％
+<br>速度　：　+30％
+<br>武器ダメージ　：　+50％
+<br>カオスダメージ　：　100％
+<br>修理　：　大工
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="smiling_moon_blade.gif" alt="" class="img01"></td>
+  <td><span title="creacent blade&#10;2hand&#10;11-14D&#10;2.5sec&#10;double str./mortal">Smiling Moon Blade<br>[スマイルムーンブレード]</span></td>
+  <td>条件　：　UOHS
+<br>マナ吸収　：　10％
+<br>回避低下　：　40％
+<br>Fireball　：　45％
+<br>好戦
+<br>速度　：　+30％
+<br>武器ダメージ　：　+45％
+<br>冷気　：　100％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="the_culling_blade.gif" alt="" class="img01"></td>
+  <td><span title="">The Culling Blade<br>[カールブレード]</span></td>
+  <td>条件　：　UOHS
+<br>スタミナ吸収　：　30％
+<br>マナ吸収　：　30％
+<br>回避低下　：　40％
+<br>速度　：　+20％
+<br>武器ダメージ　：　+50％
+<br>カオスダメージ　：　100％
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="helm_vengeance.gif" alt="" class="img01"></td>
+  <td><span title="norse helm">Helm of Vengeance<br>[報復の兜]</span></td>
+  <td>条件　：　UOHS
+<br>マナ回復　：　3
+<br>物理ダメージ反射　：　30％
+<br>命中　：　7％
+<br>マナコスト　：　-8％
+<br>武器ダメージ　：　+10％
+<br>抵抗値　：　11/10/14/7/8
+<br>修理　：　鍛冶
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="leviathan_hide_bracers.gif" alt="" class="img01"></td>
+  <td><span title="leather sleeves">Leviathan Hide Bracers<br>[リヴァイアサングローブ]</span></td>
+  <td>条件　：　UOHS
+<br>詠唱集中　：　2％
+<br>INT　：　6
+<br>スタミナ回復　：　2
+<br>マナ回復　：　2
+<br>マナコスト　：　-8％
+<br>秘薬コスト　：　-10％
+<br>抵抗値　：　7/9/10/13/14
+<br>修理　：　裁縫
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="corgul_enchanted_sash.gif" alt="" class="img01"></td>
+  <td><span title="bodysash">Corgul's Enchanted Sash<br>[コーガルサッシュ]</span></td>
+  <td>条件　：　UOHS
+<br>スタミナ　：　+1
+<br>回避　：　+5％
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="ring_soulbinder.gif" alt="" class="img01"></td>
+  <td><span title="">Ring of the Soulbinder<br>[ソウルバインダーの指輪]</span></td>
+  <td>条件　：　UOHS
+<br>マナ回復　：　2
+<br>回避　：　+15％
+<br>魔法ダメージ　：　+10％
+<br>キャストリカバリ　：　3
+<br>ファストキャスト　：　1
+<br>秘薬コスト　：　-10％
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="enchanted_coral_bracelet.gif" alt="" class="img01"></td>
+  <td><span title="">Enchanted Coral Bracelet<br>[サンゴのブレスレット]</span></td>
+  <td>条件　：　UOHS
+<br>ヒットポイント　：　+5
+<br>マナ回復　：　1
+<br>命中　：　+5％
+<br>回避　：　+15％
+<br>魔法ダメージ　：　+10％
+<br>キャストリカバリ　：　3
+<br>ファストキャスト　：　1
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td><img src="corgul_handbook_on_mysticism.gif" alt="" class="img01"></td>
+  <td><span title="">Corgul Handbook on Mysticism<br>[コーガル神秘の書]</span></td>
+  <td>条件　：　UOHS
+<br>マナ回復　：　3
+<br>回避　：　+5％
+<br>マナコスト　：　-10％
+<br>秘薬コスト　：　-20％
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td><img src="corgul_handbook_on_the_undead.gif" alt="" class="img01"></td>
+  <td><span title="">Corgul Handbook on the Undead<br>[コーガル霊媒の書]</span></td>
+  <td>条件　：　UOHS
+<br>マナ回復　：　3
+<br>回避　：　+5％
+<br>マナコスト　：　-10％
+<br>秘薬コスト　：　-20％
+</td>
+ </tr>
+
+</table>
+
+</div>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

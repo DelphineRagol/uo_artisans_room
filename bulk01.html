@@ -1,0 +1,718 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>バルクオーダー：注文～納品まで</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898739</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<h2>バルクオーダー：注文～納品まで</h2>
+<hr>
+
+<h3>１．注文書をもらうには</h3>
+
+オーダー（注文）を受けるには以下の2つの方法があります。
+<ul class="list02">
+  <li>NPC鍛冶屋または裁縫屋に何回かアイテムを売る。</li>
+  <li>NPC鍛冶屋または裁縫屋をクリックしたときに出る選択コマンドから<font color="#ff0000">「バルクオーダー」</font>を選択する。
+<br><img src="bulk04.gif" alt="" class="img02" width="164" height="120"></li>
+</ul>
+
+注文を出すNPCは以下の職業表示となっています。
+
+<ul class="list03">
+<b>鍛冶</b>
+   <li>Blacksmith</li>
+   <li>Blacksmith guildmaster（guildmistress）</li>
+   <li>Armourer</li>
+   <li>Weaponsmith</li>
+</ul>
+
+
+<ul class="list03">
+<b>裁縫</b>
+   <li>Tailor</li>
+   <li>Weaver</li>
+</ul>
+
+
+キャラクターに裁縫や鍛冶スキルが0.1以上あれば、上の方法により、注文の内容を表示した画像が表示されます。
+<br>下の画像は「Shadow ingotで高品質（exceptional）のRing leggingsを10着作って欲しい。」という注文書です。
+<br><img src="bulk05.gif" alt="注文受け入れ画面" width="330" height="205" class="img02">
+
+<p>
+表示された注文を受ける場合は「OK」を、受けないときは「Cancel」を押します。
+</p>
+
+<p>
+NPCの鍛冶屋または裁縫屋が注文を出す間隔は、<font color="#ff0000">Publish74より6時間毎となり、最大で3枚（18時間分）貯められるようになりました。</font>
+<br>また、手持ちの注文書を納品した場合、注文書が1枚スタックされます。
+<br>ただし、受けられる注文書が3枚たまった状態で納品した場合、受けられる注文書は4枚にならず、3枚のままです。
+<br>注文の内容は、スキル値によって下表のようになっています。
+</p>
+
+<p>
+古代ハンマーを装備して見た目のスキルを上げても、受け取る注文の内容は補正前のスキルに沿ったものとなります。
+<br>例えば、実スキル40に古代ハンマー＋60を装備して見た目のスキルを100にしても、スキル40相当の注文しか貰うことはできません。
+</p>
+
+<table class="table01">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="80">スキル</td>
+  <td align="center" width="420">注文の内容</td>
+ </tr>
+ <tr bgcolor="#bbbbff">
+  <td align="center">0.1～69.9</td>
+  <td align="left">
+   <ul class="list01">
+   <li>鍛冶　：　自分のスキルで作成成功率が30.2～70％となる装備品のどれかが注文されます。</li>
+   <li>裁縫　：　自分のスキルで作成成功率が50～70％となる装備品のどれかが注文されます。</li>
+   <li>注文は小口のみとなります。</li>
+   <li>品質の指定はありません（標準品質のみ）</li>
+   <li>素材の指定はありません（Iron、ClothまたはNormal leatherのみ）</li>
+  </ul>
+  </td>
+ </tr>
+ <tr bgcolor="#ffff99">
+  <td align="center">70.0～99.9</td>
+  <td align="left">
+   <ul class="list01">
+   <li>全ての装備品（UO-Rまで）の中からどれかが注文されます。</li>
+   <li>小口だけでなく大口の注文を受けることがあります。</li>
+   <li>品質を指定されることがあります。</li>
+   <li>素材を指定されることがあります。</li>
+   <li><font color="#ff0000">スキルが上がれば高品質や高級素材を必要とする注文が出現しやすくなります。</font></li>
+  </ul>
+</td>
+ </tr>
+ <tr bgcolor="#ffdd99">
+  <td align="center">100.0以上</td>
+  <td align="left">
+   <ul class="list01">
+   <li>全ての装備品（UO-Rまで）の中からどれかが注文されます。</li>
+   <li>小口だけでなく大口の注文を受けることがあります。</li>
+   <li>品質を指定される確率が特別に高くなります。鍛冶の場合、高品質指定の注文が50％程度になります。</li>
+   <li>素材を指定されることがあります。鍛冶の場合、素材指定の注文が30％程度（全注文に対し）になります。</li>
+   <li><font color="#ff0000">鍛冶スキルが110および120で、素材指定の確率がさらに上昇するようになります。
+<br>鍛冶110　：　全注文に対し35％程度（全防具系注文に対しては70％程度）
+<br>鍛冶120　：　全注文に対し45％程度（全防具系注文に対しては90％程度）</font></li>
+</ul>
+ </td>
+ </tr>
+</table>
+<br class="cle">
+
+<h3>２．ヤミ取引</h3>
+
+Publish74より、NPCとバルクオーダーの内容に関するヤミ取引をすることができます。
+
+<p>1．NPCをクリックし、「賄賂」を選択し、NPCに見せたい注文書をターゲットに指定する。
+<br>大口／小口ともに可能だが、注文書には何も結合していない状態でなければならない。
+<br><img src="bribery_00.gif" alt="" class="img01">
+<br><img src="bribery_01.gif" alt="" class="img01">
+</p>
+
+<p>2．NPCが注文の内容に応じた金額を要求する。
+<br><img src="bribery_02.gif" alt="" class="img01">
+<br><img src="bribery_03.gif" alt="" class="img01">
+</p>
+
+<p>3．1で指定した注文書を、NPCに渡す。
+</p>
+
+<p>4．銀行からお金が引き落とされ、渡した注文書の品質／素材／数量のどれかが１ランクが上昇する。
+<br>数量20、高品質、最上級素材がそれ以上ランクアップすることはない。
+<br><img src="bribery_04.gif" alt="" class="img01">
+<br><img src="bulk_pub74.gif" alt="" class="img01" width="360" height="210">
+</p>
+
+<p>5．1～4を繰り返していくうちに、NPCが生産ギルドに目をつけられ、一時的に闇取引できなくなる。
+<br>ほとぼりが冷めるまで、実時間で2時間程度は必要で、プレイヤー側で強制的に解除する方法はない。
+<br><img src="bribery_05.gif" alt="" class="img01">
+</p>
+
+<h4>闇取引の要求金額（概算）</h4>
+
+<br>下の表は、闇取引したい注文書とNPCが要求する基本金額（概算）を表したものです。
+<br>要求する金額は、NPCにとって何回目の闇取引回数かにおおよそ比例しています（100gp未満切捨）。
+<br>たとえば、以前に闇取引を9回していたNPCに取引を持ちかけると、基本金額の10倍程度を要求してきます。
+<br>時間による低減もありますが、要求金額に対してわずかなものです。
+
+<h4>鍛冶小口</h4>
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="100">数量<br>＼<br>素材</td>
+  <td width="80">10</td>
+  <td width="80">15</td>
+  <td width="80">20</td>
+  <td width="80">10EX</td>
+  <td width="80">15EX</td>
+  <td width="80">20EX</td>
+ </tr>
+ <tr bgcolor="#e0e0e0">
+  <td>武器</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>---</td>
+ </tr>
+ <tr bgcolor="#d8d8d8">
+  <td>防具Iron</td>
+  <td>5</td>
+  <td>10</td>
+  <td>20</td>
+  <td>15</td>
+  <td>25</td>
+  <td>40</td>
+ </tr>
+ <tr bgcolor="#e0e0c0">
+  <td>Dull</td>
+  <td></td>
+  <td>55</td>
+  <td>125</td>
+  <td>90</td>
+  <td>160</td>
+  <td>280</td>
+ </tr>
+ <tr bgcolor="#909090">
+  <td>Shadow</td>
+  <td>65</td>
+  <td></td>
+  <td>250</td>
+  <td>180</td>
+  <td>320</td>
+  <td>550</td>
+ </tr>
+ <tr bgcolor="#e0c080">
+  <td>Copper</td>
+  <td>100</td>
+  <td></td>
+  <td>375</td>
+  <td>280</td>
+  <td>480</td>
+  <td>820</td>
+ </tr>
+ <tr bgcolor="#c08040">
+  <td>Bronze</td>
+  <td>125</td>
+  <td>220</td>
+  <td>500</td>
+  <td>360</td>
+  <td>650</td>
+  <td>1100</td>
+ </tr>
+ <tr bgcolor="#fff0c0">
+  <td>Gold</td>
+  <td>160</td>
+  <td>280</td>
+  <td>625</td>
+  <td>450</td>
+  <td>800</td>
+  <td>1380</td>
+ </tr>
+ <tr bgcolor="#ffc0c0">
+  <td>Agapite</td>
+  <td>200</td>
+  <td>330</td>
+  <td>750</td>
+  <td>550</td>
+  <td>960</td>
+  <td>1660</td>
+ </tr>
+ <tr bgcolor="#c0ffc0">
+  <td>Verite</td>
+  <td>220</td>
+  <td>380</td>
+  <td>875</td>
+  <td>640</td>
+  <td>1120</td>
+  <td>1970</td>
+ </tr>
+ <tr bgcolor="#c0e0ff">
+  <td>Valorite</td>
+  <td>500</td>
+  <td>875</td>
+  <td>1500</td>
+  <td>1120</td>
+  <td>1970</td>
+  <td>---</td>
+ </tr>
+</table>
+
+<h4>鍛冶大口</h4>
+小口の5倍程度です
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="100">数量<br>＼<br>素材</td>
+  <td width="80">10</td>
+  <td width="80">15</td>
+  <td width="80">20</td>
+  <td width="80">10EX</td>
+  <td width="80">15EX</td>
+  <td width="80">20EX</td>
+ </tr>
+ <tr bgcolor="#e0e0e0">
+  <td>武器</td>
+  <td>50</td>
+  <td>80</td>
+  <td>150</td>
+  <td>120</td>
+  <td>200</td>
+  <td>---</td>
+ </tr>
+ <tr bgcolor="#d8d8d8">
+  <td>防具Iron</td>
+  <td>25</td>
+  <td>40</td>
+  <td>100</td>
+  <td>75</td>
+  <td>125</td>
+  <td>225</td>
+ </tr>
+ <tr bgcolor="#e0e0c0">
+  <td>Dull</td>
+  <td>150</td>
+  <td>275</td>
+  <td>625</td>
+  <td>475</td>
+  <td>825</td>
+  <td>1425</td>
+ </tr>
+ <tr bgcolor="#909090">
+  <td>Shadow</td>
+  <td>320</td>
+  <td>550</td>
+  <td>1250</td>
+  <td>925</td>
+  <td>1650</td>
+  <td>2825</td>
+ </tr>
+ <tr bgcolor="#e0c080">
+  <td>Copper</td>
+  <td>480</td>
+  <td>825</td>
+  <td>1880</td>
+  <td>1425</td>
+  <td>2450</td>
+  <td>4225</td>
+ </tr>
+ <tr bgcolor="#c08040">
+  <td>Bronze</td>
+  <td>625</td>
+  <td>1100</td>
+  <td>2500</td>
+  <td>1875</td>
+  <td>3275</td>
+  <td>5625</td>
+ </tr>
+ <tr bgcolor="#fff0c0">
+  <td>Gold</td>
+  <td>780</td>
+  <td>1380</td>
+  <td>3120</td>
+  <td>2325</td>
+  <td>4100</td>
+  <td>7025</td>
+ </tr>
+ <tr bgcolor="#ffc0c0">
+  <td>Agapite</td>
+  <td>925</td>
+  <td>1650</td>
+  <td>3750</td>
+  <td>2825</td>
+  <td>4900</td>
+  <td>8450</td>
+ </tr>
+ <tr bgcolor="#c0ffc0">
+  <td>Verite</td>
+  <td>1100</td>
+  <td>1920</td>
+  <td>4380</td>
+  <td>3275</td>
+  <td>5725</td>
+  <td>9850</td>
+ </tr>
+ <tr bgcolor="#c0e0ff">
+  <td>Valorite</td>
+  <td>2500</td>
+  <td>4380</td>
+  <td>7500</td>
+  <td>5625</td>
+  <td>9850</td>
+  <td>---</td>
+ </tr>
+</table>
+
+
+<h4>裁縫小口</h4>
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="100">数量<br>＼<br>素材</td>
+  <td width="80">10</td>
+  <td width="80">15</td>
+  <td width="80">20</td>
+  <td width="80">10EX</td>
+  <td width="80">15EX</td>
+  <td width="80">20EX</td>
+ </tr>
+ <tr bgcolor="#e0e0e0">
+  <td>布</td>
+  <td>10</td>
+  <td>20</td>
+  <td>35</td>
+  <td>25</td>
+  <td>40</td>
+  <td>---</td>
+ </tr>
+ <tr bgcolor="#ffcc99">
+  <td>標準革</td>
+  <td></td>
+  <td>10</td>
+  <td>25</td>
+  <td>20</td>
+  <td>30</td>
+  <td>50</td>
+ </tr>
+ <tr bgcolor="#6699ff">
+  <td>Spined</td>
+  <td>75</td>
+  <td>140</td>
+  <td>325</td>
+  <td>250</td>
+  <td>450</td>
+  <td>750</td>
+ </tr>
+ <tr bgcolor="#ff9999">
+  <td>Horned</td>
+  <td>150</td>
+  <td>280</td>
+  <td>650</td>
+  <td>480</td>
+  <td>860</td>
+  <td>1480</td>
+ </tr>
+ <tr bgcolor="#66cc66">
+  <td>Barbed</td>
+  <td>480</td>
+  <td>860</td>
+  <td>1480</td>
+  <td>1100</td>
+  <td>1940</td>
+  <td>---</td>
+ </tr>
+</table>
+
+<h4>裁縫大口</h4>
+小口の10倍程度です
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="100">数量<br>＼<br>素材</td>
+  <td width="80">10</td>
+  <td width="80">15</td>
+  <td width="80">20</td>
+  <td width="80">10EX</td>
+  <td width="80">15EX</td>
+  <td width="80">20EX</td>
+ </tr>
+ <tr bgcolor="#e0e0e0">
+  <td>布</td>
+  <td>100</td>
+  <td>175</td>
+  <td>300</td>
+  <td>225</td>
+  <td>400</td>
+  <td>---</td>
+ </tr>
+ <tr bgcolor="#ffcc99">
+  <td>標準革</td>
+  <td></td>
+  <td></td>
+  <td>200</td>
+  <td>150</td>
+  <td>260</td>
+  <td>450</td>
+ </tr>
+ <tr bgcolor="#6699ff">
+  <td>Spined</td>
+  <td>825</td>
+  <td>1450</td>
+  <td></td>
+  <td>2500</td>
+  <td>4375</td>
+  <td>7500</td>
+ </tr>
+ <tr bgcolor="#ff9999">
+  <td>Horned</td>
+  <td></td>
+  <td>2925</td>
+  <td>6675</td>
+  <td>5000</td>
+  <td>8750</td>
+  <td>15000</td>
+ </tr>
+ <tr bgcolor="#66cc66">
+  <td>Barbed</td>
+  <td>5000</td>
+  <td>8750</td>
+  <td>15000</td>
+  <td>11250</td>
+  <td>19700</td>
+  <td>---</td>
+ </tr>
+</table>
+
+
+<h3>２．注文を完成させる</h3>
+
+鍛冶および裁縫の注文書は大口と小口の2種類あり、それぞれ完成させる方法が異なっています。
+
+<h4>（１）小口の注文（Small bulk order）</h4>
+
+小口の注文は、<font color="#ff0000">注文書に書かれた1種類のアイテムを</font>作る形式です。
+<br><font color="#ff0000"><b>数量・品質・使用する素材</b></font>に注意して作れば、問題なく完成させることができます。
+ <ul class="list04">
+  <li>下の<b>画像1</b>は、内容が「<font color="#ff0000">高品質のWar fork15本を作成する</font>」という小口注文です。</li>
+  <li>注文書(Deed)をダブルクリックしたときに出てくる「アイテムを登録する（英語ではCombine this deed・・・）」のボタンを押します。</li>
+  <li>ターゲットカーソルを注文書の要求しているものに合わせます（<b>画像2</b>）。
+  <br>War forkを1本だけ注文書に組み込むと、画像1のWar forkの右の数字が0から1となります。引き続き、War forkをDeedに組み込んでいきます。</li>
+  <li>必要な数（ここでは15本）だけ組み込むと、それ以上注文書にWar forkを組み込むことができなくなります。</li>
+  <li>完成させた注文書をNPCの鍛冶屋に直接渡せば、その注文は完了となります。</li>
+ </ul>
+
+<h4>画像1</h4>
+<img src="bulk14.gif" alt="" class="img02">
+<h4>画像2</h4>
+<img src="bulk15.gif" alt="" class="img02">
+
+<h4>（２）大口の注文（Large bulk order）</h4>
+
+大口の注文は、<font color="#ff0000">注文書に書かれた2種類以上の小口注文書を完成させ、それらを組み込む</font>形式です。
+<br>複数枚の注文書が必要となるため、小口注文よりも難易度が高く、大口注文でしか得られない高級な報酬品もあります。
+ <ul class="list04">
+  <li>下の<b>画像3</b>は、内容が「<font color="#ff0000">高品質のDagger、Kryss、Warfork、Short spear、Spear15本のセットを作成する</font>」という大口注文です。</li>
+  <li><font color="#ff0000"><b>大口注文に書かれた数量・品質・使用する素材</b>に注意して、大口注文書に組み込むための小口注文書を完成</font>させます。</li>
+  <li>大口注文書をダブルクリックしたときに出てくる「Combine this deed with another deed」のボタンを押します。</li>
+  <li>ターゲットカーソルを注文書の要求しているものに合わせます（<b>画像4</b>）。</li>
+  <br>War forkの小口注文書を組み込むと、画像1のWar forkの右の数字が0から15となります。引き続き、他の小口注文書を組み込んでいきます
+  <li>必要な小口注文書を全て組み込むと、それ以上注文書に小口注文書を組み込むことができなくなります。</li>
+  <li>完成させた注文書をNPCの鍛冶屋に直接渡せば、その注文は完了となります。</li>
+ </ul>
+
+  <table class="table01">
+    <tr bgcolor="#f0f0f0">
+      <td align="center" width="100">大口の種類</td>
+      <td align="center" width="150">必要なDeed</td>
+    </tr>    
+    <tr bgcolor="#d0b0ff">
+      <td align="center">Plate系防具<br>(全7枚)</td>
+      <td><b>Platemail系大口</b><br>Plate gorget<br>Plate gloves<br>Plate arms<br>Plate helm<br>Plate legs<br>Plate tunic</td>
+    </tr>    
+    <tr bgcolor="#ffffc0">
+      <td align="center">Chain系防具<br>(全4枚)</td>
+      <td><b>Chainmail系大口</b><br>Chain coif<br>Chain legs<br>Chain tunic</td>
+    </tr>    
+    <tr bgcolor="#ffe0c0">
+      <td align="center">Ring系防具<br>(全5枚)</td>
+      <td><b>Ringmail系大口</b><br>Ring gloves<br>Ring sleeves<br>Ring legs<br>Ring tunic</td>
+    </tr>    
+    <tr bgcolor="#c0ffb0">
+      <td align="center">Sword系武器<br>(全7枚)</td>
+      <td><b>Sword系大口</b><br>Broad sword<br>Cutlass<br>Katana<br>Long sword<br>Scimitar<br>Viking sword</td>
+    </tr>
+  </table>
+
+  <table bgcolor="#c0ffb0" class="table01">
+    <tr bgcolor="#f0f0f0">
+      <td align="center" width="100">大口の種類</td>
+      <td align="center" width="150">必要なDeed</td>
+    </tr>
+    <tr>
+      <td align="center">Axe系武器<br>(全7枚)</td>
+      <td><b>Axe系大口</b><br>Axe<br>Battle axe<br>Double axe<br>Executioner's axe<br>Large battle axe<br>Two handed axe</td>
+    </tr>
+    <tr>
+      <td align="center">Fencing系<br>武器(全6枚)</td>
+      <td><b>Fencing系大口</b><br>Dagger<br>Kryss<br>Short spear<br>Spear<br>War fork</td>
+    </tr>
+    <tr>
+      <td align="center">Mace系武器<br>(全7枚)</td>
+      <td><b>Mace系大口</b><br>Hammer pick<br>Mace<br>Maul<br>War hammer<br>War axe<br>War mace</td>
+    </tr>
+    <tr>
+      <td align="center">Pole系武器<br>(全3枚)</td>
+      <td><b>Pole系大口</b><br>Bardiche<br>Halberd</td>
+    </tr>
+  </table>
+
+<br class="cle">
+<h4>画像3</h4>
+<img src="bulk18.gif" alt="" class="img02">
+<h4>画像4</h4>
+<img src="bulk19.gif" alt="" class="img02">
+
+<h3>３．報酬品</h3>
+
+大口、小口に関わらず、完成させた注文書を対応するNPCに渡すことで、<font color="#ff0000">報酬品（gp＋アイテム＋名声）を獲得できます。</font>
+<br>獲得できる報酬品は注文の難易度によって決まっています。注文の難易度を決めている要素は以下の項目です。
+
+<ul class="list01">
+  <li>品質　：　高品質 or 標準品質（指定無）</li>
+  <li>素材　：　特殊素材 or 標準素材（指定無）</li>
+  <li>数量　：　10、15、20</li>
+  <li>注文の種類　：　大口 or 小口</li>
+</ul>
+
+注文の内容に対する報酬品は、<a href="bulk_prize_fw.html">報酬順引き</a>にて確認できます。
+
+<h3>４．Bulk Order Book（バルクオーダーブック）</h3>
+
+バルクオーダーブックはPublish19以降、書写スキルにより作成可能となっています。<img src="bulkbook000.gif" alt="" class="img01">
+<br>作成にはBlank Scrollが10本必要です。
+
+<h4>（１）注文書（Deed）を入れる</h4>
+
+  <ul class="list01">
+    <li>バルクオーダーブックに注文書をドロップすると、バルクオーダーブックの中に注文書の内容が登録されます。</li>
+    <li>裁縫と鍛冶の注文書を1冊のバルクオーダーブックに混ぜても問題ありません。</li>
+    <li>バルクオーダーブックにいれた注文書は、5枚で1アイテムの扱いとなります（最大で100アイテム分）。</li>
+    <li>バルクオーダーブックには最大で500枚の注文書を入れることができます。</li>
+    <li>アイテムプロパティ画面で、バルクオーダーブックに入っている注文書の枚数が確認できます。</li>
+    <li>バルクオーダーブックをクリックすると「書名変更」のコマンドが現れ、書名を入力することができます（Runeの名前をつけるタイプ）。
+<br>Publish56より、全角文字にも対応可能となる予定です。</li>
+<br><img src="bulkbook_pub56.gif" alt="" class="img01">
+  </ul>
+
+<h4>（２） バルクオーダーブックから注文書を探す</h4>
+  <ul class="list01">
+    <li>バルクオーダーブックをダブルクリックすると、収められている注文書の一覧が表示されます(<b>画像-1</b>)。</li>
+    <li>左上にある「Set Filter」を選ぶと、<b>画像-2</b>のようなFilter設定画面となります。</li>
+    <li>ここで設定を変えることにより、本を開いたときに表示するDeedを絞ることができます。</li>
+      <ul class="list02">
+        <li>種類・・・<b>全体(大口＋小口)／小口のみ／大口のみ</b>の表示</li>
+        <li>品質・・・<b>全体(標準＋高品質)／標準のみ／高品質のみ</b>の表示</li>
+        <li>素材・・・<b>鍛冶Deed／裁縫Deed</b>全体表示</li>
+        <br>スキル別に<b>材質(Iron～Valorite／Cloth, Normal leather～Barbed leather）</b>ごとの表示</li>
+        <li>数量・・・<b>全体(10＋15＋20)／10のみ／15のみ／20のみ</b>の表示</li>
+      </ul>
+    </ul>
+
+<table class="table03" width="450">
+  <tr>
+    <td align="center"><img src="bulkbook001.gif" alt="" width="407" height="300" class="img02"><br>画像-1　Deed表示部分</td>
+  </tr>
+
+  <tr>
+    <td align="center"><img src="bulkbook002.gif" alt="" width="407" height="300" class="img02"><br>画像-2　Filter設定部分</td>
+  </tr>
+</table>
+
+<br class="cle">
+<h4>（３） バルクオーダーブックの中にある注文書を売る(PCベンダー)</h4>
+
+バルクオーダーブックに入れた注文書をPCベンダーで販売することができます。
+<ul class="list04">
+   <li>自分のバックパックに入っているバルクオーダーブックをダブルクリックし一覧表示させます。</li>
+   <li>注文書一覧の右のほうにある青いボタン(「売」の下にあります)を押します（注文書1枚ごとにボタンがついています）。</li>
+   <li>価格を入力します。入力が完了したものは<b>画像-1</b>のように値がつけられます。</li>
+   <li>売る注文書が入ったバルクオーダーブックをベンダーにおきますが、
+<font color="#ff0000">本自体には価格をつけないようにします(本を置いたら[Esc]ボタンを押すとよい)。</font></li>
+   <li>バルクオーダーブックの中にある注文書をPCベンダーから買う場合、注文書一覧で「買」の下にあるボタンを押して買うことになります。</li>
+</ul>
+
+<h4>（４） バルクオーダーブックの表紙を変える</h4>
+
+UO11周年記念パッケージ内のアイテムとして、Bulk order cover（全12種、各30チャージ）を入手することができます。
+<br>Bulk order coverを使い、バルクオーダーブックの色を変えることができます。
+
+<table class="table01">
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="80">Cover</td>
+    <td align="center" width="80">本</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center"><img src="bulkcover_normal.gif" alt="" class="img01"><br>Normal</td>
+    <td align="center"><img src="bulkbook000.gif" alt="" class="img01"></td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center"><img src="bulkcover_dull.gif" alt="" class="img01"><br>Dullcopper</td>
+    <td align="center"><img src="bulkbook_dull.gif" alt="" class="img01"></td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center"><img src="bulkcover_shadow.gif" alt="" class="img01"><br>Shadow</td>
+    <td align="center"><img src="bulkbook_shadow.gif" alt="" class="img01"></td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center"><img src="bulkcover_copper.gif" alt="" class="img01"><br>Copper</td>
+    <td align="center"><img src="bulkbook_copper.gif" alt="" class="img01"></td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center"><img src="bulkcover_bronze.gif" alt="" class="img01"><br>Bronze</td>
+    <td align="center"><img src="bulkbook_bronze.gif" alt="" class="img01"></td>
+  </tr>
+</table>
+
+<table class="table01">
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="80">Cover</td>
+    <td align="center" width="80">本</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center"><img src="bulkcover_gold.gif" alt="" class="img01"><br>Gold</td>
+    <td align="center"><img src="bulkbook_gold.gif" alt="" class="img01"></td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center"><img src="bulkcover_agapite.gif" alt="" class="img01"><br>Agapite</td>
+    <td align="center"><img src="bulkbook_agapite.gif" alt="" class="img01"></td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center"><img src="bulkcover_verite.gif" alt="" class="img01"><br>Verite</td>
+    <td align="center"><img src="bulkbook_verite.gif" alt="" class="img01"></td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center"><img src="bulkcover_valorite.gif" alt="" class="img01"><br>Valorite</td>
+    <td align="center"><img src="bulkbook_valorite.gif" alt="" class="img01"></td>
+  </tr>
+</table>
+
+<table class="table01">
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="80">Cover</td>
+    <td align="center" width="80">本</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center"><img src="bulkcover_spined.gif" alt="" class="img01"><br>Spined</td>
+    <td align="center"><img src="bulkbook_spined.gif" alt="" class="img01"></td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center"><img src="bulkcover_horned.gif" alt="" class="img01"><br>Horned</td>
+    <td align="center"><img src="bulkbook_horned.gif" alt="" class="img01"></td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center"><img src="bulkcover_barbed.gif" alt="" class="img01"><br>Barbed</td>
+    <td align="center"><img src="bulkbook_barbed.gif" alt="" class="img01"></td>
+  </tr>
+
+</table>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

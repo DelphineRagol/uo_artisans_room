@@ -1,0 +1,685 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>バルクオーダー報酬品（順引き）</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898758</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<h2>バルクオーダー報酬品（順引き）</h2>
+<hr>
+<script language="javascript">
+<!--
+
+
+function bssim0(form)
+{
+var form = document.form_bssim;
+  form.el01.value = 0;
+  form.el02.value = 0;
+  form.el03.value = 0;
+  form.el04.value = 0;
+  form.sco.value = 0;
+  form.fame.value = 0;
+  form.gp.value = 0;
+  form.rew01.value = 0;
+  form.rew02.value = 0;
+  form.rew03.value = 0;
+  form.rew04.value = 0;
+  form.rew05.value = 0;
+  return true;
+}
+
+function bssim1(form)
+{
+var form = document.form_bssim;
+
+  chn = 23;
+  sco = 0;
+  fil02 = 0;
+  for(i=0; i<9; i++)
+ {
+    if(document.form_bssim.elements[i].checked)
+     {
+      sco += eval(document.form_bssim.elements[i].value);
+     }
+ }
+
+      fil01 = sco;
+
+  if(sco>100)
+    {
+      sco = sco - 100.0;
+
+  for(i=18; i<21; i++)
+      {
+    if(document.form_bssim.elements[i].checked)
+        {
+      sco += eval(document.form_bssim.elements[i].value);
+        }
+      }
+    
+    }
+
+  else
+    {
+
+  for(i=9; i<21; i++)
+      {
+    if(document.form_bssim.elements[i].checked)
+        {
+      sco += eval(document.form_bssim.elements[i].value);
+        }
+      }
+
+    }
+
+  for(i=21; i<chn; i++)
+      {
+    if(document.form_bssim.elements[i].checked)
+        {
+      sco += eval(document.form_bssim.elements[i].value);
+      fil02 += eval(document.form_bssim.elements[i].value);
+        }
+      }
+
+  if(fil02==0)
+    {
+      fil02 = 10;
+    }
+  else if(fil02==1)
+    {
+      fil02 = 15;
+    }
+  else
+    {
+      fil02 = 20;
+    }
+
+
+  fame = Math.floor(sco / 2.0) * Math.floor(sco / 2.0);
+
+  if(fil01==0)
+    {
+      gp = 0;
+    }
+  else if(sco<12)
+    {
+      gp = 300 * fil02;
+    }
+  else if(sco<16)
+    {
+      gp = 400 * fil02;
+    }
+  else if(sco<20)
+    {
+      gp = 500 * fil02;
+    }
+  else if(sco<24)
+    {
+      gp = 750 * fil02;
+    }
+  else if(sco<28)
+    {
+      gp = 1000 * fil02;
+    }
+  else if(sco<32)
+    {
+      gp = 1500 * fil02;
+    }
+  else if(sco<36)
+    {
+      gp = 2500 * fil02;
+    }
+  else if(sco<40)
+    {
+      gp = 5000 * fil02;
+    }
+  else
+    {
+      gp = 10000 * fil02;
+    }
+
+
+  if(sco==0)
+    {
+      document.rew01 = "sturdy shovel （100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco==1)
+    {
+      document.rew01 = "sturdy pickaxe （100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco==2)
+    {
+      document.rew01 = "sturdy shovel （45％）";
+      document.rew02 = "sturdy pickaxe （45％）";
+      document.rew03 = "leather blacksmith gloves of mining（10％）";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<16)
+    {
+      document.rew01 = "prospector's tool （50％）";
+      document.rew02 = "gargoyle pickaxe （40％）";
+      document.rew03 = "studded blacksmith gloves of mining（10％）";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<18)
+    {
+      document.rew01 = "prospector's tool （40％）";
+      document.rew02 = "gargoyle pickaxe （40％）";
+      document.rew03 = "powder of fortifying（20％）";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<20)
+    {
+      document.rew01 = "powder of fortifying（90％）";
+      document.rew02 = "ringmail blacksmith gloves of mining（10％）";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<22)
+    {
+      document.rew01 = "dullcopper runic hammer（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<24)
+    {
+      document.rew01 = "dullcopper runic hammer（60％）";
+      document.rew02 = "shadow runic hammer（40％）";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco==24)
+    {
+      document.rew01 = "shadow runic hammer（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco==25)
+    {
+      document.rew01 = "blacksmith power scroll 105（60％）";
+      document.rew02 = "shadow runic hammer（30％）";
+      document.rew03 = "color anvil deed（10％）";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco==26)
+    {
+      document.rew01 = "copper runic hammer（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco==27)
+    {
+      document.rew01 = "blacksmith power scroll 110（60％）";
+      document.rew02 = "copper runic hammer（30％）";
+      document.rew03 = "color anvil deed（10％）";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<30)
+    {
+      document.rew01 = "bronze runic hammer（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<32)
+    {
+      document.rew01 = "ancient smith hammer +10（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<34)
+    {
+      document.rew01 = "blacksmith power scroll 115（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<36)
+    {
+      document.rew01 = "ancient smith hammer +15（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<38)
+    {
+      document.rew01 = "blacksmith power scroll 120（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<40)
+    {
+      document.rew01 = "gold runic hammer（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<42)
+    {
+      document.rew01 = "ancient smith hammer +30（70％）";
+      document.rew02 = "agapite runic hammer（15％）";
+      document.rew03 = "ancient smith hammer +60（7.5％）";
+      document.rew04 = "verite runic hammer（5％）";
+      document.rew05 = "valorite runic hammer（2.5％）";
+    }
+  else if(sco<44)
+    {
+      document.rew01 = "agapite runic hammer（70％）";
+      document.rew02 = "ancient smith hammer +60（15％）";
+      document.rew03 = "verite runic hammer（10％）";
+      document.rew04 = "valorite runic hammer（5％）";
+      document.rew05 = "";
+    }
+  else if(sco<46)
+    {
+      document.rew01 = "ancient smith hammer +60（70％）";
+      document.rew02 = "verite runic hammer（20％）";
+      document.rew03 = "valorite runic hammer（10％）";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else if(sco<48)
+    {
+      document.rew01 = "verite runic hammer（80％）";
+      document.rew02 = "valorite runic hammer（20％）";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+  else
+    {
+      document.rew01 = "valorite runic hammer（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+      document.rew05 = "";
+    }
+
+  form.fame.value = fame;
+  form.gp.value = gp;
+  form.rew01.value = document.rew01;
+  form.rew02.value = document.rew02;
+  form.rew03.value = document.rew03;
+  form.rew04.value = document.rew04;
+  form.rew05.value = document.rew05;
+
+ return true;
+}
+//-->
+</script>
+
+<script language="javascript">
+<!--
+
+
+function tasim0(form)
+{
+var form = document.form_tasim;
+  form.el01.value = 0;
+  form.el02.value = 0;
+  form.el03.value = 0;
+  form.el04.value = 0;
+  form.sco.value = 0;
+  form.fame.value = 0;
+  form.gp.value = 0;
+  form.rew01.value = 0;
+  form.rew02.value = 0;
+  form.rew03.value = 0;
+  form.rew04.value = 0;
+  return true;
+}
+
+function tasim1(form)
+{
+var form = document.form_tasim;
+
+  chn = 14;
+  sco = 0;
+  fil02 = 0;
+  for(i=0; i<4; i++)
+ {
+    if(document.form_tasim.elements[i].checked)
+     {
+      sco += eval(document.form_tasim.elements[i].value);
+     }
+ }
+
+      fil01 = sco;
+
+
+  for(i=4; i<11; i++)
+      {
+    if(document.form_tasim.elements[i].checked)
+        {
+      sco += eval(document.form_tasim.elements[i].value);
+        }
+      }
+
+
+  for(i=11; i<chn; i++)
+      {
+    if(document.form_tasim.elements[i].checked)
+        {
+      sco += eval(document.form_tasim.elements[i].value);
+      fil02 += eval(document.form_tasim.elements[i].value);
+        }
+      }
+
+  if(fil02==0)
+    {
+      fil02 = 10;
+    }
+  else if(fil02==1)
+    {
+      fil02 = 15;
+    }
+  else
+    {
+      fil02 = 20;
+    }
+
+
+  fame = Math.floor(sco / 2.0) * Math.floor(sco / 2.0);
+
+  if(fil01==0)
+    {
+      gp = 0;
+    }
+  else if(sco<12)
+    {
+      gp = 300 * fil02;
+    }
+  else if(sco<16)
+    {
+      gp = 400 * fil02;
+    }
+  else if(sco<20)
+    {
+      gp = 500 * fil02;
+    }
+  else if(sco<24)
+    {
+      gp = 750 * fil02;
+    }
+  else if(sco<28)
+    {
+      gp = 1000 * fil02;
+    }
+  else if(sco<32)
+    {
+      gp = 1500 * fil02;
+    }
+  else
+    {
+      gp = 2500 * fil02;
+    }
+
+
+  if(sco<2)
+    {
+      document.rew01 = "ランク1布100枚 （100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+    }
+  else if(sco<4)
+    {
+      document.rew01 = "ランク2布100枚 （100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+    }
+  else if(sco<6)
+    {
+      document.rew01 = "ランク3布100枚 （100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+    }
+  else if(sco<8)
+    {
+      document.rew01 = "ランク4布100枚 （90％）";
+      document.rew02 = "Color sandal （10％）";
+      document.rew03 = "";
+      document.rew04 = "";
+    }
+  else if(sco<12)
+    {
+      document.rew01 = "ランク5布100枚 （80％）";
+      document.rew02 = "Color sandal （20％）";
+      document.rew03 = "";
+      document.rew04 = "";
+   }
+  else if(sco<14)
+    {
+      document.rew01 = "stretched hide deed（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+    }
+  else if(sco<16)
+    {
+      document.rew01 = "spined runic sewing kit（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+    }
+  else if(sco<18)
+    {
+      document.rew01 = "flower tapestry（60％）";
+      document.rew02 = "tailoring power scroll 105（40％）";
+      document.rew03 = "";
+      document.rew04 = "";
+    }
+  else if(sco<20)
+    {
+      document.rew01 = "bear rug deed（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+    }
+  else if(sco<22)
+    {
+      document.rew01 = "tailoring power scroll 110（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+    }
+  else if(sco==22)
+    {
+      document.rew01 = "clothing bless deed（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+    }
+  else if(sco==23)
+    {
+      document.rew01 = "tailoring power scroll 115（50％）";
+      document.rew02 = "horned runic sewing kit（30％）";
+      document.rew03 = "tailoring power scroll 120（15％）";
+      document.rew04 = "barbed runic sewing kit（5％）";
+    }
+  else if(sco<26)
+    {
+      document.rew01 = "horned runic sewing kit（70％）";
+      document.rew02 = "tailoring power scroll 120（20％）";
+      document.rew03 = "barbed runic sewing kit（10％）";
+      document.rew04 = "";
+    }
+  else if(sco<28)
+    {
+      document.rew01 = "tailoring power scroll 120（80％）";
+      document.rew02 = "barbed runic sewing kit（20％）";
+      document.rew03 = "";
+      document.rew04 = "";
+    }
+  else
+    {
+      document.rew01 = "barbed runic sewing kit（100％）";
+      document.rew02 = "";
+      document.rew03 = "";
+      document.rew04 = "";
+    }
+
+  form.fame.value = fame;
+  form.gp.value = gp;
+  form.rew01.value = document.rew01;
+  form.rew02.value = document.rew02;
+  form.rew03.value = document.rew03;
+  form.rew04.value = document.rew04;
+
+ return true;
+}
+//-->
+</script>
+
+鍛冶および裁縫バルクオーダーの種類から報酬品を表示させるようにしました。Publish59の変更に対応しています。
+
+<form name="form_bssim">
+<h3>鍛冶</h3>
+<table class="table01">
+  <tr bgcolor="#ccccff">
+    <td width="190" valign="top">
+      <INPUT Type="radio" name="el01" value="0.0" onclick="bssim1(form)" checked>　小口
+  <br><INPUT Type="radio" name="el01" value="8.0" onclick="bssim1(form)">　防具大口（Ring mail）
+  <br><INPUT Type="radio" name="el01" value="12.0" onclick="bssim1(form)">　防具大口（Chain mail）
+  <br><INPUT Type="radio" name="el01" value="16.0" onclick="bssim1(form)">　防具大口（Plate mail）
+  <br><INPUT Type="radio" name="el01" value="108.0" onclick="bssim1(form)">　武器大口（Pole Arm）
+  <br><INPUT Type="radio" name="el01" value="112.0" onclick="bssim1(form)">　武器大口（Axe）
+  <br><INPUT Type="radio" name="el01" value="112.0" onclick="bssim1(form)">　武器大口（Swords）
+  <br><INPUT Type="radio" name="el01" value="112.0" onclick="bssim1(form)">　武器大口（Mace）
+  <br><INPUT Type="radio" name="el01" value="114.0" onclick="bssim1(form)">　武器大口（Fencer）
+    </td>
+
+    <td width="120" valign="top">
+      <INPUT Type="radio" name="el02" value="0.0" onclick="bssim1(form)" checked>　Iron
+  <br><INPUT Type="radio" name="el02" value="8.0" onclick="bssim1(form)">　Dullcopper
+  <br><INPUT Type="radio" name="el02" value="10.0" onclick="bssim1(form)">　Shadow
+  <br><INPUT Type="radio" name="el02" value="12.0" onclick="bssim1(form)">　Copper
+  <br><INPUT Type="radio" name="el02" value="14.0" onclick="bssim1(form)">　Bronze
+  <br><INPUT Type="radio" name="el02" value="16.0" onclick="bssim1(form)">　Gold
+  <br><INPUT Type="radio" name="el02" value="18.0" onclick="bssim1(form)">　Agapite
+  <br><INPUT Type="radio" name="el02" value="20.0" onclick="bssim1(form)">　Verite
+  <br><INPUT Type="radio" name="el02" value="22.0" onclick="bssim1(form)">　Valorite
+    </td>
+
+    <td width="120" valign="top">
+      <INPUT Type="radio" name="el03" value="0.0" onclick="bssim1(form)" checked>　Normal
+  <br><INPUT Type="radio" name="el03" value="8.0" onclick="bssim1(form)">　Exceptional
+    </td>
+
+  
+    <td width="70" valign="top">
+      <INPUT Type="radio" name="el04" value="0.0" onclick="bssim1(form)" checked>　10
+  <br><INPUT Type="radio" name="el04" value="1.0" onclick="bssim1(form)">　15
+  <br><INPUT Type="radio" name="el04" value="2.0" onclick="bssim1(form)">　20
+    </td>
+</tr>
+
+
+  <tr>
+    <td colspan="4" bgcolor="#ffddcc">
+      名声（GM以上）　：　<INPUT TYPE="text" readonly="readonly" class="read" NAME="fame" SIZE="5">pts
+  <br>報酬金（大口のみ）　：　<INPUT TYPE="text" readonly="readonly" class="read" NAME="gp" SIZE="7">gp
+  <br>報酬アイテム　：　<INPUT TYPE="text" readonly="readonly" class="readtext" NAME="rew01" SIZE="50">
+<br><INPUT TYPE="text" readonly="readonly" class="readtext2" NAME="rew02" SIZE="50">
+<br><INPUT TYPE="text" readonly="readonly" class="readtext2" NAME="rew03" SIZE="50">
+<br><INPUT TYPE="text" readonly="readonly" class="readtext2" NAME="rew04" SIZE="50">
+<br><INPUT TYPE="text" readonly="readonly" class="readtext2" NAME="rew05" SIZE="50">
+    </td>
+  </tr>
+
+</table>
+<br class="cle">
+</form>
+
+
+
+<form name="form_tasim">
+<h3>裁縫</h3>
+
+<table class="table01">
+  <tr bgcolor="#ccccff">
+    <td width="190" valign="top">
+      <INPUT Type="radio" name="el01" value="0.0" onclick="tasim1(form)" checked>　小口
+  <br><INPUT Type="radio" name="el01" value="12.0" onclick="tasim1(form)">　4パーツ大口
+  <br><INPUT Type="radio" name="el01" value="16.0" onclick="tasim1(form)">　5パーツ大口
+  <br><INPUT Type="radio" name="el01" value="20.0" onclick="tasim1(form)">　6パーツ大口
+    </td>
+
+    <td width="120" valign="top">
+      <INPUT Type="radio" name="el02" value="0.0" onclick="tasim1(form)" checked>　Cloth
+  <br><INPUT Type="radio" name="el02" value="0.0" onclick="tasim1(form)">　Leather
+  <br><INPUT Type="radio" name="el02" value="2.0" onclick="tasim1(form)">　Spined
+  <br><INPUT Type="radio" name="el02" value="4.0" onclick="tasim1(form)">　Horned
+  <br><INPUT Type="radio" name="el02" value="6.0" onclick="tasim1(form)">　Barbed
+    </td>
+
+    <td width="120" valign="top">
+      <INPUT Type="radio" name="el03" value="0.0" onclick="tasim1(form)" checked>　Normal
+  <br><INPUT Type="radio" name="el03" value="4.0" onclick="tasim1(form)">　Exceptional
+    </td>
+
+  
+    <td width="70" valign="top">
+      <INPUT Type="radio" name="el04" value="0.0" onclick="tasim1(form)" checked>　10
+  <br><INPUT Type="radio" name="el04" value="1.0" onclick="tasim1(form)">　15
+  <br><INPUT Type="radio" name="el04" value="2.0" onclick="tasim1(form)">　20
+    </td>
+</tr>
+
+
+  <tr>
+    <td colspan="4" bgcolor="#ffddcc">
+      名声（GM以上）　：　<INPUT TYPE="text" readonly="readonly" class="read" NAME="fame" SIZE="5">pts
+  <br>報酬金（大口のみ）　：　<INPUT TYPE="text" readonly="readonly" class="read" NAME="gp" SIZE="7">gp
+  <br>報酬アイテム　：　<INPUT TYPE="text" readonly="readonly" class="readtext" NAME="rew01" SIZE="50">
+<br><INPUT TYPE="text" readonly="readonly" class="readtext2" NAME="rew02" SIZE="50">
+<br><INPUT TYPE="text" readonly="readonly" class="readtext2" NAME="rew03" SIZE="50">
+<br><INPUT TYPE="text" readonly="readonly" class="readtext2" NAME="rew04" SIZE="50">
+    </td>
+  </tr>
+
+</table>
+
+</form>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

@@ -1,0 +1,50 @@
+body { background-color:#99ff99; font-size:10pt; line-height:1.5em; margin-left:2.0em; margin-right:2.0em; letter-spacing:0.0em;}
+A:link { text-decoration:underline; color:#000080; }
+A:visited { text-decoration:underline; color:#000080; }
+A:hover { text-decoration:none; color:#d0ff00; background-color:#006600; }
+h1 { text-align: center; font-weight: bold; margin-top:1.0em; margin-bottom:0.5em; } /* site title */
+h2 { text-align: center; font-weight: bold; margin-top:1.0em; margin-bottom:0.5em; } /* page title */
+h3 { font-weight: bold; margin-top:1.0em; margin-bottom:0.5em; } /* L1 */
+h4 { font-weight: bold; margin-top:1.0em; margin-bottom:0.5em; } /* L2 */
+.cle { clear: both;}
+ /* Table */
+.table01 { float:left; table-layout:fixed; border:1px #202020 solid; border-collapse:collapse; margin-right:0.5em; margin-left:2.0em; margin-top:0.8em; margin-bottom:1.2em;}
+.table01 td { padding:0.5em; line-height:1.5em; border:1px #202020 solid;  }
+.table02 { table-layout:fixed; border:1px #202020 solid; border-collapse:collapse; margin-right:0.5em; margin-left:2.0em; margin-top:0.8em; margin-bottom:1.2em;}
+.table02 td { padding:0.5em; line-height:1.5em; border:1px #202020 solid; text-align:center; }
+.table03 { table-layout:fixed; border:0px; margin-right:0.5em; margin-left:0.5em; margin-top:0.5em; margin-bottom:0.5em; font-size:8pt;}
+.table03 td { padding:0.5em; line-height:1.5em; }
+.table04 { float:left; border:1px #202020 solid; border-collapse:collapse; margin-right:2em; margin-left:2em; margin-top:0.5em; margin-bottom:0.5em;}
+.table04 td { padding:0.3em; line-height:1.5em; }
+.table05 { float:left; table-layout:fixed; border:1px #202020 solid; border-collapse:collapse; margin-right:0.5em; margin-left:2.0em; margin-top:0.8em; margin-bottom:1.2em;}
+.table05 td { padding:0.3em; line-height:1.5em; border-top:none; border-bottom:1px solid #333333; border-left:1px dashed #333333; border-right:1px dashed #333333; }
+.table06 { width:90%; border:1px #202020 solid; background: #f0f0f0; border-collapse:collapse; margin-right:0.5em; margin-left:0.5em; margin-top:0.5em; margin-bottom:0.5em;}
+.table06 td { padding:0.3em; line-height:1.5em; border-bottom:1px #202020 dashed;}
+.table07 { table-layout:fixed; border-collapse:collapse; margin-right:0.5em; margin-left:2.0em; margin-top:0.8em; margin-bottom:1.2em;}
+.table07 td { padding:0.0em 1.0em; line-height:1.5em; border-top:0.5em solid #99ff99; border-bottom:0.5em solid #99ff99;}
+.tr1 { text-align:right;}
+.table02s { table-layout:fixed; border:1px #202020 solid; border-collapse:collapse; margin-right:0.5em; margin-left:2.0em; margin-top:0.8em; margin-bottom:1.2em; font-size:0.9em;}
+.table02s td { padding:0.5em; line-height:1.5em; border:1px #202020 solid; text-align:center; }
+ /* List */
+.list01 { list-style-type: disc; list-style-position: outside; line-height:1.4em; padding-left:2.0em;}
+.list02 { list-style-type: circle; list-style-position: outside; line-height:1.4em; padding-left:2.0em;}
+.list03 { list-style-type: none; list-style-position: outside; line-height:1.4em; padding-left:2.0em;}
+.list04 { list-style-type: decimal; list-style-position: outside; line-height:1.4em; padding-left:2.0em;}
+ /* Image */
+img.img01 { float:none; vertical-align:middle; border:0px; margin:0.2em 0.2em 0.2em 0.2em;}
+img.img02 { float:none; vertical-align:middle; border:0px; margin:0.5em 1.0em 0.5em 1.0em;}
+img.img03 { float:left; vertical-align:middle; border:0px; margin:0.2em 0.2em 0.2em 0.2em;}
+img.img04 { float:left; vertical-align:middle; border:0px; margin:0.5em 1.0em 0.5em 1.0em;}
+img.img05 { float:right; vertical-align:middle; border:0px; margin:0.2em 0.2em 0.2em 0.2em;}
+img.img06 { float:right; vertical-align:middle; border:0px; margin:0.5em 1.0em 0.5em 1.0em;}
+ /* Div */
+div.div01 { line-height:1.5em; margin-left:1.0em; margin-right:0.0em; }
+div.div02 { line-height:1.5em; margin-left:2.0em; margin-right:0.0em; }
+div.dan01 { width:30%; float:left; }
+div.dan02 { width:30%; float:left; }
+div.dan03 { width:30%; float:left; }
+ /* Textbox */
+INPUT.read { border-width: 0px; color: #000000; background-color: transparent; text-align: center;}
+INPUT.readtext { border-width: 0px; color: #000000; background-color: transparent; text-align: left;}
+INPUT.readtext2 { border-width: 0px; color: #000000; background-color: transparent; text-align: left; margin-left:7.5em;}
+

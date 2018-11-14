@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style.css" type="text/css" rel="stylesheet">
+<TITLE>特効武器耐久値測定</TITLE>
+</HEAD>
+<body><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899167</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<div class="block02">
+<font size="3">
+<br><center><font size="5"><b>特効武器耐久値測定</b></font>（AoS以前）</center>
+<HR>
+
+
+特効効果が付加されている武器のVendor評価額を調べ、実際に使用したところ、耐久値に大きなばらつきがあることがわかりました。
+<br>下の計算表により特効武器の耐久値をほぼ特定することができます。
+<p>
+ <ul class="list01">
+―当時の仕様―
+  <li>推定耐久値は1〜255までの間です。</li>
+  <li>耐久値を推定するために必要な条件は、武器の種類とVendor評価額です。</li>
+  <li>Vendor評価額は、Grand MasterのItem Identificationスキルを持つものが鑑定したときに得られる評価額です。
+<br>同様の効果は、PCが運営するVendorに価格をつけずに武器を置くことで得られます。
+<br><font color="ff0000">NPCのVendorに売るときの価格はVendor評価額とは異なりますので注意してください。</font></li>
+  <li>特効効果自体はVendor評価額に影響を与えません。同じ武器で違う特効効果でもVendor評価額が同じであれば、それらはほぼ同程度の耐久値をもっていることになります。</li>
+  <li>中古未修理状態でおいたときのVendor評価額は中古状態の耐久値を反映してます。</li>
+ </ul>
+</p>
+<script language="javascript">
+<!--
+//Weapons1
+var durb;
+durb = new Array(27);
+durb[0] = 0;   //None
+durb[1] = 40;  //Broad sword
+durb[2] = 27;  //Cutlass
+durb[3] = 33;  //katana
+durb[4] = 51;  //Long sword
+durb[5] = 38;  //Scimitar
+durb[6] = 46;  //Viking sword
+durb[7] = 69;  //Bardiche
+durb[8] = 58;  //Halberd
+durb[9] = 47;  //Axe
+durb[10] = 43; //Battle axe
+durb[11] = 37; //Double axe
+durb[12] = 47; //Executioner's axe
+durb[13] = 36; //Large battel axe
+durb[14] = 42; //Two handed axe
+durb[15] = 22; //Dagger
+durb[16] = 31; //Kryss
+durb[17] = 37; //War fork
+durb[18] = 25; //Short spear
+durb[19] = 43; //Spear
+durb[20] = 46; //Hammer pick
+durb[21] = 24; //Mace
+durb[22] = 30; //Maul
+durb[23] = 50; //War axe
+durb[24] = 43; //War mace
+durb[25] = 43; //War hammer
+durb[26] = 48; //Bow
+//Weapons1
+
+//Base1
+var bas;
+bas = new Array(27);
+bas[0] = "-----------------------------";   //None
+bas[1] = "評価額45〜56gp , 耐久値31〜100";  //Broad sword
+bas[2] = "評価額32〜38gp , 耐久値31〜70";  //Cutlass
+bas[3] = "評価額38〜48gp , 耐久値31〜90";  //katana
+bas[4] = "評価額56〜69gp , 耐久値31〜110";  //Long sword
+bas[5] = "評価額43〜53gp , 耐久値31〜90";  //Scimitar
+bas[6] = "評価額51〜62gp , 耐久値31〜100";  //Viking sword
+bas[7] = "評価額74〜85gp , 耐久値31〜100";  //Bardiche
+bas[8] = "評価額63〜71gp , 耐久値31〜80";  //Halberd
+bas[9] = "評価額52〜65gp , 耐久値31〜110";  //Axe
+bas[10] = "評価額48〜54gp , 耐久値31〜70"; //Battle axe
+bas[11] = "評価額42〜55gp , 耐久値31〜110"; //Double axe
+bas[12] = "評価額52〜65gp , 耐久値31〜110"; //Executioner's axe
+bas[13] = "評価額41〜47gp , 耐久値31〜70"; //Large battel axe
+bas[14] = "評価額47〜57gp , 耐久値31〜90"; //Two handed axe
+bas[15] = "評価額27〜28gp , 耐久値31〜40"; //Dagger
+bas[16] = "評価額36〜46gp , 耐久値31〜90"; //Kryss
+bas[17] = "評価額42〜55gp , 耐久値31〜110"; //War fork
+bas[18] = "評価額30〜36gp , 耐久値31〜70"; //Short spear
+bas[19] = "評価額48〜56gp , 耐久値31〜80"; //Spear
+bas[20] = "評価額51〜57gp , 耐久値31〜70"; //Hammer pick
+bas[21] = "評価額29〜35gp , 耐久値31〜70"; //Mace
+bas[22] = "評価額35〜41gp , 耐久値31〜70"; //Maul
+bas[23] = "評価額55〜63gp , 耐久値31〜80"; //War axe
+bas[24] = "評価額48〜61gp , 耐久値31〜110"; //War mace
+bas[25] = "評価額48〜61gp , 耐久値31〜110"; //War hammer
+bas[26] = "評価額53〜58gp , 耐久値31〜60"; //Bow
+//base1
+
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.durb.value = 0;
+  form.hyouka.value = 0;
+  form.dur1.value = 0;
+  form.dur2.value = 0;
+  form.base.value = 0;
+  return true;
+}
+
+//計算
+function keisan1(form)
+{
+var form = document.form_keisan;
+  dura = form.durb.options[form.durb.selectedIndex].value;
+  document.base = bas[dura];
+  dur0 = form.hyouka.value;
+  dur1 = 6 * (dur0 - durb[dura]);
+  dur2 = dur1 + 5;
+if(dur1==0){
+  dur1 = 1;
+}
+if(dura==0){
+  dur1 = 0;
+  dur2 = 0;
+}
+ if(dur1<0||dur1>255){
+  dur1 = 0;
+  dur2 = 0;
+}
+ if(dur1==252){
+  dur2 = 255;
+}
+  form.dur1.value = dur1;
+  form.dur2.value = dur2;
+  form.base.value = document.base;
+  return true;
+}
+
+
+//-->
+</script>
+<p>
+<form name="form_keisan">
+
+<table align="center" class="table04">
+  <tr>
+    <td align="center" width="150"><font size="4">武器</font>(選択)</td>
+    <td align="center" width="250">
+      <select name="durb" size="1" onchange="keisan1(form)">
+<option value="0">---Sword系(片手)---
+<option value="1">Broad sword
+<option value="2">Cutlass
+<option value="3">Katana
+<option value="4">Long sword
+<option value="5">Scimitar
+<option value="6">Viking sword
+<option value="0">---Sword系(両手)---
+<option value="7">Bardiche
+<option value="8">Halberd
+<option value="9">Axe
+<option value="10">Battle axe
+<option value="11">Double axe
+<option value="12">Executioner's axe
+<option value="13">Large battle axe
+<option value="14">Two handed axe
+<option value="0">----Fencing系----
+<option value="15">Dagger
+<option value="16">Kryss
+<option value="17">War fork
+<option value="18">Short spear
+<option value="19">Spear
+<option value="0">------Mace系------
+<option value="20">Hammer pick
+<option value="21">Mace
+<option value="22">Maul
+<option value="23">War axe
+<option value="24">War mace
+<option value="25">War hammer
+<option value="0">----Archery系----
+<option value="26">Bow(by Juka Lord)
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="150"><font size="4">評価額</font>(入力)</td>
+    <td align="center" width="250">
+      <INPUT TYPE="text" NAME="hyouka" SIZE="6" value="0" onchange="keisan1(form)">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="ffe0c0" width="150"><font size="4">推定耐久値</font></td>
+    <td align="center" bgcolor="ffe0c0" width="250">
+      <input readonly type="text" name="dur1" size="5" value="0">　〜　
+      <input readonly type="text" name="dur2" size="5" value="0">
+    </td>
+  </tr>
+  <tr>
+    <td align="center" bgcolor="c0e0ff" width="150"><font size="4">基礎耐久データ</font></td>
+    <td align="center" bgcolor="c0e0ff" width="250">
+      <INPUT readonly TYPE="text" NAME="base" SIZE="40" value="-----------------------------">
+    </td>
+  </tr>
+</table>
+</form>
+
+
+</font>
+</div>
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

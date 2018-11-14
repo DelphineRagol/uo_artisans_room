@@ -1,0 +1,641 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>Imbuing（練成）スキル ： 訓練</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898808</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<h2>Imbuing（練成）スキル ： 訓練</h2>
+<HR>
+
+
+<h3>スキルを上げる</h3>
+
+練成スキルを上げるには、以下のことを行う必要があります。
+<br>なお、Royal City中央にあるソウルフォージの近くにいるガーゴイル（Artificer）から、練成スキルを学ぶこともできます。 
+
+<ul class="list02">
+  <li>適切な抽出評価値を持つマジックアイテムまたは特殊素材製アイテムを抽出する。</li>
+  <li>適切なマジック強度率となる練成を行う。</li>
+</ul>
+
+<h4>（１）抽出によるスキル上げ</h4>
+
+Publish63より、マジックアイテムまたは特殊素材製のアイテムの抽出で上げることができるスキルの上限がなくなりました。
+<br>ただし、練成スキルに見合った抽出評価値を持つアイテムを抽出する必要があります。
+<br>下に、練成スキルと抽出評価値の関係を示したグラフを提示します。破線付近が現在の練成スキルでスキルを上げやすい抽出評価値となります。
+
+<br><img src="imbuing_graph3.gif" alt="" class="img02">
+
+<h4>特殊素材製装備品と抽出評価値の例</h4>
+
+下表の総強度率は特殊素材プロパティに特殊素材の補正率を考慮したものです。
+これに種族・施設・耐久値・練成品補正を行うと抽出評価値となります。
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="120">アイテム</td>
+    <td align="center" width="120">品質条件</td>
+    <td align="center" width="120">使用する<br>特殊素材</td>
+    <td align="center" width="120">総強度率</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">武器(金属製)</td>
+    <td align="center">なし</td>
+    <td align="center">dull</td>
+    <td align="center">51</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">武器(金属製)</td>
+    <td align="center">なし</td>
+    <td align="center">gold</td>
+    <td align="center">96</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">武器(大工製)</td>
+    <td align="center">武器学GM、HQ</td>
+    <td align="center">oak</td>
+    <td align="center">131</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">武器(大工製)</td>
+    <td align="center">武器学GM、HQ</td>
+    <td align="center">yew</td>
+    <td align="center">142</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">武器(大工・弓製)</td>
+    <td align="center">なし</td>
+    <td align="center">bloodwood</td>
+    <td align="center">151</td>
+  </tr>
+
+</table>
+
+<h4>スキル上げのデータ</h4>
+
+スキル50.0まではパワースクロール110を使用した状態、それ以降はパワースクロール120を使用した状態としています。
+なお、装備品の耐久値は50以上に調整しているため、実際にスキルを上げる場合、表の抽出アイテム数よりも多めに作成することになります。
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="100">抽出評価値</td>
+    <td align="center" width="180">アイテム特性</td>
+    <td align="center" width="90">スキル</td>
+    <td align="center" width="120">抽出アイテム数</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center" rowspan="3">120程度</td>
+    <td align="center" rowspan="3">gold製武器<br>施設＋種族補正30</td>
+    <td align="center">40～50</td>
+    <td align="center">400回程度</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">50～60</td>
+    <td align="center">550回程度</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">60～70</td>
+    <td align="center">1500回程度</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center" rowspan="3">150程度</td>
+    <td align="center" rowspan="3">oak製高品質弓<br>施設＋種族補正30</td>
+    <td align="center">40～50</td>
+    <td align="center">350回程度</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">50～60</td>
+    <td align="center">500回程度</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">60～70</td>
+    <td align="center">1000回程度</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center" rowspan="2">180程度</td>
+    <td align="center" rowspan="2">bloodwood製武器<br>施設＋種族補正30</td>
+    <td align="center">50～60</td>
+    <td align="center">400回程度</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">60～70</td>
+    <td align="center">800回程度</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center" rowspan="2">200程度</td>
+    <td align="center" rowspan="2">bloodwood製武器<br>施設＋種族補正50</td>
+    <td align="center">50～60</td>
+    <td align="center">350回程度</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">60～70</td>
+    <td align="center">600回程度</td>
+  </tr>
+
+</table>
+
+
+<h4>（２）練成によるスキル上げ</h4>
+
+装備アイテムに適切な強度のマジック効果を練成することで、スキルを上げることができます。
+<br>練成でスキルを上げるときの注意点は以下のとおりです。
+
+<h4>注意点</h4>
+<ul class="list02">
+  <li><font color="#ff0000">練成に失敗したときはスキルの上昇判定がないため、ほかの生産スキルよりも若干高めの成功率となる練成を繰り返す。
+<br>パワースクロール120を使っている場合、60～80％程度の成功率がよい。</font></li>
+  <li>練成成功率毎の練成後総強度率と練成スキルの関係は下の図のとおり。
+<br>ソウルフォージの補正、ガーゴイルの種族補正は考慮していない。</li>
+  <li>練成スキルに対し強度率の低いアイテムは、適正難易度にするための練成を行うことも有効。</li>
+  <li>1つの装備品に対して行う練成は、できるだけ20回（成功回数）までにする。</li>
+</ul>
+
+
+<img src="imbuing_graph2.gif" alt="" class="img02">
+<table class="table01">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="80">スキル</td>
+    <td align="center" width="150">NPC品50%, HQ品60%<br>練成後総強度率</td>
+    <td align="center" width="150">NPC品75%, HQ品90%<br>練成後総強度率</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">40</td>
+    <td align="center">50％</td>
+    <td align="center">28％</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">50</td>
+    <td align="center">67％</td>
+    <td align="center">42％</td>
+  </tr>
+
+  <tr bgcolor="#ccffff">
+    <td align="center">60</td>
+    <td align="center">85％</td>
+    <td align="center">57％</td>
+  </tr>
+
+  <tr bgcolor="#ccffff">
+    <td align="center">70</td>
+    <td align="center">107％</td>
+    <td align="center">75％</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">80</td>
+    <td align="center">132％</td>
+    <td align="center">95％</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">90</td>
+    <td align="center">161％</td>
+    <td align="center">118％</td>
+  </tr>
+
+  <tr bgcolor="#ffffcc">
+    <td align="center">100</td>
+    <td align="center">195％</td>
+    <td align="center">145％</td>
+  </tr>
+
+  <tr bgcolor="#ffffcc">
+    <td align="center">110</td>
+    <td align="center">237％</td>
+    <td align="center">176％</td>
+  </tr>
+
+  <tr bgcolor="#ffcccc">
+    <td align="center">120</td>
+    <td align="center">289％</td>
+    <td align="center">214％</td>
+  </tr>
+
+</table>
+
+<br class="cle">
+
+<h4>スキル上げに助けとなる装備品</h4>
+
+練成スキルを上げるために手助けとなるPC製装備品をスキル毎に提示します。
+<br>アイテムに最小材料の練成（強度率20％未満）を行うとき、成功率が60～90％程度（グラフの黄～緑の範囲）となるスキルをスキル上げの目安としています。
+<br>Publish63以降、特殊素材製アイテムにも練成を行うことが可能となったため、一定のプロパティ強度を持つアイテムを準備しやすくなりました。
+
+<p>鍛冶・細工</p>
+鍛冶および細工製アイテムでスキルを120まで上げる場合、gold製のHQ武器に最小材料の練成を行い、さらに別のプロパティを練成するのが有効です。
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td width="120">アイテム</td>
+    <td width="170">品質などの条件</td>
+    <td width="80">練成前<br>総強度率</td>
+    <td width="120">スキル上げ<br>目安</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td>盾</td>
+    <td>gold製</td>
+    <td>70％</td>
+    <td>55～75</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td>武器</td>
+    <td>iron製、武器学GM、HQ</td>
+    <td>80％</td>
+    <td>60～80</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td>和鎧、陣笠</td>
+    <td>iron製、HQ（瞑想可）</td>
+    <td>100％</td>
+    <td>70～90</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td>武器</td>
+    <td>dullcopper製、武器学GM、HQ</td>
+    <td>130％</td>
+    <td>80～100</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td>武器</td>
+    <td>gold製、武器学GM、HQ</td>
+    <td>170％</td>
+    <td>92～112</td>
+  </tr>
+</table>
+
+<p>大工・弓工</p>
+
+大工および弓工製アイテムでは、スキル100程度でoak製のHQ武器に最小材料の練成を行い、さらに別のプロパティを練成するのが有効です。
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td width="120">アイテム</td>
+    <td width="170">品質などの条件</td>
+    <td width="80">練成前<br>総強度率</td>
+    <td width="120">スキル上げ<br>目安</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td>武器</td>
+    <td>wood製、武器学GM、HQ</td>
+    <td>80％</td>
+    <td>60～80</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td>武器</td>
+    <td>oak製、武器学GM、HQ</td>
+    <td>130％</td>
+    <td>80～100</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td>武器</td>
+    <td>bloodwood製、武器学GM、HQ</td>
+    <td>212％</td>
+    <td>105～120</td>
+  </tr>
+
+</table>
+
+<h4>スキル上げのデータ</h4>
+
+スキル60程度までは抽出により比較的楽に上げられるため、それ以降のデータとなります。
+<br>練成の強度は材料が最小となる20％未満とし、練成成功率を75％前後に調整しています。
+<br>スキルは練成に成功したときのみ上昇するため、下表では練成成功回数を表記しています。
+このとき、実際に練成に挑戦した回数は成功回数の1.3～1.4倍程度となります。
+
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="90">スキル</td>
+    <td align="center" width="180">アイテム特性</td>
+    <td align="center" width="100">練成前<br>総強度率</td>
+    <td align="center" width="120">練成<br>成功回数</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">60～65</td>
+    <td align="center">NPC製dullcopper強化武器</td>
+    <td align="center">50％</td>
+    <td align="center">200回程度</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">65～70</td>
+    <td align="center">普通素材HQ武器</td>
+    <td align="center">80％</td>
+    <td align="center">250回程度</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">70～75</td>
+    <td align="center">普通素材HQ武器</td>
+    <td align="center">80％</td>
+    <td align="center">350回程度</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">75～80</td>
+    <td align="center">金属製HQ和鎧</td>
+    <td align="center">100％</td>
+    <td align="center">450回程度</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">80～85</td>
+    <td align="center">金属製HQ和鎧</td>
+    <td align="center">100％</td>
+    <td align="center">500回程度</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">85～90</td>
+    <td align="center">dullcopper製HQ武器</td>
+    <td align="center">130％</td>
+    <td align="center">500回程度</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">90～95</td>
+    <td align="center">dullcopper製HQ武器</td>
+    <td align="center">130％</td>
+    <td align="center">500回程度</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">95～100</td>
+    <td align="center">dullcopper製HQ武器＋α</td>
+    <td align="center">130％＋α</td>
+    <td align="center">950回程度</td>
+  </tr>
+
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center" colspan="4">60～100までの練成成功回数　：　4000回程度</td>
+  </tr>
+
+
+  <tr bgcolor="#ccccff">
+    <td align="center">100～105</td>
+    <td align="center">gold製HQ武器</td>
+    <td align="center">170％</td>
+    <td align="center">1200回程度</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">105～110</td>
+    <td align="center">gold製HQ武器＋α</td>
+    <td align="center">170％＋α</td>
+    <td align="center">1700回程度</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">110～115</td>
+    <td align="center">bloodwood製HQ武器</td>
+    <td align="center">212％</td>
+    <td align="center">2600回程度</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">115～120</td>
+    <td align="center">bloodwood製HQ武器＋α</td>
+    <td align="center">212％＋α</td>
+    <td align="center">3200回程度</td>
+  </tr>
+
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center" colspan="4">100～120までの練成成功回数　：　9000回程度</td>
+  </tr>
+
+</table>
+
+<h4>成功率の違いによるスキルの上がり易さ</h4>
+
+練成スキルが100.0（上限120.0）のとき、成功率が異なる練成を繰り返し、スキルのあがりやすさに差があるか
+確認してみました。
+<br>練成成功100回毎にスキル値および使用素材数（失敗を含む練成回数）を確認し、スキルを元に戻すことを10回繰り返してます。
+<br>左側から練成成功率45％、60％、75％、90％程度で調査しています。
+
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="80" rowspan="2">&nbsp;</td>
+    <td align="center" width="120" colspan="2">45％程度</td>
+    <td align="center" width="120" colspan="2">60％程度</td>
+    <td align="center" width="120" colspan="2">75％程度</td>
+    <td align="center" width="120" colspan="2">90％程度</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">練成<br>回数</td>
+    <td align="center">上昇<br>回数</td>
+    <td align="center">練成<br>回数</td>
+    <td align="center">上昇<br>回数</td>
+    <td align="center">練成<br>回数</td>
+    <td align="center">上昇<br>回数</td>
+    <td align="center">練成<br>回数</td>
+    <td align="center">上昇<br>回数</td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#f0f0f0">1</td>
+    <td align="center" bgcolor="#ccccff">206</td>
+    <td align="center" bgcolor="#ccccff">5</td>
+    <td align="center" bgcolor="#ddddff">155</td>
+    <td align="center" bgcolor="#ddddff">7</td>
+    <td align="center" bgcolor="#ccccff">136</td>
+    <td align="center" bgcolor="#ccccff">6</td>
+    <td align="center" bgcolor="#ddddff">108</td>
+    <td align="center" bgcolor="#ddddff">3</td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#f0f0f0">2</td>
+    <td align="center" bgcolor="#ccccff">225</td>
+    <td align="center" bgcolor="#ccccff">5</td>
+    <td align="center" bgcolor="#ddddff">176</td>
+    <td align="center" bgcolor="#ddddff">4</td>
+    <td align="center" bgcolor="#ccccff">137</td>
+    <td align="center" bgcolor="#ccccff">4</td>
+    <td align="center" bgcolor="#ddddff">111</td>
+    <td align="center" bgcolor="#ddddff">4</td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#f0f0f0">3</td>
+    <td align="center" bgcolor="#ccccff">232</td>
+    <td align="center" bgcolor="#ccccff">9</td>
+    <td align="center" bgcolor="#ddddff">141</td>
+    <td align="center" bgcolor="#ddddff">6</td>
+    <td align="center" bgcolor="#ccccff">128</td>
+    <td align="center" bgcolor="#ccccff">3</td>
+    <td align="center" bgcolor="#ddddff">105</td>
+    <td align="center" bgcolor="#ddddff">2</td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#f0f0f0">4</td>
+    <td align="center" bgcolor="#ccccff">224</td>
+    <td align="center" bgcolor="#ccccff">6</td>
+    <td align="center" bgcolor="#ddddff">171</td>
+    <td align="center" bgcolor="#ddddff">6</td>
+    <td align="center" bgcolor="#ccccff">129</td>
+    <td align="center" bgcolor="#ccccff">4</td>
+    <td align="center" bgcolor="#ddddff">112</td>
+    <td align="center" bgcolor="#ddddff">3</td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#f0f0f0">5</td>
+    <td align="center" bgcolor="#ccccff">221</td>
+    <td align="center" bgcolor="#ccccff">5</td>
+    <td align="center" bgcolor="#ddddff">152</td>
+    <td align="center" bgcolor="#ddddff">5</td>
+    <td align="center" bgcolor="#ccccff">124</td>
+    <td align="center" bgcolor="#ccccff">6</td>
+    <td align="center" bgcolor="#ddddff">108</td>
+    <td align="center" bgcolor="#ddddff">4</td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#f0f0f0">6</td>
+    <td align="center" bgcolor="#ccccff">200</td>
+    <td align="center" bgcolor="#ccccff">7</td>
+    <td align="center" bgcolor="#ddddff">180</td>
+    <td align="center" bgcolor="#ddddff">5</td>
+    <td align="center" bgcolor="#ccccff">127</td>
+    <td align="center" bgcolor="#ccccff">6</td>
+    <td align="center" bgcolor="#ddddff">119</td>
+    <td align="center" bgcolor="#ddddff">3</td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#f0f0f0">7</td>
+    <td align="center" bgcolor="#ccccff">203</td>
+    <td align="center" bgcolor="#ccccff">8</td>
+    <td align="center" bgcolor="#ddddff">177</td>
+    <td align="center" bgcolor="#ddddff">7</td>
+    <td align="center" bgcolor="#ccccff">149</td>
+    <td align="center" bgcolor="#ccccff">5</td>
+    <td align="center" bgcolor="#ddddff">110</td>
+    <td align="center" bgcolor="#ddddff">3</td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#f0f0f0">8</td>
+    <td align="center" bgcolor="#ccccff">230</td>
+    <td align="center" bgcolor="#ccccff">8</td>
+    <td align="center" bgcolor="#ddddff">160</td>
+    <td align="center" bgcolor="#ddddff">6</td>
+    <td align="center" bgcolor="#ccccff">126</td>
+    <td align="center" bgcolor="#ccccff">5</td>
+    <td align="center" bgcolor="#ddddff">107</td>
+    <td align="center" bgcolor="#ddddff">3</td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#f0f0f0">9</td>
+    <td align="center" bgcolor="#ccccff">255</td>
+    <td align="center" bgcolor="#ccccff">7</td>
+    <td align="center" bgcolor="#ddddff">168</td>
+    <td align="center" bgcolor="#ddddff">6</td>
+    <td align="center" bgcolor="#ccccff">137</td>
+    <td align="center" bgcolor="#ccccff">5</td>
+    <td align="center" bgcolor="#ddddff">108</td>
+    <td align="center" bgcolor="#ddddff">3</td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#f0f0f0">10</td>
+    <td align="center" bgcolor="#ccccff">229</td>
+    <td align="center" bgcolor="#ccccff">6</td>
+    <td align="center" bgcolor="#ddddff">163</td>
+    <td align="center" bgcolor="#ddddff">7</td>
+    <td align="center" bgcolor="#ccccff">128</td>
+    <td align="center" bgcolor="#ccccff">4</td>
+    <td align="center" bgcolor="#ddddff">111</td>
+    <td align="center" bgcolor="#ddddff">2</td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#f0f0f0">合計</td>
+    <td align="center" bgcolor="#ffffcc">2225</td>
+    <td align="center" bgcolor="#ffffcc">66</td>
+    <td align="center" bgcolor="#ffddbb">1643</td>
+    <td align="center" bgcolor="#ffddbb">59</td>
+    <td align="center" bgcolor="#ffffcc">1321</td>
+    <td align="center" bgcolor="#ffffcc">48</td>
+    <td align="center" bgcolor="#ffddbb">1099</td>
+    <td align="center" bgcolor="#ffddbb">30</td>
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#f0f0f0">1回上昇<br>材料数</td>
+    <td align="center" bgcolor="#ffffcc" colspan="2">33.7</td>
+    <td align="center" bgcolor="#ffddbb" colspan="2">27.8</td>
+    <td align="center" bgcolor="#ffffcc" colspan="2">27.5</td>
+    <td align="center" bgcolor="#ffddbb" colspan="2">33.3</td>
+  </tr>
+
+</table>
+
+
+<h4>（３）パワースクロール</h4>
+
+Royal Cityのソウルフォージの近くにいるガーゴイル（Artificer）から、練成スキルに関するクエストを受けることができます。
+<br>クエストは3種類ありますが、完了することで練成スキルのパワースクロールを入手することができます。
+<br>キャラクターが必要な魔法素材を抽出できる段階になったときに、受けるとよいでしょう。
+<br>余裕があれば、書写スキルで作成できるスクロールシートを使うことで、パワースクロールを1段階上げることもできます。
+
+<ul class="list02">
+ <li>ソウルフォージの神秘 ： <img src="magical_residue.gif" alt="magical residue" class="img01">Magical residue [魔法の残骸]×50 --- パワースクロール105または110</li>
+ <li>ソウルフォージの知識 ： <img src="enchanted_essence.gif" alt="enchanted essence" class="img01">Enchanted essence [魔力化エキス]×50 --- パワースクロール115</li>
+ <li>ソウルフォージの修得 ： <img src="relic_fragment.gif" alt="relic fragment" class="img01">Relic fragment [レリックの破片]×50 --- パワースクロール120</li>
+</ul>
+
+これらのクエストを完了すると、パワースクロールの入ったバックパックを受け取りますが、
+稀にrunic mallet and chisel<img src="verite_mallet.gif" alt="" class="img01">も入っていることがあります。
+<br>runic mallet and chiselは石工（大工スキル）用の作成アイテムで、ガーゴイル専用の石系装備を作成するときに使用すると、
+runic mallet and chiselの種類に応じたマジック効果および強度が付加されます。
+<br><a href="runiceffect_stone.html">runic mallet and chiselの効果</a>（鍛冶とほぼ同じですが、全て10チャージ）
+
+
+<h3>強化の成功率について</h3>
+
+練成スキルが100以上になると、特殊素材の強化成功率に影響を与えるようになります。
+<br>βテスト時に試したものも含め、<a href="enhance03.html">装備品強化の確認データ</a>に追記する予定です。
+
+
+</BODY>
+</HTML>
+
+
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

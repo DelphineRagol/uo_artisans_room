@@ -1,0 +1,645 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>Throwing（投擲）スキル</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899245</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<h2>Throwing（投擲）スキル</h2>
+<HR>
+
+Throwing（投擲）スキルについて、現時点での仕様をまとめています。
+<br>なお、このスキルはStygian Abyssでの新種族ガーゴイル専用のものです。
+
+<h3>１．武器の種類</h3>
+
+投擲武器は以下の3種類となっています。それぞれ攻撃力や速度は異なりますが、共通の特徴があります。
+<ul class="list02">
+  <li>片手武器</li>
+  <li>射程に幅がある</li>
+  <li>弓系武器と同じく、攻撃直前に0.75秒の停止時間が必要。</li>
+  <li><s><font color="#ff0000">ほかの武器とは異なり、命中判定後0.75秒のリカバリータイムが必要（投擲武器が戻る時間）。</font></s>
+<br>Publish68.3より、リカバリータイムはなくなりました。
+</li>
+</ul>
+
+<table width="250" class="table04">
+ <tr bgcolor="#99ffcc">
+  <td align="center" valign="middle" width="25%"><img src="boomerang.gif" alt="boomerang" class="img01"></td>
+  <td align="center" valign="middle" width="50%" colspan="2">boomerang<br>[ブーメラン]</td>
+  <td align="center" valign="middle" width="25%"><img src="repok.gif" width="25" height="25" alt="Deed可" class="img01"><br>鍛冶</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ccff99" colspan="4">ダメージ　：　8～12
+<br>射程　：　4～7
+<br>基本速度　：　2.00sec
+<br>装備STR　：　25
+<br>片手武器（Throwing）
+<br>耐久性　：　31～90
+<br>重量　：　4
+</td>
+ </tr>
+ <tr bgcolor="#99ffcc">
+  <td align="center" valign="middle" colspan="2">Primary<br><img src="doublestrike.gif" alt="" width="30" height="30" class="img01"><br>mystic arc</td>
+  <td align="center" valign="middle" colspan="2">Secondary<br><img src="concussion.gif" alt="" width="30" height="30" class="img01"><br>concussion</td>
+ </tr>
+</table>
+
+<table width="250" class="table04">
+ <tr bgcolor="#99ffcc">
+  <td align="center" valign="middle" width="25%"><img src="cyclone.gif" alt="cyclone" class="img01"></td>
+  <td align="center" valign="middle" width="50%" colspan="2">cyclone<br>[サイクロン]</td>
+  <td align="center" valign="middle" width="25%"><img src="repok.gif" width="25" height="25" alt="Deed可" class="img01"><br>鍛冶</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ccff99" colspan="4">ダメージ　：　13～17
+<br>射程　：　6～9
+<br>基本速度　：　3.00sec
+<br>装備STR　：　40
+<br>片手武器（Throwing）
+<br>耐久性　：　31～90
+<br>重量　：　7
+</td>
+ </tr>
+ <tr bgcolor="#99ffcc">
+  <td align="center" valign="middle" colspan="2">Primary<br><img src="movingshot.gif" alt="" width="30" height="30" class="img01"><br>movingshot</td>
+  <td align="center" valign="middle" colspan="2">Secondary<br><img src="concussion.gif" alt="" width="30" height="30" class="img01"><br>infused throw</td>
+ </tr>
+</table>
+
+<br class="cle">
+<table width="250" class="table04">
+ <tr bgcolor="#99ffcc">
+  <td align="center" valign="middle" width="25%"><img src="soul_glaive.gif" alt="soul glaive" class="img01"></td>
+  <td align="center" valign="middle" width="50%" colspan="2">soul glaive<br>[ソウルグレイブ]</td>
+  <td align="center" valign="middle" width="25%"><img src="repok.gif" width="25" height="25" alt="Deed可" class="img01"><br>鍛冶</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ccff99" colspan="4">ダメージ　：　18～22
+<br>射程　：　8～11
+<br>基本速度　：　4.00sec
+<br>装備STR　：　60
+<br>片手武器（Throwing）
+<br>耐久性　：　31～90
+<br>重量　：　10
+</td>
+ </tr>
+ <tr bgcolor="#99ffcc">
+  <td align="center" valign="middle" colspan="2">Primary<br><img src="armorignore.gif" alt="" width="30" height="30" class="img01"><br>armorignore</td>
+  <td align="center" valign="middle" colspan="2">Secondary<br><img src="mortalstrike.gif" alt="" width="30" height="30" class="img01"><br>mortalstrike</td>
+ </tr>
+</table>
+
+<br class="cle">
+
+
+<h3>３．射程および命中・ダメージの修正</h3>
+
+投擲武器で攻撃を行うとき、ターゲットとの距離により命中判定およびダメージ量に補正がかかります。
+<br>そのため、投擲武器で攻撃を行うとき、適切な間合いをとることも重要となります。
+<br>投擲武器3種の射程および様々な補正は以下のとおりです。
+
+<h4>射程 = 基本射程 + 3 * ((STR - 装備STR) / (140 - 装備STR)) </h4>
+
+<h4>（１）boomerang</h4>
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="150" rowspan="2">装備品種類</td>
+    <td align="center" width="400" colspan="4">射程</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">4</td>
+    <td align="center">5</td>
+    <td align="center">6</td>
+    <td align="center">7</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center"><img src="boomerang.gif" alt="boomerang" class="img01"></td>
+    <td align="center">25～63</td>
+    <td align="center">64～101</td>
+    <td align="center">102～139</td>
+    <td align="center">140～150</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center"><img src="boomerang.gif" alt="boomerang" class="img01"><br>dullcopper, gold製</td>
+    <td align="center">12～54</td>
+    <td align="center">55～97</td>
+    <td align="center">98～139</td>
+    <td align="center">140～150</td>
+  </tr>
+
+</table>
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="70" rowspan="2">最大射程</td>
+    <td align="center" width="90" rowspan="2">命中補正<br>ダメージ補正</td>
+    <td align="center" width="350" colspan="7">ターゲットとの距離</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">近接</td>
+    <td align="center">2</td>
+    <td align="center">3</td>
+    <td align="center">4</td>
+    <td align="center">5</td>
+    <td align="center">6</td>
+    <td align="center">7</td>
+  </tr>
+
+  <tr bgcolor="#ffddcc">
+    <td align="center" bgcolor="#ccccff" rowspan=2">4</td>
+    <td align="center">命中補正</td>
+    <td align="center"><font color="#ff0000">-31%</font></td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">ダメージ補正</td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center"><font color="#ff0000">-31%</font></td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ffddcc">
+    <td align="center" bgcolor="#ddddff" rowspan=2">5</td>
+    <td align="center">命中補正</td>
+    <td align="center"><font color="#ff0000">-40%</font></td>
+    <td align="center"><font color="#ff0000">-3%</font></td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">ダメージ補正</td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center"><font color="#ff0000">-3%</font></td>
+    <td align="center"><font color="#ff0000">-40%</font></td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ffddcc">
+    <td align="center" bgcolor="#ccccff" rowspan=2">6</td>
+    <td align="center">命中補正</td>
+    <td align="center"><font color="#ff0000">-47%</font></td>
+    <td align="center"><font color="#ff0000">-12%</font></td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center">0%</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">ダメージ補正</td>
+    <td align="center">0%</td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center"><font color="#ff0000">-12%</font></td>
+    <td align="center"><font color="#ff0000">-47%</font></td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ffddcc">
+    <td align="center" bgcolor="#ddddff" rowspan=2">7</td>
+    <td align="center">命中補正</td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center"><font color="#ff0000">-19%</font></td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">ダメージ補正</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center"><font color="#ff0000">-19%</font></td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+  </tr>
+
+</table>
+
+<h4>（２）cyclone</h4>
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="150" rowspan="2">装備品種類</td>
+    <td align="center" width="400" colspan="4">射程</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">6</td>
+    <td align="center">7</td>
+    <td align="center">8</td>
+    <td align="center">9</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center"><img src="cyclone.gif" alt="cyclone" class="img01"></td>
+    <td align="center">40～73</td>
+    <td align="center">74～106</td>
+    <td align="center">106～139</td>
+    <td align="center">140～150</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center"><img src="cyclone.gif" alt="cyclone" class="img01"><br>dullcopper, gold製</td>
+    <td align="center">20～59</td>
+    <td align="center">60～99</td>
+    <td align="center">100～139</td>
+    <td align="center">140～150</td>
+  </tr>
+
+</table>
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="70" rowspan="2">最大射程</td>
+    <td align="center" width="90" rowspan="2">命中補正<br>ダメージ補正</td>
+    <td align="center" width="450" colspan="9">ターゲットとの距離</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">近接</td>
+    <td align="center">2</td>
+    <td align="center">3</td>
+    <td align="center">4</td>
+    <td align="center">5</td>
+    <td align="center">6</td>
+    <td align="center">7</td>
+    <td align="center">8</td>
+    <td align="center">9</td>
+  </tr>
+
+  <tr bgcolor="#ffddcc">
+    <td align="center" bgcolor="#ccccff" rowspan=2">6</td>
+    <td align="center">命中補正</td>
+    <td align="center"><font color="#ff0000">-47%</font></td>
+    <td align="center"><font color="#ff0000">-12%</font></td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center">0%</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">ダメージ補正</td>
+    <td align="center">0%</td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center"><font color="#ff0000">-12%</font></td>
+    <td align="center"><font color="#ff0000">-47%</font></td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ffddcc">
+    <td align="center" bgcolor="#ddddff" rowspan=2">7</td>
+    <td align="center">命中補正</td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center"><font color="#ff0000">-19%</font></td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">ダメージ補正</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center"><font color="#ff0000">-19%</font></td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ffddcc">
+    <td align="center" bgcolor="#ccccff" rowspan=2">8</td>
+    <td align="center">命中補正</td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center"><font color="#ff0000">-26%</font></td>
+    <td align="center"><font color="#ff0000">-3%</font></td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">ダメージ補正</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center"><font color="#ff0000">-3%</font></td>
+    <td align="center"><font color="#ff0000">-26%</font></td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ffddcc">
+    <td align="center" bgcolor="#ddddff" rowspan=2">9</td>
+    <td align="center">命中補正</td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center"><font color="#ff0000">-31%</font></td>
+    <td align="center"><font color="#ff0000">-9%</font></td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">ダメージ補正</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center"><font color="#ff0000">-9%</font></td>
+    <td align="center"><font color="#ff0000">-31%</font></td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+  </tr>
+
+</table>
+
+<h4>（３）soul glaive</h4>
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="150" rowspan="2">装備品種類</td>
+    <td align="center" width="400" colspan="4">射程</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">8</td>
+    <td align="center">9</td>
+    <td align="center">10</td>
+    <td align="center">11</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center"><img src="soul_glaive.gif" alt="soul glaive" class="img01"></td>
+    <td align="center">60～86</td>
+    <td align="center">87～113</td>
+    <td align="center">114～139</td>
+    <td align="center">140～150</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center"><img src="soul_glaive.gif" alt="soul glaive" class="img01"><br>dullcopper, gold製</td>
+    <td align="center">30～66</td>
+    <td align="center">67～103</td>
+    <td align="center">104～139</td>
+    <td align="center">140～150</td>
+  </tr>
+
+</table>
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="70" rowspan="2">最大射程</td>
+    <td align="center" width="90" rowspan="2">命中補正<br>ダメージ補正</td>
+    <td align="center" width="550" colspan="11">ターゲットとの距離</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">近接</td>
+    <td align="center">2</td>
+    <td align="center">3</td>
+    <td align="center">4</td>
+    <td align="center">5</td>
+    <td align="center">6</td>
+    <td align="center">7</td>
+    <td align="center">8</td>
+    <td align="center">9</td>
+    <td align="center">10</td>
+    <td align="center">11</td>
+  </tr>
+
+  <tr bgcolor="#ffddcc">
+    <td align="center" bgcolor="#ccccff" rowspan=2">8</td>
+    <td align="center">命中補正</td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center"><font color="#ff0000">-26%</font></td>
+    <td align="center"><font color="#ff0000">-3%</font></td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">ダメージ補正</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center"><font color="#ff0000">-3%</font></td>
+    <td align="center"><font color="#ff0000">-26%</font></td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ffddcc">
+    <td align="center" bgcolor="#ddddff" rowspan=2">9</td>
+    <td align="center">命中補正</td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center"><font color="#ff0000">-31%</font></td>
+    <td align="center"><font color="#ff0000">-9%</font></td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">ダメージ補正</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center"><font color="#ff0000">-9%</font></td>
+    <td align="center"><font color="#ff0000">-31%</font></td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center">&nbsp;</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ffddcc">
+    <td align="center" bgcolor="#ccccff" rowspan=2">10</td>
+    <td align="center">命中補正</td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center"><font color="#ff0000">-36%</font></td>
+    <td align="center"><font color="#ff0000">-14%</font></td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center">+2%</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">ダメージ補正</td>
+    <td align="center">0%</td>
+    <td align="center">0%</td>
+    <td align="center">+2%</td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center"><font color="#ff0000">-14%</font></td>
+    <td align="center"><font color="#ff0000">-36%</font></td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center">&nbsp;</td>
+  </tr>
+
+  <tr bgcolor="#ffddcc">
+    <td align="center" bgcolor="#ddddff" rowspan=2">11</td>
+    <td align="center">命中補正</td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+    <td align="center"><font color="#ff0000">-40%</font></td>
+    <td align="center"><font color="#ff0000">-19%</font></td>
+    <td align="center"><font color="#ff0000">-3%</font></td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+5%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center">+2%</td>
+    <td align="center">0%</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">ダメージ補正</td>
+    <td align="center">0%</td>
+    <td align="center">+2%</td>
+    <td align="center">+2%</td>
+    <td align="center">+5%</td>
+    <td align="center">+5%</td>
+    <td align="center">+5%</td>
+    <td align="center">+2%</td>
+    <td align="center"><font color="#ff0000">-3%</font></td>
+    <td align="center"><font color="#ff0000">-19%</font></td>
+    <td align="center"><font color="#ff0000">-40%</font></td>
+    <td align="center"><font color="#ff0000">-50%</font></td>
+  </tr>
+
+</table>
+
+<h3>３．マイナス方向の補正緩和</h3>
+
+<br>射程とターゲット距離による命中およびダメージの補正のうち、マイナス方向の補正については、それを緩和することも可能です。
+
+
+<h4>（１）ダメージ修正の緩和</h4>
+
+装備者のSTRが高ければ、ダメージのマイナス方向の修正を緩和することができます。
+
+<h4>緩和率[％] = 180 * ((STR - 装備STR) / (140 - 装備STR)) -90　（0～90％）</h4>
+
+<ul class="list02">
+  <li>soul glaive（装備STR60）を装備したキャラクターのSTRが90だった場合、緩和率は0％より小さいため、
+<br>射程ぎりぎりからの攻撃によるマイナス方向のダメージ修正を緩和することはできない。</li>
+  <li>soul glaive（装備STR60）を装備したキャラクターのSTRが124だった場合、緩和率は54％となり、
+<br>射程ぎりぎりからの攻撃によるマイナス方向のダメージ修正を54％緩和することができる。
+<br>そのため、ダメージ修正は－50％から－23％となる。</li>
+</ul>
+
+<h4>（２）命中率修正の緩和（その１）</h4>
+装備者のDEXが高ければ、マイナス方向の命中率修正を緩和することができます。
+
+<h4>緩和率[％] = 確認中　（0～90％）</h4>
+
+緩和率が発生するDEXの値があること、
+<br>DEXが同じでも、武器種類によって緩和率が違っていそうなことを確認しています。
+
+
+<h4>（３）命中率修正の緩和（その２）</h4>
+投擲武器で近接の敵を攻撃するとき、命中率修正をThrowingスキルで緩和することができます。
+
+<h4>緩和率[％] = 0.75 * (Throwingスキル) （0～90％）</h4>
+
+近接攻撃の場合、命中率修正の緩和（その１）と（その２）は加算され、最大90％まで緩和することができます。
+<br>また、Throwingスキルが120かつDEXが140以上の場合、命中率のマイナス補正がなくなり、＋5％の命中率補正が
+かかります。
+
+
+<h3>４．盾装備時のペナルティ</h3>
+
+投擲武器は片手武器のため、盾も装備できますが、そのとき、命中および回避プロパティが減少します。
+<br>盾スキルが0のとき、他に命中および回避プロパティが付加された状態でなければ、命中および回避プロパティは100減少し、
+相手に攻撃を命中させることはできず、相手からの攻撃を確実に受ける状態となります。
+<br>盾スキルが120のときでも、命中および回避プロパティが20減少することになります。
+
+<h4>命中 = -100 + (parryスキル) * 2 / 3</h4>
+
+<h4>回避 = -100 + (parryスキル) * 2 / 3</h4>
+
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

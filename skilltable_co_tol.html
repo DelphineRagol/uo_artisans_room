@@ -1,0 +1,1332 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>料理作成難易度表</TITLE>
+</HEAD>
+<body><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898567</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<h2>料理作成難易度表</h2>
+<HR>
+
+<script language="javascript">
+<!--
+//Soubi
+var soubi;
+soubi=new Array(81);
+soubi[0] =  3; // 0_1
+soubi[1] =  3;
+soubi[2] =  3;
+soubi[3] =  3;
+soubi[4] =  3;
+soubi[5] =  3;
+soubi[6] =  3;
+soubi[7] =  3; // 0_1
+soubi[8] =  3;
+soubi[9] =  3;
+soubi[10] =  3;
+soubi[11] =  3;
+soubi[12] =  3;
+soubi[13] =  3;
+soubi[14] =  3;
+soubi[15] =  8000006; //greentea0_2
+soubi[16] =  7000006; //wasabi0_2
+soubi[17] =  9000010; //sushi 0_10/3
+soubi[18] =  9000010;
+soubi[19] =  5500006; //savagekin0_2
+soubi[20] =  9000010; //eggbomb0_10/3
+soubi[21] =  3750006; //parrotwafer0_2
+soubi[22] =  7505006; //plant pigment50_2
+soubi[23] =  7505006; //naturaldye
+soubi[24] =  7505006; //colorfix
+soubi[25] =  6005006; //woodpulp
+soubi[26] =  3; // 0_1
+soubi[27] =  3;
+soubi[28] =  3;
+soubi[29] =  3;
+soubi[30] =  3;
+soubi[31] =  3;
+soubi[32] =  3;
+soubi[33] =  3;
+soubi[34] =  3;
+soubi[35] =  3;
+soubi[36] =  3;
+soubi[37] =  3;
+soubi[38] =  6000006; //miso0_2
+soubi[39] =  6000006;
+soubi[40] =  6000006;
+soubi[41] =  6000006;
+soubi[42] =  3500006; //gingerbreadcookie
+soubi[43] =  3; // 0_1
+soubi[44] =  3;
+soubi[45] =  3;
+soubi[46] =  3;
+soubi[47] =  3;
+soubi[48] =  3;
+soubi[49] =  3; // rotworm stew0_1
+soubi[50] =  7505006; //fooddeco50_2
+soubi[51] =  6005006; //enchantapple50_2
+soubi[52] =  9505006; //grapeofwrath50_2
+soubi[53] =  5500006; //fruit bowl0_2
+soubi[54] =  1500006; //darkchoco0_2
+soubi[55] =  3250004; //milkchoco0_4/3
+soubi[56] =  5250004; //whitechoco0_4/3
+soubi[57] =  6000006;
+soubi[58] =  6100006;
+soubi[59] =  6200006;
+soubi[60] =  6300006;
+soubi[61] =  6400006;
+soubi[62] =  6500006;
+soubi[63] =  6600006;
+soubi[64] =  6700006;
+soubi[65] =  6800006;
+soubi[66] =  6900006;
+soubi[67] =  7000006;
+soubi[68] =  7100006;
+soubi[69] =  7200006;
+soubi[70] =  7300006;
+soubi[71] =  7400006;
+soubi[72] =  7500006;
+soubi[73] =  6;
+soubi[74] =  3000003;
+soubi[75] =  3;
+soubi[76] =  8000006;
+soubi[77] =  6000007.5; // three tiered cake
+
+soubi[78] =  5003;
+soubi[79] =  5003;
+soubi[80] =  5003;
+
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.skill.value = 0.0;
+  exb1 = 0.0;
+  crb1 = 0.0;
+
+return true;
+}
+
+//計算
+
+function keisan1(form)
+{
+var form = document.form_keisan;
+  skill = form.skill.value;
+  exb1 = form.exb1.options[form.exb1.selectedIndex].value;
+  crb1 = form.crb1.options[form.crb1.selectedIndex].value;
+
+  pmt1 = new Array(81);
+
+    for (i=0; i<81; i++)
+    {
+    pmt1[i] = Math.floor(soubi[i]/10000) / 10.0;
+    }
+
+  pmt2 = new Array(81);
+
+    for (i=0; i<81; i++)
+    {
+    pmt2[i] = Math.floor(Math.abs((soubi[i] % 10000)) / 100.0);
+    }
+
+  pmt3 = new Array(81);
+
+    for (i=0; i<81; i++)
+    {
+    pmt3[i] = Math.abs((soubi[i] % 100)) / 3.0;
+    }
+
+  rate = new Array(162);
+
+    for (i=0; i<81; i++)
+    {
+    rate[2*i] = Math.round(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] + 1.0 * crb1)) * 10 ) / 10;
+    rate[2*i+1] = Math.round(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] - 60.0 + 1.0 * exb1
+                + Math.min(15.0 , Math.max(0.0 , (skill - 95.0) * 3.0)))) * 10 ) / 10;
+    if(skill - pmt1[i]<0)
+    {
+    rate[2*i] = 0.0;
+    rate[2*i+1] = 0.0;
+    }
+    }
+
+    form.rate000.value = rate[0];
+    form.rate001.value = rate[1];
+    form.rate002.value = rate[2];
+    form.rate003.value = rate[3];
+    form.rate004.value = rate[4];
+    form.rate005.value = rate[5];
+    form.rate006.value = rate[6];
+    form.rate007.value = rate[7];
+    form.rate008.value = rate[8];
+    form.rate009.value = rate[9];
+    form.rate010.value = rate[10];
+    form.rate011.value = rate[11];
+    form.rate012.value = rate[12];
+    form.rate013.value = rate[13];
+    form.rate014.value = rate[14];
+    form.rate015.value = rate[15];
+    form.rate016.value = rate[16];
+    form.rate017.value = rate[17];
+    form.rate018.value = rate[18];
+    form.rate019.value = rate[19];
+    form.rate020.value = rate[20];
+    form.rate021.value = rate[21];
+    form.rate022.value = rate[22];
+    form.rate023.value = rate[23];
+    form.rate024.value = rate[24];
+    form.rate025.value = rate[25];
+    form.rate026.value = rate[26];
+    form.rate027.value = rate[27];
+    form.rate028.value = rate[28];
+    form.rate029.value = rate[29];
+    form.rate030.value = rate[30];
+    form.rate031.value = rate[31];
+    form.rate032.value = rate[32];
+    form.rate033.value = rate[33];
+    form.rate034.value = rate[34];
+    form.rate035.value = rate[35];
+    form.rate036.value = rate[36];
+    form.rate037.value = rate[37];
+    form.rate038.value = rate[38];
+    form.rate040.value = rate[40];
+    form.rate041.value = rate[41];
+    form.rate042.value = rate[42];
+    form.rate044.value = rate[44];
+    form.rate046.value = rate[46];
+    form.rate048.value = rate[48];
+    form.rate050.value = rate[50];
+    form.rate052.value = rate[52];
+    form.rate054.value = rate[54];
+    form.rate055.value = rate[55];
+    form.rate056.value = rate[56];
+    form.rate057.value = rate[57];
+    form.rate058.value = rate[58];
+    form.rate060.value = rate[60];
+    form.rate061.value = rate[61];
+    form.rate062.value = rate[62];
+    form.rate063.value = rate[63];
+    form.rate064.value = rate[64];
+    form.rate065.value = rate[65];
+    form.rate066.value = rate[66];
+    form.rate067.value = rate[67];
+    form.rate068.value = rate[68];
+    form.rate069.value = rate[69];
+    form.rate070.value = rate[70];
+    form.rate071.value = rate[71];
+    form.rate072.value = rate[72];
+    form.rate073.value = rate[73];
+    form.rate074.value = rate[74];
+    form.rate075.value = rate[75];
+    form.rate076.value = rate[76];
+    form.rate077.value = rate[77];
+    form.rate078.value = rate[78];
+    form.rate079.value = rate[79];
+    form.rate080.value = rate[80];
+    form.rate081.value = rate[81];
+    form.rate082.value = rate[82];
+    form.rate083.value = rate[83];
+    form.rate084.value = rate[84];
+    form.rate085.value = rate[85];
+    form.rate086.value = rate[86];
+    form.rate088.value = rate[88];
+    form.rate090.value = rate[90];
+    form.rate092.value = rate[92];
+    form.rate094.value = rate[94];
+    form.rate096.value = rate[96];
+    form.rate098.value = rate[98];
+    form.rate100.value = rate[100];
+    form.rate102.value = rate[102];
+    form.rate104.value = rate[104];
+    form.rate105.value = rate[105];
+    form.rate106.value = rate[106];
+    form.rate107.value = rate[107];
+    form.rate108.value = rate[108];
+    form.rate109.value = rate[109];
+    form.rate110.value = rate[110];
+    form.rate111.value = rate[111];
+    form.rate112.value = rate[112];
+    form.rate113.value = rate[113];
+    form.rate114.value = rate[114];
+    form.rate115.value = rate[115];
+    form.rate116.value = rate[116];
+    form.rate117.value = rate[117];
+    form.rate118.value = rate[118];
+    form.rate119.value = rate[119];
+    form.rate120.value = rate[120];
+    form.rate121.value = rate[121];
+    form.rate122.value = rate[122];
+    form.rate123.value = rate[123];
+    form.rate124.value = rate[124];
+    form.rate125.value = rate[125];
+    form.rate126.value = rate[126];
+    form.rate127.value = rate[127];
+    form.rate128.value = rate[128];
+    form.rate129.value = rate[129];
+    form.rate130.value = rate[130];
+    form.rate131.value = rate[131];
+    form.rate132.value = rate[132];
+    form.rate133.value = rate[133];
+    form.rate134.value = rate[134];
+    form.rate135.value = rate[135];
+    form.rate136.value = rate[136];
+    form.rate137.value = rate[137];
+    form.rate138.value = rate[138];
+    form.rate139.value = rate[139];
+    form.rate140.value = rate[140];
+    form.rate141.value = rate[141];
+    form.rate142.value = rate[142];
+    form.rate143.value = rate[143];
+    form.rate144.value = rate[144];
+    form.rate145.value = rate[145];
+    form.rate146.value = rate[146];
+    form.rate148.value = rate[148];
+    form.rate150.value = rate[150];
+    form.rate152.value = rate[152];
+    form.rate154.value = rate[154];
+    form.rate155.value = rate[155];
+    form.rate156.value = rate[156];
+    form.rate158.value = rate[158];
+    form.rate160.value = rate[160];
+    form.sk0.value = skill;
+    form.sk1.value = skill;
+    form.sk2.value = skill;
+    form.sk3.value = skill;
+    form.sk4.value = skill;
+    form.sk5.value = skill;
+    form.sk6.value = skill;
+    form.sk7.value = skill;
+return true;
+}
+//-->
+</script>
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+
+ {//functionの宣言。受けとったIDは変数targetIDに格納。
+  if( document.getElementById(targetID))
+   { //指定のIDのついたオブジェクトがあったら処理する
+     //指定されたIDのstyle.displayがnoneなら
+    for (i=1; i<9; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {//blockに変更する
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+
+<form name="form_keisan">
+<p>料理スキルで作ることができるアイテムの作成難易度表です。下のカテゴリ画像をクリックすると、そのカテゴリが表示／非表示されます。</p>
+<p>スキル　：　<INPUT TYPE="text" NAME="skill" SIZE="4" value="100">（手入力）
+<br>成功率補正のタリスマンを装備している場合は、こちらも選択してください。
+<br>
+料理　：　高品質成功率ボーナス
+<select name="exb1" size="1">
+<option value="0">----
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+</select>
+％、
+成功率ボーナス
+<select name="crb1" size="1">
+<option value="0">----
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+</select>
+％
+
+<br><input type="button" value="高品質および作成成功率計算" onclick="keisan1(form)">
+
+<table class="table03">
+  <tr>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_1');return false;"><img src="bowlflour.gif" alt="素材" class="img01"></a><br>素材</td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_2');return false;"><img src="unbakedpie.gif" alt="仕込み" class="img01"></a><br>仕込み</td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_3');return false;"><img src="bakepie.gif" alt="加熱" class="img01"></a><br>加熱</td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_4');return false;"><img src="cookbird.gif" alt="丸焼き" class="img01"></a><br>丸焼き</td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_5');return false;"><img src="fruitbowl.gif" alt="エンチャント" class="img01"></a><br>enchant</td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_6');return false;"><img src="cocoa_liquor.gif" alt="チョコレート" class="img01"></a><br>chocolate</td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_7');return false;"><img src="fairy_salmon_pie.gif" alt="魔法のフィッシュパイ" class="img01"></a><br>魔法の<br>fishpie</td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_8');return false;"><img src="mug_spring_dragonfish.gif" alt="飲み物" class="img01"></a><br>飲み物</td>
+  </tr>
+</table>
+
+<div id="cat_1" style="display: none">
+
+<h4>（１）素材</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk0" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="flour.gif" alt="" class="img01"><br>sack of flour<br>[小麦粉袋]</td>
+   <td align="center"><img src="wheat.gif" alt="" class="img01">　wheat×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate000" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate001" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="dough.gif" alt="" class="img01"><br>dough<br>[生地]</td>
+   <td align="center"><img src="bowlflour.gif" alt="" class="img01">　flour×1
+<br><img src="water.gif" alt="" class="img01">　water×1杯分</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate002" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate003" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="sweetdough.gif" alt="" class="img01"><br>sweet dough<br>[甘い生地]</td>
+   <td align="center"><img src="dough.gif" alt="" class="img01">　dough×1
+<br><img src="honey.gif" alt="" class="img01">　honey×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate004" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate005" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="cakemix.gif" alt="" class="img01"><br>cake mix<br>[ケーキミックス]</td>
+   <td align="center"><img src="bowlflour.gif" alt="" class="img01">　flour×1
+<br><img src="sweetdough.gif" alt="" class="img01">　sweet dough×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate006" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate007" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="cakemix.gif" alt="" class="img01"><br>cookie mix<br>[クッキーミックス]</td>
+   <td align="center"><img src="honey.gif" alt="" class="img01">　honey×1
+<br><img src="sweetdough.gif" alt="" class="img01">　sweet dough×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate008" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate009" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="cocoa_butter.gif" alt="" class="img01"><br>cocoa butter<br>[ココアバター]</td>
+   <td align="center"><img src="cocoa_pulp.gif" alt="" class="img01">　cocoa pulp×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate010" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate011" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="cocoa_liquor.gif" alt="" class="img01"><br>cocoa liquor<br>[カカオリカー]</td>
+   <td align="center"><img src="cocoa_pulp.gif" alt="" class="img01">　cocoa pulp×1
+<br><img src="pewterbowl.gif" alt="" class="img01">　pewter bowl×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate012" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate013" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="wheat_wort.gif" alt="" class="img01"><br>wheat wort<br>[麦汁]</td>
+   <td align="center"><img src="bowlflour.gif" alt="" class="img01">　flour×1
+<br><img src="water.gif" alt="" class="img01">　water×1杯分
+<br><img src="empbottle.gif" alt="" class="img01">　empty bottle×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate150" SIZE="4"></td>
+   <td align="center">&nbsp;</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="oilflask.gif" alt="" class="img01"><br>fish oil flask<br>[フィッシュオイルのビン]</td>
+   <td align="center"><img src="bowlflour.gif" alt="" class="img01">　flour×1
+<br><img src="rawfish.gif" alt="" class="img01">　raw fish steak×8</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate152" SIZE="4"></td>
+   <td align="center">&nbsp;</td>
+   </tr>
+
+</table>
+<br class="cle">
+fish oil flaskは、生産メニューにおいて「一度に可能な限り作成する」と表示されていますが、実際は1つずつの作成です。
+</div>
+
+<div id="cat_2" style="display: none">
+
+<h4>（２）仕込み</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk1" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="unbakedpie.gif" alt="" class="img01"><br>unbaked quiche<br>[未調理のキッシュ]</td>
+   <td align="center"><img src="dough.gif" alt="" class="img01">　dough×1
+<br><img src="eggs.gif" alt="" class="img01">　eggs×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate014" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate015" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="unbakedpie.gif" alt="" class="img01"><br>unbaked quiche<br>[未調理のミートパイ]</td>
+   <td align="center"><img src="dough.gif" alt="" class="img01">　dough×1
+<br><img src="chickenleg.gif" alt="" class="img01"><img src="rawfish.gif" alt="" class="img01">
+<img src="lambrawleg.gif" alt="" class="img01"><img src="cutrawrib.gif" alt="" class="img01">raw meat×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate016" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate017" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="uncookpizza.gif" alt="" class="img01"><br>uncooked sausage pizza<br>[生のソーセージピザ]</td>
+   <td align="center"><img src="dough.gif" alt="" class="img01">　dough×1
+<br><img src="sausage.gif" alt="" class="img01">　sausage×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate018" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate019" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="uncookpizza.gif" alt="" class="img01"><br>uncooked cheeze pizza<br>[生のチーズピザ]</td>
+   <td align="center"><img src="dough.gif" alt="" class="img01">　dough×1
+<br><img src="cheeze.gif" alt="" class="img01">　cheeze×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate020" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate021" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="unbakedpie.gif" alt="" class="img01"><br>unbaked fruit pie<br>[未調理のフルーツパイ]</td>
+   <td align="center"><img src="dough.gif" alt="" class="img01">　dough×1
+<br><img src="pear.gif" alt="" class="img01">　pear×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate022" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate023" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="unbakedpie.gif" alt="" class="img01"><br>unbaked peach cobbler<br>[未調理のピーチコブラー]</td>
+   <td align="center"><img src="dough.gif" alt="" class="img01">　dough×1
+<br><img src="peach.gif" alt="" class="img01">　peach×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate024" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate025" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="unbakedpie.gif" alt="" class="img01"><br>unbaked apple pie<br>[未調理のアップルパイ]</td>
+   <td align="center"><img src="dough.gif" alt="" class="img01">　dough×1
+<br><img src="apple.gif" alt="" class="img01">　apple×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate026" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate027" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="unbakedpie.gif" alt="" class="img01"><br>unbaked pumpkin pie<br>[未調理のパンプキンパイ]</td>
+   <td align="center"><img src="dough.gif" alt="" class="img01">　dough×1
+<br><img src="pumpkin.gif" alt="" class="img01">　pumpkin×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate028" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate029" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="greentea.gif" alt="" class="img01"><br>green tea<br>[お茶]</td>
+   <td align="center"><img src="greentea0.gif" alt="" class="img01">　green tea×1
+<br><img src="water.gif" alt="" class="img01">　water×1杯分</td>
+   <td align="center">80.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate030" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate031" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="wasabi.gif" alt="" class="img01"><br>wasabi clumps<br>[わさびあえ]</td>
+   <td align="center"><img src="b_peas.gif" alt="" class="img01">　bowl of peas×3
+<br><img src="water.gif" alt="" class="img01">　water×1杯分</td>
+   <td align="center">70.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate032" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate033" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="sushiroll.gif" alt="" class="img01"><br>sushi rolls<br>[巻き寿司]</td>
+   <td align="center"><img src="rawfish.gif" alt="" class="img01">　raw fish steaks×10
+<br><img src="water.gif" alt="" class="img01">　water×1杯分</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate034" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate035" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="sushiplatter.gif" alt="" class="img01"><br>sushi platter<br>[寿司盛り]</td>
+   <td align="center"><img src="rawfish.gif" alt="" class="img01">　raw fish steaks×10
+<br><img src="water.gif" alt="" class="img01">　water×1杯分</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate036" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate037" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="savagekin.gif" alt="" class="img01"><br>savage kin paint<br>[サベージペイント]</td>
+   <td align="center"><img src="bowlflour.gif" alt="" class="img01">　flour×1
+<br><img src="tribalberry.gif" alt="" class="img01">　tribal berry×1</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate038" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="eggbomb.gif" alt="" class="img01"><br>egg bomb<br>[エッグボム]</td>
+   <td align="center"><img src="bowlflour.gif" alt="" class="img01">　flour×3
+<br><img src="eggs.gif" alt="" class="img01">　eggs×1</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate040" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate041" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="parrotwafer.gif" alt="" class="img01"><br>parrot wafer<br>[オウム用ウエハース]</td>
+   <td align="center"><img src="dough.gif" alt="" class="img01">　dough×1
+<br><img src="honey.gif" alt="" class="img01">　honey×1
+<br><img src="rawfish.gif" alt="" class="img01">　raw fish steak×1</td>
+   <td align="center">37.5</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate042" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="plant_pigment_plain.gif" alt="" class="img01"><br>plant pigment<br>[植物顔料]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="plant_clippings.gif" alt="" class="img01"> plant clippings×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate044" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="natural_dye_plain.gif" alt="" class="img01"><br>natural dye<br>[自然染料]</td>
+   <td align="center"><img src="plant_pigment_plain.gif" alt="" class="img01"> plant pigment×1
+<br><img src="color_fixative.gif" alt="" class="img01"> color fixative×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate046" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="color_fixative.gif" alt="" class="img01"><br>color fixative<br>[色素定着剤]</td>
+   <td align="center"><img src="silverserpent_venom.gif" alt="" class="img01"> silver serpent venom×1
+<br><img src="winebottle.gif" alt="" class="img01"> bottle of wine×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate048" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="wood_pulp.gif" alt="" class="img01"><br>wood pulp<br>[木のパルプ]</td>
+   <td align="center"><img src="barkfragment.gif" alt="" class="img01"> bark fragment×1
+<br><img src="water.gif" alt="" class="img01"> water×1杯分</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate050" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="charcoal.gif" alt="" class="img01"><br>charcoal<br>[木炭]</td>
+   <td align="center"><img src="board.gif" alt="" class="img01"> board×1</td>
+   <td align="center">0.0<br>HS</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate146" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+</div>
+
+<div id="cat_3" style="display: none">
+
+<h4>（３）加熱</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk2" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="bread.gif" alt="" class="img01"><br>bread loaf<br>[パン]</td>
+   <td align="center"><img src="dough.gif" alt="" class="img01">　dough×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate052" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="cookies.gif" alt="" class="img01"><br>pan of cookies<br>[クッキー]</td>
+   <td align="center"><img src="cakemix.gif" alt="" class="img01">　cookie mix×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate054" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate055" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="cake.gif" alt="" class="img01"><br>cake<br>[ケーキ]</td>
+   <td align="center"><img src="cakemix.gif" alt="" class="img01">　cake mix×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate056" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate057" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="muffins.gif" alt="" class="img01"><br>muffins<br>[マフィン]</td>
+   <td align="center"><img src="sweetdough.gif" alt="" class="img01">　sweet dough×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate058" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="bakepie.gif" alt="" class="img01"><br>baked quiche<br>[キッシュ]</td>
+   <td align="center"><img src="unbakedpie.gif" alt="" class="img01">　unbaked quiche×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate060" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate061" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="bakepie.gif" alt="" class="img01"><br>baked meat pie<br>[ミートパイ]</td>
+   <td align="center"><img src="unbakedpie.gif" alt="" class="img01">　unbaked meat pie×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate062" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate063" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="pizza.gif" alt="" class="img01"><br>cooked sausage pizza<br>[ソーセージピザ]</td>
+   <td align="center"><img src="uncookpizza.gif" alt="" class="img01">　uncooked sausage pizza×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate064" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate065" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="pizza.gif" alt="" class="img01"><br>cooked cheeze pizza<br>[チーズピザ]</td>
+   <td align="center"><img src="uncookpizza.gif" alt="" class="img01">　uncooked cheeze pizza×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate066" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate067" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="bakepie.gif" alt="" class="img01"><br>baked fruit pie<br>[フルーツパイ]</td>
+   <td align="center"><img src="unbakedpie.gif" alt="" class="img01">　unbaked fruit pie×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate068" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate069" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="bakepie.gif" alt="" class="img01"><br>baked peach cobbler<br>[ピーチコブラー]</td>
+   <td align="center"><img src="unbakedpie.gif" alt="" class="img01">　unbaked peach cobbler×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate070" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate071" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="bakepie.gif" alt="" class="img01"><br>baked apple pie<br>[アップルパイ]</td>
+   <td align="center"><img src="unbakedpie.gif" alt="" class="img01">　unbaked apple pie×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate072" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate073" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="bakepie.gif" alt="" class="img01"><br>baked pumpkin pie<br>[パンプキンパイ]</td>
+   <td align="center"><img src="unbakedpie.gif" alt="" class="img01">　unbaked pumpkin pie×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate074" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate075" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="misosoup.gif" alt="" class="img01"><br>miso soup<br>[みそ汁]</td>
+   <td align="center"><img src="rawfish.gif" alt="" class="img01">　raw fish steak×1
+<br><img src="water.gif" alt="" class="img01">　water×1杯分</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate076" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate077" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="w_misosoup.gif" alt="" class="img01"><br>white miso soup<br>[みそ汁(白みそ)]</td>
+   <td align="center"><img src="rawfish.gif" alt="" class="img01">　raw fish steak×1
+<br><img src="water.gif" alt="" class="img01">　water×1杯分</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate078" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate079" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="r_misosoup.gif" alt="" class="img01"><br>red miso soup<br>[みそ汁(赤みそ)]</td>
+   <td align="center"><img src="rawfish.gif" alt="" class="img01">　raw fish steak×1
+<br><img src="water.gif" alt="" class="img01">　water×1杯分</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate080" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate081" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="a_misosoup.gif" alt="" class="img01"><br>awase miso soup<br>[みそ汁(合わせみそ)]</td>
+   <td align="center"><img src="rawfish.gif" alt="" class="img01">　raw fish steak×1
+<br><img src="water.gif" alt="" class="img01">　water×1杯分</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate082" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate083" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="gingerbreadcookie.gif" alt="" class="img01"><br>gingerbread cookie<br>[ジンジャーマンクッキー]</td>
+   <td align="center"><img src="cakemix.gif" alt="" class="img01">　cookie mix×1
+<br><img src="freshginger.gif" alt="" class="img01">　fresh ginger×1</td>
+   <td align="center">35.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate084" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate085" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="three_tiered_cake.gif" alt="" class="img01"><br>three tiered cake<br>[三段ケーキ]</td>
+   <td align="center"><img src="cakemix.gif" alt="" class="img01">　cake mix×3</td>
+   <td align="center">60.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate154" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate155" SIZE="4"></td>
+   </tr>
+
+</table>
+
+<br class="cle">
+</div>
+
+<div id="cat_4" style="display: none">
+
+
+<h4>（４）丸焼き</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk3" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="cookbird.gif" alt="" class="img01"><br>cooked bird<br>[鳥のロースト]</td>
+   <td align="center"><img src="rawbird.gif" alt="" class="img01">　raw bird×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate086" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="chickenleg2.gif" alt="" class="img01"><br>chicken leg<br>[鳥のもも焼き]</td>
+   <td align="center"><img src="chickenleg.gif" alt="" class="img01">　raw chicken legs×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate088" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="fishsteak.gif" alt="" class="img01"><br>fish steak<br>[魚のステーキ]</td>
+   <td align="center"><img src="rawfish.gif" alt="" class="img01">　raw fish steak×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate090" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="friedegg.gif" alt="" class="img01"><br>fried eggs<br>[目玉焼き]</td>
+   <td align="center"><img src="eggs.gif" alt="" class="img01">　eggs×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate092" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="lambleg.gif" alt="" class="img01"><br>leg of lamb<br>[羊脚の焼肉]</td>
+   <td align="center"><img src="lambrawleg.gif" alt="" class="img01">　raw legs of lamb×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate094" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="cutrib.gif" alt="" class="img01"><br>cut of ribs<br>[スペアリブ]</td>
+   <td align="center"><img src="cutrawrib.gif" alt="" class="img01">　raw ribs×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate096" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="rotworm_stew.gif" alt="" class="img01"><br>bowl of rotworm stew<br>[ロットワームシチュー]</td>
+   <td align="center"><img src="rawfish.gif" alt="" class="img01">　raw rotworm meat×1</td>
+   <td align="center">0.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate098" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="rotworm_stew.gif" alt="" class="img01"><br>stew of blackrock<br>[ブラックロックシチュー]</td>
+   <td align="center"><img src="rotworm_stew.gif" alt="ロットワームシチュー" class="img01">×1
+<br><img src="blackrock01.gif" alt="small piece of blackrock" class="img01">ブラックロック小片×1
+</td>
+   <td align="center">30.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate148" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_5" style="display: none">
+
+<h4>（５）エンチャント</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk4" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="fooddeco.gif" alt="" class="img01"><br>food decoration tool<br>[食品文字入れペン]</td>
+   <td align="center"><img src="dough.gif" alt="" class="img01">　dough×1
+<br><img src="honey.gif" alt="" class="img01">　honey×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate100" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="enchantedapple.gif" alt="" class="img01"><br>enchanted apple<br>[魔法のリンゴ]</td>
+   <td align="center"><img src="apple.gif" alt="" class="img01">　apple×1
+<br><img src="healpot.gif" alt="" class="img01">　greater heal pot.×1</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate102" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="grapesofwrath.gif" alt="" class="img01"><br>grapes of wrath<br>[怒りのブドウ]</td>
+   <td align="center"><img src="grape.gif" alt="" class="img01">　grape×1
+<br><img src="strpot.gif" alt="" class="img01">　greater strength pot.×1</td>
+   <td align="center">95.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate104" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate105" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="fruitbowl.gif" alt="" class="img01"><br>fruit bowl<br>[フルーツボウル]</td>
+   <td align="center"><img src="woodenbowl.gif" alt="" class="img01">　wooden bowl×1
+<br><img src="pear.gif" alt="" class="img01">　pear×3
+<br><img src="apple.gif" alt="" class="img01">　apple×3
+<br><img src="banana.gif" alt="" class="img01">　banana×3</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate106" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate107" SIZE="4"></td>
+   </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_6" style="display: none">
+
+<h4>（６）チョコ作り</h4>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk5" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="chocolate01.gif" alt="" class="img01"><br>dark chocolate<br>[ダークチョコレート]</td>
+   <td align="center"><img src="sack_sugar.gif" alt="" class="img01">　sack of sugar×1
+<br><img src="cocoa_butter.gif" alt="" class="img01">　cocoa butter×1
+<br><img src="cocoa_liquor.gif" alt="" class="img01">　cocoa liquor×1</td>
+   <td align="center">15.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate108" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate109" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="milkchocolate.gif" alt="" class="img01"><br>milk chocolate<br>[ミルクチョコレート]</td>
+   <td align="center"><img src="sack_sugar.gif" alt="" class="img01">　sack of sugar×1
+<br><img src="cocoa_butter.gif" alt="" class="img01">　cocoa butter×1
+<br><img src="cocoa_liquor.gif" alt="" class="img01">　cocoa liquor×1
+<br><img src="milkpitcher.gif" alt="" class="img01">　milk×1杯分</td>
+   <td align="center">32.5</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate110" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate111" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="whitechocolate.gif" alt="" class="img01"><br>white chocolate<br>[ホワイトチョコレート]</td>
+   <td align="center"><img src="sack_sugar.gif" alt="" class="img01">　sack of sugar×1
+<br><img src="cocoa_butter.gif" alt="" class="img01">　cocoa butter×1
+<br><img src="vanilla.gif" alt="" class="img01">　vanilla×1
+<br><img src="milkpitcher.gif" alt="" class="img01">　milk×1杯分</td>
+   <td align="center">52.5</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate112" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate113" SIZE="4"></td>
+   </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_7" style="display: none">
+
+<h4>（７）魔法のフィッシュパイ</h4>
+UOHS (未踏の航路) を導入している必要があります。
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="180" rowspan="2">製品名</td>
+   <td align="center" width="190" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk6" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="great_barracuda_pie.gif" alt="" title="命中+8%" class="img01"><br>great barracuda pie<br>[グレートバラクーダのパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="great_barracuda_steak.gif" alt="great barracuda steak&#10;グレートバラクーダの切り身" class="img01">　×1
+<br><img src="zoogi_fungus.gif" alt="zoogi fungus" class="img01">　粉菌キノコ×1
+<br><img src="mento_seasoning.gif" alt="mento seasoning" class="img01">　メント調味料×1</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate114" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate115" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="giant_koi_pie.gif" alt="" title="回避+8%" class="img01"><br>giant koi pie<br>[コイのパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="giant_koi_steak.gif" alt="great koi steak&#10;コイの切り身" class="img01">　×1
+<br><img src="bowlpeas.gif" alt="bowl of peas" class="img01">　豆のボウル×1
+<br><img src="mento_seasoning.gif" alt="mento seasoning" class="img01">　メント調味料×1</td>
+   <td align="center">61.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate116" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate117" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="fire_fish_pie.gif" alt="" title="炎吸収 5%" class="img01"><br>fire fish pie<br>[ファイアフィッシュのパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="fire_fish_steak.gif" alt="fire fish steak&#10;ファイアフィッシュの切り身" class="img01">　×1
+<br><img src="carrot.gif" alt="carrot" class="img01">　ニンジン×1
+<br><img src="samuel_secret_sauce.gif" alt="samuel's secret sauce" class="img01">　サミュエル特製ソース×1</td>
+   <td align="center">62.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate118" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate119" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="stone_crab_pie.gif" alt="" title="物理吸収 5%" class="img01"><br>stone crab pie<br>[ストーンクラブのパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="stone_crab_meat.gif" alt="" title="stone crab meat&#10;ストーンクラブの身" class="img01">　×1
+<br><img src="cabbage.gif" alt="cabbage" class="img01">　キャベツ×1
+<br><img src="samuel_secret_sauce.gif" alt="samuel's secret sauce" class="img01">　サミュエル特製ソース×1</td>
+   <td align="center">63.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate120" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate121" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="blue_lobster_pie.gif" alt="" title="冷気吸収 5%" class="img01"><br>blue lobster pie<br>[ブルーロブスターのパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="blue_lobster_meat.gif" alt="" title="blue lobster meat&#10;ブルーロブスターの身" class="img01">　×1
+<br><img src="tribalberry.gif" alt="tribal berry" class="img01">　部族イチゴ×1
+<br><img src="samuel_secret_sauce.gif" alt="samuel's secret sauce" class="img01">　サミュエル特製ソース×1</td>
+   <td align="center">64.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate122" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate123" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="reaper_fish_pie.gif" alt="" title="毒吸収 5%" class="img01"><br>reaper fish pie<br>[リーパーフィッシュパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="reaper_fish_steak.gif" alt="reaper fish steak&#10;リーパーフィッシュの切り身" class="img01">　×1
+<br><img src="pumpkin.gif" alt="pumpkin" class="img01">　カボチャ×1
+<br><img src="samuel_secret_sauce.gif" alt="samuel's secret sauce" class="img01">　サミュエル特製ソース×1</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate124" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate125" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="crystal_fish_pie.gif" alt="" title="エネルギー吸収 5%" class="img01"><br>crystal fish pie<br>[クリスタルフィッシュパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="crystal_fish_steak.gif" alt="crystal fish steak&#10;クリスタルフィッシュの切り身" class="img01">　×1
+<br><img src="apple.gif" alt="apple" class="img01">　リンゴ×1
+<br><img src="samuel_secret_sauce.gif" alt="samuel's secret sauce" class="img01">　サミュエル特製ソース×1</td>
+   <td align="center">66.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate126" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate127" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="bull_fish_pie.gif" alt="" title="武器ダメージ+5%" class="img01"><br>bull fish pie<br>[ブルフィッシュパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="bull_fish_steak.gif" alt="bull fish steak&#10;ブルフィッシュの切り身" class="img01">　×1
+<br><img src="squash.gif" alt="squash" class="img01">　ウリ×1
+<br><img src="mento_seasoning.gif" alt="mento seasoning" class="img01">　メント調味料×1</td>
+   <td align="center">67.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate128" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate129" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="summer_dragonfish_pie.gif" alt="" title="魔法ダメージ+5%" class="img01"><br>summer dragonfish pie<br>[夏竜魚のパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="summer_dragonfish_steak.gif" alt="summer dragonfish steak&#10;夏竜魚の切り身" class="img01">　×1
+<br><img src="onion.gif" alt="onion" class="img01">　玉ねぎ×1
+<br><img src="mento_seasoning.gif" alt="mento seasoning" class="img01">　メント調味料×1</td>
+   <td align="center">68.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate130" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate131" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="fairy_salmon_pie.gif" alt="" title="詠唱集中 2%" class="img01"><br>fairy salmon pie<br>[フェアリーサーモンパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="fairy_salmon_steak.gif" alt="fairy salmon steak&#10;フェアリーサーモンの切り身" class="img01">　×1
+<br><img src="corn.gif" alt="ear of corn" class="img01">　トウモロコシ×1
+<br><img src="dark_truffle.gif" alt="dark truffle" class="img01">　ダークトリュフ×1</td>
+   <td align="center">69.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate132" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate133" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="lava_fish_pie.gif" alt="" title="マナ変換 5%" class="img01"><br>lava fish pie<br>[ラヴァフィッシュパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="lava_fish_steak.gif" alt="lava fish steak&#10;フェアリーサーモンの切り身" class="img01">　×1
+<br><img src="cheeze.gif" alt="cheeze" class="img01">　チーズ×1
+<br><img src="dark_truffle.gif" alt="dark truffle" class="img01">　ダークトリュフ×1</td>
+   <td align="center">70.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate134" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate135" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="autumn_dragonfish_pie.gif" alt="" title="meditation[瞑想]+10" class="img01"><br>autumn dragonfish pie<br>[秋竜魚のパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="autumn_dragonfish_steak.gif" alt="autumn dragonfish steak&#10;秋竜魚の切り身" class="img01">　×1
+<br><img src="pear.gif" alt="pear" class="img01">　洋ナシ×1
+<br><img src="mento_seasoning.gif" alt="mento seasoning" class="img01">　メント調味料×1</td>
+   <td align="center">71.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate136" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate137" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="spider_crab_pie.gif" alt="" title="focus[集中]+10" class="img01"><br>spider crab pie<br>[スパイダークラブパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="spider_crab_meat.gif" alt="" title="spider crab meat&#10;スパイダークラブの身" class="img01">　×1
+<br><img src="lettuce.gif" alt="lettuce" class="img01">　レタス×1
+<br><img src="mento_seasoning.gif" alt="mento seasoning" class="img01">　メント調味料×1</td>
+   <td align="center">72.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate138" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate139" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="yellow_barracuda_pie.gif" alt="" title="ヒットポイント回復 3" class="img01"><br>yellow barracuda pie<br>[イエローバラクーダのパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="yellow_barracuda_steak.gif" alt="yellow barracuda steak&#10;イエローバラクーダの切り身" class="img01">　×1
+<br><img src="winebottle.gif" alt="bottle of wine" class="img01">　ワインの瓶×1
+<br><img src="mento_seasoning.gif" alt="mento seasoning" class="img01">　メント調味料×1</td>
+   <td align="center">73.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate140" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate141" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="holy_mackerel_pie.gif" alt="" title="マナ回復 3" class="img01"><br>holy mackerel pie<br>[ギョギョのパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="holy_mackerel_steak.gif" alt="holy mackerel steak&#10;ギョギョの切り身" class="img01">　×1
+<br><img src="honey.gif" alt="honey" class="img01">　ハチミツ×1
+<br><img src="mento_seasoning.gif" alt="mento seasoning" class="img01">　メント調味料×1</td>
+   <td align="center">74.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate142" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate143" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="unicorn_fish_pie.gif" alt="" title="スタミナ回復 3" class="img01"><br>unicorn fish pie<br>[ユニコーンフィッシュパイ]</td>
+   <td align="center"><img src="dough.gif" alt="dough" class="img01">　生地×1
+<br><img src="unicorn_fish_steak.gif" alt="unicorn fish steak&#10;ユニコーンフィッシュの切り身" class="img01">　×1
+<br><img src="freshginger.gif" alt="freshginger" class="img01">　ショウガ×1
+<br><img src="mento_seasoning.gif" alt="mento seasoning" class="img01">　メント調味料×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate144" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate145" SIZE="4"></td>
+   </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+
+<div id="cat_8" style="display: none">
+
+<h4>（８）飲み物</h4>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk7" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="mug_spring_dragonfish.gif" alt="" class="img01"><br>Coffee<br>[コーヒー]</td>
+   <td align="center"><img src="water.gif" alt="" class="img01">　water×1杯分
+<br>Coffee Grounds×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate156" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="mug_spring_dragonfish.gif" alt="" class="img01"><br>Green Tea<br>[茶葉]</td>
+   <td align="center"><img src="water.gif" alt="" class="img01">　water×1杯分
+<br><img src="greentea0.gif" alt="" class="img01">　green tea×1
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate158" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="mug_spring_dragonfish.gif" alt="" class="img01"><br>Hot Cocoa<br>[ホットココア]</td>
+   <td align="center"><img src="milkpitcher.gif" alt="" class="img01">　milk×1杯分
+<br><img src="sack_sugar.gif" alt="" class="img01">　sack of sugar×1
+<br><img src="cocoa_liquor.gif" alt="" class="img01">　cocoa liquor×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate160" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+</form>
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

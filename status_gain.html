@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>スキル上昇時のステータス増加</TITLE>
+</HEAD>
+<body><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899015</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<div class="block02">
+<h2>スキル上昇時のステータス（Status）増加</h2>
+<HR>
+Publish45より、基礎Statusの上昇に関する仕様が変更されました。
+
+<h3>仕様</h3>
+
+<ul class="list01">
+  <li>スキルが上昇したとき、5％の確率で基礎Status（STR／DEX／INT）も上昇するようになります。</li>
+  <li>上昇する基礎Statusは、スキル毎に設定されている"Primary status"および"Secondary status"のどちらかが選ばれます。</li>
+  <li>選ばれる確率は、"Primary status"が75％、"Secondary status"が25％の確率です。</li>
+  <li>1日の基礎Status（STR／DEX／INT）上昇量に制限がなくなります。</li>
+  <li>基礎Statusを上昇以外の設定にしているとき、該当する基礎Statusの上昇判定があっても、その基礎Statusは上昇しません。</li>
+  <li><font color="#ff0000">100.0（GM）以上となっているスキルについては、▲（上昇）の状態でスキルを成功させたときに基礎Statusの上昇判定が行われます。</font>
+<br>例）Focus 100以上の状態で、StaminaまたはManaを自然回復。
+<br>Blacksmith 100以上の状態で、スキル上昇の対象とならないDaggerを作成。
+</li>
+  <li>スキル合計値が上限となっている場合、▲（上昇）設定のスキルが上昇したとみなされたときにステータスの上昇判定が行われることになります。</li>
+</ul>
+
+<h4>現時点の不具合</h4>
+
+<ul class="list01">
+  <li>Focusは現時点で<font color="#ff0000">Primary：INT ＋ Secondary：DEX</font>となっており、UOSSの発表と逆になっています。</li>
+</ul>
+
+<h3>１．STRおよびDEXが上昇するスキル</h3>
+
+<table class="table01">
+  <tr>
+   <td align="center" bgcolor="#f0f0f0" width="100">Primary</td>
+   <td align="center" bgcolor="#ff9999" width="180">STR</td>
+   <td align="center" bgcolor="#ffff99" width="180">DEX</td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#f0f0f0" width="100">Secondary</td>
+   <td align="center" bgcolor="#ffffcc" width="180">DEX</td>
+   <td align="center" bgcolor="#ffcccc" width="180">STR</td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#f0f0f0" width="100">該当スキル</td>
+   <td  align="left" valign="top" bgcolor="#ffddcc" width="160">
+<ul class="list01">
+<b>Miscellaneous</b>
+  <li>Blacksmith</li>
+  <li>Carpentry</li>
+  <li>Lumberjacking</li>
+  <li>Mining</li>
+  <li>Resisting spells</li>
+<br><b>Combat Ratings</b>
+  <li>Swordsmanship</li>
+  <li>Mace fighting</li>
+  <li>Tactics</li>
+  <li>Wrestling</li>
+</ul>
+</td>
+   <td align="left" valign="top" bgcolor="#ffddcc" width="160">
+<ul class="list01">
+<b>Miscellaneous</b>
+  <li>Bowcraft/Fletching</li>
+  <li>Fishing</li>
+  <li><font color="#ff0000">Throwing</font></li>
+<br><b>Combat Ratings</b>
+  <li>Archery</li>
+  <li>Fencing</li>
+  <li>Parrying</li>
+</ul>
+   </td>
+ </tr>
+</table>
+<br class="cle">
+
+<h3>２．DEXおよびINTが上昇するスキル</h3>
+
+<p>
+<table class="table01">
+  <tr>
+   <td align="center" bgcolor="#f0f0f0" width="100">Primary</td>
+   <td align="center" bgcolor="#ffff99" width="180">DEX</td>
+   <td align="center" bgcolor="#9999ff" width="180">INT</td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#f0f0f0" width="100">Secondary</td>
+   <td align="center" bgcolor="#bbbbff" width="180">INT</td>
+   <td align="center" bgcolor="#ffffcc" width="180">DEX</td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#f0f0f0" width="100">該当スキル</td>
+   <td align="left" valign="top" bgcolor="#ccffdd">
+<ul class="list01">
+<b>Miscellaneous</b>
+  <li>Lockpicking</li>
+  <li>Musicianship</li>
+  <li>Ninjitsu</li>
+  <li>Remove trap</li>
+  <li>Snooping</li>
+  <li>Stealing</li>
+  <li>Stealth</li>
+  <li>Tailoring</li>
+  <li>Tinkering</li>
+<br><b>Actions</b>
+  <li>Begging</li>
+  <li>Camping</li>
+  <li>Hiding</li>
+</ul>
+   </td>
+   <td align="left" valign="top" bgcolor="#ccffdd">
+<ul class="list01">
+<b>Miscellaneous</b>
+  <li>Alchemy</li>
+  <li>Cooking</li>
+  <li><font color="#ff0000">Focus</font></li>
+  <li>Healing</li>
+  <li>Herding</li>
+  <li>Veterinary</li>
+<br><b>Actions</b>
+  <li>Cartography</li>
+  <li>Detecting hidden</li>
+  <li>Discordance</li>
+  <li>Inscription</li>
+  <li>Peacemaking</li>
+  <li>Poisoning</li>
+  <li>Provocation</li>
+  <li>Tracking</li>
+<br><b>Lore and Knowledge</b>
+  <li>Forensic Evaluation</li>
+  <li>Item Identification</li>
+</ul>
+   </td>
+ </tr>
+</table>
+<br class="cle">
+
+<h3>３．INTおよびSTRが上昇するスキル</h3>
+
+<table class="table01">
+  <tr>
+   <td align="center" bgcolor="#f0f0f0" width="100">Primary</td>
+   <td align="center" bgcolor="#9999ff" width="180">INT</td>
+   <td align="center" bgcolor="#ff9999" width="180">STR</td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#f0f0f0" width="100">Secondary</td>
+   <td align="center" bgcolor="#ffcccc" width="180">STR</td>
+   <td align="center" bgcolor="#bbbbff" width="180">INT</td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#f0f0f0">該当スキル</td>
+   <td align="left" valign="top" bgcolor="#ddccff">
+<ul class="list01">
+<b>Miscellaneous</b>
+  <li><font color="#ff0000">Imbuing</font></li>
+  <li><font color="#ff0000">Mysticism</font></li>
+  <li>Magery</li>
+  <li>Meditation</li>
+  <li>Necromancy</li>
+  <li>Spellweaving</li>
+<br><b>Actions</b>
+  <li>Spirit speak</li>
+<br><b>Lore and Knowledge</b>
+  <li>Anatomy</li>
+  <li>Arms Lore</li>
+  <li>Animal Lore</li>
+  <li>Evaluating Intelligence</li>
+  <li>Taste Identification</li>
+</ul>
+    </td>
+   <td align="left" valign="top" bgcolor="#ddccff">
+<ul class="list01">
+<b>Miscellaneous</b>
+  <li>Bushido</li>
+  <li>Chivalry</li>
+<br><b>Actions</b>
+  <li>Animal Taming</li>
+</ul>
+</td>
+
+ </tr>
+
+</table>
+<br class="cle">
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

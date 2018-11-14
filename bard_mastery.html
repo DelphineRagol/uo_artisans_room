@@ -1,0 +1,1286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>バードマスタリー</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899051</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+
+ {//functionの宣言。受けとったIDは変数targetIDに格納。
+  if( document.getElementById(targetID))
+   { //指定のIDのついたオブジェクトがあったら処理する
+     //指定されたIDのstyle.displayがnoneなら
+    for (i=1; i<4; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {//blockに変更する
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+
+<h2>バードマスタリー</h2>
+
+<hr>
+
+<a href="#" onClick="showHide('cat_1');return false;">Peacemaking[沈静化]</a>　
+<a href="#" onClick="showHide('cat_2');return false;">Provocation[扇動]</a>　
+<a href="#" onClick="showHide('cat_3');return false;">Discordance[不調和]</a>
+
+<div id="cat_1" style="display: none">
+<h3>Resillience - Peacemaking</h3>
+<h4>消費マナ</h4>
+開始時マナコスト　：　16
+<br>維持コスト　：　4（2秒毎）
+<br>効果対象が5体増えるごとに、維持コストが1増加する。騎乗されている生物は対象とはならない。
+<br>discordance、provocationがそれぞれスキル10.0以上（不具合？）で維持コストが1減少する。
+<br>いずれもマナコスト（マジックプロパティ）は有効
+
+<h4>効果：ヒットポイント、スタミナ、マナ回復プロパティの増加</h4>
+
+<font color="#ff0000">Publish73より下表の数値に修正</font>
+<br>扇動および不調和による加算値は重複される。
+<br>この効果により、ヒットポイントおよびスタミナ回復がそれぞれの上限を超えても有効に機能する。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>沈静</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">1</td>
+    <td align="center">2</td>
+    <td align="center">3</td>
+    <td align="center">4</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">2</td>
+    <td align="center">4</td>
+    <td align="center">6</td>
+    <td align="center">8</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">3</td>
+    <td align="center">6</td>
+    <td align="center">9</td>
+    <td align="center">12</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">4</td>
+    <td align="center">8</td>
+    <td align="center">12</td>
+    <td align="center">16</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="120">扇動、不調和</td>
+    <td align="center" width="60">加算値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">2</td>
+  </tr>
+  <tr>
+    <td align="center">240.0</td>
+    <td align="center">3</td>
+  </tr>
+</table>
+<br class="cle">
+<h4>効果：Curse効果時間の短縮</h4>
+抵抗値上限低下の有効時間は表のとおり機能するが、ステータス低下は機能していない
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>沈静</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">-10％</td>
+    <td align="center">-10％</td>
+    <td align="center">-20％</td>
+    <td align="center">-20％</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">-10％</td>
+    <td align="center">-20％</td>
+    <td align="center">-20％</td>
+    <td align="center">-30％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">-20％</td>
+    <td align="center">-20％</td>
+    <td align="center">-30％</td>
+    <td align="center">-30％</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">-20％</td>
+    <td align="center">-30％</td>
+    <td align="center">-30％</td>
+    <td align="center">-40％</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="120">扇動＋不調和</td>
+    <td align="center" width="60">加算値</td>
+  </tr>
+  <tr>
+    <td align="center">～209.9</td>
+    <td align="center">-0％</td>
+  </tr>
+  <tr>
+    <td align="center">～239.9</td>
+    <td align="center">-10％</td>
+  </tr>
+  <tr>
+    <td align="center">240.0</td>
+    <td align="center">-20％</td>
+  </tr>
+</table>
+<br class="cle">
+
+<h4>効果：Bleed attack効果時間の短縮</h4>
+
+魔曲の効果がないときの効果時間は12秒。音楽および沈静スキルにより効果時間は下表のようになる。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>沈静</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">10sec</td>
+    <td align="center">10sec</td>
+    <td align="center">9sec</td>
+    <td align="center">9sec</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">10sec</td>
+    <td align="center">9sec</td>
+    <td align="center">9sec</td>
+    <td align="center">8sec</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">9sec</td>
+    <td align="center">9sec</td>
+    <td align="center">8sec</td>
+    <td align="center">8sec</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">9sec</td>
+    <td align="center">8sec</td>
+    <td align="center">8sec</td>
+    <td align="center">7sec</td>
+  </tr>
+</table>
+
+<br class="cle">
+扇動および不調和が一定以上あれば、効果時間はさらに減少する。
+<br>音楽系4スキルが全て120のとき、効果時間がさらに1秒減少して4秒となる。
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">不調<br>＼<br>扇動</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">-0sec</td>
+    <td align="center">-0sec</td>
+    <td align="center">-0sec</td>
+    <td align="center">-1sec</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">-0sec</td>
+    <td align="center">-0sec</td>
+    <td align="center">-1sec</td>
+    <td align="center">-1sec</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">-0sec</td>
+    <td align="center">-1sec</td>
+    <td align="center">-1sec</td>
+    <td align="center">-1sec</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">-1sec</td>
+    <td align="center">-1sec</td>
+    <td align="center">-1sec</td>
+    <td align="center">-2sec</td>
+  </tr>
+</table>
+
+<br class="cle">
+
+<h4>効果：Mortal Wound効果時間の短縮</h4>
+
+魔曲の効果がないときの効果時間は6秒。音楽および沈静スキルにより効果時間は下表のようになる。
+<br>なお、扇動および不調和による影響はない。
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>沈静</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">5sec</td>
+    <td align="center">4sec</td>
+    <td align="center">3sec</td>
+    <td align="center">2sec</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">4sec</td>
+    <td align="center">4sec</td>
+    <td align="center">3sec</td>
+    <td align="center">2sec</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">3sec</td>
+    <td align="center">3sec</td>
+    <td align="center">3sec</td>
+    <td align="center">2sec</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">2sec</td>
+    <td align="center">2sec</td>
+    <td align="center">2sec</td>
+    <td align="center">2sec</td>
+  </tr>
+</table>
+
+<br class="cle">
+
+<h4>効果：毒状態の解除</h4>
+ダメージが発生するとき、毒に抵抗できたかどうかの判定を行う。
+<br>抵抗に成功したとき、オレンジの花びらを使用したときと同じメッセージが表示される。
+
+<p>毒抵抗確率の最大値 = 2 / （毒レベル + 1）</p>
+音楽関連スキルによる補正値は、下表の数値表を使い算出。その値により、抵抗確率が変化する。
+
+<p>補正値 = [1/2 ×{(音楽 - 90)/10 + (沈静 - 90)/10}] + [1/3 ×{(扇動 - 90)/10 + (不調 - 90)/10}]</p>
+
+<ul class="list03">
+  <li>補正値 = 0　：　最大値×0（抵抗できない）</li>
+  <li>補正値 = 1　：　最大値×3／9</li>
+  <li>補正値 = 2　：　最大値×6／9</li>
+  <li>補正値 = 3　：　最大値×8／9</li>
+  <li>補正値 = 4　：　最大値</li>
+</ul>
+
+補正値算出のための数値表
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>沈静</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">2</td>
+    <td align="center">3</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">1</td>
+    <td align="center">2</td>
+    <td align="center">3</td>
+    <td align="center">4</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">2</td>
+    <td align="center">3</td>
+    <td align="center">4</td>
+    <td align="center">5</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">3</td>
+    <td align="center">4</td>
+    <td align="center">5</td>
+    <td align="center">6</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">扇動<br>不調和</td>
+    <td align="center" width="70">&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">2</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">3</td>
+  </tr>
+</table>
+<br class="cle">
+
+
+
+<h3>Perseverance - Peacemaking</h3>
+<h4>消費マナ</h4>
+開始時マナコスト　：　18
+<br>維持コスト　：　5（2秒毎）
+<br>効果対象が5体増えるごとに、維持コストが1増加する。騎乗されている生物は対象とはならない。
+<br>discordance、provocationがそれぞれスキル10.0以上（不具合？）で維持コストが1減少する。
+<br>いずれもマナコスト（マジックプロパティ）は有効
+
+<h4>効果：回避およびダメージ軽減</h4>
+
+<font color="#ff0000">Publish73より下表の数値に修正</font>
+<br>扇動および不調和による加算値は重複される。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>沈静</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">1％</td>
+    <td align="center">3％</td>
+    <td align="center">4％</td>
+    <td align="center">6％</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">3％</td>
+    <td align="center">6％</td>
+    <td align="center">9％</td>
+    <td align="center">12％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">4％</td>
+    <td align="center">9％</td>
+    <td align="center">13％</td>
+    <td align="center">18％</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">6％</td>
+    <td align="center">12％</td>
+    <td align="center">18％</td>
+    <td align="center">24％</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">扇動<br>不調和</td>
+    <td align="center" width="70">加算値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">0％</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">1％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">2％</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">3％</td>
+  </tr>
+</table>
+<br class="cle">
+<h4>効果：詠唱集中</h4>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>沈静</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">1％</td>
+    <td align="center">1％</td>
+    <td align="center">2％</td>
+    <td align="center">2％</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">1％</td>
+    <td align="center">2％</td>
+    <td align="center">2％</td>
+    <td align="center">3％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">2％</td>
+    <td align="center">2％</td>
+    <td align="center">3％</td>
+    <td align="center">3％</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">2％</td>
+    <td align="center">3％</td>
+    <td align="center">3％</td>
+    <td align="center">4％</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="120">扇動＋不調和</td>
+    <td align="center" width="60">加算値</td>
+  </tr>
+  <tr>
+    <td align="center">～209.9</td>
+    <td align="center">0％</td>
+  </tr>
+  <tr>
+    <td align="center">～239.9</td>
+    <td align="center">1％</td>
+  </tr>
+  <tr>
+    <td align="center">240.0</td>
+    <td align="center">2％</td>
+  </tr>
+</table>
+<br class="cle">
+
+</div>
+
+<div id="cat_2" style="display: none">
+<h3>Inspire - Provocation</h3>
+<h4>消費マナ</h4>
+開始時マナコスト　：　16
+<br>維持コスト　：　4（2秒毎）
+<br>効果対象が5体増えるごとに、維持コストが1増加する。騎乗されている生物は対象とはならない。
+<br>discordance、ppeacemakingがそれぞれスキル10.0以上（不具合？）で維持コストが1減少する。
+<br>いずれもマナコスト（マジックプロパティ）は有効
+
+<h4>効果：命中および魔法ダメージの増加</h4>
+
+沈静および不調和による加算値は重複される。プロパティの上限を超えて機能しない。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>扇動</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">+4％</td>
+    <td align="center">+6％</td>
+    <td align="center">+8％</td>
+    <td align="center">+10％</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">+6％</td>
+    <td align="center">+8％</td>
+    <td align="center">+10％</td>
+    <td align="center">+12％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">+8％</td>
+    <td align="center">+10％</td>
+    <td align="center">+12％</td>
+    <td align="center">+14％</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">+10％</td>
+    <td align="center">+12％</td>
+    <td align="center">+14％</td>
+    <td align="center">+16％</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">沈静<br>不調和</td>
+    <td align="center" width="70">加算値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">+0％</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">+1％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">+2％</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">+3％</td>
+  </tr>
+</table>
+<br class="cle">
+
+<h4>効果：武器ダメージの増加</h4>
+
+沈静および不調和による加算値は重複される。プロパティの上限を超えて機能しない。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>扇動</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">+10％</td>
+    <td align="center">+15％</td>
+    <td align="center">+20％</td>
+    <td align="center">+25％</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">+15％</td>
+    <td align="center">+20％</td>
+    <td align="center">+25％</td>
+    <td align="center">+30％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">+20％</td>
+    <td align="center">+25％</td>
+    <td align="center">+30％</td>
+    <td align="center">+35％</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">+25％</td>
+    <td align="center">+30％</td>
+    <td align="center">+35％</td>
+    <td align="center">+40％</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">沈静<br>不調和</td>
+    <td align="center" width="70">加算値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">+0％</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">+3％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">+6％</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">+9％</td>
+  </tr>
+</table>
+<br class="cle">
+
+<h4>効果：ダメージボーナス</h4>
+
+<font color="#ff0000">Publish73より追加</font>
+<br>沈静および不調和による加算値は重複されるが、合計値の端数は切り捨てとなる。
+<br>武器攻撃では特効のように乗算ボーナスとして、魔法攻撃では魔法ダメージ＋と同じ扱いとして機能する。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>扇動</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">+0％</td>
+    <td align="center">+1％</td>
+    <td align="center">+2％</td>
+    <td align="center">+3％</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">+1％</td>
+    <td align="center">+3％</td>
+    <td align="center">+4％</td>
+    <td align="center">+6％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">+2％</td>
+    <td align="center">+4％</td>
+    <td align="center">+6％</td>
+    <td align="center">+9％</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">+3％</td>
+    <td align="center">+6％</td>
+    <td align="center">+9％</td>
+    <td align="center">+12％</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">沈静<br>不調和</td>
+    <td align="center" width="70">加算値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">+0.0％</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">+0.5％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">+1.0％</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">+1.5％</td>
+  </tr>
+</table>
+<br class="cle">
+
+
+<h3>Invigorate - Provocation</h3>
+<h4>消費マナ</h4>
+開始時マナコスト　：　22
+<br>維持コスト　：　5（2秒毎）
+<br>効果対象が2体増えるごとに、維持コストが1増加する。騎乗されている生物は対象とはならない。
+<br>discordance、peacemakingnがそれぞれスキル10.0以上（不具合？）で維持コストが1減少する。
+<br>いずれもマナコスト（マジックプロパティ）は有効
+
+<h4>効果：STR,DEX,INTの増加</h4>
+
+沈静および不調和による加算値は重複される。ステータスの上限150は超えない。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>扇動</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">+2</td>
+    <td align="center">+3</td>
+    <td align="center">+4</td>
+    <td align="center">+5</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">+3</td>
+    <td align="center">+4</td>
+    <td align="center">+5</td>
+    <td align="center">+6</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">+4</td>
+    <td align="center">+5</td>
+    <td align="center">+6</td>
+    <td align="center">+7</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">+5</td>
+    <td align="center">+6</td>
+    <td align="center">+7</td>
+    <td align="center">+8</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">沈静<br>不調和</td>
+    <td align="center" width="70">加算値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">2</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">3</td>
+  </tr>
+</table>
+<br class="cle">
+
+<h4>効果：ヒットポイントの増加</h4>
+
+沈静および扇動による加算値は重複される。
+<br>ヒットポイントの増加はプロパティの上限を超えて機能する。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>扇動</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">+5</td>
+    <td align="center">+7</td>
+    <td align="center">+9</td>
+    <td align="center">+11</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">+8</td>
+    <td align="center">+10</td>
+    <td align="center">+12</td>
+    <td align="center">+14</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">+11</td>
+    <td align="center">+13</td>
+    <td align="center">+15</td>
+    <td align="center">+17</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">+14</td>
+    <td align="center">+16</td>
+    <td align="center">+18</td>
+    <td align="center">+20</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">沈静<br>不調和</td>
+    <td align="center" width="70">加算値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">2</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">3</td>
+  </tr>
+</table>
+<br class="cle">
+
+<h4>効果：4秒毎のヒットポイント回復</h4>
+
+沈静および扇動による加算値は重複される。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>扇動</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">4～7</td>
+    <td align="center">5～8</td>
+    <td align="center">6～9</td>
+    <td align="center">7～10</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">6～9</td>
+    <td align="center">7～10</td>
+    <td align="center">8～11</td>
+    <td align="center">9～12</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">8～9</td>
+    <td align="center">9～12</td>
+    <td align="center">10～13</td>
+    <td align="center">11～14</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">10～13</td>
+    <td align="center">11～14</td>
+    <td align="center">12～15</td>
+    <td align="center">13～16</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">沈静<br>不調和</td>
+    <td align="center" width="70">加算値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">2</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">3</td>
+  </tr>
+</table>
+<br class="cle">
+
+</div>
+
+<div id="cat_3" style="display: none">
+
+<h3>Dispire - Discordance</h3>
+<h4>消費マナ</h4>
+開始時マナコスト　：　24
+<br>維持コスト　：　10（2秒毎）
+<br>peacemaking、provocationがそれぞれスキル10.0以上（不具合？）で維持コストが1減少する。
+<br>いずれもマナコスト（マジックプロパティ）は有効
+
+<h4>効果：STRの低下</h4>
+沈静および扇動による加算値は重複される。
+<br>対象の魔法抵抗スキルが高い場合、STR低下量が最大で3減少する。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>不調和</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">-4</td>
+    <td align="center">-6</td>
+    <td align="center">-8</td>
+    <td align="center">-10</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">-6</td>
+    <td align="center">-8</td>
+    <td align="center">-10</td>
+    <td align="center">-12</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">-8</td>
+    <td align="center">-10</td>
+    <td align="center">-12</td>
+    <td align="center">-14</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">-10</td>
+    <td align="center">-12</td>
+    <td align="center">-14</td>
+    <td align="center">-16</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">沈静<br>扇動<br>魔法抵抗</td>
+    <td align="center" width="70">加算値</td>
+    <td align="center" width="70">減少値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">-1</td>
+    <td align="center">1</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">-2</td>
+    <td align="center">2</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">-3</td>
+    <td align="center">3</td>
+  </tr>
+</table>
+<br class="cle">
+
+<h4>効果：属性ダメージ</h4>
+
+沈静および扇動による加算値は重複される。
+<br>対象の魔法抵抗スキルが高い場合、ダメージの基本値が最大で9減少する。
+<br>対NPCでは基本値に対し1.5倍の補正、特効楽器の対象には2倍（合計で3倍）の補正がある。
+<br>ダメージ回数は最大5回で、それまでにMagicresistスキルにより、効果無効化の可能性がある。
+<br><s>Publish73より、Discordanceのクエスト完了後に入手できる本をクリックすると、属性を選択できるようになったが、
+実際の属性は物理のまま変わらない。</s>
+<br>2012/9/5 TC1シャードで修正を確認。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>不調和</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">9</td>
+    <td align="center">13</td>
+    <td align="center">17</td>
+    <td align="center">21</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">14</td>
+    <td align="center">18</td>
+    <td align="center">22</td>
+    <td align="center">26</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">19</td>
+    <td align="center">23</td>
+    <td align="center">27</td>
+    <td align="center">31</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center">24</td>
+    <td align="center">28</td>
+    <td align="center">32</td>
+    <td align="center">36</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">沈静<br>扇動<br>魔法抵抗</td>
+    <td align="center" width="70">加算値</td>
+    <td align="center" width="70">減少値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">2</td>
+    <td align="center">-3</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">4</td>
+    <td align="center">-6</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">6</td>
+    <td align="center">-9</td>
+  </tr>
+</table>
+<br class="cle">
+
+<h3>Tribulation - Discordance</h3>
+<h4>消費マナ</h4>
+開始時マナコスト　：　26
+<br>維持コスト　：　12（2秒毎）
+<br>peacemaking、provocationがそれぞれスキル10.0以上（不具合？）で維持コストが1減少する。
+<br>いずれもマナコスト（マジックプロパティ）は有効
+
+<h4>効果：命中、魔法ダメージプロパティの低下</h4>
+
+沈静および扇動による加算値は重複される。
+<br>対象の魔法抵抗スキルが高い場合、低下量は減少する。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>不調和</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center" colspan="4">-5％</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center" colspan="4">-10％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center" colspan="4">-15％</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center" colspan="4">-20％</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">沈静<br>扇動<br>魔法抵抗</td>
+    <td align="center" width="70">加算値</td>
+    <td align="center" width="70">減少値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">-2％</td>
+    <td align="center">2％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">-4％</td>
+    <td align="center">4％</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">-6％</td>
+    <td align="center">6％</td>
+  </tr>
+</table>
+<br class="cle">
+
+<h4>効果：爆発の追加ダメージ（属性）</h4>
+<br>Publish73より、Discordanceのクエスト完了後に入手できる本をクリックすると、属性を選択できるようになったが、
+実際の属性は物理のまま変わらない。
+<br>2012/9/5 TC1シャードで修正を確認。
+
+
+発生確率
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>不調和</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center" rowspan="4">15％</td>
+    <td align="center" rowspan="4">30％</td>
+    <td align="center" rowspan="4">45％</td>
+    <td align="center" rowspan="4">60％</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">沈静<br>扇動</td>
+    <td align="center" width="70">加算値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">4％</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">8％</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">12％</td>
+  </tr>
+</table>
+<br class="cle">
+
+追加ダメージは、受けたダメージに対する比率が基本値となる。
+沈静および扇動による加算値は重複される。
+<br>対象の魔法抵抗スキルが高い場合、比率が減少する。
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="70">音楽<br>＼<br>不調和</td>
+    <td align="center" width="70">～99.9</td>
+    <td align="center" width="70">～109.9</td>
+    <td align="center" width="70">～119.9</td>
+    <td align="center" width="70">120.0</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center" colspan="4">1/12</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center" colspan="4">2/12</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center" colspan="4">3/12</td>
+  </tr>
+  <tr>
+    <td align="center">～120.0</td>
+    <td align="center" colspan="4">4/12</td>
+  </tr>
+</table>
+
+<table bgcolor="#f0f0c0" class="table01">
+  <tr>
+    <td align="center" width="90">沈静<br>扇動<br>魔法抵抗</td>
+    <td align="center" width="70">加算値</td>
+    <td align="center" width="70">減少値</td>
+  </tr>
+  <tr>
+    <td align="center">～99.9</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td align="center">～109.9</td>
+    <td align="center">1/36</td>
+    <td align="center">-1/18</td>
+  </tr>
+  <tr>
+    <td align="center">～119.9</td>
+    <td align="center">2/36</td>
+    <td align="center">-2/18</td>
+  </tr>
+  <tr>
+    <td align="center">120.0</td>
+    <td align="center">3/36</td>
+    <td align="center">-3/18</td>
+  </tr>
+</table>
+<br class="cle">
+
+</div>
+
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

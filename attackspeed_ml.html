@@ -1,0 +1,584 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style.css" type="text/css" rel="stylesheet">
+<TITLE>攻撃速度計算</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899183</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<div class="block02">
+<br>
+<font size="3">
+<center><font size="5"><b>攻撃速度計算</b></font>（宝珠の守人対応版）</center>
+<HR>
+<script language="javascript">
+<!--
+//speed
+var sokudo;
+sokudo = new Array(30);
+sokudo[0] = 1.25;  //1.25sec
+sokudo[1] = 1.50;  //1.50sec
+sokudo[2] = 1.75;  //1.75sec
+sokudo[3] = 2.00;  //2.00sec
+sokudo[4] = 2.25;  //2.25sec
+sokudo[5] = 2.50;  //2.50sec
+sokudo[6] = 2.75;  //2.75sec
+sokudo[7] = 3.00;  //3.00sec
+sokudo[8] = 3.25;  //3.25sec
+sokudo[9] = 3.50;  //3.50sec
+sokudo[10] = 3.75; //3.75sec
+sokudo[11] = 4.00; //4.00sec
+sokudo[12] = 4.25; //4.25sec
+sokudo[13] = 4.50; //4.00sec
+sokudo[14] = 4.75; //4.75sec
+sokudo[15] = 5.00; //5.00sec
+sokudo[16] = 5.25; //5.25sec
+sokudo[17] = 5.50; //5.50sec
+sokudo[18] = 5.75; //5.75sec
+sokudo[19] = 6.00; //6.00sec
+sokudo[20] = 6.25; //6.25sec
+sokudo[21] = 6.50; //6.50sec
+sokudo[22] = 6.75; //6.75sec
+sokudo[23] = 7.00; //7.00sec
+sokudo[24] = 7.25; //7.25sec
+sokudo[25] = 7.50; //7.50sec
+sokudo[26] = 7.75; //7.75sec
+sokudo[27] = 8.00; //8.00sec
+sokudo[28] = 8.25; //8.25sec
+sokudo[29] = 8.50; //8.50sec
+//speed
+
+//wepspd
+var speed;
+speed = new Array(83);
+speed[0] = 50.0;   //
+speed[1] = 36.0;  //
+speed[2] = 33.0;  //
+speed[3] = 47.0;  //
+speed[4] = 44.0;  //
+speed[5] = 46.0;  //
+speed[6] = 30.0;  //
+speed[7] = 37.0;  //
+speed[8] = 28.0;  //
+speed[9] = 49.0;  //
+speed[10] = 46.0; //
+speed[11] = 49.0; //
+speed[12] = 35.0; //
+speed[13] = 28.0; //
+speed[14] = 37.0; //
+speed[15] = 25.0; //
+speed[16] = 32.0; //
+speed[17] = 37.0; //
+speed[18] = 31.0; //
+speed[19] = 33.0; //
+speed[20] = 33.0;  //
+speed[21] = 29.0;  //
+speed[22] = 31.0;  //
+speed[23] = 41.0;  //
+speed[24] = 56.0;  //
+speed[25] = 53.0;  //
+speed[26] = 24.0;  //
+speed[27] = 43.0;  //
+speed[28] = 49.0;  //
+speed[29] = 37.0;  //
+speed[30] = 55.0; //
+speed[31] = 42.0; //
+speed[32] = 43.0; //
+speed[33] = 28.0; //
+speed[34] = 40.0; //
+speed[35] = 32.0; //
+speed[36] = 30.0; //
+speed[37] = 33.0; //
+speed[38] = 26.0; //
+speed[39] = 28.0; //
+speed[40] = 33.0;   //
+speed[41] = 33.0;  //
+speed[42] = 39.0;  //
+speed[43] = 44.0;  //
+speed[44] = 40.0;  //
+speed[45] = 33.0;  //
+speed[46] = 48.0;  //
+speed[47] = 40.0;  //
+speed[48] = 25.0;  //
+speed[49] = 25.0;  //
+speed[50] = 24.0; //
+speed[51] = 22.0; //
+speed[52] = 41.0; //
+speed[53] = 32.0; //
+speed[54] = 44.0; //
+speed[55] = 32.0; //
+speed[56] = 40.0; //
+speed[57] = 53.0; //
+speed[58] = 55.0; //
+speed[59] = 55.0; //
+speed[60] = 53.0; //
+speed[61] = 47.0; //
+speed[62] = 50.0; //
+speed[63] = 45.0; //
+speed[64] = 25.0; //
+speed[65] = 43.0; //
+speed[66] = 48.0; //
+speed[67] = 44.0; //
+speed[68] = 50.0; //
+speed[69] = 42.0; //
+speed[70] = 35.0;   //
+speed[71] = 41.0;  //
+speed[72] = 28.0;  //
+speed[73] = 31.0;  //
+speed[74] = 37.0;  //
+speed[75] = 48.0;  //
+speed[76] = 27.0;  //
+speed[77] = 38.0;  //
+speed[78] = 50.0;  //
+speed[79] = 26.0;  //
+speed[80] = 23.0;  //
+speed[81] = 21.0;  //
+speed[82] = 24.0;  //
+//speed
+
+
+            
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.speed01.value = 0.0;
+  form.speed02.value = 0.0;
+  form.weapon1.value = 0.0;
+  form.spdb.value = 0.0;
+
+return true;
+}
+
+//計算
+function keisan1(form)
+{
+var form = document.form_keisan;
+  spd = form.weapon1.options[form.weapon1.selectedIndex].value;
+  speed01 = speed[spd];
+    form.speed01.value = speed01;
+  spdb = form.spdb.options[form.spdb.selectedIndex].value;
+  speed02 = Math.floor(speed01 * (1.0 + spdb / 100.0));
+    form.speed02.value = speed02;
+
+  stam = new Array(30);
+    for (i=0; i<30; i++)
+    {
+       stam[i] = Math.max(0.0, Math.floor(20000.0 / speed02 / (sokudo[i] + 0.75) - 100.0) + 1.0);
+    }
+
+    form.stam00.value = stam[0];
+    form.stam01.value = stam[1];
+    form.stam02.value = stam[2];
+    form.stam03.value = stam[3];
+    form.stam04.value = stam[4];
+    form.stam05.value = stam[5];
+    form.stam06.value = stam[6];
+    form.stam07.value = stam[7];
+    form.stam08.value = stam[8];
+    form.stam09.value = stam[9];
+    form.stam10.value = stam[10];
+    form.stam11.value = stam[11];
+    form.stam12.value = stam[12];
+    form.stam13.value = stam[13];
+    form.stam14.value = stam[14];
+    form.stam15.value = stam[15];
+    form.stam16.value = stam[16];
+    form.stam17.value = stam[17];
+    form.stam18.value = stam[18];
+    form.stam19.value = stam[19];
+    form.stam20.value = stam[20];
+    form.stam21.value = stam[21];
+    form.stam22.value = stam[22];
+    form.stam23.value = stam[23];
+    form.stam24.value = stam[24];
+    form.stam25.value = stam[25];
+    form.stam26.value = stam[26];
+    form.stam27.value = stam[27];
+    form.stam28.value = stam[28];
+    form.stam29.value = stam[29];
+
+return true;
+}
+//-->
+</script>
+
+<form name="form_keisan">
+宝珠の守人で追加された武器にも対応しています。武器および特殊効果等を加味した速度増加（-60％～60％まで）を選択してください。
+<br>特定の攻撃間隔に必要なStaminaは下の式で算出しています。
+<br><font color="#ff0000">Stamina＝ [ 20000 /{ (武器速度)×(攻撃間隔 + 0.75) } － 100 ] ＋ 1</font>
+<br>[ 　 ]の中で端数切捨となります。
+<br>また、Staminaは攻撃(武器直接・魔法直接等)によるダメージで減少します。
+<br><font color="#ff0000">Stamina減少量＝(Damage/直前のHP)×(直前のStamina)－5</font>　(端数切り上げ)
+<p>
+武器選択　
+      <select name="weapon1" SIZE="1" onchange="keisan1(form)">
+<option value="0">--Sword系片手--
+<option value="1">Bone harvester
+<option value="2">Broadsword
+<option value="3">Crescent blade
+<option value="4">Cutlass
+<option value="5">Katana
+<option value="6">Longsword
+<option value="7">Scimitar
+<option value="8">Viking sword
+<option value="9">Butcher knife
+<option value="10">Cleaver
+<option value="11">Skinning knife
+<option value="12">Pickaxe
+<option value="0">--Sword系両手--
+<option value="13">Bardiche
+<option value="14">Bladed staff
+<option value="15">Halberd
+<option value="16">Scythe
+<option value="17">Axe
+<option value="18">Battle axe
+<option value="19">Double axe
+<option value="20">Executioner's axe
+<option value="21">Large battle axe
+<option value="22">Two handed axe
+<option value="23">Hatchet
+<option value="0">--Fencing系--
+<option value="24">Dagger
+<option value="25">Kryss
+<option value="26">Lance
+<option value="27">Warfork
+<option value="28">Double bladed staff
+<option value="29">Pike
+<option value="30">Short spear
+<option value="31">Spear
+<option value="32">Pitch fork
+<option value="0">--Mace系--
+<option value="33">Hammer pick
+<option value="34">Mace
+<option value="35">Maul
+<option value="36">Scepter
+<option value="37">War axe
+<option value="38">War mace
+<option value="39">War hammer
+<option value="40">Sledge hammer
+<option value="41">Smith's hammer
+<option value="42">Black staff
+<option value="43">Club
+<option value="44">Crook
+<option value="45">Gnarled staff
+<option value="46">Quarter staff
+<option value="47">Wand
+<option value="0">--Archery系--
+<option value="48">Bow
+<option value="49">Composite bow
+<option value="79">Composite bow[P39]
+<option value="50">Crossbow
+<option value="80">Crossbow[P39]
+<option value="51">Heavy crossbow
+<option value="81">Heavy crossbow[P39]
+<option value="52">Repeating crossbow
+<option value="0">--武刀の天地追加--
+<option value="53">No-dachi
+<option value="54">Wakizashi
+<option value="55">Lajatang
+<option value="56">Daisho
+<option value="57">Tekagi
+<option value="58">Kama
+<option value="59">Sai
+<option value="60">Bokuto
+<option value="61">Nunchaku
+<option value="62">Tessen
+<option value="63">Tetsubo
+<option value="64">Yumi
+<option value="82">Yumi[P39]
+<option value="0">--宝珠の守人追加--
+<option value="65">Radient scimitar
+<option value="66">War cleaver
+<option value="67">Elven spellblade
+<option value="68">Assassin spike
+<option value="69">Leaf blade
+<option value="70">Rune blade
+<option value="71">Elven Machete
+<option value="72">Ornate axe(old)
+<option value="73">Ornate axe(now)
+<option value="74">Diamond mace
+<option value="75">Wild staff
+<option value="76">Elven composite bow
+<option value="77">Magical shortbow
+<option value="78">素手
+  </select>
+</p>
+<table align="center" class="table05">
+ <tr>
+  <td align="center" width="80">基本速度</td>
+  <td align="center" width="120">速度増加合計</td>
+  <td align="center" width="120">補正後速度</td>
+ </tr>
+ <tr>
+  <td align="center" width="80"><INPUT readonly TYPE="text" NAME="speed01" SIZE="3"></td>
+  <td align="center" width="120">＋　
+  <select name="spdb" SIZE="1" onchange="keisan1(form)">
+<option value="-60">-60
+<option value="-55">-55
+<option value="-50">-50
+<option value="-45">-45
+<option value="-40">-40
+<option value="-35">-35
+<option value="-30">-30
+<option value="-25">-25
+<option value="-20">-20
+<option value="-15">-15
+<option value="-10">-10
+<option value="-5">-5
+<option value="0" selected>0
+<option value="5">5
+<option value="10">10
+<option value="15">15
+<option value="20">20
+<option value="25">25
+<option value="30">30
+<option value="35">35
+<option value="40">40
+<option value="45">45
+<option value="50">50
+<option value="55">55
+<option value="60">60
+  </select>
+　％
+</td>
+ <td align="center" width="120"> ＝　<INPUT readonly TYPE="text" NAME="speed02" SIZE="3"></td>
+ </tr>
+</table>
+<br>
+<table align="center" class="table04">
+ <tr>
+   <td align="center" bgcolor="#99ffcc" colspan="10">攻撃間隔(秒)に必要なStamina</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#9999ff" width="40">8.50</td>
+   <td align="center" bgcolor="#9999ff" width="40">8.25</td>
+   <td align="center" bgcolor="#99ccff" width="40">8.00</td>
+   <td align="center" bgcolor="#99ccff" width="40">7.75</td>
+   <td align="center" bgcolor="#99ccff" width="40">7.50</td>
+   <td align="center" bgcolor="#99ccff" width="40">7.25</td>
+   <td align="center" bgcolor="#99ffff" width="40">7.00</td>
+   <td align="center" bgcolor="#99ffff" width="40">6.75</td>
+   <td align="center" bgcolor="#99ffff" width="40">6.50</td>
+   <td align="center" bgcolor="#99ffff" width="40">6.25</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#9999ff"><INPUT readonly TYPE="text" NAME="stam29" SIZE="3"></td>
+   <td align="center" bgcolor="#9999ff"><INPUT readonly TYPE="text" NAME="stam28" SIZE="3"></td>
+   <td align="center" bgcolor="#99ccff"><INPUT readonly TYPE="text" NAME="stam27" SIZE="3"></td>
+   <td align="center" bgcolor="#99ccff"><INPUT readonly TYPE="text" NAME="stam26" SIZE="3"></td>
+   <td align="center" bgcolor="#99ccff"><INPUT readonly TYPE="text" NAME="stam25" SIZE="3"></td>
+   <td align="center" bgcolor="#99ccff"><INPUT readonly TYPE="text" NAME="stam24" SIZE="3"></td>
+   <td align="center" bgcolor="#99ffff"><INPUT readonly TYPE="text" NAME="stam23" SIZE="3"></td>
+   <td align="center" bgcolor="#99ffff"><INPUT readonly TYPE="text" NAME="stam22" SIZE="3"></td>
+   <td align="center" bgcolor="#99ffff"><INPUT readonly TYPE="text" NAME="stam21" SIZE="3"></td>
+   <td align="center" bgcolor="#99ffff"><INPUT readonly TYPE="text" NAME="stam20" SIZE="3"></td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffcc">6.00</td>
+   <td align="center" bgcolor="#99ffcc">5.75</td>
+   <td align="center" bgcolor="#99ffcc">5.50</td>
+   <td align="center" bgcolor="#99ffcc">5.25</td>
+   <td align="center" bgcolor="#99ff99">5.00</td>
+   <td align="center" bgcolor="#99ff99">4.75</td>
+   <td align="center" bgcolor="#99ff99">4.50</td>
+   <td align="center" bgcolor="#99ff99">4.25</td>
+   <td align="center" bgcolor="#ccff99">4.00</td>
+   <td align="center" bgcolor="#ccff99">3.75</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffcc"><INPUT readonly TYPE="text" NAME="stam19" SIZE="3"></td>
+   <td align="center" bgcolor="#99ffcc"><INPUT readonly TYPE="text" NAME="stam18" SIZE="3"></td>
+   <td align="center" bgcolor="#99ffcc"><INPUT readonly TYPE="text" NAME="stam17" SIZE="3"></td>
+   <td align="center" bgcolor="#99ffcc"><INPUT readonly TYPE="text" NAME="stam16" SIZE="3"></td>
+   <td align="center" bgcolor="#99ff99"><INPUT readonly TYPE="text" NAME="stam15" SIZE="3"></td>
+   <td align="center" bgcolor="#99ff99"><INPUT readonly TYPE="text" NAME="stam14" SIZE="3"></td>
+   <td align="center" bgcolor="#99ff99"><INPUT readonly TYPE="text" NAME="stam13" SIZE="3"></td>
+   <td align="center" bgcolor="#99ff99"><INPUT readonly TYPE="text" NAME="stam12" SIZE="3"></td>
+   <td align="center" bgcolor="#ccff99"><INPUT readonly TYPE="text" NAME="stam11" SIZE="3"></td>
+   <td align="center" bgcolor="#ccff99"><INPUT readonly TYPE="text" NAME="stam10" SIZE="3"></td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ccff99">3.50</td>
+   <td align="center" bgcolor="#ccff99">3.25</td>
+   <td align="center" bgcolor="#ffff99">3.00</td>
+   <td align="center" bgcolor="#ffff99">2.75</td>
+   <td align="center" bgcolor="#ffcc99">2.50</td>
+   <td align="center" bgcolor="#ffcc99">2.25</td>
+   <td align="center" bgcolor="#ff9999">2.00</td>
+   <td align="center" bgcolor="#ff9999">1.75</td>
+   <td align="center" bgcolor="#ff99cc">1.50</td>
+   <td align="center" bgcolor="#ff99cc">1.25</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ccff99"><INPUT readonly TYPE="text" NAME="stam09" SIZE="3"></td>
+   <td align="center" bgcolor="#ccff99"><INPUT readonly TYPE="text" NAME="stam08" SIZE="3"></td>
+   <td align="center" bgcolor="#ffff99"><INPUT readonly TYPE="text" NAME="stam07" SIZE="3"></td>
+   <td align="center" bgcolor="#ffff99"><INPUT readonly TYPE="text" NAME="stam06" SIZE="3"></td>
+   <td align="center" bgcolor="#ffcc99"><INPUT readonly TYPE="text" NAME="stam05" SIZE="3"></td>
+   <td align="center" bgcolor="#ffcc99"><INPUT readonly TYPE="text" NAME="stam04" SIZE="3"></td>
+   <td align="center" bgcolor="#ff9999"><INPUT readonly TYPE="text" NAME="stam03" SIZE="3"></td>
+   <td align="center" bgcolor="#ff9999"><INPUT readonly TYPE="text" NAME="stam02" SIZE="3"></td>
+   <td align="center" bgcolor="#ff99cc"><INPUT readonly TYPE="text" NAME="stam01" SIZE="3"></td>
+   <td align="center" bgcolor="#ff99cc"><INPUT readonly TYPE="text" NAME="stam00" SIZE="3"></td>
+ </tr>
+</table>
+</form>
+</p>
+<p>武器速度一覧
+<table align="center" class="table04">
+ <tr>
+   <td align="center" bgcolor="#99ffcc" width="80">基本速度</td>
+   <td align="center" bgcolor="#ffff99" width="350">対応武器名</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#9999ff">22</td>
+   <td align="left" bgcolor="#ffffcc">Heavy crossbow</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#9999ff">23</td>
+   <td align="left" bgcolor="#ffffcc">&nbsp;</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#9999ff">24</td>
+   <td align="left" bgcolor="#ffffcc">Lance, Crossbow</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ccff">25</td>
+   <td align="left" bgcolor="#ffffcc">Halberd, Yumi, Composite bow, Bow</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ccff">26</td>
+   <td align="left" bgcolor="#ffffcc">War mace</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ccff">27</td>
+   <td align="left" bgcolor="#ffffcc">Elven composite bow</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ccff">28</td>
+   <td align="left" bgcolor="#ffffcc">Hammer pick, War hammer, Viking sword, Bardiche</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ccff">29</td>
+   <td align="left" bgcolor="#ffffcc">Large battle axe</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffff">30</td>
+   <td align="left" bgcolor="#ffffcc">Long sword, Scepter</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffff">31</td>
+   <td align="left" bgcolor="#ffffcc">Battle axe, Two handed axe, Ornate axe</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffff">32</td>
+   <td align="left" bgcolor="#ffffcc">No-dachi, Scythe, Lajatang, Maul</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffff">33</td>
+   <td align="left" bgcolor="#ffffcc">Broadsword, Double axe, Executioner's axe, War axe,<br>Gnarled staff, Sledge hammer, Smith's hammer</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffff">34</td>
+   <td align="left" bgcolor="#ffffcc">&nbsp;</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffcc">35</td>
+   <td align="left" bgcolor="#ffffcc">Rune blade, Pick axe</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffcc">36</td>
+   <td align="left" bgcolor="#ffffcc">Bone harvester</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffcc">37</td>
+   <td align="left" bgcolor="#ffffcc">Scimitar, Axe, Bladed staff, Pike, Diamond mace</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffcc">38</td>
+   <td align="left" bgcolor="#ffffcc">Magical shortbow</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ffcc">39</td>
+   <td align="left" bgcolor="#ffffcc">Black staff</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ff99">40</td>
+   <td align="left" bgcolor="#ffffcc">Daisho, Mace, Crook, Wand</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ff99">41</td>
+   <td align="left" bgcolor="#ffffcc">Elven Machete, Hatchet, Repeating Crossbow</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ff99">42</td>
+   <td align="left" bgcolor="#ffffcc">Leaf blade, Spear</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ff99">43</td>
+   <td align="left" bgcolor="#ffffcc">Radient scimitar, War fork, Pitchfork</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#99ff99">44</td>
+   <td align="left" bgcolor="#ffffcc">Elven spellblade, Wakizashi, Cutlass, Club</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ccff99">45</td>
+   <td align="left" bgcolor="#ffffcc">Tetsubo</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ccff99">46</td>
+   <td align="left" bgcolor="#ffffcc">Katana, Cleaver</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ccff99">47</td>
+   <td align="left" bgcolor="#ffffcc">Crescent blade, Nunchaku</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ccff99">48</td>
+   <td align="left" bgcolor="#ffffcc">War cleaver, Quarter staff, Wild staff</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ccff99">49</td>
+   <td align="left" bgcolor="#ffffcc">Butcher knife, Skinning knife</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ffff99">50</td>
+   <td align="left" bgcolor="#ffffcc">Assassin spike, Tessen</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ffff99">51</td>
+   <td align="left" bgcolor="#ffffcc">&nbsp;</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ffff99">52</td>
+   <td align="left" bgcolor="#ffffcc">&nbsp;</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ffff99">53</td>
+   <td align="left" bgcolor="#ffffcc">Bokuto, Tekagi, Kryss</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ffff99">54</td>
+   <td align="left" bgcolor="#ffffcc">&nbsp;</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ffcc99">55</td>
+   <td align="left" bgcolor="#ffffcc">Kama, Sai, Short spear</td>
+ </tr>
+ <tr>
+   <td align="center" bgcolor="#ffcc99">56</td>
+   <td align="left" bgcolor="#ffffcc">Dagger</td>
+ </tr>
+</table>
+</p>
+</font>
+</div>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

@@ -1,0 +1,733 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>命中率計算</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898924</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+ 
+<!--以下本文-->
+ 
+<h2>命中率計算</h2>
+<HR>
+ 
+<script language="javascript"> 
+<!--
+//Wep Base Req
+var wep3;
+wep3 = new Array(7);
+wep3[0] = 0.0 ;
+wep3[1] = 425.0 ;
+wep3[2] = 412.0 ;
+wep3[3] = 640.0 ;
+wep3[4] = 620.0 ;
+wep3[5] = 860.0 ;
+wep3[6] = 830.0 ;
+//
+ 
+//meityu_hosei
+var hose;
+hose=new Array(88);
+hose[0] = -31.0 ;
+hose[1] = 2.0 ;
+hose[2] = 5.0 ;
+hose[3] = 2.0 ;
+hose[4] = 111.0 ;
+hose[5] = 111.0 ;
+hose[6] = 111.0 ;
+hose[7] = 111.0 ;
+hose[8] = 111.0 ;
+hose[9] = 111.0 ;
+hose[10] = 111.0 ;
+hose[11] = -40.0 ;
+hose[12] = -3.0 ;
+hose[13] = 2.0 ;
+hose[14] = 5.0 ;
+hose[15] = 2.0 ;
+hose[16] = 111.0 ;
+hose[17] = 111.0 ;
+hose[18] = 111.0 ;
+hose[19] = 111.0 ;
+hose[20] = 111.0 ;
+hose[21] = 111.0 ;
+hose[22] = -47.0 ;
+hose[23] = -12.0 ;
+hose[24] = 2.0 ;
+hose[25] = 5.0 ;
+hose[26] = 2.0 ;
+hose[27] = 0.0 ;
+hose[28] = 111.0 ;
+hose[29] = 111.0 ;
+hose[30] = 111.0 ;
+hose[31] = 111.0 ;
+hose[32] = 111.0 ;
+hose[33] = -50.0 ;
+hose[34] = -19.0 ;
+hose[35] = 2.0 ;
+hose[36] = 5.0 ;
+hose[37] = 2.0 ;
+hose[38] = 0.0 ;
+hose[39] = 0.0 ;
+hose[40] = 111.0 ;
+hose[41] = 111.0 ;
+hose[42] = 111.0 ;
+hose[43] = 111.0 ;
+hose[44] = -50.0 ;
+hose[45] = -26.0 ;
+hose[46] = -3.0 ;
+hose[47] = 2.0 ;
+hose[48] = 5.0 ;
+hose[49] = 2.0 ;
+hose[50] = 0.0 ;
+hose[51] = 0.0 ;
+hose[52] = 111.0 ;
+hose[53] = 111.0 ;
+hose[54] = 111.0 ;
+hose[55] = -50.0 ;
+hose[56] = -31.0 ;
+hose[57] = -9.0 ;
+hose[58] = 2.0 ;
+hose[59] = 5.0 ;
+hose[60] = 5.0 ;
+hose[61] = 2.0 ;
+hose[62] = 0.0 ;
+hose[63] = 0.0 ;
+hose[64] = 111.0 ;
+hose[65] = 111.0 ;
+hose[66] = -50.0 ;
+hose[67] = -36.0 ;
+hose[68] = -14.0 ;
+hose[69] = 2.0 ;
+hose[70] = 5.0 ;
+hose[71] = 5.0 ;
+hose[72] = 2.0 ;
+hose[73] = 2.0 ;
+hose[74] = 0.0 ;
+hose[75] = 0.0 ;
+hose[76] = 111.0 ;
+hose[77] = -50.0 ;
+hose[78] = -40.0 ;
+hose[79] = -19.0 ;
+hose[80] = -3.0 ;
+hose[81] = 2.0 ;
+hose[82] = 5.0 ;
+hose[83] = 5.0 ;
+hose[84] = 5.0 ;
+hose[85] = 2.0 ;
+hose[86] = 2.0 ;
+hose[87] = 0.0 ;
+//
+ 
+ 
+function sim0(form)
+{
+var form = document.form_sim;
+  form.race_a.value = 0.0;
+  form.race_b.value = 0.0;
+  form.skill_a.value = 0.0;
+  form.skill_b.value = 0.0;
+  form.equip_a.value = 0.0;
+  form.equip_b.value = 0.0;
+  form.parry_a.value = 0.0;
+  form.parry_b.value = 0.0;
+  form.busi_a.value = 0.0;
+  form.busi_b.value = 0.0;
+  form.chiv_a.value = 0.0;
+  form.chiv_b.value = 0.0;
+  form.karma_a.value = 0.0;
+  form.karma_b.value = 0.0;
+  form.dex_a.value = 0.0;
+  form.dex_b.value = 0.0;
+  form.hcinc_a.value = 0.0;
+  form.hcinc_b.value = 0.0;
+  form.dcinc_a.value = 0.0;
+  form.dcinc_b.value = 0.0;
+  form.divf_a.value = 0.0;
+  form.divf_b.value = 0.0;
+  form.light_a.value = 0.0;
+  form.light_b.value = 0.0;
+  form.hcdec_a.value = 0.0;
+  form.hcdec_b.value = 0.0;
+  form.dcdec_a.value = 0.0;
+  form.dcdec_b.value = 0.0;
+  form.thci_a.value = 0.0;
+  form.thci_b.value = 0.0;
+  form.tdci_a.value = 0.0;
+  form.tdci_b.value = 0.0;
+  form.sya.value = 0.0;
+  return true;
+}
+ 
+function sim1(form)
+{
+var form = document.form_sim;
+  sk_a = form.skill_a.value;
+  sk_b = form.skill_b.value;
+  hcinc1_a = form_sim.hcinc_a.value;
+  hcinc1_b = form_sim.hcinc_b.value;
+  dcinc1_a = form_sim.dcinc_a.value;
+  dcinc1_b = form_sim.dcinc_b.value;
+  parry1_a = form_sim.parry_a.value;
+  parry1_b = form_sim.parry_b.value;
+  busi1_a = form_sim.busi_a.value;
+  busi1_b = form_sim.busi_b.value;
+  chiv1_a = form_sim.chiv_a.value;
+  chiv1_b = form_sim.chiv_b.value;
+  karma1_a = form_sim.karma_a.value;
+  karma1_b = form_sim.karma_b.value;
+  karma1_a = Math.min(20000.0, Math.max(-20000.0, karma1_a));
+  karma1_b = Math.min(20000.0, Math.max(-20000.0, karma1_b));
+  dex1_a = form_sim.dex_a.value;
+  dex1_b = form_sim.dex_b.value;
+  rac1_a = form_sim.race_a.options[form_sim.race_a.selectedIndex].value;
+  rac1_b = form_sim.race_b.options[form_sim.race_b.selectedIndex].value;
+  eqp1_a = form_sim.equip_a.options[form_sim.equip_a.selectedIndex].value;
+  eqp1_b = form_sim.equip_b.options[form_sim.equip_b.selectedIndex].value;
+  disco1_a = form_sim.disco_a.options[form_sim.disco_a.selectedIndex].value;
+  disco1_b = form_sim.disco_b.options[form_sim.disco_b.selectedIndex].value;
+ 
+  sk_a = Math.floor(10 * sk_a * (1 - disco1_b * 0.01)) / 10;
+  sk_b = Math.floor(10 * sk_b * (1 - disco1_a * 0.01)) / 10;
+  parry1_a = Math.floor(10 * parry1_a * (1 - disco1_b * 0.01)) / 10;
+  parry1_b = Math.floor(10 * parry1_b * (1 - disco1_a * 0.01)) / 10;
+  busi1_a = Math.floor(10 * busi1_a * (1 - disco1_b * 0.01)) / 10;
+  busi1_b = Math.floor(10 * busi1_b * (1 - disco1_a * 0.01)) / 10;
+ 
+  buki = form.weapon1.options[form.weapon1.selectedIndex].value;
+  rng1 = Math.floor(wep3[buki]/100);
+  rng2 = (wep3[buki] % 100);
+  st = form.str_a.value;
+ 
+  sya = rng1 + Math.min(3.0, Math.max(0.0, Math.floor(3.0 * (st - rng2) / (140.0 - rng2))));
+  form.sya.value = sya;
+  hol1 = Math.min(90.0, Math.max(0.0, Math.floor(180 * (dex1_a - rng2) / (140.0 - rng2) - 90.0)));
+  hol2 = Math.min(90.0, Math.floor(0.75 * sk_a));
+  hol3 = Math.min(90.0, Math.max(0.0, hol1 + hol2));
+if((sk_a>=120)&&(dex1_a>=140)){
+ hol3 = 105.0;
+}
+ 
+if(eqp1_a == 1){
+ shhc_a = Math.floor(parry1_a * 2 / 3 - 100);
+}
+else{
+ shhc_a = 0.0;
+}
+ 
+if((form.divf_a.checked)&&(chiv1_a>=25.0)){
+ 
+  para01 = Math.floor(0.1 * Math.sqrt(300 * chiv1_a * (karma1_a + 40000.0) / 40000.0));
+ divhc_a = Math.floor((6 * para01 + 32.0 * 1.0)/ 11.0);
+ divdc_a = -20.0 + 5.0 * Math.max(0.0, Math.floor((chiv1_a - 100.0) / 10.0));
+}
+else{
+ divhc_a = 0.0;
+ divdc_a = 0.0;
+}
+ 
+if((form.divf_b.checked)&&(chiv1_b>=25.0)){
+  para02 = Math.floor(0.1 * Math.sqrt(300 * chiv1_b * (karma1_b + 40000.0) / 40000.0));
+ divhc_b = Math.floor((6 * para02 + 32.0 * 1.0)/ 11.0);
+ divdc_b = -20.0 + 5.0 * Math.max(0.0, Math.floor((chiv1_b - 100.0) / 10.0));
+}
+else{
+ divhc_b = 0.0;
+ divdc_b = 0.0;
+}
+ 
+if(form.light_a.checked){
+ lighth_a = 50.0;
+ lightd_a = 0.0;
+}
+else{
+ lighth_a = 0.0;
+ lightd_a = 0.0;
+}
+ 
+if(form.light_b.checked){
+ lighth_b = 50.0;
+ lightd_b = 0.0;
+}
+else{
+ lighth_b = 0.0;
+ lightd_b = 0.0;
+}
+ 
+ 
+if(form.hcdec_a.checked){
+ hcdec_a = -25.0;
+}
+else{
+ hcdec_a = 0.0;
+}
+ 
+if(form.hcdec_b.checked){
+ hcdec_b = -25.0;
+}
+else{
+ hcdec_b = 0.0;
+}
+ 
+if(form.dcdec_a.checked){
+ dcdec_a = -25.0;
+}
+else{
+ dcdec_a = 0.0;
+}
+ 
+if(form.dcdec_b.checked){
+ dcdec_b = -25.0;
+}
+else{
+ dcdec_b = 0.0;
+}
+ 
+ thci_a = parseFloat(hcinc1_a) + parseFloat(lighth_a) + parseFloat(divhc_a) + parseFloat(hcdec_a) + parseFloat(shhc_a);
+ thci_b = parseFloat(hcinc1_b) + parseFloat(lighth_b) + parseFloat(divhc_b) + parseFloat(hcdec_b);
+ tdci_a = parseFloat(dcinc1_a) + parseFloat(lightd_a) + parseFloat(divdc_a) + parseFloat(dcdec_a) - parseFloat(disco1_b);
+ tdci_b = parseFloat(dcinc1_b) + parseFloat(lightd_b) + parseFloat(divdc_b) + parseFloat(dcdec_b) - parseFloat(disco1_a);
+ 
+ hc_a = Math.min(100.0, Math.max(2.0 , Math.floor(50.0 * ((parseFloat(sk_a) + 20.0) / (parseFloat(sk_b) + 20.0)) * (Math.min(45.0, thci_a) + parseFloat(rac1_a) + 100.0) / (Math.min(45.0, tdci_b) + 100.0)))) ;
+ hc_b = Math.min(100.0, Math.max(2.0 , Math.floor(50.0 * ((parseFloat(sk_b) + 20.0) / (parseFloat(sk_a) + 20.0)) * (Math.min(45.0, thci_b) + parseFloat(rac1_b) + 100.0) / (Math.min(45.0, tdci_a) + 100.0)))) ;
+ 
+ 
+ 
+ msk_a =Math.max(parry1_a, busi1_a);
+ msk_b =Math.max(parry1_b, busi1_b);
+ 
+if(eqp1_a == 0){
+ block_a = 0.0;
+}
+else if(eqp1_a == 1){
+ block_a = Math.floor(10.0 * ((1.00 - Math.max(0.0, Math.min(70.0, 80.0 - dex1_a))/100) * ((parry1_a - busi1_a) * 0.25 + 5.0 * Math.floor(Math.max(0.0, Math.min(100.0, parry1_a)) / 100)))) /10;
+ block_a = Math.max( 0.0 , block_a);
+}
+else if(eqp1_a == 2){
+ bk_a1 = (parry1_a * 0.125 + 5.0 * Math.floor(Math.max(0.0, Math.min(100.0, parry1_a)) / 100));
+ bk_a2 = (parry1_a * busi1_a) / 480 + 5.0 * Math.floor(Math.max(0.0, Math.min(100.0, msk_a)) / 100);
+ block_a = Math.floor(10.0 * ((1.00 - Math.max(0.0, Math.min(70.0, 80.0 - dex1_a))/100) * Math.max( bk_a1, bk_a2 ))) / 10;
+}
+else{
+ bk_a1 = (parry1_a * 0.125 + 5.0 * Math.floor(Math.max(0.0, Math.min(100.0, parry1_a)) / 100));
+ bk_a2 = (parry1_a * busi1_a) / 411.4 + 5.0 * Math.floor(Math.max(0.0, Math.min(100.0, msk_a)) / 100);
+ block_a = Math.floor(10.0 * ((1.00 - Math.max(0.0, Math.min(70.0, 80.0 - dex1_a))/100) * Math.max( bk_a1, bk_a2 ))) / 10;
+}
+ 
+if(eqp1_b == 0){
+ block_b = 0.0;
+}
+else if(eqp1_b == 1){
+ block_b = Math.floor(10.0 * ((1.00 - Math.max(0.0, Math.min(70.0, 80.0 - dex1_b))/100) * ((parry1_b - busi1_b) * 0.25 + 5.0 * Math.floor(Math.max(0.0, Math.min(100.0, parry1_b)) / 100)))) / 10;
+ block_b = Math.max( 0.0 , block_b);
+}
+else if(eqp1_b == 2){
+ bk_b1 = (parry1_b * 0.125 + 5.0 * Math.floor(Math.max(0.0, Math.min(100.0, parry1_b)) / 100));
+ bk_b2 = (parry1_b * busi1_b) / 480 + 5.0 * Math.floor(Math.max(0.0, Math.min(100.0, msk_b)) / 100);
+ block_b = Math.floor(10.0 * ((1.00 - Math.max(0.0, Math.min(70.0, 80.0 - dex1_b))/100) * Math.max( bk_b1, bk_b2 ))) / 10;
+}
+else{
+ bk_b1 = (parry1_b * 0.125 + 5.0 * Math.floor(Math.max(0.0, Math.min(100.0, parry1_b)) / 100));
+ bk_b2 = (parry1_b * busi1_b) / 411.4 + 5.0 * Math.floor(Math.max(0.0, Math.min(100.0, msk_b)) / 100);
+ block_b = Math.floor(10.0 * ((1.00 - Math.max(0.0, Math.min(70.0, 80.0 - dex1_b))/100) * Math.max( bk_b1, bk_b2 ))) / 10;
+}
+ 
+  dni = new Array(11);
+  ddd = new Array(22);
+ 
+ for (i=0; i<11; i++)
+  {
+  dni[i] = hose[11*(sya-4)+i];
+ if((hol3==105.0)&&(i==0))
+    {
+  dni[i] = 5.0;
+    }
+ else if((dni[i]<0)&&(i==0))
+    {
+  dni[i] = Math.ceil(dni[i] * (1.0 - hol3 / 100.0));
+    }
+ else if(dni[i]<0)
+    {
+  dni[i] = Math.ceil(dni[i] * (1.0 - hol1 / 100.0));
+    }
+ if(dni[i]>100)
+    {
+  dni[i] = -100.0;
+    }
+ ddd[2*i] = Math.min(100.0, Math.floor((1+dni[i]/100) * hc_a));
+ ddd[2*i+1] = Math.floor(Math.min(100.0, Math.floor((1+dni[i]/100) * hc_a)) * (1.00 - block_b / 100));
+  }
+ 
+ 
+ form.skd_a.value = sk_a;
+ form.skd_b.value = sk_b;
+ form.pad_a.value = parry1_a;
+ form.pad_b.value = parry1_b;
+ form.bud_a.value = busi1_a;
+ form.bud_b.value = busi1_b;
+ form.chd_a.value = chiv1_a;
+ form.chd_b.value = chiv1_b;
+ form.dhc_a.value = divhc_a;
+ form.dhc_b.value = divhc_b;
+ form.ddc_a.value = divdc_a;
+ form.ddc_b.value = divdc_b;
+ form.thci_a.value = thci_a + parseFloat(rac1_a);
+ form.thci_b.value = thci_b + parseFloat(rac1_b);
+ form.tdci_a.value = tdci_a;
+ form.tdci_b.value = tdci_b;
+  form.hc00.value = ddd[0];
+  form.hc01.value = ddd[1];
+  form.hc02.value = ddd[2];
+  form.hc03.value = ddd[3];
+  form.hc04.value = ddd[4];
+  form.hc05.value = ddd[5];
+  form.hc06.value = ddd[6];
+  form.hc07.value = ddd[7];
+  form.hc08.value = ddd[8];
+  form.hc09.value = ddd[9];
+  form.hc10.value = ddd[10];
+  form.hc11.value = ddd[11];
+  form.hc12.value = ddd[12];
+  form.hc13.value = ddd[13];
+  form.hc14.value = ddd[14];
+  form.hc15.value = ddd[15];
+  form.hc16.value = ddd[16];
+  form.hc17.value = ddd[17];
+  form.hc18.value = ddd[18];
+  form.hc19.value = ddd[19];
+  form.hc20.value = ddd[20];
+  form.hc21.value = ddd[21];
+  form.hose00.value = dni[0];
+  form.hose01.value = dni[1];
+  form.hose02.value = dni[2];
+  form.hose03.value = dni[3];
+  form.hose04.value = dni[4];
+  form.hose05.value = dni[5];
+  form.hose06.value = dni[6];
+  form.hose07.value = dni[7];
+  form.hose08.value = dni[8];
+  form.hose09.value = dni[9];
+  form.hose10.value = dni[10];
+ 
+ 
+ return true;
+}
+//-->
+</script>
+ 
+自分と相手の武器スキルおよびプロパティを入力することで、直接攻撃の命中率を計算できます。
+<br>ここでは、自分側の使用武器を投擲系に限定し、自分側の攻撃命中率のみを算出します。
+<form name="form_sim">
+ 
+<table class="table01">
+  <tr bgcolor="#f0f0f0">
+   <td align="center" width="160">&nbsp;</td>
+   <td align="center" width="220">自分のキャラクター</td>
+   <td align="center" width="220">相手のキャラクター</td>
+  </tr>
+  <tr bgcolor="#ddddff">
+   <td align="center">種族</td>
+   <td align="center"><select name="race_a" size="1">
+<option value="5">ガーゴイル
+</select></td>
+   <td align="center"><select name="race_b" size="1">
+<option value="0">指定なし
+</select></td>
+  </tr>
+  <tr bgcolor="#ccccff">
+   <td align="center">STR</td>
+   <td align="center"><input type="text" name="str_a" size="4" value="120"></td>
+   <td align="center">指定なし</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+   <td align="center">DEX</td>
+   <td align="center"><input type="text" name="dex_a" size="4" value="100"></td>
+   <td align="center"><input type="text" name="dex_b" size="4" value="100"></td>
+  </tr>
+  <tr bgcolor="#ccccff">
+   <td align="center">装備品</td>
+   <td align="center"><select name="equip_a" size="1">
+<option value="2">投擲武器のみ
+<option value="1">盾＋投擲武器
+</select>
+<br><select name="weapon1" SIZE="1">
+<option value="0">-----武器選択-----
+<option value="1">boomerang
+<option value="2">boomerang(装備条件-50％)
+<option value="3">cyclone
+<option value="4">cyclone(装備条件-50％)
+<option value="5">soul glaive
+<option value="6">soul glaive(装備条件-50％)
+</select>
+ 
+ 
+</td>
+   <td align="center"><select name="equip_b" size="1">
+<option value="0">なし
+<option value="1">盾＋片手武器
+<option value="2">片手武器のみ
+<option value="3">両手武器
+</select></td>
+  </tr>
+  <tr bgcolor="#ddddff">
+   <td align="center">武器スキル</td>
+   <td align="center"><input type="text" name="skill_a" size="4" value="100"> (<input class="readtext" readonly type="text" name="skd_a" size="4" value="0">)</td>
+   <td align="center"><input type="text" name="skill_b" size="4" value="100"> (<input class="readtext" readonly type="text" name="skd_b" size="4" value="0">)</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+   <td align="center">盾スキル</td>
+   <td align="center"><input type="text" name="parry_a" size="4" value="0"> (<input class="readtext" readonly type="text" name="pad_a" size="4" value="0">)</td>
+   <td align="center"><input type="text" name="parry_b" size="4" value="0"> (<input class="readtext" readonly type="text" name="pad_b" size="4" value="0">)</td>
+  </tr>
+  <tr bgcolor="#ddddff">
+   <td align="center">武士スキル</td>
+   <td align="center"><input type="text" name="busi_a" size="4" value="0"> (<input class="readtext" readonly type="text" name="bud_a" size="4" value="0">)</td>
+   <td align="center"><input type="text" name="busi_b" size="4" value="0"> (<input class="readtext" readonly type="text" name="bud_b" size="4" value="0">)</td>
+  </tr>
+  <tr bgcolor="#ddddff">
+   <td align="center">騎士スキル</td>
+   <td align="center"><input type="text" name="chiv_a" size="4" value="0"> (<input class="readtext" readonly type="text" name="chd_a" size="4" value="0">)</td>
+   <td align="center"><input type="text" name="chiv_b" size="4" value="0"> (<input class="readtext" readonly type="text" name="chd_b" size="4" value="0">)</td>
+  </tr>
+  <tr bgcolor="#ddddff">
+   <td align="center">カルマ</td>
+   <td align="center"><input type="text" name="karma_a" size="4" value="0"></td>
+   <td align="center"><input type="text" name="karma_b" size="4" value="0"></td>
+  </tr>
+  <tr bgcolor="#ddddff">
+   <td align="center">命中率補正効果<br>マジック効果<br>アビリティ</td>
+   <td align="left">
+命中（装備品）　：　+ <input type="text" name="hcinc_a" size="3" value="0">％
+<br>回避（装備品）　：　+ <input type="text" name="dcinc_a" size="3" value="0">％
+<br><INPUT Type="checkbox" name="divf_a" value="yes">　Devine F(命中+<input class="readtext" readonly type="text" name="dhc_a" size="2" value="0">,回避<input class="readtext" readonly type="text" name="ddc_a" size="3" value="0">)
+<br><INPUT Type="checkbox" name="light_a" value="yes">　Lightning strike(命中+50)
+<br><INPUT Type="checkbox" name="hcdec_a" value="yes">　被命中低下(命中-25)
+<br><INPUT Type="checkbox" name="dcdec_a" value="yes">　被回避低下(回避-25)
+</td>
+   <td align="left">
+命中（装備品）　：　+ <input type="text" name="hcinc_b" size="3" value="0">％
+<br>回避（装備品）　：　+ <input type="text" name="dcinc_b" size="3" value="0">％
+<br><INPUT Type="checkbox" name="divf_b" value="yes">　Devine F(命中+<input class="readtext" readonly type="text" name="dhc_b" size="2" value="0">,回避<input class="readtext" readonly type="text" name="ddc_b" size="3" value="0">)
+<br><INPUT Type="checkbox" name="light_b" value="yes">　Lightning strike(命中+50)
+<br><INPUT Type="checkbox" name="hcdec_b" value="yes">　被命中低下(命中-25)
+<br><INPUT Type="checkbox" name="dcdec_b" value="yes">　被回避低下(回避-25)
+</td>
+  </tr>
+ 
+  <tr bgcolor="#ccccff">
+   <td align="center">不調和(相手の能力低下)</td>
+   <td align="center"><select name="disco_a" SIZE="1">
+<option value="0">------スキル------
+<option value="0">0～4.9
+<option value="1">5.0～9.9 (-1%)
+<option value="2">10.0～14.9 (-2%)
+<option value="3">15.0～19.9 (-3%)
+<option value="4">20.0～24.9 (-4%)
+<option value="5">25.0～29.9 (-5%)
+<option value="6">30.0～34.9 (-6%)
+<option value="7">35.0～39.9 (-7%)
+<option value="8">40.0～44.9 (-8%)
+<option value="9">45.0～49.9 (-9%)
+<option value="10">50.0～54.9 (-10%)
+<option value="11">55.0～59.9 (-11%)
+<option value="12">60.0～64.9 (-12%)
+<option value="13">65.0～69.9 (-13%)
+<option value="14">70.0～74.9 (-14%)
+<option value="15">75.0～79.9 (-15%)
+<option value="16">80.0～84.9 (-16%)
+<option value="17">85.0～89.9 (-17%)
+<option value="18">90.0～94.9 (-18%)
+<option value="19">95.0～99.9 (-19%)
+<option value="20">100.0～102.4 (-20%)
+<option value="21">102.5～104.9 (-21%)
+<option value="22">105.0～107.4 (-22%)
+<option value="23">107.5～109.9 (-23%)
+<option value="24">110.0～112.4 (-24%)
+<option value="25">112.5～114.9 (-25%)
+<option value="26">115.0～117.4 (-26%)
+<option value="27">117.5～119.9 (-27%)
+<option value="28">120.0 (-28%)
+<option value="7">MAX難易度(-7%)
+<option value="14">MAX難易度(-14%)
+    </select></td>
+   <td align="center"><select name="disco_b" SIZE="1">
+<option value="0">------スキル------
+<option value="0">0～4.9
+<option value="1">5.0～9.9 (-1%)
+<option value="2">10.0～14.9 (-2%)
+<option value="3">15.0～19.9 (-3%)
+<option value="4">20.0～24.9 (-4%)
+<option value="5">25.0～29.9 (-5%)
+<option value="6">30.0～34.9 (-6%)
+<option value="7">35.0～39.9 (-7%)
+<option value="8">40.0～44.9 (-8%)
+<option value="9">45.0～49.9 (-9%)
+<option value="10">50.0～54.9 (-10%)
+<option value="11">55.0～59.9 (-11%)
+<option value="12">60.0～64.9 (-12%)
+<option value="13">65.0～69.9 (-13%)
+<option value="14">70.0～74.9 (-14%)
+<option value="15">75.0～79.9 (-15%)
+<option value="16">80.0～84.9 (-16%)
+<option value="17">85.0～89.9 (-17%)
+<option value="18">90.0～94.9 (-18%)
+<option value="19">95.0～99.9 (-19%)
+<option value="20">100.0～102.4 (-20%)
+<option value="21">102.5～104.9 (-21%)
+<option value="22">105.0～107.4 (-22%)
+<option value="23">107.5～109.9 (-23%)
+<option value="24">110.0～112.4 (-24%)
+<option value="25">112.5～114.9 (-25%)
+<option value="26">115.0～117.4 (-26%)
+<option value="27">117.5～119.9 (-27%)
+<option value="28">120.0 (-28%)
+<option value="7">MAX難易度(-7%)
+<option value="14">MAX難易度(-14%)
+    </select></td>
+  </tr>
+ 
+  <tr bgcolor="#ffffcc">
+   <td align="center">命中（全体）</td>
+   <td align="center"><input class="readtext" readonly type="text" name="thci_a" size="4" value="0">％</td>
+   <td align="center"><input class="readtext" readonly type="text" name="thci_b" size="4" value="0">％</td>
+  </tr>
+  <tr bgcolor="#ffffcc">
+   <td align="center">回避（全体）</td>
+   <td align="center"><input class="readtext" readonly type="text" name="tdci_a" size="4" value="0">％</td>
+   <td align="center"><input class="readtext" readonly type="text" name="tdci_b" size="4" value="0">％</td>
+  </tr>
+</table>
+ 
+<br class="cle">
+ <div class="02">
+<input type="button" value="命中率を計算する" onclick="sim1(form)">
+  </div>
+ 
+<p>最大射程　：　<input class="readtext" readonly type="text" name="sya" size="2" value="0"></p>
+ <table class="table01">
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="70" rowspan="2">距離</td>
+     <td align="center" width="80" rowspan="2">命中補正</td>
+     <td align="center" width="150" colspan="2">命中率</td>
+   </tr>
+   <tr bgcolor="#f0f0f0">
+     <td align="center">ブロック<br>考慮なし</td>
+     <td align="center">ブロック<br>考慮あり</td>
+   </tr>
+   <tr bgcolor="#ddddff">
+     <td align="center">近接</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hose00" size="4" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc00" size="3" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc01" size="3" value="0">%</td>
+   </tr>
+   <tr bgcolor="#ddddff">
+     <td align="center">2</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hose01" size="4" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc02" size="3" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc03" size="3" value="0">%</td>
+   </tr>
+   <tr bgcolor="#ddddff">
+     <td align="center">3</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hose02" size="4" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc04" size="3" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc05" size="3" value="0">%</td>
+   </tr>
+   <tr bgcolor="#ddddff">
+     <td align="center">4</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hose03" size="4" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc06" size="3" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc07" size="3" value="0">%</td>
+   </tr>
+   <tr bgcolor="#ddddff">
+     <td align="center">5</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hose04" size="4" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc08" size="3" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc09" size="3" value="0">%</td>
+   </tr>
+   <tr bgcolor="#ddddff">
+     <td align="center">6</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hose05" size="4" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc10" size="3" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc11" size="3" value="0">%</td>
+   </tr>
+ </table>
+ 
+ <table class="table01">
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="70" rowspan="2">距離</td>
+     <td align="center" width="80" rowspan="2">命中補正</td>
+     <td align="center" width="150" colspan="2">命中率</td>
+   </tr>
+   <tr bgcolor="#f0f0f0">
+     <td align="center">ブロック<br>考慮なし</td>
+     <td align="center">ブロック<br>考慮あり</td>
+   </tr>
+   <tr bgcolor="#ddddff">
+     <td align="center">7</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hose06" size="4" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc12" size="3" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc13" size="3" value="0">%</td>
+   </tr>
+   <tr bgcolor="#ddddff">
+     <td align="center">8</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hose07" size="4" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc14" size="3" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc15" size="3" value="0">%</td>
+   </tr>
+   <tr bgcolor="#ddddff">
+     <td align="center">9</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hose08" size="4" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc16" size="3" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc17" size="3" value="0">%</td>
+   </tr>
+   <tr bgcolor="#ddddff">
+     <td align="center">10</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hose09" size="4" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc18" size="3" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc19" size="3" value="0">%</td>
+   </tr>
+   <tr bgcolor="#ddddff">
+     <td align="center">11</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hose10" size="4" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc20" size="3" value="0">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="hc21" size="3" value="0">%</td>
+   </tr>
+ </table>
+</form>
+<br class="cle">
+ 
+ 
+ 
+ 
+<h4>―使い方―</h4>
+<ul class="list01">
+ <li>自分および相手キャラクターの装備品を選択します。</li>
+ <li>自分および相手キャラクターの武器・盾・武士スキルを入力します。</li>
+ <li>自分および相手キャラクターのDEXを入力します。</li>
+ <li>装備品に付加される命中および回避プロパティの合計値を入力します。</li>
+ <li>アビリティおよびマジック効果で該当するものをチェックします。
+<br>「被～」は、その状態となったキャラクターの方をチェックします。</li>
+ <li>不調和スキルを選択すると、命中率計算時に相手側のスキルおよび回避に補正がかかります。
+<br>補正後のスキル値は入力値隣の（　）内に表示されます。
+<br>なお、不調和は対モンスターのみ有効なので、注意してください。</li>
+ <li>「命中率を計算する」ボタンを押すと以下の項目が計算されます。</li>
+  <ul class="list02">
+  <li>アビリティによる補正を行った後の命中および回避プロパティ</li>
+  <li>相手からの直接攻撃ブロック率</li>
+  <li>自分から相手および相手から自分への直接攻撃命中率</li>
+  <li>自分から相手および相手から自分へのブロック率を考慮した直接攻撃命中率</li>
+  </ul>
+</ul>
+＜直接攻撃の命中率＞
+<p>（命中率）＝ 50 ×{（ A1 + 20 ）／（ B1 + 20 ）} × {（ A2 + R2 + 100 ）／（ B2 + 100 ）}</p>
+ 
+ <ul class="list03">
+  <li>A1　：　攻撃者が装備している武器のスキル</li>
+  <li>A2　：　攻撃者に付加されている「命中＋」プロパティの合計。上限は45</li>
+  <li>B1　：　被攻撃者が装備している武器のスキル</li>
+  <li>B2　：　被攻撃者に付加されている「回避＋」プロパティの合計。上限は45</li>
+  <li>R2　：　攻撃者の種族による補正。ガーゴイルのみ+5の補正</li>
+ </ul>
+ 
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

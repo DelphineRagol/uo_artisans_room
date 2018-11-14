@@ -1,0 +1,1709 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>武器ダメージ計算</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898935</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+ 
+<h2>武器ダメージ計算</h2>
+<HR>
+敵に与えるダメージの計算表です。Publish71での騎士魔法変更に対応させました。
+
+ 
+<script language="javascript"> 
+<!--
+//Mons AR
+var marm;
+marm=new Array(300);
+marm[0] = 0;
+marm[1] = 10010010010010;
+marm[2] = 20020020020020;
+marm[3] = 30030030030030;
+marm[4] = 40040040040040;
+marm[5] = 50050050050050;
+marm[6] = 60060060060060;
+marm[7] = 70070070070070;
+marm[8] = 70070070070075;
+marm[9] = 80080080080080;
+marm[10] = 80080085080080;
+marm[11] = 85080085080080;
+marm[12] = 30030030030030;
+marm[13] = 45070055030065;
+marm[14] = 65070070070070;
+marm[15] = 80080060080080;
+marm[16] = 55050055070065;
+marm[17] = 55045060100065;
+marm[18] = 30000030100030;
+marm[19] = 70040050050050;
+marm[20] = 40050050065060;
+marm[21] = 45040055070070;
+marm[22] = 75060060075075;
+marm[23] = 50050050050050;
+marm[24] = 45070055030065;
+marm[25] = 30060060090050;
+marm[26] = 60050050040040;
+marm[27] = 25035050030020;
+marm[28] = 75060060100060;
+marm[29] = 20050020020010;
+marm[30] = 80080030080080;
+marm[31] = 85060060080080;
+marm[32] = 45030030040040;
+marm[33] = 55060060060060;
+marm[34] = 55060060060060;
+marm[35] = 75060090100060;
+marm[36] = 60060100090075;
+marm[37] = 80050050100070;
+marm[38] = 90060075060100;
+marm[39] = 90065075075055;
+marm[40] = 30100050060077;
+marm[41] = 30030030030030;
+marm[42] = 45040020010030;
+marm[43] = 55025050050025;
+marm[44] = 45025015060040;
+marm[45] = 65060050100040;
+marm[46] = 45080005040040;
+marm[47] = 60080070060060;
+marm[48] = 70060070060060;
+marm[49] = 30045040045020;
+marm[50] = 50055040045020;
+marm[51] = 75040040070040;
+marm[52] = 20020030010010;
+marm[53] = 50030060020030;
+marm[54] = 25020030010010;
+marm[55] = 65070025030030;
+marm[56] = 55025025100025;
+marm[57] = 40030040040030;
+marm[58] = 50040030060040;
+marm[59] = 50025000025000;
+marm[60] = 70060050100040;
+marm[61] = 75060070055055;
+marm[62] = 60050020020030;
+marm[63] = 80040040040040;
+marm[64] = 40030030070030;
+marm[65] = 60040040100040;
+marm[66] = 55010060020030;
+marm[67] = 15040040040040;
+marm[68] = 80010060100010;
+marm[69] = 20020030010010;
+marm[70] = 20020035010010;
+marm[71] = 30020040000030;
+marm[72] = 50030060030025;
+marm[73] = 40010010010010;
+marm[74] = 30040020010010;
+marm[75] = 25020035010010;
+marm[76] = 25020030010010;
+marm[77] = 10000010060010;
+marm[78] = 35025055000040;
+marm[79] = 45095035035035;
+marm[80] = 45100110020030;
+marm[81] = 60020020100040;
+marm[82] = 35005005100005;
+marm[83] = 55020050040050;
+marm[84] = 55030050040030;
+marm[85] = 45030030030030;
+marm[86] = 50030010030030;
+marm[87] = 35030000025025;
+marm[88] = 45020010030030;
+marm[89] = 30000000100005;
+marm[90] = 55040035050055;
+marm[91] = 60050045050055;
+marm[92] = 45050040020030;
+marm[93] = 55045025055025;
+marm[94] = 55030050050030;
+marm[95] = 40035015025000;
+marm[96] = 35020050020030;
+marm[97] = 15005025025005;
+marm[98] = 35020050020030;
+marm[99] = 40020030020020;
+marm[100] = 25020035035095;
+marm[101] = 30000050020080;
+marm[102] = 35030025065025;
+marm[103] = 45045025065025;
+marm[104] = 25030015015025;
+marm[105] = 40030025010010;
+marm[106] = 40030025010010;
+marm[107] = 20035030035010;
+marm[108] = 40030025010010;
+marm[109] = 40030025010010;
+marm[110] = 40045030035010;
+marm[111] = 55020020030045;
+marm[112] = 30020025100025;
+marm[113] = 40030030070030;
+marm[114] = 30000010100010;
+marm[115] = 60020020100040;
+marm[116] = 22007060023065;
+marm[117] = 65020085035080;
+marm[118] = 50000070020060;
+marm[119] = 64002071042060;
+marm[120] = 80040040040040;
+marm[121] = 35020060020060;
+marm[122] = 55040070040050;
+marm[123] = 55040070040050;
+marm[124] = 55040070040050;
+marm[125] = 60090000100000;
+marm[126] = 40020030025020;
+marm[127] = 50040055050040;
+marm[128] = 30020035030030;
+marm[129] = 55025030030030;
+marm[130] = 55025030030030;
+marm[131] = 65035040040040;
+marm[132] = 55070045050050;
+marm[133] = 65070050050050;
+marm[134] = 50040050070040;
+marm[135] = 65070000035050;
+marm[136] = 50035035050070;
+marm[137] = 75080045035045;
+marm[138] = 55025030030030;
+marm[139] = 40015040030025;
+marm[140] = 40010040030030;
+marm[141] = 80040040040040;
+marm[142] = 50040040050050;
+marm[143] = 100040040050030;
+marm[144] = 40040040070070;
+marm[145] = 60040040050100;
+marm[146] = 40070040040040;
+marm[147] = 35015015050020;
+marm[148] = 35015015020020;
+marm[149] = 40050050050040;
+marm[150] = 40070010030030;
+marm[151] = 50030030040030;
+marm[152] = 55070015040040;
+marm[153] = 45060005030030;
+marm[154] = 35035025035020;
+marm[155] = 50030030050060;
+marm[156] = 45070030050060;
+marm[157] = 45040070060070;
+marm[158] = 65050035045045;
+marm[159] = 40020050055040;
+marm[160] = 40035035075040;
+marm[161] = 40050050050050;
+marm[162] = 45100040045045;
+marm[163] = 65070050050050;
+marm[164] = 65030045040030;
+marm[165] = 65030045035025;
+marm[166] = 65030045035025;
+marm[167] = 55060030025035;
+marm[168] = 65050045020050;
+marm[169] = 55015080040040;
+marm[170] = 65080070060060;
+marm[171] = 75040040070040;
+marm[172] = 35025025025025;
+marm[173] = 35030020090030;
+marm[174] = 45050040020030;
+marm[175] = 40045040020040;
+marm[176] = 20035030010035;
+marm[177] = 40030025010010;
+marm[178] = 35030035090035;
+marm[179] = 45030035040035;
+marm[180] = 40020025035025;
+marm[181] = 25030035040035;
+marm[182] = 35005005100005;
+marm[183] = 35070000030010;
+marm[184] = 30000080015010;
+marm[185] = 30005010070010;
+marm[186] = 25050030030015;
+marm[187] = 30070040030015;
+marm[188] = 45050030020030;
+marm[189] = 65060050100040;
+marm[190] = 55010060020030;
+marm[191] = 80070040050050;
+marm[192] = 45025015060040;
+marm[193] = 35050110020020;
+marm[194] = 40020050055040;
+marm[195] = 40030050050040;
+marm[196] = 55025050050025;
+marm[197] = 35020050040020;
+marm[198] = 45010050020020;
+marm[199] = 55020040050030;
+marm[200] = 60020020100040;
+marm[201] = 35005050020020;
+marm[202] = 45010060025025;
+marm[203] = 45040020010030;
+marm[204] = 50040040100050;
+marm[205] = 35060005030030;
+marm[206] = 35010010060005;
+marm[207] = 35015010010025;
+marm[208] = 30010010015015;
+marm[209] = 40015040050040;
+marm[210] = 50060000030040;
+marm[211] = 80060060060060;
+marm[212] = 45040025025025;
+marm[213] = 45110060100040;
+marm[214] = 45030030040040;
+marm[215] = 35030025030030;
+marm[216] = 45030025030030;
+marm[217] = 45015045030030;
+marm[218] = 40030035090035;
+marm[219] = 45030035040035;
+marm[220] = 40020020100020;
+marm[221] = 80040040040040;
+marm[222] = 45060000025040;
+marm[223] = 45030030020010;
+marm[224] = 55045045035025;
+marm[225] = 55030030030020;
+marm[226] = 30070020030030;
+marm[227] = 30020010040020;
+marm[228] = 45040025065025;
+marm[229] = 45060040040040;
+marm[230] = 60040015015015;
+marm[231] = 45040025025025;
+marm[232] = 60060060030020;
+marm[233] = 65035035015010;
+marm[234] = 35100010010030;
+//
+ 
+//Mons AR
+var mari;
+mari=new Array(300);
+mari[0] = 0;
+mari[1] = 10010010010010;
+mari[2] = 20020020020020;
+mari[3] = 30030030030030;
+mari[4] = 40040040040040;
+mari[5] = 50050050050050;
+mari[6] = 60060060060060;
+mari[7] = 70070070070070;
+mari[8] = 70070070070075;
+mari[9] = 80080080080080;
+mari[10] = 80090095090090;
+mari[11] = 95090095090090;
+mari[12] = 30030030030030;
+mari[13] = 55090065040075;
+mari[14] = 80080080080080;
+mari[15] = 90090070090090;
+mari[16] = 65060065090075;
+mari[17] = 65055070100075;
+mari[18] = 50000050100050;
+mari[19] = 85050065065060;
+mari[20] = 55065065075075;
+mari[21] = 55050065080080;
+mari[22] = 80070070080080;
+mari[23] = 70070070070070;
+mari[24] = 55090065035075;
+mari[25] = 30060060090050;
+mari[26] = 70060060050050;
+mari[27] = 30045060040030;
+mari[28] = 80070070100070;
+mari[29] = 30060030030020;
+mari[30] = 90090040090090;
+mari[31] = 90070070090090;
+mari[32] = 55040040050050;
+mari[33] = 65080080080080;
+mari[34] = 65080080080080;
+mari[35] = 75060090100060;
+mari[36] = 60060100090075;
+mari[37] = 90060060100080;
+mari[38] = 90060075060100;
+mari[39] = 90065075075055;
+mari[40] = 35100055065080;
+mari[41] = 30030030030030;
+mari[42] = 55050030020040;
+mari[43] = 65030060060030;
+mari[44] = 55035025070050;
+mari[45] = 80070060100050;
+mari[46] = 55090010050050;
+mari[47] = 75090080070070;
+mari[48] = 80070080070070;
+mari[49] = 40055050055030;
+mari[50] = 60065050055030;
+mari[51] = 80060060080060;
+mari[52] = 50030040020020;
+mari[53] = 60050080030050;
+mari[54] = 30030050020020;
+mari[55] = 80090040045045;
+mari[56] = 65030030100030;
+mari[57] = 50040050050040;
+mari[58] = 60050040070050;
+mari[59] = 55030000030000;
+mari[60] = 80080060100050;
+mari[61] = 90075085060060;
+mari[62] = 70060030030040;
+mari[63] = 90050050050050;
+mari[64] = 50040040080040;
+mari[65] = 70050050100050;
+mari[66] = 65020070030040;
+mari[67] = 30050050050050;
+mari[68] = 90030070100015;
+mari[69] = 35030045020020;
+mari[70] = 30030050020020;
+mari[71] = 40030050000045;
+mari[72] = 60050075050030;
+mari[73] = 50020020020020;
+mari[74] = 40050030030020;
+mari[75] = 30030045020020;
+mari[76] = 30030050020020;
+mari[77] = 15000015070015;
+mari[78] = 45030065000050;
+mari[79] = 55100045045045;
+mari[80] = 60100000030040;
+mari[81] = 70030030100050;
+mari[82] = 45010010100010;
+mari[83] = 65030060050060;
+mari[84] = 65040060050040;
+mari[85] = 50040040040040;
+mari[86] = 60040020040040;
+mari[87] = 45045000035035;
+mari[88] = 55030020040040;
+mari[89] = 45010010100010;
+mari[90] = 75060055070075;
+mari[91] = 75060055070075;
+mari[92] = 50060050030040;
+mari[93] = 65055040065040;
+mari[94] = 65040060060050;
+mari[95] = 55045020035000;
+mari[96] = 45030060030040;
+mari[97] = 20010040035015;
+mari[98] = 40030060030040;
+mari[99] = 50030040030025;
+mari[100] = 40035045045100;
+mari[101] = 35015060030090;
+mari[102] = 45040035075035;
+mari[103] = 55050035075035;
+mari[104] = 35040025020030;
+mari[105] = 50040035020020;
+mari[106] = 50040035020020;
+mari[107] = 30045040045020;
+mari[108] = 50040035020020;
+mari[109] = 50040035020020;
+mari[110] = 50055040045020;
+mari[111] = 65030030040055;
+mari[112] = 35030035100035;
+mari[113] = 50040040080040;
+mari[114] = 40000020100020;
+mari[115] = 70030030100050;
+mari[116] = 37020078039073;
+mari[117] = 75030100045100;
+mari[118] = 70000090030090;
+mari[119] = 75009078049087;
+mari[120] = 90050050050050;
+mari[121] = 45030080030080;
+mari[122] = 65050080050060;
+mari[123] = 65050080050060;
+mari[124] = 65050080050060;
+mari[125] = 70090000100000;
+mari[126] = 45040035030040;
+mari[127] = 55050060060060;
+mari[128] = 35030040040040;
+mari[129] = 65035040040040;
+mari[130] = 65035040040040;
+mari[131] = 75045050050050;
+mari[132] = 70080055060060;
+mari[133] = 80080060060060;
+mari[134] = 60050055080050;
+mari[135] = 65080000045060;
+mari[136] = 65045045065085;
+mari[137] = 85095055045055;
+mari[138] = 60035040040040;
+mari[139] = 50025050040035;
+mari[140] = 50020050040040;
+mari[141] = 90050050050050;
+mari[142] = 70050050070060;
+mari[143] = 100050050060040;
+mari[144] = 50050050090080;
+mari[145] = 70050050060100;
+mari[146] = 60090060060060;
+mari[147] = 40030030080035;
+mari[148] = 40030030040035;
+mari[149] = 60070070070060;
+mari[150] = 40075010030030;
+mari[151] = 70050050060050;
+mari[152] = 70090025050050;
+mari[153] = 70080015040040;
+mari[154] = 50050035050030;
+mari[155] = 70060060070080;
+mari[156] = 65085060070080;
+mari[157] = 55055090070085;
+mari[158] = 80070050070065;
+mari[159] = 60030060065050;
+mari[160] = 65050050095060;
+mari[161] = 60070070070070;
+mari[162] = 50100040050050;
+mari[163] = 85090070070070;
+mari[164] = 85050065055050;
+mari[165] = 85050065055050;
+mari[166] = 85050065055050;
+mari[167] = 65070040035045;
+mari[168] = 75060055030060;
+mari[169] = 70025090050050;
+mari[170] = 75090080070070;
+mari[171] = 80060060080060;
+mari[172] = 40035035035035;
+mari[173] = 45040030100040;
+mari[174] = 50060050030040;
+mari[175] = 50050050025050;
+mari[176] = 30045040020045;
+mari[177] = 50040035020020;
+mari[178] = 40040045100045;
+mari[179] = 55040045050045;
+mari[180] = 45030035040035;
+mari[181] = 35040045050045;
+mari[182] = 45010010100010;
+mari[183] = 45080000040020;
+mari[184] = 35000090025020;
+mari[185] = 35010020090020;
+mari[186] = 35060040040020;
+mari[187] = 40080050040020;
+mari[188] = 60060040030040;
+mari[189] = 80080060100050;
+mari[190] = 65020070030040;
+mari[191] = 90080050060060;
+mari[192] = 55035025070050;
+mari[193] = 35060000030030;
+mari[194] = 60030060065050;
+mari[195] = 50040060060050;
+mari[196] = 65030060060030;
+mari[197] = 45030070050030;
+mari[198] = 55020060030030;
+mari[199] = 65030050060040;
+mari[200] = 70030030100050;
+mari[201] = 45010060030030;
+mari[202] = 55015070035035;
+mari[203] = 55050030020040;
+mari[204] = 60050050100070;
+mari[205] = 45080010040040;
+mari[206] = 45025025070010;
+mari[207] = 45025020020035;
+mari[208] = 35020020025025;
+mari[209] = 50025050075050;
+mari[210] = 60070000040050;
+mari[211] = 90070070070070;
+mari[212] = 55050035035035;
+mari[213] = 55000070100050;
+mari[214] = 55040040050050;
+mari[215] = 45040035040040;
+mari[216] = 50040035040040;
+mari[217] = 55025055040040;
+mari[218] = 50040045100045;
+mari[219] = 55040045050045;
+mari[220] = 50030030100030;
+mari[221] = 90050050050050;
+mari[222] = 55070000035050;
+mari[223] = 55040040030020;
+mari[224] = 65055055045035;
+mari[225] = 65040040040030;
+mari[226] = 40080030040040;
+mari[227] = 40025015050025;
+mari[228] = 55050035075035;
+mari[229] = 55070050050050;
+mari[230] = 70050025025025;
+mari[231] = 55060035035035;
+mari[232] = 70070070040030;
+mari[233] = 75045045025020;
+mari[234] = 55100030025040;
+//
+ 
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.monster.value = 0;
+  form.wep1.value = 0;
+  form.str.value = 0;
+  form.tac.value = 0;
+  form.ana.value = 0;
+  form.lumb.value = 0;
+  form.tokkou.value = 0;
+  form.consec.value = 0;
+  form.eoone.value= 0;
+  form.tal01.value = 0;
+  form.tal02.value = 0;
+  form.tal03.value = 0;
+  form.quiv.value = 0;
+  form.ara.value = 0;
+  form.fra.value = 0;
+  form.cra.value = 0;
+  form.pra.value = 0;
+  form.era.value = 0;
+  form.damage01.value = 0;
+  form.damage02.value = 0;
+  form.damage03.value = 0;
+  form.damage04.value = 0;
+  form.damage05.value = 0;
+  form.damage06.value = 0;
+  form.damage07.value = 0;
+  form.damage08.value = 0;
+  form.damage09.value = 0;
+  form.damage10.value = 0;
+  form.damage11.value = 0;
+  form.damage12.value = 0;
+  form.damage13.value = 0;
+  form.damage14.value = 0;
+  form.damage15.value = 0;
+  form.damage16.value = 0;
+  form.damage17.value = 0;
+  form.damage18.value = 0;
+  form.damage19.value = 0;
+  form.damage20.value = 0;
+  form.armin.value = 0;
+  form.frmin.value = 0;
+  form.crmin.value = 0;
+  form.prmin.value = 0;
+  form.ermin.value = 0;
+  form.armax.value = 0;
+  form.frmax.value = 0;
+  form.crmax.value = 0;
+  form.prmax.value = 0;
+  form.ermax.value = 0;
+  form.armax2.value = 0;
+  form.frmax2.value = 0;
+  form.crmax2.value = 0;
+  form.prmax2.value = 0;
+  form.ermax2.value = 0;
+  form.cops.value = 0;
+  form.disco.value = 0;
+  form.evil.value = 0;
+  form.bushi.value = 0;
+  form.whirl.value = 0;
+  form.bard01.value = 0;
+  return true;
+}
+ 
+//計算
+ 
+function keisan1(form)
+{
+var form = document.form_keisan;
+  mons = form.monster.options[form.monster.selectedIndex].value;
+  disco1 = form.disco.options[form.disco.selectedIndex].value;
+  chiv1 = form.chiv.value;
+ 
+  st = form.st.value;
+   if(st>=100){
+  dinc1 = Math.floor(st * 3000 + 50000) / 10000;
+}
+   else{
+  dinc1 = Math.floor(st * 3000) / 10000;
+}
+ 
+  form.dinc1.value = dinc1;
+ 
+  tac = form.tac.value;
+   if(tac>=100.0){
+  dinc2 = Math.floor(( tac * 1.0 + 10.0 ) * 6250) / 10000;
+}
+   else{
+  dinc2 = Math.floor(tac * 6250) / 10000;
+}
+ 
+  form.dinc2.value = dinc2;
+ 
+ 
+  ana = form.ana.value;
+   if(ana>=100.0){
+  dinc3 = Math.floor((ana * 1.0 + 10.0) * 5000) / 10000;
+}
+   else{
+  dinc3 = Math.floor(ana * 5000) / 10000;
+}
+ 
+  form.dinc3.value = dinc3;
+ 
+  lumb = form.lumb.value;
+  bushi1 = form.bushi.value;
+  whirl1 = form.whirl.value;
+ 
+  res1 = marm[mons];
+  res2 = mari[mons];
+ 
+  mar1 = Math.floor(res1 / Math.pow(10,12));
+if(mar1 > 100)
+ {
+  mar1 = 100 - mar1;
+ }
+  mfr1 = Math.floor((res1 % Math.pow(10,12)) / Math.pow(10,9));
+if(mfr1 > 100)
+ {
+  mfr1 = 100 - mfr1;
+ }
+  mcr1 = Math.floor((res1 % Math.pow(10,9)) / Math.pow(10,6));
+if(mcr1 > 100)
+ {
+  mcr1 = 100 - mcr1;
+ }
+  mpr1 = Math.floor((res1 % Math.pow(10,6)) / Math.pow(10,3));
+if(mpr1 > 100)
+ {
+  mpr1 = 100 - mpr1;
+ }
+  mer1 = (res1 % Math.pow(10,3));
+if(mer1 > 100)
+ {
+  mer1 = 100 - mer1;
+ }
+ 
+  mar2 = Math.floor(res2 / Math.pow(10,12));
+if(mar2 > 100)
+ {
+  mar2 = 100 - mar2;
+ }
+  mfr2 = Math.floor((res2 % Math.pow(10,12)) / Math.pow(10,9));
+if(mfr2 > 100)
+ {
+  mfr2 = 100 - mfr2;
+ }
+  mcr2 = Math.floor((res2 % Math.pow(10,9)) / Math.pow(10,6));
+if(mcr2 > 100)
+ {
+  mcr2 = 100 - mcr2;
+ }
+  mpr2 = Math.floor((res2 % Math.pow(10,6)) / Math.pow(10,3));
+if(mpr2 > 100)
+ {
+  mpr2 = 100 - mpr2;
+ }
+  mer2 = (res2 % Math.pow(10,3));
+if(mer2 > 100)
+ {
+  mer2 = 100 - mer2;
+ }
+
+     mar1 = mar1 - disco1;
+     mfr1 = mfr1 - disco1;
+     mcr1 = mcr1 - disco1;
+     mpr1 = mpr1 - disco1;
+     mer1 = mer1 - disco1;
+     mar2 = mar2 - disco1;
+     mfr2 = mfr2 - disco1;
+     mcr2 = mcr2 - disco1;
+     mpr2 = mpr2 - disco1;
+     mer2 = mer2 - disco1;
+ 
+   if(form.cops.checked){
+     mar1 = Math.min(mar1 * 1.0 + 10.0,100);
+     mfr1 = mfr1 * 1.0 - 15.0;
+     mcr1 = Math.min(mcr1 * 1.0 + 10.0,100);
+     mpr1 = mpr1 * 1.0 - 15.0;
+     mer1 = mer1 * 1.0;
+     mar2 = Math.min(mar2 * 1.0 + 10.0,100);
+     mfr2 = mfr2 * 1.0 - 15.0;
+     mcr2 = Math.min(mcr2 * 1.0 + 10.0,100);
+     mpr2 = mpr2 * 1.0 - 15.0;
+     mer2 = mer2 * 1.0;
+}
+
+  form.armin.value = mar1;
+  form.frmin.value = mfr1;
+  form.crmin.value = mcr1;
+  form.prmin.value = mpr1;
+  form.ermin.value = mer1;
+  form.armax.value = mar2;
+  form.frmax.value = mfr2;
+  form.crmax.value = mcr2;
+  form.prmax.value = mpr2;
+  form.ermax.value = mer2;
+
+
+  wep1 = form.wep1.options[form.wep1.selectedIndex].value;
+  att1 = form.atk1.options[form.atk1.selectedIndex].value;
+  att2 = form.atk2.options[form.atk2.selectedIndex].value;
+ 
+  fra1 = form.fra.options[form.fra.selectedIndex].value;
+  cra1 = form.cra.options[form.cra.selectedIndex].value;
+  pra1 = form.pra.options[form.pra.selectedIndex].value;
+  era1 = form.era.options[form.era.selectedIndex].value;
+  cha1 = form.cha.options[form.cha.selectedIndex].value;
+  ara = 100 - fra1 - cra1 - pra1 - era1 - cha1;
+  form.ara.value = ara;
+  ara1 = form.ara.value;
+ 
+ 
+ if(wep1==1)
+{
+   if(lumb>100.0)
+  {
+  dincl = 100.0;
+  }
+ 
+   else if(lumb==100.0)
+  {
+  dincl = 30.0;
+  }
+   else
+  {
+  dincl = Math.floor(lumb * 2000) / 10000;
+  }
+ 
+}
+ 
+   else
+{
+  dincl = 0.0;
+}
+ 
+  form.dincl.value = dincl;
+ 
+ 
+ if(wep1==2)
+{
+   if(form.quiv.checked)
+  {
+     form.quiv.value = 10.0;
+  }
+   else
+  {
+     form.quiv.value = 0.0;
+  }
+ 
+}
+ else
+{
+     form.quiv.value = 0.0;
+}
+ 
+  quiv1 = form.quiv.value;
+  form.quiv1.value = quiv1;
+ 
+ 
+  dinc4 = form.dinc4.value;
+ 
+ 
+  tdi = parseFloat(dinc1) + parseFloat(dinc2) + parseFloat(dinc3) + Math.min(100.0, parseFloat(dinc4)) + parseFloat(dincl) + parseFloat(quiv1);
+ 
+  form.tdi.value = tdi;
+ 
+ 
+  att1 = Math.floor(att1 * (tdi + 100.0) / 100);
+  att2 = Math.floor(att2 * (tdi + 100.0) / 100);
+ 
+  form.att1.value = att1;
+  form.att2.value = att2;
+ 
+  tokkou = form.tokkou.options[form.tokkou.selectedIndex].value;
+ 
+  form.tok1.value = tokkou;
+ 
+  tkk1 = tokkou / 100;
+ 
+ 
+   if(form.evil.checked){
+     form.evil.value = 1.25;
+}
+   else{
+     form.evil.value = 1.0;
+}
+  evil1 = form.evil.value;
+  form.evil1.value = evil1 * 100;
+ 
+ 
+   if(form.consec.checked){
+     
+     cons1 = Math.floor(Math.max(100.0, 100.0 + (chiv1 - 90.0)/2.00))/100.0;
+}
+   else{
+     cons1 = 1.0;
+}
+  form.cons1.value = Math.round(cons1 * 100);
+ 
+ 
+   if(form.eoone.checked){
+     form.eoone.value =Math.floor(Math.max(115.0, 115.0 + 0.90 * (chiv1 - 45.0)))/100;
+}
+   else{
+     form.eoone.value = 1.0;
+}
+  eoo1 = form.eoone.value;
+  form.eoo1.value = Math.round(eoo1 * 100);
+ 
+ 
+   if(form.tal01.checked){
+     form.tal01.value = 2.0;
+}
+   else{
+     form.tal01.value = 1.0;
+}
+  tal1 = form.tal01.value;
+  form.tal1.value = tal1 * 100;
+ 
+ 
+  tal02 = form.tal02.value;
+  tal2 = Math.min(1.0 + tal02 / 100 , 2.0);
+  form.tal2.value = tal2 * 100;
+ 
+ 
+  tal03 = form.tal03.value;
+  tal3 = 1.0 - tal03 / 100;
+  form.tal3.value = tal3 * 100;
+ 
+ 
+  bard1 = form.bard01.options[form.bard01.selectedIndex].value;
+  form.bard1.value = bard1;
+ 
+  bard2 = bard1 / 100;
+ 
+ 
+  mul01 = evil1 * tkk1 * cons1 * eoo1 * tal1 * tal2 * tal3 * bard2;
+  mul01 = Math.min(300, Math.floor(mul01 * 100));
+  form.mul01.value = mul01;
+  mul02 = evil1 * tkk1 * cons1 * eoo1 * tal1 * tal2 * tal3 * bard2 * 1.5;
+  mul02 = Math.min(300, Math.floor(mul02 * 100));
+  form.mul02.value = mul02;
+  mul03 = evil1 * tkk1 * cons1 * eoo1 * tal1 * tal2 * tal3 * bard2 * 0.9;
+  mul03 = Math.min(300, Math.floor(mul03 * 100));
+  form.mul03.value =mul03;
+  mul04 = evil1 * tkk1 * cons1 * eoo1 * tal1 * tal2 * tal3 * bard2 * 0.9;
+  mul04 = Math.min(300, Math.floor(mul04 * 100));
+  form.mul04.value = mul04;
+  mul05 = mul01;
+  form.mul05.value = mul05
+  mul06 = mul01;
+  form.mul06.value = mul06;
+  mul07 = evil1 * tkk1 * cons1 * eoo1 * tal1 * tal2 * tal3 * bard2 * (100.0 + bushi1 * 1.0) / 100.0;
+  mul07 = Math.min(300, Math.floor(mul07 * 100));
+  form.mul07.value = mul07;
+  mul08 = mul01
+  form.mul08.value = mul08;
+  mul09 = evil1 * tkk1 * cons1 * eoo1 * tal1 * tal2 * tal3 * bard2 * (100.0 + bushi1 * 1.5) / 100.0;
+  mul09 = Math.min(300, Math.floor(mul09 * 100));
+  form.mul09.value = mul09;
+ 
+  whirl2 = 1.0 + Math.min(1.0, Math.floor(bushi1 * bushi1 * whirl1 * whirl1 / 3600) / 100);
+ 
+  mul10 = evil1 * tkk1 * cons1 * eoo1 * tal1 * tal2 * tal3 * bard2 * whirl2;
+  mul10 = Math.min(300, Math.floor(mul10 * 100));
+  form.mul10.value = mul10;
+ 
+ 
+     con1 = Math.min(mar1, mfr1);
+     con1 = Math.min(con1, mcr1);
+     con1 = Math.min(con1, mpr1);
+     con1 = Math.min(con1, mer1);
+     con2 = Math.min(mar2, mfr2);
+     con2 = Math.min(con2, mcr2);
+     con2 = Math.min(con2, mpr2);
+     con2 = Math.min(con2, mer2);
+     con3 = Math.max(mar1, mfr1);
+     con3 = Math.max(con3, mcr1);
+     con3 = Math.max(con3, mpr1);
+     con3 = Math.max(con3, mer1);
+ 
+ 
+   if(form.consec.checked){
+  dam11 = att1 * (100 - con1) / 100;
+  dam12 = 0.0;
+  dam13 = 0.0;
+  dam14 = 0.0;
+  dam15 = 0.0;
+  dam16 = 0.0;
+  dam21 = att2 * (100 - con2) / 100;
+  dam22 = 0.0;
+  dam23 = 0.0;
+  dam24 = 0.0;
+  dam25 = 0.0;
+  dam26 = 0.0;
+}
+   else{
+  dam11 = att1 * ara1 * (100 - mar1) / 10000;
+  dam12 = att1 * fra1 * (100 - mfr1) / 10000;
+  dam13 = att1 * cra1 * (100 - mcr1) / 10000;
+  dam14 = att1 * pra1 * (100 - mpr1) / 10000;
+  dam15 = att1 * era1 * (100 - mer1) / 10000;
+  dam16 = att1 * cha1 * (100 - con3) / 10000;
+  dam21 = att2 * ara1 * (100 - mar2) / 10000;
+  dam22 = att2 * fra1 * (100 - mfr2) / 10000;
+  dam23 = att2 * cra1 * (100 - mcr2) / 10000;
+  dam24 = att2 * pra1 * (100 - mpr2) / 10000;
+  dam25 = att2 * era1 * (100 - mer2) / 10000;
+  dam26 = att2 * cha1 * (100 - con2) / 10000;
+}
+ 
+  dam1 = (dam11 + dam12 + dam13 + dam14 + dam15 + dam16);
+  dam2 = (dam21 + dam22 + dam23 + dam24 + dam25 + dam26);
+ 
+   damage01 = Math.floor(dam1 * mul01 / 100);
+   damage02 = Math.floor(dam2 * mul01 / 100);
+   damage03 = Math.floor(dam1 * mul02 / 100);
+   damage04 = Math.floor(dam2 * mul02 / 100);
+   damage05 = Math.floor(att1 * mul03 / 100);
+   damage06 = Math.floor(att2 * mul03 / 100);
+   damage07 = Math.floor(dam1 * mul04 / 100);
+   damage08 = Math.floor(dam2 * mul04 / 100);
+   damage09 = damage01;
+   damage10 = damage02;
+   damage11 = damage01;
+   damage12 = damage02;
+   damage13 = Math.floor(dam1 * mul07 / 100);
+   damage14 = Math.floor(dam2 * mul07 / 100);
+   damage15 = damage01;
+   damage16 = damage02;
+   damage17 = Math.floor(dam1 * mul09 / 100);
+   damage18 = Math.floor(dam2 * mul09 / 100);
+   damage19 = Math.floor(dam1 * mul10 / 100);
+   damage20 = Math.floor(dam2 * mul10 / 100);
+ 
+  form.damage01.value = damage01;
+  form.damage02.value = damage02;
+  form.damage03.value = damage03;
+  form.damage04.value = damage04;
+  form.damage05.value = damage05;
+  form.damage06.value = damage06;
+  form.damage07.value = damage07;
+  form.damage08.value = damage08;
+  form.damage09.value = damage09;
+  form.damage10.value = damage10;
+  form.damage11.value = damage11;
+  form.damage12.value = damage12;
+  form.damage13.value = damage13;
+  form.damage14.value = damage14;
+  form.damage15.value = damage15;
+  form.damage16.value = damage16;
+  form.damage17.value = damage17;
+  form.damage18.value = damage18;
+  form.damage19.value = damage19;
+  form.damage20.value = damage20;
+ 
+  return true;
+}
+ 
+//-->
+</script>
+ 
+ <form name="form_keisan">
+ 
+<h3>１．キャラクター特性</h3>
+ 
+<table class="table01">
+ <tr bgcolor="#ddddff">
+  <td align="center" width="100">STR</td>
+  <td align="center" width="70"><INPUT Type="text" size="4" name="st" value="100" onchange="keisan1(form)"></td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">anatomy</td>
+  <td align="center"><INPUT Type="text" size="4" name="ana" value="100" onchange="keisan1(form)"></td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">tactics</td>
+  <td align="center"><INPUT Type="text" size="4" name="tac" value="100" onchange="keisan1(form)"></td>
+ </tr>
+</table>
+ 
+<table class="table01">
+ <tr bgcolor="#ddddff">
+  <td align="center" width="100">lumberjacking</td>
+  <td align="center" width="70"><INPUT Type="text" size="4" name="lumb" value="100" onchange="keisan1(form)"></td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">bushido</td>
+  <td align="center"><INPUT Type="text" size="4" name="bushi" value="100" onchange="keisan1(form)"></td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">chivalry</td>
+  <td align="center"><INPUT Type="text" size="4" name="chiv" value="100" onchange="keisan1(form)"></td>
+ </tr>
+</table>
+ 
+<br class="cle">斧系武器でlumberjackingに100より大きい数値を入力すると、クリティカル用のダメージ計算（武器ダメージ+100％）になります。
+ 
+<h3>２．使用武器の基礎攻撃力、種類および属性</h3>
+基礎攻撃力　：　
+<select name="atk1" SIZE="1" onchange="keisan1(form)">
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+<option value="31">31
+<option value="32">32
+<option value="33">33
+<option value="34">34
+<option value="35">35
+</select>
+ ～ 
+<select name="atk2" SIZE="1" onchange="keisan1(form)">
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+<option value="31">31
+<option value="32">32
+<option value="33">33
+<option value="34">34
+<option value="35">35
+<option value="36">36
+<option value="37">37
+<option value="38">38
+<option value="39">39
+<option value="40">40
+</select>
+ 　 
+<select name="wep1" SIZE="1" onchange="keisan1(form)">
+<option value="0">斧、弓以外
+<option value="1">斧系
+<option value="2">弓系
+</select>
+ 
+ <table class="table02">
+   <tr>
+     <td align="center" bgcolor="#f0f0f0" width="90">攻撃属性</td>
+     <td align="center" bgcolor="#d0d0d0" width="80">物理</td>
+     <td align="center" bgcolor="#ffc080" width="80">炎</td>
+     <td align="center" bgcolor="#80c0ff" width="80">冷気</td>
+     <td align="center" bgcolor="#80ffc0" width="80">毒</td>
+     <td align="center" bgcolor="#ffc0ff" width="80">エネルギー</td>
+     <td align="center" bgcolor="#cccccc" width="80">カオス</td>
+   </tr>
+ 
+   <tr>
+     <td align="center" bgcolor="#f0f0f0" width="80">割合</td>
+     <td align="center" bgcolor="#d0d0d0" width="80"><INPUT readonly TYPE="text" NAME="ara" SIZE="4" value="100" onchange="keisan1(form)">%</td>
+     <td align="center" bgcolor="#ffc080" width="80"><select name="fra" SIZE="1" onchange="keisan1(form)">
+<option value="0">0
+<option value="5">5
+<option value="10">10
+<option value="15">15
+<option value="20">20
+<option value="25">25
+<option value="30">30
+<option value="35">35
+<option value="40">40
+<option value="45">45
+<option value="50">50
+<option value="55">55
+<option value="60">60
+<option value="65">65
+<option value="70">70
+<option value="75">75
+<option value="80">80
+<option value="85">85
+<option value="90">90
+<option value="95">95
+<option value="100">100
+    </select>%</td>
+     <td align="center" bgcolor="#80c0ff" width="80"><select name="cra" SIZE="1" onchange="keisan1(form)">
+<option value="0">0
+<option value="5">5
+<option value="10">10
+<option value="15">15
+<option value="20">20
+<option value="25">25
+<option value="30">30
+<option value="35">35
+<option value="40">40
+<option value="45">45
+<option value="50">50
+<option value="55">55
+<option value="60">60
+<option value="65">65
+<option value="70">70
+<option value="75">75
+<option value="80">80
+<option value="85">85
+<option value="90">90
+<option value="95">95
+<option value="100">100
+    </select>%</td>
+     <td align="center" bgcolor="#80ffc0" width="80"><select name="pra" SIZE="1" onchange="keisan1(form)">
+<option value="0">0
+<option value="5">5
+<option value="10">10
+<option value="15">15
+<option value="20">20
+<option value="25">25
+<option value="30">30
+<option value="35">35
+<option value="40">40
+<option value="45">45
+<option value="50">50
+<option value="55">55
+<option value="60">60
+<option value="65">65
+<option value="70">70
+<option value="75">75
+<option value="80">80
+<option value="85">85
+<option value="90">90
+<option value="95">95
+<option value="100">100
+    </select>%</td>
+     <td align="center" bgcolor="#ffc0ff" width="80"><select name="era" SIZE="1" onchange="keisan1(form)">
+<option value="0">0
+<option value="5">5
+<option value="10">10
+<option value="15">15
+<option value="20">20
+<option value="25">25
+<option value="30">30
+<option value="35">35
+<option value="40">40
+<option value="45">45
+<option value="50">50
+<option value="55">55
+<option value="60">60
+<option value="65">65
+<option value="70">70
+<option value="75">75
+<option value="80">80
+<option value="85">85
+<option value="90">90
+<option value="95">95
+<option value="100">100
+    </select>%</td>
+     <td align="center" bgcolor="#cccccc" width="80"><select name="cha" SIZE="1" onchange="keisan1(form)">
+<option value="0">0
+<option value="5">5
+<option value="10">10
+<option value="15">15
+<option value="20">20
+<option value="25">25
+<option value="30">30
+<option value="35">35
+<option value="40">40
+<option value="45">45
+<option value="50">50
+<option value="55">55
+<option value="60">60
+<option value="65">65
+<option value="70">70
+<option value="75">75
+<option value="80">80
+<option value="85">85
+<option value="90">90
+<option value="95">95
+<option value="100">100
+    </select>%</td>
+   </tr>
+ 
+</table>
+ 
+ 
+<h3>３．モンスター・攻撃対象の抵抗値</h3>
+ 
+　　　<select name="monster" size="1" onchange="keisan1(form)">
+<optgroup label="基準抵抗値">
+<option value="0">全抵抗値0
+<option value="1">全抵抗値10
+<option value="2">全抵抗値20
+<option value="3">全抵抗値30
+<option value="4">全抵抗値40
+<option value="5">全抵抗値50
+<option value="6">全抵抗値60
+<option value="7">全抵抗値70
+<option value="8">ER75、他All70
+<option value="9">全抵抗値80
+<optgroup label="Boss, Champion">
+<option value="10">Osiredon
+<option value="11">Corgul
+<option value="12">Premival Lich
+<option value="13">Abyssal Infernal
+<option value="14">Slasher of Veils
+<option value="15">Stygian Dragon
+<option value="16">Medusa
+<option value="17">Navery night-eyes
+<option value="18">Niporailem
+<option value="19">Chief Paroxysmus
+<option value="20">Dread Horn
+<option value="21">Lady Melisande
+<option value="22">Shimmering Effusion
+<option value="23">Travesty
+<option value="24">Monstrous Interred Grizzle
+<option value="25">Serado the Awakened
+<option value="26">Barracoon the Piper
+<option value="27">Neira the Necro.
+<option value="28">Mephitis
+<option value="29">Semidar
+<option value="30">Rikktor
+<option value="31">Lord Oaks
+<option value="32">Silvani
+<option value="33">The Harrower
+<option value="34">The True Harrower
+<option value="35">Bone Daemon
+<option value="36">Darknight Creeper
+<option value="37">Flesh Renderer
+<option value="38">Impaler
+<option value="39">Shadow Knight
+<option value="40">Abyssmal Horror
+<option value="41">Dark Father
+<option value="42">acid elemental (renowned)
+<option value="43">ancient lich (renowned)
+<option value="44">devourer of souls (renowned)
+<option value="45">fire daemon (renowned)
+<option value="46">fire elemental (renowned)
+<option value="47">wyvern (renowned)
+<option value="48">pixie (renowned)
+<option value="49">goblin mage (renowned)
+<option value="50">goblin alchemist (renowned)
+<option value="51">skeletal dragon (renowned)
+<option value="52">rakktavi (renowned)
+<option value="53">vitavi (renowned)
+<option value="54">tikitavi (renowned)
+<optgroup label="Ter Mur, Abyss, Underworld">
+<option value="66">pit fiend
+<option value="67">fairy dragon
+<option value="68">clockwark scorpion
+<option value="69">clan chitter assistant
+<option value="70">clan chitter tinkerer
+<option value="71">clan ribbon plague rat
+<option value="72">clan ribbon supplicant
+<option value="73">clan ribbon courtier
+<option value="74">clan scratch savage wolf
+<option value="75">clan scratch scrounger
+<option value="76">clan scratch henchrat
+<option value="77">acid slug
+<option value="78">skeletal lich
+<option value="79">fire ant
+<option value="80">fire daemon
+<option value="81">lava elemental
+<option value="82">coral snake
+<option value="83">maddening horror
+<option value="84">high plains boura
+<option value="85">ruddy boura
+<option value="86">lowland boura
+<option value="87">slith
+<option value="88">stone slith
+<option value="89">toxic slith
+<option value="90">kepetch
+<option value="91">kepetch ambusher
+<option value="92">raptor
+<option value="93">skree
+<option value="94">putrid undead gargoyle
+<option value="95">gargoyle shade
+<option value="96">effete putrid gargoyle
+<option value="97">effete undead gargoyle
+<option value="98">putrid undead guardian
+<option value="99">leather wolf
+<option value="100">trapdoor spider
+<option value="101">treefellow guardian
+<option value="102">rotworm
+<option value="103">bloodworm
+<option value="104">gremlin
+<option value="105">gray goblin
+<option value="106">gray goblin keeper
+<option value="107">gray goblin mage
+<option value="108">green goblin
+<option value="109">green goblin scout
+<option value="110">green goblin alchemist
+<option value="111">iron beetle
+<option value="112">wolf spider
+<option value="113">sentinel spider
+<option value="114">tangling roots
+<option value="115">greater poison elem
+<optgroup label="ML Monsters">
+<option value="55">Abscess
+<option value="56">Coil
+<option value="57">Saliva
+<option value="58">Tangle
+<option value="59">Thrasher
+<option value="60">Putrefier
+<option value="61">Swoop
+<option value="62">Gnaw
+<option value="63">Irk, Guile, Spite
+<option value="64">Lady Lissith, Sabrix, Silk
+<option value="65">Malefic, Virulent
+<option value="116">crystal daemon
+<option value="117">crystal hydra
+<option value="118">crystal sea serpent
+<option value="119">crystal vortex
+<option value="120">crystal lattice seeker
+<option value="121">unfrozen mummy
+<option value="122">Lady Jennifer
+<option value="123">Lady Marai
+<option value="124">Sir Patrick
+<option value="125">Red Death
+<option value="126">Grobu
+<option value="127">Lurg
+<option value="128">troglodyte
+<option value="129">minotaur
+<option value="130">minotaur scout
+<option value="131">minotaur captain
+<option value="132">tormented minotaur
+<option value="133">Meraktus
+<option value="134">Miasma
+<option value="135">Pyre
+<option value="136">reptalon
+<option value="137">Rend
+<option value="138">satyr
+<option value="139">dryad
+<option value="140">insane dryad
+<option value="141">changeling
+<option value="142">bulbous putrification
+<option value="143">corporeal brume
+<option value="144">fetid essence
+<option value="145">mantra effervencene
+<optgroup label="Tokuno Monsters">
+<option value="146">bake kitsune
+<option value="147">deathwatch beetle
+<option value="148">deathwatch beetle hatchling
+<option value="149">fan dancer
+<option value="150">fire beetle
+<option value="151">gaman
+<option value="152">hiryu
+<option value="153">lesser hiryu
+<option value="154">kappa
+<option value="155">kaze kemono
+<option value="156">Rai-ju
+<option value="157">lady of the snow
+<option value="158">oni
+<option value="159">revenant lion
+<option value="160">rune beetle
+<option value="161">tsuki wolf
+<option value="162">fire rabbit
+<option value="163">yamandon
+<option value="164">yomotsu warrior
+<option value="165">yomotsu priest
+<option value="166">yomotsu elder
+<optgroup label="Classic Monsters">
+<option value="167">dragon
+<option value="168">shadow wyrm
+<option value="169">white wyrm
+<option value="170">ancient wyrm
+<option value="171">skeletal dragon
+<option value="172">serpentine dragon
+<option value="173">wyvern
+<option value="174">drake
+<option value="175">juka lord
+<option value="176">juka mage
+<option value="177">juka warrior
+<option value="178">ophidian knight
+<option value="179">ophidian matriarch
+<option value="180">ophidian justicar
+<option value="181">ophidian shaman
+<option value="182">silver serpent
+<option value="183">lava serpent
+<option value="184">giant ice serpent
+<option value="185">giant serpent
+<option value="186">sea serpent
+<option value="187">deep sea serpent
+<option value="188">daemon
+<option value="189">barlon daemon
+<option value="190">ice fiend
+<option value="191">succubus
+<option value="192">devourer of souls
+<option value="193">flame gargoyle
+<option value="194">lich
+<option value="195">lich lord
+<option value="196">ancient lich
+<option value="197">rotting corpse
+<option value="198">mummy
+<option value="199">blood elemental
+<option value="200">poison elemental
+<option value="201">ice elemental
+<option value="202">snow elemental
+<option value="203">acid elemental
+<option value="204">crystal elemental
+<option value="205">fire elemental
+<option value="206">water elemental
+<option value="207">air elemental
+<option value="208">earth elemental
+<option value="209">wanderer of the void
+<option value="210">efreet
+<option value="211">sand vortax
+<option value="212">orc blute
+<option value="213">arctic ogre lord
+<option value="214">ogre lord
+<option value="215">titan
+<option value="216">cyclopean warrior
+<option value="217">meer eternal
+<option value="218">terathan avenger
+<option value="219">terathan matriarch
+<option value="220">dread spider
+<option value="221">ethereal warrior
+<option value="222">phoenix
+<option value="223">kraken
+<option value="224">leviathan
+<option value="225">nightmare
+<option value="226">fire steed
+<option value="227">bog thing
+<option value="228">plague beast
+<option value="229">elder gazer
+<option value="230">exodus minion
+<option value="231">exodus overseer
+<option value="232">betrayer
+<option value="233">blackthorn juggernaut
+<option value="234">golem
+     </select>
+ 
+ 
+ <table class="table02">
+ 
+   <tr>
+     <td align="center" bgcolor="#f0f0f0" width="90">&nbsp;</td>
+     <td align="center" bgcolor="#d0d0d0" width="80">物理</td>
+     <td align="center" bgcolor="#ffc080" width="80">炎</td>
+     <td align="center" bgcolor="#80c0ff" width="80">冷気</td>
+     <td align="center" bgcolor="#80ffc0" width="80">毒</td>
+     <td align="center" bgcolor="#ffc0ff" width="80">エネルギー</td>
+   </tr>
+ 
+   <tr>
+     <td align="center" bgcolor="#f0f0f0" width="90">選択Monster</td>
+     <td align="center" bgcolor="#d0d0d0" width="80"><input class="readtext" readonly type="text" name="armin" size="2" value="0">～<input class="readtext" readonly type="text" name="armax" size="2" value="0"></td>
+     <td align="center" bgcolor="#ffc080" width="80"><input class="readtext" readonly type="text" name="frmin" size="2" value="0">～<input class="readtext" readonly type="text" name="frmax" size="2" value="0"></td>
+     <td align="center" bgcolor="#80c0ff" width="80"><input class="readtext" readonly type="text" name="crmin" size="2" value="0">～<input class="readtext" readonly type="text" name="crmax" size="2" value="0"></td>
+     <td align="center" bgcolor="#80ffc0" width="80"><input class="readtext" readonly type="text" name="prmin" size="2" value="0">～<input class="readtext" readonly type="text" name="prmax" size="2" value="0"></td>
+     <td align="center" bgcolor="#ffc0ff" width="80"><input class="readtext" readonly type="text" name="ermin" size="2" value="0">～<input class="readtext" readonly type="text" name="ermax" size="2" value="0"></td>
+   </tr>
+ 
+</table>
+ 
+Corpse Skin [Necromancy]　：　<INPUT Type="checkbox" name="cops" value="yes" onclick="keisan1(form)">使用
+<br>不調和 [Discordance]　：　<select name="disco" SIZE="1" onchange="keisan1(form)">
+<optgroup label="スキル(低下量)">
+<option value="0">0～4.9 (-0)
+<option value="1">5.0～9.9 (-1)
+<option value="2">10.0～14.9 (-2)
+<option value="3">15.0～19.9 (-3)
+<option value="4">20.0～24.9 (-4)
+<option value="5">25.0～29.9 (-5)
+<option value="6">30.0～34.9 (-6)
+<option value="7">35.0～39.9 (-7)
+<option value="8">40.0～44.9 (-8)
+<option value="9">45.0～49.9 (-9)
+<option value="10">50.0～54.9 (-10)
+<option value="11">55.0～59.9 (-11)
+<option value="12">60.0～64.9 (-12)
+<option value="13">65.0～69.9 (-13)
+<option value="14">70.0～74.9 (-14)
+<option value="15">75.0～79.9 (-15)
+<option value="16">80.0～84.9 (-16)
+<option value="17">85.0～89.9 (-17)
+<option value="18">90.0～94.9 (-18)
+<option value="19">95.0～99.9 (-19)
+<option value="20">100.0～102.4 (-20)
+<option value="21">102.5～104.9 (-21)
+<option value="22">105.0～107.4 (-22)
+<option value="23">107.5～109.9 (-23)
+<option value="24">110.0～112.4 (-24)
+<option value="25">112.5～114.9 (-25)
+<option value="26">115.0～117.4 (-26)
+<option value="27">117.5～119.9 (-27)
+<option value="28">120.0 (-28)
+<option value="7">MAX難易度 (-7)
+<option value="14">MAX難易度 (-14)
+    </select>
+ 
+ 
+<h3>４．武器ダメージ増加、ダメージ修正項目</h3>
+プロテクトおよびDragon Bardingは、モンスターの直接攻撃によるダメージを計算するときに使用します。
+ 
+ <table class="table01">
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="180">武器ダメージ増加項目</td>
+     <td align="center" width="90">増加量</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">STR</td>
+     <td align="center">+<input class="readtext" readonly type="text" name="dinc1" size="5" value="0" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">tactics</td>
+     <td align="center">+<input class="readtext" readonly type="text" name="dinc2" size="5" value="0" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">anatomy</td>
+     <td align="center">+<input class="readtext" readonly type="text" name="dinc3" size="5" value="0" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">lamberjacking</td>
+     <td align="center">+<input class="readtext" readonly type="text" name="dincl" size="5" value="0" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">Quiver　<INPUT Type="checkbox" name="quiv" value="yes" onclick="keisan1(form)">使用</td>
+     <td align="center">+<input class="readtext" readonly type="text" name="quiv1" size="5" value="0" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">武器ダメージ＋プロパティ</td>
+     <td align="center">+<input type="text" name="dinc4" size="5" value="0" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#bbbbff">
+     <td align="center">武器ダメージ増加合計</td>
+     <td align="center">+<input class="readtext" readonly type="text" name="tdi" size="5" value="0" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#99bbff">
+     <td align="center"><img src="attackpower.gif" alt="" class="img01">武器攻撃力</td>
+     <td align="center"> 
+<input class="readtext" readonly type="text" name="att1" size="2" value="0">～<input class="readtext" readonly type="text" name="att2" size="2" value="0">
+</td>
+   </tr>
+</table>
+ 
+ <table class="table01">
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="140">項　目</td>
+     <td align="center" width="120">適用</td>
+     <td align="center" width="90">ダメージ修正</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">特効 [武器]</td>
+     <td align="center"><select name="tokkou" SIZE="1" onchange="keisan1(form)">
+<option value="100">未使用 
+<option value="300">単一
+<option value="200">種族系
+</select></td>
+     <td align="center">×<input class="readtext" readonly type="text" name="tok1" size="3" value="100" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">特効 [talisman]</td>
+     <td align="center"><INPUT Type="checkbox" name="tal01" value="yes" onclick="keisan1(form)">使用</td>
+     <td align="center">×<input class="readtext" readonly type="text" name="tal1" size="3" value="100" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">キラー [talisman]</td>
+     <td align="center"><INPUT Type="text" size="3" name="tal02" value="0" onchange="keisan1(form)">%</td>
+     <td align="center">×<input class="readtext" readonly type="text" name="tal2" size="3" value="100" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">consecrate weapon</td>
+     <td align="center"><INPUT Type="checkbox" name="consec" value="yes" onclick="keisan1(form)">使用</td>
+     <td align="center">×<input class="readtext" readonly type="text" name="cons1" size="3" value="100" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">Enemy of One</td>
+     <td align="center"><INPUT Type="checkbox" name="eoone" value="yes" onclick="keisan1(form)">使用</td>
+     <td align="center">×<input class="readtext" readonly type="text" name="eoo1" size="3" value="100" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">Evil Omen</td>
+     <td align="center"><INPUT Type="checkbox" name="evil" value="yes" onclick="keisan1(form)">使用</td>
+     <td align="center">×<input class="readtext" readonly type="text" name="evil1" size="3" value="100" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">プロテクト [talisman]</td>
+     <td align="center"><INPUT Type="text" size="3" name="tal03" value="0" onchange="keisan1(form)">%</td>
+     <td align="center">×<input class="readtext" readonly type="text" name="tal3" size="3" value="100" onchange="keisan1(form)">%</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">Dragon Barding</td>
+     <td align="center"><select name="bard01" SIZE="1" onchange="keisan1(form)">
+<option value="100">未使用 
+<option value="90">標準品
+<option value="80">高品質
+<option value="88">Paroxysmus'
+</select>
+     <td align="center">×<input class="readtext" readonly type="text" name="bard1" size="3" value="100" onchange="keisan1(form)">%</td>
+   </tr>
+</table>
+ 
+<br class="cle">
+ 
+ 
+<h3>５．ダメージ計算結果</h3>
+ 
+ <table class="table02">
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="250">攻撃方法</td>
+     <td align="center" width="120">ダメージ修正</td>
+     <td align="center" width="200">最終ダメージ</td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">通常攻撃</td>
+     <td align="center"><input class="readtext" readonly type="text" name="mul01" size="3" value="100" onchange="keisan1(form)">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="damage01" size="3" value="0">～　<input class="readtext" readonly type="text" name="damage02" size="3" value="0"></td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">crushing blow</td>
+     <td align="center"><input class="readtext" readonly type="text" name="mul02" size="3" value="100" onchange="keisan1(form)">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="damage03" size="3" value="0">～　<input class="readtext" readonly type="text" name="damage04" size="3" value="0"></td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">armor ignore</td>
+     <td align="center"><input class="readtext" readonly type="text" name="mul03" size="3" value="100" onchange="keisan1(form)">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="damage05" size="3" value="0">～　<input class="readtext" readonly type="text" name="damage06" size="3" value="0"></td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">double strike(1st + 2nd)</td>
+     <td align="center"><input class="readtext" readonly type="text" name="mul04" size="3" value="100" onchange="keisan1(form)">% +<input class="readtext" readonly type="text" name="mul05" size="3" value="100" onchange="keisan1(form)">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="damage07" size="3" value="0">～　<input class="readtext" readonly type="text" name="damage08" size="3" value="0">
+＋　<input class="readtext" readonly type="text" name="damage09" size="3" value="0">～　<input class="readtext" readonly type="text" name="damage10" size="3" value="0"></td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">momentum strike(1st[生存] + 2nd)</td>
+     <td align="center"><input class="readtext" readonly type="text" name="mul06" size="3" value="100" onchange="keisan1(form)">% +<input class="readtext" readonly type="text" name="mul07" size="3" value="100" onchange="keisan1(form)">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="damage11" size="3" value="0">～　<input class="readtext" readonly type="text" name="damage12" size="3" value="0">
+＋　<input class="readtext" readonly type="text" name="damage13" size="3" value="0">～　<input class="readtext" readonly type="text" name="damage14" size="3" value="0"></td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">momentum strike(1st[撃破] + 2nd)</td>
+     <td align="center"><input class="readtext" readonly type="text" name="mul08" size="3" value="100" onchange="keisan1(form)">% +<input class="readtext" readonly type="text" name="mul09" size="3" value="100" onchange="keisan1(form)">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="damage15" size="3" value="0">～　<input class="readtext" readonly type="text" name="damage16" size="3" value="0">
+＋　<input class="readtext" readonly type="text" name="damage17" size="3" value="0">～　<input class="readtext" readonly type="text" name="damage18" size="3" value="0"></td>
+   </tr>
+ 
+   <tr bgcolor="#ddddff">
+     <td align="center">whirl wind　巻き込み<INPUT Type="text" size="2" name="whirl" value="1" onchange="keisan1(form)">体</td>
+     <td align="center"><input class="readtext" readonly type="text" name="mul10" size="3" value="100" onchange="keisan1(form)">%</td>
+     <td align="center"><input class="readtext" readonly type="text" name="damage19" size="3" value="0">～　<input class="readtext" readonly type="text" name="damage20" size="3" value="0"></td>
+   </tr>
+</table>
+<br class="cle">
+ 
+ 
+</form>
+ 
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

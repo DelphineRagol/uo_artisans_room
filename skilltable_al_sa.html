@@ -1,0 +1,1069 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>錬金・硝工作成難易度表</TITLE>
+</HEAD>
+<body><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898562</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<h2>錬金・硝工作成難易度表</h2>
+<HR>
+
+<script language="javascript">
+<!--
+//Soubi
+var soubi;
+soubi=new Array(66);
+soubi[0] =  -2500006;
+soubi[1] =  2500006;
+soubi[2] =  -2500006;
+soubi[3] =  1500006;
+soubi[4] =  5500006;
+soubi[5] =  -1000006;
+soubi[6] =  2500006;
+soubi[7] =  6500006;
+soubi[8] =  6500006; // elixirod rebirth
+soubi[9] =  1500006;
+soubi[10] =  3500006;
+soubi[11] =  -2500006;
+soubi[12] =  2500006;
+soubi[13] =  4500006;
+soubi[14] =  6500006;
+soubi[15] =  -500006;
+soubi[16] =  1500006;
+soubi[17] =  5500006;
+soubi[18] =  9000006;
+soubi[19] =  6500006;
+soubi[20] =  6500006;
+soubi[21] =  7505006;
+soubi[22] =  500006;
+soubi[23] =  3500006;
+soubi[24] =  6500006;
+soubi[25] =  5500006;
+soubi[26] =  7000006;
+soubi[27] =  5000006;
+soubi[28] =  6500006;
+soubi[29] =  6500006;
+soubi[30] =  2500006;
+soubi[31] =  5500006;
+soubi[32] =  9000010;
+soubi[33] =  7500006;
+soubi[34] =  7505006;
+soubi[35] =  9000010;
+soubi[36] =  7505006;
+soubi[37] =  7505006;
+soubi[38] =  7505006;
+soubi[39] =  7505006;
+soubi[40] =  7505006;
+soubi[41] =  9005006;
+soubi[42] =  9005006;
+soubi[43] =  6;
+soubi[44] =  9000010;
+
+soubi[45] =  5250006;
+soubi[46] =  5250006;
+soubi[47] =  5250006;
+soubi[48] =  5500006;
+soubi[49] =  5750006;
+soubi[50] =  6000006;
+soubi[51] =  6000006;
+soubi[52] =  6000006;
+soubi[53] =  6000006;
+soubi[54] =  6500006;
+soubi[55] =  6500006;
+soubi[56] =  7500006;
+soubi[57] =  10005006;
+soubi[58] =  7500006;
+soubi[59] =  7000006;
+soubi[60] =  7000006;
+soubi[61] =  5250006;
+soubi[62] =  6000006;
+soubi[63] =  5500006;
+soubi[64] =  5500006;
+soubi[65] =  5360006;
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.skill.value = 0.0;
+  exb1 = 0.0;
+  crb1 = 0.0;
+
+return true;
+}
+
+//計算
+
+function keisan1(form)
+{
+var form = document.form_keisan;
+  skill = form.skill.value;
+  exb1 = form.exb1.options[form.exb1.selectedIndex].value;
+  crb1 = form.crb1.options[form.crb1.selectedIndex].value;
+
+  pmt1 = new Array(66);
+
+    for (i=0; i<66; i++)
+    {
+    pmt1[i] = Math.floor(soubi[i]/10000) / 10.0;
+    }
+
+  pmt2 = new Array(66);
+
+    for (i=0; i<66; i++)
+    {
+    pmt2[i] = Math.floor(Math.abs((soubi[i] % 10000)) / 100.0);
+    }
+
+  pmt3 = new Array(66);
+
+    for (i=0; i<66; i++)
+    {
+    pmt3[i] = Math.abs((soubi[i] % 100)) / 3.0;
+    }
+
+  rate = new Array(132);
+
+    for (i=0; i<45; i++)
+    {
+    rate[2*i] = Math.round(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] + 1.0 * crb1)) * 10 ) / 10;
+    rate[2*i+1] = Math.round(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] - 60.0 + 1.0 * exb1
+                + Math.min(15.0 , Math.max(0.0 , (skill - 95.0) * 3.0)))) * 10 ) / 10;
+    if(skill - pmt1[i]<0)
+    {
+    rate[2*i] = 0.0;
+    rate[2*i+1] = 0.0;
+    }
+    }
+
+    for (i=45; i<66; i++)
+    {
+    rate[2*i] = Math.round(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] + 1.0 * crb1)) * 10 ) / 10;
+    rate[2*i+1] = Math.round(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] - 60.0 + 1.0 * exb1
+                + Math.min(15.0 , Math.max(0.0 , (skill - 95.0) * 3.0)))) * 10 ) / 10;
+    if(skill < 100)
+    {
+    rate[2*i] = 0.0;
+    rate[2*i+1] = 0.0;
+    }
+    }
+
+    form.rate000.value = rate[0];
+    form.rate002.value = rate[2];
+    form.rate004.value = rate[4];
+    form.rate006.value = rate[6];
+    form.rate008.value = rate[8];
+    form.rate010.value = rate[10];
+    form.rate012.value = rate[12];
+    form.rate014.value = rate[14];
+    form.rate016.value = rate[16];
+    form.rate018.value = rate[18];
+    form.rate020.value = rate[20];
+    form.rate022.value = rate[22];
+    form.rate024.value = rate[24];
+    form.rate026.value = rate[26];
+    form.rate028.value = rate[28];
+    form.rate030.value = rate[30];
+    form.rate032.value = rate[32];
+    form.rate034.value = rate[34];
+    form.rate036.value = rate[36];
+    form.rate038.value = rate[38];
+    form.rate040.value = rate[40];
+    form.rate042.value = rate[42];
+    form.rate044.value = rate[44];
+    form.rate046.value = rate[46];
+    form.rate048.value = rate[48];
+    form.rate050.value = rate[50];
+    form.rate052.value = rate[52];
+    form.rate054.value = rate[54];
+    form.rate056.value = rate[56];
+    form.rate058.value = rate[58];
+    form.rate060.value = rate[60];
+    form.rate062.value = rate[62];
+    form.rate064.value = rate[64];
+    form.rate066.value = rate[66];
+    form.rate067.value = rate[67];
+    form.rate068.value = rate[68];
+    form.rate070.value = rate[70];
+    form.rate072.value = rate[72];
+    form.rate074.value = rate[74];
+    form.rate076.value = rate[76];
+    form.rate078.value = rate[78];
+    form.rate080.value = rate[80];
+    form.rate082.value = rate[82];
+    form.rate084.value = rate[84];
+    form.rate086.value = rate[86];
+    form.rate088.value = rate[88];
+
+    form.rate090.value = rate[90];
+    form.rate092.value = rate[92];
+    form.rate094.value = rate[94];
+    form.rate096.value = rate[96];
+    form.rate098.value = rate[98];
+    form.rate100.value = rate[100];
+    form.rate102.value = rate[102];
+    form.rate104.value = rate[104];
+    form.rate106.value = rate[106];
+    form.rate108.value = rate[108];
+    form.rate110.value = rate[110];
+    form.rate112.value = rate[112];
+    form.rate114.value = rate[114];
+    form.rate116.value = rate[116];
+    form.rate118.value = rate[118];
+    form.rate120.value = rate[120];
+    form.rate122.value = rate[122];
+    form.rate124.value = rate[124];
+    form.rate126.value = rate[126];
+    form.rate128.value = rate[128];
+    form.rate129.value = rate[129];
+    form.rate130.value = rate[130];
+    form.rate131.value = rate[131];
+    form.sk0.value = skill;
+    form.sk1.value = skill;
+    form.sk2.value = skill;
+    form.sk3.value = skill;
+    form.sk4.value = skill;
+    form.sk5.value = skill;
+    form.sk6.value = skill;
+return true;
+}
+//-->
+</script>
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+
+ {//functionの宣言。受けとったIDは変数targetIDに格納。
+  if( document.getElementById(targetID))
+   { //指定のIDのついたオブジェクトがあったら処理する
+     //指定されたIDのstyle.displayがnoneなら
+    for (i=1; i<8; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {//blockに変更する
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+
+<form name="form_keisan">
+<p>錬金スキルで作ることができるアイテムの作成難易度表です。下のカテゴリ画像をクリックすると、そのカテゴリが表示／非表示されます。</p>
+<p>スキル　：　<INPUT TYPE="text" NAME="skill" SIZE="4" value="100">（手入力）
+<br>成功率補正のタリスマンおよびhygieia's Amulet [ハイジーアのアミュレット]を装備している場合は、下の成功率ボーナスも選択してください。
+<br>
+錬金または硝工　：　高品質成功率ボーナス
+<select name="exb1" size="1">
+<option value="0">----
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+</select>
+％、
+成功率ボーナス
+<select name="crb1" size="1">
+<option value="0">----
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+<option value="31">31
+<option value="32">32
+<option value="33">33
+<option value="34">34
+<option value="35">35
+<option value="36">36
+<option value="37">37
+<option value="38">38
+<option value="39">39
+<option value="40">40
+<option value="41">41
+<option value="42">42
+<option value="43">43
+<option value="44">44
+<option value="45">45
+</select>
+％
+
+<br><input type="button" value="高品質および作成成功率計算" onclick="keisan1(form)">
+
+<table class="table03">
+  <tr>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_1');return false;"><img src="al_cat01.gif" alt="治療回復系" class="img01"></a><font size=2"><br>治療回復系</font></td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_2');return false;"><img src="al_cat02.gif" alt="増強系" class="img01"></a><br>増強系</td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_3');return false;"><img src="al_cat06.gif" alt="毒系" class="img01"></a><br>毒系</td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_4');return false;"><img src="al_cat08.gif" alt="爆発系" class="img01"></a><br>爆発系</td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_5');return false;"><img src="natural_dye_plain.gif" alt="特殊混合物" class="img01"></a><font size=2"><br>特殊混合物</font></td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_6');return false;"><img src="crystal_dust.gif" alt="素材" class="img01"></a><br>素材</td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_7');return false;"><img src="al_cat11.gif" alt="硝工" class="img01"></a><br>硝工</td>
+  </tr>
+</table>
+
+<div id="cat_1" style="display: none">
+
+<h4>（１）治療回復系</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk0" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="最大スタミナの25％分回復"><img src="refpot.gif" alt="" class="img01"><br>refresh potion<br>[スタミナ回復]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="blackpearl.gif" alt="black pearl" class="img01"> black pearl×1</td>
+   <td align="center">-25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate000" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="最大スタミナの50％分回復"><img src="refpot.gif" alt="" class="img01"><br>greater refresh potion<br>[スタミナ回復 - 強]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="blackpearl.gif" alt="black pearl" class="img01"> black pearl×5</td>
+   <td align="center">25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate002" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="HP6～8回復&#10;クールタイム4秒"><img src="healpot.gif" alt="" class="img01"><br>lesser heal potion<br>[回復 - 弱]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="ginseng.gif" alt="ginseng" class="img01"> ginseng×1</td>
+   <td align="center">-25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate004" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="HP13～16回復&#10;クールタイム8秒"><img src="healpot.gif" alt="" class="img01"><br>heal potion<br>[回復]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="ginseng.gif" alt="ginseng" class="img01"> ginseng×3</td>
+   <td align="center">15.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate006" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="HP21～25回復&#10;クールタイム10秒"><img src="healpot.gif" alt="" class="img01"><br>greater heal potion<br>[回復 - 強]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="ginseng.gif" alt="ginseng" class="img01"> ginseng×7</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate008" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="毒回復&#10;100/35/15/10/5%"><img src="curepot.gif" alt="" class="img01"><br>lesser cure potion<br>[解毒 - 弱]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="garlic.gif" alt="garlic" class="img01"> garlic×1</td>
+   <td align="center">-10.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate010" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="毒回復&#10;100/95/45/25/15%"><img src="curepot.gif" alt="" class="img01"><br> cure potion<br>[解毒]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="garlic.gif" alt="garlic" class="img01"> garlic×3</td>
+   <td align="center">25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate012" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="毒回復&#10;100/100/75/45/25%"><img src="curepot.gif" alt="" class="img01"><br>greater cure potion<br>[解毒 - 強]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="garlic.gif" alt="garlic" class="img01"> garlic×6</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate014" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="ペット蘇生"><img src="elixir_rebirth.gif" alt="" class="img01"><br>elixir of rebirth<br>[ペットエリクサー]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="medusa_blood.gif" alt="medusa's blood" class="img01"> medusa's blood×1
+<br><img src="spidersilk.gif" alt="spidersilk" class="img01"> spider silk×3</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate016" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_2" style="display: none">
+
+<h4>（２）増強系</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk1" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="DEX+10,120秒"><img src="agipot.gif" alt="" class="img01"><br>agility potion<br>[敏捷増強]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="bloodmoss.gif" alt="bloodmoss" class="img01"> blood moss×1</td>
+   <td align="center">15.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate018" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="DEX+20,120秒"><img src="agipot.gif" alt="" class="img01"><br>greater agility potion<br>[敏捷増強 - 強]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="bloodmoss.gif" alt="bloodmoss" class="img01"> blood moss×3</td>
+   <td align="center">35.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate020" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="nightpot.gif" alt="" class="img01"><br>night sight potion<br>[暗視]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="spidersilk.gif" alt="spidersilk" class="img01"> spider silk×1</td>
+   <td align="center">-25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate022" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="STR+10,120秒"><img src="strpot.gif" alt="" class="img01"><br>strength potion<br>[筋力増強]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="mandrake.gif" alt="mandrake" class="img01"> mandrake×2</td>
+   <td align="center">25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate024" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="STR+20,120秒"><img src="strpot.gif" alt="" class="img01"><br>greater strength potion<br>[筋力増強 - 強]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="mandrake.gif" alt="mandrake" class="img01"> mandrake×5</td>
+   <td align="center">45.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate026" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="Invisibility,20～30秒"><img src="invisipotion.gif" alt="" class="img01"><br>invisibility potion<br>[潜伏]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="bloodmoss.gif" alt="" class="img01"> blood moss×4
+<br><img src="nightshade.gif" alt="" class="img01"> nightshade×3</td>
+   <td align="center">65.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate028" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_3" style="display: none">
+
+<h4>（３）毒系</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk2" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="poipot.gif" alt="" class="img01"><br>lesser poison potion<br>[毒 - 弱]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="nightshade.gif" alt="nightshade" class="img01"> nightshade×1</td>
+   <td align="center">-5.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate030" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="poipot.gif" alt="" class="img01"><br>poison potion<br>[毒]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="nightshade.gif" alt="nightshade" class="img01"> nightshade×2</td>
+   <td align="center">15.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate032" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="poipot.gif" alt="" class="img01"><br>greater poison potion<br>[毒 - 強]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="nightshade.gif" alt="nightshade" class="img01"> nightshade×4</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate034" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="poipot.gif" alt="" class="img01"><br>deadly poison potion<br>[毒 - 激]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="nightshade.gif" alt="nightshade" class="img01"> nightshade×8</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate036" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="parasiticpotion.gif" alt="" class="img01"><br>parasitic poison<br>[寄生毒]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="parasiticplant.gif" alt="" class="img01"> parasitic plant×5</td>
+   <td align="center">65.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate038" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="darkglowpotion.gif" alt="" class="img01"><br>darkglow potion<br>[夜光毒]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="luminescentfungi.gif" alt="" class="img01"> luminescent fungi×5</td>
+   <td align="center">65.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate040" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="柔らかい茎（錬金、細工）の材料"><img src="scouring_toxin.gif" alt="" class="img01"><br>scouring toxin<br>[毒洗浄液]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="toxic_venom_sac.gif" alt="venom sac" class="img01"> toxic venom sac×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate042" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_4" style="display: none">
+
+<h4>（４）爆発系</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk3" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="爆発周囲炎ダメージ&#10;(5～10)+(0～20)ダメージ"><img src="exppot.gif" alt="" class="img01"><br>lesser explosion potion<br>[爆発 - 弱]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×3</td>
+   <td align="center">5.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate044" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="爆発周囲炎ダメージ&#10;(10～20)+(0～20)ダメージ"><img src="exppot.gif" alt="" class="img01"><br>explosion potion<br>[爆発]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×5</td>
+   <td align="center">35.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate046" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="爆発周囲炎ダメージ&#10;(20～40)+(0～20)ダメージ"><img src="exppot.gif" alt="" class="img01"><br>greater explosion potion<br>[爆発 - 強]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×10</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate048" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="5×5炎フィールド10秒&#10;(2～4)+(0～8)ダメージ"><img src="conflagration.gif" alt="" class="img01"><br>conflagration<br>[火炎]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="gravedust.gif" alt="" class="img01"> grave dust×5</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate050" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="5×5炎フィールド10秒&#10;(4～8)+(0～8)ダメージ"><img src="conflagration.gif" alt="" class="img01"><br>greater conflagration<br>[火炎 - 強]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="gravedust.gif" alt="" class="img01"> grave dust×10</td>
+   <td align="center">70.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate052" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="半径5マスターゲット解除&#10;クールタイム60秒"><img src="confusion.gif" alt="" class="img01"><br>confusion blast<br>[混乱]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="pigiron.gif" alt="" class="img01"> pig iron×5</td>
+   <td align="center">50.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate054" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="半径7マスターゲット解除&#10;クールタイム60秒"><img src="confusion.gif" alt="" class="img01"><br>greater confusion blast<br>[混乱 - 大]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="pigiron.gif" alt="" class="img01"> pig iron×10</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate056" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="火薬袋(裁縫),導火線(錬金)の材料"><img src="black_powder.gif" alt="" class="img01"><br>black powder<br>[黒色火薬]</td>
+   <td align="center"><img src="saltpetre.gif" alt="" class="img01"> 硝石×6
+<br><img src="charcoal.gif" alt="" title="charcoal&#10;料理＞仕込み" class="img01"> 木炭×1
+<br><img src="surash.gif" alt="" class="img01"> sulfurous ash×1</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate058" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="点火棒(細工)の材料"><img src="match_cord.gif" alt="" class="img01"><br>match cord<br>[火縄]</td>
+   <td align="center"><img src="saltpetre.gif" alt="" class="img01"> 硝石×1
+<br><img src="yarn.gif" alt="" class="img01"> yarn×1
+<br><img src="water.gif" alt="" class="img01"> water×1杯分
+<br><img src="potash.gif" alt="" title="potash&#10;錬金＞素材" class="img01"> カリウム×1</td>
+   <td align="center">25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate060" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="大砲発射に必要"><img src="fuse_cord.gif" alt="" class="img01"><br>fuse cord<br>[導火線]</td>
+   <td align="center"><img src="black_powder.gif" alt="" titel="black powder" class="img01"> 黒色火薬×1
+<br><img src="yarn.gif" alt="" class="img01"> yarn×1
+<br><img src="water.gif" alt="" class="img01"> water×1杯分
+<br><img src="potash.gif" alt="" title="potash&#10;錬金＞素材" class="img01"> カリウム×1</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate062" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_5" style="display: none">
+
+<h4>（５）特殊混合物</h4>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk4" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="eggbomb.gif" alt="" class="img01"><br>smoke bomb<br>[煙玉]</td>
+   <td align="center"><img src="eggs.gif" alt="" class="img01"> eggs×1
+<br><img src="ginseng.gif" alt="" class="img01"> ginseng×3</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate064" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="wisp.gif" alt="" class="img01"><br>hovering wisp<br>[漂うウィスプ]</td>
+   <td align="center"><img src="essence.gif" alt="" class="img01"> captured essence×4</td>
+   <td align="center">75.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate066" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate067" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="natural_dye_plain.gif" alt="" class="img01"><br>natural dye<br>[自然染料]</td>
+   <td align="center"><img src="plant_pigment_plain.gif" alt="" class="img01"> plant pigment×1
+<br><img src="color_fixative.gif" alt="" class="img01"> color fixative×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate068" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="nexus_core.gif" alt="" class="img01"><br>nexus core<br>[ネクサスコア]</td>
+   <td align="center"><img src="crushed_glass.gif" alt="crushed glass" class="img01"> crushed glass×5
+<br><img src="darksapphire.gif" alt="dark sapphire" class="img01"> dark sapphire×5
+<br><img src="spidersilk.gif" alt="" class="img01"> spider silk×10
+<br><img src="mandrake.gif" alt="" class="img01"> mandrake×10
+</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate070" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_6" style="display: none">
+
+<h4>（６）素材</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="210" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk5" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="plant_pigment_plain.gif" alt="" class="img01"><br>plant pigment<br>[植物顔料]</td>
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"> empty bottle×1
+<br><img src="plant_clippings.gif" alt="" class="img01"> plant clippings×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate072" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="color_fixative.gif" alt="" class="img01"><br>color fixative<br>[色素定着剤]</td>
+   <td align="center"><img src="silverserpent_venom.gif" alt="" class="img01"> silver serpent venom×1
+<br><img src="winebottle.gif" alt="" class="img01"> bottle of wine×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate074" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="ソウルストーンフラグメント(硝工)の材料"><img src="crystal_granules.gif" alt="" class="img01"><br>crystal granules<br>[クリスタルの粒]</td>
+   <td align="center"><img src="shimmering_crystal.gif" alt="" title="shimmering effusionが落とす" class="img01">shimmering crystal×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate076" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="ゴーゴンレンズ(細工)の材料"><img src="crystal_dust.gif" alt="" class="img01"><br>crystal dust<br>[クリスタルの粉末]</td>
+   <td align="center"><img src="broken_crystal.gif" alt="" title="crystal daemon等が落とす" class="img01">broken crystal×4</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate078" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="バスケット類(細工)の材料"><img src="soften_reed.gif" alt="" class="img01"><br>soften reeds<br>[柔らかい茎]</td>
+   <td align="center"><img src="reed_plain.gif" alt="" class="img01"> dry reeds×2
+<br><img src="scouring_toxin.gif" alt="" class="img01"> scouring toxin×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate080" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center" title="特効：エレメンタル族の練成材料"><img src="vial_vitriol.gif" alt="vial of vitriol" class="img01"><br>vial of vitriol<br>[硫酸の小瓶]</td>
+   <td align="center"><img src="parasiticpotion.gif" alt="parasitic poison" class="img01"> parasitic poison×1
+<br><img src="nightshade.gif" alt="blackpearl" class="img01"> nightshade×30</td>
+   <td align="center">90.0<br>魔法75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate082" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center" title="NightSightの練成材料"><img src="vial_ichor.gif" alt="vial of ichor" class="img01"><br>vial of ichor<br>[イコルの瓶]</td>
+   <td align="center"><img src="darkglowpotion.gif" alt="darkglow poison" class="img01">darkglow poison×1
+<br><img src="spidersilk.gif" alt="spider's silk" class="img01">spider's silk×30</td>
+   <td align="center">90.0<br>魔法75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate084" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="potash.gif" alt="" class="img01"><br>potash<br>[カリウム]</td>
+   <td align="center"><img src="water.gif" alt="" class="img01"> water×1杯分
+<br><img src="board.gif" alt="" class="img01"> board×1</td>
+   <td align="center">0.0<br>HS</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate086" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gold_dust.gif" alt="gold dust" class="img01"><br>gold dust<br>[砂金]</td>
+   <td align="center"><img src="gold_piece.gif" alt="gold piece" class="img01"> 1000gp</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate088" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+</div>
+
+<div id="cat_7" style="display: none">
+
+<h4>（７）硝工</h4>
+
+錬金スキル100、かつ<img src="sandbook.gif" alt="" class="img01">Crafting glass with glassblowingを読んでいる必要があります。
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="180" rowspan="2">製品名</td>
+   <td align="center" width="210" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk6" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="empbottle.gif" alt="" class="img01"><br>empty bottle<br>[空きビン]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×1</td>
+   <td align="center">52.5</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate090" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="flask01.gif" alt="" class="img01"><br>flask (small)<br>[フラスコ(小)]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×2</td>
+   <td align="center">52.5</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate092" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="flask02.gif" alt="" class="img01"><br>flask (medium)<br>[フラスコ(中)]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×3</td>
+   <td align="center">52.5</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate094" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="flask03.gif" alt="" class="img01"><br>flask (curved)<br>[フラスコ(カーブ)]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×2</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate096" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="flask04.gif" alt="" class="img01"><br>flask (large#1)<br>[フラスコ(大-1)]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×4</td>
+   <td align="center">57.5</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate098" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="flask05.gif" alt="" class="img01"><br>flask (large#2)<br>[フラスコ(大-2)]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×5</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate100" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="flask06.gif" alt="" class="img01"><br>flask (bubbling blue)<br>[フラスコ(泡-青)]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×5</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate102" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="flask07.gif" alt="" class="img01"><br>flask (bubbling purple)<br>[フラスコ(泡-紫)]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×5</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate104" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="flask08.gif" alt="" class="img01"><br>flask (bubbling red)<br>[フラスコ(泡-赤)]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×7</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate106" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="vial01.gif" alt="" class="img01"><br>empty vials<br>[空の試験管]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×8</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate108" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="vial02.gif" alt="" class="img01"><br>full vials<br>[液体入り試験管]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×9</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate110" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="hourglass.gif" alt="" class="img01"><br>spinning hourglass<br>[回転する砂時計]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×10</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate112" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="runedprism.gif" alt="" class="img01"><br>hollow prism<br>[中空のプリズム]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×8</td>
+   <td align="center">100.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate114" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="termur_style_floormirror.gif" alt="" class="img01"><br>TerMur style floormirror<br>[テルマー式立て鏡]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×20</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate116" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="termur_style_wallmirror.gif" alt="" class="img01"><br>TerMur style wallmirror<br>[テルマー式壁掛け鏡]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×10</td>
+   <td align="center">70.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate118" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="soulstone_fragment.gif" alt="" class="img01"><br>soulstone fragment<br>[ソウルストーンフラグメント]</td>
+   <td align="center"><img src="crystal_granules.gif" alt="" title="shimmering crystalから作成" class="img01">crystal granules×2
+<br><img src="void_essence.gif" alt="" class="img01">void essence×2</td>
+   <td align="center">70.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate120" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="venom_vial.gif" alt="" class="img01"><br>empty venom vial<br>[毒用容器]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×1</td>
+   <td align="center">52.5</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate122" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="oilflask.gif" alt="" class="img01"><br>empty oil flask<br>[空っぽの油のビン]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×5</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate124" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="workable_glass.gif" alt="" class="img01"><br>workable glass<br>[加工用ガラス]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×10</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate126" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="glass_sword.gif" alt="" class="img01"><br>glass sword<br>[グラスソード]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×14</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate128" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate129" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="glass_staff.gif" alt="" class="img01"><br>glass staff<br>[グラススタッフ]</td>
+   <td align="center"><img src="sand02.gif" alt="" class="img01"> sand×10</td>
+   <td align="center">53.6</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate130" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate131" SIZE="4"></td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+
+</form>
+</BODY>
+</HTML>
+
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

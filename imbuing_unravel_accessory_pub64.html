@@ -1,0 +1,582 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>アクセサリ抽出計算</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898841</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<h2>アクセサリ抽出計算</h2>
+<HR>
+
+Imbuingスキルでアイテムを抽出（unravel）するときの参考に作成しました。
+<br>キャラクター、抽出に使用する施設、付加されるマジック効果などを選択欄より選択します。
+<br>特殊宝石を使用して作成するアクセサリ（fireruby bracelet等）の特殊効果は、一番下の選択欄より選択します。
+<br>アクセサリの現在耐久値を入力し、"練成品"であれば、そこをチェックします。練成品ではないアクセサリは耐久値255として計算します。
+<br>全強度計算ボタンを押すと、下に評価強度および抽出素材が表示されます。
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+function keisan0(form)
+{
+  form_keisan.prop1.value = 0.0;
+  form_keisan.prop2.value = 0.0;
+  form_keisan.prop3.value = 0.0;
+  form_keisan.prop4.value = 0.0;
+  form_keisan.prop5.value = 0.0;
+  form_keisan.prop6.value = 0.0;
+  form_keisan.prop8.value = 0.0;
+  form_keisan.prop9.value = 0.0;
+  form_keisan.rat1.value = 0.0;
+  form_keisan.rat2.value = 0.0;
+  form_keisan.rat3.value = 0.0;
+  form_keisan.rat4.value = 0.0;
+  form_keisan.rat5.value = 0.0;
+  form_keisan.rat6.value = 0.0;
+  form_keisan.rat8.value = 0.0;
+  form_keisan.rat9.value = 0.0;
+  form_keisan.imb.value = 0.0;
+  form_keisan.hose.value = 0.0;
+  form_keisan.rat.value = 0.0;
+  return true;
+}
+
+//計算
+function keisan1(form)
+{
+var form = document.form_keisan;
+
+  prop1 = form_keisan.prop1.options[form.prop1.selectedIndex].value;
+  prop2 = form_keisan.prop2.options[form.prop2.selectedIndex].value;
+  prop3 = form_keisan.prop3.options[form.prop3.selectedIndex].value;
+  prop4 = form_keisan.prop4.options[form.prop4.selectedIndex].value;
+  prop5 = form_keisan.prop5.options[form.prop5.selectedIndex].value;
+  rat6 = form_keisan.prop6.options[form.prop6.selectedIndex].value;
+  rat8 = form_keisan.prop8.options[form.prop8.selectedIndex].value;
+  rat9 = form_keisan.prop9.options[form.prop9.selectedIndex].value;
+  kyo1 = form_keisan.kyo1.value;
+  kyo2 = form_keisan.kyo2.value;
+  kyo3 = form_keisan.kyo3.value;
+  kyo4 = form_keisan.kyo4.value;
+  kyo5 = form_keisan.kyo5.value;
+  dur = form_keisan.dur.value;
+  rat = 0.0;
+
+  if(prop1 == 0)
+   {
+    rat1 = 0.0;
+   }
+  else if(prop1 <= 2)
+   {
+    rat1 = 100.0;
+   }
+  else if(prop1 == 3)
+   {
+    rat1 = Math.floor(100 * kyo1 / 3);
+   }
+  else if(prop1 == 4)
+   {
+    rat1 = Math.floor(100 * kyo1 / 25);
+   }
+  else if(prop1 <= 8)
+   {
+    rat1 = Math.floor(100 * kyo1 / 8);
+   }
+  else if(prop1 == 9)
+   {
+    rat1 = Math.floor(100 * kyo1 / 12);
+   }
+  else if(prop1 <= 17)
+   {
+    rat1 = Math.floor(100 * kyo1 / 15);
+   }
+  else if(prop1 == 18)
+   {
+    rat1 = Math.floor(100 * kyo1 / 20);
+   }
+  else if(prop1 == 19)
+   {
+    rat1 = Math.floor(100 * kyo1 / 25);
+   }
+  else
+   {
+    rat1 = Math.floor(kyo1);
+   }
+rat = eval(rat + rat1);
+
+  if(prop2 == 0)
+   {
+    rat2 = 0.0;
+   }
+  else if(prop2 <= 2)
+   {
+    rat2 = 100.0;
+   }
+  else if(prop2 == 3)
+   {
+    rat2 = Math.floor(100 * kyo2 / 3);
+   }
+  else if(prop2 == 4)
+   {
+    rat2 = Math.floor(100 * kyo2 / 25);
+   }
+  else if(prop2 <= 8)
+   {
+    rat2 = Math.floor(100 * kyo2 / 8);
+   }
+  else if(prop2 == 9)
+   {
+    rat2 = Math.floor(100 * kyo2 / 12);
+   }
+  else if(prop2 <= 17)
+   {
+    rat2 = Math.floor(100 * kyo2 / 15);
+   }
+  else if(prop2 == 18)
+   {
+    rat2 = Math.floor(100 * kyo2 / 20);
+   }
+  else if(prop2 == 19)
+   {
+    rat2 = Math.floor(100 * kyo2 / 25);
+   }
+  else
+   {
+    rat2 = Math.floor(kyo2);
+   }
+rat = eval(rat + rat2);
+
+  if(prop3 == 0)
+   {
+    rat3 = 0.0;
+   }
+  else if(prop3 <= 2)
+   {
+    rat3 = 100.0;
+   }
+  else if(prop3 == 3)
+   {
+    rat3 = Math.floor(100 * kyo3 / 3);
+   }
+  else if(prop3 == 4)
+   {
+    rat3 = Math.floor(100 * kyo3 / 25);
+   }
+  else if(prop3 <= 8)
+   {
+    rat3 = Math.floor(100 * kyo3 / 8);
+   }
+  else if(prop3 == 9)
+   {
+    rat3 = Math.floor(100 * kyo3 / 12);
+   }
+  else if(prop3 <= 17)
+   {
+    rat3 = Math.floor(100 * kyo3 / 15);
+   }
+  else if(prop3 == 18)
+   {
+    rat3 = Math.floor(100 * kyo3 / 20);
+   }
+  else if(prop3 == 19)
+   {
+    rat3 = Math.floor(100 * kyo3 / 25);
+   }
+  else
+   {
+    rat3 = Math.floor(kyo3);
+   }
+rat = eval(rat + rat3);
+
+  if(prop4 == 0)
+   {
+    rat4 = 0.0;
+   }
+  else if(prop4 <= 2)
+   {
+    rat4 = 100.0;
+   }
+  else if(prop4 == 3)
+   {
+    rat4 = Math.floor(100 * kyo4 / 3);
+   }
+  else if(prop4 == 4)
+   {
+    rat4 = Math.floor(100 * kyo4 / 25);
+   }
+  else if(prop4 <= 8)
+   {
+    rat4 = Math.floor(100 * kyo4 / 8);
+   }
+  else if(prop4 == 9)
+   {
+    rat4 = Math.floor(100 * kyo4 / 12);
+   }
+  else if(prop4 <= 17)
+   {
+    rat4 = Math.floor(100 * kyo4 / 15);
+   }
+  else if(prop4 == 18)
+   {
+    rat4 = Math.floor(100 * kyo4 / 20);
+   }
+  else if(prop4 == 19)
+   {
+    rat4 = Math.floor(100 * kyo4 / 25);
+   }
+  else
+   {
+    rat4 = Math.floor(kyo4);
+   }
+rat = eval(rat + rat4);
+
+  if(prop5 == 0)
+   {
+    rat5 = 0.0;
+   }
+  else if(prop5 <= 2)
+   {
+    rat5 = 100.0;
+   }
+  else if(prop5 == 3)
+   {
+    rat5 = Math.floor(100 * kyo5 / 3);
+   }
+  else if(prop5 == 4)
+   {
+    rat5 = Math.floor(100 * kyo5 / 25);
+   }
+  else if(prop5 <= 8)
+   {
+    rat5 = Math.floor(100 * kyo5 / 8);
+   }
+  else if(prop5 == 9)
+   {
+    rat5 = Math.floor(100 * kyo5 / 12);
+   }
+  else if(prop5 <= 17)
+   {
+    rat5 = Math.floor(100 * kyo5 / 15);
+   }
+  else if(prop5 == 18)
+   {
+    rat5 = Math.floor(100 * kyo5 / 20);
+   }
+  else if(prop5 == 19)
+   {
+    rat5 = Math.floor(100 * kyo5 / 25);
+   }
+  else
+   {
+    rat5 = Math.floor(kyo5);
+   }
+rat = eval(rat + rat5);
+
+rat = eval(rat + rat6 * 1 + rat8 * 1 + rat9 * 1);
+
+   if(form.imb.checked){
+     form.imb.value = 30.0;
+}
+   else{
+     form.imb.value = 0.0;
+}
+  imb1 = form.imb.value;
+
+dur = Math.min(100.0, dur * 2);
+
+hose = Math.max(0.0, dur - imb1);
+
+rat = Math.floor(rat * hose / 100.0);
+
+
+ if(rat<1)
+{
+  document.zai = "抽出不可";
+}
+ else if(rat<50)
+{
+  document.zai = "Magical Residue × 1";
+}
+ else if(rat<100)
+{
+  document.zai = "Magical Residue × 2～3";
+}
+ else if(rat<150)
+{
+  document.zai = "Magical Residue × 3～4";
+}
+ else if(rat<200)
+{
+  document.zai = "Magical Residue × 4～5";
+}
+ else if(rat<300)
+{
+  document.zai = "Enchanted Essence × 1～2";
+}
+ else if(rat<400)
+{
+  document.zai = "Enchanted Essence × 2～3";
+}
+ else if(rat<451)
+{
+  document.zai = "Enchanted Essence × 3～4";
+}
+ else
+{
+  document.zai = "Relic Fragment × 1～2";
+}
+
+  form.zai.value = document.zai;
+
+form.rat1.value = rat1;
+form.rat2.value = rat2;
+form.rat3.value = rat3;
+form.rat4.value = rat4;
+form.rat5.value = rat5;
+form.rat6.value = rat6;
+form.rat8.value = rat8;
+form.rat9.value = rat9;
+form.hose.value = hose;
+form.rat.value = rat;
+
+return true;
+}
+// -->
+ </script>
+
+<form name="form_keisan">
+
+<h4>キャラクター・施設の特性</h4>
+
+<table class="table02">
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="220">キャラクター・施設</td>
+    <td align="center" width="120">強度率加算（％）</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center"><select name="prop8" size="1">
+<option value="0">Human
+<option value="0">Elf
+<option value="20">Gargoyle
+</select>
+</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat8" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center"><select name="prop9" size="1">
+<option value="0">普通のSoul Forge
+<option value="10">Royal CityのSoul Forge
+<option value="30">Queen's Soul Forge
+</select>
+</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat9" size="4" value="0">％</td>
+  </tr>
+
+</table>
+
+
+<h4>アイテムの特性</h4>
+
+
+<table class="table02">
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="220">プロパティ選択</td>
+    <td align="center" width="120">プロパティ強度</td>
+    <td align="center" width="120">強度率（％）</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">
+<select name="prop1" SIZE="1">
+<option value="0">---------------
+<option value="5">STR
+<option value="6">DEX
+<option value="7">INT
+<option value="10">物理抵抗
+<option value="11">炎抵抗
+<option value="12">冷気抵抗
+<option value="13">毒抵抗
+<option value="14">エネルギー抵抗
+<option value="15">命中
+<option value="16">回避
+<option value="19">武器ダメージ
+<option value="9">魔法ダメージ
+<option value="18">秘薬コスト(－は省略)
+<option value="8">マナコスト(－は省略)
+<option value="4">ポーション強化
+<option value="20">幸運
+<option value="17">スキル
+<option value="3">キャストリカバリ
+<option value="1">ファストキャスト(強度省略)
+<option value="2">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo1" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat1" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">
+<select name="prop2" SIZE="1">
+<option value="0">---------------
+<option value="5">STR
+<option value="6">DEX
+<option value="7">INT
+<option value="10">物理抵抗
+<option value="11">炎抵抗
+<option value="12">冷気抵抗
+<option value="13">毒抵抗
+<option value="14">エネルギー抵抗
+<option value="15">命中
+<option value="16">回避
+<option value="19">武器ダメージ
+<option value="9">魔法ダメージ
+<option value="18">秘薬コスト(－は省略)
+<option value="8">マナコスト(－は省略)
+<option value="4">ポーション強化
+<option value="20">幸運
+<option value="17">スキル
+<option value="3">キャストリカバリ
+<option value="1">ファストキャスト(強度省略)
+<option value="2">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo2" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat2" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">
+<select name="prop3" SIZE="1">
+<option value="0">---------------
+<option value="5">STR
+<option value="6">DEX
+<option value="7">INT
+<option value="10">物理抵抗
+<option value="11">炎抵抗
+<option value="12">冷気抵抗
+<option value="13">毒抵抗
+<option value="14">エネルギー抵抗
+<option value="15">命中
+<option value="16">回避
+<option value="19">武器ダメージ
+<option value="9">魔法ダメージ
+<option value="18">秘薬コスト(－は省略)
+<option value="8">マナコスト(－は省略)
+<option value="4">ポーション強化
+<option value="20">幸運
+<option value="17">スキル
+<option value="3">キャストリカバリ
+<option value="1">ファストキャスト(強度省略)
+<option value="2">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo3" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat3" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">
+<select name="prop4" SIZE="1">
+<option value="0">---------------
+<option value="5">STR
+<option value="6">DEX
+<option value="7">INT
+<option value="10">物理抵抗
+<option value="11">炎抵抗
+<option value="12">冷気抵抗
+<option value="13">毒抵抗
+<option value="14">エネルギー抵抗
+<option value="15">命中
+<option value="16">回避
+<option value="19">武器ダメージ
+<option value="9">魔法ダメージ
+<option value="18">秘薬コスト(－は省略)
+<option value="8">マナコスト(－は省略)
+<option value="4">ポーション強化
+<option value="20">幸運
+<option value="17">スキル
+<option value="3">キャストリカバリ
+<option value="1">ファストキャスト(強度省略)
+<option value="2">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo4" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat4" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">
+<select name="prop5" SIZE="1">
+<option value="0">---------------
+<option value="5">STR
+<option value="6">DEX
+<option value="7">INT
+<option value="10">物理抵抗
+<option value="11">炎抵抗
+<option value="12">冷気抵抗
+<option value="13">毒抵抗
+<option value="14">エネルギー抵抗
+<option value="15">命中
+<option value="16">回避
+<option value="19">武器ダメージ
+<option value="9">魔法ダメージ
+<option value="18">秘薬コスト(－は省略)
+<option value="8">マナコスト(－は省略)
+<option value="4">ポーション強化
+<option value="20">幸運
+<option value="17">スキル
+<option value="3">キャストリカバリ
+<option value="1">ファストキャスト(強度省略)
+<option value="2">Night Sight(強度省略)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo5" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat5" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ffffcc">
+    <td align="center">
+<select name="prop6" SIZE="1">
+<option value="0">特殊宝石アクセサリ　プロパティ
+<option value="100">ヒットポイント回復 2 (fireruby)
+<option value="100">マナ回復 2 (dark sapphire)
+<option value="16">速度 +5% (turquoise)
+<option value="100">Night Sight (white pearl)
+</select>
+    </td>
+    <td align="center">&nbsp;</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat6" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ffffcc">
+    <td align="center">耐久値　：　<INPUT type="text" name="dur" size="4" value="255"></td>
+    <td align="center"><INPUT Type="checkbox" name="imb" value="yes">練成品</td>
+    <td align="center">×<INPUT class="readtext" readonly type="text" name="hose" size="4" value="0">％</td>
+  </tr>
+
+</table>
+
+<input type="button" value="プロパティ・全強度計算" onclick="keisan1(form)">　<INPUT TYPE="reset" value="リセット">
+
+<h4>抽出結果の推定</h4>
+
+<ul class="list03">
+  <li>抽出評価値　：　<INPUT class="readtext" readonly type="text" name="rat" size="4" value="0">％</li>
+  <li>魔法素材　：　<INPUT class="readtext" readonly type="text" name="zai" size="25"></li>
+</ul>
+
+</form>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

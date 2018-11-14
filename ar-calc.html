@@ -1,0 +1,1339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style.css" type="text/css" rel="stylesheet">
+<TITLE>AR計算表</TITLE>
+</HEAD>
+
+<!--以下本文-->
+
+<div class="block02">
+<br>
+<center><font size="5"><b>AR計算表</b></font>(JavaScript使用)</center>
+<font size="3">
+<hr>
+UO-AoS導入前の防具AR計算表です。実際には帽子や靴などの衣類にもARは設定されていましたが、ここでは省略しています。
+
+<script language="javascript">
+<!--
+//Parts AR
+var mar;
+mar=new Array(74);
+mar[0] = 0;  //None
+mar[1] = 40; //Plate helm
+mar[2] = 30; //Close helm
+mar[3] = 30; //Helmet
+mar[4] = 30; //Nose helm
+mar[5] = 28; //Chain coif
+mar[6] = 18; //Bascinet
+mar[7] = 30; //Bone helm
+mar[8] = 40; //Plate gorget
+mar[9] = 18; //Studded gorget
+mar[10] = 13; //Leather gorget
+mar[11] = 40; //Plate arms
+mar[12] = 22; //Ring sleeves
+mar[13] = 18; //Studded sleeves
+mar[14] = 13; //Leahter sleeves
+mar[15] = 30; //Bone arms
+mar[16] = 40; //Plate gloves
+mar[17] = 22; //Ring gloves
+mar[18] = 18; //Studded gloves
+mar[19] = 13; //Leather gloves
+mar[20] = 30; //Bone gloves
+mar[21] = 40; // Plate leggings
+mar[22] = 28; //Chain leggings
+mar[23] = 22; //Ring leggings
+mar[24] = 18; //Studded leggings
+mar[25] = 13; //Leather leggings
+mar[26] = 30; //Bone leggings
+mar[27] = 40; //Plate mail
+mar[28] = 28; //Chain tunic
+mar[29] = 22; //Ring tunic
+mar[30] = 18; //Studded tunic
+mar[31] = 13; //Leather tunic
+mar[32] = 30; //Bone armor
+mar[33] = 30; //Plate armor
+mar[34] = 16; //Studded armor
+mar[35] = 13; //Leather armor
+mar[36] = 1.2; //HQ
+mar[37] = 10; //Defense
+mar[38] = 15; //Guarding
+mar[39] = 20; //Herdening
+mar[40] = 25; //Fortification
+mar[41] = 30; //Invulnerability
+mar[42] = 7; //Buckler
+mar[43] = 8; //Wooden shield
+mar[44] = 9; //Bronze shield
+mar[45] = 10; //Metal shield
+mar[46] = 12; //Kite shield(Wood)
+mar[47] = 16; //Kite shield(Metal)
+mar[48] = 23; //Heater shield
+mar[49] = 30; //Order shield
+mar[50] = 32; //Chaos shield
+mar[51] = 20; //Orc helm
+mar[52] = 13; //Leather cap
+mar[53] = 50; //Daemon B.helm
+mar[54] = 50; //Daemon B.arms
+mar[55] = 50; //Daemon B.gloves
+mar[56] = 50; //Daemon B.legs
+mar[57] = 50; //Daemon B.armor
+mar[58] = 40; //Scale helm
+mar[59] = 40; //Scale gloves
+mar[60] = 40; //Scale sleeves
+mar[61] = 40; //Scale legs
+mar[62] = 40; //Scale tunic
+mar[63] = 2; //Dull
+mar[64] = 4; //Shadow
+mar[65] = 6; //Copper
+mar[66] = 8; //Bronze
+mar[67] = 10; //Golden
+mar[68] = 12; //Agapite
+mar[69] = 14; //Verite
+mar[70] = 16; //Valorite
+mar[71] = 10; //Spined
+mar[72] = 13; //Horned
+mar[73] = 16; //Barbed
+//Parts AR
+
+//Dex decrease
+var mdx;
+mdx = new Array(74)
+mdx[0] = 0;  //None
+mdx[1] = -1; //Plate helm
+mdx[2] = 0; //Close helm
+mdx[3] = 0; //Helmet
+mdx[4] = 0; //Nose helm
+mdx[5] = 0; //Chain coif
+mdx[6] = 0; //Bascinet
+mdx[7] = 0; //Bone helm
+mdx[8] = -1; //Plate gorget
+mdx[9] = 0; //Studded gorget
+mdx[10] = 0; //Leather gorget
+mdx[11] = -2; //Plate arms
+mdx[12] = -1; //Ring sleeves
+mdx[13] = 0; //Studded sleeves
+mdx[14] = 0; //Leahter sleeves
+mdx[15] = -2; //Bone arms
+mdx[16] = -2; //Plate gloves
+mdx[17] = -1; //Ring gloves
+mdx[18] = 0; //Studded gloves
+mdx[19] = 0; //Leather gloves
+mdx[20] = -1; //Bone gloves
+mdx[21] = -6; // Plate leggings
+mdx[22] = -3; //Chain leggings
+mdx[23] = -1; //Ring leggings
+mdx[24] = 0; //Studded leggings
+mdx[25] = 0; //Leather leggings
+mdx[26] = -4; //Bone leggings
+mdx[27] = -8; //Plate mail
+mdx[28] = -5; //Chain tunic
+mdx[29] = -2; //Ring tunic
+mdx[30] = 0; //Studded tunic
+mdx[31] = 0; //Leather tunic
+mdx[32] = -6; //Bone armor
+mdx[33] = -5; //Plate armor
+mdx[34] = 0; //Studded armor
+mdx[35] = 0; //Leather armor
+mdx[36] = 0; //HQ
+mdx[37] = 0; //Defense
+mdx[38] = 0; //Guarding
+mdx[39] = 0; //Hardening
+mdx[40] = 0; //Fortification
+mdx[41] = 0; //Invulnerability
+mdx[42] = 0; //Buckler
+mdx[43] = 0; //Wooden shield
+mdx[44] = 0; //Bronze shield
+mdx[45] = 0; //Metal shield
+mdx[46] = 0; //Kite shield(Wood)
+mdx[47] = 0; //Kite shield(Metal)
+mdx[48] = 0; //Heater shield
+mdx[49] = 0; //Order shield
+mdx[50] = 0; //Chaos shield
+mdx[51] = 0; //Orc helm
+mdx[52] = 0; //Leather cap
+mdx[53] = 0; //Daemon B.helm
+mdx[54] = -2; //Daemon B.arms
+mdx[55] = -1; //Daemon B.gloves
+mdx[56] = -4; //Daemon B.legs
+mdx[57] = -6; //Daemon B.armor
+mdx[58] = -1; //Scale helm
+mdx[59] = -2; //Scale gloves
+mdx[60] = -2; //Scale sleeves
+mdx[61] = -6; //Scale legs
+mdx[62] = -8; //Scale tunic
+mdx[63] = 0; //Dull
+mdx[64] = 0; //Shadow
+mdx[65] = 0; //Copper
+mdx[66] = 0; //Bronze
+mdx[67] = 0; //Golden
+mdx[68] = 0; //Agapite
+mdx[69] = 0; //Verite
+mdx[70] = 0; //Valorite
+mdx[71] = 0; //Spined
+mdx[72] = 0; //Horned
+mdx[73] = 0; //Barbed
+//Dex decrease
+
+//repair
+var rep;
+rep = new Array(74)
+rep[0] = 0; //None
+rep[1] = 1; //Plate helm
+rep[2] = 1; //Close helm
+rep[3] = 1; //Helmet
+rep[4] = 2; //Nose helm
+rep[5] = 1; //Chain coif
+rep[6] = 1; //Bascinet
+rep[7] = 3; //Bone helm
+rep[8] = 1; //Plate gorget
+rep[9] = 6; //Studded gorget
+rep[10] = 7; //Leather gorget
+rep[11] = 1; //Plate arms
+rep[12] = 1; //Ring sleeves
+rep[13] = 6; //Studded sleeves
+rep[14] = 7; //Leahter sleeves
+rep[15] = 3; //Bone arms
+rep[16] = 1; //Plate gloves
+rep[17] = 1; //Ring gloves
+rep[18] = 8; //Studded gloves
+rep[19] = 8; //Leather gloves
+rep[20] = 3; //Bone gloves
+rep[21] = 1; // Plate leggings
+rep[22] = 1; //Chain leggings
+rep[23] = 1; //Ring leggings
+rep[24] = 6; //Studded leggings
+rep[25] = 7; //Leather leggings
+rep[26] = 3; //Bone leggings
+rep[27] = 1; //Plate mail
+rep[28] = 1; //Chain tunic
+rep[29] = 1; //Ring tunic
+rep[30] = 6; //Studded tunic
+rep[31] = 7; //Leather tunic
+rep[32] = 3; //Bone armor
+rep[33] = 1; //Plate armor
+rep[34] = 7; //Studded armor
+rep[35] = 7; //Leather armor
+rep[36] = 0; //HQ
+rep[37] = 0; //Defense
+rep[38] = 0; //Guarding
+rep[39] = 0; //Hardening
+rep[40] = 0; //Fortification
+rep[41] = 0; //Invulnerability
+rep[42] = 1; //Buckler
+rep[43] = 6; //Wooden shield
+rep[44] = 2; //Bronze shield
+rep[45] = 2; //Metal shield
+rep[46] = 1; //Kite shield(Wood)
+rep[47] = 1; //Kite shield(Metal)
+rep[48] = 2; //Heater shield
+rep[49] = 5; //Order shield
+rep[50] = 5; //Chaos shield
+rep[51] = 4; //Orc helm
+rep[52] = 9; //Leather cap
+rep[53] = 4; //Daemon B.helm
+rep[54] = 4; //Daemon B.arms
+rep[55] = 4; //Daemon B.gloves
+rep[56] = 4; //Daemon B.legs
+rep[57] = 4; //Daemon B.armor
+rep[58] = 2; //Scale helm
+rep[59] = 2; //Scale arms
+rep[60] = 2; //Scale gloves
+rep[61] = 2; //Scale legs
+rep[62] = 2; //Scale armor
+rep[63] = 0; //Dull
+rep[64] = 0; //Shadow
+rep[65] = 0; //Copper
+rep[66] = 0; //Bronze
+rep[67] = 0; //Golden
+rep[68] = 0; //Agapite
+rep[69] = 0; //Verite
+rep[70] = 0; //Valorite
+rep[71] = 0; //Spined
+rep[72] = 0; //Horned
+rep[73] = 0; //Barbed
+//repair
+
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan
+  form.helm.value = 0;
+  form.gorget.value = 0;
+  form.arm.value = 0;
+  form.glove.value = 0;
+  form.leg.value = 0;
+  form.armor.value = 0;
+  form.shield.value = 0;
+  form.effect1.value = 0;
+  form.effect2.value = 0;
+  form.effect3.value = 0;
+  form.effect4.value = 0;
+  form.effect5.value = 0;
+  form.effect6.value = 0;
+  form.effect7.value = 0;
+  form.color1.value = 0;
+  form.color2.value = 0;
+  form.color3.value = 0;
+  form.color4.value = 0;
+  form.color5.value = 0;
+  form.color6.value = 0;
+  form.dex1.value = 0;
+  form.dex2.value = 0;
+  form.dex3.value = 0;
+  form.dex4.value = 0;
+  form.dex5.value = 0;
+  form.dex6.value = 0;
+  form.par1.value = 0;
+  form.par2.value = 0;
+  form.par3.value = 0;
+  form.par4.value = 0;
+  form.par5.value = 0;
+  form.par6.value = 0;
+  form.par7.value = 0;
+  form.tar1.value = 0;
+  form.tar2.value = 0;
+  form.tar3.value = 0;
+  form.tar4.value = 0;
+  form.tar5.value = 0;
+  form.tar6.value = 0;
+  form.parry.value = 0;
+  form.blocking.value = 0;
+  form.dex.value = 0;
+  form.tar.value = 0;
+  form.sar.value = 0;
+  form.keigen.value = 0;
+  form.rep1.value = 0;
+  form.rep2.value = 0;
+  form.rep3.value = 0;
+  form.rep4.value = 0;
+  form.rep5.value = 0;
+  form.rep6.value = 0;
+  form.rep7.value = 0;
+  form.re1.value = 0;
+  form.re2.value = 0;
+  form.re3.value = 0;
+  form.re4.value = 0;
+  form.re5.value = 0;
+  form.re6.value = 0;
+  form.re7.value = 0;
+  return true;
+}
+
+//計算
+
+function keisan1(form)
+{
+var form = document.form_keisan
+  def1 = form.helm.options[form.helm.selectedIndex].value;
+  def2 = form.gorget.options[form.gorget.selectedIndex].value;
+  def3 = form.arm.options[form.arm.selectedIndex].value;
+  def4 = form.glove.options[form.glove.selectedIndex].value;
+  def5 = form.leg.options[form.leg.selectedIndex].value;
+  def6 = form.armor.options[form.armor.selectedIndex].value;
+  def7 = form.shield.options[form.shield.selectedIndex].value;
+  sparry = form.parry.value;
+  dex1 = mdx[def1]
+  dex2 = mdx[def2]
+  dex3 = mdx[def3]
+  dex4 = mdx[def4]
+  dex5 = mdx[def5]
+  dex6 = mdx[def6]
+  dex = dex1 + dex2 + dex3 + dex4 + dex5 + dex6;
+  eff1 = form.Effect1.options[form.Effect1.selectedIndex].value;
+  eff2 = form.Effect2.options[form.Effect2.selectedIndex].value;
+  eff3 = form.Effect3.options[form.Effect3.selectedIndex].value;
+  eff4 = form.Effect4.options[form.Effect4.selectedIndex].value;
+  eff5 = form.Effect5.options[form.Effect5.selectedIndex].value;
+  eff6 = form.Effect6.options[form.Effect6.selectedIndex].value;
+  eff7 = form.Effect7.options[form.Effect7.selectedIndex].value;
+  rep1 = rep[def1]
+  rep2 = rep[def2]
+  rep3 = rep[def3]
+  rep4 = rep[def4]
+  rep5 = rep[def5]
+  rep6 = rep[def6]
+  rep7 = rep[def7]
+  col1 = form.color1.options[form.color1.selectedIndex].value;
+  col2 = form.color2.options[form.color2.selectedIndex].value;
+  col3 = form.color3.options[form.color3.selectedIndex].value;
+  col4 = form.color4.options[form.color4.selectedIndex].value;
+  col5 = form.color5.options[form.color5.selectedIndex].value;
+  col6 = form.color6.options[form.color6.selectedIndex].value;
+    if(rep1==1){
+      if(eff1==36||eff1==0){
+        if(col1<=70){
+        par1 = Math.max(Math.floor(mar[def1] * mar[eff1]) , (mar[def1] + mar[eff1])) + mar[col1];
+    }
+        else{
+        par1 = Math.max(Math.floor(mar[def1] * mar[eff1]) , (mar[def1] + mar[eff1]));
+    }
+    }
+      else{
+      par1 = mar[def1] + mar[eff1];
+    }
+    }
+    else if(rep1==2){
+      if(eff1==36||eff1==0){
+        if(col1<=70){
+      par1 = Math.max(Math.floor(mar[def1] * mar[eff1]) , (mar[def1] + mar[eff1])) + mar[col1];
+    }
+        else{
+        par1 = Math.max(Math.floor(mar[def1] * mar[eff1]) , (mar[def1] + mar[eff1]));
+    }
+    }
+      else{
+      par1 = mar[def1];
+    } 
+    }
+    else if(rep1==3){
+      if(eff1==36||eff1==0){
+        if(col1>=71||col1==0){
+        par1 = Math.max(Math.floor(mar[def1] * mar[eff1]) , (mar[def1] + mar[eff1])) + mar[col1];
+    }
+        else{
+        par1 = Math.max(Math.floor(mar[def1] * mar[eff1]) , (mar[def1] + mar[eff1]));
+    }
+    }
+      else{
+      par1 = mar[def1] + mar[eff1];
+    }
+    }
+    else if(rep1==4){
+      par1 = mar[def1];
+    }
+    else if(rep1==9){
+      if(eff1==36||eff1==0){
+        if(col1>=71||col1==0){
+        par1 = Math.max(Math.floor(mar[def1] * mar[eff1]) , (mar[def1] + mar[eff1])) + mar[col1];
+    }
+        else{
+        par1 = Math.max(Math.floor(mar[def1] * mar[eff1]) , (mar[def1] + mar[eff1]));
+    }
+    }
+      else{
+      par1 = mar[def1];
+    }
+    }
+    else{
+      par1 = 0;
+    }
+    if(rep2==1){
+      if(eff2==36||eff2==0){
+        if(col2<=70){
+        par2 = Math.max(Math.floor(mar[def2] * mar[eff2]) , (mar[def2] + mar[eff2])) + mar[col2];
+    }
+        else{
+        par2 = Math.max(Math.floor(mar[def2] * mar[eff2]) , (mar[def2] + mar[eff2]));
+    }
+    }
+      else{
+      par2 = mar[def2] + mar[eff2];
+    }
+    }
+    else if(rep2==6||rep2==7){
+      if(eff2==36||eff2==0){
+        if(col2>=71||col2==0){
+        par2 = Math.max(Math.floor(mar[def2] * mar[eff2]) , (mar[def2] + mar[eff2])) + mar[col2];
+    }
+        else{
+        par2 = Math.max(Math.floor(mar[def2] * mar[eff2]) , (mar[def2] + mar[eff2]));
+    }
+    }
+      else{
+      par2 = mar[def2] + mar[eff2];
+    }
+    }
+    else{
+      par2 = 0;
+    }
+    if(rep3==1){
+      if(eff3==36||eff3==0){
+        if(col3<=70){
+        par3 = Math.max(Math.floor(mar[def3] * mar[eff3]) , (mar[def3] + mar[eff3])) + mar[col3];
+    }
+        else{
+        par3 = Math.max(Math.floor(mar[def3] * mar[eff3]) , (mar[def3] + mar[eff3]));
+    }
+    }
+      else{
+      par3 = mar[def3] + mar[eff3];
+    }
+    }
+    else if(rep3==2){
+      if(eff3==36||eff3==0){
+        if(col3<=70){
+        par3 = Math.max(Math.floor(mar[def3] * mar[eff3]) , (mar[def3] + mar[eff3])) + mar[col3];
+    }
+        else{
+        par3 = Math.max(Math.floor(mar[def3] * mar[eff3]) , (mar[def3] + mar[eff3]));
+    }
+    }
+      else{
+      par3 = mar[def3] + mar[eff3];
+    }
+    }
+    else if(rep3==4){
+      par3 = mar[def3];
+    }
+    else if(rep3==3||rep3==6||rep3==7){
+      if(eff3==36||eff3==0){
+        if(col3>=71||col3==0){
+        par3 = Math.max(Math.floor(mar[def3] * mar[eff3]) , (mar[def3] + mar[eff3])) + mar[col3];
+    }
+        else{
+        par3 = Math.max(Math.floor(mar[def3] * mar[eff3]) , (mar[def3] + mar[eff3]));
+    }
+    }
+      else{
+      par3 = mar[def3] + mar[eff3];
+    }
+    }
+    else{
+      par3 = 0;
+    }
+    if(rep4==1){
+      if(eff4==36||eff4==0){
+        if(col4<=70){
+        par4 = Math.max(Math.floor(mar[def4] * mar[eff4]) , (mar[def4] + mar[eff4])) + mar[col4];
+    }
+        else{
+        par4 = Math.max(Math.floor(mar[def4] * mar[eff4]) , (mar[def4] + mar[eff4]));
+    }
+    }
+      else{
+      par4 = mar[def4] + mar[eff4];
+    }
+    }
+    else if(rep4==2){
+      if(eff4==36||eff4==0){
+        if(col4<=70){
+        par4 = Math.max(Math.floor(mar[def4] * mar[eff4]) , (mar[def4] + mar[eff4])) + mar[col4];
+    }
+        else{
+        par4 = Math.max(Math.floor(mar[def4] * mar[eff4]) , (mar[def4] + mar[eff4]));
+    }
+    }
+      else{
+      par4 = mar[def4];
+    }
+    }
+    else if(rep4==3||rep4==8){
+      if(eff4==36||eff4==0){
+        if(col4>=71||col4==0){
+        par4 = Math.max(Math.floor(mar[def4] * mar[eff4]) , (mar[def4] + mar[eff4])) + mar[col4];
+    }
+        else{
+        par4 = Math.max(Math.floor(mar[def4] * mar[eff4]) , (mar[def4] + mar[eff4]));
+    }
+    }
+      else{
+      par4 = mar[def4] + mar[eff4];
+    }
+    }
+    else if(rep4==4){
+      par4 = mar[def1];
+    }
+    else{
+      par4 = 0;
+    }
+    if(rep5==1){
+      if(eff5==36||eff5==0){
+        if(col5<=70){
+        par5 = Math.max(Math.floor(mar[def5] * mar[eff5]) , (mar[def5] + mar[eff5])) + mar[col5];
+    }
+        else{
+        par5 = Math.max(Math.floor(mar[def5] * mar[eff5]) , (mar[def5] + mar[eff5]));
+    }
+    }
+      else{
+      par5 = mar[def5] + mar[eff5];
+    }
+    }
+    else if(rep5==2){
+      if(eff5==36||eff5==0){
+        if(col5<=70){
+        par5 = Math.max(Math.floor(mar[def5] * mar[eff5]) , (mar[def5] + mar[eff5])) + mar[col5];
+    }
+        else{
+        par5 = Math.max(Math.floor(mar[def5] * mar[eff5]) , (mar[def5] + mar[eff5]));
+    }
+    }
+      else{
+      par5 = mar[def5];
+    }
+    }
+    else if(rep5==4){
+      par5 = mar[def5];
+    }
+    else if(rep5==3||rep5==6||rep5==7){
+      if(eff5==36||eff5==0){
+        if(col5>=71||col5==0){
+        par5 = Math.max(Math.floor(mar[def5] * mar[eff5]) , (mar[def5] + mar[eff5])) + mar[col5];
+    }
+        else{
+        par5 = Math.max(Math.floor(mar[def5] * mar[eff5]) , (mar[def5] + mar[eff5]));
+    }
+    }
+      else{
+      par5 = mar[def5] + mar[eff5];
+    }
+    }
+    else{
+      par5 = 0;
+    }
+    if(rep6==1){
+      if(eff6==36||eff6==0){
+        if(col6<=70){
+        par6 = Math.max(Math.floor(mar[def6] * mar[eff6]) , (mar[def6] + mar[eff6])) + mar[col6];
+    }
+        else{
+        par6 = Math.max(Math.floor(mar[def6] * mar[eff6]) , (mar[def6] + mar[eff6]));
+    }
+    }
+      else{
+      par6 = mar[def6] + mar[eff6];
+    }
+    }
+    else if(rep6==2){
+      if(eff6==36||eff6==0){
+        if(col6<=70){
+        par6 = Math.max(Math.floor(mar[def6] * mar[eff6]) , (mar[def6] + mar[eff6])) + mar[col6];
+    }
+        else{
+        par6 = Math.max(Math.floor(mar[def6] * mar[eff6]) , (mar[def6] + mar[eff6]));
+    }
+    }
+      else{
+      par6 = mar[def6];
+    }
+    }
+    else if(rep6==4){
+      par6 = mar[def6];
+    }
+    else if(rep6==3||rep6==6||rep6==7){
+      if(eff6==36||eff6==0){
+        if(col6>=71||col6==0){
+        par6 = Math.max(Math.floor(mar[def6] * mar[eff6]) , (mar[def6] + mar[eff6])) + mar[col6];
+    }
+        else{
+        par6 = Math.max(Math.floor(mar[def6] * mar[eff6]) , (mar[def6] + mar[eff6]));
+    }
+    }
+      else{
+      par6 = mar[def6] + mar[eff6];
+    }
+    }
+    else{
+      par6 = 0;
+    }
+    if(def7==0){
+      par7 = 0;
+    }
+    else if(def7==49||def7==50){
+      par7 = mar[def7];
+    }
+    else if(eff7==36){
+      par7 = Math.floor(mar[def7] * mar[eff7]);
+    }
+    else if(def7==44||def7==45||def7==48){
+      par7 = mar[def7];
+    }
+    else{
+      par7 = mar[def7] + mar[eff7];
+    }
+  blocking = Math.floor((100 - 2 * par7) * sparry / 10) / 10;
+    if(def7==0){
+  blocking = 0;
+    }
+    if(sparry>100||sparry<0){
+  blocking = 0;
+    }
+  tar1 = Math.round(par1 * 2000 / 14) / 1000;
+  tar2 = Math.round(par2 * 1000 / 14) / 1000;
+  tar4 = Math.round(par4 * 1000 / 14) / 1000;
+  tar5 = Math.round(par5 * 3000 / 14) / 1000;
+    if(def6<=32||def6==57||def6==62){
+      tar3 = Math.round(par3 * 2000 / 14) / 1000;
+      tar6 = Math.round(par6 * 5000 / 14) / 1000;
+    }
+    else{
+      tar3 = Math.round(Math.max(0 , (par3 - par6) * 2 / 14) * 1000) / 1000;
+      tar6 = Math.round(par6 * 7000 / 14) / 1000;
+    } 
+  tar = Math.round((tar1 + tar2 + tar3 + tar4 + tar5 + tar6) * 100) / 100;
+  sar = Math.ceil(par7 * sparry / 200);
+    if(sparry>100||sparry<0){
+  sar = 0;
+    }
+  keigen = Math.floor(par7 * (1 + sparry /200));
+    if(sparry>100||sparry<0){
+  keigen = 0;
+    }
+
+    if(rep1==1||rep1==2){
+  document.re1 = "○";
+    }
+    else{
+  document.re1 = "×";
+    }
+    if(rep2==1){
+  document.re2 = "○";
+    }
+    else if(rep2==6&&eff2!=0&&eff2!=36){
+  document.re2 = "○";
+    }
+    else if(rep2==6&&eff2==0){
+  document.re2 = "△";
+    }
+    else{
+  document.re2 = "×";
+    }
+    if(rep3==1||rep3==2){
+  document.re3 = "○";
+    }
+    else if(rep3==6&&eff3!=0&&eff3!=36){
+  document.re3 = "○";
+    }
+    else if(rep3==6&&eff3==0){
+  document.re3 = "△";
+    }
+    else{
+  document.re3 = "×";
+    }
+    if(rep4==1||rep4==2){
+  document.re4 = "○";
+    }
+    else{
+  document.re4 = "×";
+    }
+    if(rep5==1||rep5==2){
+  document.re5 = "○";
+    }
+    else if(rep5==6&&eff5!=0&&eff5!=36){
+  document.re5 = "○";
+    }
+    else if(rep5==6&&eff5==0){
+  document.re5 = "△";
+    }
+    else{
+  document.re5 = "×";
+    }
+    if(rep6==1||rep6==2){
+  document.re6 = "○";
+    }
+    else if(rep6==6&&eff6!=0&&eff6!=36){
+  document.re6 = "○";
+    }
+    else if(rep6==6&&eff6==0){
+  document.re6 = "△";
+    }
+    else{
+  document.re6 = "×";
+    }
+    if(rep7==0){
+  document.re7 = "×";
+    }
+    else if(rep7==6&&eff7==36){
+  document.re7 = "×";
+    }
+    else if(rep7==6&&eff7==0){
+  document.re7 = "△";
+    }
+    else{
+  document.re7 = "○";
+    }
+  form.dex1.value = dex1;
+  form.dex2.value = dex2;
+  form.dex3.value = dex3;
+  form.dex4.value = dex4;
+  form.dex5.value = dex5;
+  form.dex6.value = dex6;
+  form.par1.value = par1;
+  form.par2.value = par2;
+  form.par3.value = par3;
+  form.par4.value = par4;
+  form.par5.value = par5;
+  form.par6.value = par6;
+  form.par7.value = par7;
+  form.tar1.value = tar1;
+  form.tar2.value = tar2;
+  form.tar3.value = tar3;
+  form.tar4.value = tar4;
+  form.tar5.value = tar5;
+  form.tar6.value = tar6;
+  form.blocking.value = blocking;
+  form.dex.value = dex;
+  form.tar.value = tar;
+  form.sar.value = sar;
+  form.keigen.value = keigen;
+  form.re1.value = document.re1;
+  form.re2.value = document.re2;
+  form.re3.value = document.re3;
+  form.re4.value = document.re4;
+  form.re5.value = document.re5;
+  form.re6.value = document.re6;
+  form.re7.value = document.re7;
+  return true;
+  }
+//-->
+</script>
+<p><FONT SIZE="4"><b>１．鎧のAR計算</b></font></p>
+<form name="form_keisan">
+<table align="center" class="table19">
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="60">部位</td>
+    <td align="center" width="150">パーツ毎の防具</td>
+    <td align="center" width="50">修理</td>
+    <td align="center" width="120">特殊素材</td>
+    <td align="center" width="120">付加効果</td>
+    <td align="center" width="50">Dex<br>減少</td>
+    <td align="center" width="50">パーツ<br>AR</td>
+    <td align="center" width="70">表示AR</td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">頭</td>
+    <td align="center">
+      <SELECT NAME="helm" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>-----None-----
+ <OPTION value=1>Plate helm
+ <OPTION value=2>Close helm
+ <OPTION value=3>Helmet
+ <OPTION value=4>Nose helm
+ <OPTION value=5>Chain coif
+ <OPTION value=6>Bascinet
+ <OPTION value=7>Bone helm
+ <OPTION value=51>Orc helm
+ <OPTION value=52>Leather cap
+ <OPTION value=53>Daemon B.helm
+ <OPTION value=58>Scale helm
+      </SELECT>
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="re1" SIZE="3" value="--">
+    </td>
+    <td align="center">
+      <SELECT NAME="color1" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0 selected>--鍛冶系--
+ <OPTION value=63>Dull
+ <OPTION value=64>Shadow
+ <OPTION value=65>Copper
+ <OPTION value=66>Bronze
+ <OPTION value=67>Golden
+ <OPTION value=68>Agapite
+ <OPTION value=69>Verite
+ <OPTION value=70>Valorite
+ <option value=0>--裁縫系--
+ <option value=71>Spined
+ <option value=72>Horned
+ <option value=73>Barbed
+      </select>
+    </td>
+    <td align="center">
+      <SELECT NAME="Effect1" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>Normal
+ <OPTION value=36 selected>HQ
+ <OPTION value=37>Defense
+ <OPTION value=38>Guarding
+ <OPTION value=39>Hardening
+ <OPTION value=40>Fortification
+ <OPTION value=41>invulnerability
+      </select>
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="dex1" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="par1" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="tar1" SIZE="6" value="0">
+    </td>
+  </tr>
+
+  <tr bgcolor="#ccddff">
+    <td align="center">首</td>
+    <td align="center">
+      <SELECT NAME="gorget" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>-----None-----
+ <OPTION value=8>Plate gorget
+ <OPTION value=9>Studded gorget
+ <OPTION value=10>Leather gorget
+      </SELECT>
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="re2" SIZE="3" value="--">
+    </td>
+    <td align="center">
+      <SELECT NAME="color2" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0 selected>--鍛冶系--
+ <OPTION value=63>Dull
+ <OPTION value=64>Shadow
+ <OPTION value=65>Copper
+ <OPTION value=66>Bronze
+ <OPTION value=67>Golden
+ <OPTION value=68>Agapite
+ <OPTION value=69>Verite
+ <OPTION value=70>Valorite
+ <option value=0>--裁縫系--
+ <option value=71>Spined
+ <option value=72>Horned
+ <option value=73>Barbed
+      </select>
+    </td>
+    <td align="center">
+      <SELECT NAME="Effect2" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>Normal
+ <OPTION value=36 selected>HQ
+ <OPTION value=37>Defense
+ <OPTION value=38>Guarding
+ <OPTION value=39>Hardening
+ <OPTION value=40>Fortification
+ <OPTION value=41>invulnerability
+      </select>
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="dex2" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="par2" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="tar2" SIZE="6" value="0">
+    </td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">腕</td>
+    <td align="center">
+      <SELECT NAME="arm" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>-----None-----
+ <OPTION value=11>Plate arms
+ <OPTION value=12>Ring sleeves
+ <OPTION value=13>Studded sleeves
+ <OPTION value=14>Leather sleeves
+ <OPTION value=15>Bone arms
+ <OPTION value=54>Daemon B.arms
+ <OPTION value=60>Scale sleeves
+      </SELECT>
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="re3" SIZE="3" value="--">
+    </td>
+    <td align="center">
+      <SELECT NAME="color3" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0 selected>--鍛冶系--
+ <OPTION value=63>Dull
+ <OPTION value=64>Shadow
+ <OPTION value=65>Copper
+ <OPTION value=66>Bronze
+ <OPTION value=67>Golden
+ <OPTION value=68>Agapite
+ <OPTION value=69>Verite
+ <OPTION value=70>Valorite
+ <option value=0>--裁縫系--
+ <option value=71>Spined
+ <option value=72>Horned
+ <option value=73>Barbed
+      </select>
+    </td>
+    <td align="center">
+      <SELECT NAME="Effect3" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>Normal
+ <OPTION value=36 selected>HQ
+ <OPTION value=37>Defense
+ <OPTION value=38>Guarding
+ <OPTION value=39>Hardening
+ <OPTION value=40>Fortification
+ <OPTION value=41>invulnerability
+      </select>
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="dex3" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="par3" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="tar3" SIZE="6" value="0">
+    </td>
+  </tr>
+
+  <tr bgcolor="#ccddff">
+    <td align="center">手</td>
+    <td align="center">
+      <SELECT NAME="glove" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>-----None-----
+ <OPTION value=16>Plate gloves
+ <OPTION value=17>Ring gloves
+ <OPTION value=18>Studded gloves
+ <OPTION value=19>Leather gloves
+ <OPTION value=20>Bone gloves
+ <OPTION value=55>Daemon B.gloves
+ <OPTION value=59>Scale gloves
+      </SELECT>
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="re4" SIZE="3" value="--">
+    </td>
+    <td align="center">
+      <SELECT NAME="color4" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0 selected>--鍛冶系--
+ <OPTION value=63>Dull
+ <OPTION value=64>Shadow
+ <OPTION value=65>Copper
+ <OPTION value=66>Bronze
+ <OPTION value=67>Golden
+ <OPTION value=68>Agapite
+ <OPTION value=69>Verite
+ <OPTION value=70>Valorite
+ <option value=0>--裁縫系--
+ <option value=71>Spined
+ <option value=72>Horned
+ <option value=73>Barbed
+      </select>
+    </td>
+    <td align="center">
+      <SELECT NAME="Effect4" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>Normal
+ <OPTION value=36 selected>HQ
+ <OPTION value=37>Defense
+ <OPTION value=38>Guarding
+ <OPTION value=39>Hardening
+ <OPTION value=40>Fortification
+ <OPTION value=41>invulnerability
+      </select>
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="dex4" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="par4" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="tar4" SIZE="6" value="0">
+    </td>
+  </tr>
+
+  <tr bgcolor="#ccffcc">
+    <td align="center">足</td>
+    <td align="center">
+      <SELECT NAME="leg" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>-----None-----
+ <OPTION value=21>Plate leggings
+ <OPTION value=22>Chain leggings
+ <OPTION value=23>Ring leggings
+ <OPTION value=24>Studded leggings
+ <OPTION value=25>Leather leggings
+ <OPTION value=26>Bone leggings
+ <OPTION value=56>Daemon B.legs
+ <OPTION value=61>Scale legs
+      </SELECT>
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="re5" SIZE="3" value="--">
+    </td>
+    <td align="center">
+      <SELECT NAME="color5" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0 selected>--鍛冶系--
+ <OPTION value=63>Dull
+ <OPTION value=64>Shadow
+ <OPTION value=65>Copper
+ <OPTION value=66>Bronze
+ <OPTION value=67>Golden
+ <OPTION value=68>Agapite
+ <OPTION value=69>Verite
+ <OPTION value=70>Valorite
+ <option value=0>--裁縫系--
+ <option value=71>Spined
+ <option value=72>Horned
+ <option value=73>Barbed
+      </select>
+    </td>
+    <td align="center">
+      <SELECT NAME="Effect5" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>Normal
+ <OPTION value=36 selected>HQ
+ <OPTION value=37>Defense
+ <OPTION value=38>Guarding
+ <OPTION value=39>Hardening
+ <OPTION value=40>Fortification
+ <OPTION value=41>invulnerability
+      </select>
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="dex5" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="par5" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="tar5" SIZE="6" value="0">
+    </td>
+  </tr>
+
+  <tr bgcolor="#ccddff">
+    <td align="center">胴</td>
+    <td align="center">
+      <SELECT NAME="armor" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>-----None-----
+ <OPTION value=27>Plate mail
+ <OPTION value=28>Chain tunic
+ <OPTION value=29>Ring tunic
+ <OPTION value=30>Studded tunic
+ <OPTION value=31>Leather tunic
+ <OPTION value=32>Bone armor
+ <OPTION value=57>Daemon B.armor
+ <OPTION value=62>Scale tunic
+ <OPTION value=0>----Female----
+ <OPTION value=33>Plate armor
+ <OPTION value=34>Studded armor
+ <OPTION value=35>Leather armor
+      </SELECT>
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="re6" SIZE="3" value="--">
+    </td>
+    <td align="center">
+      <SELECT NAME="color6" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0 selected>--鍛冶系--
+ <OPTION value=63>Dull
+ <OPTION value=64>Shadow
+ <OPTION value=65>Copper
+ <OPTION value=66>Bronze
+ <OPTION value=67>Golden
+ <OPTION value=68>Agapite
+ <OPTION value=69>Verite
+ <OPTION value=70>Valorite
+ <option value=0>--裁縫系--
+ <option value=71>Spined
+ <option value=72>Horned
+ <option value=73>Barbed
+      </select>
+    </td>
+    <td align="center">
+      <SELECT NAME="Effect6" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>Normal
+ <OPTION value=36 selected>HQ
+ <OPTION value=37>Defense
+ <OPTION value=38>Guarding
+ <OPTION value=39>Hardening
+ <OPTION value=40>Fortification
+ <OPTION value=41>invulnerability
+      </select>
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="dex6" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="par6" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="tar6" SIZE="6" value="0">
+    </td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">合計</td>
+    <td align="right" colspan="4">&nbsp;</td>
+    <td align="center">
+<INPUT  readonly TYPE="text" NAME="dex" SIZE="4" value="0">
+    </td>
+    <td align="center">&nbsp;</td>
+    <td align="center">
+<INPUT  readonly TYPE="text" NAME="tar" SIZE="6" value="0">
+    </td>
+  </tr>
+</table>
+
+<p class="cle">修理の仕様は現在と異なっており、鍛冶スキルにでしか修理することはできませんでした。
+<br>修理欄の△は、PCが作成したもの以外修理可能であることを表しています。
+</p>
+
+<hr>
+<p><FONT SIZE="4"><b>２．盾のAR計算</b></font></p>
+
+<table align="center" class="table19">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="150">盾 </td>
+    <td align="center" width="120">付加効果</td>
+    <td align="center" width="50">修理</td>
+    <td align="center" width="80">スキル<br>[0〜100]</td>
+    <td align="center" width="50">パーツ<br>AR</td>
+    <td align="center" width="80">ブロック率<br>[％]</td>
+    <td align="center" width="50">装備時AR</td>
+    <td align="center" width="50">吸収<br>Dam.</td>
+  </tr>
+
+  <tr bgcolor="#ccddff">
+    <td align="center">
+      <SELECT NAME="shield" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>-----None-----
+ <OPTION value=42>Buckler
+ <OPTION value=43>Wooden shield
+ <OPTION value=44>Bronze shield
+ <OPTION value=45>Metal shield
+ <OPTION value=46>Tear Kite shield
+ <OPTION value=47>Metal Kite shield
+ <OPTION value=48>Heater shield
+ <OPTION value=49>Order shield
+ <OPTION value=50>Chaos shield
+      </SELECT>
+    </td>
+
+    <td align="center">
+      <SELECT NAME="Effect7" SIZE="1" onchange="keisan1(form)">
+ <OPTION value=0>Normal
+ <OPTION value=36 selected>HQ
+ <OPTION value=37>Defense
+ <OPTION value=38>Guarding
+ <OPTION value=39>Hardening
+ <OPTION value=40>Fortification
+ <OPTION value=41>invulnerability
+      </select>
+    </td>
+
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="re7" SIZE="3" value="--">
+    </td>
+    <td align="center" >
+<INPUT TYPE="text" NAME="parry" SIZE="4" value="0" onchange="keisan1(form)">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="par7" SIZE="4" value="0">
+
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="blocking" SIZE="5" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="sar" SIZE="4" value="0">
+    </td>
+    <td align="center">
+<INPUT readonly TYPE="text" NAME="keigen" SIZE="4" value="0">
+    </td>
+  </tr>
+</table>
+</form>
+
+<p class="cle">修理の仕様は現在と異なっており、鍛冶スキルにでしか修理することはできませんでした。
+<br>修理欄の△は、PCが作成したもの以外修理可能であることを表しています。
+</p>
+
+<hr>
+<p><FONT SIZE="4"><b>３．素材とマジック効果</b></font></p>
+
+素材（IngotおよびLeather）の効果
+
+<table align="center" class="table19">
+  <tr bgcolor="#e0e0c0">
+    <td align="center" width="80"><img src="dull-ingot.gif" alt=""></td>
+    <td align="center" width="100">Dullcopper</td>
+    <td align="center" width="100">AR+2</td>
+  </tr>
+
+  <tr bgcolor="#606060">
+    <td align="center"><img src="sha-ingot.gif" alt=""></td>
+    <td align="center"><font color="#ffff00">Shadow</font></td>
+    <td align="center"><font color="#ffff00">AR+4</font></td>
+  </tr>
+
+  <tr bgcolor="#e0c080">
+    <td align="center"><img src="cop-ingot.gif" alt=""></td>
+    <td align="center">Copper</td>
+    <td align="center">AR+6</td>
+  </tr>
+
+  <tr bgcolor="#a06020">
+    <td align="center"><img src="bro-ingot.gif" alt=""></td>
+    <td align="center"><font color="#ffff00">Bronze</font></td>
+    <td align="center"><font color="#ffff00">AR+8</font></td>
+  </tr>
+
+  <tr bgcolor="#fff0c0">
+    <td align="center"><img src="gold-ingot.gif" alt=""></td>
+    <td align="center">Gold</td>
+    <td align="center">AR+10</td>
+  </tr>
+
+  <tr bgcolor="#ffc0c0">
+    <td align="center"><img src="aga-ingot.gif" alt=""></td>
+    <td align="center">Agapite</td>
+    <td align="center">AR+12</td>
+  </tr>
+
+  <tr bgcolor="#c0ffc0">
+    <td align="center"><img src="ver-ingot.gif" alt=""></td>
+    <td align="center">Verite</td>
+    <td align="center">AR+14</td>
+  </tr>
+
+  <tr bgcolor="#c0e0ff">
+    <td align="center"><img src="val-ingot.gif" alt=""></td>
+    <td align="center">Valorite</td>
+    <td align="center">AR+16</td>
+  </tr>
+
+  <tr bgcolor="#6699ff">
+    <td align="center"><img src="spined.gif" alt=""></td>
+    <td align="center">Spined</td>
+    <td align="center">AR+10</td>
+  </tr>
+
+  <tr bgcolor="#ff9999">
+    <td align="center"><img src="horned.gif" alt=""></td>
+    <td align="center">Horned</td>
+    <td align="center">AR+13</td>
+  </tr>
+
+  <tr bgcolor="#66cc66">
+    <td align="center"><img src="barbed.gif" alt=""></td>
+    <td align="center">Barbed</td>
+    <td align="center">AR+16</td>
+  </tr>
+
+</table>
+
+<p class="cle">
+マジック、高品質の効果
+
+<table align="center" class="table19">
+
+  <tr bgcolor="#ffffcc">
+    <td align="center" width="150">HQ [exceptional]</td>
+    <td align="center" width="120">防具基本AR×1.2</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">Defense</td>
+    <td align="center">AR+10</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">Guarding</td>
+    <td align="center">AR+15</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">Hardening</td>
+    <td align="center">AR+20</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">Fortification</td>
+    <td align="center">AR+25</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center">Invulnerability</td>
+    <td align="center">AR+30</td>
+  </tr>
+
+</table>
+
+</p>
+</font>
+</div>
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>                                                                                                                                                                                                                                

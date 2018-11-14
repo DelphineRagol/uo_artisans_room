@@ -1,0 +1,1366 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style.css" type="text/css" rel="stylesheet">
+<TITLE>Weapon Crafting Test</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899211</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<div class="block02">
+<br>
+<font size="3">
+<center><font size="5"><b>Weapon Crafting Test</b></font></center>
+<HR>
+
+
+<script language="javascript">
+<!--
+//Wep Base dam
+var wep1;
+wep1 = new Array(101);
+wep1[0] =  0.0 ;   //なし
+wep1[1] = 13.0 ;   //Bone harvester
+wep1[2] = 14.0 ;   //Broadsword
+wep1[3] = 11.0 ;   //Crescent blade
+wep1[4] = 11.0 ;   //Cutlass
+wep1[5] = 11.0 ;   //Katana
+wep1[6] = 15.0 ;   //Longsword
+wep1[7] = 13.0 ;   //Scimitar
+wep1[8] = 15.0 ;   //Viking sword
+wep1[9] =  9.0 ;   //Butcher knife
+wep1[10] = 9.0 ;   //Skinning knife
+wep1[11] = 17.0 ;  //Bardiche
+wep1[12] = 14.0 ;  //Bladed staff
+wep1[13] = 18.0 ;  //Halberd
+wep1[14] = 15.0 ;  //Scythe
+wep1[15] = 13.0 ;  //Pickaxe
+wep1[16] = 14.0 ;  //Axe
+wep1[17] = 15.0 ;  //Battle axe
+wep1[18] = 15.0 ;  //Double axe
+wep1[19] = 15.0 ;  //Executioner's axe
+wep1[20] = 16.0 ;  //Large battle axe
+wep1[21] = 16.0 ;  //Two handed axe
+wep1[22] = 13.0 ;  //Hatchet
+wep1[23] = 10.0 ;  //Dagger
+wep1[24] = 10.0 ;  //Kryss
+wep1[25] = 17.0 ;  //Lance
+wep1[26] = 12.0 ;  //Warfork
+wep1[27] = 12.0 ;  //Double bladed staff
+wep1[28] = 14.0 ;  //Pike
+wep1[29] = 10.0 ;  //Short spear
+wep1[30] = 13.0 ;  //Spear
+wep1[31] = 13.0 ;  //Pitch fork
+wep1[32] = 15.0 ;  //Hammer pick
+wep1[33] = 12.0 ;  //Mace
+wep1[34] = 14.0 ;  //Maul
+wep1[35] = 14.0 ;  //Scepter
+wep1[36] = 14.0 ;  //War axe
+wep1[37] = 16.0 ;  //War mace
+wep1[38] = 17.0 ;  //War hammer
+wep1[39] = 13.0 ;  //Sledge hammer
+wep1[40] = 13.0 ;  //Smith's hammer
+wep1[41] = 13.0 ;  //Black staff
+wep1[42] = 11.0 ;  //Club
+wep1[43] = 13.0 ;  //Crook
+wep1[44] = 15.0 ;  //Gnarled staff
+wep1[45] = 11.0 ;  //Quarter staff
+wep1[46] =  9.0 ;  //Wand
+wep1[47] = 16.0 ;  //Bow
+wep1[48] = 15.0 ;  //Composite bow
+wep1[49] = 18.0 ;  //Crossbow
+wep1[50] = 19.0 ;  //Heavy crossbow
+wep1[51] = 10.0 ;  //Repeating crossbow
+wep1[52] = 11.0 ;  //Cleaver
+wep1[53] = 16.0 ;  //No-dachi
+wep1[54] = 10.0 ;  //Wakizashi
+wep1[55] = 16.0 ;  //Lajatang
+wep1[56] = 13.0 ;  //Daisho
+wep1[57] = 10.0 ;  //Tekagi
+wep1[58] = 9.0 ;  //Kama
+wep1[59] = 9.0 ;  //Sai
+wep1[60] = 9.0 ;  //Bokuto
+wep1[61] = 11.0 ;  //Nunchaku
+wep1[62] = 10.0 ;  //Tessen
+wep1[63] = 12.0 ;  //Tetsubo
+wep1[64] = 18.0 ;  //Yumi
+wep1[65] = 12.0 ;  //Radient scimitar
+wep1[66] =  9.0 ;  //War cleaver
+wep1[67] = 12.0 ;  //Elven spellblade
+wep1[68] = 10.0 ;  //Assassin spike
+wep1[69] = 13.0 ;  //Leaf blade
+wep1[70] = 15.0 ;  //Rune blade
+wep1[71] = 13.0 ;  //Elven Machete
+wep1[72] = 21.0 ;  //Ornate axe(old)
+wep1[73] = 18.0 ;  //Ornate axe(now)
+wep1[74] = 14.0 ;  //Diamond mace
+wep1[75] = 10.0 ;  //Wild staff
+wep1[76] = 19.0 ;  //Elven composite bow
+wep1[77] = 14.0 ;  //Magical shortbow
+wep1[78] = 15.0 ;  //bow_p39
+wep1[79] = 13.0 ;  //compbow_p39
+wep1[80] = 18.0 ;  //crossbow_p39
+wep1[81] = 20.0 ;  //hxbow_p39
+wep1[82] = 8.0 ;  //repcross_p39
+wep1[83] = 16.0 ;  //yumi_p39
+wep1[84] = 12.0 ;  //elvcom_p39
+wep1[85] = 9.0 ;  //magshort_p39
+wep1[86] = 20.0 ;  //the redeemer
+
+//Wep Base dam
+var wep2;
+wep2 = new Array(101);
+wep2[0] =  0.0 ;
+wep2[1] = 15.0 ;    //Bone harvester
+wep2[2] = 15.0 ;    //Broadsword
+wep2[3] = 14.0 ;    //Crescent blade
+wep2[4] = 13.0 ;    //Cutlass
+wep2[5] = 13.0 ;    //Katana
+wep2[6] = 16.0 ;    //Longsword
+wep2[7] = 15.0 ;    //Scimitar
+wep2[8] = 17.0 ;    //Viking sword
+wep2[9] = 11.0 ;    //Butcher knife
+wep2[10] = 11.0 ;   //Skinning knife
+wep2[11] = 18.0 ;   //Bardiche
+wep2[12] = 16.0 ;   //Bladed staff
+wep2[13] = 19.0 ;   //Halberd
+wep2[14] = 18.0 ;   //Scythe
+wep2[15] = 15.0 ;   //Pickaxe
+wep2[16] = 16.0 ;   //Axe
+wep2[17] = 17.0 ;   //Battle axe
+wep2[18] = 17.0 ;   //Double axe
+wep2[19] = 17.0 ;   //Executioner's axe
+wep2[20] = 17.0 ;   //Large battle axe
+wep2[21] = 17.0 ;   //Two handed axe
+wep2[22] = 15.0 ;   //Hatchet
+wep2[23] = 11.0 ;   //Dagger
+wep2[24] = 12.0 ;   //Kryss
+wep2[25] = 18.0 ;   //Lance
+wep2[26] = 13.0 ;   //Warfork
+wep2[27] = 13.0 ;   //Double bladed staff
+wep2[28] = 16.0 ;   //Pike
+wep2[29] = 13.0 ;   //Short spear
+wep2[30] = 15.0 ;   //Spear
+wep2[31] = 14.0 ;   //Pitch fork
+wep2[32] = 17.0 ;   //Hammer pick
+wep2[33] = 14.0 ;   //Mace
+wep2[34] = 16.0 ;   //Maul
+wep2[35] = 17.0 ;   //Scepter
+wep2[36] = 15.0 ;   //War axe
+wep2[37] = 17.0 ;   //War mace
+wep2[38] = 18.0 ;   //War hammer
+wep2[39] = 15.0 ;   //Sledge hammer
+wep2[40] = 15.0 ;   //Smith's hammer
+wep2[41] = 16.0 ;   //Black staff
+wep2[42] = 13.0 ;   //Club
+wep2[43] = 15.0 ;   //Crook
+wep2[44] = 17.0 ;   //Gnarled staff
+wep2[45] = 14.0 ;   //Quarter staff
+wep2[46] = 11.0 ;   //Wand
+wep2[47] = 18.0 ;   //Bow
+wep2[48] = 17.0 ;   //Composite bow
+wep2[49] = 20.0 ;   //Crossbow
+wep2[50] = 20.0 ;   //Heavy crossbow
+wep2[51] = 12.0 ;   //Repeating crossbow
+wep2[52] = 13.0 ;   //Cleaver
+wep2[53] = 18.0 ;  //No-dachi
+wep2[54] = 12.0 ;  //Wakizashi
+wep2[55] = 18.0 ;  //Lajatang
+wep2[56] = 15.0 ;  //Daisho
+wep2[57] = 12.0 ;  //Tekagi
+wep2[58] = 11.0 ;  //Kama
+wep2[59] = 11.0 ;  //Sai
+wep2[60] = 11.0 ;  //Bokuto
+wep2[61] = 13.0 ;  //Nunchaku
+wep2[62] = 12.0 ;  //Tessen
+wep2[63] = 14.0 ;  //Tetsubo
+wep2[64] = 20.0 ;  //Yumi
+wep2[65] = 14.0 ;  //Radient scimitar
+wep2[66] = 11.0 ;  //War cleaver
+wep2[67] = 14.0 ;  //Elven spellblade
+wep2[68] = 12.0 ;  //Assassin spike
+wep2[69] = 15.0 ;  //Leaf blade
+wep2[70] = 17.0 ;  //Rune blade
+wep2[71] = 15.0 ;  //Elven Machete
+wep2[72] = 23.0 ;  //Ornate axe(old)
+wep2[73] = 20.0 ;  //Ornate axe(now)
+wep2[74] = 17.0 ;  //Diamond mace
+wep2[75] = 12.0 ;  //Wild staff
+wep2[76] = 22.0 ;  //Elven composite bow
+wep2[77] = 16.0 ;  //Magical shortbow
+wep2[78] = 19.0 ;  //bow_p39
+wep2[79] = 17.0 ;  //compbow_p39
+wep2[80] = 22.0 ;  //crossbow_p39
+wep2[81] = 24.0 ;  //hxbow_p39
+wep2[82] = 12.0 ;  //repcross_p39
+wep2[83] = 20.0 ;  //yumi_p39
+wep2[84] = 16.0 ;  //elvcom_p39
+wep2[85] = 13.0 ;  //magshort_p39
+wep2[86] = 24.0 ;  //the redeemer
+//
+
+//Wep Base Speed
+var wep3;
+wep3 = new Array(101);
+wep3[0] = 2.50 ;
+wep3[1] = 3.00 ;    //Bone harvester
+wep3[2] = 3.25 ;    //Broadsword
+wep3[3] = 2.50 ;    //Crescent blade
+wep3[4] = 2.50 ;    //Cutlass
+wep3[5] = 2.50 ;    //Katana
+wep3[6] = 3.50 ;    //Longsword
+wep3[7] = 3.00 ;    //Scimitar
+wep3[8] = 3.75 ;    //Viking sword
+wep3[9] = 2.25 ;    //Butcher knife
+wep3[10] = 2.25 ;   //Skinning knife
+wep3[11] = 3.75 ;   //Bardiche
+wep3[12] = 3.00 ;   //Bladed staff
+wep3[13] = 4.25 ;   //Halberd
+wep3[14] = 3.50 ;   //Scythe
+wep3[15] = 3.00 ;   //Pickaxe
+wep3[16] = 3.00 ;   //Axe
+wep3[17] = 3.50 ;   //Battle axe
+wep3[18] = 3.25 ;   //Double axe
+wep3[19] = 3.25 ;   //Executioner's axe
+wep3[20] = 3.75 ;   //Large battle axe
+wep3[21] = 3.50 ;   //Two handed axe
+wep3[22] = 2.75 ;   //Hatchet
+wep3[23] = 2.00 ;   //Dagger
+wep3[24] = 2.00 ;   //Kryss
+wep3[25] = 4.50 ;   //Lance
+wep3[26] = 2.75 ;   //Warfork
+wep3[27] = 2.25 ;   //Double bladed staff
+wep3[28] = 3.00 ;   //Pike
+wep3[29] = 2.00 ;   //Short spear
+wep3[30] = 2.75 ;   //Spear
+wep3[31] = 2.50 ;   //Pitch fork
+wep3[32] = 3.75 ;   //Hammer pick
+wep3[33] = 2.75 ;   //Mace
+wep3[34] = 3.50 ;   //Maul
+wep3[35] = 3.50 ;   //Scepter
+wep3[36] = 3.25 ;   //War axe
+wep3[37] = 4.00 ;   //War mace
+wep3[38] = 3.75 ;   //War hammer
+wep3[39] = 3.25 ;   //Sledge hammer
+wep3[40] = 3.25 ;   //Smith's hammer
+wep3[41] = 2.75 ;   //Black staff
+wep3[42] = 2.50 ;   //Club
+wep3[43] = 2.75 ;   //Crook
+wep3[44] = 3.25 ;   //Gnarled staff
+wep3[45] = 2.25 ;   //Quarter staff
+wep3[46] = 2.75 ;   //Wand
+wep3[47] = 4.25 ;   //Bow
+wep3[48] = 4.00 ;   //Composite bow
+wep3[49] = 4.50 ;   //Crossbow
+wep3[50] = 5.00 ;   //Heavy crossbow
+wep3[51] = 2.75 ;   //Repeating crossbow
+wep3[52] = 2.50 ;   //Cleaver
+wep3[53] = 3.50 ;   //No-dachi
+wep3[54] = 2.50 ;   //Wakizashi
+wep3[55] = 3.50 ;   //Lajatang
+wep3[56] = 2.75 ;   //Daisho
+wep3[57] = 2.00 ;   //Tekagi
+wep3[58] = 2.00 ;   //Kama
+wep3[59] = 2.00 ;   //Sai
+wep3[60] = 2.00 ;   //Bokuto
+wep3[61] = 2.50 ;   //Nunchaku
+wep3[62] = 2.00 ;   //Tessen
+wep3[63] = 2.50 ;   //Tetsubo
+wep3[64] = 4.50 ;   //Yumi
+wep3[65] = 2.50 ;   //Radient scimitar
+wep3[66] = 2.25 ;   //War cleaver
+wep3[67] = 2.50 ;   //Elven spellblade
+wep3[68] = 2.00 ;   //Assassin spike
+wep3[69] = 2.75 ;   //Leaf blade
+wep3[70] = 3.00 ;   //Rune blade
+wep3[71] = 2.75 ;   //Elven Machete
+wep3[72] = 3.50 ;   //Ornate axe(old)
+wep3[73] = 3.50 ;   //Ornate axe(now)
+wep3[74] = 3.00 ;   //Diamond mace
+wep3[75] = 2.25 ;   //Wild staff
+wep3[76] = 4.00 ;   //Elven composite bow
+wep3[77] = 3.00 ;   //Magical shortbow
+wep3[78] = 4.25 ;   //bow_p39
+wep3[79] = 4.00 ;   //compbow_p39
+wep3[80] = 4.50 ;   //crossbow_p39
+wep3[81] = 5.00 ;   //hxbow_p39
+wep3[82] = 2.75 ;   //repcross_p39
+wep3[83] = 4.50 ;   //yumi_p39
+wep3[84] = 4.00 ;   //elvcom_p39
+wep3[85] = 3.00 ;   //magshort_p39
+wep3[86] = 5.00 ;   //the redeemer
+//
+
+
+//Wep Weight
+var wep4;
+wep4 = new Array(101);
+wep4[0] = 1.0 ;
+wep4[1] = 3.0 ;    //Bone harvester
+wep4[2] = 6.0 ;    //Broadsword
+wep4[3] = 1.0 ;    //Crescent blade
+wep4[4] = 8.0 ;    //Cutlass
+wep4[5] = 6.0 ;    //Katana
+wep4[6] = 7.0 ;    //Longsword
+wep4[7] = 5.0 ;    //Scimitar
+wep4[8] = 6.0 ;    //Viking sword
+wep4[9] = 1.0 ;    //Butcher knife
+wep4[10] = 1.0 ;   //Skinning knife
+wep4[11] = 7.0 ;   //Bardiche
+wep4[12] = 4.0 ;   //Bladed staff
+wep4[13] = 16.0 ;   //Halberd
+wep4[14] = 5.0 ;   //Scythe
+wep4[15] = 11.0 ;   //Pickaxe
+wep4[16] = 4.0 ;   //Axe
+wep4[17] = 4.0 ;   //Battle axe
+wep4[18] = 7.0 ;   //Double axe
+wep4[19] = 8.0 ;   //Executioner's axe
+wep4[20] = 6.0 ;   //Large battle axe
+wep4[21] = 8.0 ;   //Two handed axe
+wep4[22] = 4.0 ;   //Hatchet
+wep4[23] = 1.0 ;   //Dagger
+wep4[24] = 2.0 ;   //Kryss
+wep4[25] = 12.0 ;   //Lance
+wep4[26] = 9.0 ;   //Warfork
+wep4[27] = 2.0 ;   //Double bladed staff
+wep4[28] = 8.0 ;   //Pike
+wep4[29] = 4.0 ;   //Short spear
+wep4[30] = 7.0 ;   //Spear
+wep4[31] = 11.0 ;   //Pitch fork
+wep4[32] = 9.0 ;   //Hammer pick
+wep4[33] = 14.0 ;   //Mace
+wep4[34] = 10.0 ;   //Maul
+wep4[35] = 8.0 ;   //Scepter
+wep4[36] = 8.0 ;   //War axe
+wep4[37] = 17.0 ;   //War mace
+wep4[38] = 10.0 ;   //War hammer
+wep4[39] = 10.0 ;   //Sledge hammer
+wep4[40] = 8.0 ;   //Smith's hammer
+wep4[41] = 6.0 ;   //Black staff
+wep4[42] = 8.0 ;   //Club
+wep4[43] = 3.0 ;   //Crook
+wep4[44] = 3.0 ;   //Gnarled staff
+wep4[45] = 4.0 ;   //Quarter staff
+wep4[46] = 1.0 ;   //Wand
+wep4[47] = 6.0 ;   //Bow
+wep4[48] = 5.0 ;   //Composite bow
+wep4[49] = 7.0 ;   //Crossbow
+wep4[50] = 9.0 ;   //Heavy crossbow
+wep4[51] = 6.0 ;   //Repeating crossbow
+wep4[52] = 1.0 ;   //Cleaver
+wep4[53] = 10.0 ;   //No-dachi
+wep4[54] = 5.0 ;   //Wakizashi
+wep4[55] = 12.0 ;   //Lajatang
+wep4[56] = 8.0 ;   //Daisho
+wep4[57] = 5.0 ;   //Tekagi
+wep4[58] = 7.0 ;   //Kama
+wep4[59] = 7.0 ;   //Sai
+wep4[60] = 7.0 ;   //Bokuto
+wep4[61] = 5.0 ;   //Nunchaku
+wep4[62] = 6.0 ;   //Tessen
+wep4[63] = 8.0 ;   //Tetsubo
+wep4[64] = 8.0 ;   //Yumi
+wep4[65] = 9.0 ;   //Radient scimitar
+wep4[66] = 10.0 ;   //War cleaver
+wep4[67] = 5.0 ;   //Elven spellblade
+wep4[68] = 4.0 ;   //Assassin spike
+wep4[69] = 8.0 ;   //Leaf blade
+wep4[70] = 7.0 ;   //Rune blade
+wep4[71] = 6.0 ;   //Elven Machete
+wep4[72] = 12.0 ;   //Ornate axe(old)
+wep4[73] = 12.0 ;   //Ornate axe(now)
+wep4[74] = 10.0 ;   //Diamond mace
+wep4[75] = 8.0 ;   //Wild staff
+wep4[76] = 8.0 ;   //Elven composite bow
+wep4[77] = 6.0 ;   //Magical shortbow
+wep4[78] = 6.0 ;   //bow_p39
+wep4[79] = 5.0 ;   //compbow_p39
+wep4[80] = 7.0 ;   //crossbow_p39
+wep4[81] = 9.0 ;   //hxbow_p39
+wep4[82] = 6.0 ;   //repcross_p39
+wep4[83] = 8.0 ;   //yumi_p39
+wep4[84] = 8.0 ;   //elvcom_p39
+wep4[85] = 6.0 ;   //magshort_p39
+wep4[86] = 6.0 ;   //the redeemer
+//
+
+//Wep Difficulty
+var wep5;
+wep5 = new Array(101);
+wep5[0] = 0.0 ;
+wep5[1] = 33.0 ;    //Bone harvester
+wep5[2] = 35.4 ;    //Broadsword
+wep5[3] = 45.0 ;    //Crescent blade
+wep5[4] = 24.3 ;    //Cutlass
+wep5[5] = 44.1 ;    //Katana
+wep5[6] = 28.0 ;    //Longsword
+wep5[7] = 31.7 ;    //Scimitar
+wep5[8] = 24.3 ;    //Viking sword
+wep5[9] = 25.0 ;    //Butcher knife
+wep5[10] = 25.0 ;   //Skinning knife
+wep5[11] = 31.7 ;   //Bardiche
+wep5[12] = 40.0 ;   //Bladed staff
+wep5[13] = 39.1 ;   //Halberd
+wep5[14] = 39.0 ;   //Scythe
+wep5[15] = 11.0 ;   //Pickaxe
+wep5[16] = 34.2 ;   //Axe
+wep5[17] = 30.5 ;   //Battle axe
+wep5[18] = 29.3 ;   //Double axe
+wep5[19] = 34.2 ;   //Executioner's axe
+wep5[20] = 28.0 ;   //Large battle axe
+wep5[21] = 33.0 ;   //Two handed axe
+wep5[22] = 30.0 ;   //Hatchet
+wep5[23] = -0.4 ;   //Dagger
+wep5[24] = 36.7 ;   //Kryss
+wep5[25] = 48.0 ;   //Lance
+wep5[26] = 42.9 ;   //Warfork
+wep5[27] = 45.0 ;   //Double bladed staff
+wep5[28] = 47.0 ;   //Pike
+wep5[29] = 45.3 ;   //Short spear
+wep5[30] = 49.0 ;   //Spear
+wep5[31] = 0.0 ;   //Pitch fork
+wep5[32] = 34.2 ;   //Hammer pick
+wep5[33] = 14.5 ;   //Mace
+wep5[34] = 19.4 ;   //Maul
+wep5[35] = 21.4 ;   //Scepter
+wep5[36] = 39.1 ;   //War axe
+wep5[37] = 28.0 ;   //War mace
+wep5[38] = 34.2 ;   //War hammer
+wep5[39] = 40.0 ;   //Sledge hammer
+wep5[40] = 40.0 ;   //Smith's hammer
+wep5[41] = 0.0 ;   //Black staff
+wep5[42] = 40.0 ;   //Club
+wep5[43] = 53.9 ;   //Crook
+wep5[44] = 53.9 ;   //Gnarled staff
+wep5[45] = 48.6 ;   //Quarter staff
+wep5[46] = 0.0 ;   //Wand
+wep5[47] = 30.0 ;   //Bow
+wep5[48] = 70.0 ;   //Composite bow
+wep5[49] = 60.0 ;   //Crossbow
+wep5[50] = 80.0 ;   //Heavy crossbow
+wep5[51] = 90.0 ;   //Repeating crossbow
+wep5[52] = 30.0 ;   //Cleaver
+wep5[53] = 75.0 ;   //No-dachi
+wep5[54] = 50.0 ;   //Wakizashi
+wep5[55] = 80.0 ;   //Lajatang
+wep5[56] = 60.0 ;   //Daisho
+wep5[57] = 55.0 ;   //Tekagi
+wep5[58] = 40.0 ;   //Kama
+wep5[59] = 50.0 ;   //Sai
+wep5[60] = 70.0 ;   //Bokuto
+wep5[61] = 70.0 ;   //Nunchaku
+wep5[62] = 85.0 ;   //Tessen
+wep5[63] = 80.0 ;   //Tetsubo
+wep5[64] = 90.0 ;   //Yumi
+wep5[65] = 75.0 ;   //Radient scimitar
+wep5[66] = 70.0 ;   //War cleaver
+wep5[67] = 70.0 ;   //Elven spellblade
+wep5[68] = 70.0 ;   //Assassin spike
+wep5[69] = 70.0 ;   //Leaf blade
+wep5[70] = 70.0 ;   //Rune blade
+wep5[71] = 70.0 ;   //Elven Machete
+wep5[72] = 70.0 ;   //Ornate axe(old)
+wep5[73] = 70.0 ;   //Ornate axe(now)
+wep5[74] = 70.0 ;   //Diamond mace
+wep5[75] = 63.8 ;   //Wild staff
+wep5[76] = 95.0 ;   //Elven composite bow
+wep5[77] = 85.0 ;   //Magical shortbow
+wep5[78] = 6.0 ;   //bow_p39
+wep5[79] = 5.0 ;   //compbow_p39
+wep5[80] = 7.0 ;   //crossbow_p39
+wep5[81] = 9.0 ;   //hxbow_p39
+wep5[82] = 6.0 ;   //repcross_p39
+wep5[83] = 8.0 ;   //yumi_p39
+wep5[84] = 8.0 ;   //elvcom_p39
+wep5[85] = 6.0 ;   //magshort_p39
+wep5[86] = 6.0 ;   //the redeemer
+//
+
+//Wep durability
+var wep6;
+wep6 = new Array(101);
+wep6[0] = 0.0 ;
+wep6[1] = 50.0 ;    //Bone harvester
+wep6[2] = 65.0 ;    //Broadsword
+wep6[3] = 55.0 ;    //Crescent blade
+wep6[4] = 50.0 ;    //Cutlass
+wep6[5] = 60.0 ;    //Katana
+wep6[6] = 70.0 ;    //Longsword
+wep6[7] = 60.0 ;    //Scimitar
+wep6[8] = 65.0 ;    //Viking sword
+wep6[9] = 35.0 ;    //Butcher knife
+wep6[10] = 35.0 ;   //Skinning knife
+wep6[11] = 65.0 ;   //Bardiche
+wep6[12] = 70.0 ;   //Bladed staff
+wep6[13] = 55.0 ;   //Halberd
+wep6[14] = 65.0 ;   //Scythe
+wep6[15] = 45.0 ;   //Pickaxe
+wep6[16] = 70.0 ;   //Axe
+wep6[17] = 50.0 ;   //Battle axe
+wep6[18] = 70.0 ;   //Double axe
+wep6[19] = 70.0 ;   //Executioner's axe
+wep6[20] = 50.0 ;   //Large battle axe
+wep6[21] = 60.0 ;   //Two handed axe
+wep6[22] = 55.0 ;   //Hatchet
+wep6[23] = 35.0 ;   //Dagger
+wep6[24] = 60.0 ;   //Kryss
+wep6[25] = 70.0 ;   //Lance
+wep6[26] = 70.0 ;   //Warfork
+wep6[27] = 55.0 ;   //Double bladed staff
+wep6[28] = 70.0 ;   //Pike
+wep6[29] = 50.0 ;   //Short spear
+wep6[30] = 55.0 ;   //Spear
+wep6[31] = 45.0 ;   //Pitch fork
+wep6[32] = 50.0 ;   //Hammer pick
+wep6[33] = 50.0 ;   //Mace
+wep6[34] = 50.0 ;   //Maul
+wep6[35] = 70.0 ;   //Scepter
+wep6[36] = 55.0 ;   //War axe
+wep6[37] = 70.0 ;   //War mace
+wep6[38] = 70.0 ;   //War hammer
+wep6[39] = 45.0 ;   //Sledge hammer
+wep6[40] = 45.0 ;   //Smith's hammer
+wep6[41] = 50.0 ;   //Black staff
+wep6[42] = 35.0 ;   //Club
+wep6[43] = 40.0 ;   //Crook
+wep6[44] = 40.0 ;   //Gnarled staff
+wep6[45] = 45.0 ;   //Quarter staff
+wep6[46] = 70.0 ;   //Wand
+wep6[47] = 45.0 ;   //Bow
+wep6[48] = 55.0 ;   //Composite bow
+wep6[49] = 55.0 ;   //Crossbow
+wep6[50] = 65.0 ;   //Heavy crossbow
+wep6[51] = 55.0 ;   //Repeating crossbow
+wep6[52] = 40.0 ;   //Cleaver
+wep6[53] = 80.0 ;   //No-dachi
+wep6[54] = 50.0 ;   //Wakizashi
+wep6[55] = 85.0 ;   //Lajatang
+wep6[56] = 55.0 ;   //Daisho
+wep6[57] = 50.0 ;   //Tekagi
+wep6[58] = 50.0 ;   //Kama
+wep6[59] = 60.0 ;   //Sai
+wep6[60] = 40.0 ;   //Bokuto
+wep6[61] = 40.0 ;   //Nunchaku
+wep6[62] = 60.0 ;   //Tessen
+wep6[63] = 60.0 ;   //Tetsubo
+wep6[64] = 60.0 ;   //Yumi
+wep6[65] = 60.0 ;   //Radient scimitar
+wep6[66] = 60.0 ;   //War cleaver
+wep6[67] = 60.0 ;   //Elven spellblade
+wep6[68] = 60.0 ;   //Assassin spike
+wep6[69] = 60.0 ;   //Leaf blade
+wep6[70] = 60.0 ;   //Rune blade
+wep6[71] = 60.0 ;   //Elven Machete
+wep6[72] = 60.0 ;   //Ornate axe(old)
+wep6[73] = 60.0 ;   //Ornate axe(now)
+wep6[74] = 60.0 ;   //Diamond mace
+wep6[75] = 60.0 ;   //Wild staff
+wep6[76] = 50.0 ;   //Elven composite bow
+wep6[77] = 50.0 ;   //Magical shortbow
+wep6[78] = 45.0 ;   //bow_p39
+wep6[79] = 55.0 ;   //compbow_p39
+wep6[80] = 55.0 ;   //crossbow_p39
+wep6[81] = 65.0 ;   //hxbow_p39
+wep6[82] = 55.0 ;   //repcross_p39
+wep6[83] = 60.0 ;   //yumi_p39
+wep6[84] = 50.0 ;   //elvcom_p39
+wep6[85] = 50.0 ;   //magshort_p39
+wep6[86] = 100.0 ;   //the redeemer
+//
+
+//Wep requirement
+var wep7;
+wep7 = new Array(101);
+wep7[0] = 0.0 ;
+wep7[1] = 25.0 ;    //Bone harvester
+wep7[2] = 30.0 ;    //Broadsword
+wep7[3] = 55.0 ;    //Crescent blade
+wep7[4] = 25.0 ;    //Cutlass
+wep7[5] = 25.0 ;    //Katana
+wep7[6] = 35.0 ;    //Longsword
+wep7[7] = 25.0 ;    //Scimitar
+wep7[8] = 40.0 ;    //Viking sword
+wep7[9] = 5.0 ;    //Butcher knife
+wep7[10] = 5.0 ;   //Skinning knife
+wep7[11] = 45.0 ;   //Bardiche
+wep7[12] = 40.0 ;   //Bladed staff
+wep7[13] = 95.0 ;   //Halberd
+wep7[14] = 45.0 ;   //Scythe
+wep7[15] = 50.0 ;   //Pickaxe
+wep7[16] = 35.0 ;   //Axe
+wep7[17] = 35.0 ;   //Battle axe
+wep7[18] = 45.0 ;   //Double axe
+wep7[19] = 40.0 ;   //Executioner's axe
+wep7[20] = 80.0 ;   //Large battle axe
+wep7[21] = 40.0 ;   //Two handed axe
+wep7[22] = 20.0 ;   //Hatchet
+wep7[23] = 10.0 ;   //Dagger
+wep7[24] = 10.0 ;   //Kryss
+wep7[25] = 95.0 ;   //Lance
+wep7[26] = 45.0 ;   //Warfork
+wep7[27] = 50.0 ;   //Double bladed staff
+wep7[28] = 50.0 ;   //Pike
+wep7[29] = 40.0 ;   //Short spear
+wep7[30] = 50.0 ;   //Spear
+wep7[31] = 50.0 ;   //Pitch fork
+wep7[32] = 45.0 ;   //Hammer pick
+wep7[33] = 45.0 ;   //Mace
+wep7[34] = 45.0 ;   //Maul
+wep7[35] = 40.0 ;   //Scepter
+wep7[36] = 50.0 ;   //War axe
+wep7[37] = 80.0 ;   //War mace
+wep7[38] = 95.0 ;   //War hammer
+wep7[39] = 40.0 ;   //Sledge hammer
+wep7[40] = 40.0 ;   //Smith's hammer
+wep7[41] = 35.0 ;   //Black staff
+wep7[42] = 35.0 ;   //Club
+wep7[43] = 20.0 ;   //Crook
+wep7[44] = 20.0 ;   //Gnarled staff
+wep7[45] = 30.0 ;   //Quarter staff
+wep7[46] = 5.0 ;   //Wand
+wep7[47] = 30.0 ;   //Bow
+wep7[48] = 45.0 ;   //Composite bow
+wep7[49] = 35.0 ;   //Crossbow
+wep7[50] = 80.0 ;   //Heavy crossbow
+wep7[51] = 30.0 ;   //Repeating crossbow
+wep7[52] = 10.0 ;   //Cleaver
+wep7[53] = 40.0 ;   //No-dachi
+wep7[54] = 20.0 ;   //Wakizashi
+wep7[55] = 65.0 ;   //Lajatang
+wep7[56] = 40.0 ;   //Daisho
+wep7[57] = 10.0 ;   //Tekagi
+wep7[58] = 15.0 ;   //Kama
+wep7[59] = 15.0 ;   //Sai
+wep7[60] = 20.0 ;   //Bokuto
+wep7[61] = 15.0 ;   //Nunchaku
+wep7[62] = 10.0 ;   //Tessen
+wep7[63] = 35.0 ;   //Tetsubo
+wep7[64] = 35.0 ;   //Yumi
+wep7[65] = 20.0 ;   //Radient scimitar
+wep7[66] = 15.0 ;   //War cleaver
+wep7[67] = 35.0 ;   //Elven spellblade
+wep7[68] = 15.0 ;   //Assassin spike
+wep7[69] = 20.0 ;   //Leaf blade
+wep7[70] = 30.0 ;   //Rune blade
+wep7[71] = 20.0 ;   //Elven Machete
+wep7[72] = 45.0 ;   //Ornate axe(old)
+wep7[73] = 45.0 ;   //Ornate axe(now)
+wep7[74] = 35.0 ;   //Diamond mace
+wep7[75] = 15.0 ;   //Wild staff
+wep7[76] = 45.0 ;   //Elven composite bow
+wep7[77] = 45.0 ;   //Magical shortbow
+wep7[78] = 30.0 ;   //bow_p39
+wep7[79] = 45.0 ;   //compbow_p39
+wep7[80] = 35.0 ;   //crossbow_p39
+wep7[81] = 80.0 ;   //hxbow_p39
+wep7[82] = 30.0 ;   //repcross_p39
+wep7[83] = 35.0 ;   //yumi_p39
+wep7[84] = 45.0 ;   //elvcom_p39
+wep7[85] = 45.0 ;   //magshort_p39
+wep7[86] = 85.0 ;   //the redeemer
+//
+
+//Wep Hardness
+var wep8;
+wep8 = new Array(101);
+wep8[0] = 0.0 ;
+wep8[1] = 8.0 ;    //Bone harvester
+wep8[2] = 8.0 ;    //Broadsword
+wep8[3] = 8.0 ;    //Crescent blade
+wep8[4] = 8.0 ;    //Cutlass
+wep8[5] = 8.0 ;    //Katana
+wep8[6] = 8.0 ;    //Longsword
+wep8[7] = 8.0 ;    //Scimitar
+wep8[8] = 8.0 ;    //Viking sword
+wep8[9] = 8.0 ;    //Butcher knife
+wep8[10] = 8.0 ;   //Skinning knife
+wep8[11] = 8.0 ;   //Bardiche
+wep8[12] = 8.0 ;   //Bladed staff
+wep8[13] = 8.0 ;   //Halberd
+wep8[14] = 8.0 ;   //Scythe
+wep8[15] = 8.0 ;   //Pickaxe
+wep8[16] = 8.0 ;   //Axe
+wep8[17] = 8.0 ;   //Battle axe
+wep8[18] = 8.0 ;   //Double axe
+wep8[19] = 8.0 ;   //Executioner's axe
+wep8[20] = 8.0 ;   //Large battle axe
+wep8[21] = 8.0 ;   //Two handed axe
+wep8[22] = 8.0 ;   //Hatchet
+wep8[23] = 8.0 ;   //Dagger
+wep8[24] = 8.0 ;   //Kryss
+wep8[25] = 8.0 ;   //Lance
+wep8[26] = 8.0 ;   //Warfork
+wep8[27] = 8.0 ;   //Double bladed staff
+wep8[28] = 8.0 ;   //Pike
+wep8[29] = 8.0 ;   //Short spear
+wep8[30] = 8.0 ;   //Spear
+wep8[31] = 8.0 ;   //Pitch fork
+wep8[32] = 8.0 ;   //Hammer pick
+wep8[33] = 8.0 ;   //Mace
+wep8[34] = 8.0 ;   //Maul
+wep8[35] = 8.0 ;   //Scepter
+wep8[36] = 8.0 ;   //War axe
+wep8[37] = 8.0 ;   //War mace
+wep8[38] = 8.0 ;   //War hammer
+wep8[39] = 8.0 ;   //Sledge hammer
+wep8[40] = 8.0 ;   //Smith's hammer
+wep8[41] = 8.0 ;   //Black staff
+wep8[42] = 8.0 ;   //Club
+wep8[43] = 8.0 ;   //Crook
+wep8[44] = 8.0 ;   //Gnarled staff
+wep8[45] = 8.0 ;   //Quarter staff
+wep8[46] = 8.0 ;   //Wand
+wep8[47] = 8.0 ;   //Bow
+wep8[48] = 8.0 ;   //Composite bow
+wep8[49] = 8.0 ;   //Crossbow
+wep8[50] = 8.0 ;   //Heavy crossbow
+wep8[51] = 8.0 ;   //Repeating crossbow
+wep8[52] = 8.0 ;   //Cleaver
+wep8[53] = 8.0 ;   //No-dachi
+wep8[54] = 8.0 ;   //Wakizashi
+wep8[55] = 8.0 ;   //Lajatang
+wep8[56] = 8.0 ;   //Daisho
+wep8[57] = 8.0 ;   //Tekagi
+wep8[58] = 8.0 ;   //Kama
+wep8[59] = 8.0 ;   //Sai
+wep8[60] = 8.0 ;   //Bokuto
+wep8[61] = 8.0 ;   //Nunchaku
+wep8[62] = 8.0 ;   //Tessen
+wep8[63] = 8.0 ;   //Tetsubo
+wep8[64] = 8.0 ;   //Yumi
+wep8[65] = 8.0 ;   //Radient scimitar
+wep8[66] = 8.0 ;   //War cleaver
+wep8[67] = 8.0 ;   //Elven spellblade
+wep8[68] = 8.0 ;   //Assassin spike
+wep8[69] = 8.0 ;   //Leaf blade
+wep8[70] = 8.0 ;   //Rune blade
+wep8[71] = 8.0 ;   //Elven Machete
+wep8[72] = 8.0 ;   //Ornate axe(old)
+wep8[73] = 8.0 ;   //Ornate axe(now)
+wep8[74] = 8.0 ;   //Diamond mace
+wep8[75] = 8.0 ;   //Wild staff
+wep8[76] = 8.0 ;   //Elven composite bow
+wep8[77] = 8.0 ;   //Magical shortbow
+wep8[78] = 8.0 ;   //bow_p39
+wep8[79] = 8.0 ;   //compbow_p39
+wep8[80] = 8.0 ;   //crossbow_p39
+wep8[81] = 8.0 ;   //hxbow_p39
+wep8[82] = 8.0 ;   //repcross_p39
+wep8[83] = 8.0 ;   //yumi_p39
+wep8[84] = 8.0 ;   //elvcom_p39
+wep8[85] = 8.0 ;   //magshort_p39
+wep8[86] = 8.0 ;   //the redeemer
+//
+
+//Wep Type
+var wep9;
+wep9 = new Array(101);
+wep9[0] = 0.0 ;
+wep9[1] = 1.0 ;    //Bone harvester
+wep9[2] = 1.0 ;    //Broadsword
+wep9[3] = 1.0 ;    //Crescent blade
+wep9[4] = 1.0 ;    //Cutlass
+wep9[5] = 1.0 ;    //Katana
+wep9[6] = 1.0 ;    //Longsword
+wep9[7] = 1.0 ;    //Scimitar
+wep9[8] = 1.0 ;    //Viking sword
+wep9[9] = 1.0 ;    //Butcher knife
+wep9[10] = 1.0 ;   //Skinning knife
+wep9[11] = 1.0 ;   //Bardiche
+wep9[12] = 1.0 ;   //Bladed staff
+wep9[13] = 1.0 ;   //Halberd
+wep9[14] = 1.0 ;   //Scythe
+wep9[15] = 1.0 ;   //Pickaxe
+wep9[16] = 1.0 ;   //Axe
+wep9[17] = 1.0 ;   //Battle axe
+wep9[18] = 1.0 ;   //Double axe
+wep9[19] = 1.0 ;   //Executioner's axe
+wep9[20] = 1.0 ;   //Large battle axe
+wep9[21] = 1.0 ;   //Two handed axe
+wep9[22] = 1.0 ;   //Hatchet
+wep9[23] = 2.0 ;   //Dagger
+wep9[24] = 2.0 ;   //Kryss
+wep9[25] = 2.0 ;   //Lance
+wep9[26] = 2.0 ;   //Warfork
+wep9[27] = 2.0 ;   //Double bladed staff
+wep9[28] = 2.0 ;   //Pike
+wep9[29] = 2.0 ;   //Short spear
+wep9[30] = 2.0 ;   //Spear
+wep9[31] = 2.0 ;   //Pitch fork
+wep9[32] = 3.0 ;   //Hammer pick
+wep9[33] = 3.0 ;   //Mace
+wep9[34] = 3.0 ;   //Maul
+wep9[35] = 3.0 ;   //Scepter
+wep9[36] = 3.0 ;   //War axe
+wep9[37] = 3.0 ;   //War mace
+wep9[38] = 3.0 ;   //War hammer
+wep9[39] = 3.0 ;   //Sledge hammer
+wep9[40] = 3.0 ;   //Smith's hammer
+wep9[41] = 3.0 ;   //Black staff
+wep9[42] = 3.0 ;   //Club
+wep9[43] = 3.0 ;   //Crook
+wep9[44] = 3.0 ;   //Gnarled staff
+wep9[45] = 3.0 ;   //Quarter staff
+wep9[46] = 3.0 ;   //Wand
+wep9[47] = 4.0 ;   //Bow
+wep9[48] = 4.0 ;   //Composite bow
+wep9[49] = 4.0 ;   //Crossbow
+wep9[50] = 4.0 ;   //Heavy crossbow
+wep9[51] = 4.0 ;   //Repeating crossbow
+wep9[52] = 4.0 ;   //Cleaver
+wep9[53] = 1.0 ;   //No-dachi
+wep9[54] = 1.0 ;   //Wakizashi
+wep9[55] = 2.0 ;   //Lajatang
+wep9[56] = 1.0 ;   //Daisho
+wep9[57] = 2.0 ;   //Tekagi
+wep9[58] = 2.0 ;   //Kama
+wep9[59] = 2.0 ;   //Sai
+wep9[60] = 1.0 ;   //Bokuto
+wep9[61] = 3.0 ;   //Nunchaku
+wep9[62] = 3.0 ;   //Tessen
+wep9[63] = 3.0 ;   //Tetsubo
+wep9[64] = 4.0 ;   //Yumi
+wep9[65] = 1.0 ;   //Radient scimitar
+wep9[66] = 2.0 ;   //War cleaver
+wep9[67] = 2.0 ;   //Elven spellblade
+wep9[68] = 2.0 ;   //Assassin spike
+wep9[69] = 2.0 ;   //Leaf blade
+wep9[70] = 1.0 ;   //Rune blade
+wep9[71] = 1.0 ;   //Elven Machete
+wep9[72] = 1.0 ;   //Ornate axe(old)
+wep9[73] = 1.0 ;   //Ornate axe(now)
+wep9[74] = 3.0 ;   //Diamond mace
+wep9[75] = 3.0 ;   //Wild staff
+wep9[76] = 4.0 ;   //Elven composite bow
+wep9[77] = 4.0 ;   //Magical shortbow
+wep9[78] = 4.0 ;   //bow_p39
+wep9[79] = 4.0 ;   //compbow_p39
+wep9[80] = 4.0 ;   //crossbow_p39
+wep9[81] = 4.0 ;   //hxbow_p39
+wep9[82] = 4.0 ;   //repcross_p39
+wep9[83] = 4.0 ;   //yumi_p39
+wep9[84] = 4.0 ;   //elvcom_p39
+wep9[85] = 4.0 ;   //magshort_p39
+wep9[86] = 1.0 ;   //the redeemer
+//
+
+//ele01
+var ele01;
+ele01 = new Array(6);
+ele01[0] = 1.0 ;    //standard
+ele01[1] = 1.0 ;    //special-A
+ele01[2] = 2.0 ;    //special-B
+ele01[3] = 0.5 ;    //special-C
+ele01[4] = 1.0 ;    //special-D
+ele01[5] = 1.0 ;    //special-E
+//
+
+//ele02
+var ele02;
+ele02 = new Array(6);
+ele02[0] = 1.0 ;    //standard
+ele02[1] = 0.5 ;    //special-A
+ele02[2] = 2.0 ;    //special-B
+ele02[3] = 0.5 ;    //special-C
+ele02[4] = 1.0 ;    //special-D
+ele02[5] = 1.0 ;    //special-E
+//
+
+//ele03
+var ele03;
+ele03 = new Array(6);
+ele03[0] = 1.0 ;    //standard
+ele03[1] = 2.0 ;    //special-A
+ele03[2] = 0.5 ;    //special-B
+ele03[3] = 1.0 ;    //special-C
+ele03[4] = 0.5 ;    //special-D
+ele03[5] = 1.0 ;    //special-E
+//
+
+//ele04
+var ele04;
+ele04 = new Array(6);
+ele04[0] = 1.0 ;    //standard
+ele04[1] = 0.5 ;    //special-A
+ele04[2] = 1.0 ;    //special-B
+ele04[3] = 1.0 ;    //special-C
+ele04[4] = 2.0 ;    //special-D
+ele04[5] = 1.0 ;    //special-E
+//
+
+//ele05
+var ele05;
+ele05 = new Array(6);
+ele05[0] = 1.0 ;    //standard
+ele05[1] = 1.0 ;    //special-A
+ele05[2] = 0.5 ;    //special-B
+ele05[3] = 2.0 ;    //special-C
+ele05[4] = 1.0 ;    //special-D
+ele05[5] = 4.0 ;    //special-E
+//
+
+//ele06
+var ele06;
+ele06 = new Array(6);
+ele06[0] = 0.0 ;    //standard
+ele06[1] = 0.0 ;    //special-A
+ele06[2] = -1.0 ;    //special-B
+ele06[3] = 2.0 ;    //special-C
+ele06[4] = 0.0 ;    //special-D
+ele06[5] = 1.0 ;    //special-E
+//
+
+//ele07
+var ele07;
+ele07 = new Array(6);
+ele07[0] = 0.0 ;    //standard
+ele07[1] = 0.0 ;    //special-A
+ele07[2] = 1.0 ;    //special-B
+ele07[3] = -1.0 ;    //special-C
+ele07[4] = 0.0 ;    //special-D
+ele07[5] = 0.0 ;    //special-E
+//
+
+//ele08
+var ele08;
+ele08 = new Array(6);
+ele08[0] = 0.0 ;    //standard
+ele08[1] = -1.0 ;    //special-A
+ele08[2] = 1.0 ;    //special-B
+ele08[3] = -1.0 ;    //special-C
+ele08[4] = 0.0 ;    //special-D
+ele08[5] = 0.0 ;    //special-E
+//
+
+//ele09
+var ele09;
+ele09 = new Array(6);
+ele09[0] = 0.0 ;    //standard
+ele09[1] = 2.0 ;    //special-A
+ele09[2] = -1.0 ;    //special-B
+ele09[3] = 0.0 ;    //special-C
+ele09[4] = -1.0 ;    //special-D
+ele09[5] = 0.0 ;    //special-E
+//
+
+//ele10
+var ele10;
+ele10 = new Array(6);
+ele10[0] = 0.0 ;    //standard
+ele10[1] = -1.0 ;    //special-A
+ele10[2] = 0.0 ;    //special-B
+ele10[3] = 0.0 ;    //special-C
+ele10[4] = 1.0 ;    //special-D
+ele10[5] = 0.0 ;    //special-E
+//
+
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.sk01.value = 0;
+  form.sk02.value = 0;
+  form.sk03.value = 0;
+  form.sk04.value = 0;
+  form.sk05.value = 0;
+  form.rat01.value = 0;
+  form.rat02.value = 0;
+  return true;
+}
+
+
+function keisan1(form)
+{
+var form = document.form_keisan;
+   sk11 = form.sk01.value;
+   sk12 = form.sk02.value;
+   sk13 = form.sk03.value;
+   sk14 = form.sk04.value;
+   sk15 = form.sk05.value;
+
+   matid = form.mater1.options[form.mater1.selectedIndex].value;
+   elm = new Array();
+   elp = new Array();
+   elm[1] = ele01[matid];
+   elm[2] = ele02[matid];
+   elm[3] = ele03[matid];
+   elm[4] = ele04[matid];
+   elm[5] = ele05[matid];
+   elp[1] = ele06[matid];
+   elp[2] = ele07[matid];
+   elp[3] = ele08[matid];
+   elp[4] = ele09[matid];
+   elp[5] = ele10[matid];
+
+   wepid = form.weapon1.options[form.weapon1.selectedIndex].value;
+   at1 = wep1[wepid];
+   at2 = wep2[wepid];
+   spd = wep3[wepid];
+   wgt = wep4[wepid];
+   dif = wep5[wepid];
+   dur = wep6[wepid];
+   req = wep7[wepid];
+   had = wep8[wepid];
+   cat = wep9[wepid];
+
+   form.diff.value = dif;
+   form.bwgt.value = wgt;
+   form.bat1.value = at1;
+   form.bat2.value = at2;
+   form.bspd.value = spd;
+   form.breq.value = req;
+   form.bhad.value = had;
+   form.bdur.value = dur;
+
+
+   pl = Math.floor(100 * Math.random()) + 1.0;
+   mi = Math.floor(100 * Math.random()) + 1.0;
+
+   aa = Math.max(0.0, (sk11 - dif) / 10 - Math.max( (sk11 - dif - 20.0) / 20 , 0.0) - Math.max( (sk11 - dif - 60.0) / 40 , 0.0) - Math.max( (sk11 - dif - 100.0) / 40 , 0.0));
+   ba = Math.min(2.0, Math.max(0.0, sk13 * (sk11 - dif) / 2000));
+   bb = Math.min(2.0, Math.max(0.0, sk14 * (sk11 - dif) / 2000));
+   bc = Math.min(2.0, Math.max(0.0, sk15 * (sk11 - dif) / 2000));
+   cc = Math.min(2.0, Math.max(0.0, sk12 * (sk11 - dif) / 2000));
+
+
+
+  if(cat==1)
+    {
+   rat01 = Math.round(0.01 * pl * (aa + ba - Math.max(aa + cc - 5.0, 0.0)) + Math.max(aa + cc - 5.0, 0.0));
+    }
+  else if(cat==2)
+    {
+   rat01 = Math.round(0.01 * pl * (aa + bb - Math.max(aa + cc - 5.0, 0.0)) + Math.max(aa + cc - 5.0, 0.0));
+    }
+  else if(cat==3)
+    {
+   rat01 = Math.round(0.01 * pl * (aa + bc - Math.max(aa + cc - 5.0, 0.0)) + Math.max(aa + cc - 5.0, 0.0));
+    }
+  else
+    {
+   rat01 = Math.round(0.01 * pl * (aa - Math.max(aa + cc - 5.0, 0.0)) + Math.max(aa + cc - 5.0, 0.0));
+    }
+
+   rat02 = Math.round(0.01 * mi * (Math.min(0.0, aa + cc - 5.0)));
+   rat02 = Math.abs(rat02);
+
+  if(rat01>=1)
+  {
+   pid = new Array();
+   pp0 = new Array();
+
+   for(i=1 ; i<=5 ; i++)
+     {
+     pid[i] = 0.0;
+     }
+
+ var pcnt = 0;
+ while( pcnt < rat01 )
+   {
+   for(i=1 ; i<=5 ; i++)
+     {
+     pp0[i] = Math.floor(1000 * elm[i] * Math.random()) * 100 + i * 1.0;
+     }
+
+     pp1 = Math.max(pp0[1],pp0[2]);
+     pp1 = Math.max(pp1,pp0[3]);
+     pp1 = Math.max(pp1,pp0[4]);
+     pp1 = Math.max(pp1,pp0[5]);
+
+     pp2 = pp1 % 5.0 + 1.0;
+
+     pid[pp2] = pid[pp2] + 1.0;
+
+     pcnt = pcnt + 1;
+   }
+
+   }
+
+   else{
+
+   pid = new Array();
+
+   for(i=1 ; i<=5 ; i++)
+     {
+     pid[i] = 0.0;
+     }
+   }
+
+
+  if(rat02>=1)
+  {
+
+   nid = new Array();
+   nn0 = new Array();
+
+   for(i=1 ; i<=5 ; i++)
+     {
+     nid[i] = 0.0;
+     }
+
+ var ncnt = 0;
+ while( ncnt < rat02 )
+   {
+   for(i=1 ; i<=5 ; i++)
+     {
+     nn0[i] = Math.floor(1000 * Math.random() / elm[i]) * 100 + i * 1.0;
+     }
+
+     nn1 = Math.max(nn0[1],nn0[2]);
+     nn1 = Math.max(nn1,nn0[3]);
+     nn1 = Math.max(nn1,nn0[4]);
+     nn1 = Math.max(nn1,nn0[5]);
+
+     nn2 = nn1 % 5.0 + 1.0;
+
+     nid[nn2] = nid[nn2] + 1.0;
+
+     ncnt = ncnt + 1;
+   }
+
+   }
+
+   else{
+
+   nid = new Array();
+
+   for(i=1 ; i<=5 ; i++)
+     {
+     nid[i] = 0.0;
+     }
+   }
+
+   hid = new Array();
+
+   for(i=1 ; i<=5 ; i++)
+     {
+     hid[i] = pid[i] - nid[i] + elp[i];
+     }
+
+   at1 = at1 + hid[1];
+   at2 = at2 + hid[1];
+   spd = Math.max(1.25, spd - 0.25 * hid[2]);
+   wgt = Math.max(1.0, Math.floor(wgt * (1.0 - 0.20 * hid[3])));
+   req = Math.max(5.0, Math.floor(req - 5.0 * hid[3]));
+   dur = Math.max(10.0, Math.floor(dur * (1.0 + 0.20 * hid[4])));
+   had = had + hid[5];
+
+   form.wgt.value = wgt;
+   form.at1.value = at1;
+   form.at2.value = at2;
+   form.spd.value = spd;
+   form.req.value = req;
+   form.had.value = had;
+   form.dur.value = dur;
+
+   form.pid1.value = pid[1];
+   form.pid2.value = pid[2];
+   form.pid3.value = pid[3];
+   form.pid4.value = pid[4];
+   form.pid5.value = pid[5];
+   form.nid1.value = nid[1];
+   form.nid2.value = nid[2];
+   form.nid3.value = nid[3];
+   form.nid4.value = nid[4];
+   form.nid5.value = nid[5];
+   form.elp1.value = elp[1];
+   form.elp2.value = elp[2];
+   form.elp3.value = elp[3];
+   form.elp4.value = elp[4];
+   form.elp5.value = elp[5];
+
+  return true;
+}
+
+//-->
+</script>
+
+<form name="form_keisan">
+
+ <table align="center" class="table16">
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="160">Weapon</td>
+     <td align="center" width="200">
+<select name="weapon1" SIZE="1">
+<option value="0">----blade----  
+<option value="1">Bone harvester
+<option value="2">Broadsword
+<option value="3">Crescent blade
+<option value="4">Cutlass
+<option value="23">Dagger
+<option value="5">Katana
+<option value="24">Kryss
+<option value="6">Longsword
+<option value="7">Scimitar
+<option value="8">Viking sword
+<option value="53">No-dachi
+<option value="54">Wakizashi
+<option value="55">Lajatang
+<option value="56">Daisho
+<option value="57">Tekagi
+<option value="58">Kama
+<option value="59">Sai
+<option value="65">Radient scimitar
+<option value="66">War cleaver
+<option value="67">Elven spellblade
+<option value="68">Assassin spike
+<option value="69">Leaf blade
+<option value="70">Rune blade
+<option value="71">Elven Machete
+<option value="0">-----axe-----
+<option value="16">Axe
+<option value="17">Battle axe
+<option value="18">Double axe
+<option value="19">Executioner's axe
+<option value="20">Large battle axe
+<option value="21">Two handed axe
+<option value="36">War axe
+<option value="73">Ornate axe
+<option value="0">---pole arms---
+<option value="11">Bardiche
+<option value="12">Bladed staff
+<option value="27">Double bladed staff
+<option value="13">Halberd
+<option value="25">Lance
+<option value="28">Pike
+<option value="29">Short spear
+<option value="14">Scythe
+<option value="30">Spear
+<option value="26">War fork
+<option value="0">---bashing---
+<option value="32">Hammer pick
+<option value="33">Mace
+<option value="34">Maul
+<option value="35">Scepter
+<option value="37">War mace
+<option value="38">War hammer
+<option value="62">Tessen
+<option value="74">Diamond mace
+</select>
+
+</td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="160">Difficulty</td>
+     <td align="center" width="200"><input class="readtext" readonly type="text" name="diff" size="4" value="0"></td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="160">Blacksmith</td>
+     <td align="center" width="200"><input type="text" name="sk01" size="5" value="100"></td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="160">Material</td>
+     <td align="center" width="200"><select name="mater1" SIZE="1">
+<option value="0">standard
+<option value="1">special-A
+<option value="2">special-B
+<option value="3">special-C
+<option value="4">special-D
+<option value="5">special-E
+</select>
+</td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="160">Arms Lore</td>
+     <td align="center" width="200"><input type="text" name="sk02" size="5" value="0"></td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="160">Swordsmanship</td>
+     <td align="center" width="200"><input type="text" name="sk03" size="5" value="0"></td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="160">Fencing</td>
+     <td align="center" width="200"><input type="text" name="sk04" size="5" value="0"></td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" width="160">Mace fighting</td>
+     <td align="center" width="200"><input type="text" name="sk05" size="5" value="0"></td>
+   </tr>
+
+</table>
+
+<br class="cle">
+<input type="button" value="Crafting" onclick="keisan1(form)">
+
+
+ <table align="center" class="table18">
+
+   <tr>
+     <td align="center" bgcolor="#ffee99" width="250">Crafting</td>
+     <td align="center" bgcolor="#dddddd" width="250">Standard</td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" bgcolor="#ffeebb" width="250">weight : <input class="readtext" readonly type="text" name="wgt" size="3" value="0"></td>
+     <td align="center" bgcolor="#f0f0f0" width="250">weight : <input class="readtext" readonly type="text" name="bwgt" size="3" value="0"></td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" bgcolor="#ffeebb" width="250">damage : <input class="readtext" readonly type="text" name="at1" size="3" value="0"> - <input class="readtext" readonly type="text" name="at2" size="3" value="0"></td>
+     <td align="center" bgcolor="#f0f0f0" width="250">damage : <input class="readtext" readonly type="text" name="bat1" size="3" value="0"> - <input class="readtext" readonly type="text" name="bat2" size="3" value="0"></td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" bgcolor="#ffeebb" width="250">speed : <input class="readtext" readonly type="text" name="spd" size="5" value="0">sec</td>
+     <td align="center" bgcolor="#f0f0f0" width="250">speed : <input class="readtext" readonly type="text" name="bspd" size="5" value="0">sec</td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" bgcolor="#ffeebb" width="250">STR requirement : <input class="readtext" readonly type="text" name="req" size="4" value="0"></td>
+     <td align="center" bgcolor="#f0f0f0" width="250">STR requirement : <input class="readtext" readonly type="text" name="breq" size="4" value="0"></td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" bgcolor="#ffeebb" width="250">hardness : <input class="readtext" readonly type="text" name="had" size="3" value="0"></td>
+     <td align="center" bgcolor="#f0f0f0" width="250">hardness : <input class="readtext" readonly type="text" name="bhad" size="3" value="0"></td>
+   </tr>
+
+   <tr bgcolor="#f0f0f0">
+     <td align="center" bgcolor="#ffeebb" width="250">durability : <input class="readtext" readonly type="text" name="dur" size="4" value="0"></td>
+     <td align="center" bgcolor="#f0f0f0" width="250">durability : <input class="readtext" readonly type="text" name="bdur" size="4" value="0"></td>
+   </tr>
+
+</table>
+
+<br class="cle">
+Checking
+<table class="table20">
+<tr>
+<td>plus</td>
+<td><input class="readtext" readonly type="text" name="pid1" size="4" value="0"></td>
+<td><input class="readtext" readonly type="text" name="pid2" size="4" value="0"></td>
+<td><input class="readtext" readonly type="text" name="pid3" size="4" value="0"></td>
+<td><input class="readtext" readonly type="text" name="pid4" size="4" value="0"></td>
+<td><input class="readtext" readonly type="text" name="pid5" size="4" value="0"></td>
+</tr>
+<tr>
+<td>minus</td>
+<td><input class="readtext" readonly type="text" name="nid1" size="4" value="0"></td>
+<td><input class="readtext" readonly type="text" name="nid2" size="4" value="0"></td>
+<td><input class="readtext" readonly type="text" name="nid3" size="4" value="0"></td>
+<td><input class="readtext" readonly type="text" name="nid4" size="4" value="0"></td>
+<td><input class="readtext" readonly type="text" name="nid5" size="4" value="0"></td>
+</tr>
+<tr>
+<td>material</td>
+<td><input class="readtext" readonly type="text" name="elp1" size="4" value="0"></td>
+<td><input class="readtext" readonly type="text" name="elp2" size="4" value="0"></td>
+<td><input class="readtext" readonly type="text" name="elp3" size="4" value="0"></td>
+<td><input class="readtext" readonly type="text" name="elp4" size="4" value="0"></td>
+<td><input class="readtext" readonly type="text" name="elp5" size="4" value="0"></td>
+</tr>
+</table>
+
+</form>
+</div>
+</font>
+</BODY>
+</HTML><!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

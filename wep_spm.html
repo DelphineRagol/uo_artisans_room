@@ -1,0 +1,3169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>装備品データ（Special Move別）</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898961</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<h2>装備品データ（Special Move別）</h2>
+<hr>
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+
+ {//functionの宣言。受けとったIDは変数targetIDに格納。
+  if( document.getElementById(targetID))
+   { //指定のIDのついたオブジェクトがあったら処理する
+     //指定されたIDのstyle.displayがnoneなら
+    for (i=1; i<32; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {//blockに変更する
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+
+Publish80の更新版です。
+<table class="table03">
+  <tr>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_1');return false;"><img src="doublestrike.gif" alt="Double Strike" class="img01" width="30"></a><br>doublestr.</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_2');return false;"><img src="armorignore.gif" alt="Armor Ignore" class="img01" width="30"></a><br>ignore</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_3');return false;"><img src="whirlwind.gif" alt="Whirlwind Attack" class="img01" width="30"></a><br>whirlwind</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_4');return false;"><img src="crushing.gif" alt="Crushing Blow" class="img01" width="30"></a><br>crushing</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_5');return false;"><img src="paralyzing.gif" alt="Paralyzing Blow" class="img01" width="30"></a><br>paralyzing</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_6');return false;"><img src="bleedattack.gif" alt="Bleed Attack" class="img01" width="30"></a><br>bleed atk.</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_7');return false;"><img src="concussion.gif" alt="Concussion Blow" class="img01" width="30"></a><br>concussion</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_8');return false;"><img src="disarm.gif" alt="Disarm" class="img01" width="30"></a><br>disarm</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_9');return false;"><img src="dismount.gif" alt="Dismount" class="img01" width="30"></a><br>dismount</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_10');return false;"><img src="infecting.gif" alt="Infectious Strike" class="img01" width="30"></a><br>infecting</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_11');return false;"><img src="mortalstrike.gif" alt="Mortal Strike" class="img01" width="30"></a><br>mortal str.</td>
+  </tr>
+  <tr>
+    <td align="center"><a href="#" onClick="showHide('cat_12');return false;"><img src="shadowstrike.gif" alt="Shadow Strike" class="img01" width="30"></a><br>shadowstr.</td>
+    <td align="center"><a href="#" onClick="showHide('cat_13');return false;"><img src="feint.gif" alt="Feint" class="img01" width="30"></a><br>feint</td>
+    <td align="center"><a href="#" onClick="showHide('cat_14');return false;"><img src="block.gif" alt="Block" class="img01" width="30"></a><br>block</td>
+    <td align="center"><a href="#" onClick="showHide('cat_15');return false;"><img src="defense.gif" alt="Defense Mastery" class="img01" width="30"></a><br>defense</td>
+    <td align="center"><a href="#" onClick="showHide('cat_16');return false;"><img src="movingshot.gif" alt="Moving Shot" class="img01" width="30"></a><br>movingshot</td>
+    <td align="center"><a href="#" onClick="showHide('cat_17');return false;"><img src="bladeweave.gif" alt="Blade Weave" class="img01" width="30"></a><br>bladeweave</td>
+    <td align="center"><a href="#" onClick="showHide('cat_18');return false;"><img src="f-whirl.gif" alt="Frenzied Whirlwind" class="img01" width="30"></a><br>frenzied</td>
+    <td align="center"><a href="#" onClick="showHide('cat_19');return false;"><img src="armorpierce.gif" alt="Armor Pierce" class="img01" width="30"></a><br>pierce</td>
+    <td align="center"><a href="#" onClick="showHide('cat_20');return false;"><img src="psychicattack.gif" alt="Psychic Attack" class="img01" width="30"></a><br>psychic</td>
+    <td align="center"><a href="#" onClick="showHide('cat_21');return false;"><img src="ridingswipe.gif" alt="Riding Swipe" class="img01" width="30"></a><br>ridingswipe</td>
+    <td align="center"><a href="#" onClick="showHide('cat_22');return false;"><img src="nervestrike.gif" alt="Nerve Strike" class="img01" width="30"></a><br>nerve str.</td>
+  </tr>
+  <tr>
+    <td align="center"><a href="#" onClick="showHide('cat_23');return false;"><img src="dualwield.gif" alt="Dual Wield" class="img01" width="30"></a><br>dual wield</td>
+    <td align="center"><a href="#" onClick="showHide('cat_24');return false;"><img src="talonstrike.gif" alt="Talon Strike" class="img01" width="30"></a><br>talon str.</td>
+    <td align="center"><a href="#" onClick="showHide('cat_25');return false;"><img src="forceofnature.gif" alt="Force of Nature" class="img01" width="30"></a><br>force-nat</td>
+    <td align="center"><a href="#" onClick="showHide('cat_26');return false;"><img src="doubleshot.gif" alt="Double Shot" class="img01" width="30"></a><br>doubleshot</td>
+    <td align="center"><a href="#" onClick="showHide('cat_27');return false;"><img src="forcearrow.gif" alt="Force Arrow" class="img01" width="30"></a><br>forcearrow</td>
+    <td align="center"><a href="#" onClick="showHide('cat_28');return false;"><img src="serpentarrow.gif" alt="Serpent Arrow" class="img01" width="30"></a><br>serp.arrow</td>
+    <td align="center"><a href="#" onClick="showHide('cat_29');return false;"><img src="lightningarrow.gif" alt="Lightning Arrow" class="img01" width="30"></a><br>light.arrow</td>
+    <td align="center"><a href="#" onClick="showHide('cat_30');return false;"><img src="mystic_arc.gif" alt="Mystic Arc" class="img01" width="30"></a><br>mystic arc</td>
+    <td align="center"><a href="#" onClick="showHide('cat_31');return false;"><img src="infused_throw.gif" alt="Infused Throw" class="img01" width="30"></a><br>infuse thr</td>
+  </tr>
+</table>
+
+<br class="cle">
+
+<div id="cat_1" style="display: none">
+
+<h3><img src="doublestrike.gif" alt="Double Strike" class="img02" width="30">Double Strikeを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep03.gif" alt="crescent blade" class="img01"></td>
+  <td>crescent blade<br>[クレセントブレード]</td>
+  <td>swords</td>
+  <td>12-15</td>
+  <td>2.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep05.gif" alt="katana" class="img01"></td>
+  <td>katana<br>[刀]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep07.gif" alt="scimitar" class="img01"></td>
+  <td>scimitar<br>[シミター]</td>
+  <td>swords</td>
+  <td>12-16</td>
+  <td>3.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep24.gif" alt="pickaxe" class="img01"></td>
+  <td>pick axe<br>[つるはし]</td>
+  <td>swords</td>
+  <td>12-16</td>
+  <td>3.00</td>
+  <td>片手</td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wakizashi.gif" alt="wakizashi" class="img01"></td>
+  <td>wakizashi<br>[脇差]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td><img src="f-whirl.gif" alt="frenzied whirlwind" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="daisho.gif" alt="Daisho" class="img01"></td>
+  <td>daisho<br>[大小]</td>
+  <td>swords</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td><img src="feint.gif" alt="feint" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep12.gif" alt="double axe" class="img01"></td>
+  <td>double axe<br>[ダブルアックス]</td>
+  <td>swords</td>
+  <td>15-18</td>
+  <td>3.25</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep15.gif" alt="two handed axe" class="img01"></td>
+  <td>two handed axe<br>[両手斧]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep29.gif" alt="double bladed staff" class="img01"></td>
+  <td>double bladed staff<br>[ダブルブレード]</td>
+  <td>fencing</td>
+  <td>11-14</td>
+  <td>2.25</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep36.gif" alt="maul" class="img01"></td>
+  <td>maul<br>[モール]</td>
+  <td>mace</td>
+  <td>14-18</td>
+  <td>3.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep47.gif" alt="quarter staff" class="img01"></td>
+  <td>quarter staff<br>[クォータースタッフ]</td>
+  <td>mace</td>
+  <td>11-14</td>
+  <td>2.25</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="nunchaku.gif" alt="nunchaku" class="img01"></td>
+  <td>nunchaku<br>[ヌンチャク]</td>
+  <td>mace</td>
+  <td>12-15</td>
+  <td>2.50</td>
+  <td>両手</td>
+  <td><img src="block.gif" alt="block" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep53.gif" alt="repeating crossbow" width="30" height="31" class="img01"></td>
+  <td>repeating crossbow<br>[リピーティングクロスボウ]</td>
+  <td>archery</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="movingshot.gif" alt="moving shot" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_katana.gif" alt="gargish katana" class="img01"></td>
+  <td>gargish katana<br>[ガーゴイル刀]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_daisho.gif" alt="gargish daisho" class="img01"></td>
+  <td>gargish daisho<br>[ガーゴイル大小]</td>
+  <td>swords</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td><img src="feint.gif" alt="feint" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="dual_short_axes.gif" alt="dual short axes" class="img01"></td>
+  <td>dual short axes<br>[デュアルアックス]</td>
+  <td>swords</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="dual_pointed_spear.gif" alt="dual pointed spear" class="img01"></td>
+  <td>dual pointed spear<br>[デュアルスピア]</td>
+  <td>fencing</td>
+  <td>11-14</td>
+  <td>2.25</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="glass_staff.gif" alt="glass staff" class="img01"></td>
+  <td>glass staff<br>[グラススタッフ]</td>
+  <td>mace</td>
+  <td>11-14</td>
+  <td>2.25</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_2" style="display: none">
+
+<h3><img src="armorignore.gif" alt="Armor Ignore" class="img02" width="30">Armor Ignoreを含む武器</h3>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep02.gif" alt="broadsword" class="img01"></td>
+  <td>broadsword<br>[ブロードソード]</td>
+  <td>swords</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>片手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep05.gif" alt="katana" class="img01"></td>
+  <td>katana<br>[刀]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep06.gif" alt="longsword" class="img01"></td>
+  <td>longsword<br>[ロングソード]</td>
+  <td>swords</td>
+  <td>14-18</td>
+  <td>3.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep09.gif" alt="longsword" class="img01"></td>
+  <td>long sword<br>[ロングソード]</td>
+  <td>swords</td>
+  <td>14-18</td>
+  <td>3.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep17.gif" alt="bladed staff" class="img01"></td>
+  <td>bladed staff<br>[ブレードスタッフ]</td>
+  <td>swords</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep23.gif" alt="hatchet" class="img01"></td>
+  <td>hatchet<br>[手斧]</td>
+  <td>swords</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep26.gif" alt="kryss" class="img01"></td>
+  <td>kryss<br>[クリス]</td>
+  <td>fencing</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep32.gif" alt="spear" class="img01"></td>
+  <td>spear<br>[スピア]</td>
+  <td>fencing</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="leafblade.gif" alt="leaf blade" class="img01"></td>
+  <td>leaf blade<br>[リーフブレード]</td>
+  <td>fencing</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td><img src="feint.gif" alt="feint" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep34.gif" alt="hammer pick" class="img01"></td>
+  <td>hammer pick<br>[ハンマーピック]</td>
+  <td>mace</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep38.gif" alt="war axe" width="31" height="27" class="img01"></td>
+  <td>war axe<br>[ウォーアックス]</td>
+  <td>mace</td>
+  <td>12-16</td>
+  <td>3.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep51.gif" alt="composite bow" width="36" height="35" class="img01"></td>
+  <td>composite bow<br>[コンポジットボウ]</td>
+  <td>archery</td>
+  <td>16-20</td>
+  <td>4.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="movingshot.gif" alt="moving shot" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_katana.gif" alt="gargish katana" class="img01"></td>
+  <td>gargish katana<br>[ガーゴイル刀]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="stone_war_sword.gif" alt="stone war sword" class="img01"></td>
+  <td>stone war sword<br>[ウォーソード]</td>
+  <td>swords</td>
+  <td>15-19</td>
+  <td>3.75</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_kryss.gif" alt="gargish kryss" class="img01"></td>
+  <td>gargish kryss<br>[ガーゴイルクリス]</td>
+  <td>fencing</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="shortblade.gif" alt="shortblade" class="img01"></td>
+  <td>shortblade<br>[ショートブレード]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortalstrike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="disc_mace.gif" alt="disc mace" class="img01"></td>
+  <td>disc mace<br>[ディスクメイス]</td>
+  <td>mace</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="soul_glaive.gif" alt="soul glaive" class="img01"></td>
+  <td>soul glaive<br>[ソウルグレイブ]</td>
+  <td>throwing</td>
+  <td>16-20</td>
+  <td>4.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+<br class="cle">
+
+</div>
+
+<div id="cat_3" style="display: none">
+
+<h3><img src="whirlwind.gif" alt="Whirlwind Attack" class="img02" width="30">Whirlwind Attackを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="radientscimitar.gif" alt="radient scimitar" class="img01"></td>
+  <td>radient scimitar<br>[三日月刀]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td><img src="bladeweave.gif" alt="blade weave" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep18.gif" alt="halberd" class="img01"></td>
+  <td>halberd<br>[ハルバード]</td>
+  <td>swords</td>
+  <td>18-21</td>
+  <td>4.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep12.gif" alt="double axe" class="img01"></td>
+  <td>double axe<br>[ダブルアックス]</td>
+  <td>swords</td>
+  <td>15-18</td>
+  <td>3.25</td>
+  <td>両手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep14.gif" alt="large battle axe" class="img01"></td>
+  <td>large battle axe<br>[戦闘大斧]</td>
+  <td>swords</td>
+  <td>17-20</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="radeemer.gif" alt="the redeemer" class="img01"></td>
+  <td>The Redeemer<br>[聖者の剣]</td>
+  <td>swords</td>
+  <td>20-24</td>
+  <td>5.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="kama.gif" alt="kama" class="img01"></td>
+  <td>kama<br>[鎌]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td><img src="defense.gif" alt="defense mastery" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep39.gif" alt="war hammer" width="23" height="21" class="img01"></td>
+  <td>war hammer<br>[ウォーハンマー]</td>
+  <td>mace</td>
+  <td>17-20</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep43.gif" alt="black staff" class="img01"></td>
+  <td>black staff<br>[ブラックスタッフ]</td>
+  <td>mace</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_talwar.gif" alt="gargish talwar" class="img01"></td>
+  <td>gargish talwar<br>[タルワール]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_war_hammer.gif" alt="gargishwar hammer" class="img01"></td>
+  <td>gargish war hammer<br>[ガーグウォーハンマー]</td>
+  <td>mace</td>
+  <td>17-20</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+<br class="cle">
+
+</div>
+
+<div id="cat_4" style="display: none">
+
+<h3><img src="crushing.gif" alt="Crushing Blow" class="img02" width="30">Crushing Blowを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep02.gif" alt="broadsword" class="img01"></td>
+  <td>broadsword<br>[ブロードソード]</td>
+  <td>swords</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep08.gif" alt="viking sword" class="img01"></td>
+  <td>viking sword<br>[バイキングソード]</td>
+  <td>swords</td>
+  <td>15-19</td>
+  <td>3.75</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="no-dachi.gif" alt="No-dachi" class="img01"></td>
+  <td>no-dachi<br>[野太刀]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="ridingswipe.gif" alt="riding swipe" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep10.gif" alt="axe" class="img01"></td>
+  <td>axe<br>[アックス]</td>
+  <td>swords</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="ornateaxe.gif" alt="ornate axe" class="img01"></td>
+  <td>ornate axe<br>[装飾仕上げの斧]</td>
+  <td>swords</td>
+  <td>17-20</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep44.gif" alt="club" class="img01"></td>
+  <td>club<br>[こん棒]</td>
+  <td>mace</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep37.gif" alt="scepter" width="33" height="29" class="img01"></td>
+  <td>scepter<br>[セプター]</td>
+  <td>mace</td>
+  <td>14-18</td>
+  <td>3.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep40.gif" alt="war mace" width="19" height="20" class="img01"></td>
+  <td>war mace<br>[ウォーメイス]</td>
+  <td>mace</td>
+  <td>15-19</td>
+  <td>3.75</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep39.gif" alt="war hammer" width="23" height="21" class="img01"></td>
+  <td>war hammer<br>[ウォーハンマー]</td>
+  <td>mace</td>
+  <td>17-20</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep41.gif" alt="sledge hammer" class="img01"></td>
+  <td>sledge hammer<br>[スレッジハンマー]</td>
+  <td>mace</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep42.gif" alt="smith's hammer" width="15" height="15" class="img01"></td>
+  <td>smith's hammer<br>[鍛冶ハンマー]</td>
+  <td>mace</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="shepherdcrook.gif" alt="crook" class="img01"></td>
+  <td>shepherd's crook<br>[羊飼いの杖]</td>
+  <td>mace</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep45.gif" alt="crook" class="img01"></td>
+  <td>crook<br>[牧羊の杖]</td>
+  <td>mace</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="tetsubo.gif" alt="tetsubo" class="img01"></td>
+  <td>tetsubo<br>[鉄棒]</td>
+  <td>mace</td>
+  <td>12-15</td>
+  <td>2.50</td>
+  <td>両手</td>
+  <td><img src="f-whirl.gif" alt="frenzied whirlwind" width="30" height="30" class="img01"</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="diamondmace.gif" alt="diamond mace" class="img01"></td>
+  <td>diamond mace<br>[ダイヤモンドメイス]</td>
+  <td>mace</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>片手</td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="dread_sword.gif" alt="dread sword" class="img01"></td>
+  <td>dread sword<br>[ドレッドソード]</td>
+  <td>swords</td>
+  <td>14-18</td>
+  <td>3.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_axe.gif" alt="gargish axe" class="img01"></td>
+  <td>gargish axe<br>[ガーゴイル斧]</td>
+  <td>swords</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_war_hammer.gif" alt="gargish war hammer" class="img01"></td>
+  <td>gargish war hammer<br>[ガーグウォーハンマー]</td>
+  <td>mace</td>
+  <td>17-20</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="serpentstone_staff.gif" alt="serpentstone staff" class="img01"></td>
+  <td>serpentstone staff<br>[サーペントの石杖]</td>
+  <td>mace</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_5" style="display: none">
+<h3><img src="paralyzing.gif" alt="Paralyzing Blow" class="img02" width="30">Paralyzing Blowを含む武器</h3>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep01.gif" alt="bone harvester" class="img01"></td>
+  <td>bone harvester<br>[ボーンハーベスター]</td>
+  <td>swords</td>
+  <td>12-16</td>
+  <td>3.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep07.gif" alt="scimitar" class="img01"></td>
+  <td>scimitar<br>[シミター]</td>
+  <td>swords</td>
+  <td>12-16</td>
+  <td>3.00</td>
+  <td>片手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep08.gif" alt="viking sword" class="img01"></td>
+  <td>viking sword<br>[バイキングソード]</td>
+  <td>swords</td>
+  <td>15-19</td>
+  <td>3.75</td>
+  <td>片手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep16.gif" alt="bardiche" class="img01"></td>
+  <td>bardiche<br>[バルディッシュ]</td>
+  <td>swords</td>
+  <td>17-20</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep19.gif" alt="scythe" class="img01"></td>
+  <td>scythe<br>[サイズ]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep30.gif" alt="pike" class="img01"></td>
+  <td>pike<br>[パイク]</td>
+  <td>fencing</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep32.gif" alt="spear" class="img01"></td>
+  <td>spear<br>[スピア]</td>
+  <td>fencing</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep43.gif" alt="black staff" class="img01"></td>
+  <td>black staff<br>[ブラックスタッフ]</td>
+  <td>mace</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep41.gif" alt="sledge hammer" class="img01"></td>
+  <td>sledge hammer<br>[スレッジハンマー]</td>
+  <td>mace</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>片手
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep42.gif" alt="smith's hammer" width="15" height="15" class="img01"></td>
+  <td>smith's hammer<br>[鍛冶ハンマー]</td>
+  <td>mace</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>片手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep49.gif" alt="bow" width="30" height="31" class="img01"></td>
+  <td>bow<br>[弓]</td>
+  <td>archery</td>
+  <td>17-21</td>
+  <td>4.25</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_bone_harvester.gif" alt="gargish bone harvester" class="img01"></td>
+  <td>gargish bone harvester<br>[ガーグボーンハーベスター]</td>
+  <td>swords</td>
+  <td>12-16</td>
+  <td>3.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="stone_war_sword.gif" alt="stone war sword" class="img01"></td>
+  <td>stone war sword<br>[ウォーソード]</td>
+  <td>swords</td>
+  <td>15-19</td>
+  <td>3.75</td>
+  <td>片手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_bardiche.gif" alt="gargish bardiche" class="img01"></td>
+  <td>gargish bardiche<br>[ガーグバルディッシュ]</td>
+  <td>swords</td>
+  <td>17-20</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_scythe.gif" alt="gargish scythe" class="img01"></td>
+  <td>gargish scythe<br>[ガーゴイルサイズ]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="bloodblade.gif" alt="bloodblade" class="img01"></td>
+  <td>bloodblade<br>[ブラッドブレード]</td>
+  <td>fencing</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_pike.gif" alt="gargish pike" class="img01"></td>
+  <td>gargish pike<br>[ガーゴイルパイク]</td>
+  <td>fencing</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_6" style="display: none">
+<h3><img src="bleedattack.gif" alt="Bleed Attack" class="img02" width="30">Bleed Attackを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep04.gif" alt="cutlass" class="img01"></td>
+  <td>cutlass<br>[カットラス]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep21.gif" alt="cleaver" class="img01"></td>
+  <td>cleaver<br>[包丁]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep22.gif" alt="skinning knife" class="img01"></td>
+  <td>skinning knife<br>[皮はぎナイフ]</td>
+  <td>swords</td>
+  <td>10-13</td>
+  <td>2.25</td>
+  <td>片手</td>
+  <td><img src="shadowstrike.gif" alt="shadow strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep19.gif" alt="scythe" class="img01"></td>
+  <td>scythe<br>[サイズ]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep11.gif" alt="battle axe" class="img01"></td>
+  <td>battle axe<br>[戦闘斧]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep13.gif" alt="executioner's axe" class="img01"></td>
+  <td>executioner's axe<br>[処刑斧]</td>
+  <td>swords</td>
+  <td>15-18</td>
+  <td>3.25</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep14.gif" alt="large battle axe" class="img01"></td>
+  <td>large battle axe<br>[戦闘大斧]</td>
+  <td>swords</td>
+  <td>17-20</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep28.gif" alt="warfork" class="img01"></td>
+  <td>warfork<br>[ウォーフォーク]</td>
+  <td>fencing</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep33.gif" alt="pitchfork" class="img01"></td>
+  <td>pitchfork<br>[くまで]</td>
+  <td>fencing</td>
+  <td>12-15</td>
+  <td>2.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="elvenspellblade.gif" alt="elven spellblade" class="img01"></td>
+  <td>elven spellblade<br>[エルフの呪刀]</td>
+  <td>fencing</td>
+  <td>12-15</td>
+  <td>2.50</td>
+  <td>両手</td>
+  <td><img src="psychicattack.gif" alt="psychic attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep38.gif" alt="war axe" width="31" height="27" class="img01"></td>
+  <td>war axe<br>[ウォーアックス]</td>
+  <td>mace</td>
+  <td>12-16</td>
+  <td>3.00</td>
+  <td>片手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_cleaver.gif" alt="gargish cleaver" class="img01"></td>
+  <td>gargish cleaver<br>[ガーグクリーバー]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="glass_sword.gif" alt="glass sword" class="img01"></td>
+  <td>glass sword<br>[グラスソード]</td>
+  <td>swords</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_scythe.gif" alt="gargish scythe" class="img01"></td>
+  <td>gargish scythe<br>[ガーゴイルサイズ]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_battle_axe.gif" alt="gargish battle axe" class="img01"></td>
+  <td>gargish battle axe<br>[ガーゴイル戦闘斧]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="bloodblade.gif" alt="bloodblade" class="img01"></td>
+  <td>bloodblade<br>[ブラッドブレード]</td>
+  <td>fencing</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_warfork.gif" alt="gargish warfork" class="img01"></td>
+  <td>gargish warfork<br>[ガーグウォーフォーク]</td>
+  <td>fencing</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_7" style="display: none">
+
+<h3><img src="concussion.gif" alt="Concussion Blow" class="img02" width="30">Concussion Blowを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep06.gif" alt="longsword" class="img01"></td>
+  <td>longsword<br>[ロングソード]</td>
+  <td>swords</td>
+  <td>14-18</td>
+  <td>3.50</td>
+  <td>片手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep09.gif" alt="longsword" class="img01"></td>
+  <td>long sword<br>[ロングソード]</td>
+  <td>swords</td>
+  <td>14-18</td>
+  <td>3.50</td>
+  <td>片手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep18.gif" alt="halberd" class="img01"></td>
+  <td>halberd<br>[ハルバード]</td>
+  <td>swords</td>
+  <td>18-21</td>
+  <td>4.00</td>
+  <td>両手</td>
+  <td><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep11.gif" alt="battle axe" class="img01"></td>
+  <td>battle axe<br>[戦闘斧]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep27.gif" alt="lance" class="img01"></td>
+  <td>lance<br>[ランス]</td>
+  <td>fencing</td>
+  <td>18-22</td>
+  <td>4.25</td>
+  <td>片手</td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep35.gif" alt="mace" class="img01"></td>
+  <td>mace<br>[メイス]</td>
+  <td>mace</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep36.gif" alt="maul" width="28" height="27" class="img01"></td>
+  <td>maul<br>[モール]</td>
+  <td>mace</td>
+  <td>14-18</td>
+  <td>3.50</td>
+  <td>片手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep46.gif" alt="gnarled staff" class="img01"></td>
+  <td>gnarled staff<br>[自然木の杖]</td>
+  <td>mace</td>
+  <td>15-18</td>
+  <td>3.25</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+  <td><img src="forceofnature.gif" alt="force of nature" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep47.gif" alt="quarter staff" class="img01"></td>
+  <td>quarter staff<br>[クォータースタッフ]</td>
+  <td>mace</td>
+  <td>11-14</td>
+  <td>2.25</td>
+  <td>両手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="diamondmace.gif" alt="diamond mace" class="img01"></td>
+  <td>diamond mace<br>[ダイヤモンドメイス]</td>
+  <td>mace</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep50.gif" alt="crossbow" width="22" height="21" class="img01"></td>
+  <td>crossbow<br>[クロスボウ]</td>
+  <td>archery</td>
+  <td>18-22</td>
+  <td>4.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="dread_sword.gif" alt="dread sword" class="img01"></td>
+  <td>dread sword<br>[ドレッドソード]</td>
+  <td>swords</td>
+  <td>14-18</td>
+  <td>3.50</td>
+  <td>片手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_battle_axe.gif" alt="gargish battle axe" class="img01"></td>
+  <td>gargish battle axe<br>[ガーゴイル戦闘斧]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_lance.gif" alt="gargish lance" class="img01"></td>
+  <td>gargish lance<br>[ガーゴイルランス]</td>
+  <td>fencing</td>
+  <td>18-22</td>
+  <td>4.25</td>
+  <td>片手</td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_maul.gif" alt="gargish maul" width="28" height="27" class="img01"></td>
+  <td>gargish maul<br>[ガーゴイルモール]</td>
+  <td>mace</td>
+  <td>14-18</td>
+  <td>3.50</td>
+  <td>片手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_gnarled_staff.gif" alt="gargish gnarled staff" class="img01"></td>
+  <td>gargish gnarled staff<br>[ガーグ自然木の杖]</td>
+  <td>mace</td>
+  <td>15-18</td>
+  <td>3.25</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+  <td><img src="forceofnature.gif" alt="force of nature" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="boomerang.gif" alt="boomerang" class="img01"></td>
+  <td>boomerang<br>[ブーメラン]</td>
+  <td>throwing</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td><img src="mystic_arc.gif" alt="Mystic Arc" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_8" style="display: none">
+<h3><img src="disarm.gif" alt="Disarm" class="img02" width="30">Disarmを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep20.gif" alt="butcher knife" class="img01"></td>
+  <td>butcher knife<br>[肉切り包丁]</td>
+  <td>swords</td>
+  <td>10-13</td>
+  <td>2.25</td>
+  <td>片手</td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep24.gif" alt="pickaxe" class="img01"></td>
+  <td>pick axe<br>[つるはし]</td>
+  <td>swords</td>
+  <td>12-16</td>
+  <td>3.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep23.gif" alt="hatchet" class="img01"></td>
+  <td>hatchet<br>[手斧]</td>
+  <td>swords</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="ornateaxe.gif" alt="ornate axe" class="img01"></td>
+  <td>ornate axe<br>[装飾仕上げの斧]</td>
+  <td>swords</td>
+  <td>17-20</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="runeblade.gif" alt="rune blade" class="img01"></td>
+  <td>rune blade<br>[ルーンブレード]</td>
+  <td>swords</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+  <td><img src="bladeweave.gif" alt="blade weave" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="radeemer.gif" alt="the redeemer" class="img01"></td>
+  <td>The Redeemer<br>[聖者の剣]</td>
+  <td>swords</td>
+  <td>20-24</td>
+  <td>5.00</td>
+  <td>両手</td>
+  <td><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep28.gif" alt="warfork" class="img01"></td>
+  <td>warfork<br>[ウォーフォーク]</td>
+  <td>fencing</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="warcleaver.gif" alt="War Cleaver" class="img01"></td>
+  <td>war cleaver<br>[クリーバー]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.25</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+  <td><img src="bladeweave.gif" alt="blade weave" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep35.gif" alt="mace" class="img01"></td>
+  <td>mace<br>[メイス]</td>
+  <td>mace</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="shepherdcrook.gif" alt="crook" class="img01"></td>
+  <td>shepherd's crook<br>[羊飼いの杖]</td>
+  <td>mace</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep48.gif" alt="wand" width="22" height="22" class="img01"></td>
+  <td>wand<br>[ワンド]</td>
+  <td>mace</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep45.gif" alt="crook" class="img01"></td>
+  <td>crook<br>[牧羊の杖]</td>
+  <td>mace</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_butcher_knife.gif" alt="gargish butcher knife" class="img01"></td>
+  <td>gargish butcher's knife<br>[ガーグ肉切り包丁]</td>
+  <td>swords</td>
+  <td>9-11</td>
+  <td>2.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_warfork.gif" alt="gargish warfork" class="img01"></td>
+  <td>gargish warfork<br>[ガーグウォーフォーク]</td>
+  <td>fencing</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="dual_pointed_spear.gif" alt="dual pointed spear" class="img01"></td>
+  <td>dual pointed spear<br>[デュアルスピア]</td>
+  <td>fencing</td>
+  <td>11-14</td>
+  <td>2.25</td>
+  <td>両手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="disc_mace.gif" alt="disc mace" class="img01"></td>
+  <td>disc mace<br>[ディスクメイス]</td>
+  <td>mace</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_9" style="display: none">
+<h3><img src="dismount.gif" alt="Dismount" class="img02" width="30">Dismountを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep16.gif" alt="bardiche" class="img01"></td>
+  <td>bardiche<br>[バルディッシュ]</td>
+  <td>swords</td>
+  <td>17-20</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep17.gif" alt="bladed staff" class="img01"></td>
+  <td>bladed staff<br>[ブレードスタッフ]</td>
+  <td>swords</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep10.gif" alt="axe" class="img01"></td>
+  <td>axe<br>[アックス]</td>
+  <td>swords</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep27.gif" alt="lance" class="img01"></td>
+  <td>lance<br>[ランス]</td>
+  <td>fencing</td>
+  <td>18-22</td>
+  <td>4.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep33.gif" alt="pitchfork" class="img01"></td>
+  <td>pitchfork<br>[くまで]</td>
+  <td>fencing</td>
+  <td>12-15</td>
+  <td>2.50</td>
+  <td>両手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep44.gif" alt="club" width="22" height="21" class="img01"></td>
+  <td>club<br>[こん棒]</td>
+  <td>mace</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep48.gif" alt="wand" width="22" height="22" class="img01"></td>
+  <td>wand<br>[ワンド]</td>
+  <td>mace</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep52.gif" alt="heavy crossbow" width="24" height="29" class="img01"></td>
+  <td>heavy crossbow<br>[ヘビークロスボウ]</td>
+  <td>archery</td>
+  <td>20-24</td>
+  <td>5.00</td>
+  <td>両手</td>
+  <td><img src="movingshot.gif" alt="moving shot" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_talwar.gif" alt="gargish talwar" class="img01"></td>
+  <td>gargish talwar<br>[タルワール]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_bardiche.gif" alt="gargish bardiche" class="img01"></td>
+  <td>gargish bardiche<br>[ガーグバルディッシュ]</td>
+  <td>swords</td>
+  <td>17-20</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_axe.gif" alt="gargish axe" class="img01"></td>
+  <td>gargish axe<br>[ガーゴイル斧]</td>
+  <td>swords</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_lance.gif" alt="gargish lance" class="img01"></td>
+  <td>gargish lance<br>[ガーゴイルランス]</td>
+  <td>fencing</td>
+  <td>18-22</td>
+  <td>4.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="serpentstone_staff.gif" alt="serpentstone staff" class="img01"></td>
+  <td>serpentstone staff<br>[サーペントの石杖]</td>
+  <td>mace</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_10" style="display: none">
+
+<h3><img src="infecting.gif" alt="Infectious Strike" class="img02" width="30">Infectious Strikeを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep20.gif" alt="butcher knife" class="img01"></td>
+  <td>butcher knife<br>[肉切り包丁]</td>
+  <td>swords</td>
+  <td>10-13</td>
+  <td>2.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep21.gif" alt="cleaver" class="img01"></td>
+  <td>cleaver<br>[包丁]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep25.gif" alt="dagger" class="img01"></td>
+  <td>dagger<br>[ダガー]</td>
+  <td>fencing</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep26.gif" alt="kryss" class="img01"></td>
+  <td>kryss<br>[クリス]</td>
+  <td>fencing</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep29.gif" alt="double bladed staff" class="img01"></td>
+  <td>double bladed staff<br>[ダブルブレード]</td>
+  <td>fencing</td>
+  <td>11-14</td>
+  <td>2.25</td>
+  <td>両手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep30.gif" alt="pike" class="img01"></td>
+  <td>pike<br>[パイク]</td>
+  <td>fencing</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="assassinspike.gif" alt="Assassin Spike" class="img01"></td>
+  <td>assassin spike<br>[暗殺剣]</td>
+  <td>fencing</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+  <td><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_butcher_knife.gif" alt="gargish butcher knife" class="img01"></td>
+  <td>gargish butcher's knife<br>[ガーグ肉切り包丁]</td>
+  <td>swords</td>
+  <td>10-13</td>
+  <td>2.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_cleaver.gif" alt="gargish cleaver" class="img01"></td>
+  <td>gargish cleaver<br>[ガーグクリーバー]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="dual_short_axes.gif" alt="dual short axes" class="img01"></td>
+  <td>dual short axes<br>[デュアルアックス]</td>
+  <td>swords</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_dagger.gif" alt="gargish dagger" class="img01"></td>
+  <td>gargish dagger<br>[ガーゴイルダガー]</td>
+  <td>fencing</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_kryss.gif" alt="gargish kryss" class="img01"></td>
+  <td>gargish kryss<br>[ガーゴイルクリス]</td>
+  <td>fencing</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_pike.gif" alt="gargish pike" class="img01"></td>
+  <td>gargish pike<br>[ガーゴイルパイク]</td>
+  <td>fencing</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_11" style="display: none">
+<h3><img src="mortalstrike.gif" alt="Mortal Strike" class="img02" width="30">Mortal Strikeを含む武器</h3>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep01.gif" alt="bone harvester" class="img01"></td>
+  <td>bone harvester<br>[ボーンハーベスター]</td>
+  <td>swords</td>
+  <td>12-16</td>
+  <td>3.00</td>
+  <td>片手</td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep03.gif" alt="crescent blade" class="img01"></td>
+  <td>crescent blade<br>[クレセントブレード]</td>
+  <td>swords</td>
+  <td>12-15</td>
+  <td>2.50</td>
+  <td>両手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep13.gif" alt="executioner's axe" class="img01"></td>
+  <td>executioner's axe<br>[処刑斧]</td>
+  <td>swords</td>
+  <td>15-18</td>
+  <td>3.25</td>
+  <td>両手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep31.gif" alt="short spear" class="img01"></td>
+  <td>short spear<br>[ショートスピア]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.00</td>
+  <td>両手</td>
+  <td><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep34.gif" alt="hammer pick" class="img01"></td>
+  <td>hammer pick<br>[ハンマーピック]</td>
+  <td>mace</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>片手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep37.gif" alt="scepter" width="33" height="29" class="img01"></td>
+  <td>scepter<br>[セプター]</td>
+  <td>mace</td>
+  <td>14-18</td>
+  <td>3.50</td>
+  <td>片手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep40.gif" alt="war mace" class="img01"></td>
+  <td>war mace<br>[ウォーメイス]</td>
+  <td>mace</td>
+  <td>15-19</td>
+  <td>3.75</td>
+  <td>片手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep49.gif" alt="bow" width="30" height="31" class="img01"></td>
+  <td>bow<br>[弓]</td>
+  <td>archery</td>
+  <td>17-21</td>
+  <td>4.25</td>
+  <td>両手</td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep50.gif" alt="crossbow" width="22" height="21" class="img01"></td>
+  <td>crossbow<br>[クロスボウ]</td>
+  <td>archery</td>
+  <td>18-22</td>
+  <td>4.50</td>
+  <td>両手</td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_bone_harvester.gif" alt="gargish bone harvester" class="img01"></td>
+  <td>gargish bone harvester<br>[ガーグボーンハーベスター]</td>
+  <td>swords</td>
+  <td>12-16</td>
+  <td>3.00</td>
+  <td>片手</td>
+  <td><img src="paralyzing.gif" alt="paralyzing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="glass_sword.gif" alt="glass sword" class="img01"></td>
+  <td>glass sword<br>[グラスソード]</td>
+  <td>swords</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="shortblade.gif" alt="shortblade" class="img01"></td>
+  <td>shortblade<br>[ショートブレード]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.25</td>
+  <td>片手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortalstrike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="glass_staff.gif" alt="glass staff" class="img01"></td>
+  <td>glass staff<br>[グラススタッフ]</td>
+  <td>mace</td>
+  <td>11-14</td>
+  <td>2.25</td>
+  <td>両手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="soul_glaive.gif" alt="soul glaive" class="img01"></td>
+  <td>soul glaive<br>[ソウルグレイブ]</td>
+  <td>throwing</td>
+  <td>16-20</td>
+  <td>4.00</td>
+  <td>片手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_12" style="display: none">
+<h3><img src="shadowstrike.gif" alt="Shadow Strike" class="img02" width="30">Shadow Strikeを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep04.gif" alt="cutlass" class="img01"></td>
+  <td>cutlass<br>[カットラス]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep22.gif" alt="skinning knife" class="img01"></td>
+  <td>skinning knife<br>[皮はぎナイフ]</td>
+  <td>swords</td>
+  <td>10-13</td>
+  <td>2.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep15.gif" alt="two handed axe" class="img01"></td>
+  <td>two handed axe<br>[両手斧]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep25.gif" alt="dagger" class="img01"></td>
+  <td>dagger<br>[ダガー]</td>
+  <td>fencing</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep31.gif" alt="short spear" class="img01"></td>
+  <td>short spear<br>[ショートスピア]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+  <td><img src="mortalstrike.gif" alt="mortal strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="assassinspike.gif" alt="Assassin Spike" class="img01"></td>
+  <td>assassin spike<br>[暗殺剣]</td>
+  <td>fencing</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_dagger.gif" alt="gargish dagger" class="img01"></td>
+  <td>gargish dagger<br>[ガーゴイルダガー]</td>
+  <td>fencing</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="shadowstrike.gif" alt="shadow attack" width="30" height="30" class="img01"></td>
+  <td><img src="infecting.gif" alt="infecting" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_13" style="display: none">
+<h3><img src="feint.gif" alt="Feint" class="img02" width="30">Feintを含む武器</3h>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="daisho.gif" alt="Daisho" class="img01"></td>
+  <td>daisho<br>[大小]</td>
+  <td>swords</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="feint.gif" alt="feint" width="30" height="30" class="img01"></td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="bokuto.gif" alt="bokuto" class="img01"></td>
+  <td>bokuto<br>[木刀]</td>
+  <td>swords</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="feint.gif" alt="feint" width="30" height="30" class="img01"></td>
+  <td><img src="nervestrike.gif" alt="nerve strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="leafblade.gif" alt="leaf blade" class="img01"></td>
+  <td>leaf blade<br>[リーフブレード]</td>
+  <td>fencing</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="feint.gif" alt="feint" width="30" height="30" class="img01"></td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="tessen.gif" alt="tessen" class="img01"></td>
+  <td>tessen<br>[鉄扇]</td>
+  <td>mace</td>
+  <td>10-13</td>
+  <td>2.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="feint.gif" alt="feint" width="30" height="30" class="img01"></td>
+  <td><img src="dualwield.gif" alt="dualwield" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_daisho.gif" alt="gargish daisho" class="img01"></td>
+  <td>gargish daisho<br>[ガーゴイル大小]</td>
+  <td>swords</td>
+  <td>13-16</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="feint.gif" alt="feint" width="30" height="30" class="img01"></td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_tessen.gif" alt="gargish tessen" class="img01"></td>
+  <td>gargish tessen<br>[ガーゴイル鉄扇]</td>
+  <td>mace</td>
+  <td>10-13</td>
+  <td>2.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="feint.gif" alt="feint" width="30" height="30" class="img01"></td>
+  <td><img src="dualwield.gif" alt="dualwield" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_14" style="display: none">
+<h3><img src="block.gif" alt="Block" class="img02" width="30">Blockを含む武器</h3>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="nunchaku.gif" alt="nunchaku" class="img01"></td>
+  <td>nunchaku<br>[ヌンチャク]</td>
+  <td>mace</td>
+  <td>12-15</td>
+  <td>2.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="block.gif" alt="block" width="30" height="30" class="img01"></td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wildstaff.gif" alt="wild staff" class="img01"></td>
+  <td>wild staff<br>[ワイルドスタッフ]</td>
+  <td>mace</td>
+  <td>10-13</td>
+  <td>2.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="block.gif" alt="block" width="30" height="30" class="img01"></td>
+  <td><img src="forceofnature.gif" alt="force of nature" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_15" style="display: none">
+<h3><img src="defense.gif" alt="Defense Mastery" class="img02" width="30">Defense Masteryを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="elvenmachete.gif" alt="elven machete" class="img01"></td>
+  <td>elven machete<br>[エルフの山刀]</td>
+  <td>swords</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="defense.gif" alt="defense mastery" width="30" height="30" class="img01"></td>
+  <td><img src="bladeweave.gif" alt="blade weave" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="lajatang.gif" alt="Lajatang" class="img01"></td>
+  <td>lajatang<br>[ラジャタン]</td>
+  <td>fencing</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="defense.gif" alt="defense mastery" width="30" height="30" class="img01"></td>
+  <td><img src="f-whirl.gif" alt="frenzied whirlwind" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="kama.gif" alt="kama" class="img01"></td>
+  <td>kama<br>[鎌]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.00</td>
+  <td>両手</td>
+  <td><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="defense.gif" alt="defense mastery" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_16" style="display: none">
+<h3><img src="movingshot.gif" alt="Moving Shot" class="img02" width="30">Moving Shotを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep51.gif" alt="composite bow" width="36" height="35" class="img01"></td>
+  <td>composite bow<br>[コンポジットボウ]</td>
+  <td>archery</td>
+  <td>16-20</td>
+  <td>4.00</td>
+  <td>両手</td>
+  <td><img src="armorignore.gif" alt="armor ignore" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="movingshot.gif" alt="moving shot" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="wep52.gif" alt="heavy crossbow" width="24" height="29" class="img01"></td>
+  <td>heavy crossbow<br>[ヘビークロスボウ]</td>
+  <td>archery</td>
+  <td>20-24</td>
+  <td>5.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="movingshot.gif" alt="moving shot" width="30" height="30" class="img01"></td>
+  <td><img src="dismount.gif" alt="dismount" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep53.gif" alt="repeating crossbow" width="30" height="31" class="img01"></td>
+  <td>repeating crossbow<br>[リピーティングクロスボウ]</td>
+  <td>archery</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>両手</td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="movingshot.gif" alt="moving shot" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="cyclone.gif" alt="cyclone" class="img01"></td>
+  <td>cyclone<br>[サイクロン]</td>
+  <td>throwing</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="movingshot.gif" alt="moving shot" width="30" height="30" class="img01"></td>
+  <td><img src="infused_throw.gif" alt="Infused Throw" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_17" style="display: none">
+<h3><img src="bladeweave.gif" alt="Blade Weave" class="img02" width="30">Blade Weaveを含む武器</h3>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="elvenmachete.gif" alt="elven machete" class="img01"></td>
+  <td>elven machete<br>[エルフの山刀]</td>
+  <td>swords</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td><img src="defense.gif" alt="defense mastery" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="bladeweave.gif" alt="blade weave" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="runeblade.gif" alt="rune blade" class="img01"></td>
+  <td>rune blade<br>[ルーンブレード]</td>
+  <td>swords</td>
+  <td>14-17</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="bladeweave.gif" alt="blade weave" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="radientscimitar.gif" alt="radient scimitar" class="img01"></td>
+  <td>radient scimitar<br>[三日月刀]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td><img src="whirlwind.gif" alt="whirlwind attack" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="bladeweave.gif" alt="blade weave" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="warcleaver.gif" alt="War Cleaver" class="img01"></td>
+  <td>war cleaver<br>[クリーバー]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.25</td>
+  <td>両手</td>
+  <td><img src="disarm.gif" alt="disarm" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="bladeweave.gif" alt="blade weave" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_18" style="display: none">
+<h3><img src="f-whirl.gif" alt="Frenzied Whirlwind" class="img02" width="30">Frenzied Whirlwindを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wakizashi.gif" alt="wakizashi" class="img01"></td>
+  <td>wakizashi<br>[脇差]</td>
+  <td>swords</td>
+  <td>10-14</td>
+  <td>2.50</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="f-whirl.gif" alt="frenzied whirlwind" width="30" height="30" class="img01"></td>
+  <td><img src="doublestrike.gif" alt="double strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="lajatang.gif" alt="Lajatang" class="img01"></td>
+  <td>lajatang<br>[ラジャタン]</td>
+  <td>fencing</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td><img src="defense.gif" alt="defense mastery" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="f-whirl.gif" alt="frenzied whirlwind" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="tetsubo.gif" alt="tetsubo" class="img01"></td>
+  <td>tetsubo<br>[鉄棒]</td>
+  <td>mace</td>
+  <td>12-15</td>
+  <td>2.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="f-whirl.gif" alt="frenzied whirlwind" width="30" height="30" class="img01"</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_19" style="display: none">
+<h3><img src="armorpierce.gif" alt="Armor Pierce" class="img02" width="30">Armor Pierceを含む武器</h3>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="sai.gif" alt="sai" class="img01"></td>
+  <td>sai<br>[サイ]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.00</td>
+  <td>両手</td>
+  <td><img src="dualwield.gif" alt="dualwield" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="armorpierce.gif" alt="armor pierce" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="yumi.gif" alt="yumi" class="img01"></td>
+  <td>yumi<br>[和弓]</td>
+  <td>archery</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="armorpierce.gif" alt="armor pierce" width="30" height="30" class="img01"></td>
+  <td><img src="doubleshot.gif" alt="double shot" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_20" style="display: none">
+<h3><img src="psychicattack.gif" alt="Psychic Attack" class="img02" width="30">Psychic Attackを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="elvenspellblade.gif" alt="elven spellblade" class="img01"></td>
+  <td>elven spellblade<br>[エルフの呪刀]</td>
+  <td>fencing</td>
+  <td>12-15</td>
+  <td>2.50</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="psychicattack.gif" alt="psychic attack" width="30" height="30" class="img01"></td>
+  <td><img src="bleedattack.gif" alt="bleed attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="magicalshortbow.gif" alt="magical shortbow" class="img01"></td>
+  <td>magical shortbow<br>[マジカルショートボウ]</td>
+  <td>archery</td>
+  <td>12-16</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td><img src="lightningarrow.gif" alt="lightning arrow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="psychicattack.gif" alt="psychic attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_21" style="display: none">
+<h3><img src="ridingswipe.gif" alt="Riding Swipe" class="img02" width="30">Riding Swipeを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="no-dachi.gif" alt="No-dachi" class="img01"></td>
+  <td>no-dachi<br>[野太刀]</td>
+  <td>swords</td>
+  <td>16-19</td>
+  <td>3.50</td>
+  <td>両手</td>
+  <td><img src="crushing.gif" alt="crushing blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="ridingswipe.gif" alt="riding swipe" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_22" style="display: none">
+<h3><img src="nervestrike.gif" alt="Nerve Strike" class="img02" width="30">Nerve Strikeを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="bokuto.gif" alt="bokuto" class="img01"></td>
+  <td>bokuto<br>[木刀]</td>
+  <td>swords</td>
+  <td>10-12</td>
+  <td>2.00</td>
+  <td>片手</td>
+  <td><img src="feint.gif" alt="feint" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="nervestrike.gif" alt="nerve strike" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_23" style="display: none">
+<h3><img src="dualwield.gif" alt="Dual Wield" class="img02" width="30">Dual Wieldを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="sai.gif" alt="sai" class="img01"></td>
+  <td>sai<br>[サイ]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="dualwield.gif" alt="dualwield" width="30" height="30" class="img01"></td>
+  <td><img src="armorpierce.gif" alt="armor pierce" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="tekagi.gif" alt="tekagi" class="img01"></td>
+  <td>tekagi<br>[手鉤]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="dualwield.gif" alt="dualwield" width="30" height="30" class="img01"></td>
+  <td><img src="talonstrike.gif" alt="talonstrike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_tekagi.gif" alt="gargish tekagi" class="img01"></td>
+  <td>gargish tekagi<br>[ガーゴイル手鉤]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="dualwield.gif" alt="dualwield" width="30" height="30" class="img01"></td>
+  <td><img src="talonstrike.gif" alt="talonstrike" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_24" style="display: none">
+<h3><img src="talonstrike.gif" alt="Talon Strike" class="img02" width="30">Talon Strikeを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="tekagi.gif" alt="tekagi" class="img01"></td>
+  <td>tekagi<br>[手鉤]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.00</td>
+  <td>両手</td>
+  <td><img src="dualwield.gif" alt="dualwield" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="talonstrike.gif" alt="talonstrike" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td><img src="gargish_tekagi.gif" alt="gargish tekagi" class="img01"></td>
+  <td>gargish tekagi<br>[ガーゴイル手鉤]</td>
+  <td>fencing</td>
+  <td>10-13</td>
+  <td>2.00</td>
+  <td>両手</td>
+  <td><img src="dualwield.gif" alt="dualwield" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="talonstrike.gif" alt="talonstrike" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_25" style="display: none">
+<h3><img src="forceofnature.gif" alt="Force of Nature" class="img02" width="30">Force of Natureを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wep46.gif" alt="gnarled staff" class="img01"></td>
+  <td>gnarled staff<br>[自然木の杖]</td>
+  <td>mace</td>
+  <td>15-18</td>
+  <td>3.25</td>
+  <td>両手</td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="forceofnature.gif" alt="force of nature" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="wildstaff.gif" alt="wild staff" class="img01"></td>
+  <td>wild staff<br>[ワイルドスタッフ]</td>
+  <td>mace</td>
+  <td>10-13</td>
+  <td>2.25</td>
+  <td>片手</td>
+  <td><img src="block.gif" alt="block" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="forceofnature.gif" alt="force of nature" width="30" height="30" class="img01"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="gargish_gnarled_staff.gif" alt="" class="img01"></td>
+  <td>gargish gnarled staff<br>[ガーグ自然木の杖]</td>
+  <td>mace</td>
+  <td>15-18</td>
+  <td>3.25</td>
+  <td>両手</td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="forceofnature.gif" alt="force of nature" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_26" style="display: none">
+<h3><img src="doubleshot.gif" alt="Double Shot" class="img02" width="30">Double Shotを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="yumi.gif" alt="yumi" class="img01"></td>
+  <td>yumi<br>[和弓]</td>
+  <td>archery</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>両手</td>
+  <td><img src="armorpierce.gif" alt="armor pierce" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="doubleshot.gif" alt="double shot" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_27" style="display: none">
+<h3><img src="forcearrow.gif" alt="Force Arrow" class="img02" width="30">Force Arrowを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="elvencomposite.gif" alt="elven composite longbow" class="img01"></td>
+  <td>elven composite<br>longbow<br>[エルフ式ロングボウ]</td>
+  <td>archery</td>
+  <td>15-19</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="forcearrow.gif" alt="force arrow" width="30" height="30" class="img01"></td>
+  <td><img src="serpentarrow.gif" alt="serpent arrow" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_28" style="display: none">
+<h3><img src="serpentarrow.gif" alt="Serpent Arrow" class="img02" width="30">Serpent Arrowを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="elvencomposite.gif" alt="elven composite longbow" class="img01"></td>
+  <td>elven composite<br>longbow<br>[エルフ式ロングボウ]</td>
+  <td>archery</td>
+  <td>15-19</td>
+  <td>3.75</td>
+  <td>両手</td>
+  <td><img src="forcearrow.gif" alt="force arrow" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="serpentarrow.gif" alt="serpent arrow" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_29" style="display: none">
+<h3><img src="lightningarrow.gif" alt="Lightning Arrow" class="img02" width="30">Lightning Arrowを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="magicalshortbow.gif" alt="magical shortbow" class="img01"></td>
+  <td>magical shortbow<br>[マジカルショートボウ]</td>
+  <td>archery</td>
+  <td>12-16</td>
+  <td>3.00</td>
+  <td>両手</td>
+  <td bgcolor="#ffbbaa"><img src="lightningarrow.gif" alt="lightning arrow" width="30" height="30" class="img01"></td>
+  <td><img src="psychicattack.gif" alt="psychic attack" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+<br class="cle">
+</div>
+
+<div id="cat_30" style="display: none">
+<h3><img src="mystic_arc.gif" alt="Mystic Arc" class="img02" width="30">Mystic Arcを含む武器</h3>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="boomerang.gif" alt="boomerang" class="img01"></td>
+  <td>boomerang<br>[ブーメラン]</td>
+  <td>throwing</td>
+  <td>11-15</td>
+  <td>2.75</td>
+  <td>片手</td>
+  <td bgcolor="#ffbbaa"><img src="mystic_arc.gif" alt="Mystic Arc" width="30" height="30" class="img01"></td>
+  <td><img src="concussion.gif" alt="concussion blow" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+
+<br class="cle">
+</div>
+
+<div id="cat_31" style="display: none">
+<h3><img src="infused_throw.gif" alt="Infused Throw" class="img02" width="30">Infused Throwを含む武器</h3>
+
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+  <td width="90">武器画像</td>
+  <td width="170">武器名</td>
+  <td width="65">系統</td>
+  <td width="65">ダメージ
+  <td width="55">速度<br>[sec]
+  <td width="55">片手<br>両手
+  <td width="50">Pri.</td>
+  <td width="50">Sec.</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td><img src="cyclone.gif" alt="cyclone" class="img01"></td>
+  <td>cyclone<br>[サイクロン]</td>
+  <td>throwing</td>
+  <td>13-17</td>
+  <td>3.25</td>
+  <td>片手</td>
+  <td><img src="movingshot.gif" alt="moving shot" width="30" height="30" class="img01"></td>
+  <td bgcolor="#ffbbaa"><img src="infused_throw.gif" alt="Infused Throw" width="30" height="30" class="img01"></td>
+ </tr>
+
+</table>
+<br class="cle">
+
+</div>
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

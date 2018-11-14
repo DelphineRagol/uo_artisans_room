@@ -1,0 +1,858 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>防具強化計算（木製装備）</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898910</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+<!--以下本文-->
+
+<script language="javascript">
+<!--
+//Arm AR
+var mar;
+mar=new Array(7);
+mar[0] = 0;    //None
+mar[1] = 3;    //Oak
+mar[2] = 2;    //Ash
+mar[3] = 6;    //Yew
+mar[4] = 2;    //Heart
+mar[5] = 3;    //Blood
+mar[6] = 2;    //Frost
+//Arm AR         
+
+//Arm FR
+var mfr;
+mfr=new Array(7);
+mfr[0] = 0;    //None
+mfr[1] = 3;    //Oak
+mfr[2] = 0;    //Ash
+mfr[3] = 3;    //Yew
+mfr[4] = 3;    //Heart
+mfr[5] = 8;    //Blood
+mfr[6] = 1;    //Frost
+//Mons FR         
+
+//arm CR
+var mcr;
+mcr=new Array(7);
+mcr[0] = 0;    //None
+mcr[1] = 0;    //Oak
+mcr[2] = 4;    //Ash
+mcr[3] = 3;    //Yew
+mcr[4] = 2;    //Heart
+mcr[5] = 1;    //Blood
+mcr[6] = 8;    //Frost
+//arm CR
+
+//arm PR
+var mpr;
+mpr=new Array(7);
+mpr[0] = 0;    //None
+mpr[1] = 2;    //Oak
+mpr[2] = 1;    //Ash
+mpr[3] = 0;    //Yew
+mpr[4] = 7;    //Heart
+mpr[5] = 3;    //Blood
+mpr[6] = 3;    //Frost
+//arm PR
+
+//arm ER
+var mer;
+mer=new Array(7);
+mer[0] = 0;    //None
+mer[1] = 3;    //Oak
+mer[2] = 6;    //Ash
+mer[3] = 3;    //Yew
+mer[4] = 2;    //Heart
+mer[5] = 3;    //Blood
+mer[6] = 4;    //Frost
+//arm ER
+
+//arm luck
+var mlr;
+mlr=new Array(7);
+mlr[0] = 0;    //None
+mlr[1] = 40;   //Oak
+mlr[2] = 0;    //Ash
+mlr[3] = 0;    //Yew
+mlr[4] = 0;    //Heart
+mlr[5] = 0;    //Blood
+mlr[6] = 0;    //Frost
+//arm luck
+
+//arm require
+var mrr;
+mrr=new Array(7);
+mrr[0] = 0;    //None
+mrr[1] = 0;    //Oak
+mrr[2] = 20;   //Ash
+mrr[3] = 0;    //Yew
+mrr[4] = 0;    //Heart
+mrr[5] = 0;    //Blood
+mrr[6] = 0;    //Frost
+//arm require
+
+//arm dur
+var mdr;
+mdr=new Array(7);
+mdr[0] = 0;    //None
+mdr[1] = 50;   //Oak
+mdr[2] = 0;    //Ash
+mdr[3] = 0;    //Yew
+mdr[4] = 0;    //Heart
+mdr[5] = 0;    //Blood
+mdr[6] = 0;    //Frost
+//arm dur
+
+//arm hpr
+var mhr;
+mhr=new Array(7);
+mhr[0] = 0;     //None
+mhr[1] = 0;     //Oak
+mhr[2] = 0;     //Ash
+mhr[3] = 1;     //Yew
+mhr[4] = 0;     //Heart
+mhr[5] = 2;     //Blood
+mhr[6] = 0;     //Frost
+//arm hpre
+
+//arm other
+var mor;
+mor=new Array(7);
+mor[0] = 0;     //None
+mor[1] = 0;     //Oak
+mor[2] = 1;     //Ash
+mor[3] = 0;     //Yew
+mor[4] = 1;     //Heart
+mor[5] = 0;     //Blood
+mor[6] = 0;     //Frost
+//arm hpre
+
+
+
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.sozai.value = 0;
+  form.skill.value = 0;
+  form.skill2.value = 0;
+  form.ara.value = 0;
+  form.fra.value = 0;
+  form.cra.value = 0;
+  form.pra.value = 0;
+  form.era.value = 0;
+  form.luck.value = 0;
+  form.hpr.value = 0;
+  form.dur.value = 0;
+  form.phy.value = 0;
+  form.fir.value = 0;
+  form.col.value = 0;
+  form.poi.value = 0;
+  form.ene.value = 0;
+  form.luck3.value = 0;
+  form.hpr3.value = 0;
+  form.req3.value = 0;
+  form.dur3.value = 0;
+  form.suc.value = 0;
+  form.fai.value = 0;
+  form.des.value = 0;
+  form.rsuc.value = 0;
+  return true;
+}
+
+//計算
+
+function keisan1(form)
+{
+var form = document.form_keisan;
+  soz1 = form.sozai.options[form.sozai.selectedIndex].value;
+  skill = form.skill.options[form.skill.selectedIndex].value;
+  skill2 = form.skill2.options[form.skill2.selectedIndex].value;
+  hosei = Math.floor(skill * 1.0 + skill2 * 1.0);
+  mar1 = mar[soz1];
+  mfr1 = mfr[soz1];
+  mcr1 = mcr[soz1];
+  mpr1 = mpr[soz1];
+  mer1 = mer[soz1];
+  mlr1 = mlr[soz1];
+  mhr1 = mhr[soz1];
+  mrr1 = mrr[soz1];
+  mdr1 = mdr[soz1];
+  mor1 = mor[soz1];
+
+  ara1 = form.ara.options[form.ara.selectedIndex].value;
+  fra1 = form.fra.options[form.fra.selectedIndex].value;
+  cra1 = form.cra.options[form.cra.selectedIndex].value;
+  pra1 = form.pra.options[form.pra.selectedIndex].value;
+  era1 = form.era.options[form.era.selectedIndex].value;
+  luk1 = form.luck.value;
+  hpr1 = form.hpr.options[form.hpr.selectedIndex].value;
+  dur1 = form.dur.value;
+
+  luck2 = luk1 * 1 + mlr1;
+   if(luk1<0||luk1>100){
+  luck2 = 0;
+}
+  form.luck3.value = luck2;
+
+
+  dur2 = Math.floor(dur1 * (1 + mdr1 / 100));
+   if(dur1<=0||dur1>255){
+  dur2 = 0;
+}
+  form.dur3.value = dur2;
+
+  hpr2 = hpr1 * 1.0 + mhr1;
+  form.hpr3.value = hpr2;
+
+
+     phy = ara1 * 1 + mar1 * 1;
+     fir = fra1 * 1 + mfr1 * 1;
+     col = cra1 * 1 + mcr1 * 1;
+     poi = pra1 * 1 + mpr1 * 1;
+     ene = era1 * 1 + mer1 * 1;
+     form.phy.value = phy;
+     form.fir.value = fir;
+     form.col.value = col;
+     form.poi.value = poi;
+     form.ene.value = ene;
+
+
+     if(mar1>0){
+
+          su0 = hosei / 100 + 0.80 - ara1 / 100;
+
+       }
+
+     else{
+
+          su0 = 1.0;
+
+       }
+
+
+     if(mfr1>0){
+
+          su1 = hosei / 100 + 0.80 - fra1 / 100;
+
+       }
+
+     else{
+
+          su1 = 1.0;
+
+       }
+
+     if(mcr1>0){
+
+         su2 = hosei / 100 + 0.80 - cra1 / 100;
+
+       }
+
+     else{
+
+          su2 = 1.0;
+
+       }
+
+
+     if(mpr1>0){
+
+         su3 = hosei / 100 + 0.80 - pra1 / 100;
+
+       }
+
+     else{
+
+          su3 = 1.0;
+
+       }
+
+     if(mer1>0){
+
+         su4 = hosei / 100 + 0.80 - era1 / 100;
+
+       }
+
+     else{
+
+          su4 = 1.0;
+
+       }
+
+     if(mlr1>0){
+
+         su5 = hosei / 100 + 0.70 - Math.floor(luk1 / 2) / 100;
+
+       }
+
+     else{
+
+          su5 = 1.0;
+
+       }
+
+     if(mrr1>0){
+
+         su6 = hosei / 100 + 0.80;
+
+       }
+
+     else{
+
+          su6 = 1.0;
+
+       }
+
+     if(mdr1>0){
+
+         su7 = hosei / 100 + 0.80 - Math.floor(dur1 / 40) / 100;
+
+       }
+
+     else{
+
+          su7 = 1.0;
+
+       }
+
+
+     if(mhr1>0){
+
+         su8 = hosei / 100 + 0.80 - hpr1 / 10;
+
+       }
+
+     else{
+
+          su8 = 1.0;
+
+       }
+
+
+     if(mor1>0){
+
+         su9 = hosei / 100 + 0.80;
+
+       }
+
+     else{
+
+          su9 = 1.0;
+
+       }
+
+
+
+
+
+     kkk = new Array(10);
+     kkk[0] = su0;
+     kkk[1] = su1;
+     kkk[2] = su2;
+     kkk[3] = su3;
+     kkk[4] = su4;
+     kkk[5] = su5;
+     kkk[6] = su6;
+     kkk[7] = su7;
+     kkk[8] = su8;
+     kkk[9] = su9;
+
+	for (i=0; i<10; i++)
+	{
+		for (j=0; j<10-i; j++)
+		{
+			if (kkk[j] > kkk[j+1])
+			{
+				n = kkk[j];
+				kkk[j]  = kkk[j+1];
+				kkk[j+1] = n;
+			}
+		}
+	}
+
+     suc1 = kkk[0];
+     suc2 = kkk[1];
+     suc3 = kkk[2];
+     suc4 = kkk[3];
+     suc5 = kkk[4];
+     suc6 = kkk[5];
+     suc7 = kkk[6];
+     suc8 = kkk[7];
+     suc9 = kkk[8];
+     suc10 = kkk[9];
+
+     if(suc1==1.0){
+     des1 = 0.0;
+     }
+     else{
+     des1 = 0.9 - suc1;
+     }
+
+     if(suc2==1.0){
+     des2 = 0.0;
+     }
+     else{
+     des2 = 0.9 - suc2;
+     }
+
+     if(suc3==1.0){
+     des3 = 0.0;
+     }
+     else{
+     des3 = 0.9 - suc3;
+     }
+
+     if(suc4==1.0){
+     des4 = 0.0;
+     }
+     else{
+     des4 = 0.9 - suc4;
+     }
+
+     if(suc5==1.0){
+     des5 = 0.0;
+     }
+     else{
+     des5 = 0.9 - suc5;
+     }
+
+     if(suc6==1.0){
+     des6 = 0.0;
+     }
+     else{
+     des6 = 0.9 - suc6;
+     }
+
+     if(suc7==1.0){
+     des7 = 0.0;
+     }
+     else{
+     des7 = 0.9 - suc7;
+     }
+
+     if(suc8==1.0){
+     des8 = 0.0;
+     }
+     else{
+     des8 = 0.9 - suc8;
+     }
+
+     if(suc9==1.0){
+     des9 = 0.0;
+     }
+     else{
+     des9 = 0.9 - suc9;
+     }
+
+     if(suc10==1.0){
+     des10 = 0.0;
+     }
+     else{
+     des10 = 0.9 - suc10;
+     }
+
+    suc0 = Math.floor(100 * suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * suc7 * suc8 * suc9 * suc10);
+
+    desa = des1;
+    desb = suc1 * des2;
+    desc = suc1 * suc2 * des3;
+    desd = suc1 * suc2 * suc3 * des4;
+    dese = suc1 * suc2 * suc3 * suc4 * des5;
+    desf = suc1 * suc2 * suc3 * suc4 * suc5 * des6;
+    desg = suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * des7;
+    desh = suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * suc7 * des8;
+    desi = suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * suc7 * suc8 * des9;
+    desj = suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * suc7 * suc8 * suc9 * des10;
+
+    des0 = Math.ceil(100 * (desa + desb + desc + desd + dese + desf + desg + desh + desi + desj));
+
+    fai0 = 100 - suc0 - des0;
+    rsuc0 = Math.round(100 * suc0 / (suc0 + des0));
+    form.suc.value = suc0;
+    form.des.value = des0;
+    form.fai.value = fai0;
+    form.rsuc.value = rsuc0;
+  return true;
+}
+
+
+//-->
+</script>
+
+<h2>防具強化計算（木製装備）</h2>
+<hr>
+
+ここでは、自分の所持している防具を強化することで属性抵抗値やその他の特性値がどのように変わるか、
+さらに、強化のおおよその成功率が計算できます。
+
+ <form name="form_keisan">
+
+<h3>使用素材とスキル</h3>
+
+
+<ul class="list03">
+
+<li>大工／弓作成スキル　：　<select name="skill" size="1">
+<option value="0">100.0未満
+<option value="1">100.0
+</select></li>
+
+<li>練成スキル　：　<select name="skill2" size="1">
+<option value="0">100未満またはガーゴイル以外
+<option value="1">100.0～109.9
+<option value="2">110.0～119.9
+<option value="3">120.0
+</select></li>
+
+
+<li>特殊素材選択　：　<select name="sozai" size="1">
+<option value="0">-----素材[木材]------
+<option value="1">Oak [スキル65～]
+<option value="2">Ash [スキル75～]
+<option value="3">Yew [スキル85～]
+<option value="4">Heartwood [スキル95～]
+<option value="5">Bloodwood [スキル95～]
+<option value="6">Frostwood [スキル95～]
+</select></li>
+
+<li><input type="button" value="強化成功率計算" onclick="keisan1(form)"></li>
+
+</ul>
+<h3>強化前後の特性値 　 <INPUT TYPE="RESET" NAME="Reset" VALUE="Reset"></h3>
+
+もともと防具に付加されないプロパティ（装備条件、重量）は省略します。
+
+<table class="table02">
+ <tr>
+    <td align="center" bgcolor="#f0f0f0" width="75">&nbsp;</td>
+    <td align="center" bgcolor="#d0d0d0" width="60">物理<br>AR</td>
+    <td align="center" bgcolor="#ffc080" width="60">炎<br>FR</td>
+    <td align="center" bgcolor="#80c0ff" width="60">冷気<br>CR</td>
+    <td align="center" bgcolor="#80ffc0" width="60">毒<br>PR</td>
+    <td align="center" bgcolor="#ffc0ff" width="60">エネ<br>ER</td>
+    <td align="center" bgcolor="#ffffd0" width="60">幸運</td>
+    <td align="center" bgcolor="#ffffd0" width="60">HP<br>回復</td>
+    <td align="center" bgcolor="#ffffd0" width="60">耐久</td>
+ </tr>
+
+ <tr>
+    <td align="center" bgcolor="#f0f0f0">強化前</td>
+    <td align="center" bgcolor="#d0d0d0" width="35"><select name="ara" SIZE="1">
+<option value="0">AR
+<option value="0">0
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+    </select>
+</td>
+
+    <td align="center" bgcolor="#ffc080"><select name="fra" SIZE="1">
+<option value="0">FR
+<option value="0">0
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+    </select></td>
+
+    <td align="center" bgcolor="#80c0ff"><select name="cra" SIZE="1">
+<option value="0">CR
+<option value="0">0
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+    </select></td>
+
+    <td align="center" bgcolor="#80ffc0"><select name="pra" SIZE="1">
+<option value="0">PR
+<option value="0">0
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+    </select></td>
+
+    <td align="center" bgcolor="#ffc0ff"><select name="era" SIZE="1">
+<option value="0">ER
+<option value="0">0
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+    </select></td>
+
+    <td align="center" bgcolor="#ffffd0"><INPUT TYPE="text" NAME="luck" SIZE="3" value="0"></td>
+
+    <td align="center" bgcolor="#ffffd0"><select name="hpr" SIZE="1">
+<option value="0">0
+<option value="1">1
+<option value="2">2
+    </select></td>
+
+    <td align="center" bgcolor="#ffffd0"><INPUT TYPE="text" NAME="dur" SIZE="3" value="0"></td>
+
+</tr>
+
+<tr>
+    <td align="center" bgcolor="#f0f0f0">強化後</td>
+    <td align="center" bgcolor="#d0d0d0"><input readonly type="text" name="phy" size="2" value="0"></td>
+    <td align="center" bgcolor="#ffc080"><input readonly type="text" name="fir" size="2" value="0"></td>
+    <td align="center" bgcolor="#80c0ff"><input readonly type="text" name="col" size="2" value="0"></td>
+    <td align="center" bgcolor="#80ffc0"><input readonly type="text" name="poi" size="2" value="0"></td>
+    <td align="center" bgcolor="#ffc0ff"><input readonly type="text" name="ene" size="2" value="0"></td>
+    <td align="center" bgcolor="#ffffd0"><input readonly type="text" name="luck3" size="3" value="0"></td>
+    <td align="center" bgcolor="#ffffd0"><input readonly type="text" name="hpr3" size="2" value="0"></td>
+    <td align="center" bgcolor="#ffffd0"><input readonly type="text" name="dur3" size="3" value="0"></td>
+</tr>
+
+</table>
+
+<h3>強化成功率</h3>
+
+ <table class="table02">
+  <tr>
+   <td align="center" bgcolor="#80c0ff" width="100">成功率</td>
+   <td align="center" bgcolor="#ffff80" width="100">失敗率</td>
+   <td align="center" bgcolor="#ffc080" width="100">破壊率</td>
+   <td align="center" bgcolor="#f0f0f0" width="100">実成功率</td>
+  </tr>
+  <tr>
+   <td align="center" bgcolor="#a0e0ff"><input readonly type="text" class="readtext" name="suc" size="3" value="0">％</td>
+   <td align="center" bgcolor="#ffffc0"><input readonly type="text" class="readtext" name="fai" size="3" value="0">％</td>
+   <td align="center" bgcolor="#ffe0a0"><input readonly type="text" class="readtext" name="des" size="3" value="0">％</td>
+   <td align="center" bgcolor="#ffffff"><input readonly type="text" class="readtext" name="rsuc" size="3" value="0">％</td>
+  </tr>
+ </table>
+
+</form>
+
+<h3>注意事項</h3>
+<ul class="list02">
+<li>未強化防具の属性抵抗値(物理、炎、氷、毒、エネルギー)および幸運などの数値を選択または入力してください。</li>
+<li>使用素材は、Oak, Ash, Yew, Heartwood, Bloodwood, Frostwoodの計6種類から選択します。</li>
+<li>スキルの値も成功率に影響しますので、スキルの高さも選択してください。
+<br>スキルが100の場合、プロパティごとの強化成功率が1％加算されます。</li>
+<li>ガーゴイルで練成スキルが100.0以上の場合、プロパティごとの強化成功率が(1＋超過分/100)％加算されます（スキル120で＋3％）。</li>
+<li>「強化成功率計算」ボタンを押すと強化成功率などが計算されます。</li>
+<li>新しく付加されるようになったプロパティの成功率は、暫定的に下のようにしています。</li>
+  <ul class="list03">
+     <li>HP回復・・・成功率＝80－(強化前HP回復値)×10、破壊率＝10＋(強化前HP回復値)×10</li>
+     <li>重量・・・成功率＝80％固定、破壊率＝10％固定</li>
+     <li>Heartwoodのランダム付加・・・成功率＝80％固定、破壊率＝10％固定</li>
+  </ul>
+</ul>
+
+<h3>参考　：　素材による特性値の変化量</h3>
+
+<table class="table02">
+
+ <tr>
+    <td align="center" bgcolor="#f0f0f0" width="80"><font size="2">素材</font></td>
+    <td align="center" bgcolor="#f0f0f0" width="60"><font size="2">必要<br>スキル</font></td>
+    <td align="center" bgcolor="#d0d0d0" width="60"><font size="2">物理<br>抵抗</font></td>
+    <td align="center" bgcolor="#ffc080" width="60"><font size="2">炎<br>抵抗</font></td>
+    <td align="center" bgcolor="#80c0ff" width="60"><font size="2">冷気<br>抵抗</font></td>
+    <td align="center" bgcolor="#80ffc0" width="60"><font size="2">毒<br>抵抗</font></td>
+    <td align="center" bgcolor="#ffc0ff" width="60"><font size="2">エネ<br>抵抗</font></td>
+    <td align="center" bgcolor="#f0f0f0" width="180"><font size="2">その他</font></td>
+ </tr>
+
+   <tr>
+    <td align="center" bgcolor="#d0c070"><img src="oak-board.gif" alt="oak" class="img01"><br>oak</td>
+    <td align="center" bgcolor="#d0c070"><font size="2">65.0</font></td>
+    <td align="center" bgcolor="#d0d0d0"><font size="2">+3%</font></td>
+    <td align="center" bgcolor="#ffc080"><font size="2">+3%</font></td>
+    <td align="center" bgcolor="#80c0ff"><font size="2">&nbsp;</font></td>
+    <td align="center" bgcolor="#80ffc0"><font size="2">+2%</font></td>
+    <td align="center" bgcolor="#ffc0ff"><font size="2">+3%</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">耐久値+50%, 幸運+40</font></td>
+   </tr>
+
+   <tr>
+    <td align="center" bgcolor="#d8d8b0"><img src="ash-board.gif" alt="ash" class="img01"><br>ash</td>
+    <td align="center" bgcolor="#d8d8b0"><font size="2">75.0</font></td>
+    <td align="center" bgcolor="#d0d0d0"><font size="2">+2%</font></td>
+    <td align="center" bgcolor="#ffc080"><font size="2">&nbsp;</font></td>
+    <td align="center" bgcolor="#80c0ff"><font size="2">+4%</font></td>
+    <td align="center" bgcolor="#80ffc0"><font size="2">+1%</font></td>
+    <td align="center" bgcolor="#ffc0ff"><font size="2">+6%</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">装備条件-20%, 重量-25%</font></td>
+   </tr>
+
+   <tr>
+    <td align="center" bgcolor="#e0cc40"><img src="yew-board.gif" alt="yew" class="img01"><br>yew</td>
+    <td align="center" bgcolor="#e0cc40"><font size="2">85.0</font></td>
+    <td align="center" bgcolor="#d0d0d0"><font size="2">+6%</font></td>
+    <td align="center" bgcolor="#ffc080"><font size="2">+3%</font></td>
+    <td align="center" bgcolor="#80c0ff"><font size="2">+3%</font></td>
+    <td align="center" bgcolor="#80ffc0"><font size="2">&nbsp;</font></td>
+    <td align="center" bgcolor="#ffc0ff"><font size="2">+3%</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">HP回復1</font></td>
+   </tr>
+
+   <tr>
+    <td align="center" bgcolor="#70d070"><img src="heart-board.gif" alt="heartwood" class="img01"><br>heartwood</td>
+    <td align="center" bgcolor="#70d070"><font size="2">95.0</font></td>
+    <td align="center" bgcolor="#d0d0d0"><font size="2">+2%</font></td>
+    <td align="center" bgcolor="#ffc080"><font size="2">+3%</font></td>
+    <td align="center" bgcolor="#80c0ff"><font size="2">+2%</font></td>
+    <td align="center" bgcolor="#80ffc0"><font size="2">+7%</font></td>
+    <td align="center" bgcolor="#ffc0ff"><font size="2">+2%</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">下記参照</font></td>
+   </tr>
+
+   <tr>
+    <td align="center" bgcolor="#c09090"><img src="blood-board.gif" alt="bloodwood" class="img01"><br>bloodwood</td>
+    <td align="center" bgcolor="#c09090"><font size="2">95.0</font></td>
+    <td align="center" bgcolor="#d0d0d0"><font size="2">+3%</font></td>
+    <td align="center" bgcolor="#ffc080"><font size="2">+8%</font></td>
+    <td align="center" bgcolor="#80c0ff"><font size="2">+1%</font></td>
+    <td align="center" bgcolor="#80ffc0"><font size="2">+3%</font></td>
+    <td align="center" bgcolor="#ffc0ff"><font size="2">+3%</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">HP回復2</font></td>
+   </tr>
+
+   <tr>
+    <td align="center" bgcolor="#c0e0e0"><img src="frost-board.gif" alt="frostwood" class="img01"><br>frostwood</td>
+    <td align="center" bgcolor="#c0e0e0"><font size="2">95.0</font></td>
+    <td align="center" bgcolor="#d0d0d0"><font size="2">+2%</font></td>
+    <td align="center" bgcolor="#ffc080"><font size="2">+1%</font></td>
+    <td align="center" bgcolor="#80c0ff"><font size="2">+8%</font></td>
+    <td align="center" bgcolor="#80ffc0"><font size="2">+3%</font></td>
+    <td align="center" bgcolor="#ffc0ff"><font size="2">+4%</font></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2">&nbsp;</font></td>
+   </tr>
+
+ </table>
+
+ 
+「耐久値＋○％」の効果は装備品プロパティには表示されませんが、実際の耐久値（耐久性：○／○）には反映されています。
+<br>BloodwoodのHP回復2は、装備品にHP回復が付加されていない場合、付加されます。
+<br>Heartwoodで付加されるプロパティと強度（以下のうち1つが付加されます）
+ <ul class="list01">
+     <li>幸運 40</li>
+     <li>耐久値+50%</li>
+     <li>装備条件-20%</li>
+     <li>重量-50%</li>
+     <li>命中+5%</li>
+     <li>武器ダメージ+10%</li>
+     <li>瞑想可</li>
+ </ul>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

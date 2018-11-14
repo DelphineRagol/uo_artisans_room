@@ -1,0 +1,2273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style.css" type="text/css" rel="stylesheet">
+<TITLE>武器ダメージ計算（TC2 PVP TEST暫定）</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899187</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<div class="block02">
+<br>
+<font size="3">
+<center><font size="5"><b>武器ダメージ計算</b></font>（TC2 PVP TEST暫定）</center>
+<HR>
+<p>現在の攻撃力で、モンスターに与えるダメージの計算表です。</p>
+<script language="javascript">
+<!--
+//Mons AR
+var marm;
+marm=new Array(120);
+marm[0] = 0;     //None
+marm[1] = 65;    //Dgon
+marm[2] = 70;    //WWyr
+marm[3] = 75;    //SWyr
+marm[4] = 75;    //AWyr
+marm[5] = 50;    //Drak
+marm[6] = 45;    //Wyve
+marm[7] = 40;    //SerD
+marm[8] = 60;    //Daem
+marm[9] = 65;    //Icef
+marm[10] = 80;   //Barl
+marm[11] = 35;   //Garg
+marm[12] = 55;   //SGar
+marm[13] = 35;   //Fgar
+marm[14] = 60;   //GarE
+marm[15] = 60;   //GarD
+marm[16] = 25;   //Imp
+marm[17] = 60;   //ChaD
+marm[18] = 75;   //BonD
+marm[19] = 90;   //Impaler
+marm[20] = 30;   //Demon knight
+marm[21] = 35;   //Abyssmal horror
+marm[22] = 35;   //Earth
+marm[23] = 45;   //Fire
+marm[24] = 45;   //Water
+marm[25] = 45;   //Air
+marm[26] = 55;   //Acid
+marm[27] = 70;   //Poison
+marm[28] = 65;   //Blood
+marm[29] = 55;   //Snow
+marm[30] = 45;   //Ice
+marm[31] = 60;   //Crys
+marm[32] = 40;   //Dull
+marm[33] = 40;   //Sha
+marm[34] = 40;   //Cop
+marm[35] = 40;   //Bro
+marm[36] = 75;   //Gol
+marm[37] = 40;   //Aga
+marm[38] = 40;   //Ver
+marm[39] = 75;   //Val
+marm[40] = 60;   //Efreet
+marm[41] = 45;   //Titan
+marm[42] = 50;   //Cycl
+marm[43] = 35;   //Ogre
+marm[44] = 55;   //OgL
+marm[45] = 55;   //ArOL
+marm[46] = 45;   //Troll
+marm[47] = 55;    //Ftro
+marm[48] = 40;   //Ettin
+marm[49] = 30;   //Orc
+marm[50] = 35;   //OrcCa
+marm[51] = 35;   //OrcL
+marm[52] = 35;   //OrcM
+marm[53] = 35;   //OrcS
+marm[54] = 35;   //OrcCh
+marm[55] = 35;   //OrcBo
+marm[56] = 55;   //OrcBl
+marm[57] = 60;   //Lich
+marm[58] = 50;   //LL
+marm[59] = 20;   //Zomb
+marm[60] = 55;   //Mummy
+marm[61] = 45;   //RotC
+marm[62] = 20;   //Skel
+marm[63] = 45;   //SkeK
+marm[64] = 30;   //SkeM
+marm[65] = 30;   //Ghoul
+marm[66] = 30;   //Ghost
+marm[67] = 25;   //TerD
+marm[68] = 35;   //TerW
+marm[69] = 50;   //TerA
+marm[70] = 55;   //TerM
+marm[71] = 40;   //OphW
+marm[72] = 35;   //OphS
+marm[73] = 45;   //OphZ
+marm[74] = 40;   //OphK
+marm[75] = 55;   //OphM
+marm[76] = 30;   //widow
+marm[77] = 50;   //Dspi
+marm[78] = 20;   //Gspi
+marm[79] = 30;   //Fspi
+marm[80] = 60;   //DarkC
+marm[81] = 90;   //flRen
+marm[82] = 90;   //shaK
+marm[83] = 90;   //Succubus
+marm[84] = 80;   //SkeD
+marm[85] = 30;   //Lizman
+marm[86] = 70;   //The Piper
+marm[87] = 30;   //Necro
+marm[88] = 80;   //Mephitis
+marm[89] = 30;   //Semidar
+marm[90] = 90;   //Rikktor
+marm[91] = 90;   //Lordoaks
+marm[92] = 55;   //Silvani
+marm[93] = 65;   //Harrower
+marm[94] = 65;   //t.Harrower
+marm[95] = 30;   //Ratman
+marm[96] = 45;   //Ratman mage
+marm[97] = 55;   //ratman archor
+marm[98] = 65;   //leviathan
+marm[99] = 55;   //kraken
+marm[100] = 40;   //deep sea serpent
+marm[101] = 35;   //sea serpent
+//Mons AR
+
+//Mons FR
+var mfrm;
+mfrm=new Array(120);
+mfrm[0] = 0;     //
+mfrm[1] = 70;    //
+mfrm[2] = 25;    //
+mfrm[3] = 60;    //
+mfrm[4] = 90;    //
+mfrm[5] = 60;    //
+mfrm[6] = 40;    //
+mfrm[7] = 35;    //
+mfrm[8] = 60;    //
+mfrm[9] = 20;    //
+mfrm[10] = 80;   //
+mfrm[11] = 35;   //
+mfrm[12] = 30;   //
+mfrm[13] = 60;   //
+mfrm[14] = 60;   //
+mfrm[15] = 70;   //
+mfrm[16] = 45;   //
+mfrm[17] = 70;   //
+mfrm[18] = 60;   //
+mfrm[19] = 60;   //
+mfrm[20] = 30;   //
+mfrm[21] = 100;  //
+mfrm[22] = 20;   //
+mfrm[23] = 80;   //
+mfrm[24] = 25;   //
+mfrm[25] = 25;   //
+mfrm[26] = 50;   //
+mfrm[27] = 30;   //
+mfrm[28] = 30;   //
+mfrm[29] = 15;   //
+mfrm[30] = 10;   //
+mfrm[31] = 50;   //
+mfrm[32] = 40;   //
+mfrm[33] = 40;   //
+mfrm[34] = 40;   //
+mfrm[35] = 40;   //
+mfrm[36] = 20;   //
+mfrm[37] = 50;   //
+mfrm[38] = 20;   //
+mfrm[39] = 60;   //
+mfrm[40] = 70;   //
+mfrm[41] = 40;   //
+mfrm[42] = 40;   //
+mfrm[43] = 25;   //
+mfrm[44] = 40;   //
+mfrm[45] = 0;    //
+mfrm[46] = 35;   //
+mfrm[47] = 0;    //
+mfrm[48] = 25;   //
+mfrm[49] = 30;   //
+mfrm[50] = 20;   //
+mfrm[51] = 40;   //
+mfrm[52] = 40;   //
+mfrm[53] = 40;   //
+mfrm[54] = 40;   //
+mfrm[55] = 40;   //
+mfrm[56] = 50;   //
+mfrm[57] = 30;   //
+mfrm[58] = 40;   //
+mfrm[59] = 0;    //
+mfrm[60] = 20;   //
+mfrm[61] = 30;   //
+mfrm[62] = 10;   //
+mfrm[63] = 30;   //
+mfrm[64] = 30;   //
+mfrm[65] = 0;    //
+mfrm[66] = 0;    //
+mfrm[67] = 20;   //
+mfrm[68] = 30;   //
+mfrm[69] = 40;   //
+mfrm[70] = 40;   //
+mfrm[71] = 30;   //
+mfrm[72] = 40;   //
+mfrm[73] = 30;   //
+mfrm[74] = 40;   //
+mfrm[75] = 40;   //
+mfrm[76] = 20;   //
+mfrm[77] = 30;   //
+mfrm[78] = 0;    //
+mfrm[79] = 10;   //
+mfrm[80] = 60;   //
+mfrm[81] = 60;   //
+mfrm[82] = 65;   //
+mfrm[83] = 80;   //
+mfrm[84] = 60;   //
+mfrm[85] = 10;   //
+mfrm[86] = 60;   //
+mfrm[87] = 45;   //
+mfrm[88] = 70;   //
+mfrm[89] = 60;   //
+mfrm[90] = 90;   //
+mfrm[91] = 70;   //
+mfrm[92] = 40;   //
+mfrm[93] = 80;   //
+mfrm[94] = 80;   //
+mfrm[95] = 20;   //Ratman
+mfrm[96] = 20;   //Ratman mage
+mfrm[97] = 20;   //ratman archor
+mfrm[98] = 55;   //leviathan
+mfrm[99] = 40;   //kraken
+mfrm[100] = 80;   //deep sea serpent
+mfrm[101] = 60;   //sea serpent
+//Mons FR         
+
+//Mons CR
+var mcrm;
+mcrm=new Array(120);
+mcrm[0] = 0;     //
+mcrm[1] = 40;    //
+mcrm[2] = 90;    //
+mcrm[3] = 55;    //
+mcrm[4] = 80;    //
+mcrm[5] = 50;    //
+mcrm[6] = 30;    //
+mcrm[7] = 35;    //
+mcrm[8] = 40;    //
+mcrm[9] = 70;    //
+mcrm[10] = 60;   //
+mcrm[11] = 10;   //
+mcrm[12] = 20;   //
+mcrm[13] = 0;    //
+mcrm[14] = 30;   //
+mcrm[15] = 25;   //
+mcrm[16] = 45;   //
+mcrm[17] = 50;   //
+mcrm[18] = 90;   //
+mcrm[19] = 60;   //
+mcrm[20] = 30;   //
+mcrm[21] = 55;   //
+mcrm[22] = 20;   //
+mcrm[23] = 10;   //
+mcrm[24] = 25;   //
+mcrm[25] = 20;   //
+mcrm[26] = 30;   //
+mcrm[27] = 30;   //
+mcrm[28] = 50;   //
+mcrm[29] = 70;   //
+mcrm[30] = 60;   //
+mcrm[31] = 50;   //
+mcrm[32] = 20;   //
+mcrm[33] = 30;   //
+mcrm[34] = 40;   //
+mcrm[35] = 20;   //
+mcrm[36] = 40;   //
+mcrm[37] = 50;   //
+mcrm[38] = 60;   //
+mcrm[39] = 60;   //
+mcrm[40] = 0;    //
+mcrm[41] = 35;   //
+mcrm[42] = 35;   //
+mcrm[43] = 25;   //
+mcrm[44] = 40;   //
+mcrm[45] = 70;   //
+mcrm[46] = 25;   //
+mcrm[47] = 50;   //
+mcrm[48] = 50;   //
+mcrm[49] = 20;   //
+mcrm[50] = 25;   //
+mcrm[51] = 30;   //
+mcrm[52] = 30;   //
+mcrm[53] = 25;   //
+mcrm[54] = 25;   //
+mcrm[55] = 25;   //
+mcrm[56] = 35;   //
+mcrm[57] = 60;   //
+mcrm[58] = 60;   //
+mcrm[59] = 30;   //
+mcrm[60] = 60;   //
+mcrm[61] = 70;   //
+mcrm[62] = 40;   //
+mcrm[63] = 60;   //
+mcrm[64] = 60;   //
+mcrm[65] = 30;   //
+mcrm[66] = 30;   //
+mcrm[67] = 25;   //
+mcrm[68] = 35;   //
+mcrm[69] = 45;   //
+mcrm[70] = 45;   //
+mcrm[71] = 35;   //
+mcrm[72] = 45;   //
+mcrm[73] = 35;   //
+mcrm[74] = 45;   //
+mcrm[75] = 45;   //
+mcrm[76] = 20;   //
+mcrm[77] = 30;   //
+mcrm[78] = 0;    //
+mcrm[79] = 50;   //
+mcrm[80] = 100;  //
+mcrm[81] = 60;   //
+mcrm[82] = 75;   //
+mcrm[83] = 50;   //
+mcrm[84] = 60;   //
+mcrm[85] = 10;   //
+mcrm[86] = 60;   //
+mcrm[87] = 60;   //
+mcrm[88] = 70;   //
+mcrm[89] = 30;   //
+mcrm[90] = 40;   //
+mcrm[91] = 70;   //
+mcrm[92] = 40;   //
+mcrm[93] = 80;   //
+mcrm[94] = 80;   //
+mcrm[95] = 20;   //Ratman
+mcrm[96] = 20;   //Ratman mage
+mcrm[97] = 20;   //ratman archor
+mcrm[98] = 55;   //leviathan
+mcrm[99] = 40;   //kraken
+mcrm[100] = 50;   //deep sea serpent
+mcrm[101] = 40;   //sea serpent
+//Mons CR
+
+//Mons PR
+var mprm;
+mprm=new Array(120);
+mprm[0] = 0;      //
+mprm[1] = 35;     //
+mprm[2] = 50;     //
+mprm[3] = 30;     //
+mprm[4] = 70;     //
+mprm[5] = 30;     //
+mprm[6] = 100;    //
+mprm[7] = 35;     //
+mprm[8] = 30;     //
+mprm[9] = 30;     //
+mprm[10] = 100;   //
+mprm[11] = 25;    //
+mprm[12] = 40;    //
+mprm[13] = 30;    //
+mprm[14] = 35;    //
+mprm[15] = 25;    //
+mprm[16] = 55;    //
+mprm[17] = 30;    //
+mprm[18] = 100;   //
+mprm[19] = 60;    //
+mprm[20] = 30;    //
+mprm[21] = 65;    //
+mprm[22] = 25;    //
+mprm[23] = 40;    //
+mprm[24] = 70;    //
+mprm[25] = 20;    //
+mprm[26] = 40;    //
+mprm[27] = 100;   //
+mprm[28] = 60;    //
+mprm[29] = 35;    //
+mprm[30] = 30;    //
+mprm[31] = 100;   //
+mprm[32] = 30;    //
+mprm[33] = 20;    //
+mprm[34] = 30;    //
+mprm[35] = 30;    //
+mprm[36] = 40;    //
+mprm[37] = 40;    //
+mprm[38] = 60;    //
+mprm[39] = 50;    //
+mprm[40] = 40;    //
+mprm[41] = 40;    //
+mprm[42] = 40;    //
+mprm[43] = 25;    //
+mprm[44] = 50;    //
+mprm[45] = 100;   //
+mprm[46] = 15;    //
+mprm[47] = 10;    //
+mprm[48] = 25;    //
+mprm[49] = 20;    //
+mprm[50] = 10;    //
+mprm[51] = 40;    //
+mprm[52] = 40;    //
+mprm[53] = 20;    //
+mprm[54] = 20;    //
+mprm[55] = 20;    //
+mprm[56] = 35;    //
+mprm[57] = 65;    //
+mprm[58] = 60;    //
+mprm[59] = 10;    //
+mprm[60] = 30;    //
+mprm[61] = 50;    //
+mprm[62] = 35;    //
+mprm[63] = 30;    //
+mprm[64] = 30;    //
+mprm[65] = 10;    //
+mprm[66] = 20;    //
+mprm[67] = 25;    //
+mprm[68] = 40;    //
+mprm[69] = 100;   //
+mprm[70] = 50;    //
+mprm[71] = 40;    //
+mprm[72] = 50;    //
+mprm[73] = 40;    //
+mprm[74] = 100;   //
+mprm[75] = 50;    //
+mprm[76] = 60;    //
+mprm[77] = 100;   //
+mprm[78] = 35;    //
+mprm[79] = 30;    //
+mprm[80] = 90;    //
+mprm[81] = 100;   //
+mprm[82] = 75;    //
+mprm[83] = 60;    //
+mprm[84] = 80;    //
+mprm[85] = 20;    //
+mprm[86] = 50;    //
+mprm[87] = 40;    //
+mprm[88] = 100;   //
+mprm[89] = 30;    //
+mprm[90] = 90;    //
+mprm[91] = 90;    //
+mprm[92] = 50;    //
+mprm[93] = 80;    //
+mprm[94] = 80;    //
+mprm[95] = 20;   //Ratman
+mprm[96] = 20;   //Ratman mage
+mprm[97] = 20;   //ratman archor
+mprm[98] = 45;   //leviathan
+mprm[99] = 30;   //kraken
+mprm[100] = 40;   //deep sea serpent
+mprm[101] = 40;   //sea serpent
+//Mons PR
+
+//Mons ER
+var merm;
+merm=new Array(120);
+merm[0] = 0;      //
+merm[1] = 45;     //
+merm[2] = 50;     //
+merm[3] = 60;     //
+merm[4] = 70;     //
+merm[5] = 40;     //
+merm[6] = 40;     //
+merm[7] = 35;     //
+merm[8] = 40;     //
+merm[9] = 40;     //
+merm[10] = 50;    //
+merm[11] = 0;     //
+merm[12] = 40;    //
+merm[13] = 30;    //
+merm[14] = 25;    //
+merm[15] = 25;    //
+merm[16] = 45;    //
+merm[17] = 30;    //
+merm[18] = 60;    //
+merm[19] = 100;   //
+merm[20] = 30;    //
+merm[21] = 80;    //
+merm[22] = 25;    //
+merm[23] = 40;    //
+merm[24] = 10;    //
+merm[25] = 35;    //
+merm[26] = 20;    //
+merm[27] = 50;    //
+merm[28] = 40;    //
+merm[29] = 35;    //
+merm[30] = 30;    //
+merm[31] = 70;    //
+merm[32] = 30;    //
+merm[33] = 40;    //
+merm[34] = 20;    //
+merm[35] = 30;    //
+merm[36] = 40;    //
+merm[37] = 20;    //
+merm[38] = 60;    //
+merm[39] = 60;    //
+merm[40] = 50;    //
+merm[41] = 40;    //
+merm[42] = 40;    //
+merm[43] = 25;    //
+merm[44] = 50;    //
+merm[45] = 50;    //
+merm[46] = 15;    //
+merm[47] = 10;    //
+merm[48] = 25;    //
+merm[49] = 30;    //
+merm[50] = 10;    //
+merm[51] = 40;    //
+merm[52] = 40;    //
+merm[53] = 30;    //
+merm[54] = 30;    //
+merm[55] = 30;    //
+merm[56] = 35;    //
+merm[57] = 50;    //
+merm[58] = 50;    //
+merm[59] = 0;     //
+merm[60] = 30;    //
+merm[61] = 30;    //
+merm[62] = 15;    //
+merm[63] = 40;    //
+merm[64] = 40;    //
+merm[65] = 20;    //
+merm[66] = 0;     //
+merm[67] = 40;    //
+merm[68] = 35;    //
+merm[69] = 45;    //
+merm[70] = 45;    //
+merm[71] = 35;    //
+merm[72] = 45;    //
+merm[73] = 35;    //
+merm[74] = 45;    //
+merm[75] = 45;    //
+merm[76] = 20;    //
+merm[77] = 30;    //
+merm[78] = 0;     //
+merm[79] = 20;    //
+merm[80] = 75;    //
+merm[81] = 80;    //
+merm[82] = 55;    //
+merm[83] = 60;    //
+merm[84] = 60;    //
+merm[85] = 0;     //
+merm[86] = 50;    //
+merm[87] = 30;    //
+merm[88] = 70;    //
+merm[89] = 20;    //
+merm[90] = 90;    //
+merm[91] = 90;    //
+merm[92] = 50;    //
+merm[93] = 80;    //
+merm[94] = 80;    //
+merm[95] = 20;   //Ratman
+merm[96] = 20;   //Ratman mage
+merm[97] = 20;   //ratman archor
+merm[98] = 35;   //leviathan
+merm[99] = 20;   //kraken
+merm[100] = 20;   //deep sea serpent
+merm[101] = 20;   //sea serpent
+//Mons ER
+
+//Mons AR
+var mari;
+mari=new Array(120);
+mari[0] = 0;      //
+mari[1] = 55;     //
+mari[2] = 55;     //
+mari[3] = 65;     //
+mari[4] = 65;     //
+mari[5] = 45;     //
+mari[6] = 35;     //
+mari[7] = 35;     //
+mari[8] = 45;     //
+mari[9] = 55;     //
+mari[10] = 65;    //
+mari[11] = 30;    //
+mari[12] = 40;    //
+mari[13] = 30;    //
+mari[14] = 40;    //
+mari[15] = 40;    //
+mari[16] = 15;    //
+mari[17] = 50;    //
+mari[18] = 75;    //
+mari[19] = 90;    //
+mari[20] = 30;    //
+mari[21] = 30;    //
+mari[22] = 30;    //
+mari[23] = 35;    //
+mari[24] = 35;    //
+mari[25] = 35;    //
+mari[26] = 45;    //
+mari[27] = 60;    //
+mari[28] = 55;    //
+mari[29] = 45;    //
+mari[30] = 35;    //
+mari[31] = 50;    //
+mari[32] = 30;    //
+mari[33] = 30;    //
+mari[34] = 30;    //
+mari[35] = 30;    //
+mari[36] = 60;    //
+mari[37] = 30;    //
+mari[38] = 30;    //
+mari[39] = 65;    //
+mari[40] = 50;    //
+mari[41] = 35;    //
+mari[42] = 45;    //
+mari[43] = 30;    //
+mari[44] = 45;    //
+mari[45] = 45;    //
+mari[46] = 35;    //
+mari[47] = 45;    //
+mari[48] = 35;    //
+mari[49] = 25;    //
+mari[50] = 30;    //
+mari[51] = 25;    //
+mari[52] = 25;    //
+mari[53] = 25;    //
+mari[54] = 25;    //
+mari[55] = 25;    //
+mari[56] = 45;    //
+mari[57] = 40;    //
+mari[58] = 40;    //
+mari[59] = 15;    //
+mari[60] = 45;    //
+mari[61] = 35;    //
+mari[62] = 15;    //
+mari[63] = 35;    //
+mari[64] = 35;    //
+mari[65] = 25;    //
+mari[66] = 25;    //
+mari[67] = 20;    //
+mari[68] = 30;    //
+mari[69] = 40;    //
+mari[70] = 45;    //
+mari[71] = 35;    //
+mari[72] = 25;    //
+mari[73] = 40;    //
+mari[74] = 35;    //
+mari[75] = 45;    //
+mari[76] = 20;    //
+mari[77] = 40;    //
+mari[78] = 15;    //
+mari[79] = 25;    //
+mari[80] = 60;    //
+mari[81] = 80;    //
+mari[82] = 90;    //
+mari[83] = 80;    //
+mari[84] = 75;    //
+mari[85] = 25;    //
+mari[86] = 60;    //
+mari[87] = 25;    //
+mari[88] = 75;    //
+mari[89] = 20;    //
+mari[90] = 80;    //
+mari[91] = 85;    //
+mari[92] = 45;    //
+mari[93] = 55;    //
+mari[94] = 55;    //
+mari[95] = 25;   //Ratman
+mari[96] = 40;   //Ratman mage
+mari[97] = 40;   //ratman archor
+mari[98] = 55;   //leviathan
+mari[99] = 45;   //kraken
+mari[100] = 30;   //deep sea serpent
+mari[101] = 25;   //sea serpent
+//Mons AR
+
+//Mons FR
+var mfri;
+mfri=new Array(120);
+mfri[0] = 0;       //
+mfri[1] = 60;      //
+mfri[2] = 15;      //
+mfri[3] = 50;      //
+mfri[4] = 80;      //
+mfri[5] = 50;      //
+mfri[6] = 30;      //
+mfri[7] = 25;      //
+mfri[8] = 50;      //
+mfri[9] = 10;      //
+mfri[10] = 60;     //
+mfri[11] = 25;     //
+mfri[12] = 20;     //
+mfri[13] = 50;     //
+mfri[14] = 50;     //
+mfri[15] = 60;     //
+mfri[16] = 35;     //
+mfri[17] = 60;     //
+mfri[18] = 60;     //
+mfri[19] = 60;     //
+mfri[20] = 30;     //
+mfri[21] = 100;    //
+mfri[22] = 10;     //
+mfri[23] = 60;     //
+mfri[24] = 10;     //
+mfri[25] = 15;     //
+mfri[26] = 40;     //
+mfri[27] = 20;     //
+mfri[28] = 20;     //
+mfri[29] = 10;     //
+mfri[30] = 5;      //
+mfri[31] = 40;     //
+mfri[32] = 30;     //
+mfri[33] = 30;     //
+mfri[34] = 30;     //
+mfri[35] = 30;     //
+mfri[36] = 10;     //
+mfri[37] = 40;     //
+mfri[38] = 10;     //
+mfri[39] = 50;     //
+mfri[40] = 60;     //
+mfri[41] = 30;     //
+mfri[42] = 30;     //
+mfri[43] = 15;     //
+mfri[44] = 30;     //
+mfri[45] = -10;    //
+mfri[46] = 25;     //
+mfri[47] = 0;      //
+mfri[48] = 15;     //
+mfri[49] = 20;     //
+mfri[50] = 10;     //
+mfri[51] = 30;     //
+mfri[52] = 30;     //
+mfri[53] = 30;     //
+mfri[54] = 30;     //
+mfri[55] = 30;     //
+mfri[56] = 40;     //
+mfri[57] = 20;     //
+mfri[58] = 30;     //
+mfri[59] = 0;      //
+mfri[60] = 10;     //
+mfri[61] = 20;     //
+mfri[62] = 5;      //
+mfri[63] = 20;     //
+mfri[64] = 20;     //
+mfri[65] = 0;      //
+mfri[66] = 0;      //
+mfri[67] = 10;     //
+mfri[68] = 20;     //
+mfri[69] = 30;     //
+mfri[70] = 30;     //
+mfri[71] = 20;     //
+mfri[72] = 30;     //
+mfri[73] = 20;     //
+mfri[74] = 30;     //
+mfri[75] = 30;     //
+mfri[76] = 10;     //
+mfri[77] = 20;     //
+mfri[78] = 0;      //
+mfri[79] = 5;      //
+mfri[80] = 60;     //
+mfri[81] = 50;     //
+mfri[82] = 65;     //
+mfri[83] = 70;     //
+mfri[84] = 40;     //
+mfri[85] = 5;      //
+mfri[86] = 50;     //
+mfri[87] = 35;     //
+mfri[88] = 60;     //
+mfri[89] = 50;     //
+mfri[90] = 80;     //
+mfri[91] = 60;     //
+mfri[92] = 30;     //
+mfri[93] = 60;     //
+mfri[94] = 60;     //
+mfri[95] = 10;   //Ratman
+mfri[96] = 10;   //Ratman mage
+mfri[97] = 10;   //ratman archor
+mfri[98] = 45;   //leviathan
+mfri[99] = 30;   //kraken
+mfri[100] = 70;   //deep sea serpent
+mfri[101] = 50;   //sea serpent
+//Mons FR         
+
+//Mons CR
+var mcri;
+mcri=new Array(120);
+mcri[0] = 0;     //
+mcri[1] = 30;    //
+mcri[2] = 80;    //
+mcri[3] = 45;    //
+mcri[4] = 70;    //
+mcri[5] = 40;    //
+mcri[6] = 20;    //
+mcri[7] = 25;    //
+mcri[8] = 30;    //
+mcri[9] = 60;    //
+mcri[10] = 55;   //
+mcri[11] = 5;    //
+mcri[12] = 10;   //
+mcri[13] = -10;  //
+mcri[14] = 20;   //
+mcri[15] = 15;   //
+mcri[16] = 35;   //
+mcri[17] = 40;   //
+mcri[18] = 90;   //
+mcri[19] = 60;   //
+mcri[20] = 30;   //
+mcri[21] = 50;   //
+mcri[22] = 10;   //
+mcri[23] = 5;    //
+mcri[24] = 10;   //
+mcri[25] = 10;   //
+mcri[26] = 20;   //
+mcri[27] = 20;   //
+mcri[28] = 40;   //
+mcri[29] = 60;   //
+mcri[30] = 50;   //
+mcri[31] = 40;   //
+mcri[32] = 10;   //
+mcri[33] = 20;   //
+mcri[34] = 30;   //
+mcri[35] = 10;   //
+mcri[36] = 30;   //
+mcri[37] = 40;   //
+mcri[38] = 50;   //
+mcri[39] = 50;   //
+mcri[40] = 0;    //
+mcri[41] = 25;   //
+mcri[42] = 25;   //
+mcri[43] = 15;   //
+mcri[44] = 30;   //
+mcri[45] = 60;   //
+mcri[46] = 15;   //
+mcri[47] = 40;   //
+mcri[48] = 40;   //
+mcri[49] = 10;   //
+mcri[50] = 15;   //
+mcri[51] = 20;   //
+mcri[52] = 20;   //
+mcri[53] = 15;   //
+mcri[54] = 15;   //
+mcri[55] = 15;   //
+mcri[56] = 25;   //
+mcri[57] = 50;   //
+mcri[58] = 50;   //
+mcri[59] = 20;   //
+mcri[60] = 50;   //
+mcri[61] = 50;   //
+mcri[62] = 25;   //
+mcri[63] = 50;   //
+mcri[64] = 50;   //
+mcri[65] = 20;   //
+mcri[66] = 15;   //
+mcri[67] = 15;   //
+mcri[68] = 25;   //
+mcri[69] = 35;   //
+mcri[70] = 35;   //
+mcri[71] = 25;   //
+mcri[72] = 35;   //
+mcri[73] = 25;   //
+mcri[74] = 35;   //
+mcri[75] = 35;   //
+mcri[76] = 10;   //
+mcri[77] = 20;   //
+mcri[78] = 0;    //
+mcri[79] = 40;   //
+mcri[80] = 100;  //
+mcri[81] = 50;   //
+mcri[82] = 75;   //
+mcri[83] = 40;   //
+mcri[84] = 40;   //
+mcri[85] = 5;    //
+mcri[86] = 50;   //
+mcri[87] = 50;   //
+mcri[88] = 60;   //
+mcri[89] = 20;   //
+mcri[90] = 30;   //
+mcri[91] = 60;   //
+mcri[92] = 30;   //
+mcri[93] = 60;   //
+mcri[94] = 60;   //
+mcri[95] = 10;   //Ratman
+mcri[96] = 10;   //Ratman mage
+mcri[97] = 10;   //ratman archor
+mcri[98] = 45;   //leviathan
+mcri[99] = 30;   //kraken
+mcri[100] = 40;   //deep sea serpent
+mcri[101] = 30;   //sea serpent
+//Mons CR
+
+//Mons PR
+var mpri;
+mpri=new Array(120);
+mpri[0] = 0;      //
+mpri[1] = 25;     //
+mpri[2] = 40;     //
+mpri[3] = 20;     //
+mpri[4] = 60;     //
+mpri[5] = 20;     //
+mpri[6] = 90;     //
+mpri[7] = 25;     //
+mpri[8] = 20;     //
+mpri[9] = 20;     //
+mpri[10] = 100;   //
+mpri[11] = 15;    //
+mpri[12] = 30;    //
+mpri[13] = 20;    //
+mpri[14] = 25;    //
+mpri[15] = 15;    //
+mpri[16] = 45;    //
+mpri[17] = 20;    //
+mpri[18] = 100;   //
+mpri[19] = 60;    //
+mpri[20] = 30;    //
+mpri[21] = 60;    //
+mpri[22] = 15;    //
+mpri[23] = 30;    //
+mpri[24] = 60;    //
+mpri[25] = 10;    //
+mpri[26] = 30;    //
+mpri[27] = 100;   //
+mpri[28] = 50;    //
+mpri[29] = 25;    //
+mpri[30] = 20;    //
+mpri[31] = 100;   //
+mpri[32] = 20;    //
+mpri[33] = 10;    //
+mpri[34] = 20;    //
+mpri[35] = 20;    //
+mpri[36] = 30;    //
+mpri[37] = 30;    //
+mpri[38] = 50;    //
+mpri[39] = 40;    //
+mpri[40] = 30;    //
+mpri[41] = 30;    //
+mpri[42] = 30;    //
+mpri[43] = 15;    //
+mpri[44] = 40;    //
+mpri[45] = 100;   //
+mpri[46] = 5;     //
+mpri[47] = 5;     //
+mpri[48] = 15;    //
+mpri[49] = 10;    //
+mpri[50] = 5;     //
+mpri[51] = 30;    //
+mpri[52] = 30;    //
+mpri[53] = 15;    //
+mpri[54] = 15;    //
+mpri[55] = 15;    //
+mpri[56] = 25;    //
+mpri[57] = 55;    //
+mpri[58] = 50;    //
+mpri[59] = 5;     //
+mpri[60] = 20;    //
+mpri[61] = 40;    //
+mpri[62] = 25;    //
+mpri[63] = 20;    //
+mpri[64] = 20;    //
+mpri[65] = 5;     //
+mpri[66] = 10;    //
+mpri[67] = 15;    //
+mpri[68] = 30;    //
+mpri[69] = 90;    //
+mpri[70] = 40;    //
+mpri[71] = 30;    //
+mpri[72] = 40;    //
+mpri[73] = 35;    //
+mpri[74] = 90;    //
+mpri[75] = 40;    //
+mpri[76] = 50;    //
+mpri[77] = 90;    //
+mpri[78] = 25;    //
+mpri[79] = 20;    //
+mpri[80] = 90;    //
+mpri[81] = 100;   //
+mpri[82] = 75;    //
+mpri[83] = 50;    //
+mpri[84] = 80;    //
+mpri[85] = 10;    //
+mpri[86] = 40;    //
+mpri[87] = 30;    //
+mpri[88] = 100;   //
+mpri[89] = 20;    //
+mpri[90] = 80;    //
+mpri[91] = 80;    //
+mpri[92] = 40;    //
+mpri[93] = 60;    //
+mpri[94] = 60;    //
+mpri[95] = 10;   //Ratman
+mpri[96] = 10;   //Ratman mage
+mpri[97] = 10;   //ratman archor
+mpri[98] = 35;   //leviathan
+mpri[99] = 20;   //kraken
+mpri[100] = 30;   //deep sea serpent
+mpri[101] = 30;   //sea serpent
+//Mons PR
+
+//Mons ER
+var meri;
+meri=new Array(120);
+meri[0] = 0;     //
+meri[1] = 35;    //
+meri[2] = 40;    //
+meri[3] = 50;    //
+meri[4] = 60;    //
+meri[5] = 30;    //
+meri[6] = 30;    //
+meri[7] = 25;    //
+meri[8] = 30;    //
+meri[9] = 30;    //
+meri[10] = 40;   //
+meri[11] = 0;    //
+meri[12] = 30;   //
+meri[13] = 20;   //
+meri[14] = 15;   //
+meri[15] = 15;   //
+meri[16] = 35;   //
+meri[17] = 20;   //
+meri[18] = 60;   //
+meri[19] = 100;  //
+meri[20] = 30;   //
+meri[21] = 77;   //
+meri[22] = 15;   //
+meri[23] = 30;   //
+meri[24] = 5;    //
+meri[25] = 25;   //
+meri[26] = 10;   //
+meri[27] = 40;   //
+meri[28] = 30;   //
+meri[29] = 25;   //
+meri[30] = 20;   //
+meri[31] = 55;   //
+meri[32] = 20;   //
+meri[33] = 30;   //
+meri[34] = 10;   //
+meri[35] = 20;   //
+meri[36] = 30;   //
+meri[37] = 10;   //
+meri[38] = 50;   //
+meri[39] = 50;   //
+meri[40] = 40;   //
+meri[41] = 30;   //
+meri[42] = 30;   //
+meri[43] = 25;   //
+meri[44] = 40;   //
+meri[45] = 40;   //
+meri[46] = 5;    //
+meri[47] = 5;    //
+meri[48] = 15;   //
+meri[49] = 20;   //
+meri[50] = 5;    //
+meri[51] = 30;   //
+meri[52] = 30;   //
+meri[53] = 25;   //
+meri[54] = 25;   //
+meri[55] = 25;   //
+meri[56] = 25;   //
+meri[57] = 40;   //
+meri[58] = 40;   //
+meri[59] = 0;    //
+meri[60] = 20;   //
+meri[61] = 20;   //
+meri[62] = 5;    //
+meri[63] = 30;   //
+meri[64] = 30;   //
+meri[65] = 10;   //
+meri[66] = 0;    //
+meri[67] = 30;   //
+meri[68] = 25;   //
+meri[69] = 35;   //
+meri[70] = 35;   //
+meri[71] = 25;   //
+meri[72] = 35;   //
+meri[73] = 25;   //
+meri[74] = 35;   //
+meri[75] = 35;   //
+meri[76] = 10;   //
+meri[77] = 20;   //
+meri[78] = 0;    //
+meri[79] = 10;   //
+meri[80] = 75;   //
+meri[81] = 70;   //
+meri[82] = 55;   //
+meri[83] = 50;   //
+meri[84] = 40;   //
+meri[85] = 0;    //
+meri[86] = 40;   //
+meri[87] = 20;   //
+meri[88] = 60;   //
+meri[89] = 10;   //
+meri[90] = 80;   //
+meri[91] = 80;   //
+meri[92] = 40;   //
+meri[93] = 60;   //
+meri[94] = 60;   //
+meri[95] = 10;   //Ratman
+meri[96] = 10;   //Ratman mage
+meri[97] = 10;   //ratman archor
+meri[98] = 25;   //leviathan
+meri[99] = 10;   //kraken
+meri[100] = 15;   //deep sea serpent
+meri[101] = 15;   //sea serpent
+//Mons ER
+
+//Mons syuzoku
+var syu;
+syu = new Array(120);
+syu[0] = "----有効特効効果----"; //None
+syu[1] = "ドラゴン・爬虫類";     //Dragon
+syu[2] = "ドラゴン・爬虫類";     //White wyrm
+syu[3] = "ドラゴン・爬虫類";     //Shadow wyrm
+syu[4] = "ドラゴン・爬虫類";     //Ancient wyrm
+syu[5] = "ドラゴン・爬虫類";     //Drake
+syu[6] = "ドラゴン・爬虫類";     //Wyvern
+syu[7] = "ドラゴン・爬虫類";     //Serpentine Dragon
+syu[8] = "悪魔族";     //Daemon
+syu[9] = "悪魔族・アイス";     //Ice fiend
+syu[10] = "悪魔族";    //Barlon
+syu[11] = "ガーゴイル・悪魔族";  //Gargoyle
+syu[12] = "ガーゴイル・悪魔族";  //Stone gargoyle
+syu[13] = "ガーゴイル・悪魔族";  //Fire gargoyle
+syu[14] = "ガーゴイル・悪魔族";  //Gargoyle enforcer
+syu[15] = "ガーゴイル・悪魔族";  //Gargoyle destroyer
+syu[16] = "悪魔族";    //Imp
+syu[17] = "悪魔族";    //Chaos daemon
+syu[18] = "悪魔族";    //Bone daemon
+syu[19] = "悪魔族";    //Impaler
+syu[20] = "悪魔族";    //Demon knight
+syu[21] = "悪魔族";    //Abyssmal horror
+syu[22] = "アースエレ・エレ族";   //Earth elemental
+syu[23] = "ファイアエレ・エレ族・フレイム";   //Fire elemental
+syu[24] = "ウォーターエレ・エレ族"; //Water elemental
+syu[25] = "エアエレ・エレ族";   //Air elemental
+syu[26] = "エレメンタル族";   //Acid elemental
+syu[27] = "ポイズンエレ・エレ族";   //Poison elemental
+syu[28] = "ブラッドエレ・エレ族";   //Blood elemental
+syu[29] = "スノーエレ・エレ族";   //Snow elemental
+syu[30] = "スノーエレ・エレ族";   //Ice elemental
+syu[31] = "エレメンタル族";   //Crystal elemental
+syu[32] = "エレメンタル族";   //Dullcopper elemental
+syu[33] = "アースエレ・エレ族";   //Shadowiron elemental
+syu[34] = "アースエレ・エレ族";   //Copper elemental
+syu[35] = "アースエレ・エレ族";   //Bronze elemental
+syu[36] = "アースエレ・エレ族";   //Golden elemental
+syu[37] = "アースエレ・エレ族";   //Agapite elemental
+syu[38] = "アースエレ・エレ族";   //Verite elemental
+syu[39] = "アースエレ・エレ族";   //Valorite elemental
+syu[40] = "エレメンタル族";   //Efreet
+syu[41] = "亜人種";   //Titan
+syu[42] = "亜人種";   //Cyclopean warrior
+syu[43] = "オーガ・亜人種";   //Ogre
+syu[44] = "オーガ・亜人種";   //Ogre lord
+syu[45] = "オーガ・亜人種";   //Arctic ogre lord
+syu[46] = "トロル・亜人種";   //Troll
+syu[47] = "トロル・亜人種";    //Frost troll
+syu[48] = "亜人種";   //Ettin
+syu[49] = "オーク・亜人種";   //Orc
+syu[50] = "オーク・亜人種";   //Orc captain
+syu[51] = "オーク・亜人種";   //Orc lord
+syu[52] = "オーク・亜人種";   //Orc mage
+syu[53] = "オーク・亜人種";   //Orc scout
+syu[54] = "オーク・亜人種";   //Orc chopper
+syu[55] = "オーク・亜人種";   //Orc bomber
+syu[56] = "オーク・亜人種";   //Orc blute
+syu[57] = "アンデッド族・メイジ";   //Lich
+syu[58] = "アンデッド族・メイジ";   //Lich lord
+syu[59] = "アンデッド族";    //Zombie
+syu[60] = "アンデッド族";   //Mummy
+syu[61] = "アンデッド族";   //Rotting corpse
+syu[62] = "アンデッド族";  //Skeleton
+syu[63] = "アンデッド族";   //Skeletal knight
+syu[64] = "アンデッド族・メイジ";   //Skeleton mage
+syu[65] = "アンデッド族";    //Ghoul
+syu[66] = "アンデッド族";    //Ghost
+syu[67] = "テラサン・鋏角類";   //Terathan drone
+syu[68] = "テラサン・鋏角類";   //Terathan warrior
+syu[69] = "テラサン・鋏角類";   //Terathan avenger
+syu[70] = "テラサン・鋏角類";   //Terathan matriarch
+syu[71] = "オフィディアン・爬虫類";   //Ophidian warrior
+syu[72] = "オフィディアン・爬虫類";   //Ophidian shaman
+syu[73] = "オフィディアン・爬虫類";   //Ophidian zealot
+syu[74] = "オフィディアン・爬虫類";   //Ophidian knight
+syu[75] = "オフィディアン・爬虫類";   //Ophidian matriarch
+syu[76] = "スパイダー・鋏角類";   //Giant black widow
+syu[77] = "スパイダー・鋏角類";   //Dread spider
+syu[78] = "スパイダー・鋏角類";    //Giant spider
+syu[79] = "スパイダー・鋏角類";  //Frost spider
+syu[80] = "アンデッド族";   //Darknight creeper
+syu[81] = "なし";   //flesh renderer
+syu[82] = "アンデッド族";   //shadow knight
+syu[83] = "悪魔族";   //Succubus
+syu[84] = "ドラゴン・爬虫類";   //Skeletal dragon
+syu[85] = "リザードマン・爬虫類";   //Lizardman
+syu[86] = "なし";   //The Piper
+syu[87] = "なし";   //Necro
+syu[88] = "鋏角類・スパイダー";   //Mephitis
+syu[89] = "悪魔族";   //Semidar
+syu[90] = "爬虫類";   //Rikktor
+syu[91] = "妖精族";   //Lordoaks
+syu[92] = "妖精族";   //Silvani
+syu[93] = "なし";   //Harrower
+syu[94] = "なし";   //t.Harrower
+syu[95] = "亜人種・ヴァーミン";   //Ratman
+syu[96] = "亜人種・ヴァーミン";   //Rat mage
+syu[97] = "亜人種・ヴァーミン";   //Rat archer
+syu[98] = "なし";   //Leviathan
+syu[99] = "なし";   //Kraken
+syu[100] = "スネーク・爬虫類";   //Deep sea
+syu[101] = "スネーク・爬虫類";   //Sea serpent
+//Mons syuzoku
+
+//Wep Base dam
+var wep1;
+wep1 = new Array(79);
+wep1[0] =  0.0 ;   //なし
+wep1[1] = 13.0 ;   //Bone harvester
+wep1[2] = 14.0 ;   //Broadsword
+wep1[3] = 11.0 ;   //Crescent blade
+wep1[4] = 11.0 ;   //Cutlass
+wep1[5] = 11.0 ;   //Katana
+wep1[6] = 15.0 ;   //Longsword
+wep1[7] = 13.0 ;   //Scimitar
+wep1[8] = 15.0 ;   //Viking sword
+wep1[9] =  9.0 ;   //Butcher knife
+wep1[10] = 9.0 ;  //Skinning knife
+wep1[11] = 17.0 ;  //Bardiche
+wep1[12] = 14.0 ;  //Bladed staff
+wep1[13] = 18.0 ;  //Halberd
+wep1[14] = 15.0 ;  //Scythe
+wep1[15] = 13.0 ;  //Pickaxe
+wep1[16] = 14.0 ;  //Axe
+wep1[17] = 15.0 ;  //Battle axe
+wep1[18] = 15.0 ;  //Double axe
+wep1[19] = 15.0 ;  //Executioner's axe
+wep1[20] = 16.0 ;  //Large battle axe
+wep1[21] = 16.0 ;  //Two handed axe
+wep1[22] = 13.0 ;  //Hatchet
+wep1[23] = 10.0 ;  //Dagger
+wep1[24] = 10.0 ;  //Kryss
+wep1[25] = 17.0 ;  //Lance
+wep1[26] = 12.0 ;  //Warfork
+wep1[27] = 12.0 ;  //Double bladed staff
+wep1[28] = 14.0 ;  //Pike
+wep1[29] = 10.0 ;  //Short spear
+wep1[30] = 13.0 ;  //Spear
+wep1[31] = 13.0 ;  //Pitch fork
+wep1[32] = 15.0 ;  //Hammer pick
+wep1[33] = 12.0 ;  //Mace
+wep1[34] = 14.0 ;  //Maul
+wep1[35] = 14.0 ;  //Scepter
+wep1[36] = 14.0 ;  //War axe
+wep1[37] = 16.0 ;  //War mace
+wep1[38] = 17.0 ;  //War hammer
+wep1[39] = 13.0 ;  //Sledge hammer
+wep1[40] = 13.0 ;  //Smith's hammer
+wep1[41] = 13.0 ;  //Black staff
+wep1[42] = 11.0 ;  //Club
+wep1[43] = 13.0 ;  //Crook
+wep1[44] = 15.0 ;  //Gnarled staff
+wep1[45] = 11.0 ;  //Quarter staff
+wep1[46] =  9.0 ;  //Wand
+wep1[47] = 16.0 ;  //Bow
+wep1[48] = 15.0 ;  //Composite bow
+wep1[49] = 18.0 ;  //Crossbow
+wep1[50] = 19.0 ;  //Heavy crossbow
+wep1[51] = 10.0 ;  //Repeating crossbow
+wep1[52] = 11.0 ;  //Cleaver
+wep1[53] = 16.0 ;  //No-dachi
+wep1[54] = 10.0 ;  //Wakizashi
+wep1[55] = 16.0 ;  //Lajatang
+wep1[56] = 13.0 ;  //Daisho
+wep1[57] = 10.0 ;  //Tekagi
+wep1[58] = 9.0 ;  //Kama
+wep1[59] = 9.0 ;  //Sai
+wep1[60] = 9.0 ;  //Bokuto
+wep1[61] = 11.0 ;  //Nunchaku
+wep1[62] = 10.0 ;  //Tessen
+wep1[63] = 12.0 ;  //Tetsubo
+wep1[64] = 18.0 ;  //Yumi
+wep1[65] = 12.0 ;  //Radient scimitar
+wep1[66] =  9.0 ;  //War cleaver
+wep1[67] = 12.0 ;  //Elven spellblade
+wep1[68] = 10.0 ;  //Assassin spike
+wep1[69] = 13.0 ;  //Leaf blade
+wep1[70] = 15.0 ;  //Rune blade
+wep1[71] = 13.0 ;  //Elven Machete
+wep1[72] = 21.0 ;  //Ornate axe(old)
+wep1[73] = 18.0 ;  //Ornate axe(now)
+wep1[74] = 14.0 ;  //Diamond mace
+wep1[75] = 10.0 ;  //Wild staff
+wep1[76] = 19.0 ;  //Elven composite bow
+wep1[77] = 14.0 ;  //Magical shortbow
+wep1[78] = 1.0 ;  //bear hand
+
+//Wep Base dam
+var wep2;
+wep2 = new Array(79);
+wep2[0] =  0.0 ;
+wep2[1] = 15.0 ;
+wep2[2] = 15.0 ;
+wep2[3] = 14.0 ;
+wep2[4] = 13.0 ;
+wep2[5] = 13.0 ;
+wep2[6] = 16.0 ;
+wep2[7] = 15.0 ;
+wep2[8] = 17.0 ;
+wep2[9] = 11.0 ;
+wep2[10] = 11.0 ;
+wep2[11] = 18.0 ;
+wep2[12] = 16.0 ;
+wep2[13] = 19.0 ;
+wep2[14] = 18.0 ;
+wep2[15] = 15.0 ;
+wep2[16] = 16.0 ;
+wep2[17] = 17.0 ;
+wep2[18] = 17.0 ;
+wep2[19] = 17.0 ;
+wep2[20] = 17.0 ;
+wep2[21] = 17.0 ;
+wep2[22] = 15.0 ;
+wep2[23] = 11.0 ;
+wep2[24] = 12.0 ;
+wep2[25] = 18.0 ;
+wep2[26] = 13.0 ;
+wep2[27] = 13.0 ;
+wep2[28] = 16.0 ;
+wep2[29] = 13.0 ;
+wep2[30] = 15.0 ;
+wep2[31] = 14.0 ;
+wep2[32] = 17.0 ;
+wep2[33] = 14.0 ;
+wep2[34] = 16.0 ;
+wep2[35] = 17.0 ;
+wep2[36] = 15.0 ;
+wep2[37] = 17.0 ;
+wep2[38] = 18.0 ;
+wep2[39] = 15.0 ;
+wep2[40] = 15.0 ;
+wep2[41] = 16.0 ;
+wep2[42] = 13.0 ;
+wep2[43] = 15.0 ;
+wep2[44] = 17.0 ;
+wep2[45] = 14.0 ;
+wep2[46] = 11.0 ;
+wep2[47] = 18.0 ;
+wep2[48] = 17.0 ;
+wep2[49] = 20.0 ;
+wep2[50] = 20.0 ;
+wep2[51] = 12.0 ;
+wep2[52] = 13.0 ;
+wep2[53] = 18.0 ;  //No-dachi
+wep2[54] = 12.0 ;  //Wakizashi
+wep2[55] = 18.0 ;  //Lajatang
+wep2[56] = 15.0 ;  //Daisho
+wep2[57] = 12.0 ;  //Tekagi
+wep2[58] = 11.0 ;  //Kama
+wep2[59] = 11.0 ;  //Sai
+wep2[60] = 11.0 ;  //Bokuto
+wep2[61] = 13.0 ;  //Nunchaku
+wep2[62] = 12.0 ;  //Tessen
+wep2[63] = 14.0 ;  //Tetsubo
+wep2[64] = 20.0 ;  //Yumi
+wep2[65] = 14.0 ;  //Radient scimitar
+wep2[66] = 11.0 ;  //War cleaver
+wep2[67] = 14.0 ;  //Elven spellblade
+wep2[68] = 12.0 ;  //Assassin spike
+wep2[69] = 15.0 ;  //Leaf blade
+wep2[70] = 17.0 ;  //Rune blade
+wep2[71] = 15.0 ;  //Elven Machete
+wep2[72] = 23.0 ;  //Ornate axe(old)
+wep2[73] = 20.0 ;  //Ornate axe(now)
+wep2[74] = 17.0 ;  //Diamond mace
+wep2[75] = 12.0 ;  //Wild staff
+wep2[76] = 22.0 ;  //Elven composite bow
+wep2[77] = 16.0 ;  //Magical shortbow
+wep2[78] = 4.0 ;  //bear hand
+//
+
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.monster.value = 0;
+  form.weapon1.value = 0;
+  form.str.value = 0;
+  form.tac.value = 0;
+  form.ana.value = 0;
+  form.wdi.value = 0;
+  form.bra.value = 0;
+  form.ring.value = 0;
+  form.armor.value = 0;
+  form.devi.value = 0;
+  form.lumb.value = 0;
+  form.tokkou.value = 0;
+  form.consec.value = 0;
+  form.eoone.value= 0;
+  form.tal01.value = 0;
+  form.tal02.value = 0;
+  form.quiv.value = 0;
+  form.ara.value = 0;
+  form.fra.value = 0;
+  form.cra.value = 0;
+  form.pra.value = 0;
+  form.era.value = 0;
+  form.damage1.value = 0;
+  form.damage2.value = 0;
+  form.damage3.value = 0;
+  form.damage4.value = 0;
+  form.armin.value = 0;
+  form.frmin.value = 0;
+  form.crmin.value = 0;
+  form.prmin.value = 0;
+  form.ermin.value = 0;
+  form.armax.value = 0;
+  form.frmax.value = 0;
+  form.crmax.value = 0;
+  form.prmax.value = 0;
+  form.ermax.value = 0;
+  form.zyuzoku.value = 0;
+  form.cops.value = 0;
+  form.holi.value = 0;
+  form.disco.value = 0;
+  form.evil.value = 0;
+  form.bushi.value = 0;
+  return true;
+}
+
+//計算
+
+function keisan1(form)
+{
+var form = document.form_keisan;
+  mons = form.monster.options[form.monster.selectedIndex].value;
+  mar1 = marm[mons];
+  mfr1 = mfrm[mons];
+  mcr1 = mcrm[mons];
+  mpr1 = mprm[mons];
+  mer1 = merm[mons];
+  mar2 = mari[mons];
+  mfr2 = mfri[mons];
+  mcr2 = mcri[mons];
+  mpr2 = mpri[mons];
+  mer2 = meri[mons];
+  document.syuzoku = syu[mons];
+  form.syuzoku.value = document.syuzoku;
+  buki = form.weapon1.options[form.weapon1.selectedIndex].value;
+  att1 = wep1[buki];
+  att2 = wep2[buki];
+  
+  fra1 = form.fra.options[form.fra.selectedIndex].value;
+  cra1 = form.cra.options[form.cra.selectedIndex].value;
+  pra1 = form.pra.options[form.pra.selectedIndex].value;
+  era1 = form.era.options[form.era.selectedIndex].value;
+  ara = 100 - fra1 - cra1 - pra1 - era1;
+  form.ara.value = ara;
+  ara1 = form.ara.value;
+
+  st = form.st.value;
+
+  dinc1 = Math.floor(st * 0.1);
+
+  tac = form.tac.value;
+  dinc2 = Math.floor(tac * 0.1);
+
+  ana = form.ana.value;
+  dinc3 = Math.floor(ana * 0.05);
+
+  lumb = form.lumb.value;
+  dincl = Math.floor(lumb * 0.04);
+
+  wdi = form.wdi.value;
+  dinc4 = wdi;
+
+  bra = form.bra.value;
+  dinc5 = bra;
+
+  ring = form.ring.value;
+  dinc6 = ring;
+
+  armor = form.armor.value;
+  dinc7 = armor;
+
+
+   if(form.devi.checked){
+     form.devi.value = 10.0;
+}
+   else{
+     form.devi.value = 0.0;
+}
+  dinc8 = form.devi.value;
+
+   if(form.holi.checked){
+     form.holi.value = 25.0;
+}
+   else{
+     form.holi.value = 0.0;
+}
+  dinca = form.holi.value;
+
+  dince = Math.min(100.0, parseFloat(dinc4) + parseFloat(dinc5) + parseFloat(dinc6) + parseFloat(dinc7) + parseFloat(dinc8) + parseFloat(dinca));
+  
+  dince = Math.floor(dince * 0.1);
+
+  tdi1 = dinc1 + dinc2 + dinc3 + dince + dincl;
+
+  tdi2 = dinc1 + dinc2 + dinc3 + dince;
+
+    if(buki>=16&&buki<=22||buki==72||buki==73){
+
+  form.tdi0.value = tdi1;
+  tdi = Math.floor(Math.min(10.0, tdi1) + Math.max(Math.min(7.5, (tdi1 - 10.0) * 0.75),0.0) + Math.max(Math.min(10.0 * 2.0 / 3.0 ,(tdi1 - 20.0) * 2.0 / 3.0),0.0 )
+ + Math.max(Math.min(5.0, (tdi1 - 30.0) * 0.50), 0.0) + Math.max(Math.min(10.0 * 1.0 / 3.0, (tdi1 - 40.0) * 1.0 / 3.0), 0.0) + Math.max(0.0,(tdi1 - 50.0) * 1.0 / 4.0));
+
+}
+    else{
+
+  form.tdi0.value = tdi2;
+  tdi = Math.floor(Math.min(10.0, tdi2) + Math.max(Math.min(7.5, (tdi2 - 10.0) * 0.75),0.0) + Math.max(Math.min(10.0 * 2.0 / 3.0 ,(tdi2 - 20.0) * 2.0 / 3.0),0.0 )
+ + Math.max(Math.min(5.0, (tdi2 - 30.0) * 0.50), 0.0) + Math.max(Math.min(10.0 * 1.0 / 3.0, (tdi2 - 40.0) * 1.0 / 3.0), 0.0) + Math.max(0.0,(tdi2 - 50.0) * 1.0 / 4.0));
+}
+
+  form.bdam1.value = att1;
+  form.bdam2.value = att2;
+  form.tdi.value = tdi;
+
+  att1 = att1 + tdi;
+  att2 = att2 + tdi;
+
+  form.att1.value = att1;
+  form.att2.value = att2;
+
+  disco1 = form.disco.options[form.disco.selectedIndex].value;
+  bushi1 = form.bushi.options[form.bushi.selectedIndex].value;
+  spm1 = form.spm.options[form.spm.selectedIndex].value;
+     
+     mar1 = mar1 - disco1;
+     mfr1 = mfr1 - disco1;
+     mcr1 = mcr1 - disco1;
+     mpr1 = mpr1 - disco1;
+     mer1 = mer1 - disco1;
+     mar2 = mar2 - disco1;
+     mfr2 = mfr2 - disco1;
+     mcr2 = mcr2 - disco1;
+     mpr2 = mpr2 - disco1;
+     mer2 = mer2 - disco1;
+
+   if(form.cops.checked){
+     mar1 = Math.min(mar1 + 10.0,100);
+     mfr1 = mfr1 - 15.0;
+     mcr1 = Math.min(mcr1 + 10.0,100);
+     mpr1 = mpr1 - 15.0;
+     mer1 = mer1;
+     mar2 = Math.min(mar2 + 10.0,100);
+     mfr2 = mfr2 - 15.0;
+     mcr2 = Math.min(mcr2 + 10.0,100);
+     mpr2 = mpr2 - 15.0;
+     mer2 = mer2;
+}
+
+   if(form.evil.checked){
+     form.evil.value = 1.25;
+}
+   else{
+     form.evil.value = 1.0;
+}
+  evil1 = form.evil.value;
+
+
+   if(form.tokkou.checked){
+     form.tokkou.value = 2.0;
+}
+   else{
+     form.tokkou.value = 1.0;
+}
+  tok1 = form.tokkou.value;
+
+
+   if(form.eoone.checked){
+     form.eoone.value = 1.5;
+}
+   else{
+     form.eoone.value = 1.0;
+}
+  eoo1 = form.eoone.value;
+
+
+   if(form.tal01.checked){
+     form.tal01.value = 2.0;
+}
+   else{
+     form.tal01.value = 1.0;
+}
+  tal1 = form.tal01.value;
+
+
+  tal02 = form.tal02.value;
+  tal2 = Math.min(1.0 + tal02 / 100 , 2.0);
+
+
+   if(form.quiv.checked){
+     form.quiv.value = 1.1;
+}
+   else{
+     form.quiv.value = 1.0;
+}
+  quiv1 = form.quiv.value;
+
+  mul = evil1 * tok1 * eoo1 * tal1 * tal2 * quiv1;
+
+
+   if(form.consec.checked){
+     con1 = Math.min(mar1, mfr1);
+     con1 = Math.min(con1, mcr1);
+     con1 = Math.min(con1, mpr1);
+     con1 = Math.min(con1, mer1);
+     con2 = Math.min(mar2, mfr2);
+     con2 = Math.min(con2, mcr2);
+     con2 = Math.min(con2, mpr2);
+     con2 = Math.min(con2, mer2);
+  dam11 = att1 * (100 - con1) / 100;
+  dam12 = 0.0;
+  dam13 = 0.0;
+  dam14 = 0.0;
+  dam15 = 0.0;
+  dam21 = att2 * (100 - con2) / 100;
+  dam22 = 0.0;
+  dam23 = 0.0;
+  dam24 = 0.0;
+  dam25 = 0.0;
+}
+   else{
+  dam11 = att1 * ara1 * (100 - mar1) / 10000;
+  dam12 = att1 * fra1 * (100 - mfr1) / 10000;
+  dam13 = att1 * cra1 * (100 - mcr1) / 10000;
+  dam14 = att1 * pra1 * (100 - mpr1) / 10000;
+  dam15 = att1 * era1 * (100 - mer1) / 10000;
+  dam21 = att2 * ara1 * (100 - mar2) / 10000;
+  dam22 = att2 * fra1 * (100 - mfr2) / 10000;
+  dam23 = att2 * cra1 * (100 - mcr2) / 10000;
+  dam24 = att2 * pra1 * (100 - mpr2) / 10000;
+  dam25 = att2 * era1 * (100 - mer2) / 10000;
+}
+
+ if(ara<0){
+  document.dam1 = "Error";
+  document.dam2 = "Error";
+  document.dam3 = " ";
+  document.dam4 = " ";
+  form.damage1.value = document.dam1;
+  form.damage2.value = document.dam2;
+  form.damage3.value = document.dam3;
+  form.damage4.value = document.dam4;
+}
+ else{
+  dam1 = (dam11 + dam12 + dam13 + dam14 + dam15);
+  dam2 = (dam21 + dam22 + dam23 + dam24 + dam25);
+}
+
+  if(spm1==1){
+   dam1 = Math.floor(att1 * Math.min(3.0, mul * 0.9));
+   dam2 = Math.floor(att2 * Math.min(3.0, mul * 0.9));
+   document.dam3 = " ";
+   document.dam4 = " ";
+  form.damage1.value = dam1;
+  form.damage2.value = dam2;
+  form.damage3.value = document.dam3;
+  form.damage4.value = document.dam4;
+}
+ else if(spm1==2){
+   dam1 = Math.floor(dam1 * Math.min(3.0, mul * (100.0 + bushi1 * 1.0) / 100.0));
+   dam2 = Math.floor(dam2 * Math.min(3.0, mul * (100.0 + bushi1 * 1.0) / 100.0));
+   document.dam3 = " ";
+   document.dam4 = " ";
+  form.damage1.value = dam1;
+  form.damage2.value = dam2;
+  form.damage3.value = document.dam3;
+  form.damage4.value = document.dam4;
+}
+ else if(spm1==3){
+   dam1 = Math.floor(dam1 * Math.min(3.0, mul * (100.0 + bushi1 * 1.5) / 100.0));
+   dam2 = Math.floor(dam2 * Math.min(3.0, mul * (100.0 + bushi1 * 1.5) / 100.0));
+   document.dam3 = " ";
+   document.dam4 = " ";
+  form.damage1.value = dam1;
+  form.damage2.value = dam2;
+  form.damage3.value = document.dam3;
+  form.damage4.value = document.dam4;
+}
+ else if(spm1==4){
+   dam1 = Math.floor(dam1 * Math.min(3.0, mul * 1.5));
+   dam2 = Math.floor(dam2 * Math.min(3.0, mul * 1.5));
+   document.dam3 = " ";
+   document.dam4 = " ";
+  form.damage1.value = dam1;
+  form.damage2.value = dam2;
+  form.damage3.value = document.dam3;
+  form.damage4.value = document.dam4;
+}
+ else if(spm1==5){
+   dam1 = Math.floor(dam1 * Math.min(3.0, mul * 0.9));
+   dam2 = Math.floor(dam2 * Math.min(3.0, mul * 0.9));
+   document.dam3 = " ";
+   document.dam4 = " ";
+  form.damage1.value = dam1;
+  form.damage2.value = dam2;
+  form.damage3.value = document.dam3;
+  form.damage4.value = document.dam4;
+}
+ else if(spm1==6){
+   dam3 = Math.floor(dam1 * Math.min(3.0, mul * 0.9));
+   dam4 = Math.floor(dam2 * Math.min(3.0, mul * 0.9));
+   dam5 = Math.floor(dam1 * Math.min(3.0, mul));
+   dam6 = Math.floor(dam2 * Math.min(3.0, mul));
+  form.damage1.value = dam3;
+  form.damage2.value = dam4;
+  form.damage3.value = dam5;
+  form.damage4.value = dam6;
+}
+
+ else{
+   dam1 = Math.floor(dam1 * Math.min(3.0, mul * 1.0));
+   dam2 = Math.floor(dam2 * Math.min(3.0, mul * 1.0));
+   document.dam3 = " ";
+   document.dam4 = " ";
+  form.damage1.value = dam1;
+  form.damage2.value = dam2;
+  form.damage3.value = document.dam3;
+  form.damage4.value = document.dam4;
+}
+
+  form.armin.value = mar2;
+  form.frmin.value = mfr2;
+  form.crmin.value = mcr2;
+  form.prmin.value = mpr2;
+  form.ermin.value = mer2;
+  form.armax.value = mar1;
+  form.frmax.value = mfr1;
+  form.crmax.value = mcr1;
+  form.prmax.value = mpr1;
+  form.ermax.value = mer1;
+
+  return true;
+}
+
+//-->
+</script>
+<p>
+ <form name="form_keisan">
+ <table align="center" class="table04">
+  <tr>
+    <td align="center" bgcolor="#e0f0ff" colspan="4"><font size="4"><b>自キャラの攻撃力と特殊効果</b></font>　　
+</td>
+    <td align="center" bgcolor="#fff0e0" colspan="2"><font size="4"><b>Monster選択</b></font></td>
+  </tr>
+   <tr>
+    <td align="center" bgcolor="#ffffd0" width="90">
+      STR<br><INPUT Type="text" size="4" name="st" value="100" onchange="keisan1(form)">
+    </td>
+    <td align="center" bgcolor="#ffffd0" width="90">
+      Tactics<br><INPUT Type="text" size="4" name="tac" value="0" onchange="keisan1(form)">
+    </td>
+    <td align="center" bgcolor="#ffffd0" width="90">
+      Anatomy<br><INPUT Type="text" size="4" name="ana" value="0" onchange="keisan1(form)">
+    </td>
+    <td align="center" bgcolor="#ffffd0" width="90">
+      Lumber<br><INPUT Type="text" size="4" name="lumb" value="0" onchange="keisan1(form)">
+    </td>
+    <td align="center" bgcolor="#ffd0c0" colspan="2">
+     <select name="monster" size="1" onchange="keisan1(form)">
+<option value="0">---Monster選択---
+<option value="0">----Doom Boss----
+<option value="18">Bone daemon
+<option value="80">Darknight creeper
+<option value="81">Flesh renderer
+<option value="19">Impaler
+<option value="82">Shadow knight
+<option value="21">Abyssmal horror
+<option value="20">Dark Father
+<option value="0">--Evil Champion--
+<option value="86">Barracoon the Piper
+<option value="87">Neira the Necro.
+<option value="88">Mephitis
+<option value="89">Semidar
+<option value="90">Rikktor
+<option value="91">Lord Oaks
+<option value="92">Silvani
+<option value="93">The Harrower
+<option value="94">The True Harrower
+<option value="0">----爬虫類系---
+<option value="1">Dragon
+<option value="2">White wyrm
+<option value="3">Shadow wyrm
+<option value="4">Ancient wyrm
+<option value="5">Drake
+<option value="6">Wyvern
+<option value="7">Serpentine Dragon
+<option value="84">Skeletal Dragon
+<option value="85">Lizard man
+<option value="0">--デーモン・悪魔系--
+<option value="8">Daemon
+<option value="9">Ice fiend
+<option value="10">Barlon
+<option value="11">Gargoyle
+<option value="83">Succubus
+<option value="12">Stone gargoyle
+<option value="13">Fire gargoyle
+<option value="14">Gargoyle enforcer
+<option value="15">Gargoyle destroyer
+<option value="16">Imp
+<option value="17">Chaos daemon
+<option value="0">---エレメンタル系---
+<option value="22">Earth elemental
+<option value="23">Fire elemental
+<option value="24">Water elemental
+<option value="25">Air elemental
+<option value="26">Acid elemental
+<option value="27">Poison elemental
+<option value="28">Blood elemental
+<option value="29">Snow elemental
+<option value="30">Ice elemental
+<option value="31">Crystal elemental
+<option value="32">Dullcopper elem.
+<option value="33">Shadowiron elem.
+<option value="34">Copper elemental
+<option value="35">Bronze elemental
+<option value="36">Golden elemental
+<option value="37">Agapite elemental
+<option value="38">Verite elemental
+<option value="39">Valorite elemental
+<option value="40">Efreet
+<option value="0">-----亜人系-----
+<option value="41">Titan
+<option value="42">Cyclopean warrior
+<option value="43">Ogre
+<option value="44">Ogre lord
+<option value="45">Arctic ogre lord
+<option value="46">Troll
+<option value="47">Frost troll
+<option value="48">Ettin
+<option value="95">Ratman
+<option value="96">Ratman mage
+<option value="97">Ratman archor
+<option value="49">Orc
+<option value="50">Orc captain
+<option value="51">Orc lord
+<option value="52">Orc mage
+<option value="53">Orc scout
+<option value="54">Orc chopper
+<option value="55">Orc bomber
+<option value="56">Orc blute
+<option value="0">----アンデッド系---
+<option value="57">Lich
+<option value="58">Lich lord
+<option value="59">Zombie
+<option value="60">Mummy
+<option value="61">Rotting corpse
+<option value="62">Skeleton
+<option value="63">Skeletal knight
+<option value="64">Skeleton mage
+<option value="65">Ghoul
+<option value="66">Ghost
+<option value="0">----テラサン系----
+<option value="67">Terathan drone
+<option value="68">Terathan warrior
+<option value="69">Terathan avenger
+<option value="70">Terathan matriarch
+<option value="0">--オフディアン系--
+<option value="71">Ophidian warrior
+<option value="72">Ophidian shaman
+<option value="73">Ophidian zealot
+<option value="74">Ophidian knght
+<option value="75">Ophidian matriarch
+<option value="0">-----蜘蛛系-----
+<option value="76">Giant black widow
+<option value="77">Dread spider
+<option value="78">Giant spider
+<option value="79">Frost spider
+<option value="0">----水棲生物----
+<option value="98">Leviathan
+<option value="99">Kraken
+<option value="100">Deep sea serpent
+<option value="101">Sea serpent
+     </select></td>
+   </tr>
+
+  <tr>
+    <td align="center" bgcolor="#e0f0ff" colspan="4"><font size="4"><b>武器ダメージ増加</b>[Max：100％]</font></td>
+    <td align="center" bgcolor="#ffd0c0" colspan="2"><INPUT readonly TYPE="text" NAME="syuzoku" SIZE="25" value="----有効特効効果----">
+  </tr>
+
+  <tr>
+    <td align="center" bgcolor="#d0d0ff" width="90">使用武器</td>
+    <td align="center" bgcolor="#d0d0ff" colspan="3">
+      <select name="weapon1" SIZE="1" onchange="keisan1(form)">
+<option value="78" selected>素手
+<option value="0">--Sword系片手--
+<option value="1">Bone harvester
+<option value="2">Broadsword
+<option value="3">Crescent blade
+<option value="4">Cutlass
+<option value="5">Katana
+<option value="6">Longsword
+<option value="7">Scimitar
+<option value="8">Viking sword
+<option value="9">Butcher knife
+<option value="52">Cleaver
+<option value="10">Skinning knife
+<option value="15">Pickaxe
+<option value="0">--Sword系両手--
+<option value="11">Bardiche
+<option value="12">Bladed staff
+<option value="13">Halberd
+<option value="14">Scythe
+<option value="16">Axe
+<option value="17">Battle axe
+<option value="18">Double axe
+<option value="19">Executioner's axe
+<option value="20">Large battle axe
+<option value="21">Two handed axe
+<option value="22">Hatchet
+<option value="0">--Fencing系--
+<option value="23">Dagger
+<option value="24">Kryss
+<option value="25">Lance
+<option value="26">Warfork
+<option value="27">Double bladed staff
+<option value="28">Pike
+<option value="29">Short spear
+<option value="30">Spear
+<option value="31">Pitch fork
+<option value="0">--Mace系--
+<option value="32">Hammer pick
+<option value="33">Mace
+<option value="34">Maul
+<option value="35">Scepter
+<option value="36">War axe
+<option value="37">War mace
+<option value="38">War hammer
+<option value="39">Sledge hammer
+<option value="40">Smith's hammer
+<option value="41">Black staff
+<option value="42">Club
+<option value="43">Crook
+<option value="44">Gnarled staff
+<option value="45">Quarter staff
+<option value="46">Wand
+<option value="0">--Archery系--
+<option value="47">Bow
+<option value="48">Composite bow
+<option value="49">Crossbow
+<option value="50">Heavy crossbow
+<option value="51">Repeating crossbow
+<option value="0">--武刀の天地追加--
+<option value="53">No-dachi
+<option value="54">Wakizashi
+<option value="55">Lajatang
+<option value="56">Daisho
+<option value="57">Tekagi
+<option value="58">Kama
+<option value="59">Sai
+<option value="60">Bokuto
+<option value="61">Nunchaku
+<option value="62">Tessen
+<option value="63">Tetsubo
+<option value="64">Yumi
+<option value="0">--宝珠の守人追加--
+<option value="65">Radient scimitar
+<option value="66">War cleaver
+<option value="67">Elven spellblade
+<option value="68">Assassin spike
+<option value="69">Leaf blade
+<option value="70">Rune blade
+<option value="71">Elven Machete
+<option value="72">Ornate axe(old)
+<option value="73">Ornate axe(now)
+<option value="74">Diamond mace
+<option value="75">Wild staff
+<option value="76">Elven composite bow
+<option value="77">Magical shortbow
+  </select>
+　Damage＋<INPUT Type="text" size="3" name="wdi" value="0" onchange="keisan1(form)">％
+    </td>
+    <td align="center" bgcolor="#fff0e0" colspan="2"><b>属性抵抗値</b></td>
+  </tr>
+
+   <tr>
+    <td align="left" bgcolor="#ccccff" colspan="2">
+      ブレスレット : <INPUT Type="text" size="3" name="bra" value="0" onchange="keisan1(form)">％　[Max25%]
+    </td>
+    <td align="left" bgcolor="#ccccff" colspan="2">
+      リング : <INPUT Type="text" size="3" name="ring" value="0" onchange="keisan1(form)">％　[Max40%]
+    </td>
+    <td align="center" bgcolor="#d0d0d0" width="90">物理</td>
+    <td align="center" bgcolor="#d0d0d0" width="90"><input readonly type="text" name="armin" size="3" value="0">～<input readonly type="text" name="armax" size="3" value="0"></td>
+   </tr>
+
+   <tr>
+    <td align="left" bgcolor="#ccccff" colspan="4">
+      その他装備品合計ダメージ増加 ： <INPUT Type="text" size="3" name="armor" value="0" onchange="keisan1(form)">％
+    </td>
+    <td align="center" bgcolor="#ffc080" width="90">炎</td>
+    <td align="center" bgcolor="#ffc080" width="90"><input readonly type="text" name="frmin" size="3" value="0">～<input readonly type="text" name="frmax" size="3" value="0"></td>
+   </tr>
+
+   <tr>
+    <td align="left" bgcolor="#ccccff" colspan="2">
+      <INPUT Type="checkbox" name="devi" value="yes" onclick="keisan1(form)">　Devine fury(騎士：10％)
+    </td>
+    <td align="left" bgcolor="#ccccff" colspan="2">
+      <INPUT Type="checkbox" name="holi" value="yes" onclick="keisan1(form)">　Holific Beast(ネクロ：25％)
+    </td>
+    <td align="center" bgcolor="#80c0ff" width="90">冷気</td>
+    <td align="center" bgcolor="#80c0ff" width="90"><input readonly type="text" name="crmin" size="3" value="0">～<input readonly type="text" name="crmax" size="3" value="0"></td>
+   </tr>
+
+   <tr>
+    <td align="center" bgcolor="#e0f0ff" colspan="4"><font size="4"><b>特効系ダメージ増加</b>[Max：3倍]</font></td>
+    </td>
+    <td align="center" bgcolor="#80ffc0" width="90">毒</td>
+    <td align="center" bgcolor="#80ffc0" width="90"><input readonly type="text" name="prmin" size="3" value="0">～<input readonly type="text" name="prmax" size="3" value="0"></td>
+   </tr>
+
+   <tr>
+    <td align="left" bgcolor="#ffffd0" colspan="2">
+      <INPUT Type="checkbox" name="tokkou" value="yes" onclick="keisan1(form)">　特効武器(×2)
+    </td>
+    <td align="left" bgcolor="#ffffd0" colspan="2">
+      <INPUT Type="checkbox" name="eoone" value="yes" onclick="keisan1(form)">　Enemy of One(騎士：×1.5)
+    </td>
+    <td align="center" bgcolor="#ffc0ff" width="90">エネルギー</td>
+    <td align="center" bgcolor="#ffc0ff" width="90"><input readonly type="text" name="ermin" size="3" value="0">～<input readonly type="text" name="ermax" size="3" value="0"></td>
+   </tr>
+
+   <tr>
+    <td align="left" bgcolor="#ffffd0" colspan="2">
+      <INPUT Type="checkbox" name="tal01" value="yes" onclick="keisan1(form)">　特効タリスマン(×2)
+    </td>
+    <td align="left" bgcolor="#ffffd0" colspan="2">
+      タリスマン Killer : <INPUT Type="text" size="3" name="tal02" value="0" onchange="keisan1(form)">％
+    </td>
+
+    <td align="left" bgcolor="#d0d0d0" colspan="2">
+      <INPUT Type="checkbox" name="cops" value="yes" onclick="keisan1(form)">　Corpse Skin(ネクロ)
+    </td>
+
+   </tr>
+
+   <tr>
+    <td align="left" bgcolor="#ffffd0" colspan="2">
+      <INPUT Type="checkbox" name="evil" value="yes" onclick="keisan1(form)">　Evil Omen(ネクロ：×1.25)
+    </td>
+    <td align="left" bgcolor="#ffffd0" colspan="2">
+      <INPUT Type="checkbox" name="quiv" value="yes" onclick="keisan1(form)">　Quiver(弓系：×1.1)
+    </td>
+    <td align="center" bgcolor="#d0d0d0" colspan="2">不調和
+ <select name="disco" SIZE="1" onchange="keisan1(form)">
+<option value="0">--スキル--
+<option value="14">MAX難易度
+<option value="0">0～4.9
+<option value="1">5.0～9.9
+<option value="2">10.0～14.9
+<option value="3">15.0～19.9
+<option value="4">20.0～24.9
+<option value="5">25.0～29.9
+<option value="6">30.0～34.9
+<option value="7">35.0～39.9
+<option value="8">40.0～44.9
+<option value="9">45.0～49.9
+<option value="10">50.0～54.9
+<option value="11">55.0～59.9
+<option value="12">60.0～64.9
+<option value="13">65.0～69.9
+<option value="14">70.0～74.9
+<option value="15">75.0～79.9
+<option value="16">80.0～84.9
+<option value="17">85.0～89.9
+<option value="18">90.0～94.9
+<option value="19">95.0～99.9
+<option value="20">100.0～102.4
+<option value="21">102.5～104.9
+<option value="22">105.0～107.4
+<option value="23">107.5～109.9
+<option value="24">110.0～112.4
+<option value="25">112.5～114.9
+<option value="26">115.0～117.4
+<option value="27">117.5～119.9
+<option value="28">120.0
+    </select>
+    </td>
+
+   </tr>
+
+   <tr>
+    <td align="center" bgcolor="#ffffd0" colspan="4">武士道
+ <select name="bushi" SIZE="1" onchange="keisan1(form)">
+<option value="0">--スキル--
+<option value="70">70.0～79.9
+<option value="80">80.0～89.9
+<option value="90">90.0～99.9
+<option value="100">100.0～109.9
+<option value="110">110.0～119.9
+<option value="120">120
+    </select>
+：Momentum Strike用
+    </td>
+
+    <td align="center" colspan="2" rowspan="5">&nbsp;</td>
+
+   </tr>
+
+
+   <tr>
+    <td align="center" bgcolor="#e0f0ff" colspan="4"><font size="4"><b>使用武器属性配分</b></font></td>
+   </tr>
+
+   <tr>
+    <td align="left" bgcolor="#ffffd0" colspan="2">
+      <INPUT Type="checkbox" name="consec" value="yes" onclick="keisan1(form)">　Consecrate.(騎士道)
+    </td>
+    <td align="center" bgcolor="#d0d0d0" width="90">物理</td>
+    <td align="center" bgcolor="#d0d0d0" width="90"><INPUT readonly TYPE="text" NAME="ara" SIZE="4" value="100" onchange="keisan1(form)">％</td>
+   </tr>
+   <tr>
+    <td align="center" bgcolor="#ffc080" width="90">炎</td>
+    <td align="center" bgcolor="#ffc080" width="90"><select name="fra" SIZE="1" onchange="keisan1(form)">
+<option value="0">0
+<option value="10">10
+<option value="20">20
+<option value="30">30
+<option value="40">40
+<option value="50">50
+<option value="60">60
+<option value="70">70
+<option value="80">80
+<option value="90">90
+<option value="100">100
+    </select>％</td>
+    <td align="center" bgcolor="#80c0ff" width="90">冷気</td>
+    <td align="center" bgcolor="#80c0ff" width="90"><select name="cra" SIZE="1" onchange="keisan1(form)">
+<option value="0">0
+<option value="10">10
+<option value="20">20
+<option value="30">30
+<option value="40">40
+<option value="50">50
+<option value="60">60
+<option value="70">70
+<option value="80">80
+<option value="90">90
+<option value="100">100
+    </select>％</td>
+   </tr>
+   <tr>
+    <td align="center" bgcolor="#80ffc0" width="90">毒</td>
+    <td align="center" bgcolor="#80ffc0" width="90"><select name="pra" SIZE="1" onchange="keisan1(form)">
+<option value="0">0
+<option value="10">10
+<option value="20">20
+<option value="30">30
+<option value="40">40
+<option value="50">50
+<option value="60">60
+<option value="70">70
+<option value="80">80
+<option value="90">90
+<option value="100">100
+    </select>％</td>
+    <td align="center" bgcolor="#ffc0ff" width="90">エネルギー</td>
+    <td align="center" bgcolor="#ffc0ff" width="90"><select name="era" SIZE="1" onchange="keisan1(form)">
+<option value="0">0
+<option value="10">10
+<option value="20">20
+<option value="30">30
+<option value="40">40
+<option value="50">50
+<option value="60">60
+<option value="70">70
+<option value="80">80
+<option value="90">90
+<option value="100">100
+    </select>％</td>
+   </tr>
+
+  <tr>
+    <td align="center" bgcolor="#ccffcc" colspan="2">武器攻撃力<br><input readonly type="text" name="bdam1" size="3" value="0">　～　<input readonly type="text" name="bdam2" size="3" value="0"></td>
+    <td align="center" bgcolor="#ccffcc">加算基本値<br><input readonly type="text" name="tdi0" size="3" value="0"></td>
+    <td align="center" bgcolor="#ccffcc">補正後加算値<br><input readonly type="text" name="tdi" size="3" value="0"></td>
+    <td align="center" bgcolor="#ccffcc" colspan="2">ステータス欄攻撃力<br>　<img src="attackpower.gif" alt="" align="middle">　<input readonly type="text" name="att1" size="3" value="0">　～　<input readonly type="text" name="att2" size="3" value="0">
+    </td>
+  </tr>
+
+  </table>
+</p>
+<p>
+  <table align="center" class="table04">
+   <tr>
+    <td align="center" bgcolor="#ffffe0" width="300"><font size="4"><font color="#ff0000"><b>最終ダメージ</b></font></font></td>
+   </tr>
+    <td align="center" bgcolor="#ffc080" width="300"><select name="spm" SIZE="1" onchange="keisan1(form)">
+<option value="0">　　　　　　　　通常攻撃
+<option value="0">---------Special move---------
+<option value="1">Armor ignore(SPM)
+<option value="5">Double strike(SPM,1hit)
+<option value="6">Double strike(SPM,2hit)
+<option value="4">Crushing blow(SPM)
+<option value="0">---------Bushido 攻撃---------
+<option value="2">Momentum Strike(1st非撃破の2nd)
+<option value="3">Momentum Strike(1st撃破の2nd)
+    </select></td>
+   </tr>
+   <tr>
+    <td align="center" bgcolor="#ffffc0" width="300">
+      <input readonly type="text" name="damage1" size="4" value="0">　～　
+      <input readonly type="text" name="damage2" size="4" value="0">
+　＋　
+      <input readonly type="text" name="damage3" size="4" value="0">　～　
+      <input readonly type="text" name="damage4" size="4" value="0">
+    </td>
+   </tr>
+ </table>
+</p>
+</form>
+<br>―注意事項―
+<ul type="disk">
+<li>ステータス欄の攻撃力は、下に示す要素が反映されたものとなっています。
+<br><b>STR/Tactics/Anatomy/Lumberjack(斧系武器のみ)/武器などのダメージ増加効果/Divine fury/Holific Beast</b>
+
+<p>攻撃力加算値の算出方法（Pub40暫定）
+  <ul type="circle">
+以下の項目をそれぞれ計算します。いずれも端数は切捨。
+     <li>STR・・・STR/10を計算します。最大値は15
+     <li>Tactics・・・Tactics/10を計算します。最大値は12
+     <li>武器ダメージ増加・・・武器ダメージ増加/10を計算します。最大値は10
+     <li>Anatomy・・・Anatomy/20を計算します。最大値は6
+     <li>Lumberjacking・・・Lumberjacking/25を計算します。最大値は4（斧系武器のみ適用）
+  </ul>
+上の5項目の合計を算出します。最大値は43または47（斧系武器）です。
+<br>この合計値に対して補正を行い、最終的な攻撃力加算値を算出します。合計値が高いほどより加算値は多くなりますが、増え方はだんだん鈍ります。式は少々煩雑です。
+<br>最大値での攻撃力増加値は30または31（斧系武器）となります。
+<br>武器の基礎攻撃力と攻撃力増加値を足して、ステータス欄の攻撃力となります。
+</p>
+<p align="center"><img src="hosei_p40a3.gif" alt=""><br>ダメージ加算基本値(合計値)を換算するときの参考図
+</p>
+
+<li><font color="#ff0000">「特効武器」</font>をチェックしますと<font color="#ff0000">特効効果(攻撃力2倍)</font>が反映されます。
+<li><font color="#ff0000">「Consecrate weapon」</font>(パラディン)をチェックしますと、<font color="#ff0000">モンスターの最小抵抗値の属性100％攻撃</font>となります。
+<br>炎が弱点のモンスターには普通の物理属性武器であっても炎100％武器のような扱いとなります。
+<li><font color="#ff0000">「Enemy of One」</font>(パラディン）をチェックしますと、<font color="#ff0000">ダメージが1.5倍</font>になります。
+<li><font color="#ff0000">「Evil o men」</font>(ネクロ）をチェックしますと、<font color="#ff0000">ダメージが1.25倍</font>になります。
+<li>攻撃属性は<b>物理以外の属性比率</b>を選択します。<font color="#ff0000"><b>物理がマイナス</b>になると「Error」となります</font>ので注意してください。
+<li><font color="#ff0000">「Corpse Skin」</font>(ネクロ）をチェックしますと、<font color="#ff0000">属性抵抗値が変化します</font>。
+  <ul type="disk">
+   <li>物理属性抵抗＋10
+   <li>炎属性抵抗－15
+   <li>冷気属性抵抗＋10
+   <li>毒属性抵抗－15
+  </ul>
+<li>不調和スキルを選択すると属性抵抗値が低下します。不調和成功時の低下量は全属性共通で下の式となっています。(最大値28)
+<br><font color="#ff0000">(不調和スキル/５)＋max(0,(不調和スキル－100)/５)</font>
+<br>ただし、音楽難易度最高のモンスターに対しては、成功時の低下量が半分(14)となります。
+<li>スペシャルムーブや武士道の術を選択することができます。
+  <ul type="disk">
+   <li>Armor ignore
+   <li>Double strike(1発目のみ命中)
+   <li>Double strike(2発命中)
+   <li>Crushing blow
+   <li>Momentum strike
+  </ul>
+</ul>
+<br>―更新・データ追加―
+<ul type="disk">
+
+<li>選択したモンスターごとに属性抵抗値を表示するようにしました。(7/30)
+<li>選択したモンスターに有効な特効効果を表示するようにしました。(9/13)
+<li>チャンピオンモンスターのデータを追加(10/11)
+<li>属性抵抗変化効果やスペシャルムーブに対応(2/1)
+<li>使用武器・ステータス等を入力項目にしました。(5/29)
+<li>Publish25用に、装備品のダメージ合計の上限を100％に設定しました。(7/14)
+<li>ダメージ増加に関わる装備品等を追加、乗算ダメージの上限を3倍に設定しました。(2005,1/2)
+<li>TC2 PVP TESTの暫定仕様を反映させてみました（武器攻撃力のみ）(2006，2/11）
+
+</ul>
+
+
+</font>
+</div>
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

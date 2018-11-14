@@ -1,0 +1,388 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>Publish74 メモ</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899121</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<h3>バルクオーダーの変更</h3>
+
+Publish74では、バルクオーダーの仕様変更が予定されています。
+
+<h4>１．注文の取り置き</h4>
+
+従来は、スキルによって1時間、2時間、6時間ごとに1枚しか取り置き分はありませんでしたが、
+<br>Publish74では、スキルに関係なく6時間ごとに1枚、そして最大で3枚取り置くようになりました。
+<br>前回注文を受けて18時間経過した状態で注文を受けようとするとき、3回注文を受けることができます。
+<br>ただし、NPCからの注文は1回につき1枚なので、同じ行動を3回行う必要があります。
+<br><img src="bribery_00.gif" alt="" class="img01">
+
+<br>なお、納品したときに取り置き分が1枚増える仕様は変わっていません。
+
+<h4>２．注文の闇取引</h4>
+
+NPCとバルクオーダーに関する闇取引をすることができます。
+
+<p>1．NPCをクリックし、「賄賂」を選択し、NPCに見せたい注文書をターゲットに指定する。
+<br>大口／小口ともに可能だが、注文書には何も結合していない状態でなければならない。
+<br><img src="bribery_00.gif" alt="" class="img01">
+<br><img src="bribery_01.gif" alt="" class="img01">
+</p>
+
+<p>2．NPCが注文の内容に応じた金額を要求する。
+<br><img src="bribery_02.gif" alt="" class="img01">
+<br><img src="bribery_03.gif" alt="" class="img01">
+</p>
+
+<p>3．1で指定した注文書を、NPCに渡す。
+</p>
+
+<p>4．銀行からお金が引き落とされ、渡した注文書の品質／素材／数量のどれかが１ランクが上昇する。
+<br><img src="bribery_04.gif" alt="" class="img01">
+</p>
+
+<p>5．1～4を繰り返していくうちに、NPCが生産ギルドに目をつけられ、一時的に闇取引できなくなる。
+<br>ほとぼりが冷めるまで、実時間で2時間程度は必要で、プレイヤー側で強制的に解除する方法はない。
+<br><img src="bribery_05.gif" alt="" class="img01">
+</p>
+
+<h4>闇取引の要求金額（概算）</h4>
+
+<br>下の表は、闇取引したい注文書とNPCが要求する基本金額（概算）を表したものです。
+<br>要求する金額は、NPCにとって何回目の闇取引回数かにおおよそ比例しています（100gp未満切捨）。
+<br>たとえば、以前に闇取引を9回していたNPCに取引を持ちかけると、基本金額の10倍程度を要求してきます。
+<br>時間による低減もありますが、要求金額に対してわずかなものです。
+
+<h4>鍛冶小口</h4>
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="100">数量<br>＼<br>素材</td>
+  <td width="80">10</td>
+  <td width="80">15</td>
+  <td width="80">20</td>
+  <td width="80">10EX</td>
+  <td width="80">15EX</td>
+  <td width="80">20EX</td>
+ </tr>
+ <tr bgcolor="#e0e0e0">
+  <td>武器</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>---</td>
+ </tr>
+ <tr bgcolor="#d8d8d8">
+  <td>防具Iron</td>
+  <td>5</td>
+  <td>10</td>
+  <td>20</td>
+  <td>15</td>
+  <td>25</td>
+  <td>40</td>
+ </tr>
+ <tr bgcolor="#e0e0c0">
+  <td>Dull</td>
+  <td></td>
+  <td>55</td>
+  <td>125</td>
+  <td>90</td>
+  <td>160</td>
+  <td>280</td>
+ </tr>
+ <tr bgcolor="#909090">
+  <td>Shadow</td>
+  <td>65</td>
+  <td></td>
+  <td>250</td>
+  <td>180</td>
+  <td>320</td>
+  <td>550</td>
+ </tr>
+ <tr bgcolor="#e0c080">
+  <td>Copper</td>
+  <td>100</td>
+  <td></td>
+  <td>375</td>
+  <td>280</td>
+  <td>480</td>
+  <td>820</td>
+ </tr>
+ <tr bgcolor="#c08040">
+  <td>Bronze</td>
+  <td>125</td>
+  <td>220</td>
+  <td>500</td>
+  <td>360</td>
+  <td>650</td>
+  <td>1100</td>
+ </tr>
+ <tr bgcolor="#fff0c0">
+  <td>Gold</td>
+  <td>160</td>
+  <td>280</td>
+  <td>625</td>
+  <td>450</td>
+  <td>800</td>
+  <td>1380</td>
+ </tr>
+ <tr bgcolor="#ffc0c0">
+  <td>Agapite</td>
+  <td>200</td>
+  <td>330</td>
+  <td>750</td>
+  <td>550</td>
+  <td>960</td>
+  <td>1660</td>
+ </tr>
+ <tr bgcolor="#c0ffc0">
+  <td>Verite</td>
+  <td>220</td>
+  <td>380</td>
+  <td>875</td>
+  <td>640</td>
+  <td>1120</td>
+  <td>1970</td>
+ </tr>
+ <tr bgcolor="#c0e0ff">
+  <td>Valorite</td>
+  <td>500</td>
+  <td>875</td>
+  <td>1500</td>
+  <td>1120</td>
+  <td>1970</td>
+  <td>---</td>
+ </tr>
+</table>
+
+<h4>鍛冶大口</h4>
+小口の5倍程度のようです
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="100">数量<br>＼<br>素材</td>
+  <td width="80">10</td>
+  <td width="80">15</td>
+  <td width="80">20</td>
+  <td width="80">10EX</td>
+  <td width="80">15EX</td>
+  <td width="80">20EX</td>
+ </tr>
+ <tr bgcolor="#e0e0e0">
+  <td>武器</td>
+  <td></td>
+  <td></td>
+  <td>150</td>
+  <td>120</td>
+  <td>200</td>
+  <td>---</td>
+ </tr>
+ <tr bgcolor="#d8d8d8">
+  <td>防具Iron</td>
+  <td></td>
+  <td>40</td>
+  <td></td>
+  <td>75</td>
+  <td></td>
+  <td></td>
+ </tr>
+ <tr bgcolor="#e0e0c0">
+  <td>Dull</td>
+  <td>150</td>
+  <td>275</td>
+  <td>625</td>
+  <td>475</td>
+  <td>825</td>
+  <td>1425</td>
+ </tr>
+ <tr bgcolor="#909090">
+  <td>Shadow</td>
+  <td>320</td>
+  <td>550</td>
+  <td>1250</td>
+  <td>925</td>
+  <td>1650</td>
+  <td>2825</td>
+ </tr>
+ <tr bgcolor="#e0c080">
+  <td>Copper</td>
+  <td>480</td>
+  <td>825</td>
+  <td>1880</td>
+  <td>1425</td>
+  <td>2450</td>
+  <td>4225</td>
+ </tr>
+ <tr bgcolor="#c08040">
+  <td>Bronze</td>
+  <td>625</td>
+  <td>1100</td>
+  <td>2500</td>
+  <td>1875</td>
+  <td>3275</td>
+  <td>5625</td>
+ </tr>
+ <tr bgcolor="#fff0c0">
+  <td>Gold</td>
+  <td>780</td>
+  <td>1380</td>
+  <td>3120</td>
+  <td>2325</td>
+  <td>4100</td>
+  <td>7025</td>
+ </tr>
+ <tr bgcolor="#ffc0c0">
+  <td>Agapite</td>
+  <td>925</td>
+  <td>1650</td>
+  <td>3750</td>
+  <td>2825</td>
+  <td>4900</td>
+  <td>8450</td>
+ </tr>
+ <tr bgcolor="#c0ffc0">
+  <td>Verite</td>
+  <td>1100</td>
+  <td>1920</td>
+  <td>4380</td>
+  <td>3275</td>
+  <td>5725</td>
+  <td>9850</td>
+ </tr>
+ <tr bgcolor="#c0e0ff">
+  <td>Valorite</td>
+  <td>2500</td>
+  <td>4380</td>
+  <td>7500</td>
+  <td>5625</td>
+  <td>9850</td>
+  <td>---</td>
+ </tr>
+</table>
+
+
+<h4>裁縫小口</h4>
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="100">数量<br>＼<br>素材</td>
+  <td width="80">10</td>
+  <td width="80">15</td>
+  <td width="80">20</td>
+  <td width="80">10EX</td>
+  <td width="80">15EX</td>
+  <td width="80">20EX</td>
+ </tr>
+ <tr bgcolor="#e0e0e0">
+  <td>布</td>
+  <td>10</td>
+  <td>20</td>
+  <td>35</td>
+  <td>25</td>
+  <td>40</td>
+  <td>---</td>
+ </tr>
+ <tr bgcolor="#ffcc99">
+  <td>標準革</td>
+  <td></td>
+  <td>10</td>
+  <td>25</td>
+  <td>20</td>
+  <td>30</td>
+  <td>50</td>
+ </tr>
+ <tr bgcolor="#6699ff">
+  <td>Spined</td>
+  <td>75</td>
+  <td>140</td>
+  <td>325</td>
+  <td>250</td>
+  <td>450</td>
+  <td>750</td>
+ </tr>
+ <tr bgcolor="#ff9999">
+  <td>Horned</td>
+  <td>150</td>
+  <td>280</td>
+  <td>650</td>
+  <td>480</td>
+  <td>860</td>
+  <td>1480</td>
+ </tr>
+ <tr bgcolor="#66cc66">
+  <td>Barbed</td>
+  <td>480</td>
+  <td>860</td>
+  <td>1480</td>
+  <td>1100</td>
+  <td>1940</td>
+  <td>---</td>
+ </tr>
+</table>
+
+<h4>裁縫大口</h4>
+小口の10倍程度のようです
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="100">数量<br>＼<br>素材</td>
+  <td width="80">10</td>
+  <td width="80">15</td>
+  <td width="80">20</td>
+  <td width="80">10EX</td>
+  <td width="80">15EX</td>
+  <td width="80">20EX</td>
+ </tr>
+ <tr bgcolor="#e0e0e0">
+  <td>布</td>
+  <td>100</td>
+  <td>175</td>
+  <td>300</td>
+  <td>225</td>
+  <td>400</td>
+  <td>---</td>
+ </tr>
+ <tr bgcolor="#ffcc99">
+  <td>標準革</td>
+  <td></td>
+  <td></td>
+  <td>200</td>
+  <td>150</td>
+  <td>260</td>
+  <td>450</td>
+ </tr>
+ <tr bgcolor="#6699ff">
+  <td>Spined</td>
+  <td>825</td>
+  <td>1450</td>
+  <td></td>
+  <td>2500</td>
+  <td>4375</td>
+  <td>7500</td>
+ </tr>
+ <tr bgcolor="#ff9999">
+  <td>Horned</td>
+  <td></td>
+  <td>2925</td>
+  <td>6675</td>
+  <td>5000</td>
+  <td>8750</td>
+  <td>15000</td>
+ </tr>
+ <tr bgcolor="#66cc66">
+  <td>Barbed</td>
+  <td>5000</td>
+  <td>8750</td>
+  <td>15000</td>
+  <td>11250</td>
+  <td>19700</td>
+  <td>---</td>
+ </tr>
+</table>
+
+</body>
+</html>
+
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

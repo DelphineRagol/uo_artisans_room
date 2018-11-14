@@ -1,0 +1,591 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>魔法系スキル（Mysticism）</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899239</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<h2>Mysticism</h2>
+
+<hr>
+
+<h3>１．概要</h3>
+
+MysticismスキルはUOSA(Stygian Abyss)より導入されたスキルです。
+<br>Mysticism魔法は16種類あり、それらは難易度ごとに8グループ（ランク）×2種類に分けられています。
+<br>魔法を使うには、<img src="mysticismbook.gif" alt="" class="img01">Mysticism spellbook[神秘の呪文書]、秘薬そしてマナが必要になります。
+<br>多くの魔法の効果は、MysticismとFocusまたはImbuingスキルによって変わります。
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+
+ {//functionの宣言。受けとったIDは変数targetIDに格納。
+  if( document.getElementById(targetID))
+   { //指定のIDのついたオブジェクトがあったら処理する
+     //指定されたIDのstyle.displayがnoneなら
+    for (i=1; i<9; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {//blockに変更する
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+
+<br>
+<a href="#" onClick="showHide('cat_1');return false;"><img src="1stcircle.gif" alt="ランク1" class="img01" width="33"></a>
+<a href="#" onClick="showHide('cat_2');return false;"><img src="2ndcircle.gif" alt="ランク2" class="img01" width="33"></a>
+<a href="#" onClick="showHide('cat_3');return false;"><img src="3rdcircle.gif" alt="ランク3" class="img01" width="33"></a>
+<a href="#" onClick="showHide('cat_4');return false;"><img src="4thcircle.gif" alt="ランク4" class="img01" width="33"></a>
+<a href="#" onClick="showHide('cat_5');return false;"><img src="5thcircle.gif" alt="ランク5" class="img01" width="33"></a>
+<a href="#" onClick="showHide('cat_6');return false;"><img src="6thcircle.gif" alt="ランク6" class="img01" width="33"></a>
+<a href="#" onClick="showHide('cat_7');return false;"><img src="7thcircle.gif" alt="ランク7" class="img01" width="33"></a>
+<a href="#" onClick="showHide('cat_8');return false;"><img src="8thcircle.gif" alt="ランク8" class="img01" width="33"></a>
+
+
+<div id="cat_1" style="display: none">
+
+<h4>ランク1（難易度：-5.0、消費マナ：4）</h4>
+
+<h4>Nether Bolt [In Corp Ylem]</h4>
+
+<ul class="list03">
+<li>秘薬　：　<img src="blackpearl.gif" alt="black pearl" class="img01"><img src="surash.gif" alt="surfurous ash" class="img01"></li>
+<li>詠唱時間　：　0.75sec</li>
+<li>効果　：　地底に眠る力を矢としてターゲットへ放ち攻撃します。</li>
+<li>基本ダメージ　：　11～14（カオスダメージ）
+<br>INT、Inscription、魔法ダメージ+(SDI)さらにFocusまたはImbuingスキルによるダメージ修正を行います。</li>
+</ul>
+
+ダメージ計算 ＝ (基本ダメージ) * (1 + INT補正 + Inscription補正 + SDI補正) * (0.30 + max(focus, imbuing) * 0.009)
+
+<h4>Healing Stone [Kal In Mani]</h4>
+
+<ul class="list03">
+<li>秘薬　：　<img src="bone.gif" alt="bone" class="img01"><img src="garlic.gif" alt="garlic" class="img01"><img src="ginseng.gif" alt="ginseng" class="img01">
+<img src="spidersilk.gif" alt="spider silk" class="img01"></li>
+<li>詠唱時間　：　5.00sec</li>
+<li>効果　：　ヒーリングストーン<img src="healing_stone.gif" alt="" class="img01"> をバックパック内に創り出します。</li>
+</ul>
+
+ヒーリングストーン<img src="healing_stone.gif" alt="" class="img01">の仕様
+
+<ul class="list02">
+<li>地面に置くと消滅します。</li>
+<li>毒状態でダブルクリックすると、解毒を試みます。毒状態でなければ、HPが回復します。</li>
+<li>ヒーリングストーンには治療ポイントが設定されており、解毒およびHP回復により減少していきます。</li>
+<li>ヒーリングストーンを連続してHP回復に使用するとき、2秒間の間隔が必要です。
+現在、HP回復ポーションによる回復も、この制限に適用されています。</li>
+<li>HP回復直後はヒーリングストーンのエネルギーが消耗しており、完全に回復するには15秒必要です。
+<br>15秒以内に連続使用した場合、HP回復量にペナルティが発生します。</li>
+<li>ヒーリングストーンがある状態でヒーリングストーンの魔法を使用すると、新しいものに更新されます。</li>
+</ul>
+治療ポイント ＝ (Mysticism + Max(focus, imbuing)) * 1.25　 [最大値 300] 
+<br>HP回復量 ＝ {(Mysticism + Max(focus, imbuing)) / 6 + (1～6)}×((経過時間)/15)
+<br>解毒成功時消費ポイント ＝ (毒レベル) * 15
+<br>解毒失敗時消費ポイント ＝ (毒レベル) * 5
+<br>解毒確率 ＝ 100 / (毒レベル) * ((Mysticism + Max(focus, imbuing))/240 [%]
+
+<br>mysticism=120 focus=120のときの解毒確率
+
+<table class="table02">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="80">毒レベル</td>
+    <td align="center" width="80">1</td>
+    <td align="center" width="80">2</td>
+    <td align="center" width="80">3</td>
+    <td align="center" width="80">4</td>
+    <td align="center" width="80">5</td>
+  </tr>
+  <tr bgcolor="#ddffff">
+    <td align="center" width="80">解毒確率</td>
+    <td align="center" width="80">100/100</td>
+    <td align="center" width="80">107/200</td>
+    <td align="center" width="80">66/201</td>
+    <td align="center" width="80">46/202</td>
+    <td align="center" width="80">32/202</td>
+  </tr>
+</table>
+
+<br class="cle">
+
+
+</div>
+
+<div id="cat_2" style="display: none">
+
+<h4>ランク2（難易度：8.0、消費マナ：6）</h4>
+
+<h4>Purge Magic [An Ort Sanct]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="fertile_dirt.gif" alt="" class="img01"><img src="garlic.gif" alt="" class="img01"><img src="mandrake.gif" alt="" class="img01"><img src="surash.gif" alt="surfurous ash" class="img01"></li>
+<li>詠唱時間　：　1.00sec</li>
+<li>効果　：　ターゲットに掛かっている保護効果を一つ消去します。保護効果にはそれぞれレベルが設定されており、スキルが低い場合、高レベルの保護効果は消去できません。
+<br>消去できる保護効果がない場合、8秒間マナコストを増加させ、その後カオス属性のダメージを与えます。</li>
+</ul>
+消去できる保護効果のレベル＝(Mysticism + Max(focus, imbuing))/40
+<br>マナコスト＝+(Mysticism + Max(focus, imbuing))×0.15 - (magicresist)×0.10 [%]　[最大+36%]
+<br>基本ダメージ : 15～19（カオスダメージ）
+<br>ダメージ計算 ＝ (基本ダメージ) * (0.30 + max(focus, imbuing) * 0.009)
+
+<br>INT、プロパティによる魔法ダメージ+の補正はありませんが、FocusまたはImbuingスキルによるダメージ修正を行います。
+<br>なお、この魔法によりマナコスト増加中のキャラクターが別の対象にダメージを与えると、その時点でマナコストが元に戻り、継続時間に応じて低減されたカオスダメージを受けます。
+
+<table class="table01">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="70">レベル</td>
+    <td align="center" width="480">対応する保護効果</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">1</td>
+    <td align="left">Magery : reactive armor, agility, cunning, strength
+<br>Chivalry : consecrate weapon
+<br>Necromancy : curse weapon
+<br>Bushido : confidence
+<br>Spellweaving : gift of renewal
+<br>Mysticism : enchant
+<br>その他 : agility potion, strength potion, fruit bowl(agility + cunning + strength)
+</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">2</td>
+    <td align="left">Magery : bless
+<br>Chivalry : divine fury, enemy of one
+<br>Necromancy : wraith form
+<br>Spellweaving : immolating weapon, attunement, reaper form
+</td>
+  </tr>
+
+  <tr bgcolor="#ffffdd">
+    <td align="center">3</td>
+    <td align="left">Magery : protection, magic reflection
+<br>Necromancy : horrific beast
+<br>Spellweaving : arcane enpowerment
+<br>Mysticism : stone form
+</td>
+  </tr>
+
+  <tr bgcolor="#ffdddd">
+    <td align="center">4</td>
+    <td align="left">Necromancy : lich form
+</td>
+  </tr>
+
+  <tr bgcolor="#ffcccc">
+    <td align="center">5</td>
+    <td align="left">Necromancy : vampiric embrace
+</td>
+  </tr>
+
+</table>
+<br class="cle">
+<h4>Enchant [In Ort Ylem]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="mandrake.gif" alt="" class="img01"><img src="spidersilk.gif" alt="" class="img01"><img src="surash.gif" alt="" class="img01"></li>
+<li>詠唱時間　：　5.00sec</li>
+<li>効果　：　次の一撃に効果を発揮する魔法を、一振りの武器に付与します。ただし、既に追加魔法の効果が付加された武器には使用できません。
+<br>エンチャントが付与された武器が外れた時点で、効果は無効となりますが、Mysticism, ImbuingまたはFocusスキルがともに80.1以上あれば、
+<br>詠唱可 + ファストキャスト-1が同時に付加され、魔法の詠唱で武器が外れることはなくなります。</li>
+</ul>
+
+追加効果 ： magic arrow, harm, fireball, lightning, dispelのうち1種類。魔法の種類により有効時間が補正されます。
+<br>追加効果が付加された武器は"<font color="#ff0000">エンチャント</font>"が表記されます。
+<br>追加効果の発動確率 ：  20 + (Mysticism + Max(focus, imbuing)) / 6 [%]
+<br>有効時間[sec] ：  {20+(Mysticism + Max(focus, imbuing))*2/3} * (魔法補正)
+<br>魔法補正 ： Magic arrow=0.80, Harm=0.90, Fireball=0.65, Lightning=0.60, Dispel=1.00
+<br><font color="#ff0000">Enchantにより追加された魔法のダメージの計算は、普通の追加魔法とは異なり、
+FocusまたはImbuingスキルによる補正を行います。
+<br>FocusまたはImbuingスキルが120の場合、EIが60相当のダメージとなります。</font>
+
+</div>
+
+<div id="cat_3" style="display: none">
+
+<h4>ランク3（難易度：20.0、消費マナ：9）</h4>
+
+<h4>Sleep　[In Zu]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="blackpearl.gif" alt="" class="img01"><img src="nightshade.gif" alt="" class="img01"><img src="spidersilk.gif" alt="" class="img01"></li>
+<li>詠唱時間　：　1.25sec</li>
+<li>効果　：　生物1体を一時的な睡眠状態に陥れます。睡眠状態にある生物は移動速度が非常に遅くなりますが、ダメージを受けたり一定時間が過ぎると、効果は終了します。</li>
+</ul>
+
+プロパティ変化 ： ファストキャスト-2、キャストリカバリ-4、速度-40％、命中-45％、回避-45％
+<br>効果時間 ＝ (mysticism + Max(focus, imbuing))/20 - (対象Magicresist - 30)/10 -1  [sec]
+
+<h4>Eagle Strike　[Kal Por Xen]</h4>
+
+<ul class="list03">
+<li>秘薬　：　<img src="bone.gif" alt="" class="img01"><img src="bloodmoss.gif" alt="" class="img01"><img src="spidersilk.gif" alt="" class="img01"><img src="mandrake.gif" alt="" class="img01"></li>
+<li>詠唱時間　：　1.25sec</li>
+<li>効果　：　>ワシのような生物を召喚し、その爪でターゲットを攻撃させます。</li>
+<li>基本ダメージ　：　20～24（エネルギーダメージ）
+<br>INT、Inscription、魔法ダメージ+(SDI)さらにFocusまたはImbuingスキルによるダメージ修正を行います。</li>
+</ul>
+
+ダメージ計算 ＝ (基本ダメージ) * (1 + INT補正 + Inscription補正 + SDI補正) * (0.30 + max(focus, imbuing) * 0.009)
+
+
+</div>
+
+<div id="cat_4" style="display: none">
+
+<h4>ランク4（難易度：33.0、消費マナ：11、詠唱時間：1.50sec）</h4>
+
+<h4>Animated Weapon　[In Jux Por Ylem]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="bone.gif" alt="" class="img01"><img src="blackpearl.gif" alt="" class="img01"><img src="mandrake.gif" alt="" class="img01"><img src="nightshade.gif" alt="" class="img01"></li>
+<li>詠唱時間　：　1.50sec</li>
+<li>効果　：　一振りの武器を召喚し、周囲の敵を攻撃させます。</li>
+</ul>
+
+召喚された武器生物のステータス
+
+<ul class="list02">
+<li>コントロールスロット ： 4</li>
+<li>HP : 20 + (mysticisms + Max(focus, imbuing)) * 0.75</li>
+<li>Stamina : 10 + (mysticisms + Max(focus, imbuing)) * 0.5</li>
+<li>Mana : なし</li>
+<li>STR : 10 + (mysticisms + Max(focus, imbuing)) * 0.5</li>
+<li>DEX : 10 + (mysticisms + Max(focus, imbuing)) * 0.5</li>
+<li>INT : 10</li>
+<li>抵抗値 : (40～50/30～40/30～40/100/20～30)</li>
+<li>ダメージ : (mysticisms + Max(focus, imbuing))に依存し、最小で7～8、最大で14～18</li>
+<li>攻撃属性 : 60 /0/0/20/20</li>
+<li>wrestling : (mysticisms + Max(focus, imbuing)) * 0.5</li>
+<li>resisting spell : (mysticisms + Max(focus, imbuing)) * 0.5</li>
+<li>tactics : tactics * 0.5</li>
+<li>anatomy : anatomy * 0.5</li>
+<li>有効時間 :  10 + (mysticisms + Max(focus, imbuing)) * 0.5 [sec]</li>
+</ul>
+
+<table class="table01">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="130">Mys+Max(Imb, Foc)</td>
+    <td align="center" width="80">ダメージ</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～59.9</td>
+    <td align="center">7～8</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～69.9</td>
+    <td align="center">8～9</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～89.9</td>
+    <td align="center">8～10</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～119.9</td>
+    <td align="center">9～11</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～139.9</td>
+    <td align="center">10～12</td>
+  </tr>
+</table>
+
+<table class="table01">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="130">Mys+Max(Imb, Foc)</td>
+    <td align="center" width="80">ダメージ</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～149.9</td>
+    <td align="center">10～13</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～179.9</td>
+    <td align="center">11～14</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～209.9</td>
+    <td align="center">12～15</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～239.9</td>
+    <td align="center">13～17</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">240</td>
+    <td align="center">14～18</td>
+  </tr>
+</table>
+<br class="cle">
+
+<h4>Stone Form　[In Rel Ylem]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="fertile_dirt.gif" alt="" class="img01"><img src="bloodmoss.gif" alt="" class="img01"><img src="garlic.gif" alt="" class="img01"></li>
+<li>詠唱時間　：　1.50sec</li>
+<li>効果　：　術者を石のように強固にします。抵抗値が増加し受けるダメージが減少しますが、移動速度や攻撃速度が減少します。
+<br>また、毒・麻痺・睡眠・流血・窒息・ステータス低下に抵抗し、効果を無効にします。</li>
+</ul>
+
+プロパティ変化
+<ul class="list02">
+<li>速度 ： -10%</li>
+<li>ファストキャスト ： -2</li>
+<li>全属性抵抗値 ： + (mysticisms + Max(focus, imbuing)) / 24 [%]</li>
+<li>全属性抵抗値の最大値 ： + (mysticisms + Max(focus, imbuing)) / 48 [%]</li>
+<li>状態変化抵抗確率 ： (mysticisms + Max(focus, imbuing)) / 2.4 [%]</li>
+<li>武器ダメージは増加していないようです。
+</ul>
+
+</div>
+
+<div id="cat_5" style="display: none">
+
+<h4>ランク5（難易度：45.0、消費マナ：14）</h4>
+
+<h4>Spell Trigger　[In Vas Ort Ex]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="dragon_blood.gif" alt="dragon's blood" class="img01"><img src="garlic.gif" alt="garlic" class="img01"><img src="mandrake.gif" alt="mandrake root" class="img01"><img src="spidersilk.gif" alt="spider's silk" class="img01"></li>
+<li>詠唱時間　：　5.00sec</li>
+<li>効果　：　spell stone[封呪の石]<img src="spell_stone.gif" alt="" class="img01"> をバックパック内に創り出します。
+</ul>
+
+spell stone[封呪の石]<img src="spell_stone.gif" alt="" class="img01">の仕様
+
+<ul class="list02">
+<li>バックパックに1つしか作り出すことはできず、地面や別の鞄に移すと消滅します。</li>
+<li>spell stone[封呪の石]がある状態でSpell Triggerを詠唱すると、新しいものに更新されます。</li>
+<li>発動する呪文は術者の呪文書に書き写されている必要があり、spell stone[封呪の石]を使うとき、保存した魔法に対応する秘薬も消費します。</li>
+<li>spell stone[封呪の石]は5分に1回しか使用することはできません。</li>
+</ul>
+所持できる魔法のランク＝(Mysticism + Max(focus, imbuing))/40
+
+<h4>Mass Sleep　[Vas Zu]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="ginseng.gif" alt="" class="img01"><img src="nightshade.gif" alt="" class="img01"><img src="spidersilk.gif" alt="" class="img01"></li>
+<li>詠唱時間　：　1.75sec</li>
+<li>効果　：　Sleepと効果は同じですが、Mass Sleepは狭い一定範囲内の複数の対象に効果を及ぼします。
+<br>睡眠状態にある生物は移動速度が非常に遅くなりますが、ダメージを受けたり一定時間が過ぎると、効果は終了します。</li>
+</ul>
+
+プロパティ変化 ： ファストキャスト-2、キャストリカバリ-4、速度-40％、命中-45％、回避-45％
+<br>効果時間 ＝ (mysticism + Max(focus, imbuing))/20 - (対象Magicresist - 30)/10 -1  [sec]
+
+
+</div>
+
+<div id="cat_6" style="display: none">
+
+<h4>ランク6（難易度：58.0、消費マナ：20）</h4>
+
+<h4>Cleansing Winds　[In Vas Mani Hur]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="dragon_blood.gif" alt="dragon's blood" class="img01"><img src="garlic.gif" alt="" class="img01"><img src="ginseng.gif" alt="" class="img01"><img src="mandrake.gif" alt="" class="img01"></li>
+<li>詠唱時間　：　2.00sec</li>
+<li>効果　：　穏やかな風を吹き起こし、狭い一定範囲内のパーティメンバーに対して、解毒、解呪、回復の効果をもたらします。
+<br>回復の対象が複数（自分を含め4名まで）または解毒からの回復に成功した場合、HP回復量が低下します。</li>
+</ul>
+
+HP回復量＝ (9-対象)/8 * (Mysticism + Max(focus, imbuing)) * 7 / 30 + (1～8)
+<br>解毒成功確率＝90 + (Mysticism + Max(focus, imbuing))/2.4 - （毒レベル）* 20
+<br>解毒によるHP回復の損失＝（毒レベル）* 15 [％]
+<br>ステータス低下魔法, Curse, Mindrot, Mortal Strike, Sleep, Spell Plagueを除去
+
+<h4>Bombard　[Corp Por Ylem]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="dragon_blood.gif" alt="dragon's blood" class="img01"><img src="bloodmoss.gif" alt="" class="img01"><img src="garlic.gif" alt="" class="img01"><img src="surash.gif" alt="" class="img01"></li>
+<li>詠唱時間　：　2.00sec</li>
+<li>効果　：　巨石を召喚しターゲットに放ちます。また、対象をノックバックし、2秒間スタンさせます。<br>ノックバック、スタンの確率は不明。</li>
+<li>基本ダメージ　：　41～45（物理ダメージ）
+<br>INT、Inscription、魔法ダメージ+(SDI)さらにFocusまたはImbuingスキルによるダメージ修正を行います。</li>
+</ul>
+ダメージ計算 ＝ (基本ダメージ) * (1 + INT補正 + Inscription補正 + SDI補正) * (0.30 + max(focus, imbuing) * 0.009)
+
+</div>
+
+<div id="cat_7" style="display: none">
+
+<h4>ランク7（難易度：70.0、消費マナ：40）</h4>
+
+<h4>Spell Plague　[Vas Rel Jux Ort]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="daemonbone.gif" alt="" class="img01"><img src="dragon_blood.gif" alt="dragon's blood" class="img01"><img src="nightshade.gif" alt="" class="img01"><img src="surash.gif" alt="" class="img01"></li>
+<li>詠唱時間　：　2.25sec</li>
+<li>効果　：　対象にダメージを伴う強い呪いを掛けます。 対象がダメージを受けるたび、追加の爆発が発生します（最大3回）。
+<br>呪いの有効期間は8秒です。</li>
+<li>初期基本ダメージ　：　46～50（カオスダメージ）</li>
+<br>追加基本ダメージ　：　22～25、28～31、37～40（カオスダメージ）
+<br>INT、プロパティによる魔法ダメージ+の補正はありませんが、FocusまたはImbuingスキルによるダメージ修正を行います。</li>
+</ul>
+ダメージ計算 ＝ (基本ダメージ) * (0.30 + max(focus, imbuing) * 0.009)
+
+<h4>Hail Storm　[Kal Des Ylem]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="dragon_blood.gif" alt="dragon's blood" class="img01"><img src="blackpearl.gif" alt="" class="img01"><img src="bloodmoss.gif" alt="" class="img01"><img src="mandrake.gif" alt="" class="img01"></li>
+<li>詠唱時間　：　2.25sec</li>
+<li>効果　：　猛烈な嵐を呼び出し、周囲の敵に雹を打ちつけます。</li>
+<li>ダメージ　：　52～56（冷気ダメージ）
+<br>INT、Inscription、魔法ダメージ+(SDI)さらにFocusまたはImbuingスキルによるダメージ修正を行います。
+<br>対象範囲内の生物数による低減はありません。</li>
+</ul>
+ダメージ計算 ＝ (基本ダメージ) * (1 + INT補正 + Inscription補正 + SDI補正) * (0.30 + max(focus, imbuing) * 0.009)
+
+</div>
+
+<div id="cat_8" style="display: none">
+
+<h4>ランク8（難易度：83.0、消費マナ：50）</h4>
+
+<h4>Nether Cyclone　[Grav Hur]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="bloodmoss.gif" alt="" class="img01"><img src="mandrake.gif" alt="" class="img01"><img src="nightshade.gif" alt="" class="img01"><img src="surash.gif" alt="" class="img01"></li>
+<li>詠唱時間　：　2.50sec</li>
+<li>効果　：　ターゲットとその周囲1タイルの全てに致命の疾風を吹き付けます。この魔法攻撃を受けたとき、一定割合のスタミナおよびマナを失います。</li>
+<li>ダメージ　：　52～56（カオスダメージ）
+<br>INT、Inscription、魔法ダメージ+(SDI)さらにFocusまたはImbuingスキルによるダメージ修正を行います。
+<br>対象範囲内の生物数による低減はありません。</li>
+<li>スタミナおよびマナ減少率　：　(Mysticism)/12 + Max(focus, imbuing))/12 - (Magicresist)/10 [％]
+<br>キャラクターのスタミナおよびマナの最大値が減少率のもととなります。この効果とHPダメージによるスタミナ減少は重複します。</li>
+
+</ul>
+
+<h4>Rising Colossus　[Kal Vas Xen Corp Ylem]</h4>
+
+<ul class="list02">
+<li>秘薬　：　<img src="daemonbone.gif" alt="" class="img01"><img src="dragon_blood.gif" alt="dragon's blood" class="img01"><img src="fertile_dirt.gif" alt="" class="img01"><img src="nightshade.gif" alt="" class="img01"></li>
+<li>詠唱時間　：　2.50sec</li>
+<li>効果　：　石像の巨人を召喚し、周囲の敵を攻撃させます。</li>
+</ul>
+
+召喚された巨人のステータス
+
+<ul class="list02">
+<li>コントロールスロット ： 5</li>
+<li>HP : 200 + (Mysticism + Max(focus, imbuing)) * 1.125</li>
+<li>Stamina : 30 + (Mysticism + Max(focus, imbuing)) * 0.75</li>
+<li>Mana : 50 + (Mysticism + Max(focus, imbuing)) * 0.75</li>
+<li>STR : 600 + (Mysticism + Max(focus, imbuing)) * 0.75</li>
+<li>DEX : 30 + (Mysticism + Max(focus, imbuing)) * 0.75</li>
+<li>INT : 50 + (Mysticism + Max(focus, imbuing)) * 0.75</li>
+<li>抵抗値 : (65～70/50～55/50～55/100/65～70)</li>
+<li>ダメージ : (Mysticism + Max(focus, imbuing))に依存し、最小で7～8、最大で19～24（下表参照）</li>
+<li>攻撃属性 : 100 /0/0/0/0</li>
+<li>wrestling : (Mysticism + Max(focus, imbuing)) / 2</li>
+<li>resisting spell : (Mysticism + Max(focus, imbuing)) / 2</li>
+<li>tactics : (Mysticism + Max(focus, imbuing)) / 2</li>
+<li>anatomy : (Mysticism + Max(focus, imbuing)) / 2</li>
+<li>有効時間 : (Mysticism + Max(focus, imbuing)) / 4 [sec]</li>
+</ul>
+
+
+<table class="table01">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="80">Mys+Max(Imb, Foc)</td>
+    <td align="center" width="80">ダメージ</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～93.0</td>
+    <td align="center">7～8</td>
+  </tr>
+  <tr bgcolor="#ddddff">
+    <td align="center">～106.3</td>
+    <td align="center">8～10</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～119.6</td>
+    <td align="center">9～11</td>
+  </tr>
+  <tr bgcolor="#ddddff">
+    <td align="center">～132.9</td>
+    <td align="center">10～12</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～139.6</td>
+    <td align="center">11～13</td>
+  </tr>
+</table>
+
+<table class="table01">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="80">Mys+Max(Imb, Foc)</td>
+    <td align="center" width="80">ダメージ</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～146.2.</td>
+    <td align="center">11～14</td>
+  </tr>
+  <tr bgcolor="#ddddff">
+    <td align="center">～159.5</td>
+    <td align="center">12～15</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～172.8</td>
+    <td align="center">13～16</td>
+  </tr>
+  <tr bgcolor="#ddddff">
+    <td align="center">～186.1</td>
+    <td align="center">14～17</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～199.4</td>
+    <td align="center">15～19</td>
+  </tr>
+</table>
+
+<table class="table01">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="80">Mys+Max(Imb, Foc)</td>
+    <td align="center" width="80">ダメージ</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">～212.7</td>
+    <td align="center">16～20</td>
+  </tr>
+  <tr bgcolor="#ddddff">
+    <td align="center">～226.0</td>
+    <td align="center">17～21</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">～232.7</td>
+    <td align="center">18～22</td>
+  </tr>
+  <tr bgcolor="#ddddff">
+    <td align="center">～239.3</td>
+    <td align="center">18～23</td>
+  </tr>
+  <tr bgcolor="#ccccff">
+    <td align="center">239.4～</td>
+    <td align="center">19～24</td>
+  </tr>
+</table>
+
+<br class="cle">
+<img src="rising_colossus_pic.gif" alt="" class="img01">
+
+
+</div>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

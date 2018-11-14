@@ -1,0 +1,834 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>防具強化計算（インゴット、革、花崗岩使用装備）</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898906</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+ 
+<!--以下本文-->
+<script language="javascript"> 
+<!--
+//Arm AR
+var mar;
+mar=new Array(12);
+mar[0] = 0;     //None
+mar[1] = 3;     //Shadow
+mar[2] = 2;     //Copper
+mar[3] = 3;    //Bronze
+mar[4] = 2;     //Agapite
+mar[5] = 4;     //Verite
+mar[6] = 5;    //Valorite
+mar[7] = 10;    //Dull
+mar[8] = 2;    //Gold
+mar[9] = 9;    //spined
+mar[10] = 2;    //horned
+mar[11] = 3;    //barbed
+//Arm AR         
+ 
+//Arm FR
+var mfr;
+mfr=new Array(12);
+mfr[0] = 0;     //None
+mfr[1] = 2;     //Shadow
+mfr[2] = 2;     //Copper
+mfr[3] = 0;    //Bronze
+mfr[4] = 7;     //Agapite
+mfr[5] = 4;     //Verite
+mfr[6] = 0;    //Valorite
+mfr[7] = 0;    //Dull
+mfr[8] = 2;    //Gold
+mfr[9] = 0;    //spined
+mfr[10] = 4;    //horned
+mfr[11] = 2;    //barbed
+//Mons FR         
+ 
+//arm CR
+var mcr;
+mcr=new Array(12);
+mcr[0] = 0;     //None
+mcr[1] = 0;    //Shadow
+mcr[2] = 0;     //Copper
+mcr[3] = 7;     //Bronze
+mcr[4] = 2;    //Agapite
+mcr[5] = 3;     //Verite
+mcr[6] = 4;    //Valorite
+mcr[7] = 0;    //Dull
+mcr[8] = 3;    //Gold
+mcr[9] = 0;    //spined
+mcr[10] = 3;    //horned
+mcr[11] = 3;    //barbed
+//arm CR
+ 
+//arm PR
+var mpr;
+mpr=new Array(12);
+mpr[0] = 0;     //None
+mpr[1] = 0;     //Shadow
+mpr[2] = 7;    //Copper
+mpr[3] = 2;     //Bronze
+mpr[4] = 2;     //Agapite
+mpr[5] = 4;    //Verite
+mpr[6] = 4;    //Valorite
+mpr[7] = 0;    //Dull
+mpr[8] = 0;    //Gold
+mpr[9] = 0;    //spined
+mpr[10] = 3;    //horned
+mpr[11] = 3;    //barbed
+//arm PR
+ 
+//arm ER
+var mer;
+mer=new Array(12);
+mer[0] = 0;     //None
+mer[1] = 7;     //Shadow
+mer[2] = 2;    //Copper
+mer[3] = 2;     //Bronze
+mer[4] = 2;    //Agapite
+mer[5] = 1;    //Verite
+mer[6] = 4;    //Valorite
+mer[7] = 0;    //Dull
+mer[8] = 3;    //Gold
+mer[9] = 0;    //spined
+mer[10] = 3;    //horned
+mer[11] = 5;    //barbed
+//arm ER
+ 
+//arm luck
+var mlr;
+mlr=new Array(12);
+mlr[0] = 0;     //None
+mlr[1] = 0;     //Shadow
+mlr[2] = 0;    //Copper
+mlr[3] = 0;     //Bronze
+mlr[4] = 0;    //Agapite
+mlr[5] = 0;    //Verite
+mlr[6] = 0;    //Valorite
+mlr[7] = 0;    //Dull
+mlr[8] = 40;    //Gold
+mlr[9] = 40;    //spined
+mlr[10] = 0;    //horned
+mlr[11] = 0;    //barbed
+//arm luck
+ 
+//arm require
+var mrr;
+mrr=new Array(12);
+mrr[0] = 0;     //None
+mrr[1] = 0;     //Shadow
+mrr[2] = 0;    //Copper
+mrr[3] = 0;     //Bronze
+mrr[4] = 0;    //Agapite
+mrr[5] = 0;    //Verite
+mrr[6] = 0;    //Valorite
+mrr[7] = 20;    //Dull
+mrr[8] = 30;    //Gold
+mrr[9] = 0;    //spined
+mrr[10] = 0;    //horned
+mrr[11] = 0;    //barbed
+//arm require
+ 
+//arm dur
+var mdr;
+mdr=new Array(12);
+mdr[0] = 0;     //None
+mdr[1] = 100;     //Shadow
+mdr[2] = 0;    //Copper
+mdr[3] = 0;     //Bronze
+mdr[4] = 0;    //Agapite
+mdr[5] = 0;    //Verite
+mdr[6] = 50;    //Valorite
+mdr[7] = 50;    //Dull
+mdr[8] = 0;    //Gold
+mdr[9] = 0;    //spined
+mdr[10] = 0;    //horned
+mdr[11] = 0;    //barbed
+//arm dur
+ 
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.sozai.value = 0;
+  form.skill.value = 0;
+  form.skill2.value = 0;
+  form.ara.value = 0;
+  form.fra.value = 0;
+  form.cra.value = 0;
+  form.pra.value = 0;
+  form.era.value = 0;
+  form.luck.value = 0;
+  form.req.value = 0;
+  form.dur.value = 0;
+  form.phy.value = 0;
+  form.fir.value = 0;
+  form.col.value = 0;
+  form.poi.value = 0;
+  form.ene.value = 0;
+  form.luck3.value = 0;
+  form.req3.value = 0;
+  form.dur3.value = 0;
+  form.suc.value = 0;
+  form.fai.value = 0;
+  form.des.value = 0;
+  form.rsuc.value = 0;
+  return true;
+}
+ 
+//計算
+ 
+function keisan1(form)
+{
+var form = document.form_keisan;
+  soz1 = form.sozai.options[form.sozai.selectedIndex].value;
+  skill = form.skill.options[form.skill.selectedIndex].value;
+  skill2 = form.skill2.options[form.skill2.selectedIndex].value;
+  hosei = Math.floor(skill * 1.0 + skill2 * 1.0);
+  mar1 = mar[soz1];
+  mfr1 = mfr[soz1];
+  mcr1 = mcr[soz1];
+  mpr1 = mpr[soz1];
+  mer1 = mer[soz1];
+  mlr1 = mlr[soz1];
+  mrr1 = mrr[soz1];
+  mdr1 = mdr[soz1];
+  ara1 = form.ara.options[form.ara.selectedIndex].value;
+  fra1 = form.fra.options[form.fra.selectedIndex].value;
+  cra1 = form.cra.options[form.cra.selectedIndex].value;
+  pra1 = form.pra.options[form.pra.selectedIndex].value;
+  era1 = form.era.options[form.era.selectedIndex].value;
+  luk1 = form.luck.value;
+  req1 = form.req.options[form.req.selectedIndex].value;
+  dur1 = form.dur.value;
+  luck2 = luk1 * 1 + mlr1;
+   if(luk1<0||luk1>100){
+  luck2 = 0;
+}
+  form.luck3.value = luck2;
+  req2 = -req1 - mrr1;
+  req2 = Math.max(-100,req2);
+  form.req3.value = req2;
+  dur2 = Math.floor(dur1 * (1 + mdr1 / 100));
+   if(dur1<=0||dur1>255){
+  dur2 = 0;
+}
+  form.dur3.value = dur2;
+ 
+     phy = ara1 * 1 + mar1 * 1;
+     fir = fra1 * 1 + mfr1 * 1;
+     col = cra1 * 1 + mcr1 * 1;
+     poi = pra1 * 1 + mpr1 * 1;
+     ene = era1 * 1 + mer1 * 1;
+     form.phy.value = phy;
+     form.fir.value = fir;
+     form.col.value = col;
+     form.poi.value = poi;
+     form.ene.value = ene;
+ 
+     if(mar1>0&&soz1>=1){
+         su0 = Math.min(0.89, hosei / 100 + 0.80 - ara1 / 100);
+    }
+     else{
+    su0 = 1.0;
+    }
+ 
+     if(mfr1>0&&soz1>=1){
+         su1 = Math.min(0.89, hosei / 100 + 0.80 - fra1 / 100);
+       }
+     else{
+    su1 = 1.0;
+    }
+ 
+     if(mcr1>0&&soz1>=1){
+         su2 = Math.min(0.89, hosei / 100 + 0.80 - cra1 / 100);
+       }
+     else{
+    su2 = 1.0;
+    }
+ 
+     if(mpr1>0&&soz1>=1){
+         su3 = Math.min(0.89, hosei / 100 + 0.80 - pra1 / 100);
+       }
+     else{
+    su3 = 1.0;
+    }
+ 
+     if(mer1>0&&soz1>=1){
+         su4 = Math.min(0.89, hosei / 100 + 0.80 - era1 / 100);
+       }
+     else{
+    su4 = 1.0;
+    }
+ 
+     if(mlr1>0&&soz1>=1){
+         su5 = Math.min(0.89, hosei / 100 + 0.70 - Math.floor(luk1 / 2) / 100);
+       }
+     else{
+    su5 = 1.0;
+    }
+ 
+     if(mrr1>0&&soz1>=1){
+         su6 = Math.min(0.89, hosei / 100 + 0.81 - req1 / 500);
+       }
+     else{
+    su6 = 1.0;
+     }
+ 
+     if(mdr1>0&&soz1>=1){
+         su7 = Math.min(0.89, hosei / 100 + 0.80 - Math.floor(dur1 / 40) / 100);
+       }
+     else{
+    su7 = 1.0;
+    }
+ 
+     kkk = new Array(8);
+     kkk[0] = su0;
+     kkk[1] = su1;
+     kkk[2] = su2;
+     kkk[3] = su3;
+     kkk[4] = su4;
+     kkk[5] = su5;
+     kkk[6] = su6;
+     kkk[7] = su7;
+ 
+	for (i=0; i<7; i++)
+	{
+		for (j=0; j<7-i; j++)
+		{
+			if (kkk[j] > kkk[j+1])
+			{
+				n = kkk[j];
+				kkk[j]  = kkk[j+1];
+				kkk[j+1] = n;
+			}
+		}
+	}
+ 
+     suc1 = kkk[0];
+     suc2 = kkk[1];
+     suc3 = kkk[2];
+     suc4 = kkk[3];
+     suc5 = kkk[4];
+     suc6 = kkk[5];
+     suc7 = kkk[6];
+     suc8 = kkk[7];
+ 
+     if(suc1==1.0){
+     des1 = 0.0;
+     }
+     else{
+     des1 = 0.9 - suc1;
+     }
+ 
+     if(suc2==1.0){
+     des2 = 0.0;
+     }
+     else{
+     des2 = 0.9 - suc2;
+     }
+ 
+     if(suc3==1.0){
+     des3 = 0.0;
+     }
+     else{
+     des3 = 0.9 - suc3;
+     }
+ 
+     if(suc4==1.0){
+     des4 = 0.0;
+     }
+     else{
+     des4 = 0.9 - suc4;
+     }
+ 
+     if(suc5==1.0){
+     des5 = 0.0;
+     }
+     else{
+     des5 = 0.9 - suc5;
+     }
+ 
+     if(suc6==1.0){
+     des6 = 0.0;
+     }
+     else{
+     des6 = 0.9 - suc6;
+     }
+ 
+     if(suc7==1.0){
+     des7 = 0.0;
+     }
+     else{
+     des7 = 0.9 - suc7;
+     }
+ 
+     if(suc8==1.0){
+     des8 = 0.0;
+     }
+     else{
+     des8 = 0.9 - suc8;
+     }
+ 
+    suc0 = Math.floor(100 * suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * suc7 * suc8);
+ 
+    desa = des1;
+    desb = suc1 * des2;
+    desc = suc1 * suc2 * des3;
+    desd = suc1 * suc2 * suc3 * des4;
+    dese = suc1 * suc2 * suc3 * suc4 * des5;
+    desf = suc1 * suc2 * suc3 * suc4 * suc5 * des6;
+    desg = suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * des7;
+    desh = suc1 * suc2 * suc3 * suc4 * suc5 * suc6 * suc7 * des8;
+ 
+    des0 = Math.ceil(100 * (desa + desb + desc + desd + dese + desf + desg + desh));
+ 
+    fai0 = 100 - suc0 - des0;
+    rsuc0 = Math.round(100 * suc0 / (suc0 + des0));
+    form.suc.value = suc0;
+    form.des.value = des0;
+    form.fai.value = fai0;
+    form.rsuc.value = rsuc0;
+  return true;
+}
+ 
+ 
+//-->
+</script>
+ 
+<h2>防具強化計算（インゴット、革、花崗岩使用装備）</h2>
+<hr>
+ 
+自分の所持している防具を強化することで属性抵抗値やその他の特性値がどのように変わるか、
+さらに、強化のおおよその成功率が計算できます。
+<br>適用スキルは、鍛冶・裁縫・大工（石工）です。
+ 
+<form name="form_keisan">
+ 
+<h3>使用素材とスキル</h3>
+ 
+<ul class="list03">
+ 
+<li>専門スキル　：　<select name="skill" size="1">
+<option value="0">～100.0
+<option value="1">100.0～109.9
+<option value="2">110.0～119.9
+<option value="3">120.0～129.9
+<option value="4">130.0～139.9
+<option value="5">140.0～149.9
+<option value="6">150.0～159.9
+<option value="7">160.0～169.9
+<option value="8">170.0～179.9
+<option value="9">180.0
+</select>　（鍛冶は、ancient smith hammerによる補正を含む）</li>
+ 
+<li>練成スキル　：　<select name="skill2" size="1">
+<option value="0">ガーゴイルのみ適用される
+<option value="1">100.0～109.9
+<option value="2">110.0～119.9
+<option value="3">120.0
+</select></li>
+ 
+<li>特殊素材選択　：　<select name="sozai" size="1">
+<option value="0">--素材[ingot, granite, leather]--
+<option value="7">Dullcopper [スキル65～]
+<option value="1">Shadow [スキル70～]
+<option value="2">Copper [スキル75～]
+<option value="3">Bronze [スキル80～]
+<option value="8">Gold [スキル85～]
+<option value="4">Agapite [スキル90～]
+<option value="5">Verite [スキル95～]
+<option value="6">Valorite [スキル99～]
+<option value="9">Spined [スキル65～]
+<option value="10">Horned [スキル80～]
+<option value="11">Barbed [スキル99～]
+</select></li>
+ 
+<li><input type="button" value="強化成功率計算" onclick="keisan1(form)"></li>
+</ul>
+ 
+<h3>強化前後の特性値 　 <INPUT TYPE="RESET" NAME="Reset" VALUE="Reset"></h3>
+ 
+<table class="table02">
+ <tr>
+    <td align="center" bgcolor="#f0f0f0" width="90">特性値</td>
+    <td align="center" bgcolor="#d0d0d0" width="60">物理<br>抵抗</td>
+    <td align="center" bgcolor="#ffc080" width="60">炎<br>抵抗</td>
+    <td align="center" bgcolor="#80c0ff" width="60">冷気<br>抵抗</td>
+    <td align="center" bgcolor="#80ffc0" width="60">毒<br>抵抗</td>
+    <td align="center" bgcolor="#ffc0ff" width="60">エネ<br>抵抗</td>
+    <td align="center" bgcolor="#ffffd0" width="60">幸運</td>
+    <td align="center" bgcolor="#ffffd0" width="60">装備<br>条件</td>
+    <td align="center" bgcolor="#ffffd0" width="60">耐久値</td>
+ </tr>
+ 
+ <tr>
+    <td align="center" bgcolor="#f0f0f0">強化前(入力)</td>
+    <td align="center" bgcolor="#d0d0d0"><select name="ara" SIZE="1">
+<option value="0">AR
+<option value="0">0
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+    </select></td>
+    <td align="center" bgcolor="#ffc080"><select name="fra" SIZE="1">
+<option value="0">FR
+<option value="0">0
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+    </select></td>
+    <td align="center" bgcolor="#80c0ff"><select name="cra" SIZE="1">
+<option value="0">CR
+<option value="0">0
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+    </select></td>
+    <td align="center" bgcolor="#80ffc0"><select name="pra" SIZE="1">
+<option value="0">PR
+<option value="0">0
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+    </select></td>
+    <td align="center" bgcolor="#ffc0ff"><select name="era" SIZE="1">
+<option value="0">ER
+<option value="0">0
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+<option value="7">7
+<option value="8">8
+<option value="9">9
+<option value="10">10
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+    </select></td>
+    <td align="center" bgcolor="#ffffd0"><INPUT TYPE="text" NAME="luck" SIZE="4" value="0"></td>
+    <td align="center" bgcolor="#ffffd0"><select name="req" SIZE="1">
+<option value="0" selected>-0%
+    </select></td>
+    <td align="center" bgcolor="#ffffd0"><INPUT TYPE="text" NAME="dur" SIZE="4" value="0"></td>
+ </tr>
+ 
+ 
+   <tr>
+    <td align="center" bgcolor="#f0f0f0" rowspan="2">強化後</td>
+    <td align="center" bgcolor="#d0d0d0"><font size="2"><input readonly type="text" class="readtext" name="phy" size="4" value="0"></td>
+    <td align="center" bgcolor="#ffc080"><font size="2"><input readonly type="text" class="readtext" name="fir" size="4" value="0"></td>
+    <td align="center" bgcolor="#80c0ff"><font size="2"><input readonly type="text" class="readtext" name="col" size="4" value="0"></td>
+    <td align="center" bgcolor="#80ffc0"><font size="2"><input readonly type="text" class="readtext" name="poi" size="4" value="0"></td>
+    <td align="center" bgcolor="#ffc0ff"><font size="2"><input readonly type="text" class="readtext" name="ene" size="4" value="0"></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2"><input readonly type="text" class="readtext" name="luck3" size="4" value="0"></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2"><input readonly type="text" class="readtext" name="req3" size="4" value="0"></td>
+    <td align="center" bgcolor="#ffffd0"><font size="2"><input readonly type="text" class="readtext" name="dur3" size="4" value="0"></td>
+   </tr>
+ 
+</table>
+ 
+<h3>強化成功率</h3>
+ 
+ <table class="table02">
+  <tr>
+   <td align="center" bgcolor="#80c0ff" width="100">成功率</td>
+   <td align="center" bgcolor="#ffff80" width="100">失敗率</td>
+   <td align="center" bgcolor="#ffc080" width="100">破壊率</td>
+   <td align="center" bgcolor="#f0f0f0" width="100">実成功率</td>
+  </tr>
+ 
+  <tr>
+   <td align="center" bgcolor="#a0e0ff"><input readonly type="text" name="suc" size="3" value="0">％</td>
+   <td align="center" bgcolor="#ffffc0"><input readonly type="text" name="fai" size="3" value="0">％</td>
+   <td align="center" bgcolor="#ffe0a0"><input readonly type="text" name="des" size="3" value="0">％</td>
+   <td align="center" bgcolor="#ffffff"><input readonly type="text" name="rsuc" size="3" value="0">％</td>
+  </tr>
+ </table>
+ 
+ 
+<h3>注意事項</h3>
+<ul class="list02">
+<li>鍛冶製防具を強化するとき、ancient smith hammer[古代ハンマー]を装備していれば、その補正を含めたスキルを選択します。</li>
+<li>鍛冶・裁縫または大工スキルが100以上の場合、プロパティごとの強化成功率が(1＋超過分/100)％加算されます（スキル180で＋9％）。</li>
+<li>ガーゴイルで練成スキルが100.0以上の場合、プロパティごとの強化成功率が(1＋超過分/100)％加算されます（スキル120で＋3％）。</li>
+<li>使用素材は、Dull～Valoriteのインゴット8種類およびSpined～Barbedの皮3種類から選択します。</li>
+<li>強化前の防具特性値として、属性抵抗値（物理、炎、氷、毒、エネルギー）、幸運、耐久値を選択します。</li>
+<li>強化成功率は<a href="enhance01.html">こちら</a>の推測式を使用していますが、現在、破壊確率が0％になるかどうか不明なため、プロパティごとに最小1％の破壊確率を設定しています。</li>
+</ul>
+ 
+<h3>参考　：　素材による特性値の変化量</h3>
+ 
+<table class="table02">
+ 
+ <tr>
+    <td align="center" bgcolor="#f0f0f0" width="80">素材</td>
+    <td align="center" bgcolor="#f0f0f0" width="60">必要<br>スキル</td>
+    <td align="center" bgcolor="#d0d0d0" width="60">物理<br>抵抗</td>
+    <td align="center" bgcolor="#ffc080" width="60">炎<br>抵抗</td>
+    <td align="center" bgcolor="#80c0ff" width="60">冷気<br>抵抗</td>
+    <td align="center" bgcolor="#80ffc0" width="60">毒<br>抵抗</td>
+    <td align="center" bgcolor="#ffc0ff" width="60">エネ<br>抵抗</td>
+    <td align="center" bgcolor="#ffffd0" width="60">幸運</td>
+    <td align="center" bgcolor="#ffffd0" width="60">装備<br>条件</td>
+    <td align="center" bgcolor="#ffffd0" width="60">耐久値</td>
+ </tr>
+ 
+   <tr>
+    <td align="center" bgcolor="#e0e0c8"><img src="dull-ingot.gif" alt="dullcopper" class="img01"><br>dullcopper</td>
+    <td align="center" bgcolor="#e0e0c8">65.0</td>
+    <td align="center" bgcolor="#d0d0d0">+10</td>
+    <td align="center" bgcolor="#ffc080">&nbsp;</td>
+    <td align="center" bgcolor="#80c0ff">&nbsp;</td>
+    <td align="center" bgcolor="#80ffc0">&nbsp;</td>
+    <td align="center" bgcolor="#ffc0ff">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">-20%</td>
+    <td align="center" bgcolor="#ffffd0">+50%</td>
+   </tr>
+ 
+   <tr>
+    <td align="center" bgcolor="#a0a0a0"><img src="sha-ingot.gif" alt="shadow" class="img01"><br>shadow</td>
+    <td align="center" bgcolor="#a0a0a0">70.0</td>
+    <td align="center" bgcolor="#d0d0d0">+3</td>
+    <td align="center" bgcolor="#ffc080">+2</td>
+    <td align="center" bgcolor="#80c0ff">&nbsp;</td>
+    <td align="center" bgcolor="#80ffc0">&nbsp;</td>
+    <td align="center" bgcolor="#ffc0ff">+7</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">+100%</td>
+   </tr>
+ 
+   <tr>
+    <td align="center" bgcolor="#e0c890"><img src="cop-ingot.gif" alt="copper" class="img01"><br>copper</td>
+    <td align="center" bgcolor="#e0c890">75.0</td>
+    <td align="center" bgcolor="#d0d0d0">+2</td>
+    <td align="center" bgcolor="#ffc080">+2</td>
+    <td align="center" bgcolor="#80c0ff">&nbsp;</td>
+    <td align="center" bgcolor="#80ffc0">+7</td>
+    <td align="center" bgcolor="#ffc0ff">+2</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+   </tr>
+ 
+   <tr>
+    <td align="center" bgcolor="#c89050"><img src="bro-ingot.gif" alt="bronze" class="img01"><br>bronze</td>
+    <td align="center" bgcolor="#c89050">80.0</td>
+    <td align="center" bgcolor="#d0d0d0">+3</td>
+    <td align="center" bgcolor="#ffc080">&nbsp;</td>
+    <td align="center" bgcolor="#80c0ff">+7</td>
+    <td align="center" bgcolor="#80ffc0">+2</td>
+    <td align="center" bgcolor="#ffc0ff">+2</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+   </tr>
+ 
+   <tr>
+    <td align="center" bgcolor="#fff0c8"><img src="gold-ingot.gif" alt="gold" class="img01"><br>gold</td>
+    <td align="center" bgcolor="#fff0c8">85.0</td>
+    <td align="center" bgcolor="#d0d0d0">+2</td>
+    <td align="center" bgcolor="#ffc080">+2</td>
+    <td align="center" bgcolor="#80c0ff">+3</td>
+    <td align="center" bgcolor="#80ffc0">&nbsp;</td>
+    <td align="center" bgcolor="#ffc0ff">+3</td>
+    <td align="center" bgcolor="#ffffd0">+40</td>
+    <td align="center" bgcolor="#ffffd0">-30%</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+   </tr>
+ 
+   <tr>
+    <td align="center" bgcolor="#ffd0d0"><img src="aga-ingot.gif" alt="agapite" class="img01"><br>agapite</td>
+    <td align="center" bgcolor="#ffd0d0">90.0</td>
+    <td align="center" bgcolor="#d0d0d0">+2</td>
+    <td align="center" bgcolor="#ffc080">+7</td>
+    <td align="center" bgcolor="#80c0ff">+2</td>
+    <td align="center" bgcolor="#80ffc0">+2</td>
+    <td align="center" bgcolor="#ffc0ff">+2</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+   </tr>
+ 
+   <tr>
+    <td align="center" bgcolor="#d0ffd0"><img src="ver-ingot.gif" alt="verite" class="img01"><br>verite</td>
+    <td align="center" bgcolor="#d0ffd0">95.0</td>
+    <td align="center" bgcolor="#d0d0d0">+4</td>
+    <td align="center" bgcolor="#ffc080">+4</td>
+    <td align="center" bgcolor="#80c0ff">+3</td>
+    <td align="center" bgcolor="#80ffc0">+4</td>
+    <td align="center" bgcolor="#ffc0ff">+1</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+   </tr>
+ 
+   <tr>
+    <td align="center" bgcolor="#c8e4ff"><img src="val-ingot.gif" alt="valorite" class="img01"><br>valorite</td>
+    <td align="center" bgcolor="#c8e4ff">99.0</td>
+    <td align="center" bgcolor="#d0d0d0">+5</td>
+    <td align="center" bgcolor="#ffc080">&nbsp;</td>
+    <td align="center" bgcolor="#80c0ff">+4</td>
+    <td align="center" bgcolor="#80ffc0">+4</td>
+    <td align="center" bgcolor="#ffc0ff">+4</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">+50%</td>
+   </tr>
+ 
+   <tr>
+    <td align="center" bgcolor="#c8d8f0"><img src="spined.gif" alt="spined" width="33" class="img01"><br>spined</td>
+    <td align="center" bgcolor="#c8d8f0">65.0</td>
+    <td align="center" bgcolor="#d0d0d0">+9</td>
+    <td align="center" bgcolor="#ffc080">&nbsp;</td>
+    <td align="center" bgcolor="#80c0ff">&nbsp;</td>
+    <td align="center" bgcolor="#80ffc0">&nbsp;</td>
+    <td align="center" bgcolor="#ffc0ff">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">+40</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+   </tr>
+ 
+   <tr>
+    <td align="center" bgcolor="#ffc0c0"><img src="horned.gif" alt="horned" width="33" class="img01"><br>horned</td>
+    <td align="center" bgcolor="#ffc0c0">80.0</td>
+    <td align="center" bgcolor="#d0d0d0">+2</td>
+    <td align="center" bgcolor="#ffc080">+4</td>
+    <td align="center" bgcolor="#80c0ff">+3</td>
+    <td align="center" bgcolor="#80ffc0">+3</td>
+    <td align="center" bgcolor="#ffc0ff">+3</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+   </tr>
+ 
+   <tr>
+    <td align="center" bgcolor="#90d090"><img src="barbed.gif" alt="barbed" width="33" class="img01"><br>barbed</td>
+    <td align="center" bgcolor="#90d090">99.0</td>
+    <td align="center" bgcolor="#d0d0d0">+3</td>
+    <td align="center" bgcolor="#ffc080">+2</td>
+    <td align="center" bgcolor="#80c0ff">+3</td>
+    <td align="center" bgcolor="#80ffc0">+3</td>
+    <td align="center" bgcolor="#ffc0ff">+5</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+    <td align="center" bgcolor="#ffffd0">&nbsp;</td>
+   </tr>
+ 
+ </table>
+</form>
+ 
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

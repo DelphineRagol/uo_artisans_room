@@ -1,0 +1,1209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>特殊素材の効果</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898711</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+
+ {
+  if( document.getElementById(targetID))
+   {
+    for (i=1; i<6; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+
+<h2>特殊素材の効果（Publish81）</h2>
+<hr>
+下記の素材で装備品を作成したとき、素材固有の効果が付加されます。画像をクリックすると、素材効果を確認することができます。
+<br><a href="enhance02.html">Publish80以前の仕様</a>
+<table class="table03">
+  <tr>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_1');return false;"><img src="ver-ingot.gif" alt="ingot" class="img01"><br>ingot</a></td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_2');return false;"><img src="spined.gif" alt="切った皮" class="img01"><br>leather</a></td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_3');return false;"><img src="ash-board.gif" alt="木の板" class="img01"><br>board</a></td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_4');return false;"><img src="whiscale.gif" alt="鱗" class="img01"><br>scale</a></td>
+    <td align="center" width="75"><a href="#" onClick="showHide('cat_5');return false;"><img src="val_granite.gif" alt="高品質な花崗岩" class="img01"><br>granite</a></td>
+  </tr>
+</table>
+
+
+<div id="cat_1" style="display: none">
+<h3>（１）インゴットの効果</h3>
+<h4>（A）武器（鍛冶・細工）</h4>
+
+ダメージ変換についている(1)～(4)は、属性変換の優先順位をあらわしています。
+<br>途中で物理属性が0％になった場合、それ以降はキャンセルされます。
+<br>「耐久値＋○％」の効果は装備品プロパティには表示されませんが、実際の耐久値（耐久性：○／○）には反映されています。
+<br>なお、耐久値の最大値は255であり、特殊素材の効果でもそれを超えることはできません。
+
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="60">&nbsp;</td>
+  <td align="center" bgcolor="#c0c0a0" width="60">Dull</td>
+  <td align="center" bgcolor="#202020" width="60"><font color="#ffff00">Shadow</font></td>
+  <td align="center" bgcolor="#d0a040" width="60">Copper</td>
+  <td align="center" bgcolor="#604000" width="60"><font color="#ffff00">Bronze</font></td>
+  <td align="center" bgcolor="#ffe080" width="60">Gold</td>
+  <td align="center" bgcolor="#ffa0a0" width="60">Agapite</td>
+  <td align="center" bgcolor="#80ff80" width="60">Verite</td>
+  <td align="center" bgcolor="#80c0ff" width="60">Valorite</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">画像</td>
+  <td align="center" bgcolor="#f0f0f0"><img src="dull-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="sha-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="cop-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="bro-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="gold-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="aga-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="ver-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="val-ingot.gif" alt="" class="img01"></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td align="center" bgcolor="#c0c0a0">65.0</td>
+  <td align="center" bgcolor="#202020"><font color="#ffff00">70.0</font></td>
+  <td align="center" bgcolor="#d0a040">75.0</td>
+  <td align="center" bgcolor="#604000"><font color="#ffff00">80.0</font></td>
+  <td align="center" bgcolor="#ffe080">85.0</td>
+  <td align="center" bgcolor="#ffa0a0">90.0</td>
+  <td align="center" bgcolor="#80ff80">95.0</td>
+  <td align="center" bgcolor="#80c0ff">99.0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="9"><font color="#c0ff00">ダメージ変換<sup>※1</sup></font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0d0d0">物理</td>
+  <td align="center" bgcolor="#f0f0f0" colspan="8">他属性に変更された分だけ減少します。(物理属性がなければ変換されません)</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc080">炎</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020"><font color="#c0ff00">40%</font></td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">10%<sup>(3)</sup></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">冷気</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">20%</font></td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">30%<sup>(1)</sup></td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">20%<sup>(1)</sup></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ffc0">毒</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">10%<sup>(2)</sup></td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">40%<sup>(2)</sup></td>
+  <td align="center" bgcolor="#c0e0ff">10%<sup>(4)</sup></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc0ff">エネ</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">20%<sup>(1)</sup></td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">20%<sup>(2)</sup></td>
+  <td align="center" bgcolor="#c0ffc0">20%<sup>(1)</sup></td>
+  <td align="center" bgcolor="#c0e0ff">20%<sup>(2)</sup></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="9"><font color="#c0ff00">その他の効果</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">耐久値</td>
+  <td align="center" bgcolor="#e0e0c0">+100%</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+50%</font></td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">装備<br>条件</td>
+  <td align="center" bgcolor="#e0e0c0">-50%</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">-50%</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">運</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">+40</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+</table>
+
+<br class="cle">
+
+<h4>（B）防具および盾（鍛冶）</h4>
+
+細工で作成できるgargish necklace [ガーゴイルネックレス]およびgargish earring [ガーゴイルイヤリング]には、素材効果は付与されません。
+<br>「耐久値＋○％」の効果は装備品プロパティには表示されませんが、実際の耐久値（耐久性：○／○）には反映されています。
+<br>なお、耐久値の最大値は255であり、特殊素材の効果でもそれを超えることはできません。
+
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="60">素材</td>
+  <td align="center" bgcolor="#c0c0a0" width="60">Dull</td>
+  <td align="center" bgcolor="#202020" width="60"><font color="#ffff00">Shadow</font></td>
+  <td align="center" bgcolor="#d0a040" width="60">Copper</td>
+  <td align="center" bgcolor="#604000" width="60"><font color="#ffff00">Bronze</font></td>
+  <td align="center" bgcolor="#ffe080" width="60">Gold</td>
+  <td align="center" bgcolor="#ffa0a0" width="60">Agapite</td>
+  <td align="center" bgcolor="#80ff80" width="60">Verite</td>
+  <td align="center" bgcolor="#80c0ff" width="60">Valorite</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">画像</td>
+  <td align="center" bgcolor="#f0f0f0"><img src="dull-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="sha-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="cop-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="bro-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="gold-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="aga-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="ver-ingot.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="val-ingot.gif" alt="" class="img01"></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td align="center" bgcolor="#c0c0a0">65.0</td>
+  <td align="center" bgcolor="#202020"><font color="#ffff00">70.0</font></td>
+  <td align="center" bgcolor="#d0a040">75.0</td>
+  <td align="center" bgcolor="#604000"><font color="#ffff00">80.0</font></td>
+  <td align="center" bgcolor="#ffe080">85.0</td>
+  <td align="center" bgcolor="#ffa0a0">90.0</td>
+  <td align="center" bgcolor="#80ff80">95.0</td>
+  <td align="center" bgcolor="#80c0ff">99.0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="9"><font color="#c0ff00">抵抗値強化</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0d0d0">物理<br>抵抗</td>
+  <td align="center" bgcolor="#e0e0c0">+10％</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+3％</font></td>
+  <td align="center" bgcolor="#e0c080">+2％</td>
+  <td align="center" bgcolor="#a06020"><font color="#c0ff00">+3％</font></td>
+  <td align="center" bgcolor="#fff0c0">+2％</td>
+  <td align="center" bgcolor="#ffc0c0">+2％</td>
+  <td align="center" bgcolor="#c0ffc0">+4％</td>
+  <td align="center" bgcolor="#c0e0ff">+5％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc080">炎<br>抵抗</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+2％</font></td>
+  <td align="center" bgcolor="#e0c080">+2％</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">+2％</td>
+  <td align="center" bgcolor="#ffc0c0">+7％</td>
+  <td align="center" bgcolor="#c0ffc0">+4％</td>
+  <td align="center" bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">冷気<br>抵抗</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020"><font color="#c0ff00">+7％</font></td>
+  <td align="center" bgcolor="#fff0c0">+3％</td>
+  <td align="center" bgcolor="#ffc0c0">+2％</td>
+  <td align="center" bgcolor="#c0ffc0">+3％</td>
+  <td align="center" bgcolor="#c0e0ff">+4％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ffc0">毒<br>抵抗</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">+7％</td>
+  <td align="center" bgcolor="#a06020"><font color="#c0ff00">+2％</font></td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">+2％</td>
+  <td align="center" bgcolor="#c0ffc0">+4％</td>
+  <td align="center" bgcolor="#c0e0ff">+4％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc0ff">エネ<br>抵抗</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+7％</font></td>
+  <td align="center" bgcolor="#e0c080">+2％</td>
+  <td align="center" bgcolor="#a06020"><font color="#c0ff00">+2％</font></td>
+  <td align="center" bgcolor="#fff0c0">+3％</td>
+  <td align="center" bgcolor="#ffc0c0">+2％</td>
+  <td align="center" bgcolor="#c0ffc0">+1％</td>
+  <td align="center" bgcolor="#c0e0ff">+4％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="9"><font color="#c0ff00">その他効果</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">耐久値</td>
+  <td align="center" bgcolor="#e0e0c0">+50%</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+100%</font></td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">+50%</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">装備<br>条件</td>
+  <td align="center" bgcolor="#e0e0c0">-20%</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">-30%</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">運</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">+40</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+</table>
+
+<br class="cle">
+
+</div>
+
+<div id="cat_2" style="display: none">
+
+<h3>（２）皮の効果（裁縫）</h3>
+
+加工前の皮でも同じ効果が得られます。
+
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="60">&nbsp;</td>
+  <td align="center" bgcolor="#4080c0" width="75">Spined</td>
+  <td align="center" bgcolor="#ff6060" width="75">Horned</td>
+  <td align="center" bgcolor="#006000" width="75"><font color="#c0ff00">Barbed</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">画像</td>
+  <td align="center" bgcolor="#f0f0f0"><img src="spined.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="horned.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="barbed.gif" alt="" class="img01"></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td align="center" bgcolor="#6699ff">65.0</td>
+  <td align="center" bgcolor="#ff9999">80.0</td>
+  <td align="center" bgcolor="#66cc66">99.0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="4"><font color="#c0ff00">抵抗値強化</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0d0d0">物理<br>抵抗</td>
+  <td align="center" bgcolor="#6699ff">+9％</td>
+  <td align="center" bgcolor="#ff9999">+2％</td>
+  <td align="center" bgcolor="#66cc66">+3％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc080">炎<br>抵抗</td>
+  <td align="center" bgcolor="#6699ff">&nbsp;</td>
+  <td align="center" bgcolor="#ff9999">+4％</td>
+  <td align="center" bgcolor="#66cc66">+2％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">冷気<br>抵抗</td>
+  <td align="center" bgcolor="#6699ff">&nbsp;</td>
+  <td align="center" bgcolor="#ff9999">+3％</td>
+  <td align="center" bgcolor="#66cc66">+3％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ffc0">毒<br>抵抗</td>
+  <td align="center" bgcolor="#6699ff">&nbsp;</td>
+  <td align="center" bgcolor="#ff9999">+3％</td>
+  <td align="center" bgcolor="#66cc66">+3％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc0ff">エネ<br>抵抗</td>
+  <td align="center" bgcolor="#6699ff">&nbsp;</td>
+  <td align="center" bgcolor="#ff9999">+3％</td>
+  <td align="center" bgcolor="#66cc66">+5％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="4"><font color="#c0ff00">その他効果</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">運</td>
+  <td align="center" bgcolor="#6699ff">+40</td>
+  <td align="center" bgcolor="#ff9999">&nbsp;</td>
+  <td align="center" bgcolor="#66cc66">&nbsp;</td>
+ </tr>
+</table>
+
+</div>
+
+<div id="cat_3" style="display: none">
+
+<h3>（３）木材の効果</h3>
+
+加工前の丸太でも同じ効果が得られます。
+
+<h4>（A）武器（大工・弓工）</h4>
+
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="60">&nbsp;</td>
+  <td align="center" bgcolor="#a58429" width="80">Oak</td>
+  <td align="center" bgcolor="#acac7c" width="80">Ash</td>
+  <td align="center" bgcolor="#cc8800" width="80">Yew</td>
+  <td align="center" bgcolor="#104a10" width="80"><font color="#ccff00">Heart<br>wood</font></td>
+  <td align="center" bgcolor="#941818" width="80"><font color="#ccff00">Blood<br>wood</font></td>
+  <td align="center" bgcolor="#94cccc" width="80">Frost<br>wood</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">画像</td>
+  <td align="center" bgcolor="#f0f0f0"><img src="oak-board.gif" alt="oak" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="ash-board.gif" alt="ash" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="yew-board.gif" alt="yew" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="heart-board.gif" alt="heartwood" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="blood-board.gif" alt="bloodwood" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="frost-board.gif" alt="frostwood" class="img01"></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td align="center" bgcolor="#d0c070">65.0</td>
+  <td align="center" bgcolor="#d8d8b0">75.0</td>
+  <td align="center" bgcolor="#e0cc40">85.0</td>
+  <td align="center" bgcolor="#70d070">95.0</td>
+  <td align="center" bgcolor="#c09090">95.0</td>
+  <td align="center" bgcolor="#c0e0e0">95.0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="7"><font color="#c0ff00">ダメージ変換<sup>※1</sup></font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0d0d0">物理</td>
+  <td align="center" bgcolor="#f0f0f0" colspan="6">他属性に変更された分だけ減少します。(物理属性がなければ変換されません)</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc080">炎</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">冷気</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">40％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ffc0">毒</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc0ff">エネ</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="7"><font color="#c0ff00">その他の効果</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">耐久値</td>
+  <td align="center" bgcolor="#d0c070">+50%</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">装備<br>条件</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">-20%</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">武器<br>ダメージ</td>
+  <td align="center" bgcolor="#d0c070">+5％</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">+10％</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">+12％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">運</td>
+  <td align="center" bgcolor="#d0c070">40</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">その他</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">速度+10%<br>重量-25%</td>
+  <td align="center" bgcolor="#e0cc40">命中+5%</td>
+  <td align="center" bgcolor="#70d070">下に別記</td>
+  <td align="center" bgcolor="#c09090">life leech<br>強度8<br>HP回復2</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+</table>
+
+※<font color="#ff0000">Bloodwoodに付加されるライフリーチはマジック品で付加されている強度が優先されます。</font>
+<br>そのため、ライフリーチが付加されている装備品を強化してもライフリーチの強度は増加しません。
+
+<ul class="list01">
+Heartwoodで付加されるプロパティと強度（以下のうち1つが付加されます）
+     <li>幸運 40</li>
+     <li>耐久値＋50％</li>
+     <li>速度＋10％</li>
+     <li>装備条件－20％</li>
+     <li>重量－25％</li>
+     <li>命中＋5％</li>
+     <li>ライフリーチ 強度5</li>
+</ul>
+
+
+<h4>（B）鎧（大工）</h4>
+
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="60">&nbsp;</td>
+  <td align="center" bgcolor="#a58429" width="70">Oak</td>
+  <td align="center" bgcolor="#acac7c" width="70">Ash</td>
+  <td align="center" bgcolor="#cc8800" width="70">Yew</td>
+  <td align="center" bgcolor="#104a10" width="70"><font color="#ccff00">Heart<br>wood</font></td>
+  <td align="center" bgcolor="#941818" width="70"><font color="#ccff00">Blood<br>wood</font></td>
+  <td align="center" bgcolor="#94cccc" width="70">Frost<br>wood</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">画像</td>
+  <td align="center" bgcolor="#f0f0f0"><img src="oak-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="ash-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="yew-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="heart-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="blood-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="frost-board.gif" alt="wood"></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td align="center" bgcolor="#d0c070">65.0</td>
+  <td align="center" bgcolor="#d8d8b0">75.0</td>
+  <td align="center" bgcolor="#e0cc40">85.0</td>
+  <td align="center" bgcolor="#70d070">95.0</td>
+  <td align="center" bgcolor="#c09090">95.0</td>
+  <td align="center" bgcolor="#c0e0e0">95.0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="7"><font color="#c0ff00">抵抗値強化</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0d0d0">物理<br>抵抗</td>
+  <td align="center" bgcolor="#d0c070">+3%</td>
+  <td align="center" bgcolor="#d8d8b0">+2%</td>
+  <td align="center" bgcolor="#e0cc40">+6%</td>
+  <td align="center" bgcolor="#70d070">+2%</td>
+  <td align="center" bgcolor="#c09090">+3%</td>
+  <td align="center" bgcolor="#c0e0e0">+2%</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc080">炎<br>抵抗</td>
+  <td align="center" bgcolor="#d0c070">+3%</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">+3%</td>
+  <td align="center" bgcolor="#70d070">+3%</td>
+  <td align="center" bgcolor="#c09090">+8%</td>
+  <td align="center" bgcolor="#c0e0e0">+1%</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">冷気<br>抵抗</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">+4%</td>
+  <td align="center" bgcolor="#e0cc40">+3%</td>
+  <td align="center" bgcolor="#70d070">+2%</td>
+  <td align="center" bgcolor="#c09090">+1%</td>
+  <td align="center" bgcolor="#c0e0e0">+8%</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ffc0">毒<br>抵抗</td>
+  <td align="center" bgcolor="#d0c070">+2%</td>
+  <td align="center" bgcolor="#d8d8b0">+1%</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">+7%</td>
+  <td align="center" bgcolor="#c09090">+3%</td>
+  <td align="center" bgcolor="#c0e0e0">+3%</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc0ff">エネ<br>抵抗</td>
+  <td align="center" bgcolor="#d0c070">+3%</td>
+  <td align="center" bgcolor="#d8d8b0">+6%</td>
+  <td align="center" bgcolor="#e0cc40">+3%</td>
+  <td align="center" bgcolor="#70d070">+2%</td>
+  <td align="center" bgcolor="#c09090">+3%</td>
+  <td align="center" bgcolor="#c0e0e0">+4%</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="7"><font color="#c0ff00">その他の効果</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">耐久値</td>
+  <td align="center" bgcolor="#d0c070">+50%</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">装備<br>条件</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">-20%</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">運</td>
+  <td align="center" bgcolor="#d0c070">40</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">その他</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">重量-25%</td>
+  <td align="center" bgcolor="#e0cc40">HP回復1</td>
+  <td align="center" bgcolor="#70d070">下に別記</td>
+  <td align="center" bgcolor="#c09090">HP回復2</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+</table>
+
+「耐久値＋○％」の効果は装備品プロパティには表示されませんが、実際の耐久値（耐久性：○／○）には反映されています。
+<br>マジックプロパティで付加されているHP回復とBloodwoodのHP回復2は合算されず、BloodwoodのHP回復2が上書きされます。
+<br>Heartwoodで付加されるプロパティと強度（以下のうち1つが付加されます）
+
+<ul class="list01">
+     <li>幸運 40</li>
+     <li>耐久値＋50％</li>
+     <li>装備条件－20％</li>
+     <li>重量－50％</li>
+     <li>命中＋5％</li>
+     <li>武器ダメージ＋10％</li>
+     <li>瞑想可</li>
+ </ul>
+
+<h4>（C）Wooden shield（大工）</h4>
+
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="60">&nbsp;</td>
+  <td align="center" bgcolor="#a58429" width="70">Oak</td>
+  <td align="center" bgcolor="#acac7c" width="70">Ash</td>
+  <td align="center" bgcolor="#cc8800" width="70">Yew</td>
+  <td align="center" bgcolor="#104a10" width="70"><font color="#ccff00">Heart<br>wood</font></td>
+  <td align="center" bgcolor="#941818" width="70"><font color="#ccff00">Blood<br>wood</font></td>
+  <td align="center" bgcolor="#94cccc" width="70">Frost<br>wood</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">画像</td>
+  <td align="center" bgcolor="#f0f0f0"><img src="oak-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="ash-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="yew-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="heart-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="blood-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="frost-board.gif" alt="wood"></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td align="center" bgcolor="#d0c070">65.0</td>
+  <td align="center" bgcolor="#d8d8b0">75.0</td>
+  <td align="center" bgcolor="#e0cc40">85.0</td>
+  <td align="center" bgcolor="#70d070">95.0</td>
+  <td align="center" bgcolor="#c09090">95.0</td>
+  <td align="center" bgcolor="#c0e0e0">95.0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="7"><font color="#c0ff00">抵抗値強化</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0d0d0">物理<br>抵抗</td>
+  <td align="center" bgcolor="#d0c070">+1%</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">+3%</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc080">炎<br>抵抗</td>
+  <td align="center" bgcolor="#d0c070">+1%</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">+3%</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">冷気<br>抵抗</td>
+  <td align="center" bgcolor="#d0c070">+1%</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">+3%</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ffc0">毒<br>抵抗</td>
+  <td align="center" bgcolor="#d0c070">+1%</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc0ff">エネ<br>抵抗</td>
+  <td align="center" bgcolor="#d0c070">+1%</td>
+  <td align="center" bgcolor="#d8d8b0">+3%</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="7"><font color="#c0ff00">その他の効果</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">耐久値</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">装備<br>条件</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">-20%</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">運</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">&nbsp;</td>
+  <td align="center" bgcolor="#70d070">&nbsp;</td>
+  <td align="center" bgcolor="#c09090">40</td>
+  <td align="center" bgcolor="#c0e0e0">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">その他</td>
+  <td align="center" bgcolor="#d0c070">&nbsp;</td>
+  <td align="center" bgcolor="#d8d8b0">&nbsp;</td>
+  <td align="center" bgcolor="#e0cc40">HP回復1</td>
+  <td align="center" bgcolor="#70d070">下に別記</td>
+  <td align="center" bgcolor="#c09090">HP回復2</td>
+  <td align="center" bgcolor="#c0e0e0">詠唱可<br>FC-1</td>
+ </tr>
+</table>
+
+「耐久値＋○％」の効果は装備品プロパティには表示されませんが、実際の耐久値（耐久性：○／○）には反映されています。
+<br>Heartwoodで付加されるプロパティと強度（以下のうち1つが付加されます）
+
+<ul class="list01">
+     <li>物理ダメージ反射5％</li>
+     <li>STR 2</li>
+     <li>DEX 2</li>
+     <li>[詠唱可＋ファストキャスト-1]＋[冷気抵抗＋3％]（Frostwoodと同じ）</li>
+     <li>自己修復 2</li>
+     <li>物理抵抗 ＋5％</li>
+ </ul>
+Heartwoodで強化するとき、強化できない内容のメッセージが出ることがあります。
+
+
+<h4>（D）釣り竿（大工）</h4>
+
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="60">&nbsp;</td>
+  <td align="center" bgcolor="#a58429" width="70">Oak</td>
+  <td align="center" bgcolor="#acac7c" width="70">Ash</td>
+  <td align="center" bgcolor="#cc8800" width="70">Yew</td>
+  <td align="center" bgcolor="#104a10" width="70"><font color="#ccff00">Heart<br>wood</font></td>
+  <td align="center" bgcolor="#941818" width="70"><font color="#ccff00">Blood<br>wood</font></td>
+  <td align="center" bgcolor="#94cccc" width="70">Frost<br>wood</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">画像</td>
+  <td align="center" bgcolor="#f0f0f0"><img src="oak-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="ash-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="yew-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="heart-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="blood-board.gif" alt="wood"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="frost-board.gif" alt="wood"></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td align="center" bgcolor="#d0c070">65.0</td>
+  <td align="center" bgcolor="#d8d8b0">75.0</td>
+  <td align="center" bgcolor="#e0cc40">85.0</td>
+  <td align="center" bgcolor="#70d070">95.0</td>
+  <td align="center" bgcolor="#c09090">95.0</td>
+  <td align="center" bgcolor="#c0e0e0">95.0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">効果</td>
+  <td align="center" bgcolor="#d0c070">幸運40</td>
+  <td align="center" bgcolor="#d8d8b0">装備条件<br>-20％</td>
+  <td align="center" bgcolor="#e0cc40">HP回復2</td>
+  <td align="center" bgcolor="#70d070">下に別記</td>
+  <td align="center" bgcolor="#d0a0a0">HP回復2<br>幸運20</td>
+  <td align="center" bgcolor="#c0e0e0">詠唱可<br>FC-1</td>
+ </tr>
+</table>
+Heartwoodで作成した装備品には、他の木材に付加される効果のうち1つが付加されます
+
+<ul class="list01">
+     <li>幸運40</li>
+     <li>装備条件－20%</li>
+     <li>ヒットポイント回復2</li>
+     <li>詠唱可、ファストキャスト－1</li>
+</ul>
+
+
+</div>
+
+<div id="cat_4" style="display: none">
+
+<h3>（４）鱗の効果</h3>
+
+鱗の標準素材はないため、作成時にこれらの素材の効果が付加されます。
+<br>ただし、ベイン軍の着ている鱗鎧は標準素材の扱いとなっており、下に示す鱗で強化可能です。
+<br>また、Yellow以外の鱗で作成した防具は、Runic hammer[ルニックハンマー]で改良することができます。
+
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="60">素材</td>
+  <td align="center" bgcolor="#ff6060" width="70">Red</td>
+  <td align="center" bgcolor="#ffff60" width="70">Yellow</td>
+  <td align="center" bgcolor="#60ff60" width="70">Green</td>
+  <td align="center" bgcolor="#6060ff" width="70">Blue</td>
+  <td align="center" bgcolor="#ffffff" width="70">White</td>
+  <td align="center" bgcolor="#606060" width="70"><font color="#c0ff00">Black</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">画像</td>
+  <td align="center" bgcolor="#f0f0f0"><img src="redscale.gif"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="yelscale.gif"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="grescale.gif"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="bluscale.gif"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="whiscale.gif"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="blascale.gif"></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="7"><font color="#c0ff00">抵抗値強化</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0d0d0">物理<br>抵抗</td>
+  <td align="center" bgcolor="#ff6060">+1%</td>
+  <td align="center" bgcolor="#ffff60">-3％</td>
+  <td align="center" bgcolor="#60ff60">+1%</td>
+  <td align="center" bgcolor="#6060ff">+1%</td>
+  <td align="center" bgcolor="#ffffff">-3％</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+11％</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc080">炎<br>抵抗</td>
+  <td align="center" bgcolor="#ff6060">+11％</td>
+  <td align="center" bgcolor="#ffff60">+1%</td>
+  <td align="center" bgcolor="#60ff60">-3%</td>
+  <td align="center" bgcolor="#6060ff">+1%</td>
+  <td align="center" bgcolor="#ffffff">+1%</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+1%</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">冷気<br>抵抗</td>
+  <td align="center" bgcolor="#ff6060">-3％</td>
+  <td align="center" bgcolor="#ffff60">+1%</td>
+  <td align="center" bgcolor="#60ff60">+1%</td>
+  <td align="center" bgcolor="#6060ff">+1%</td>
+  <td align="center" bgcolor="#ffffff">+11%</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+1%</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ffc0">毒<br>抵抗</td>
+  <td align="center" bgcolor="#ff6060">+1%</td>
+  <td align="center" bgcolor="#ffff60">+1%</td>
+  <td align="center" bgcolor="#60ff60">+11%</td>
+  <td align="center" bgcolor="#6060ff">-3％</td>
+  <td align="center" bgcolor="#ffffff">+1%</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+1%</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc0ff">エネ<br>抵抗</td>
+  <td align="center" bgcolor="#ff6060">+1%</td>
+  <td align="center" bgcolor="#ffff60">+1%</td>
+  <td align="center" bgcolor="#60ff60">+1%</td>
+  <td align="center" bgcolor="#6060ff">+11%</td>
+  <td align="center" bgcolor="#ffffff">+1%</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">-3％</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="7"><font color="#c0ff00">その他効果</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">運</td>
+  <td align="center" bgcolor="#ff6060">&nbsp;</td>
+  <td align="center" bgcolor="#ffff60">+40</td>
+  <td align="center" bgcolor="#60ff60">&nbsp;</td>
+  <td align="center" bgcolor="#6060ff">&nbsp;</td>
+  <td align="center" bgcolor="#ffffff">&nbsp;</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">&nbsp;</font></td>
+ </tr>
+</table>
+
+</div>
+
+<div id="cat_5" style="display: none">
+
+<h3>（５）花崗岩の効果（石工）</h3>
+<h4>（A）武器</h4>
+
+ダメージ変換についている(1)～(4)は、属性変換の優先順位をあらわしています。
+<br>途中で物理属性が0％になった場合、それ以降はキャンセルされます。
+<br>「耐久値＋○％」の効果は装備品プロパティには表示されませんが、実際の耐久値（耐久性：○／○）には反映されています。
+<br>なお、耐久値の最大値は255であり、特殊素材の効果でもそれを超えることはできません。
+
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="60">&nbsp;</td>
+  <td align="center" bgcolor="#c0c0a0" width="60">Dull</td>
+  <td align="center" bgcolor="#202020" width="60"><font color="#ffff00">Shadow</font></td>
+  <td align="center" bgcolor="#d0a040" width="60">Copper</td>
+  <td align="center" bgcolor="#604000" width="60"><font color="#ffff00">Bronze</font></td>
+  <td align="center" bgcolor="#ffe080" width="60">Gold</td>
+  <td align="center" bgcolor="#ffa0a0" width="60">Agapite</td>
+  <td align="center" bgcolor="#80ff80" width="60">Verite</td>
+  <td align="center" bgcolor="#80c0ff" width="60">Valorite</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">画像</td>
+  <td align="center" bgcolor="#f0f0f0"><img src="dul_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="sha_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="cop_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="bro_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="gol_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="aga_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="ver_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="val_granite.gif" alt="" class="img01"></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td align="center" bgcolor="#f0f0f0" colspan="8">大工100.0（石工を行うには、大工スキルが100必要）</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="9"><font color="#c0ff00">ダメージ変換<sup>※1</sup></font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0d0d0">物理</td>
+  <td align="center" bgcolor="#f0f0f0" colspan="8">他属性に変更された分だけ減少します。(物理属性がなければ変換されません)</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc080">炎</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020"><font color="#c0ff00">40%</font></td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">10%<sup>(3)</sup></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">冷気</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">20%</font></td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">30%<sup>(1)</sup></td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">20%<sup>(1)</sup></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ffc0">毒</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">10%<sup>(2)</sup></td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">40%<sup>(2)</sup></td>
+  <td align="center" bgcolor="#c0e0ff">10%<sup>(4)</sup></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc0ff">エネ</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">20%<sup>(1)</sup></td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">20%<sup>(2)</sup></td>
+  <td align="center" bgcolor="#c0ffc0">20%<sup>(1)</sup></td>
+  <td align="center" bgcolor="#c0e0ff">20%<sup>(2)</sup></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="9"><font color="#c0ff00">その他の効果</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">耐久値</td>
+  <td align="center" bgcolor="#e0e0c0">+100%</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+50%</font></td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">装備<br>条件</td>
+  <td align="center" bgcolor="#e0e0c0">-50%</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">-50%</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">運</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">+40</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+</table>
+
+<br class="cle">
+
+<h4>（B）防具および盾</h4>
+
+「耐久値＋○％」の効果は装備品プロパティには表示されませんが、実際の耐久値（耐久性：○／○）には反映されています。
+<br>なお、耐久値の最大値は255であり、特殊素材の効果でもそれを超えることはできません。
+
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="60">素材</td>
+  <td align="center" bgcolor="#c0c0a0" width="60">Dull</td>
+  <td align="center" bgcolor="#202020" width="60"><font color="#ffff00">Shadow</font></td>
+  <td align="center" bgcolor="#d0a040" width="60">Copper</td>
+  <td align="center" bgcolor="#604000" width="60"><font color="#ffff00">Bronze</font></td>
+  <td align="center" bgcolor="#ffe080" width="60">Gold</td>
+  <td align="center" bgcolor="#ffa0a0" width="60">Agapite</td>
+  <td align="center" bgcolor="#80ff80" width="60">Verite</td>
+  <td align="center" bgcolor="#80c0ff" width="60">Valorite</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">画像</td>
+  <td align="center" bgcolor="#f0f0f0"><img src="dul_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="sha_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="cop_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="bro_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="gol_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="aga_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="ver_granite.gif" alt="" class="img01"></td>
+  <td align="center" bgcolor="#f0f0f0"><img src="val_granite.gif" alt="" class="img01"></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">必要<br>スキル</td>
+  <td align="center" bgcolor="#f0f0f0" colspan="8">大工100.0（石工を行うには、大工スキルが100必要）</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="9"><font color="#c0ff00">抵抗値強化</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0d0d0">物理<br>抵抗</td>
+  <td align="center" bgcolor="#e0e0c0">+10％</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+3％</font></td>
+  <td align="center" bgcolor="#e0c080">+2％</td>
+  <td align="center" bgcolor="#a06020"><font color="#c0ff00">+3％</font></td>
+  <td align="center" bgcolor="#fff0c0">+2％</td>
+  <td align="center" bgcolor="#ffc0c0">+2％</td>
+  <td align="center" bgcolor="#c0ffc0">+4％</td>
+  <td align="center" bgcolor="#c0e0ff">+5％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc080">炎<br>抵抗</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+2％</font></td>
+  <td align="center" bgcolor="#e0c080">+2％</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">+2％</td>
+  <td align="center" bgcolor="#ffc0c0">+7％</td>
+  <td align="center" bgcolor="#c0ffc0">+4％</td>
+  <td align="center" bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">冷気<br>抵抗</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020"><font color="#c0ff00">+7％</font></td>
+  <td align="center" bgcolor="#fff0c0">+3％</td>
+  <td align="center" bgcolor="#ffc0c0">+2％</td>
+  <td align="center" bgcolor="#c0ffc0">+3％</td>
+  <td align="center" bgcolor="#c0e0ff">+4％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ffc0">毒<br>抵抗</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">+7％</td>
+  <td align="center" bgcolor="#a06020"><font color="#c0ff00">+2％</font></td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">+2％</td>
+  <td align="center" bgcolor="#c0ffc0">+4％</td>
+  <td align="center" bgcolor="#c0e0ff">+4％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffc0ff">エネ<br>抵抗</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+7％</font></td>
+  <td align="center" bgcolor="#e0c080">+2％</td>
+  <td align="center" bgcolor="#a06020"><font color="#c0ff00">+2％</font></td>
+  <td align="center" bgcolor="#fff0c0">+3％</td>
+  <td align="center" bgcolor="#ffc0c0">+2％</td>
+  <td align="center" bgcolor="#c0ffc0">+1％</td>
+  <td align="center" bgcolor="#c0e0ff">+4％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#004000" colspan="9"><font color="#c0ff00">その他効果</font></td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">耐久値</td>
+  <td align="center" bgcolor="#e0e0c0">+50%</td>
+  <td align="center" bgcolor="#606060"><font color="#c0ff00">+100%</font></td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">&nbsp;</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">+50%</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">装備<br>条件</td>
+  <td align="center" bgcolor="#e0e0c0">-20%</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">-30%</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">運</td>
+  <td align="center" bgcolor="#e0e0c0">&nbsp;</td>
+  <td align="center" bgcolor="#606060">&nbsp;</td>
+  <td align="center" bgcolor="#e0c080">&nbsp;</td>
+  <td align="center" bgcolor="#a06020">&nbsp;</td>
+  <td align="center" bgcolor="#fff0c0">+40</td>
+  <td align="center" bgcolor="#ffc0c0">&nbsp;</td>
+  <td align="center" bgcolor="#c0ffc0">&nbsp;</td>
+  <td align="center" bgcolor="#c0e0ff">&nbsp;</td>
+ </tr>
+</table>
+
+<br class="cle">
+
+</div>
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

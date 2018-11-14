@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>マナ回復計算</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898951</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<h2>マナ回復計算</h2>
+<HR>
+
+
+<script language="javascript">
+<!--
+function sim0(form)
+{
+var form = document.form_sim;
+  form.sk1.value = 0;
+  form.sk2.value = 0;
+  form.sk3.value = 0;
+  form.sk4.value = 0;
+  form.sk7.value = 0;
+  form.acti.value = 0;
+  form.rac.value = 0;
+  return true;
+}
+
+function sim1(form)
+{
+var form = document.form_sim;
+ sk0 = form.rac.options[form.rac.selectedIndex].value;
+ sk7 = (sk0 % 10.0);
+ sk0 = Math.floor(sk0 / 10.0);
+ sk1 = form.sk1.value;
+ sk1 = Math.max(sk0, Math.min(120.0, sk1));
+ sk2 = form.sk2.value;
+ sk2 = Math.max(sk0, Math.min(120.0, sk2));
+ sk3 = form.sk3.value;
+ sk3 = Math.max(10.0, Math.min(150.0, sk3));
+ sk4 = form.sk4.value;
+ sk4 = Math.max(0.0, Math.min(30.0, sk4 * 1.0 + sk7 * 1.0));
+ sk5 = form.acti.options[form.acti.selectedIndex].value;
+ mana = form.mana.value;
+
+ rege1 = Math.round(100.0 * sk1 / 20.0) / 100.0;
+  if(sk2>=100)
+ {
+  rege2 = Math.round(100.0 * sk5 * 1.1 * (3.0 * sk2 + 1.0 * sk3) / 40.0) / 100.0;
+ }
+  else
+ {
+  rege2 = Math.round(100.0 * sk5 * 1.0 * (3.0 * sk2 + 1.0 * sk3) / 40.0) / 100.0;
+ }
+  sk6 = 1.0 * sk1 + 2.0 * sk2;
+  rege3 = Math.max(0.0, Math.round(100.0 * (Math.sqrt(sk4) * (2.35 + 0.65 * (sk6 / 360)) - (1.35 + 0.65 * (sk6 / 360)))) / 100.0);
+
+  rege4 = Math.floor(rege1 + rege2 + rege3 + 2.0);
+
+  rege5 = Math.ceil(100.0 * 10.0 * mana / rege4) / 100.0;
+
+form.sk7.value = sk7;
+
+form.rege1.value = rege1;
+form.rege2.value = rege2;
+form.rege3.value = rege3;
+form.rege4.value = rege4;
+form.rege5.value = rege5;
+
+return true;
+}
+//-->
+</script>
+
+<form name="form_sim">
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="220">マナ回復に関する項目</td>
+  <td align="center" width="140">ステータス</td>
+  <td align="center" width="100">回復速度<br>（マナ/10sec）</td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td align="center">種族</td>
+  <td align="center">
+<select name="rac" size="1">
+<option value="200">人間
+<option value="0">エルフ
+<option value="2">ガーゴイル
+</select>
+</td>
+  <td align="center">2(固定)</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td align="center">Focus スキル</td>
+  <td align="center"><input type="text" name="sk1" size="3" value="100"></td>
+  <td align="center"><input class="readtext" readonly type="text" name="rege1" size="4" value="0"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td align="center">Meditation スキル</td>
+  <td align="center"><input type="text" name="sk2" size="3" value="100"></td>
+  <td align="center" rowspan="3"><input class="readtext" readonly type="text" name="rege2" size="4" value="0"></td>
+ </tr>
+
+ <tr bgcolor="#ddddff">
+  <td align="center">INT ステータス</td>
+  <td align="center"><input type="text" name="sk3" size="3" value="100"></td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">能動瞑想可／不可</td>
+  <td align="center">
+<select name="acti" size="1">
+<option value="1">瞑想可 [平穏時]
+<option value="2">瞑想可 [瞑想時]
+<option value="0">瞑想不可
+</select>
+</td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td align="center">種族特性よるマナ回復</td>
+  <td align="center"><input class="readtext" readonly type="text" name="sk7" size="3" value="0"></td>
+  <td align="center" rowspan="2"><input class="readtext" readonly type="text" name="rege3" size="4" value="0"></td>
+ </tr>
+
+ <tr bgcolor="#ccccff">
+  <td align="center">装備品＋アビリティによるマナ回復</td>
+  <td align="center"><input type="text" name="sk4" size="3" value="0"></td>
+ </tr>
+
+ <tr bgcolor="#ffffdd">
+  <td align="center" colspan="2">キャラクターのマナ回復合計　<input type="button" value="計算" onclick="sim1(form)"></td>
+  <td align="center"><input class="readtext" readonly type="text" name="rege4" size="4" value="0"></td>
+ </tr>
+
+ <tr bgcolor="#ffe0cc">
+  <td align="center" colspan="2"><input type="text" name="mana" size="3" value="100">マナ回復に要する時間　<input type="button" value="計算" onclick="sim1(form)"></td>
+  <td align="center"><input class="readtext" readonly type="text" name="rege5" size="5" value="0">sec</td>
+ </tr>
+
+</table>
+</form>
+
+<br class="cle">
+<h4>各項目の説明</h4>
+<ul class="list01">
+  <li>種族　：　人間、エルフまたはガーゴイルより選択します。人間の場合、入力スキル＝0.0でも20.0として計算されます。</li>
+  <li>Focus　：　Focus（集中）スキル値を入力します。</li>
+  <li>Meditation　：　Meditation（瞑想）スキル値を入力します。</li>
+  <li>INT　：　INTステータス値を入力します。Manaではありませんので注意してください。</li>
+  <li>能動瞑想可／不可　：　瞑想スキルを使い瞑想状態に入ることができるかどうか選択します。</li>
+  <li>種族特性よるマナ回復　：　ガーゴイルを選択している場合、マジックプロパティに相当するマナ回復2が加算されます。</li>
+  <li>装備品およびアビリティ合計　：　装備品およびアビリティに付加される「マナ回復」の合計を入力します。</li>
+  <li>全マナ回復合計　：　キャラクターの初期値にFocus、Meditationおよび装備品等による補正後マナ回復の合計値が表示されます。
+<br><font color="#ff0000">ここで小数以下の端数は切捨となるよう修正しました。</font></li>
+  <li>マナ回復に要する時間　：　上記の全マナ回復合計を使い、任意のマナを回復させるための時間（0.01sec単位切上）を計算します。</li>
+</ul>
+
+<h4>マナ回復値の算出（最終版）</h4>
+
+<ul class="list01">
+  <li>種族に関係なく、マナ回復2が与えられている。</li>
+  <li>Focusによるマナ回復値</li>
+<br>マナ回復値＝(Focus) / 20
+  <li>Meditation, INTによるマナ回復値</li>
+<br>マナ回復値＝A×B×{3×(Meditation)＋(INT)} / 40
+<br>A　：　キャラクターの装備および状態による係数
+  <ul class="list02">
+<li>瞑想不可　：　A＝0</li>
+<li>瞑想可（平穏時）　：　A＝1</li>
+<li>瞑想可（瞑想時）　：　A＝2</li>
+  </ul>
+B　：　Meditationスキルによる係数
+  <ul class="list02">
+<li>Meditationスキルが100未満　：　B＝1.0</li>
+<li>Meditationスキルが100以上　：　B＝1.1</li>
+  </ul>
+  <li>装備品およびアビリティによる補正後のマナ回復値</li>
+<br>補正後マナ回復値＝(2.35＋0.65×C)×sqrt(補正前マナ回復値)－(1.35＋0.65×C)
+<br>C　：　{2×(Meditation)＋(Focus)}/360
+<br>修正前は、(7/3＋2/3×C)×sqrt(補正前マナ回復値)－(4/3＋2/3×C)としていました。
+</ul>
+
+<img src="mana_regene_compare.gif" alt="" class="img02">
+<br>2×(Meditation)＋(Focus)の値によって補正後のマナ回復値がグラフのように変化します。
+
+
+</body>
+</html>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

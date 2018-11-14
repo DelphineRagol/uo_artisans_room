@@ -1,0 +1,975 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>武器抽出計算</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541909102</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<h2>武器抽出計算（新仕様暫定版）</h2>
+<HR>
+
+Imbuingスキルでアイテムを抽出（unravel）するときの参考に作成しました。
+<br>キャラクター、抽出に使用する施設、付加されるマジック効果を選択欄より選択します。
+<br>武器の現在耐久値を入力し、"練成品"であれば、そこをチェックします。
+<br>全強度計算ボタンを押すと、下に評価強度および抽出される魔法素材が表示されます。
+
+<h4>抽出に関する仕様</h4>
+<ul class="list02">
+  <li>品質効果のみによる武器ダメージ+ は抽出時のマジック強度に考慮されません。</li>
+  <li>マナおよびライフリーチの表示値は武器の基本速度および速度＋プロパティにより変化するため、1～25に変換した強度で入力します。
+<br>表示値から強度へは、下のライフリーチ・マナリーチ強度変換で計算することができます。</li>
+  <li>マジック効果と素材効果が重複する場合、その合計値をマジック強度として評価されます。</li>
+  <li><font color="#ff0000">プロパティが素材効果のみの場合もマジック効果とみなされ、強度計算に反映されます。
+<br>幸運、武器ダメージなどはプロパティを選択し、その数値を入力します。</font></li>
+  <li><font color="#ff0000">特殊素材効果として付加される「装備条件」、「HP回復」のプロパティは素材を選択した時点で強度計算に反映されます。</font></li>
+  <li>ライフリーチが付加されている木製武器をbloodwoodで強化したとき、表示値は変わりませんが、ライフリーチ強度8として強度率を計算します。</li>
+  <li>強度率を計算したプロパティが6以上となった場合、それらを5プロパティあたりの強度率に補正します。</li>
+</ul>
+
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+
+//計算
+function keisan1(form)
+{
+var form = document.form_keisan;
+
+  prop1 = form_keisan.prop1.options[form.prop1.selectedIndex].value;
+  prop2 = form_keisan.prop2.options[form.prop2.selectedIndex].value;
+  prop3 = form_keisan.prop3.options[form.prop3.selectedIndex].value;
+  prop4 = form_keisan.prop4.options[form.prop4.selectedIndex].value;
+  prop5 = form_keisan.prop5.options[form.prop5.selectedIndex].value;
+  prop6 = form_keisan.prop6.options[form.prop6.selectedIndex].value;
+  prop7 = form_keisan.prop7.options[form.prop7.selectedIndex].value;
+  rat8 = form_keisan.prop8.options[form.prop8.selectedIndex].value;
+  rat9 = form_keisan.prop9.options[form.prop9.selectedIndex].value;
+  rat0 = form_keisan.prop0.options[form.prop0.selectedIndex].value;
+  rata = form_keisan.propa.options[form.propa.selectedIndex].value;
+  kyo1 = form_keisan.kyo1.value;
+  kyo2 = form_keisan.kyo2.value;
+  kyo3 = form_keisan.kyo3.value;
+  kyo4 = form_keisan.kyo4.value;
+  kyo5 = form_keisan.kyo5.value;
+  kyo6 = form_keisan.kyo6.value;
+  kyo7 = form_keisan.kyo7.value;
+  dur = form_keisan.dur.value;
+  rat = 0.0;
+  pn = 7.0;
+
+ratp = (rat8)%10;
+rat8 = Math.floor((rat8)/10);
+
+ratc = Math.floor((rata)/100);
+rata = (rata)%100/100 + 1.00;
+
+if(ratc>0)
+{
+ratq = 1.0;
+}
+else
+{
+ratq = 0.0;
+}
+
+
+  if(prop1 == 0)
+   {
+    rat1 = 0.0;
+    pn = pn - 1.0;
+   }
+  else if(prop1 == 1)
+   {
+    rat1 = 100.0;
+   }
+  else if(prop1 == 2)
+   {
+    rat1 = Math.floor(100 * kyo1 / 30);
+   }
+  else if(prop1 == 3)
+   {
+    rat1 = Math.floor(100 * (30.0 - kyo1) / 10);
+   }
+  else if(prop1 == 4)
+   {
+    rat1 = Math.floor(100 * kyo1 / 15);
+   }
+  else if(prop1 == 5)
+   {
+    rat1 = Math.floor(100 * kyo1 / 50);
+   }
+  else if(prop1 == 6)
+   {
+    rat1 = Math.floor(100 * kyo1 / 25);
+   }
+  else if(prop1 == 7)
+   {
+    rat1 = Math.floor(100 * (kyo1 - 10.0) / 40);
+   }
+  else if(prop1 == 8)
+   {
+    rat1 = Math.floor(100 * kyo1 / 50);
+   }
+  else if(prop1 == 9)
+   {
+    rat1 = Math.floor(kyo1);
+   }
+  else if(prop1 == 10)
+   {
+    rat1 = Math.floor(100 * kyo1 / 18);
+   }
+  else
+   {
+    rat1 = Math.floor(kyo1 / 1.2);
+   }
+
+rat = eval(rat + rat1);
+
+  if(prop2 == 0)
+   {
+    rat2 = 0.0;
+    pn = pn - 1.0;
+   }
+  else if(prop2 == 1)
+   {
+    rat2 = 100.0;
+   }
+  else if(prop2 == 2)
+   {
+    rat2 = Math.floor(100 * kyo2 / 30);
+   }
+  else if(prop2 == 3)
+   {
+    rat2 = Math.floor(100 * (30.0 - kyo2) / 10);
+   }
+  else if(prop2 == 4)
+   {
+    rat2 = Math.floor(100 * kyo2 / 15);
+   }
+  else if(prop2 == 5)
+   {
+    rat2 = Math.floor(100 * kyo2 / 50);
+   }
+  else if(prop2 == 6)
+   {
+    rat2 = Math.floor(100 * kyo2 / 25);
+   }
+  else if(prop2 == 7)
+   {
+    rat2 = Math.floor(100 * (kyo2 - 10.0) / 40);
+   }
+  else if(prop2 == 8)
+   {
+    rat2 = Math.floor(100 * kyo2 / 50);
+   }
+  else if(prop2 == 9)
+   {
+    rat2 = Math.floor(kyo2);
+   }
+  else if(prop2 == 10)
+   {
+    rat2 = Math.floor(100 * kyo2 / 18);
+   }
+  else
+   {
+    rat2 = Math.floor(kyo2 / 1.2);
+   }
+rat = eval(rat + rat2);
+
+  if(prop3 == 0)
+   {
+    rat3 = 0.0;
+    pn = pn - 1.0;
+   }
+  else if(prop3 == 1)
+   {
+    rat3 = 100.0;
+   }
+  else if(prop3 == 2)
+   {
+    rat3 = Math.floor(100 * kyo3 / 30);
+   }
+  else if(prop3 == 3)
+   {
+    rat3 = Math.floor(100 * (30.0 - kyo3) / 10);
+   }
+  else if(prop3 == 4)
+   {
+    rat3 = Math.floor(100 * kyo3 / 15);
+   }
+  else if(prop3 == 5)
+   {
+    rat3 = Math.floor(100 * kyo3 / 50);
+   }
+  else if(prop3 == 6)
+   {
+    rat3 = Math.floor(100 * kyo3 / 25);
+   }
+  else if(prop3 == 7)
+   {
+    rat3 = Math.floor(100 * (kyo3 - 10.0) / 40);
+   }
+  else if(prop3 == 8)
+   {
+    rat3 = Math.floor(100 * kyo3 / 50);
+   }
+  else if(prop3 == 9)
+   {
+    rat3 = Math.floor(kyo3);
+   }
+  else if(prop3 == 10)
+   {
+    rat3 = Math.floor(100 * kyo3 / 18);
+   }
+  else
+   {
+    rat3 = Math.floor(kyo3 / 1.2);
+   }
+rat = eval(rat + rat3);
+
+  if(prop4 == 0)
+   {
+    rat4 = 0.0;
+    pn = pn - 1.0;
+   }
+  else if(prop4 == 1)
+   {
+    rat4 = 100.0;
+   }
+  else if(prop4 == 2)
+   {
+    rat4 = Math.floor(100 * kyo4 / 30);
+   }
+  else if(prop4 == 3)
+   {
+    rat4 = Math.floor(100 * (30.0 - kyo4) / 10);
+   }
+  else if(prop4 == 4)
+   {
+    rat4 = Math.floor(100 * kyo4 / 15);
+   }
+  else if(prop4 == 5)
+   {
+    rat4 = Math.floor(100 * kyo4 / 50);
+   }
+  else if(prop4 == 6)
+   {
+    rat4 = Math.floor(100 * kyo4 / 25);
+   }
+  else if(prop4 == 7)
+   {
+    rat4 = Math.floor(100 * (kyo4 - 10.0) / 40);
+   }
+  else if(prop4 == 8)
+   {
+    rat4 = Math.floor(100 * kyo4 / 50);
+   }
+  else if(prop4 == 9)
+   {
+    rat4 = Math.floor(kyo4);
+   }
+  else if(prop4 == 10)
+   {
+    rat4 = Math.floor(100 * kyo4 / 18);
+   }
+  else
+   {
+    rat4 = Math.floor(kyo4 / 1.2);
+   }
+rat = eval(rat + rat4);
+
+  if(prop5 == 0)
+   {
+    rat5 = 0.0;
+    pn = pn - 1.0;
+   }
+  else if(prop5 == 1)
+   {
+    rat5 = 100.0;
+   }
+  else if(prop5 == 2)
+   {
+    rat5 = Math.floor(100 * kyo5 / 30);
+   }
+  else if(prop5 == 3)
+   {
+    rat5 = Math.floor(100 * (30.0 - kyo5) / 10);
+   }
+  else if(prop5 == 4)
+   {
+    rat5 = Math.floor(100 * kyo5 / 15);
+   }
+  else if(prop5 == 5)
+   {
+    rat5 = Math.floor(100 * kyo5 / 50);
+   }
+  else if(prop5 == 6)
+   {
+    rat5 = Math.floor(100 * kyo5 / 25);
+   }
+  else if(prop5 == 7)
+   {
+    rat5 = Math.floor(100 * (kyo5 - 10.0) / 40);
+   }
+  else if(prop5 == 8)
+   {
+    rat5 = Math.floor(100 * kyo5 / 50);
+   }
+  else if(prop5 == 9)
+   {
+    rat5 = Math.floor(kyo5);
+   }
+  else if(prop5 == 10)
+   {
+    rat5 = Math.floor(100 * kyo5 / 18);
+   }
+  else
+   {
+    rat5 = Math.floor(kyo5 / 1.2);
+   }
+rat = eval(rat + rat5);
+
+  if(prop6 == 0)
+   {
+    rat6 = 0.0;
+    pn = pn - 1.0;
+   }
+  else if(prop6 == 1)
+   {
+    rat6 = 100.0;
+   }
+  else if(prop6 == 2)
+   {
+    rat6 = Math.floor(100 * kyo6 / 30);
+   }
+  else if(prop6 == 3)
+   {
+    rat6 = Math.floor(100 * (30.0 - kyo6) / 10);
+   }
+  else if(prop6 == 4)
+   {
+    rat6 = Math.floor(100 * kyo6 / 15);
+   }
+  else if(prop6 == 5)
+   {
+    rat6 = Math.floor(100 * kyo6 / 50);
+   }
+  else if(prop6 == 6)
+   {
+    rat6 = Math.floor(100 * kyo6 / 25);
+   }
+  else if(prop6 == 7)
+   {
+    rat6 = Math.floor(100 * (kyo6 - 10.0) / 40);
+   }
+  else if(prop6 == 8)
+   {
+    rat6 = Math.floor(100 * kyo6 / 50);
+   }
+  else if(prop6 == 9)
+   {
+    rat6 = Math.floor(kyo6);
+   }
+  else if(prop6 == 10)
+   {
+    rat6 = Math.floor(100 * kyo6 / 18);
+   }
+  else
+   {
+    rat6 = Math.floor(kyo6 / 1.2);
+   }
+rat = eval(rat + rat6);
+
+
+  if(prop7 == 0)
+   {
+    rat7 = 0.0;
+    pn = pn - 1.0;
+   }
+  else if(prop7 == 1)
+   {
+    rat7 = 100.0;
+   }
+  else if(prop7 == 2)
+   {
+    rat7 = Math.floor(100 * kyo7 / 30);
+   }
+  else if(prop7 == 3)
+   {
+    rat7 = Math.floor(100 * (30.0 - kyo7) / 10);
+   }
+  else if(prop7 == 4)
+   {
+    rat7 = Math.floor(100 * kyo7 / 15);
+   }
+  else if(prop7 == 5)
+   {
+    rat7 = Math.floor(100 * kyo7 / 50);
+   }
+  else if(prop7 == 6)
+   {
+    rat7 = Math.floor(100 * kyo7 / 25);
+   }
+  else if(prop7 == 7)
+   {
+    rat7 = Math.floor(100 * (kyo7 - 10.0) / 40);
+   }
+  else if(prop7 == 8)
+   {
+    rat7 = Math.floor(100 * kyo7 / 50);
+   }
+  else if(prop7 == 9)
+   {
+    rat7 = Math.floor(kyo7);
+   }
+  else if(prop7 == 10)
+   {
+    rat7 = Math.floor(100 * kyo7 / 18);
+   }
+  else
+   {
+    rat7 = Math.floor(kyo7 / 1.2);
+   }
+rat = eval(rat + rat7);
+rat = eval(rat + rat8);
+pn = pn + ratp;
+rat = eval(rat + ratc);
+pn = pn + ratq;
+
+  if(pn >= 6.0)
+   {
+    rat = Math.floor(rat / pn) * 5.0;
+   }
+
+rat = eval(Math.floor(rat * rata) + rat9 * 1 + rat0 * 1);
+
+   if(form.imb.checked){
+     form.imb.value = 20.0;
+}
+   else{
+     form.imb.value = 0.0;
+}
+  imb1 = form.imb.value;
+
+dur = Math.min(100.0, dur * 2);
+
+hose = Math.max(0.0, dur - imb1);
+
+rat = Math.floor(rat * hose / 100.0);
+
+ if(rat<1)
+{
+  document.zai = "抽出不可";
+}
+ else if(rat<200)
+{
+  document.zai = "Magical Residue";
+}
+ else if(rat<451)
+{
+  document.zai = "Enchanted Essence";
+}
+ else
+{
+  document.zai = "Relic Fragment";
+}
+
+  form.zai.value = document.zai;
+
+form.rat1.value = rat1;
+form.rat2.value = rat2;
+form.rat3.value = rat3;
+form.rat4.value = rat4;
+form.rat5.value = rat5;
+form.rat6.value = rat6;
+form.rat7.value = rat7;
+form.rat8.value = rat8;
+form.rat9.value = rat9;
+form.rat0.value = rat0;
+form.rata.value = rata;
+form.hose.value = hose;
+form.rat.value = rat;
+
+return true;
+}
+
+function keisan2(form)
+{
+var form = document.form_keisan;
+
+  bspd = form_keisan.bspd.options[form.bspd.selectedIndex].value;
+  ssi = form_keisan.ssi.options[form.ssi.selectedIndex].value;
+  leech = form_keisan.leech.value;
+
+lestr = Math.ceil (leech / (Math.floor(bspd/(1.00 + ssi / 100 )) / 4.0));
+
+  if(form.range.checked){
+
+lestr = Math.ceil (2.0 * leech / (Math.floor(bspd/(1.00 + ssi / 100 )) / 4.0));
+
+  }
+
+form.lestr.value = lestr;
+
+}
+// -->
+ </script>
+
+<form name="form_keisan">
+
+<h4>キャラクター・施設の特性</h4>
+
+<table class="table02">
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="280">キャラクター・施設</td>
+    <td align="center" width="120">強度率加算（％）</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center"><select name="prop9" size="1">
+<option value="0">Human
+<option value="0">Elf
+<option value="20">Gargoyle
+</select>
+</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat9" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center"><select name="prop0" size="1">
+<option value="0">普通のSoul Forge
+<option value="10">Royal CityのSoul Forge
+<option value="30">Queen's Soul Forge
+</select>
+</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat0" size="4" value="0">％</td>
+  </tr>
+
+</table>
+
+
+<h4>アイテムの特性</h4>
+
+<table class="table02">
+
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="280">プロパティ選択</td>
+    <td align="center" width="120">表示値 or 強度</td>
+    <td align="center" width="120">強度率（％）</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">
+<select name="prop1" SIZE="1">
+<option value="0">---------------
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1～25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1～25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1～15)
+<option value="4">回避 (基準強度1～15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (－は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1～15)
+<option value="4">冷気抵抗 (基準強度1～15)
+<option value="4">毒抵抗 (基準強度1～15)
+<option value="4">エネルギー抵抗 (基準強度1～15)
+<option value="9">幸運 (基準強度1～100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1～25)
+<option value="6">回避 (基準強度1～25)
+<option value="11">幸運 (基準強度1～120)
+<option value="10">炎抵抗 (基準強度1～18)
+<option value="10">冷気抵抗 (基準強度1～18)
+<option value="10">毒抵抗 (基準強度1～18)
+<option value="10">エネルギー抵抗 (基準強度1～18)
+
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo1" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat1" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">
+<select name="prop2" SIZE="1">
+<option value="0">---------------
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1～25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1～25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1～15)
+<option value="4">回避 (基準強度1～15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (－は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1～15)
+<option value="4">冷気抵抗 (基準強度1～15)
+<option value="4">毒抵抗 (基準強度1～15)
+<option value="4">エネルギー抵抗 (基準強度1～15)
+<option value="9">幸運 (基準強度1～100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1～25)
+<option value="6">回避 (基準強度1～25)
+<option value="11">幸運 (基準強度1～120)
+<option value="10">炎抵抗 (基準強度1～18)
+<option value="10">冷気抵抗 (基準強度1～18)
+<option value="10">毒抵抗 (基準強度1～18)
+<option value="10">エネルギー抵抗 (基準強度1～18)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo2" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat2" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">
+<select name="prop3" SIZE="1">
+<option value="0">---------------
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1～25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1～25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1～15)
+<option value="4">回避 (基準強度1～15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (－は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1～15)
+<option value="4">冷気抵抗 (基準強度1～15)
+<option value="4">毒抵抗 (基準強度1～15)
+<option value="4">エネルギー抵抗 (基準強度1～15)
+<option value="9">幸運 (基準強度1～100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1～25)
+<option value="6">回避 (基準強度1～25)
+<option value="11">幸運 (基準強度1～120)
+<option value="10">炎抵抗 (基準強度1～18)
+<option value="10">冷気抵抗 (基準強度1～18)
+<option value="10">毒抵抗 (基準強度1～18)
+<option value="10">エネルギー抵抗 (基準強度1～18)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo3" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat3" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">
+<select name="prop4" SIZE="1">
+<option value="0">---------------
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1～25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1～25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1～15)
+<option value="4">回避 (基準強度1～15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (－は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1～15)
+<option value="4">冷気抵抗 (基準強度1～15)
+<option value="4">毒抵抗 (基準強度1～15)
+<option value="4">エネルギー抵抗 (基準強度1～15)
+<option value="9">幸運 (基準強度1～100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1～25)
+<option value="6">回避 (基準強度1～25)
+<option value="11">幸運 (基準強度1～120)
+<option value="10">炎抵抗 (基準強度1～18)
+<option value="10">冷気抵抗 (基準強度1～18)
+<option value="10">毒抵抗 (基準強度1～18)
+<option value="10">エネルギー抵抗 (基準強度1～18)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo4" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat4" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">
+<select name="prop5" SIZE="1">
+<option value="0">---------------
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1～25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1～25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1～15)
+<option value="4">回避 (基準強度1～15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (－は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1～15)
+<option value="4">冷気抵抗 (基準強度1～15)
+<option value="4">毒抵抗 (基準強度1～15)
+<option value="4">エネルギー抵抗 (基準強度1～15)
+<option value="9">幸運 (基準強度1～100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1～25)
+<option value="6">回避 (基準強度1～25)
+<option value="11">幸運 (基準強度1～120)
+<option value="10">炎抵抗 (基準強度1～18)
+<option value="10">冷気抵抗 (基準強度1～18)
+<option value="10">毒抵抗 (基準強度1～18)
+<option value="10">エネルギー抵抗 (基準強度1～18)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo5" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat5" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ddddff">
+    <td align="center">
+<select name="prop6" SIZE="1">
+<option value="0">---------------
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1～25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1～25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1～15)
+<option value="4">回避 (基準強度1～15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (－は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1～15)
+<option value="4">冷気抵抗 (基準強度1～15)
+<option value="4">毒抵抗 (基準強度1～15)
+<option value="4">エネルギー抵抗 (基準強度1～15)
+<option value="9">幸運 (基準強度1～100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1～25)
+<option value="6">回避 (基準強度1～25)
+<option value="11">幸運 (基準強度1～120)
+<option value="10">炎抵抗 (基準強度1～18)
+<option value="10">冷気抵抗 (基準強度1～18)
+<option value="10">毒抵抗 (基準強度1～18)
+<option value="10">エネルギー抵抗 (基準強度1～18)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo6" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat6" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ccccff">
+    <td align="center">
+<select name="prop7" SIZE="1">
+<option value="0">---------------
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1～25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1～25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1～15)
+<option value="4">回避 (基準強度1～15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (－は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1～15)
+<option value="4">冷気抵抗 (基準強度1～15)
+<option value="4">毒抵抗 (基準強度1～15)
+<option value="4">エネルギー抵抗 (基準強度1～15)
+<option value="9">幸運 (基準強度1～100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1～25)
+<option value="6">回避 (基準強度1～25)
+<option value="11">幸運 (基準強度1～120)
+<option value="10">炎抵抗 (基準強度1～18)
+<option value="10">冷気抵抗 (基準強度1～18)
+<option value="10">毒抵抗 (基準強度1～18)
+<option value="10">エネルギー抵抗 (基準強度1～18)
+</select>
+    </td>
+    <td align="center"><INPUT type="text" name="kyo7" size="4" value="0"></td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat7" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ffffcc">
+    <td align="center" colspan="2">
+<select name="prop8" SIZE="1">
+<option value="0">レシピ武器特殊プロパティ
+<option value="1501">knight's war cleaver : HP回復 3
+<option value="1001">true war cleaver : HP回復 2
+<option value="-621">Orcish Machete : INT-5
+<option value="331">runesabre : resistance+5
+<option value="431">rune blade of knowledge : 魔法ダメージ+5%
+<option value="1001">true radient scimitar : Night Sight
+<option value="1302">guardian axe : HP+4, HP回復 1
+<option value="331">singing axe : musicianship+5
+<option value="371">arcanist's wild staff : マナ+3
+<option value="801">thorned wild staff : 物理ダメージ反射 12%
+<option value="801">barbed longbow : 物理ダメージ反射 12%
+</select>
+    </td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat8" size="4" value="0">％</td>
+  </tr>
+
+  <tr bgcolor="#ffffcc">
+    <td align="center" colspan="2">
+<select name="propa" SIZE="1">
+<option value="0">---- 素材の種類 ----
+<option value="0">普通素材
+<option value="5002">Dull copper
+<option value="3">Shadow iron
+<option value="4">Copper
+<option value="5">Bronze
+<option value="5007">Gold
+<option value="9">Agapite
+<option value="12">Verite
+<option value="20">Valorite
+<option value="1">Oak
+<option value="2003">Ash
+<option value="7">Yew
+<option value="10">Heartwood
+<option value="2010">Heartwood[+装備条件]
+<option value="10015">Bloodwood
+<option value="20">Frostwood
+</select>
+    </td>
+    <td align="center">×<INPUT class="readtext" readonly type="text" name="rata" size="4" value="0"></td>
+  </tr>
+
+  <tr bgcolor="#ffffcc">
+    <td align="center">耐久値　：　<INPUT type="text" name="dur" size="4" value="50"></td>
+    <td align="center"><INPUT Type="checkbox" name="imb" value="yes">練成品</td>
+    <td align="center">×<INPUT class="readtext" readonly type="text" name="hose" size="4" value="0">％</td>
+  </tr>
+
+</table>
+
+<input type="button" value="プロパティ・全強度計算" onclick="keisan1(form)">　<INPUT TYPE="reset" value="リセット">
+
+<h4>抽出結果の推定</h4>
+
+<ul class="list03">
+  <li>抽出評価値　：　<INPUT class="readtext" readonly type="text" name="rat" size="4" value="0">％</li>
+  <li>魔法素材　：　<INPUT class="readtext" readonly type="text" name="zai" size="25"></li>
+</ul>
+
+<h4>ライフリーチ・マナリーチ強度変換（概算）</h4>
+
+<p>
+
+武器基本速度
+<select name="bspd" SIZE="1">
+<option value="8">2.00sec
+<option value="9">2.25sec
+<option value="10">2.50sec
+<option value="11">2.75sec
+<option value="12">3.00sec
+<option value="13">3.25sec
+<option value="14">3.50sec
+<option value="15">3.75sec
+<option value="16">4.00sec
+<option value="17">4.25sec
+<option value="18">4.50sec
+<option value="19">4.75sec
+<option value="20">5.00sec
+</select>
+　速度＋<select name="ssi" SIZE="1">
+<option value="0">0％
+<option value="5">5％
+<option value="10">10％
+<option value="15">15％
+<option value="20">20％
+<option value="25">25％
+<option value="30">30％
+<option value="35">35％
+<option value="40">40％
+</select>
+　リーチ表示値<INPUT type="text" name="leech" size="4" value="0">％
+
+　<INPUT Type="checkbox" name="range" value="yes">投擲・弓系
+
+<br><input type="button" value="リーチ強度へ変換" onclick="keisan2(form)">
+<br>強度（1～25）　：　<INPUT class="readtext" readonly type="text" name="lestr" size="4" value="0">
+</form>
+
+
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

@@ -1,0 +1,759 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>Runic toolシミュレータ：鎧防具</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899165</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<h2>Runic toolシミュレータ：鎧防具</h2>
+<hr>
+<script language="javascript">
+<!--
+function sim0(form)
+{
+var form = document.form_sim;
+  form.runic.value = 0;
+  form.koka1.value = 0;
+  form.koka2.value = 0;
+  form.koka3.value = 0;
+  form.koka4.value = 0;
+  form.koka5.value = 0;
+  form.kyo1.value = 0;
+  form.kyo2.value = 0;
+  form.kyo3.value = 0;
+  form.kyo4.value = 0;
+  form.kyo5.value = 0;
+  return true;
+}
+
+function sim1(form)
+{
+var form = document.form_sim;
+ runic1 = form.runic.options[form.runic.selectedIndex].value;
+var eff;
+ eff = new Array();
+var sel;
+ sel = new Array();
+var rmi;
+ rmi = new Array(16)
+ rmi[0] = 0;
+ rmi[1] = 40;
+ rmi[2] = 45;
+ rmi[3] = 50;
+ rmi[4] = 55;
+ rmi[5] = 60;
+ rmi[6] = 65;
+ rmi[7] = 70;
+ rmi[8] = 85;
+ rmi[9] = 40;
+ rmi[10] = 45;
+ rmi[11] = 50;
+ rmi[12] = 25;
+ rmi[13] = 35;
+ rmi[14] = 45;
+ rmi[15] = 50;
+var rma;
+ rma = new Array(16)
+ rma[0] = 0;
+ rma[1] = 100;
+ rma[2] = 100;
+ rma[3] = 100;
+ rma[4] = 100;
+ rma[5] = 100;
+ rma[6] = 100;
+ rma[7] = 100;
+ rma[8] = 100;
+ rma[9] = 100;
+ rma[10] = 100;
+ rma[11] = 100;
+ rma[12] = 50;
+ rma[13] = 75;
+ rma[14] = 90;
+ rma[15] = 100;
+
+var koka;
+ koka = new Array(18);
+ koka[0] = "Night sight";
+ koka[1] = "自己修復";
+ koka[2] = "ヒットポイント";
+ koka[3] = "マナ";
+ koka[4] = "スタミナ";
+ koka[5] = "マナコスト";
+ koka[6] = "ヒットポイント回復";
+ koka[7] = "マナ回復";
+ koka[8] = "スタミナ回復";
+ koka[9] =  "物理抵抗";
+ koka[10] =  "炎抵抗";
+ koka[11] = "冷気抵抗";
+ koka[12] = "毒抵抗";
+ koka[13] = "エネルギー抵抗";
+ koka[14] = "物理ダメージ反射";
+ koka[15] = "秘薬コスト";
+ koka[16] = "幸運";
+ koka[17] = "瞑想可";
+
+var ans; 
+ ans = new Array();
+ ans[1] = Math.floor(100 * Math.random());
+ ans[2] = Math.floor(100 * Math.random());
+ ans[3] = Math.floor(100 * Math.random());
+ ans[4] = Math.floor(100 * Math.random());
+ ans[5] = Math.floor(100 * Math.random());
+ pow = new Array();
+ for(j=1 ; j<=5 ; j++ ){
+     pow[j] = Math.floor(rmi[runic1] + ans[j] * (rma[runic1] - rmi[runic1]) / 100);
+}
+
+ eff[1] = Math.floor(97 * Math.random());
+    if(eff[1]<3)
+    {
+ sel[1] = 0;
+    }
+    else if(eff[1]<9)
+    {
+ sel[1] = 1;
+    }
+    else if(eff[1]<15)
+    {
+ sel[1] = 2;
+    }
+    else if(eff[1]<21)
+    {
+ sel[1] = 3;
+    }
+    else if(eff[1]<27)
+    {
+ sel[1] = 4;
+    }
+    else if(eff[1]<33)
+    {
+ sel[1] = 5;
+    }
+    else if(eff[1]<35)
+    {
+ sel[1] = 6;
+    }
+    else if(eff[1]<41)
+    {
+ sel[1] = 7;
+    }
+    else if(eff[1]<43)
+    {
+ sel[1] = 8;
+    }
+    else if(eff[1]<49)
+    {
+ sel[1] = 9;
+    }
+    else if(eff[1]<55)
+    {
+ sel[1] = 10;
+    }
+    else if(eff[1]<61)
+    {
+ sel[1] = 11;
+    }
+    else if(eff[1]<67)
+    {
+ sel[1] = 12;
+    }
+    else if(eff[1]<73)
+    {
+ sel[1] = 13;
+    }
+    else if(eff[1]<79)
+    {
+ sel[1] = 14;
+    }
+    else if(eff[1]<85)
+    {
+ sel[1] = 15;
+    }
+    else if(eff[1]<91)
+    {
+ sel[1] = 16;
+    }
+    else
+    {
+ sel[1] = 17;
+    }
+
+ do{
+ eff[2] = Math.floor(97 * Math.random());
+    if(eff[2]<3)
+    {
+ sel[2] = 0;
+    }
+    else if(eff[2]<9)
+    {
+ sel[2] = 1;
+    }
+    else if(eff[2]<15)
+    {
+ sel[2] = 2;
+    }
+    else if(eff[2]<21)
+    {
+ sel[2] = 3;
+    }
+    else if(eff[2]<27)
+    {
+ sel[2] = 4;
+    }
+    else if(eff[2]<33)
+    {
+ sel[2] = 5;
+    }
+    else if(eff[2]<35)
+    {
+ sel[2] = 6;
+    }
+    else if(eff[2]<41)
+    {
+ sel[2] = 7;
+    }
+    else if(eff[2]<43)
+    {
+ sel[2] = 8;
+    }
+    else if(eff[2]<49)
+    {
+ sel[2] = 9;
+    }
+    else if(eff[2]<55)
+    {
+ sel[2] = 10;
+    }
+    else if(eff[2]<61)
+    {
+ sel[2] = 11;
+    }
+    else if(eff[2]<67)
+    {
+ sel[2] = 12;
+    }
+    else if(eff[2]<73)
+    {
+ sel[2] = 13;
+    }
+    else if(eff[2]<79)
+    {
+ sel[2] = 14;
+    }
+    else if(eff[2]<85)
+    {
+ sel[2] = 15;
+    }
+    else if(eff[2]<91)
+    {
+ sel[2] = 16;
+    }
+    else
+    {
+ sel[2] = 17;
+    }
+ }
+ while(sel[2]==sel[1]);
+
+ do{
+ eff[3] = Math.floor(97 * Math.random());
+    if(eff[3]<3)
+    {
+ sel[3] = 0;
+    }
+    else if(eff[3]<9)
+    {
+ sel[3] = 1;
+    }
+    else if(eff[3]<15)
+    {
+ sel[3] = 2;
+    }
+    else if(eff[3]<21)
+    {
+ sel[3] = 3;
+    }
+    else if(eff[3]<27)
+    {
+ sel[3] = 4;
+    }
+    else if(eff[3]<33)
+    {
+ sel[3] = 5;
+    }
+    else if(eff[3]<35)
+    {
+ sel[3] = 6;
+    }
+    else if(eff[3]<41)
+    {
+ sel[3] = 7;
+    }
+    else if(eff[3]<43)
+    {
+ sel[3] = 8;
+    }
+    else if(eff[3]<49)
+    {
+ sel[3] = 9;
+    }
+    else if(eff[3]<55)
+    {
+ sel[3] = 10;
+    }
+    else if(eff[3]<61)
+    {
+ sel[3] = 11;
+    }
+    else if(eff[3]<67)
+    {
+ sel[3] = 12;
+    }
+    else if(eff[3]<73)
+    {
+ sel[3] = 13;
+    }
+    else if(eff[3]<79)
+    {
+ sel[3] = 14;
+    }
+    else if(eff[3]<85)
+    {
+ sel[3] = 15;
+    }
+    else if(eff[3]<91)
+    {
+ sel[3] = 16;
+    }
+    else
+    {
+ sel[3] = 17;
+    }
+ }
+ while(sel[3]==sel[1] || sel[3]==sel[2]);
+
+ do{
+ eff[4] = Math.floor(97 * Math.random());
+    if(eff[4]<3)
+    {
+ sel[4] = 0;
+    }
+    else if(eff[4]<9)
+    {
+ sel[4] = 1;
+    }
+    else if(eff[4]<15)
+    {
+ sel[4] = 2;
+    }
+    else if(eff[4]<21)
+    {
+ sel[4] = 3;
+    }
+    else if(eff[4]<27)
+    {
+ sel[4] = 4;
+    }
+    else if(eff[4]<33)
+    {
+ sel[4] = 5;
+    }
+    else if(eff[4]<35)
+    {
+ sel[4] = 6;
+    }
+    else if(eff[4]<41)
+    {
+ sel[4] = 7;
+    }
+    else if(eff[4]<43)
+    {
+ sel[4] = 8;
+    }
+    else if(eff[4]<49)
+    {
+ sel[4] = 9;
+    }
+    else if(eff[4]<55)
+    {
+ sel[4] = 10;
+    }
+    else if(eff[4]<61)
+    {
+ sel[4] = 11;
+    }
+    else if(eff[4]<67)
+    {
+ sel[4] = 12;
+    }
+    else if(eff[4]<73)
+    {
+ sel[4] = 13;
+    }
+    else if(eff[4]<79)
+    {
+ sel[4] = 14;
+    }
+    else if(eff[4]<85)
+    {
+ sel[4] = 15;
+    }
+    else if(eff[4]<91)
+    {
+ sel[4] = 16;
+    }
+    else
+    {
+ sel[4] = 17;
+    }
+ }
+ while(sel[4]==sel[1] || sel[4]==sel[2] || sel[4]==sel[3]);
+
+ do{
+ eff[5] = Math.floor(97 * Math.random());
+    if(eff[5]<3)
+    {
+ sel[5] = 0;
+    }
+    else if(eff[5]<9)
+    {
+ sel[5] = 1;
+    }
+    else if(eff[5]<15)
+    {
+ sel[5] = 2;
+    }
+    else if(eff[5]<21)
+    {
+ sel[5] = 3;
+    }
+    else if(eff[5]<27)
+    {
+ sel[5] = 4;
+    }
+    else if(eff[5]<33)
+    {
+ sel[5] = 5;
+    }
+    else if(eff[5]<35)
+    {
+ sel[5] = 6;
+    }
+    else if(eff[5]<41)
+    {
+ sel[5] = 7;
+    }
+    else if(eff[5]<43)
+    {
+ sel[5] = 8;
+    }
+    else if(eff[5]<49)
+    {
+ sel[5] = 9;
+    }
+    else if(eff[5]<55)
+    {
+ sel[5] = 10;
+    }
+    else if(eff[5]<61)
+    {
+ sel[5] = 11;
+    }
+    else if(eff[5]<67)
+    {
+ sel[5] = 12;
+    }
+    else if(eff[5]<73)
+    {
+ sel[5] = 13;
+    }
+    else if(eff[5]<79)
+    {
+ sel[5] = 14;
+    }
+    else if(eff[5]<85)
+    {
+ sel[5] = 15;
+    }
+    else if(eff[5]<91)
+    {
+ sel[5] = 16;
+    }
+    else
+    {
+ sel[5] = 17;
+    }
+ }
+ while(sel[5]==sel[1] || sel[5]==sel[2] || sel[5]==sel[3] || sel[5]==sel[4]);
+
+ ar = new Array();
+
+ kyo = new Array();
+
+ for(j=1 ; j<=5 ; j++ ){
+
+ if(sel[j]==0){
+  kyo[j] = "";
+}
+
+ else if(sel[j]==1){
+  kyo[j] = Math.round(pow[j] / 20);
+  if(pow[j]>=70){
+  kyo[j] = Math.round((pow[j] - 1.0) / 20);
+  }
+}
+
+ else if(sel[j]==2){
+  kyo[j] = "+" + Math.round(pow[j] / 20);
+  if(pow[j]>=70){
+  kyo[j] = "+" + Math.round((pow[j] - 1.0) / 20);
+  }
+}
+
+ else if(sel[j]<=4){
+  kyo[j] = "+" + Math.round(pow[j] * 2 / 25);
+ }
+
+ else if(sel[j]==5){
+  kyo[j] = Math.round(pow[j] * 2 / 25) * (-1.0) + "％";
+ }
+
+ else if(sel[j]<=7){
+  kyo[j] = Math.max(0,Math.round(pow[j] * 3 / 145));
+ }
+
+ else if(sel[j]==8){
+  kyo[j] = Math.max(0,Math.round(pow[j] * 3 / 100));
+ }
+
+ else if(sel[j]<=14){
+  kyo[j] = "+" + Math.round(pow[j] * 3 / 20) + "％";
+ 
+ if(pow[j]>=70){
+  kyo[j] = "+" + Math.round((pow[j] * 3 - 1.0)/ 20) + "％";
+  }
+ }
+
+ else if(sel[j]==15){
+  kyo[j] = Math.round(pow[j] / 5) * (-1.0) + "％";
+}
+
+ else if(sel[j]==16){
+  kyo[j] = Math.round(pow[j]);
+}
+
+ else{
+  kyo[j] = "";
+}
+
+}
+
+
+ document.koka1 = koka[sel[1]];
+ document.koka2 = koka[sel[2]];
+ document.koka3 = koka[sel[3]];
+ document.koka4 = koka[sel[4]];
+ document.koka5 = koka[sel[5]];
+
+ han = Math.floor(100 * Math.random())
+  if(runic1==1 || runic1==12){
+   if(han<50){
+   document.koka2 = "";
+   document.koka3 = "";
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[2] = "";
+   kyo[3] = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+   else{
+   document.koka3 = "";
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[3] = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+}
+
+  if(runic1==2){
+   document.koka3 = "";
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[3] = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+
+    if(runic1==3 || runic1==13){
+   if(han<50){
+   document.koka3 = "";
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[3] = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+   else{
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+}
+
+  if(runic1==4 || runic1==14){
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+
+    if(runic1==5||runic1==10){
+   if(han<50){
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+   else{
+   document.koka5 = "";
+   kyo[5] = "";
+}
+}
+
+  if(runic1==6 || runic1==15){
+   document.koka5 = "";
+   kyo[5] = "";
+}
+
+  if(runic1==7||runic1==11){
+   if(han<50){
+   document.koka5 = "";
+   kyo[5] = "";
+}
+}
+
+  if(runic1==9){
+   if(han<33){
+   document.koka2 = "";
+   document.koka3 = "";
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[2] = "";
+   kyo[3] = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+   else if(han<67){
+   document.koka3 = "";
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[3] = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+   else{
+   document.koka4 = "";
+   document.koka5 = "";
+   kyo[4] = "";
+   kyo[5] = "";
+}
+}
+
+
+ form.koka1.value = document.koka1;
+ form.koka2.value = document.koka2;
+ form.koka3.value = document.koka3;
+ form.koka4.value = document.koka4;
+ form.koka5.value = document.koka5;
+ form.kyo1.value = kyo[1];
+ form.kyo2.value = kyo[2];
+ form.kyo3.value = kyo[3];
+ form.kyo4.value = kyo[4];
+ form.kyo5.value = kyo[5];
+
+ return true;
+}
+//-->
+</script>
+
+<form name="form_sim">
+<p>　　　
+<select name="runic" size="1" onchange="sim1(form)">
+<option value="0">----runic tool選択----
+<option value="1">Dullcopper runic
+<option value="2">Shadow runic
+<option value="3">Copper runic
+<option value="4">Bronze runic
+<option value="5">Gold runic
+<option value="6">Agapite runic
+<option value="7">Verite runic
+<option value="8">Valorite runic
+<option value="9">Spined runic
+<option value="10">Horned runic
+<option value="11">Barbed runic
+<option value="12">Oak runic
+<option value="13">Ash runic
+<option value="14">Yew runic
+<option value="15">Heartwood runic
+</select>
+　<input type="button" value="防具作成" onclick="sim1(form)"></center>
+</p>
+
+<table class="table02">
+  <tr bgcolor="ffffcc">
+   <td align="center" width="250">付加されたマジック効果</td>
+   <td align="center" width="90">効果の強度</td>
+  </tr>
+  <tr bgcolor="ccccff">
+   <td align="center"><input class="readtext" readonly type="text" name="koka1" size="32" value="効果"></td>
+   <td align="center"><input class="readtext" readonly type="text" name="kyo1" size="6" value="強度"></td>
+  </tr>
+  <tr bgcolor="ddddff">
+   <td align="center"><input class="readtext" readonly type="text" name="koka2" size="32" value="効果"></td>
+   <td align="center"><input class="readtext" readonly type="text" name="kyo2" size="6" value="強度"></td>
+  </tr>
+  <tr bgcolor="ccccff">
+   <td align="center"><input class="readtext" readonly type="text" name="koka3" size="32" value="効果"></td>
+   <td align="center"><input class="readtext" readonly type="text" name="kyo3" size="6" value="強度"></td>
+  </tr>
+  <tr bgcolor="ddddff">
+   <td align="center"><input class="readtext" readonly type="text" name="koka4" size="32" value="効果"></td>
+   <td align="center"><input class="readtext" readonly type="text" name="kyo4" size="6" value="強度"></td>
+  </tr>
+  <tr bgcolor="ccccff">
+   <td align="center"><input class="readtext" readonly type="text" name="koka5" size="32" value="効果"></td>
+   <td align="center"><input class="readtext" readonly type="text" name="kyo5" size="6" value="強度"></td>
+  </tr>
+</table>
+</form>
+Publish52以降の仕様に対応するシミュレータです。
+<br>Runic toolで付加されるマジック効果の強度率。付加プロパティ数は以前と変わりません。
+<ul class="list01">
+  <li>Dullcopper　：　40～100％</li>
+  <li>Shadow　：　45～100％</li>
+  <li>Copper　：　50～100％</li>
+  <li>Bronze　：　55～100％</li>
+  <li>Gold　：　60～100％</li>
+  <li>Agapite　：　65～100％</li>
+  <li>Verite　：　70～100％</li>
+  <li>Valorite　：　85～100％</li>
+  <li>Spined　：　40～100％</li>
+  <li>Horned　：　45～100％</li>
+  <li>Barbed　：　50～100％</li>
+  <li>Oak　：　25～50％（Publish52より変更）</li>
+  <li>Ash　：　35～75％</li>
+  <li>Yew　：　45～90％</li>
+  <li>Heartwood　：　50～100％</li>
+</ul>
+
+</font>
+</div>
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

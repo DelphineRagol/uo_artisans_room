@@ -1,0 +1,904 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style.css" type="text/css" rel="stylesheet">
+<TITLE>属性抵抗値計算（PVP Experiment暫定）</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899194</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<div class="block02">
+<br>
+<font size="3">
+<center><font size="5"><b>属性抵抗値計算</b></font>（PVP Experiment暫定）</center>
+<hr>
+<script language="javascript">
+<!--
+//Necro
+var nar;
+nar = new Array(4);
+nar[0] = 0;
+nar[1] = 0;
+nar[2] = 0;
+nar[3] = 15;
+
+var nfr;
+nfr = new Array(4);
+nfr[0] = 0;
+nfr[1] = -10;
+nfr[2] = -25;
+nfr[3] = -5;
+
+var ncr;
+ncr = new Array(4);
+ncr[0] = 0;
+ncr[1] = 10;
+ncr[2] = 0;
+ncr[3] = 0;
+
+var npr;
+npr = new Array(4);
+npr[0] = 0;
+npr[1] = 10;
+npr[2] = 0;
+npr[3] = 0;
+
+var ner;
+ner = new Array(4);
+ner[0] = 0;
+ner[1] = 0;
+ner[2] = 0;
+ner[3] = -5;
+//Necro
+
+function sim0(form)
+{
+var form = document.form_sim;
+  
+  form.react.value = 0;
+  form.prot.value = 0;
+  form.mref.value = 0;
+  form.alore.value = 0;
+  form.insc.value = 0;
+  form.necro.value = 0;
+  form.ar01.value = 0;
+  form.fr01.value = 0;
+  form.cr01.value = 0;
+  form.pr01.value = 0;
+  form.er01.value = 0;
+  form.ar02.value = 0;
+  form.fr02.value = 0;
+  form.cr02.value = 0;
+  form.pr02.value = 0;
+  form.er02.value = 0;
+  form.ar03.value = 0;
+  form.fr03.value = 0;
+  form.cr03.value = 0;
+  form.pr03.value = 0;
+  form.er03.value = 0;
+  form.ar04.value = 0;
+  form.fr04.value = 0;
+  form.cr04.value = 0;
+  form.pr04.value = 0;
+  form.er04.value = 0;
+  form.ar05.value = 0;
+  form.fr05.value = 0;
+  form.cr05.value = 0;
+  form.pr05.value = 0;
+  form.er05.value = 0;
+  form.ar06.value = 0;
+  form.fr06.value = 0;
+  form.cr06.value = 0;
+  form.pr06.value = 0;
+  form.er06.value = 0;
+  form.ar07.value = 0;
+  form.fr07.value = 0;
+  form.cr07.value = 0;
+  form.pr07.value = 0;
+  form.er07.value = 0;
+  form.ar08.value = 0;
+  form.fr08.value = 0;
+  form.cr08.value = 0;
+  form.pr08.value = 0;
+  form.er08.value = 0;
+  form.ar09.value = 0;
+  form.fr09.value = 0;
+  form.cr09.value = 0;
+  form.pr09.value = 0;
+  form.er09.value = 0;
+  form.ar10.value = 0;
+  form.fr10.value = 0;
+  form.cr10.value = 0;
+  form.pr10.value = 0;
+  form.er10.value = 0;
+  form.ar11.value = 0;
+  form.fr11.value = 0;
+  form.cr11.value = 0;
+  form.pr11.value = 0;
+  form.er11.value = 0;
+  form.nar01.value = 0;
+  form.nfr01.value = 0;
+  form.ncr01.value = 0;
+  form.npr01.value = 0;
+  form.ner01.value = 0;
+  form.aar.value = 0;
+  form.afr.value = 0;
+  form.acr.value = 0;
+  form.apr.value = 0;
+  form.aer.value = 0;
+  form.tar.value = 0;
+  form.tfr.value = 0;
+  form.tcr.value = 0;
+  form.tpr.value = 0;
+  form.ter.value = 0;
+  form.lima.value = 0;
+  form.limb.value = 0;
+  form.limc.value = 0;
+  form.limd.value = 0;
+  form.lime.value = 0;
+  form.limf.value = 0;
+  form.limg.value = 0;
+  return true;
+}
+
+function sim1(form)
+{
+var form = document.form_sim;
+
+  hen = form.necro.options[form.necro.selectedIndex].value;
+  nar01 = nar[hen];
+  nfr01 = nfr[hen];
+  ncr01 = ncr[hen];
+  npr01 = npr[hen];
+  ner01 = ner[hen];
+
+  form.nar01.value = nar01;
+  form.nfr01.value = nfr01;
+  form.ncr01.value = ncr01;
+  form.npr01.value = npr01;
+  form.ner01.value = ner01;
+
+  lim01 = form.yoroi1.options[form.yoroi1.selectedIndex].value;
+  lim02 = form.yoroi2.options[form.yoroi2.selectedIndex].value;
+  lim03 = form.yoroi3.options[form.yoroi3.selectedIndex].value;
+  lim04 = form.yoroi4.options[form.yoroi4.selectedIndex].value;
+  lim05 = form.yoroi5.options[form.yoroi5.selectedIndex].value;
+  lim06 = form.yoroi6.options[form.yoroi6.selectedIndex].value;
+  lim07 = form.yoroi7.options[form.yoroi7.selectedIndex].value;
+  lim11 = form.sozai1.options[form.sozai1.selectedIndex].value;
+  lim12 = form.sozai2.options[form.sozai2.selectedIndex].value;
+  lim13 = form.sozai3.options[form.sozai3.selectedIndex].value;
+  lim14 = form.sozai4.options[form.sozai4.selectedIndex].value;
+  lim15 = form.sozai5.options[form.sozai5.selectedIndex].value;
+  lim16 = form.sozai6.options[form.sozai6.selectedIndex].value;
+  lim17 = form.sozai7.options[form.sozai7.selectedIndex].value;
+  sa1 = form.sa1.options[form.sa1.selectedIndex].value;
+  sa2 = form.sa2.options[form.sa2.selectedIndex].value;
+  sa3 = form.sa3.options[form.sa3.selectedIndex].value;
+  sa4 = form.sa4.options[form.sa4.selectedIndex].value;
+  sa5 = form.sa5.options[form.sa5.selectedIndex].value;
+  sa6 = form.sa6.options[form.sa6.selectedIndex].value;
+  sa7 = form.sa7.options[form.sa7.selectedIndex].value;
+
+  lima = sa1 * ( lim01 * 1.0 + lim11 * 1.0);
+  limb = sa2 * ( lim02 * 1.0 + lim12 * 1.0);
+  limc = sa3 * ( lim03 * 1.0 + lim13 * 1.0);
+  limd = sa4 * ( lim04 * 1.0 + lim14 * 1.0);
+  lime = sa5 * ( lim05 * 1.0 + lim15 * 1.0);
+  limf = sa6 * ( lim06 * 1.0 + lim16 * 1.0);
+  limg = sa7 * ( lim07 * 1.0 + lim17 * 1.0);
+
+  form.lima.value = lima;
+  form.limb.value = limb;
+  form.limc.value = limc;
+  form.limd.value = limd;
+  form.lime.value = lime;
+  form.limf.value = limf;
+  form.limg.value = limg;
+
+  lim = lima + limb + limc + limd + lime + limf + limg;
+
+  form.lim.value = lim;
+
+ ins01 = form.insc.options[form.insc.selectedIndex].value;
+ lor01 = form.alore.value;
+ lor01 = Math.min(lor01, lim);
+
+
+  if(form.react.checked){
+   form.ar01.value = 15.0 + ins01 * 1.0;
+   form.fr01.value = -5.0;
+   form.cr01.value = -5.0;
+   form.pr01.value = -5.0;
+   form.er01.value = -5.0;
+}
+  else{
+   form.ar01.value = 0.0;
+   form.fr01.value = 0.0;
+   form.cr01.value = 0.0;
+   form.pr01.value = 0.0;
+   form.er01.value = 0.0;
+}
+
+   if(form.prot.checked){
+   form.ar02.value = -15.0 + ins01 * 1.0;
+   form.fr02.value = 0.0;
+   form.cr02.value = 0.0;
+   form.pr02.value = 0.0;
+   form.er02.value = 0.0;
+}
+  else{
+   form.ar02.value = 0.0;
+   form.fr02.value = 0.0;
+   form.cr02.value = 0.0;
+   form.pr02.value = 0.0;
+   form.er02.value = 0.0;
+}
+
+  if(form.mref.checked){
+   form.ar03.value = -25.0 + ins01 * 1.0;
+   form.fr03.value = 10.0;
+   form.cr03.value = 10.0;
+   form.pr03.value = 10.0;
+   form.er03.value = 10.0;
+}
+  else{
+   form.ar03.value = 0.0;
+   form.fr03.value = 0.0;
+   form.cr03.value = 0.0;
+   form.pr03.value = 0.0;
+   form.er03.value = 0.0;
+}
+
+  ar01 = form.ar01.value;
+  fr01 = form.fr01.value;
+  cr01 = form.cr01.value;
+  pr01 = form.pr01.value;
+  er01 = form.er01.value;
+  ar02 = form.ar02.value;
+  fr02 = form.fr02.value;
+  cr02 = form.cr02.value;
+  pr02 = form.pr02.value;
+  er02 = form.er02.value;
+  ar03 = form.ar03.value;
+  fr03 = form.fr03.value;
+  cr03 = form.cr03.value;
+  pr03 = form.pr03.value;
+  er03 = form.er03.value;
+  ar04 = form.ar04.value;
+  fr04 = form.fr04.value;
+  cr04 = form.cr04.value;
+  pr04 = form.pr04.value;
+  er04 = form.er04.value;
+  ar05 = form.ar05.value;
+  fr05 = form.fr05.value;
+  cr05 = form.cr05.value;
+  pr05 = form.pr05.value;
+  er05 = form.er05.value;
+  ar06 = form.ar06.value;
+  fr06 = form.fr06.value;
+  cr06 = form.cr06.value;
+  pr06 = form.pr06.value;
+  er06 = form.er06.value;
+  ar07 = form.ar07.value;
+  fr07 = form.fr07.value;
+  cr07 = form.cr07.value;
+  pr07 = form.pr07.value;
+  er07 = form.er07.value;
+  ar08 = form.ar08.value;
+  fr08 = form.fr08.value;
+  cr08 = form.cr08.value;
+  pr08 = form.pr08.value;
+  er08 = form.er08.value;
+  ar09 = form.ar09.value;
+  fr09 = form.fr09.value;
+  cr09 = form.cr09.value;
+  pr09 = form.pr09.value;
+  er09 = form.er09.value;
+  ar10 = form.ar10.value;
+  fr10 = form.fr10.value;
+  cr10 = form.cr10.value;
+  pr10 = form.pr10.value;
+  er10 = form.er10.value;
+
+  ar11 = ar04 * 1.0 + ar05 * 1.0 + ar06 * 1.0 + ar07 * 1.0 + ar08 * 1.0 + ar09 * 1.0 + ar10 * 1.0 + lor01 * 1.0;
+  fr11 = fr04 * 1.0 + fr05 * 1.0 + fr06 * 1.0 + fr07 * 1.0 + fr08 * 1.0 + fr09 * 1.0 + fr10 * 1.0 + lor01 * 1.0;
+  cr11 = cr04 * 1.0 + cr05 * 1.0 + cr06 * 1.0 + cr07 * 1.0 + cr08 * 1.0 + cr09 * 1.0 + cr10 * 1.0 + lor01 * 1.0;
+  pr11 = pr04 * 1.0 + pr05 * 1.0 + pr06 * 1.0 + pr07 * 1.0 + pr08 * 1.0 + pr09 * 1.0 + pr10 * 1.0 + lor01 * 1.0;
+  er11 = er04 * 1.0 + er05 * 1.0 + er06 * 1.0 + er07 * 1.0 + er08 * 1.0 + er09 * 1.0 + er10 * 1.0 + lor01 * 1.0;
+
+ form.ar11.value = ar11;
+ form.fr11.value = fr11;
+ form.cr11.value = cr11;
+ form.pr11.value = pr11;
+ form.er11.value = er11;
+
+  aar = ar01 * 1.0 + ar02 * 1.0 + ar03 * 1.0 + nar01 * 1.0 + ar11 * 1.0;
+  afr = fr01 * 1.0 + fr02 * 1.0 + fr03 * 1.0 + nfr01 * 1.0 + fr11 * 1.0;
+  acr = cr01 * 1.0 + cr02 * 1.0 + cr03 * 1.0 + ncr01 * 1.0 + cr11 * 1.0;
+  apr = pr01 * 1.0 + pr02 * 1.0 + pr03 * 1.0 + npr01 * 1.0 + pr11 * 1.0;
+  aer = er01 * 1.0 + er02 * 1.0 + er03 * 1.0 + ner01 * 1.0 + er11 * 1.0;
+
+ form.aar.value = aar;
+ form.afr.value = afr;
+ form.acr.value = acr;
+ form.apr.value = apr;
+ form.aer.value = aer;
+
+  tar = Math.floor(Math.min(10.0, aar) + Math.max(Math.min(7.5, (aar - 10.0) * 0.75),0.0) + Math.max(Math.min(10.0 * 2.0 / 3.0 ,(aar - 20.0) * 2.0 / 3.0),0.0 )
+ + Math.max(Math.min(5.0, (aar - 30.0) * 0.50), 0.0) + Math.max(Math.min(10.0 * 1.0 / 3.0, (aar - 40.0)  * 1.0 / 3.0), 0.0) + Math.max(0.0,(aar - 50.0) * 1.0 / 4.0));
+
+  tfr = Math.floor(Math.min(10.0, afr) + Math.max(Math.min(7.5, (afr - 10.0) * 0.75),0.0) + Math.max(Math.min(10.0 * 2.0 / 3.0 ,(afr - 20.0) * 2.0 / 3.0),0.0 )
+ + Math.max(Math.min(5.0, (afr - 30.0) * 0.50), 0.0) + Math.max(Math.min(10.0 * 1.0 / 3.0, (afr - 40.0)  * 1.0 / 3.0), 0.0) + Math.max(0.0,(afr - 50.0) * 1.0 / 4.0));
+
+  tcr = Math.floor(Math.min(10.0, acr) + Math.max(Math.min(7.5, (acr - 10.0) * 0.75),0.0) + Math.max(Math.min(10.0 * 2.0 / 3.0 ,(acr - 20.0) * 2.0 / 3.0),0.0 )
+ + Math.max(Math.min(5.0, (acr - 30.0) * 0.50), 0.0) + Math.max(Math.min(10.0 * 1.0 / 3.0, (acr - 40.0)  * 1.0 / 3.0), 0.0) + Math.max(0.0,(acr - 50.0) * 1.0 / 4.0));
+
+  tpr = Math.floor(Math.min(10.0, apr) + Math.max(Math.min(7.5, (apr - 10.0) * 0.75),0.0) + Math.max(Math.min(10.0 * 2.0 / 3.0 ,(apr - 20.0) * 2.0 / 3.0),0.0 )
+ + Math.max(Math.min(5.0, (apr - 30.0) * 0.50), 0.0) + Math.max(Math.min(10.0 * 1.0 / 3.0, (apr - 40.0)  * 1.0 / 3.0), 0.0) + Math.max(0.0,(apr - 50.0) * 1.0 / 4.0));
+
+  ter = Math.floor(Math.min(10.0, aer) + Math.max(Math.min(7.5, (aer - 10.0) * 0.75),0.0) + Math.max(Math.min(10.0 * 2.0 / 3.0 ,(aer - 20.0) * 2.0 / 3.0),0.0 )
+ + Math.max(Math.min(5.0, (aer - 30.0) * 0.50), 0.0) + Math.max(Math.min(10.0 * 1.0 / 3.0, (aer - 40.0)  * 1.0 / 3.0), 0.0) + Math.max(0.0,(aer - 50.0) * 1.0 / 4.0));
+
+ form.tar.value = Math.min(70.0, tar);
+ form.tfr.value = Math.min(70.0, tfr);
+ form.tcr.value = Math.min(70.0, tcr);
+ form.tpr.value = Math.min(70.0, tpr);
+ form.ter.value = Math.min(75.0, ter);
+
+ return true;
+}
+//-->
+</script>
+
+PVP Experimentでテスト予定の属性抵抗値計算について、ここで計算できるようにしました。
+<form name="form_sim">
+
+
+<table align="center" class="table04">
+  <tr>
+   <td align="center" bgcolor="#ffff99" colspan="7">装備品の属性抵抗　Arms Loreスキル<input type="text" size="3" name="alore" value="0" onchange="sim1(form)"></td>
+  </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" width="240">鎧種類・特殊素材・パーツ数選択</td>
+   <td align="center" bgcolor="#ffffcc" width="40">Lore<br>上限</td>
+   <td align="center" bgcolor="#d0d0d0" width="40">AR</td>
+   <td align="center" bgcolor="#ffc080" width="40">FR</td>
+   <td align="center" bgcolor="#80c0ff" width="40">CR</td>
+   <td align="center" bgcolor="#80ffc0" width="40">PR</td>
+   <td align="center" bgcolor="#ffc0ff" width="40">ER</td>
+  </tr>
+
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" width="240">
+<select name="yoroi1" size="1" onchange="sim1(form)">
+<option value="0">鎧種類
+<option value="17">Scale
+<option value="10">Plate
+<option value="9">Chain
+<option value="8">Ring
+<option value="4">Leather
+<option value="5">Studded
+<option value="6">Bone
+<option value="4">Woodland
+</select>
+
+<select name="sozai1" size="1" onchange="sim1(form)">
+<option value="0">特殊素材
+<option value="0">Scale各種
+<option value="1">Dullcopper
+<option value="1">Shadow
+<option value="2">Copper
+<option value="3">Bronze
+<option value="1">Gold
+<option value="6">Agapite
+<option value="7">Verite
+<option value="8">Valorite
+<option value="1">Spined
+<option value="2">Horned
+<option value="3">Barbed
+<option value="1">Oak
+<option value="2">Ash
+<option value="3">Yew
+<option value="5">Heartwood
+<option value="4">Bloodwood
+<option value="4">Frostwood
+</select>
+×
+<select name="sa1" size="1" onchange="sim1(form)">
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+</select>
+   </td>
+
+   <td align="center" bgcolor="#ffffcc" width="40"><input readonly type="text" size="2" name="lima" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input type="text" name="ar04" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input type="text" name="fr04" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input type="text" name="cr04" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input type="text" name="pr04" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input type="text" name="er04" size="2" value="0" onchange="sim1(form)"></td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" width="240">
+<select name="yoroi2" size="1" onchange="sim1(form)">
+<option value="0">鎧種類
+<option value="17">Scale
+<option value="10">Plate
+<option value="9">Chain
+<option value="8">Ring
+<option value="4">Leather
+<option value="5">Studded
+<option value="6">Bone
+<option value="4">Woodland
+</select>
+
+<select name="sozai2" size="1" onchange="sim1(form)">
+<option value="0">特殊素材
+<option value="0">Scale各種
+<option value="1">Dullcopper
+<option value="1">Shadow
+<option value="2">Copper
+<option value="3">Bronze
+<option value="1">Gold
+<option value="6">Agapite
+<option value="7">Verite
+<option value="8">Valorite
+<option value="1">Spined
+<option value="2">Horned
+<option value="3">Barbed
+<option value="1">Oak
+<option value="2">Ash
+<option value="3">Yew
+<option value="5">Heartwood
+<option value="4">Bloodwood
+<option value="4">Frostwood
+</select>
+×
+<select name="sa2" size="1" onchange="sim1(form)">
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+</select>
+
+   </td>
+
+   <td align="center" bgcolor="#ffffcc" width="40"><input readonly type="text" size="2" name="limb" value="0" onchange="sim1(form)"> </td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input type="text" name="ar05" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input type="text" name="fr05" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input type="text" name="cr05" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input type="text" name="pr05" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input type="text" name="er05" size="2" value="0" onchange="sim1(form)"></td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" width="240">
+<select name="yoroi3" size="1" onchange="sim1(form)">
+<option value="0">鎧種類
+<option value="17">Scale
+<option value="10">Plate
+<option value="9">Chain
+<option value="8">Ring
+<option value="4">Leather
+<option value="5">Studded
+<option value="6">Bone
+<option value="4">Woodland
+</select>
+
+<select name="sozai3" size="1" onchange="sim1(form)">
+<option value="0">特殊素材
+<option value="0">Scale各種
+<option value="1">Dullcopper
+<option value="1">Shadow
+<option value="2">Copper
+<option value="3">Bronze
+<option value="1">Gold
+<option value="6">Agapite
+<option value="7">Verite
+<option value="8">Valorite
+<option value="1">Spined
+<option value="2">Horned
+<option value="3">Barbed
+<option value="1">Oak
+<option value="2">Ash
+<option value="3">Yew
+<option value="5">Heartwood
+<option value="4">Bloodwood
+<option value="4">Frostwood
+</select>
+×
+<select name="sa3" size="1" onchange="sim1(form)">
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+</select>
+
+   </td>
+
+   <td align="center" bgcolor="#ffffcc" width="40"><input readonly type="text" size="2" name="limc" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input type="text" name="ar06" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input type="text" name="fr06" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input type="text" name="cr06" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input type="text" name="pr06" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input type="text" name="er06" size="2" value="0" onchange="sim1(form)"></td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" width="240">
+<select name="yoroi4" size="1" onchange="sim1(form)">
+<option value="0">鎧種類
+<option value="17">Scale
+<option value="10">Plate
+<option value="9">Chain
+<option value="8">Ring
+<option value="4">Leather
+<option value="5">Studded
+<option value="6">Bone
+<option value="4">Woodland
+</select>
+
+<select name="sozai4" size="1" onchange="sim1(form)">
+<option value="0">特殊素材
+<option value="0">Scale各種
+<option value="1">Dullcopper
+<option value="1">Shadow
+<option value="2">Copper
+<option value="3">Bronze
+<option value="1">Gold
+<option value="6">Agapite
+<option value="7">Verite
+<option value="8">Valorite
+<option value="1">Spined
+<option value="2">Horned
+<option value="3">Barbed
+<option value="1">Oak
+<option value="2">Ash
+<option value="3">Yew
+<option value="5">Heartwood
+<option value="4">Bloodwood
+<option value="4">Frostwood
+</select>
+×
+<select name="sa4" size="1" onchange="sim1(form)">
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+</select>
+
+   </td>
+
+   <td align="center" bgcolor="#ffffcc" width="40"><input readonly type="text" size="2" name="limd" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input type="text" name="ar07" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input type="text" name="fr07" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input type="text" name="cr07" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input type="text" name="pr07" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input type="text" name="er07" size="2" value="0" onchange="sim1(form)"></td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" width="240">
+<select name="yoroi5" size="1" onchange="sim1(form)">
+<option value="0">鎧種類
+<option value="17">Scale
+<option value="10">Plate
+<option value="9">Chain
+<option value="8">Ring
+<option value="4">Leather
+<option value="5">Studded
+<option value="6">Bone
+<option value="4">Woodland
+</select>
+
+<select name="sozai5" size="1" onchange="sim1(form)">
+<option value="0">特殊素材
+<option value="0">Scale各種
+<option value="1">Dullcopper
+<option value="1">Shadow
+<option value="2">Copper
+<option value="3">Bronze
+<option value="1">Gold
+<option value="6">Agapite
+<option value="7">Verite
+<option value="8">Valorite
+<option value="1">Spined
+<option value="2">Horned
+<option value="3">Barbed
+<option value="1">Oak
+<option value="2">Ash
+<option value="3">Yew
+<option value="5">Heartwood
+<option value="4">Bloodwood
+<option value="4">Frostwood
+</select>
+×
+<select name="sa5" size="1" onchange="sim1(form)">
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+</select>
+
+   </td>
+
+   <td align="center" bgcolor="#ffffcc" width="40"><input readonly type="text" size="2" name="lime" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input type="text" name="ar08" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input type="text" name="fr08" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input type="text" name="cr08" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input type="text" name="pr08" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input type="text" name="er08" size="2" value="0" onchange="sim1(form)"></td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" width="240">
+<select name="yoroi6" size="1" onchange="sim1(form)">
+<option value="0">鎧種類
+<option value="17">Scale
+<option value="10">Plate
+<option value="9">Chain
+<option value="8">Ring
+<option value="4">Leather
+<option value="5">Studded
+<option value="6">Bone
+<option value="4">Woodland
+</select>
+
+<select name="sozai6" size="1" onchange="sim1(form)">
+<option value="0">特殊素材
+<option value="0">Scale各種
+<option value="1">Dullcopper
+<option value="1">Shadow
+<option value="2">Copper
+<option value="3">Bronze
+<option value="1">Gold
+<option value="6">Agapite
+<option value="7">Verite
+<option value="8">Valorite
+<option value="1">Spined
+<option value="2">Horned
+<option value="3">Barbed
+<option value="1">Oak
+<option value="2">Ash
+<option value="3">Yew
+<option value="5">Heartwood
+<option value="4">Bloodwood
+<option value="4">Frostwood
+</select>
+×
+<select name="sa6" size="1" onchange="sim1(form)">
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+</select>
+
+   </td>
+
+   <td align="center" bgcolor="#ffffcc" width="40"><input readonly type="text" size="2" name="limf" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input type="text" name="ar09" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input type="text" name="fr09" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input type="text" name="cr09" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input type="text" name="pr09" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input type="text" name="er09" size="2" value="0" onchange="sim1(form)"></td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" width="240">
+<select name="yoroi7" size="1" onchange="sim1(form)">
+<option value="0">鎧種類
+<option value="17">Scale
+<option value="10">Plate
+<option value="9">Chain
+<option value="8">Ring
+<option value="4">Leather
+<option value="5">Studded
+<option value="6">Bone
+<option value="4">Woodland
+</select>
+
+<select name="sozai7" size="1" onchange="sim1(form)">
+<option value="0">特殊素材
+<option value="0">Scale各種
+<option value="1">Dullcopper
+<option value="1">Shadow
+<option value="2">Copper
+<option value="3">Bronze
+<option value="1">Gold
+<option value="6">Agapite
+<option value="7">Verite
+<option value="8">Valorite
+<option value="1">Spined
+<option value="2">Horned
+<option value="3">Barbed
+<option value="1">Oak
+<option value="2">Ash
+<option value="3">Yew
+<option value="5">Heartwood
+<option value="4">Bloodwood
+<option value="4">Frostwood
+</select>
+×
+<select name="sa7" size="1" onchange="sim1(form)">
+<option value="1">1
+<option value="2">2
+<option value="3">3
+<option value="4">4
+<option value="5">5
+<option value="6">6
+</select>
+
+   </td>
+
+   <td align="center" bgcolor="#ffffcc" width="40"><input readonly type="text" size="2" name="limg" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input type="text" name="ar10" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input type="text" name="fr10" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input type="text" name="cr10" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input type="text" name="pr10" size="2" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input type="text" name="er10" size="2" value="0" onchange="sim1(form)"></td>
+ </tr>
+
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" width="240">装備品抵抗値合計</td>
+   <td align="center" bgcolor="#ffffcc" width="40"><input readonly type="text" size="3" name="lim" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input readonly type="text" name="ar11" size="3" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input readonly type="text" name="fr11" size="3" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input readonly type="text" name="cr11" size="3" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input readonly type="text" name="pr11" size="3" value="0" onchange="sim1(form)"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input readonly type="text" name="er11" size="3" value="0" onchange="sim1(form)"></td>
+ </tr>
+
+ <tr>
+   <td align="center" bgcolor="#60ffcc" colspan="7">魔法などによる補正　　Inscribeスキル
+     <select name="insc" size="1" onchange="sim1(form)">
+<option value="0">0.0～19.9
+<option value="1">20.0～39.9
+<option value="2">40.0～59.9
+<option value="3">60.0～79.9
+<option value="4">80.0～99.9
+<option value="5">100.0
+      </select>
+   </td>
+  </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" colspan="2"><INPUT Type="checkbox" name="react" value="yes" onclick="sim1(form)">　Reactive armor</td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input readonly type="text" name="ar01" size="2" value="0"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input readonly type="text" name="fr01" size="2" value="0"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input readonly type="text" name="cr01" size="2" value="0"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input readonly type="text" name="pr01" size="2" value="0"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input readonly type="text" name="er01" size="2" value="0"></td>
+  </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" colspan="2"><INPUT Type="checkbox" name="prot" value="yes" onclick="sim1(form)">　Protection</td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input readonly type="text" name="ar02" size="2" value="0"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input readonly type="text" name="fr02" size="2" value="0"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input readonly type="text" name="cr02" size="2" value="0"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input readonly type="text" name="pr02" size="2" value="0"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input readonly type="text" name="er02" size="2" value="0"></td>
+  </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" colspan="2"><INPUT Type="checkbox" name="mref" value="yes" onclick="sim1(form)">　Magic reflection</td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input readonly type="text" name="ar03" size="2" value="0"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input readonly type="text" name="fr03" size="2" value="0"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input readonly type="text" name="cr03" size="2" value="0"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input readonly type="text" name="pr03" size="2" value="0"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input readonly type="text" name="er03" size="2" value="0"></td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" colspan="2">Necromancy
+　<select name="necro" size="1" onchange="sim1(form)">
+<option value="0">変身魔法選択
+<option value="1">Lich Form
+<option value="2">Vampiric Embrace
+<option value="3">Wraith Form
+   </select>
+
+</td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input readonly type="text" name="nar01" size="2" value="0"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input readonly type="text" name="nfr01" size="2" value="0"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input readonly type="text" name="ncr01" size="2" value="0"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input readonly type="text" name="npr01" size="2" value="0"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input readonly type="text" name="ner01" size="2" value="0"></td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" colspan="2">抵抗値合計（魔法等の影響込）</td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input readonly type="text" name="aar" size="3" value="0"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input readonly type="text" name="afr" size="3" value="0"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input readonly type="text" name="acr" size="3" value="0"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input readonly type="text" name="apr" size="3" value="0"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input readonly type="text" name="aer" size="3" value="0"></td>
+ </tr>
+
+  <tr>
+   <td align="center" bgcolor="#ffffcc" colspan="2">補正後属性抵抗値</td>
+   <td align="center" bgcolor="#d0d0d0" width="40"><input readonly type="text" name="tar" size="2" value="0"></td>
+   <td align="center" bgcolor="#ffc080" width="40"><input readonly type="text" name="tfr" size="2" value="0"></td>
+   <td align="center" bgcolor="#80c0ff" width="40"><input readonly type="text" name="tcr" size="2" value="0"></td>
+   <td align="center" bgcolor="#80ffc0" width="40"><input readonly type="text" name="tpr" size="2" value="0"></td>
+   <td align="center" bgcolor="#ffc0ff" width="40"><input readonly type="text" name="ter" size="2" value="0"></td>
+ </tr>
+
+</table>
+</form>
+<p>
+<ul type="disk"><b>―使い方―</b>
+ <li>PVP Experimentで実施予定の抵抗値計算は、装備品の系統および使用素材によってArmsloreに適用上限がかけられるというものです。
+<br>たとえば、Armsloreスキルが高くても、鎧を装備していない場合、Armsloreによる属性抵抗ボーナスが反映されません。
+
+ <li>装備する鎧の系統とその鎧に付加されている特殊素材の種類を選択してください。
+<br>（鎧の系統と異なる系統の素材でも選べるようにしています）
+
+ <li>面倒ですが、装備している鎧のパーツ分選択すると、Armsloreの適用上限（パーツ毎、全パーツ合計）が算出されます。
+<br>
+ <li>Arms Loreスキルを入力すると、入力値とArmsLore適用上限合計とを比較し、抵抗合計に加算されます。
+
+ <li>属性抵抗は、装備品による適用上限内のArms Lore値と装備品の属性抵抗値との合計値から、下図のように補正を行い算出しています。
+<p align="center"><img src="hosei_p40a.gif" alt="">
+<br>属性抵抗(合計値)を換算するときの参考図
+</p>
+
+<li>装備品1パーツに適用されるArmslore上限値は、「装備品の系統による値」と「特殊素材による値」の合計値となります。
+ <ul type="circle">
+ ―装備品系統―
+<li>Woodland（木鎧）・・・4
+<li>Bone（骨鎧）・・・6
+<li>Studded（鋲皮鎧）・・・5
+<li>Leather（皮鎧）・・・4
+<li>Ringmail（金属鎧）・・・8
+<li>Chainmail（金属鎧）・・・9
+<li>Platemail（金属鎧）・・・10
+<li>Scalearmor（鱗鎧）・・・17（ただし特殊素材はなし）
+ </ul>
+
+ <ul type="circle">
+ ―特殊素材―
+<li>Oak（木鎧）・・・1
+<li>Ash（木鎧）・・・2
+<li>Yew（木鎧）・・・3
+<li>Bloodwood（木鎧）・・・4
+<li>Frostwood（木鎧）・・・4
+<li>Heartwood（木鎧）・・・5
+<li>Spined（皮鎧、鋲皮鎧、骨鎧）・・・1
+<li>Horned（皮鎧、鋲皮鎧、骨鎧）・・・2
+<li>Barbed（皮鎧、鋲皮鎧、骨鎧）・・・3
+<li>Dullcopper（金属鎧）・・・1
+<li>Shadow（金属鎧）・・・1
+<li>Copper（金属鎧）・・・2
+<li>Bronze（金属鎧）・・・3
+<li>Gold（金属鎧）・・・1
+<li>Agapite（金属鎧）・・・6
+<li>Verite（金属鎧）・・・7
+<li>Valorite（金属鎧）・・・8
+ </ul>
+
+</ul>
+</p>
+</div>
+</font>
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

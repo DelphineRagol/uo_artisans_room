@@ -1,0 +1,414 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>Treaseur Hunting（トレジャーハント）</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899057</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<html>
+
+<h2>Treaseur Hunting（トレジャーハント）</h2>
+
+<HR>
+
+<h3>概要</h3>
+
+特定のモンスターを倒すなど、様々な方法でぼろぼろの宝の地図を入手することができます。
+<br>この地図は解読する必要がありますが、そうすることで、埋められた財宝を発掘できるようになります。
+
+
+<h3>１．必要スキル</h3>
+
+トレジャーハントに必要なものおよびスキルは、以下のものです（太字は必須）。
+
+<ul class="list01">
+  <li><b>cartography[測量]</b> ： ぼろぼろの宝の地図の解読に必要。</li>
+  <li><b>lockpicking[開錠]</b> ： 発掘した宝箱は鍵がかけられているため、それを開けるのに必要。高レベルの宝箱は開錠でしか開けられない。</li>
+  <li><b>採掘道具</b> ： 宝を発掘するのに必要。</li>
+  <li>detecting[探知] ： 発掘した宝箱にかけられた罠を探知する。</li>
+  <li>remove trap[罠解除] ： 発掘した宝箱にかけられた罠を解除する。</li>
+  <li>magery[魔道] ： 低レベルの宝箱は、unlockの魔法で開けることも可能。</li>
+  <li>mining[採掘] ： スキルが高ければ、宝箱の発掘範囲が広がる。</li>
+  <li>戦闘関連スキル ： 宝箱を守るモンスターは倒す必要がある</li>
+</ul>
+
+<h3>２．宝の地図と解読</h3>
+
+宝の地図はレベルおよびファセットが設定されており、名称ですぐに判断することができます。
+<br>これを解読するには、cartography[測量]スキルが一定以上必要となります。
+
+<h4>レベル</h4>
+<ul class="list02">
+  <li>A Tattered, <font color="#ff0000">Plainly</font> Drawn Treasure Map　[ぼろぼろの宝の地図(レベル1)]　：　解読可能スキル25</li>
+  <li>A Tattered, <font color="#ff0000">Expertly</font> Drawn Treasure Map　[ぼろぼろの宝の地図(レベル2)]　：　解読可能スキル71</li>
+  <li>A Tattered, <font color="#ff0000">Adeptlyly</font> Drawn Treasure Map　[ぼろぼろの宝の地図(レベル3)]　：　解読可能スキル81</li>
+  <li>A Tattered, <font color="#ff0000">Cleverly</font> Drawn Treasure Map　[ぼろぼろの宝の地図(レベル4)]　：　解読可能スキル91</li>
+  <li>A Tattered, <font color="#ff0000">Deviously</font> Drawn Treasure Map　[ぼろぼろの宝の地図(レベル5)]　：　解読可能スキル100</li>
+  <li>A Tattered, <font color="#ff0000">Ingeniously</font> Drawn Treasure Map　[ぼろぼろの宝の地図(レベル6)]　：　解読可能スキル100</li>
+</ul>
+
+<h4>ファセット</h4>
+<ul class="list02">
+  <li>フェルッカ</li>
+  <li>トランメル</li>
+  <li>イルシェナー</li>
+  <li>マラス</li>
+  <li>徳之諸島</li>
+  <li>テルマー</li>
+</ul>
+
+解読できた地図は、A Tattered [ぼろぼろの]の表記が消え、Blessed表記のアイテムとなります。
+<br>解読された地図を見ると、宝箱の位置にピンが止められているのが確認できます（左側は2D、右側はSAクライアント）。
+
+<br><img src="treasurehunt_01.gif" alt="" class="img01"><img src="treasurehunt_02.gif" alt="" class="img01">
+<br><img src="treasurehunt_03.jpg" alt="" width="285" height="300" class="img01">
+<img src="treasurehunt_03sa.jpg" alt="" width="275" height="330" class="img01">
+<h3>３．宝箱の発掘</h3>
+
+宝の発掘には下記の2通りの方法があります。
+
+<ul class="list03">
+<li>方法1　：　採掘道具をクリックし、宝の地図をターゲットに指定する。続けて宝箱が埋まっているフィールドをターゲットに指定する。</li>
+<li>方法2　：　宝の地図をクリックし、"財宝を掘る"を選択する。続けて宝箱が埋まっているフィールドをターゲットに指定する。</li>
+</ul>
+
+発掘者の採掘スキルが高ければ、発掘範囲が広がり宝箱を見つけやすくなります。
+宝箱の発掘判定はターゲット位置が基準となるため、宝箱とキャラクターが最大5～8マス離れた位置でも発掘が可能です。
+<br>右下の図は、採掘スキル81～99.9キャラクターが4マス離れた位置を採掘ターゲットとし、さらに3マス離れた宝箱を発掘できることを示したものです。
+
+<table class="table01">
+  <tr bgcolor="#f0f0f0">
+    <td align="center" width="120">採掘スキル</td>
+    <td align="center" width="250">発掘範囲</td>
+  </tr>
+  <tr bgcolor="#ddddff">
+    <td align="center">0～50.9</td>
+    <td align="center">ターゲット＋周囲1マス（3×3）</td>
+  </tr>
+  <tr bgcolor="#eeeeff">
+    <td align="center">51.0～80.9</td>
+    <td align="center">ターゲット＋周囲2マス（5×5）</td>
+  </tr>
+  <tr bgcolor="#ddddff">
+    <td align="center">81.0～99.9</td>
+    <td align="center">ターゲット＋周囲3マス（7×7）</td>
+  </tr>
+  <tr bgcolor="#eeeeff">
+    <td align="center">100.0～</td>
+    <td align="center">ターゲット＋周囲4マス（9×9）</td>
+  </tr>
+</table>
+
+<img src="treasurehunt_05.gif" alt="" class="img01" width="270" height="212">
+
+<br class="cle">
+<h4>参考：ピンの位置と実際のポイントの差</h4>
+上の宝の地図画像でもわかるように2DクライアントとSAクライアントでは、ピン先の位置が若干異なっています。
+<br>それぞれのピン先および実際の宝箱位置にアイテムをおきましたが、2Dクライアントでは、ピン先と宝箱のズレが北6マス、東12マス程度となっているようです。
+<br>SAクライアントでは、ズレはほとんどなく、ピンの根元（赤丸の左下）あたりが宝箱位置となっているようです。
+
+<img src="treasurehunt_08.jpg" alt="" width="520" height="304" class="img01">
+
+
+<h3>４．ガーディアンモンスター</h3>
+
+宝箱を発掘した瞬間、ファセットと宝のレベルに応じたガーディアンモンスターが出現します。
+<br>これらには[Guardian]の表記があり、全て倒さなければ、中身を手に入れることはできません。
+
+<h4>（１）フェルッカ、トランメル</h4>
+
+レベル4までは、イルシェナー、マラス、徳之諸島でもこの表のモンスターが出現します。
+
+<table class="table01">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="80">レベル</td>
+  <td align="center" width="350">ガーディアンモンスター</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">1</td>
+  <td align="left">headless one, mongbat, orc, ratman, skeleton, zombie</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">2</td>
+  <td align="left">earth elemental, gargoyle, gazer, hell hound, orc lord, orc mage</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">3</td>
+  <td align="left">air elemental, dread spider, fire elemental, lich, ogre lord, water elemental</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">4</td>
+  <td align="left">daemon, dread spider, elder gazer, lich lord, ogre lord</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">5</td>
+  <td align="left">blood elemental, daemon, elder gazer, poison elemental, lich lord</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">6</td>
+  <td align="left">ancient wyrm, barlon, blood elemental, greater dragon, poison elemental, titan</td>
+ </tr>
+</table>
+<br class="cle">
+
+<h4>（２）イルシェナー</h4>
+
+<table class="table01">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="80">レベル</td>
+  <td align="center" width="350">ガーディアンモンスター</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">5</td>
+  <td align="left">dark guardian, exodus overseer, gargoyle destroyer, gargoyle enforcer, poison elemental</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">6</td>
+  <td align="left">exodus minion, gargoyle destroyer, titan</td>
+ </tr>
+</table>
+<br class="cle">
+
+<h4>（３）マラス</h4>
+
+<table class="table01">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="80">レベル</td>
+  <td align="center" width="350">ガーディアンモンスター</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">5</td>
+  <td align="left">lich lord, ravager, wanderer of the void</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">6</td>
+  <td align="left">devourer of souls, rotting corpse, wanderer of the void</td>
+ </tr>
+</table>
+<br class="cle">
+
+<h4>（４）徳之諸島</h4>
+
+<table class="table01">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="80">レベル</td>
+  <td align="center" width="350">ガーディアンモンスター</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">5</td>
+  <td align="left">devourer of souls, fan dancer, ronin, rune beetle</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">6</td>
+  <td align="left">hiryu, lady of the snow, oni, rune beetle, yomotsu elder, yomotsu priest, yomotsu warrior</td>
+ </tr>
+</table>
+<br class="cle">
+
+<h4>（５）テルマー</h4>
+
+<table class="table01">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="80">レベル</td>
+  <td align="center" width="350">ガーディアンモンスター</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">1</td>
+  <td align="left">clockwork scorpion, corrosive slime, greater mongbat, mongbat</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">2</td>
+  <td align="left">acid slug, slith, water elemental</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">3</td>
+  <td align="left">leather wolf, stone slith, toxic slith</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">4</td>
+  <td align="left">blood worm, kepetch, stone slith, toxic slith</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">5</td>
+  <td align="left">fire ant, lava elemental, maddening horror</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">6</td>
+  <td align="left">enraged earth elemental, greater poison elemental, lava elemental, fire daemon</td>
+ </tr>
+</table>
+<br class="cle">
+
+<h3>５．開錠およびトラップ</h3>
+
+発掘した宝箱には鍵および爆発罠が仕掛けられています。
+鍵はlockpickを使うかmagery魔法のunlockを使って開けることができますが、それぞれ一定以上のスキルが必要です。
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="80">レベル</td>
+  <td align="center" width="150">lockpick開錠<br>lockpickingスキル</td>
+  <td align="center" width="150">unlock開錠<br>mageryスキル</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>1</td>
+  <td>36.0</td>
+  <td>50.0</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>2</td>
+  <td>76.0</td>
+  <td>75.0</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>3</td>
+  <td>84.0</td>
+  <td>100.0</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>4</td>
+  <td>92.0</td>
+  <td>120.0</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>5</td>
+  <td>100.0</td>
+  <td>開錠不可</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>6</td>
+  <td>100.0</td>
+  <td>開錠不可</td>
+ </tr>
+</table>
+
+
+<h3>６．宝箱の中身</h3>
+
+宝箱にはお金、秘薬、マジックアイテムのほか様々なアイテムが入っていることがあります。
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="50">レベル</td>
+  <td width="60">お金</td>
+  <td width="60">秘薬</td>
+  <td width="60">宝石</td>
+  <td width="80">マジック<br>アイテム</td>
+  <td width="80">エッセンス<br>または<br>アビス布</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>1</td>
+  <td>5000</td>
+  <td>3</td>
+  <td>4</td>
+  <td>32程度</td>
+  <td>-</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>2</td>
+  <td>10000</td>
+  <td>4</td>
+  <td>7</td>
+  <td>40程度</td>
+  <td>2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>3</td>
+  <td>15000</td>
+  <td>5</td>
+  <td>10</td>
+  <td>48程度</td>
+  <td>3</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>4</td>
+  <td>20000</td>
+  <td>6</td>
+  <td>13</td>
+  <td>56程度</td>
+  <td>4</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>5</td>
+  <td>25000</td>
+  <td>7</td>
+  <td>16</td>
+  <td>64程度</td>
+  <td>5</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>6</td>
+  <td>30000</td>
+  <td>8</td>
+  <td>19</td>
+  <td>72程度</td>
+  <td>6</td>
+ </tr>
+</table>
+その他、入っている可能性があるアイテム
+<ul class="list02">
+  <li>Tasty Treat[ペット大好き]</li>
+  <li><img src="skeleton_key.gif" alt="skeleton key" class="img01"> Skeleton key[スケルトンキー]</li>
+  <li><img src="recipescroll.gif" alt="" class="img01"> レシピスクロール</li>
+  <li><img src="scroll_alacrity.gif" alt="" class="img01">Scroll of Aracrity</li>
+  <li><img src="creeping_vine.gif" alt="creeing vine" class="img01"><img src="creeping_vine_2.gif" alt="creeing vine" class="img01">つる草</li>
+  <li>ぼろぼろの宝の地図（発掘したものと同じまたは+1レベル）またはSOSボトル</li>
+  <li><img src="forged_pardon.gif" alt="forged pardon" class="img01">ニセの恩赦証</li>
+  <li>専用のArtifact ： レベル5以上</li>
+  <li>Minor Artifact ： レベル6のみ</li>
+  <li><img src="scroll_transcendence.gif" alt="" class="img01">Scroll of Transcendence[超越のスクロール] ： フェルッカのみ、+0.5</li>
+</ul>
+
+専用のArtifactは、下記の3種類です
+<ul class="list03">
+ <li><img src="surge_shield.gif" alt="surge shield" class="img01">
+<img src="surge_shield_2.gif" alt="surge shield" class="img01"> surge shield [サージシールド]</li>
+ <li><img src="runed_sash_warding.gif" alt="runed sash of warding" class="img01"> runed sash of warding [保護のルーンサッシュ]</li>
+ <li><img src="mana_phasing_orb.gif" alt="mana phasing orb" class="img01"> mana phasing orb [マナ同調のオーブ]</li>
+</ul>
+
+<h3>７．後始末</h3>
+
+発掘した宝箱をクリックすると、"宝箱を消す"コマンドが表示されます。
+<br>宝箱の中身があるときにこのコマンドを選択すると、画像のような警告が表示されます。
+<br>宝箱の中身がないときにこれを選択すると、自動的に宝箱は壊れてなくなります。
+<br><img src="treasurehunt_07.gif" alt="" class="img01">
+
+<h3>地図を所持しているモンスター</h3>
+
+<h4>テルマー、Underworld, Stygian Abyss</h4>
+
+<table class="table01">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="80">レベル</td>
+  <td align="center" width="350">所持モンスター</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">1</td>
+  <td align="left">greater mongbat</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">2</td>
+  <td align="left">clan scratch scrounger, slith</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">3</td>
+  <td align="left">raptor, fire ant, fairy dragon</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td align="center">4</td>
+  <td align="left">interred grizzle</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">5</td>
+  <td align="left">lava elemental, forgotten servant, stygian dragon, fire daemon[renowned]</td>
+</table>
+<br class="cle">
+
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

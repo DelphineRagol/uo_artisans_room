@@ -1,0 +1,3731 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>防具基本データ</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898964</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+ 
+ 
+<!--以下本文-->
+ 
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+ 
+ {
+  if( document.getElementById(targetID))
+   {
+    for (i=1; i<23; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+ 
+<h2>防具基本データ</h2>
+<hr>
+ 
+品質およびマジック効果が付加されていない状態の防具のデータをまとめています。
+<br>下の画像をクリックすると、その系統の防具データが表示されます。
+<br>Publish81より、瞑想障害のある防具に、スタミナ減少抵抗とマナコストのボーナスがつくようになりました。
+<br>これらのボーナスは、それぞれより高い効果のパーツ5つ分まで累積します。
+ 
+<table class="table03">
+  <tr>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_22');return false;">特性</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_1');return false;"><img src="plate05.gif" alt="plate系" class="img01"></a><br>platemail</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_2');return false;"><img src="chain03.gif" alt="chain系" class="img01"></a><br>chainmail</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_3');return false;"><img src="ring04.gif" alt="ring系" class="img01"></a><br>ringmail</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_4');return false;"><img src="scale05_2.gif" alt="scale系" class="img01"></a><br>鱗鎧</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_5');return false;"><img src="leather06.gif" alt="leather系" class="img01"></a><br>革鎧</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_6');return false;"><img src="stud05.gif" alt="stud系" class="img01"></a><br>鋲革鎧</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_7');return false;"><img src="bone05.gif" alt="bone系" class="img01"></a><br>骨鎧</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_8');return false;"><img src="p-do.gif" alt="和風plate系" class="img01"></a><br>和風plate</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_9');return false;"><img src="l-do.gif" alt="和風leather系" class="img01"></a><br>和風革鎧</td>
+    <td align="center" width="60"><a href="#" onClick="showHide('cat_10');return false;"><img src="s-do.gif" alt="和風stud系" class="img01"></a><br>和風鋲革</td>
+  </tr>
+  <tr>
+    <td align="center"><a href="#" onClick="showHide('cat_11');return false;"><img src="leaftunic.gif" alt="leaf系" class="img01"></a><br>leafarmor</td>
+    <td align="center"><a href="#" onClick="showHide('cat_12');return false;"><img src="hidetunic.gif" alt="hide系" class="img01"></a><br>hidearmor</td>
+    <td align="center"><a href="#" onClick="showHide('cat_13');return false;"><img src="woodarmor.gif" alt="wood系" class="img01"></a><br>woodarmor</td>
+    <td align="center"><a href="#" onClick="showHide('cat_14');return false;"><img src="gargish_platemail_chest.gif" alt="ガーゴイルplate系" class="img01"></a><br>garg.plate</td>
+    <td align="center"><a href="#" onClick="showHide('cat_15');return false;"><img src="gargish_cloth_chest.gif" alt="ガーゴイル布系" class="img01"></a><br>garg.布鎧</td>
+    <td align="center"><a href="#" onClick="showHide('cat_16');return false;"><img src="gargish_leather_chest.gif" alt="ガーゴイル皮系" class="img01"></a><br>garg.革鎧</td>
+    <td align="center"><a href="#" onClick="showHide('cat_17');return false;"><img src="gargish_stone_chest.gif" alt="ガーゴイル石系" class="img01"></a><br>garg.石鎧</td>
+    <td align="center"><a href="#" onClick="showHide('cat_18');return false;"><img src="helm01.gif" alt="金属兜" class="img01"></a><br>金属兜</td>
+    <td align="center"><a href="#" onClick="showHide('cat_19');return false;"><img src="wizhat.gif" alt="帽子系" class="img01"></a><br>帽子類</td>
+    <td align="center"><a href="#" onClick="showHide('cat_20');return false;"><img src="shield08.gif" alt="wood系" class="img01"></a><br>盾</td>
+    <td align="center"><a href="#" onClick="showHide('cat_21');return false;"><img src="gargish_necklace.gif" alt="ガーゴイル専用アクセサリ" class="img01"></a><br>garg.宝飾</td>
+  </tr>
+</table>
+
+<div id="cat_22" style="display: none">
+ 
+<h3>特性</h3>
+
+防具には、抵抗値などのプロパティで確認できる特性のほかに、以下のような特性があります。
+
+<h4>瞑想障害</h4>
+
+瞑想障害のある防具を１パーツ（頭、首、腕、手、足、胴）でも装備している場合、
+瞑想スキルの使用に失敗し、瞑想スキルによるマナ自然回復効果が0となります。
+<br>瞑想障害のない防具は下記のとおりで、それ以外は瞑想障害のある防具となりますが、
+<br>NPCのMage Guild Masterに25万gp払うことで、瞑想障害のある防具に対して「瞑想可」を付加/除去できます。
+
+<p>瞑想障害のない防具</p>
+ <ul class="list02">
+  <li>金属製　：　circlet類, gargoyle necklace, gargoyle earring
+  <li>革製　：　leather系、和風leather系、leaf系、gargoyle leather系
+  <li>布製　：　帽子、マスク、gargoyle cloth系
+　<li>木製　：　なし
+  <li>石製　：　なし
+</ul>
+
+<p>瞑想可の付加／除去の制限</p>
+<ul class="list02">
+  <li>「瞑想可」を除去　：　制限なし</li>
+  <li>「瞑想可」を付加　：　マジックプロパティ数が4以下の一般アイテムのみ。Artifact相当のアイテムは不可</li>
+</ul>
+
+<p>瞑想可の付加／除去の方法</p>
+<ul class="list04">
+ <li>NPC Mage guildmaster をクリックし、「瞑想可特性を変更する」を選択</li>
+ <li>特性を変更したい防具を選択すると、25万gpを要求してくるので、銀行にお金を用意しておく</li>
+ <li>先ほど選択した防具をNPCに渡すと、「瞑想可」が除去または付加される</li>
+</ul>
+
+<br><img src="remove_mage_armor_3.jpg" alt="" class="img01">
+ <img src="remove_mage_armor.gif" alt="" class="img01">
+ <img src="remove_mage_armor_2.gif" alt="" class="img01" width="210" height="154">
+
+<h4>マナコストのボーナス</h4>
+
+下記の系統で"瞑想可"が付加されていない防具を装備したキャラクターは、マナコストの効果を得ます。
+<br>この効果は<font color="#ff0000">効果の大きい順に5パーツ分累積し、マジックプロパティのマナコストの上限（-40％）には影響しません。</font>
+
+<p>1パーツあたりの効果</p>
+<ul class="list02">
+ <li>platemail, chainmail, ringmail, 鱗鎧，samurai plate, gargish plate　：　-1％</li>
+ <li>studded leather, bone, hide, studded samurai　：　-3％</li>
+ <li>gargish stone　：　-3％</li>
+</ul>
+
+<p>マナコストの合計値</p>
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="140">マジックプロパティ</td>
+  <td align="center" width="140">装備品ボーナス</td>
+  <td align="center" width="140">合計</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center">0～－40％</td>
+  <td align="center">0～－15％</td>
+  <td align="center">0～－55％</td>
+ </tr>
+</table>
+
+<h4>ダメージによるスタミナ減少抵抗</h4>
+
+防具を装備したキャラクターは、その系統に応じて、ダメージを受けたときのスタミナ減少に抵抗するようになります。
+<br>この効果は<font color="#ff0000">効果の大きい順に5パーツ分累積します。</font>
+
+<p>スタミナ減少抵抗</p>
+<ul class="list02">
+ <li>platemail, chainmail, ringmail, 鱗鎧，samurai plate, gargish plate　：　減少抵抗=7.0</li>
+ <li>studded leather, bone, hide, studded samurai　：　減少抵抗=3.5</li>
+ <li>woodland, gargish stone　：　減少抵抗=3.5</li>
+ <li>瞑想障害のない防具または「瞑想可」が付加された防具　：　減少抵抗=2.0</li>
+ <li>装備なし　：　減少抵抗=0.0</li>
+
+<p>ダメージによるスタミナ減少式</p>
+
+Stamina減少量＝(Damage/直前のHP)×(直前のStamina)－｛(減少抵抗）－5｝
+
+
+
+</div>
+
+<div id="cat_1" style="display: none">
+ 
+<h3>プレート系防具</h3>
+
+瞑想障害あり
+<br>スタミナ減少抵抗：7.0、マナコスト：-1％
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="plate01.gif" alt="" class="img01"></td>
+  <td align="center">platemail gorget<br>[プレートネック]</td>
+  <td align="center">45</td>
+  <td align="center">50～65</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="plate02.gif" alt="" class="img01"></td>
+  <td align="center">platemail gloves<br>[プレートグローブ]</td>
+  <td align="center">70</td>
+  <td align="center">50～65</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="plate06.gif" alt="" class="img01"></td>
+  <td align="center">plate helm<br>[プレートヘルム]</td>
+  <td align="center">80</td>
+  <td align="center">50～65</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="plate03.gif" alt="" class="img01"></td>
+  <td align="center">platemail arms<br>[プレートアーム]</td>
+  <td align="center">80</td>
+  <td align="center">50～65</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="plate04.gif" alt="" class="img01"></td>
+  <td align="center">platemail legs<br>[プレートレッグ]</td>
+  <td align="center">90</td>
+  <td align="center">50～65</td>
+  <td align="center">7</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="plate05.gif" alt="" class="img01"></td>
+  <td align="center">platemail [tunic]<br>[プレートチュニック]</td>
+  <td align="center">95</td>
+  <td align="center">50～65</td>
+  <td align="center">10</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="plate07.gif" alt="" class="img01"></td>
+  <td align="center">platemail [female]<br>[女戦士のプレート]</td>
+  <td align="center">95</td>
+  <td align="center">50～65</td>
+  <td align="center">4</td>
+ </tr>
+ 
+</table>
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">Iron</td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">２％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#c0c0a0">Dull</td>
+  <td align="center" bgcolor="#d0d0d0">15％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">２％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#202020"><font color="#ffff00">Shadow</font></td>
+  <td align="center" bgcolor="#d0d0d0">８％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">９％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0a040">Copper</td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">10％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#604000"><font color="#ffff00">Bronze</font></td>
+  <td align="center" bgcolor="#d0d0d0">８％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">９％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffe080">Gold</td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">５％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffa0a0">Agapite</td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">10％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ff80">Verite</td>
+  <td align="center" bgcolor="#d0d0d0">９％</td>
+  <td align="center" bgcolor="#ffc080">７％</td>
+  <td align="center" bgcolor="#80c0ff">５％</td>
+  <td align="center" bgcolor="#80ffc0">７％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">Valorite</td>
+  <td align="center" bgcolor="#d0d0d0">10％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">７％</td>
+  <td align="center" bgcolor="#ffc0ff">６％</td>
+ </tr>
+</table>
+ 
+</div>
+ 
+<div id="cat_2" style="display: none">
+ 
+<h3>チェイン系防具</h3>
+ 
+瞑想障害あり
+<br>スタミナ減少抵抗：7.0、マナコスト：-1％
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ 
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="chain01.gif" alt="" class="img01"></td>
+  <td align="center">chainmail coif<br>[チェインフード]</td>
+  <td align="center">60</td>
+  <td align="center">40～50</td>
+  <td align="center">7</td>
+ </tr>
+ 
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="chain02.gif" alt="" class="img01"></td>
+  <td align="center">chainmail leggings<br>[チェインレッグ]</td>
+  <td align="center">60</td>
+  <td align="center">45～60</td>
+  <td align="center">7</td>
+ </tr>
+ 
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="chain03.gif" alt="" class="img01"></td>
+  <td align="center">chainmail tunic<br>[チェインアーマー]</td>
+  <td align="center">60</td>
+  <td align="center">45～60</td>
+  <td align="center">7</td>
+ </tr>
+ 
+</table>
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">Iron</td>
+  <td align="center" bgcolor="#d0d0d0">４％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">１％</td>
+  <td align="center" bgcolor="#ffc0ff">２％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#c0c0a0">Dull</td>
+  <td align="center" bgcolor="#d0d0d0">14％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">１％</td>
+  <td align="center" bgcolor="#ffc0ff">２％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#202020"><font color="#ffff00">Shadow</font></td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">１％</td>
+  <td align="center" bgcolor="#ffc0ff">９％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0a040">Copper</td>
+  <td align="center" bgcolor="#d0d0d0">６％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">８％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#604000"><font color="#ffff00">Bronze</font></td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">11％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffe080">Gold</td>
+  <td align="center" bgcolor="#d0d0d0">６％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">７％</td>
+  <td align="center" bgcolor="#80ffc0">１％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffa0a0">Agapite</td>
+  <td align="center" bgcolor="#d0d0d0">６％</td>
+  <td align="center" bgcolor="#ffc080">11％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ff80">Verite</td>
+  <td align="center" bgcolor="#d0d0d0">８％</td>
+  <td align="center" bgcolor="#ffc080">８％</td>
+  <td align="center" bgcolor="#80c0ff">７％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">Valorite</td>
+  <td align="center" bgcolor="#d0d0d0">９％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">８％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">６％</td>
+ </tr>
+</table>
+ 
+</div>
+ 
+<div id="cat_3" style="display: none">
+ 
+<h3>リング系防具</h3>
+
+瞑想障害あり
+<br>スタミナ減少抵抗：7.0、マナコスト：-1％
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ 
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="ring01.gif" alt="" class="img01"></td>
+  <td align="center">ringmail gloves<br>[リング グローブ]</td>
+  <td align="center">40</td>
+  <td align="center">40～50</td>
+  <td align="center">2</td>
+ </tr>
+ 
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="ring02.gif" alt="" class="img01"></td>
+  <td align="center">ringmail sleeves<br>[リング アーム]</td>
+  <td align="center">40</td>
+  <td align="center">40～50</td>
+  <td align="center">15</td>
+ </tr>
+ 
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="ring03.gif" alt="" class="img01"></td>
+  <td align="center">ringmail leggings<br>[リング レッグ]</td>
+  <td align="center">40</td>
+  <td align="center">40～50</td>
+  <td align="center">15</td>
+ </tr>
+ 
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="ring04.gif" alt="" class="img01"></td>
+  <td align="center">ringmail tunic<br>[リング チュニック]</td>
+  <td align="center">40</td>
+  <td align="center">40～50</td>
+  <td align="center">15</td>
+ </tr>
+ 
+</table>
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">Iron</td>
+  <td align="center" bgcolor="#d0d0d0">３％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">１％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#c0c0a0">Dull</td>
+  <td align="center" bgcolor="#d0d0d0">13％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">１％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#202020"><font color="#ffff00">Shadow</font></td>
+  <td align="center" bgcolor="#d0d0d0">６％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">１％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">10％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0a040">Copper</td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">１％</td>
+  <td align="center" bgcolor="#80ffc0">12％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#604000"><font color="#ffff00">Bronze</font></td>
+  <td align="center" bgcolor="#d0d0d0">６％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">８％</td>
+  <td align="center" bgcolor="#80ffc0">７％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffe080">Gold</td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">６％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffa0a0">Agapite</td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">10％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">７％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ff80">Verite</td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">７％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">９％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">Valorite</td>
+  <td align="center" bgcolor="#d0d0d0">８％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">５％</td>
+  <td align="center" bgcolor="#80ffc0">９％</td>
+  <td align="center" bgcolor="#ffc0ff">７％</td>
+ </tr>
+</table>
+ 
+</div>
+ 
+<div id="cat_4" style="display: none">
+ 
+<h3>鱗系防具</h3>
+
+瞑想障害あり
+<br>スタミナ減少抵抗：7.0、マナコスト：-1％
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ 
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="scale01_2.gif" alt="" class="img01"></td>
+  <td align="center">dragon gloves<br>[ドラゴングローブ]</td>
+  <td align="center">75</td>
+  <td align="center">55～75</td>
+  <td align="center">2</td>
+ </tr>
+ 
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="scale03_2.gif" alt="" class="img01"></td>
+  <td align="center">dragon sleeves<br>[ドラゴンアーム]</td>
+  <td align="center">75</td>
+  <td align="center">55～75</td>
+  <td align="center">5</td>
+ </tr>
+ 
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="scale02_2.gif" alt="" class="img01"></td>
+  <td align="center">dragon helm<br>[ドラゴンヘルム]</td>
+  <td align="center">75</td>
+  <td align="center">55～75</td>
+  <td align="center">5</td>
+ </tr>
+ 
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="scale04_2.gif" alt="" class="img01"></td>
+  <td align="center">dragon leggings<br>[ドラゴンレッグ]</td>
+  <td align="center">75</td>
+  <td align="center">55～75</td>
+  <td align="center">6</td>
+ </tr>
+ 
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="scale05_2.gif" alt="" class="img01"></td>
+  <td align="center">dragon breastplate<br>[ドラゴンチュニック]</td>
+  <td align="center">75</td>
+  <td align="center">55～75</td>
+  <td align="center">10</td>
+ </tr>
+ 
+</table>
+ 
+<br class="cle">
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#202020"><font color="#ffff00">Black</font></td>
+  <td align="center" bgcolor="#d0d0d0">14％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">４％</td>
+  <td align="center" bgcolor="#ffc0ff">０％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffffff">White</td>
+  <td align="center" bgcolor="#d0d0d0">０％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">14％</td>
+  <td align="center" bgcolor="#80ffc0">４％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#6060ff">Blue</td>
+  <td align="center" bgcolor="#d0d0d0">４％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">０％</td>
+  <td align="center" bgcolor="#ffc0ff">14％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#20a020">Green</td>
+  <td align="center" bgcolor="#d0d0d0">４％</td>
+  <td align="center" bgcolor="#ffc080">０％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">14％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffff40">Yellow</td>
+  <td align="center" bgcolor="#d0d0d0">０％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">４％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff4040">Red</td>
+  <td align="center" bgcolor="#d0d0d0">４％</td>
+  <td align="center" bgcolor="#ffc080">14％</td>
+  <td align="center" bgcolor="#80c0ff">０％</td>
+  <td align="center" bgcolor="#80ffc0">４％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ 
+</table>
+ 
+</div>
+ 
+<div id="cat_5" style="display: none">
+ 
+<h3>皮系防具</h3>
+
+瞑想障害なし
+<br>スタミナ減少抵抗：2.0
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="leather01.gif" alt="" class="img01"></td>
+  <td align="center">leather gorget<br>[レザーネックガード]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="leather02.gif" alt="" class="img01"></td>
+  <td align="center">leather gloves<br>[レザーグローブ]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="leather04.gif" alt="" class="img01"></td>
+  <td align="center">leather sleeves<br>[レザーアーム]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="leather03.gif" alt="" class="img01"></td>
+  <td align="center">leather cap<br>[レザーキャップ]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="leather05.gif" alt="" class="img01"></td>
+  <td align="center">leather leggings<br>[レザーレッグ]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">4</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="leather06.gif" alt="" class="img01"></td>
+  <td align="center">leather tunic<br>[レザーチュニック]</td>
+  <td align="center">25</td>
+  <td align="center">30～40</td>
+  <td align="center">6</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="flarmor.gif" alt="" class="img01"></td>
+  <td align="center">female leather armor<br>[女戦士の革鎧]</td>
+  <td align="center">25</td>
+  <td align="center">30～40</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="lbustier.gif" alt="" class="img01"></td>
+  <td align="center">leather bustier<br>[レザービスチェ]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="lskirt.gif" alt="" class="img01"></td>
+  <td align="center">leather skirt<br>[レザースカート]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="lshorts.gif" alt="" class="img01"></td>
+  <td align="center">leather shorts<br>[レザーハーフパンツ]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">3</td>
+ </tr>
+ 
+</table>
+ 
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ 
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Normal</td>
+  <td align="center" bgcolor="#d0d0d0">２％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#4080c0">Spined</td>
+  <td align="center" bgcolor="#d0d0d0">11％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff6060">Horned</td>
+  <td align="center" bgcolor="#d0d0d0">４％</td>
+  <td align="center" bgcolor="#ffc080">８％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">６％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#006000"><font color="#ffff00">Barbed</font></td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">８％</td>
+ </tr>
+ 
+</table>
+ 
+</div>
+ 
+<div id="cat_6" style="display: none">
+ 
+<h3>鋲皮系防具</h3>
+
+瞑想障害あり
+<br>スタミナ減少抵抗：3.5、マナコスト：-3％
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="stud01.gif" alt="" class="img01"></td>
+  <td align="center">studded gorget<br>[スタッドネックガード]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="stud02.gif" alt="" class="img01"></td>
+  <td align="center">studded gloves<br>[スタッドグローブ]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="stud03.gif" alt="" class="img01"></td>
+  <td align="center">studded sleeves<br>[スタッドアーム]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">4</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="stud04.gif" alt="" class="img01"></td>
+  <td align="center">studded leggings<br>[スタッドレッグ]</td>
+  <td align="center">30</td>
+  <td align="center">35～45</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="stud05.gif" alt="" class="img01"></td>
+  <td align="center">studded tunic<br>[スタッドチュニック]</td>
+  <td align="center">35</td>
+  <td align="center">35～45</td>
+  <td align="center">8</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="fstud01.gif" alt="" class="img01"></td>
+  <td align="center">studded armor<br>[スタッドアーマー]</td>
+  <td align="center">35</td>
+  <td align="center">35～45</td>
+  <td align="center">6</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="fstud02.gif" alt="" class="img01"></td>
+  <td align="center">studded bustier<br>[スタッドビスチェ]</td>
+  <td align="center">35</td>
+  <td align="center">35～45</td>
+  <td align="center">1</td>
+ </tr>
+</table>
+ 
+<br class="cle">
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ 
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Normal</td>
+  <td align="center" bgcolor="#d0d0d0">２％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#4080c0">Spined</td>
+  <td align="center" bgcolor="#d0d0d0">11％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff6060">Horned</td>
+  <td align="center" bgcolor="#d0d0d0">４％</td>
+  <td align="center" bgcolor="#ffc080">８％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">７％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#006000"><font color="#ffff00">Barbed</font></td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">９％</td>
+ </tr>
+ 
+</table>
+ 
+</div>
+ 
+<div id="cat_7" style="display: none">
+ 
+<h3>骨系防具</h3>
+
+瞑想障害あり
+<br>スタミナ減少抵抗：3.5、マナコスト：-3％
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="bone01.gif" alt="" class="img01"></td>
+  <td align="center">bone gloves<br>[ボーングローブ]</td>
+  <td align="center">55</td>
+  <td align="center">25～30</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="bone02.gif" alt="" class="img01"></td>
+  <td align="center">bone helmet<br>[ボーンヘルメット]</td>
+  <td align="center">20</td>
+  <td align="center">25～30</td>
+  <td align="center">3</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="bone03.gif" alt="" class="img01"></td>
+  <td align="center">bone arms<br>[ボーンアーム]</td>
+  <td align="center">55</td>
+  <td align="center">25～30</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="bone04.gif" alt="" class="img01"></td>
+  <td align="center">bone leggings<br>[ボーンレッグ]</td>
+  <td align="center">55</td>
+  <td align="center">25～30</td>
+  <td align="center">3</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="bone05.gif" alt="" class="img01"></td>
+  <td align="center">bone armor<br>[ボーンアーマー]</td>
+  <td align="center">60</td>
+  <td align="center">25～30</td>
+  <td align="center">6</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="orchelm.gif" alt="" class="img01"></td>
+  <td align="center">orc helm<br>[オークヘルム]</td>
+  <td align="center">30</td>
+  <td align="center">30～50</td>
+  <td align="center">5</td>
+ </tr>
+</table>
+
+
+<img src="orchelm.gif" alt="" class="img01">orc helmの抵抗値
+
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ 
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Normal</td>
+  <td align="center" bgcolor="#d0d0d0">３％</td>
+  <td align="center" bgcolor="#ffc080">１％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#4080c0">Spined</td>
+  <td align="center" bgcolor="#d0d0d0">12％</td>
+  <td align="center" bgcolor="#ffc080">１％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff6060">Horned</td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">８％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#006000"><font color="#ffff00">Barbed</font></td>
+  <td align="center" bgcolor="#d0d0d0">６％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">10％</td>
+ </tr>
+ 
+</table>
+
+それ以外の抵抗値
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ 
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Normal</td>
+  <td align="center" bgcolor="#d0d0d0">３％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">２％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#4080c0">Spined</td>
+  <td align="center" bgcolor="#d0d0d0">12％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">２％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff6060">Horned</td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">７％</td>
+  <td align="center" bgcolor="#80c0ff">７％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">７％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#006000"><font color="#ffff00">Barbed</font></td>
+  <td align="center" bgcolor="#d0d0d0">６％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">７％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">９％</td>
+ </tr>
+ 
+</table>
+
+
+
+</div>
+ 
+<div id="cat_8" style="display: none">
+ 
+<h3>和風プレート系防具</h3>
+
+瞑想障害あり
+<br>スタミナ減少抵抗：7.0(2.0)、マナコスト：-1％（0%）
+高品質品には「瞑想可」が付与されますが、この状態では、( )内の効果となります。
+<br>Mage guildmasterに「瞑想可」プロパティを消去してもらうことで、本来の効果が得られます。
+
+<br>
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="p-mempo.gif" alt="" class="img01"></td>
+  <td align="center">platemail mempo<br>[鉄面頬]</td>
+  <td align="center">50</td>
+  <td align="center">60～75</td>
+  <td align="center">3</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="p-do.gif" alt="" class="img01"></td>
+  <td align="center">platemail do<br>[鉄胴]</td>
+  <td align="center">85</td>
+  <td align="center">55～75</td>
+  <td align="center">10</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="p-hirosode.gif" alt="" class="img01"></td>
+  <td align="center">plate hiro sode<br>[鉄広袖]</td>
+  <td align="center">75</td>
+  <td align="center">55～70</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="p-suneate.gif" alt="" class="img01"></td>
+  <td align="center">platemail suneate<br>[鉄すね当]</td>
+  <td align="center">80</td>
+  <td align="center">50～65</td>
+  <td align="center">7</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="p-haidate.gif" alt="" class="img01"></td>
+  <td align="center">platemail haidate<br>[鉄膝鎧]</td>
+  <td align="center">80</td>
+  <td align="center">50～65</td>
+  <td align="center">7</td>
+ </tr>
+ 
+</table>
+ 
+<br class="cle">
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">Iron</td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">２％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#c0c0a0">Dull</td>
+  <td align="center" bgcolor="#d0d0d0">15％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">２％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#202020"><font color="#ffff00">Shadow</font></td>
+  <td align="center" bgcolor="#d0d0d0">８％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">９％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0a040">Copper</td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">10％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#604000"><font color="#ffff00">Bronze</font></td>
+  <td align="center" bgcolor="#d0d0d0">８％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">９％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffe080">Gold</td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">５％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffa0a0">Agapite</td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">10％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ff80">Verite</td>
+  <td align="center" bgcolor="#d0d0d0">９％</td>
+  <td align="center" bgcolor="#ffc080">７％</td>
+  <td align="center" bgcolor="#80c0ff">５％</td>
+  <td align="center" bgcolor="#80ffc0">７％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">Valorite</td>
+  <td align="center" bgcolor="#d0d0d0">10％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">７％</td>
+  <td align="center" bgcolor="#ffc0ff">６％</td>
+ </tr>
+</table>
+</table>
+ 
+</div>
+ 
+<div id="cat_9" style="display: none">
+ 
+<h3>和風皮系防具</h3>
+ 
+
+瞑想障害なし
+<br>スタミナ減少抵抗：2.0
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="l-jingasa.gif" alt="" class="img01"></td>
+  <td align="center">leather jingasa<br>[皮陣笠]</td>
+  <td align="center">25</td>
+  <td align="center">25～40</td>
+  <td align="center">3</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="l-mempo.gif" alt="" class="img01"></td>
+  <td align="center">leather mempo<br>[皮面頬]</td>
+  <td align="center">20</td>
+  <td align="center">35～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="l-do.gif" alt="" class="img01"></td>
+  <td align="center">leather do<br>[皮胴]</td>
+  <td align="center">40</td>
+  <td align="center">35～45</td>
+  <td align="center">6</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="l-hirosode.gif" alt="" class="img01"></td>
+  <td align="center">leather hiro sode<br>[皮広袖]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="l-suneate.gif" alt="" class="img01"></td>
+  <td align="center">leather suneate<br>[皮すね当]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">4</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="l-haidate.gif" alt="" class="img01"></td>
+  <td align="center">leather haidate<br>[皮膝鎧]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">4</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="l_n-pants.gif" alt="" class="img01"></td>
+  <td align="center">leather ninja pants<br>[忍者皮ハカマ]</td>
+  <td align="center">15</td>
+  <td align="center">40～55</td>
+  <td align="center">3</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="l_n-jacket.gif" alt="" class="img01"></td>
+  <td align="center">leather ninja jacket<br>[忍者皮胴着]</td>
+  <td align="center">10</td>
+  <td align="center">45～60</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="l_n-mitts.gif" alt="" class="img01"></td>
+  <td align="center">leather ninja mitts<br>[忍者皮手甲]</td>
+  <td align="center">10</td>
+  <td align="center">25～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="l_n-hood.gif" alt="" class="img01"></td>
+  <td align="center">leather ninja hood<br>[忍者皮頭巾]</td>
+  <td align="center">10</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ 
+</table>
+ 
+<br class="cle"><img src="l-jingasa.gif" alt="" class="img01">leather jingasaの抵抗値
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ 
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Normal</td>
+  <td align="center" bgcolor="#d0d0d0">４％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">２％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#4080c0">Spined</td>
+  <td align="center" bgcolor="#d0d0d0">13％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">２％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff6060">Horned</td>
+  <td align="center" bgcolor="#d0d0d0">６％</td>
+  <td align="center" bgcolor="#ffc080">７％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">６％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#006000"><font color="#ffff00">Barbed</font></td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">８％</td>
+ </tr>
+ 
+</table>
+<br class="cle"><img src="l_n-hood.gif" alt="" class="img01">leather ninja hoodの抵抗値
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ 
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Normal</td>
+  <td align="center" bgcolor="#d0d0d0">２％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#4080c0">Spined</td>
+  <td align="center" bgcolor="#d0d0d0">11％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff6060">Horned</td>
+  <td align="center" bgcolor="#d0d0d0">４％</td>
+  <td align="center" bgcolor="#ffc080">７％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">７％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#006000"><font color="#ffff00">Barbed</font></td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">９％</td>
+ </tr>
+ 
+</table>
+<br class="cle">それ以外の防具の抵抗値
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ 
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Normal</td>
+  <td align="center" bgcolor="#d0d0d0">２％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#4080c0">Spined</td>
+  <td align="center" bgcolor="#d0d0d0">11％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff6060">Horned</td>
+  <td align="center" bgcolor="#d0d0d0">４％</td>
+  <td align="center" bgcolor="#ffc080">８％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">６％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#006000"><font color="#ffff00">Barbed</font></td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">８％</td>
+ </tr>
+ 
+</table>
+ 
+</div>
+ 
+<div id="cat_10" style="display: none">
+ 
+<h3>和風鋲皮系防具</h3>
+
+
+瞑想障害あり
+<br>スタミナ減少抵抗：3.5、マナコスト：-3％
+
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="s-mempo.gif" alt="" class="img01"></td>
+  <td align="center">studded mempo<br>[鋲付面頬]</td>
+  <td align="center">30</td>
+  <td align="center">35～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="s-do.gif" alt="" class="img01"></td>
+  <td align="center">studded do<br>[鋲付胴]</td>
+  <td align="center">55</td>
+  <td align="center">40～55</td>
+  <td align="center">8</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="s-hirosode.gif" alt="" class="img01"></td>
+  <td align="center">studded hiro sode<br>[鋲付広袖]</td>
+  <td align="center">30</td>
+  <td align="center">40～50</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="s-suneate.gif" alt="" class="img01"></td>
+  <td align="center">studded suneate<br>[鋲付すね当]</td>
+  <td align="center">30</td>
+  <td align="center">35～45</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="s-haidate.gif" alt="" class="img01"></td>
+  <td align="center">studded haidate<br>[鋲付膝鎧]</td>
+  <td align="center">30</td>
+  <td align="center">35～45</td>
+  <td align="center">5</td>
+ </tr>
+</table>
+<br class="cle"><img src="s-mempo.gif" alt="" class="img01">studded mempoの抵抗値
+ 
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ 
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Normal</td>
+  <td align="center" bgcolor="#d0d0d0">２％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#4080c0">Spined</td>
+  <td align="center" bgcolor="#d0d0d0">11％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff6060">Horned</td>
+  <td align="center" bgcolor="#d0d0d0">４％</td>
+  <td align="center" bgcolor="#ffc080">８％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">６％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#006000"><font color="#ffff00">Barbed</font></td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">８％</td>
+ </tr>
+</table>
+ 
+<br class="cle">それ以外の防具の抵抗値
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ 
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Normal</td>
+  <td align="center" bgcolor="#d0d0d0">２％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#4080c0">Spined</td>
+  <td align="center" bgcolor="#d0d0d0">11％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff6060">Horned</td>
+  <td align="center" bgcolor="#d0d0d0">４％</td>
+  <td align="center" bgcolor="#ffc080">８％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">７％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#006000"><font color="#ffff00">Barbed</font></td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">９％</td>
+ </tr>
+ 
+</table>
+ 
+</div>
+ 
+<div id="cat_11" style="display: none">
+ 
+<h3>リーフ系防具</h3>
+
+
+エルフ専用　瞑想障害なし
+<br>スタミナ減少抵抗：2.0
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="leafgorget.gif" alt="" class="img01"></td>
+  <td align="center">leaf gorget<br>[リーフネックガード]</td>
+  <td align="center">10</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="leafgloves.gif" alt="" class="img01"></td>
+  <td align="center">leaf gloves<br>[リーフグローブ]</td>
+  <td align="center">10</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="leafarms.gif" alt="" class="img01"></td>
+  <td align="center">leaf arms<br>[リーフアーム]</td>
+  <td align="center">15</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="leaflegs.gif" alt="" class="img01"></td>
+  <td align="center">leaf leggings<br>[リーフレッグ]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="leaftonlet.gif" alt="" class="img01"></td>
+  <td align="center">leaf tonlet<br>[リーフトンレット]</td>
+  <td align="center">10</td>
+  <td align="center">6～25</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="leaftunic.gif" alt="" class="img01"></td>
+  <td align="center">leaf tunic<br>[リーフチュニック]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+</table>
+ 
+<br class="cle">
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ 
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Normal</td>
+  <td align="center" bgcolor="#d0d0d0">２％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">４％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#4080c0">Spined</td>
+  <td align="center" bgcolor="#d0d0d0">11％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">４％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff6060">Horned</td>
+  <td align="center" bgcolor="#d0d0d0">４％</td>
+  <td align="center" bgcolor="#ffc080">７％</td>
+  <td align="center" bgcolor="#80c0ff">５％</td>
+  <td align="center" bgcolor="#80ffc0">７％</td>
+  <td align="center" bgcolor="#ffc0ff">７％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#006000"><font color="#ffff00">Barbed</font></td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">７％</td>
+  <td align="center" bgcolor="#ffc0ff">９％</td>
+ </tr>
+</table>
+ 
+ 
+</div>
+ 
+<div id="cat_12" style="display: none">
+ 
+<h3>ハイド系防具</h3>
+
+エルフ専用、瞑想障害あり
+<br>スタミナ減少抵抗：3.5、マナコスト：-3％
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="hidegorget.gif" alt="" class="img01"></td>
+  <td align="center">hide gorget<br>[ハイドネックガード]</td>
+  <td align="center">15</td>
+  <td align="center">35～45</td>
+  <td align="center">3</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="hidegloves.gif" alt="" class="img01"></td>
+  <td align="center">hide gloves<br>[ハイドグローブ]</td>
+  <td align="center">15</td>
+  <td align="center">35～45</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="hidepauldrons.gif" alt="" class="img01"></td>
+  <td align="center">hide pauldrons<br>[ハイドアーム]</td>
+  <td align="center">20</td>
+  <td align="center">35～45</td>
+  <td align="center">4</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="hidepants.gif" alt="" class="img01"></td>
+  <td align="center">hide pants<br>[ハイドレッグ]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="hidetunic.gif" alt="" class="img01"></td>
+  <td align="center">hide tunic<br>[ハイドアーマー]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">6</td>
+ </tr>
+</table>
+ 
+<br class="cle">
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ 
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Normal</td>
+  <td align="center" bgcolor="#d0d0d0">３％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">２％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#4080c0">Spined</td>
+  <td align="center" bgcolor="#d0d0d0">12％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">２％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff6060">Horned</td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">７％</td>
+  <td align="center" bgcolor="#80c0ff">７％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#006000"><font color="#ffff00">Barbed</font></td>
+  <td align="center" bgcolor="#d0d0d0">６％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">７％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">７％</td>
+ </tr>
+</table>
+ 
+</div>
+ 
+<div id="cat_13" style="display: none">
+ 
+<h3>木製防具</h3>
+
+
+エルフ専用、瞑想障害あり
+<br>スタミナ減少抵抗：3.5
+
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="woodgorget.gif" alt="" class="img01"></td>
+  <td align="center">woodland gorget<br>[ウッドランドネック]</td>
+  <td align="center">45</td>
+  <td align="center">50～65</td>
+  <td align="center">3</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="woodgauntlets.gif" alt="" class="img01"></td>
+  <td align="center">woodland gauntlets<br>[ウッドランドグローブ]</td>
+  <td align="center">70</td>
+  <td align="center">50～65</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="woodarms.gif" alt="" class="img01"></td>
+  <td align="center">woodland arms<br>[ウッドランドアーム]</td>
+  <td align="center">80</td>
+  <td align="center">50～65</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="woodlegs.gif" alt="" class="img01"></td>
+  <td align="center">woodland leggings<br>[ウッドランドレッグ]</td>
+  <td align="center">90</td>
+  <td align="center">50～65</td>
+  <td align="center">8</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="woodarmor.gif" alt="" class="img01"></td>
+  <td align="center">woodland chest<br>[ウッドランドアーマー]</td>
+  <td align="center">95</td>
+  <td align="center">50～65</td>
+  <td align="center">8</td>
+ </tr>
+</table>
+ 
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Wood</td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">２％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#a58429">Oak</td>
+  <td align="center" bgcolor="#d0d0d0">８％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">５％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#acac7c">Ash</td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">３％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">４％</td>
+  <td align="center" bgcolor="#ffc0ff">８％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#cc8800">Yew</td>
+  <td align="center" bgcolor="#d0d0d0">11％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">５％</td>
+  <td align="center" bgcolor="#80ffc0">３％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#104a10"><font color="#ccff00">Heartwood</font></td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">４％</td>
+  <td align="center" bgcolor="#80ffc0">10％</td>
+  <td align="center" bgcolor="#ffc0ff">４％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#941818"><font color="#ccff00">Bloodwood</font></td>
+  <td align="center" bgcolor="#d0d0d0">８％</td>
+  <td align="center" bgcolor="#ffc080">11％</td>
+  <td align="center" bgcolor="#80c0ff">３％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#94cccc">Frostwood</td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">４％</td>
+  <td align="center" bgcolor="#80c0ff">10％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">６％</td>
+ </tr>
+</table>
+ 
+<h3>Darkwood系防具</h3>
+ 
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="140">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="darkcrown.gif" alt="" class="img01">→<img src="darkcrown2.gif" alt="" class="img01"></td>
+  <td align="center">darkwood crown<br>[ダークウッドクラウン]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="darkgorget.gif" alt="" class="img01">→<img src="darkgorget2.gif" alt="" class="img01"></td>
+  <td align="center">darkwood gorget<br>[ダークウッドネック]</td>
+  <td align="center">45</td>
+  <td align="center">50～65</td>
+  <td align="center">3</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="darkgauntlets.gif" alt="" class="img01">→<img src="darkgauntlets2.gif" alt="" class="img01"></td>
+  <td align="center">darkwood gauntlets<br>[ダークウッドグローブ]</td>
+  <td align="center">70</td>
+  <td align="center">50～65</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="darkpauldrons.gif" alt="" class="img01">→<img src="darkpauldrons2.gif" alt="" class="img01"></td>
+  <td align="center">darkwood pauldrons<br>[ダークウッドアーム]</td>
+  <td align="center">80</td>
+  <td align="center">50～65</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="darklegs.gif" alt="" class="img01">→<img src="darklegs2.gif" alt="" class="img01"></td>
+  <td align="center">darkwood leggings<br>[ダークウッドレッグ]</td>
+  <td align="center">90</td>
+  <td align="center">50～65</td>
+  <td align="center">8</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="darkchest.gif" alt="" class="img01">→<img src="darkchest2.gif" alt="" class="img01"></td>
+  <td align="center">darkwood chest<br>[ダークウッドアーマー]</td>
+  <td align="center">95</td>
+  <td align="center">50～65</td>
+  <td align="center">8</td>
+ </tr>
+</table>
+ 
+<br class="cle">非セット時の1パーツ抵抗値および付加効果
+ 
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Wood</td>
+  <td align="center" bgcolor="#d0d0d0">８％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">５％</td>
+  <td align="center" bgcolor="#80ffc0">７％</td>
+  <td align="center" bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#a58429">Oak</td>
+  <td align="center" bgcolor="#d0d0d0">11％</td>
+  <td align="center" bgcolor="#ffc080">８％</td>
+  <td align="center" bgcolor="#80c0ff">５％</td>
+  <td align="center" bgcolor="#80ffc0">９％</td>
+  <td align="center" bgcolor="#ffc0ff">８％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#acac7c">Ash</td>
+  <td align="center" bgcolor="#d0d0d0">10％</td>
+  <td align="center" bgcolor="#ffc080">５％</td>
+  <td align="center" bgcolor="#80c0ff">９％</td>
+  <td align="center" bgcolor="#80ffc0">８％</td>
+  <td align="center" bgcolor="#ffc0ff">11％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#cc8800">Yew</td>
+  <td align="center" bgcolor="#d0d0d0">14％</td>
+  <td align="center" bgcolor="#ffc080">８％</td>
+  <td align="center" bgcolor="#80c0ff">８％</td>
+  <td align="center" bgcolor="#80ffc0">７％</td>
+  <td align="center" bgcolor="#ffc0ff">８％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#104a10"><font color="#ccff00">Heartwood</font></td>
+  <td align="center" bgcolor="#d0d0d0">10％</td>
+  <td align="center" bgcolor="#ffc080">８％</td>
+  <td align="center" bgcolor="#80c0ff">７％</td>
+  <td align="center" bgcolor="#80ffc0">14％</td>
+  <td align="center" bgcolor="#ffc0ff">７％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#941818"><font color="#ccff00">Bloodwood</font></td>
+  <td align="center" bgcolor="#d0d0d0">11％</td>
+  <td align="center" bgcolor="#ffc080">13％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">10％</td>
+  <td align="center" bgcolor="#ffc0ff">８％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#94cccc">Frostwood</td>
+  <td align="center" bgcolor="#d0d0d0">10％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">13％</td>
+  <td align="center" bgcolor="#80ffc0">10％</td>
+  <td align="center" bgcolor="#ffc0ff">９％</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">付加効果</td>
+  <td align="center" colspan="5">ヒットポイント＋2<br>回避＋5％<br>使用した特殊木材の効果（抵抗値以外）</td>
+ </tr>
+</table>
+ 
+<br class="cle">セット時の1パーツ抵抗値および付加効果
+ 
+<table class="table02">
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Wood</td>
+  <td align="center" bgcolor="#d0d0d0">10％</td>
+  <td align="center" bgcolor="#ffc080">10％</td>
+  <td align="center" bgcolor="#80c0ff">10％</td>
+  <td align="center" bgcolor="#80ffc0">10％</td>
+  <td align="center" bgcolor="#ffc0ff">10％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#a58429">Oak</td>
+  <td align="center" bgcolor="#d0d0d0">13％</td>
+  <td align="center" bgcolor="#ffc080">13％</td>
+  <td align="center" bgcolor="#80c0ff">10％</td>
+  <td align="center" bgcolor="#80ffc0">12％</td>
+  <td align="center" bgcolor="#ffc0ff">13％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#acac7c">Ash</td>
+  <td align="center" bgcolor="#d0d0d0">12％</td>
+  <td align="center" bgcolor="#ffc080">10％</td>
+  <td align="center" bgcolor="#80c0ff">14％</td>
+  <td align="center" bgcolor="#80ffc0">11％</td>
+  <td align="center" bgcolor="#ffc0ff">16％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#cc8800">Yew</td>
+  <td align="center" bgcolor="#d0d0d0">16％</td>
+  <td align="center" bgcolor="#ffc080">13％</td>
+  <td align="center" bgcolor="#80c0ff">13％</td>
+  <td align="center" bgcolor="#80ffc0">10％</td>
+  <td align="center" bgcolor="#ffc0ff">13％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#104a10"><font color="#ccff00">Heartwood</font></td>
+  <td align="center" bgcolor="#d0d0d0">12％</td>
+  <td align="center" bgcolor="#ffc080">13％</td>
+  <td align="center" bgcolor="#80c0ff">12％</td>
+  <td align="center" bgcolor="#80ffc0">17％</td>
+  <td align="center" bgcolor="#ffc0ff">12％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#941818"><font color="#ccff00">Bloodwood</font></td>
+  <td align="center" bgcolor="#d0d0d0">13％</td>
+  <td align="center" bgcolor="#ffc080">18％</td>
+  <td align="center" bgcolor="#80c0ff">11％</td>
+  <td align="center" bgcolor="#80ffc0">13％</td>
+  <td align="center" bgcolor="#ffc0ff">13％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#94cccc">Frostwood</td>
+  <td align="center" bgcolor="#d0d0d0">12％</td>
+  <td align="center" bgcolor="#ffc080">11％</td>
+  <td align="center" bgcolor="#80c0ff">18％</td>
+  <td align="center" bgcolor="#80ffc0">13％</td>
+  <td align="center" bgcolor="#ffc0ff">14％</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center">付加効果</td>
+  <td align="center" colspan="5">ヒットポイント＋12（2×6）<br>回避＋30％（5×6）<br>自己修復3（全パーツ）<br>物理ダメージ反射 25％（全体）<br>STR 10（全体）<br>幸運 100（全体）<br>使用した特殊木材の効果（抵抗値以外）</td>
+ </tr>
+</table>
+ 
+ 
+</div>
+ 
+<div id="cat_14" style="display: none">
+ 
+<h3>ガーゴイル用鋼製防具</h3>
+ 
+
+ガーゴイル専用、瞑想障害あり
+<br>スタミナ減少抵抗：7.0、マナコスト：-1％
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_platemail_arms.gif" alt="" class="img01"></td>
+  <td align="center">gargish platemail arms<br>[鋼製ガーグアーム]</td>
+  <td align="center">80</td>
+  <td align="center">50～65</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_platemail_chest.gif" alt="" class="img01"></td>
+  <td align="center">gargish platemail chest<br>[鋼製ガーグアーマー]</td>
+  <td align="center">95</td>
+  <td align="center">50～65</td>
+  <td align="center">10</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_platemail_legs.gif" alt="" class="img01"></td>
+  <td align="center">gargish platemail leggings<br>[鋼製ガーグレッグ]</td>
+  <td align="center">90</td>
+  <td align="center">50～65</td>
+  <td align="center">7</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_platemail_kilt.gif" alt="" class="img01"></td>
+  <td align="center">gargish platemail kilt<br>[鋼製ガーグキルト]</td>
+  <td align="center">80</td>
+  <td align="center">50～65</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_platemail_arms_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish platemail arms<br>[鋼製ガーグアーム]</td>
+  <td align="center">80</td>
+  <td align="center">50～65</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_platemail_chest_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish platemail chest<br>[鋼製ガーグアーマー]</td>
+  <td align="center">95</td>
+  <td align="center">50～65</td>
+  <td align="center">10</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_platemail_legs_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish platemail leggings<br>[鋼製ガーグレッグ]</td>
+  <td align="center">90</td>
+  <td align="center">50～65</td>
+  <td align="center">7</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_platemail_kilt_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish platemail kilt<br>[鋼製ガーグキルト]</td>
+  <td align="center">80</td>
+  <td align="center">50～65</td>
+  <td align="center">5</td>
+ </tr>
+  <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_amulet.gif" alt="" class="img01"></td>
+  <td align="center">gargish amulet<br>[ガーゴイルアミュレット]</td>
+  <td align="center">-</td>
+  <td align="center">30～70</td>
+  <td align="center">1</td>
+ </tr>
+
+</table>
+
+<h4>gargish amulet以外の抵抗値</h4>
+<table class="table02">
+  <tr>
+  <td bgcolor="#f0f0f0" width="110">素材</td>
+  <td bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">Iron</td>
+  <td bgcolor="#d0d0d0">８％</td>
+  <td bgcolor="#ffc080">６％</td>
+  <td bgcolor="#80c0ff">５％</td>
+  <td bgcolor="#80ffc0">６％</td>
+  <td bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#c0c0a0">Dull</td>
+  <td bgcolor="#d0d0d0">18％</td>
+  <td bgcolor="#ffc080">６％</td>
+  <td bgcolor="#80c0ff">５％</td>
+  <td bgcolor="#80ffc0">６％</td>
+  <td bgcolor="#ffc0ff">５％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#202020"><font color="#ffff00">Shadow</font></td>
+  <td bgcolor="#d0d0d0">11％</td>
+  <td bgcolor="#ffc080">８％</td>
+  <td bgcolor="#80c0ff">５％</td>
+  <td bgcolor="#80ffc0">６％</td>
+  <td bgcolor="#ffc0ff">12％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#d0a040">Copper</td>
+  <td bgcolor="#d0d0d0">10％</td>
+  <td bgcolor="#ffc080">８％</td>
+  <td bgcolor="#80c0ff">５％</td>
+  <td bgcolor="#80ffc0">13％</td>
+  <td bgcolor="#ffc0ff">７％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#604000"><font color="#ffff00">Bronze</font></td>
+  <td bgcolor="#d0d0d0">11％</td>
+  <td bgcolor="#ffc080">６％</td>
+  <td bgcolor="#80c0ff">12％</td>
+  <td bgcolor="#80ffc0">８％</td>
+  <td bgcolor="#ffc0ff">７％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffe080">Gold</td>
+  <td bgcolor="#d0d0d0">10％</td>
+  <td bgcolor="#ffc080">８％</td>
+  <td bgcolor="#80c0ff">８％</td>
+  <td bgcolor="#80ffc0">６％</td>
+  <td bgcolor="#ffc0ff">８％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffa0a0">Agapite</td>
+  <td bgcolor="#d0d0d0">10％</td>
+  <td bgcolor="#ffc080">13％</td>
+  <td bgcolor="#80c0ff">７％</td>
+  <td bgcolor="#80ffc0">８％</td>
+  <td bgcolor="#ffc0ff">７％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#80ff80">Verite</td>
+  <td bgcolor="#d0d0d0">12％</td>
+  <td bgcolor="#ffc080">10％</td>
+  <td bgcolor="#80c0ff">８％</td>
+  <td bgcolor="#80ffc0">10％</td>
+  <td bgcolor="#ffc0ff">６％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#80c0ff">Valorite</td>
+  <td bgcolor="#d0d0d0">13％</td>
+  <td bgcolor="#ffc080">６％</td>
+  <td bgcolor="#80c0ff">９％</td>
+  <td bgcolor="#80ffc0">10％</td>
+  <td bgcolor="#ffc0ff">９％</td>
+ </tr>
+</table>
+
+<h4>gargish amuletの抵抗値</h4>
+インゴットの素材効果は付与されません。
+
+<table class="table02">
+  <tr>
+  <td bgcolor="#f0f0f0" width="110">素材</td>
+  <td bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">全素材</td>
+  <td bgcolor="#d0d0d0">１％</td>
+  <td bgcolor="#ffc080">２％</td>
+  <td bgcolor="#80c0ff">２％</td>
+  <td bgcolor="#80ffc0">２％</td>
+  <td bgcolor="#ffc0ff">３％</td>
+ </tr>
+</table>
+
+
+</div>
+ 
+<div id="cat_15" style="display: none">
+ 
+<h3>ガーゴイル用布製防具</h3>
+
+ガーゴイル専用、瞑想障害なし
+<br>スタミナ減少抵抗：2.0
+
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_cloth_arms.gif" alt="" class="img01"></td>
+  <td align="center">gargish cloth arms<br>[クロスアーム]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_cloth_chest.gif" alt="" class="img01"></td>
+  <td align="center">gargish cloth chest<br>[クロスシャツ]</td>
+  <td align="center">25</td>
+  <td align="center">30～40</td>
+  <td align="center">6</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_cloth_legs.gif" alt="" class="img01"></td>
+  <td align="center">gargish cloth leggings<br>[クロスレッグ]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_cloth_kilt.gif" alt="" class="img01"></td>
+  <td align="center">gargish cloth kilt<br>[クロスキルト]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_cloth_arms_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish cloth arms<br>[クロスアーム]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_cloth_chest_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish cloth chest<br>[クロスシャツ]</td>
+  <td align="center">25</td>
+  <td align="center">30～40</td>
+  <td align="center">6</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_cloth_legs_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish cloth leggings<br>[クロスレッグ]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_cloth_kilt_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish cloth kilt<br>[クロスキルト]</td>
+  <td align="center">20</td>
+  <td align="center">30～40</td>
+  <td align="center">2</td>
+ </tr>
+ 
+</table>
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">布</td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">７％</td>
+  <td align="center" bgcolor="#80c0ff">６％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">６％</td>
+ </tr>
+</table>
+ 
+</div>
+ 
+<div id="cat_16" style="display: none">
+ 
+<h3>ガーゴイル用皮製防具</h3>
+
+
+ガーゴイル専用、瞑想障害なし
+<br>スタミナ減少抵抗：2.0
+
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_leather_arms.gif" alt="" class="img01"></td>
+  <td align="center">gargish leather arms<br>[革製ガーグアーム]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">4</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_leather_chest.gif" alt="" class="img01"></td>
+  <td align="center">gargish leather chest<br>[革製ガーグアーマー]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">8</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_leather_legs.gif" alt="" class="img01"></td>
+  <td align="center">gargish leather leggings<br>[革製ガーグレッグ]</td>
+  <td align="center">20</td>
+  <td align="center">35～45</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_leather_kilt.gif" alt="" class="img01"></td>
+  <td align="center">gargish leather kilt<br>[革製ガーグキルト]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_leather_arms_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish leather arms<br>[革製ガーグアーム]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">4</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_leather_chest_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish leather chest<br>[革製ガーグアーマー]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">8</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_leather_legs_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish leather leggings<br>[革製ガーグレッグ]</td>
+  <td align="center">20</td>
+  <td align="center">35～45</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_leather_kilt_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish leather kilt<br>[革製ガーグキルト]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">5</td>
+ </tr>
+ 
+</table>
+ 
+<br class="cle">
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ 
+ <tr>
+  <td align="center" bgcolor="#ffdd99">Normal</td>
+  <td align="center" bgcolor="#d0d0d0">５％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">７％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">６％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#4080c0">Spined</td>
+  <td align="center" bgcolor="#d0d0d0">14％</td>
+  <td align="center" bgcolor="#ffc080">６％</td>
+  <td align="center" bgcolor="#80c0ff">７％</td>
+  <td align="center" bgcolor="#80ffc0">６％</td>
+  <td align="center" bgcolor="#ffc0ff">６％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ff6060">Horned</td>
+  <td align="center" bgcolor="#d0d0d0">７％</td>
+  <td align="center" bgcolor="#ffc080">10％</td>
+  <td align="center" bgcolor="#80c0ff">10％</td>
+  <td align="center" bgcolor="#80ffc0">９％</td>
+  <td align="center" bgcolor="#ffc0ff">９％</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#006000"><font color="#ffff00">Barbed</font></td>
+  <td align="center" bgcolor="#d0d0d0">８％</td>
+  <td align="center" bgcolor="#ffc080">８％</td>
+  <td align="center" bgcolor="#80c0ff">10％</td>
+  <td align="center" bgcolor="#80ffc0">９％</td>
+  <td align="center" bgcolor="#ffc0ff">11％</td>
+ </tr>
+ 
+</table>
+ 
+</div>
+ 
+<div id="cat_17" style="display: none">
+ 
+<h3>ガーゴイル用石製防具</h3>
+
+
+ガーゴイル専用、瞑想障害あり
+<br>スタミナ減少抵抗：3.5、マナコスト：-3％
+
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_stone_arms.gif" alt="" class="img01"></td>
+  <td align="center">gargish stone arms<br>[ストーンアーム]</td>
+  <td align="center">40</td>
+  <td align="center">40～50</td>
+  <td align="center">10</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_stone_chest.gif" alt="" class="img01"></td>
+  <td align="center">gargish stone chest<br>[ストーンアーマー]</td>
+  <td align="center">40</td>
+  <td align="center">40～50</td>
+  <td align="center">15</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_stone_legs.gif" alt="" class="img01"></td>
+  <td align="center">gargish stone leggings<br>[ストーンレッグ]</td>
+  <td align="center">40</td>
+  <td align="center">40～50</td>
+  <td align="center">15</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_stone_kilt.gif" alt="" class="img01"></td>
+  <td align="center">gargish stone kilt<br>[ストーンキルト]</td>
+  <td align="center">40</td>
+  <td align="center">40～50</td>
+  <td align="center">10</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_stone_arms_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish stone arms<br>[ストーンアーム]</td>
+  <td align="center">40</td>
+  <td align="center">40～50</td>
+  <td align="center">10</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_stone_chest_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish stone chest<br>[ストーンアーマー]</td>
+  <td align="center">40</td>
+  <td align="center">40～50</td>
+  <td align="center">15</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_stone_legs_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish stone leggings<br>[ストーンレッグ]</td>
+  <td align="center">40</td>
+  <td align="center">40～50</td>
+  <td align="center">15</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_stone_kilt_fem.gif" alt="" class="img01"></td>
+  <td align="center">gargish stone kilt<br>[ストーンキルト]</td>
+  <td align="center">40</td>
+  <td align="center">40～50</td>
+  <td align="center">10</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_stone_amulet.gif" alt="" class="img01"></td>
+  <td align="center">gargish stone amulet<br>[ガーゴイルストーンアミュレット]</td>
+  <td align="center">-</td>
+  <td align="center">30～70</td>
+  <td align="center">1</td>
+ </tr>
+
+</table>
+ 
+<h4>gargish stone amulet以外の抵抗値</h4>
+
+花崗岩の素材効果は付与されません。
+<table class="table02">
+ 
+ <tr>
+  <td bgcolor="#f0f0f0" width="110">素材</td>
+  <td bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">Iron</td>
+  <td bgcolor="#d0d0d0">６％</td>
+  <td bgcolor="#ffc080">６％</td>
+  <td bgcolor="#80c0ff">４％</td>
+  <td bgcolor="#80ffc0">８％</td>
+  <td bgcolor="#ffc0ff">６％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#c0c0a0">Dull</td>
+  <td bgcolor="#d0d0d0">16％</td>
+  <td bgcolor="#ffc080">６％</td>
+  <td bgcolor="#80c0ff">４％</td>
+  <td bgcolor="#80ffc0">８％</td>
+  <td bgcolor="#ffc0ff">６％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#202020"><font color="#ffff00">Shadow</font></td>
+  <td bgcolor="#d0d0d0">９％</td>
+  <td bgcolor="#ffc080">８％</td>
+  <td bgcolor="#80c0ff">４％</td>
+  <td bgcolor="#80ffc0">８％</td>
+  <td bgcolor="#ffc0ff">13％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#d0a040">Copper</td>
+  <td bgcolor="#d0d0d0">８％</td>
+  <td bgcolor="#ffc080">８％</td>
+  <td bgcolor="#80c0ff">４％</td>
+  <td bgcolor="#80ffc0">15％</td>
+  <td bgcolor="#ffc0ff">８％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#604000"><font color="#ffff00">Bronze</font></td>
+  <td bgcolor="#d0d0d0">９％</td>
+  <td bgcolor="#ffc080">６％</td>
+  <td bgcolor="#80c0ff">11％</td>
+  <td bgcolor="#80ffc0">10％</td>
+  <td bgcolor="#ffc0ff">８％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffe080">Gold</td>
+  <td bgcolor="#d0d0d0">８％</td>
+  <td bgcolor="#ffc080">８％</td>
+  <td bgcolor="#80c0ff">７％</td>
+  <td bgcolor="#80ffc0">８％</td>
+  <td bgcolor="#ffc0ff">９％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#ffa0a0">Agapite</td>
+  <td bgcolor="#d0d0d0">８％</td>
+  <td bgcolor="#ffc080">13％</td>
+  <td bgcolor="#80c0ff">６％</td>
+  <td bgcolor="#80ffc0">10％</td>
+  <td bgcolor="#ffc0ff">８％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#80ff80">Verite</td>
+  <td bgcolor="#d0d0d0">10％</td>
+  <td bgcolor="#ffc080">10％</td>
+  <td bgcolor="#80c0ff">７％</td>
+  <td bgcolor="#80ffc0">12％</td>
+  <td bgcolor="#ffc0ff">７％</td>
+ </tr>
+ <tr>
+  <td bgcolor="#80c0ff">Valorite</td>
+  <td bgcolor="#d0d0d0">11％</td>
+  <td bgcolor="#ffc080">６％</td>
+  <td bgcolor="#80c0ff">８％</td>
+  <td bgcolor="#80ffc0">12％</td>
+  <td bgcolor="#ffc0ff">10％</td>
+ </tr>
+</table>
+
+
+<h4>gargish stone amuletの抵抗値</h4>
+<table class="table02">
+  <tr>
+  <td bgcolor="#f0f0f0" width="110">素材</td>
+  <td bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td bgcolor="#f0f0f0">全素材</td>
+  <td bgcolor="#d0d0d0">１％</td>
+  <td bgcolor="#ffc080">２％</td>
+  <td bgcolor="#80c0ff">２％</td>
+  <td bgcolor="#80ffc0">２％</td>
+  <td bgcolor="#ffc0ff">３％</td>
+ </tr>
+</table>
+
+
+</div>
+ 
+<div id="cat_18" style="display: none">
+ 
+<h3>その他金属兜</h3>
+
+瞑想障害、スタミナ減少抵抗およびマナコストは表のとおり
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="90">装備系統</td>
+  <td align="center" width="90">瞑想障害</td>
+  <td align="center" width="90">スタミナ減少抵抗</td>
+  <td align="center" width="90">マナコスト</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center">circlet類</td>
+  <td align="center">なし</td>
+  <td align="center">2.0</td>
+  <td align="center">0</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center">木製兜</td>
+  <td align="center">あり</td>
+  <td align="center">3.5</td>
+  <td align="center">0</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center">金属兜</td>
+  <td align="center">あり</td>
+  <td align="center">7.0</td>
+  <td align="center">-1</td>
+ </tr>
+</table>
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="160">防具名</td>
+  <td align="center" width="50">装備<br>STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="30">重量</td>
+  <td align="center" bgcolor="#d0d0d0" width="30">AR</td>
+  <td align="center" bgcolor="#ffc080" width="30">FR</td>
+  <td align="center" bgcolor="#80c0ff" width="30">CR</td>
+  <td align="center" bgcolor="#80ffc0" width="30">PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="30">ER</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="helm03.gif" alt="" class="img01"></td>
+  <td align="center">norse helm<br>[ノーズヘルム]</td>
+  <td align="center">55</td>
+  <td align="center">45～60</td>
+  <td align="center">5</td>
+  <td align="center" bgcolor="#d0d0d0">4</td>
+  <td align="center" bgcolor="#ffc080">1</td>
+  <td align="center" bgcolor="#80c0ff">4</td>
+  <td align="center" bgcolor="#80ffc0">4</td>
+  <td align="center" bgcolor="#ffc0ff">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="helm02.gif" alt="" class="img01"></td>
+  <td align="center">close helm<br>[クローズヘルム]</td>
+  <td align="center">55</td>
+  <td align="center">45～60</td>
+  <td align="center">5</td>
+  <td align="center" bgcolor="#d0d0d0">3</td>
+  <td align="center" bgcolor="#ffc080">3</td>
+  <td align="center" bgcolor="#80c0ff">3</td>
+  <td align="center" bgcolor="#80ffc0">3</td>
+  <td align="center" bgcolor="#ffc0ff">3</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="helm04.gif" alt="" class="img01"></td>
+  <td align="center">helmet<br>[ヘルメット]</td>
+  <td align="center">45</td>
+  <td align="center">45～60</td>
+  <td align="center">5</td>
+  <td align="center" bgcolor="#d0d0d0">2</td>
+  <td align="center" bgcolor="#ffc080">4</td>
+  <td align="center" bgcolor="#80c0ff">4</td>
+  <td align="center" bgcolor="#80ffc0">3</td>
+  <td align="center" bgcolor="#ffc0ff">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="helm01.gif" alt="" class="img01"></td>
+  <td align="center">bascinet<br>[バシネット]</td>
+  <td align="center">40</td>
+  <td align="center">45～60</td>
+  <td align="center">5</td>
+  <td align="center" bgcolor="#d0d0d0">7</td>
+  <td align="center" bgcolor="#ffc080">2</td>
+  <td align="center" bgcolor="#80c0ff">2</td>
+  <td align="center" bgcolor="#80ffc0">2</td>
+  <td align="center" bgcolor="#ffc0ff">2</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="c-hatsuburi.gif" alt="" class="img01"></td>
+  <td align="center">chainmail hatsuburi<br>[鎖はつぶり]</td>
+  <td align="center">50</td>
+  <td align="center">45～60</td>
+  <td align="center">7</td>
+  <td align="center" bgcolor="#d0d0d0">5</td>
+  <td align="center" bgcolor="#ffc080">2</td>
+  <td align="center" bgcolor="#80c0ff">2</td>
+  <td align="center" bgcolor="#80ffc0">2</td>
+  <td align="center" bgcolor="#ffc0ff">4</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="p-hatsuburi.gif" alt="" class="img01"></td>
+  <td align="center">platemail hatsuburi<br>[鉄はつぶり]</td>
+  <td align="center">65</td>
+  <td align="center">50～65</td>
+  <td align="center">5</td>
+  <td align="center" bgcolor="#d0d0d0">5</td>
+  <td align="center" bgcolor="#ffc080">3</td>
+  <td align="center" bgcolor="#80c0ff">2</td>
+  <td align="center" bgcolor="#80ffc0">2</td>
+  <td align="center" bgcolor="#ffc0ff">3</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="h_p-jingasa.gif" alt="" class="img01"></td>
+  <td align="center">heavy platemail jingasa<br>[重鉄陣笠]</td>
+  <td align="center">55</td>
+  <td align="center">45～60</td>
+  <td align="center">5</td>
+  <td align="center" bgcolor="#d0d0d0" rowspan="3">7</td>
+  <td align="center" bgcolor="#ffc080" rowspan="3">2</td>
+  <td align="center" bgcolor="#80c0ff" rowspan="3">2</td>
+  <td align="center" bgcolor="#80ffc0" rowspan="3">2</td>
+  <td align="center" bgcolor="#ffc0ff" rowspan="3">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="l_p-jingasa.gif" alt="" class="img01"></td>
+  <td align="center">light platemail jingasa<br>[軽鉄陣笠]</td>
+  <td align="center">55</td>
+  <td align="center">45～60</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="s_p-jingasa.gif" alt="" class="img01"></td>
+  <td align="center">small platemail jingasa<br>[小陣笠]</td>
+  <td align="center">55</td>
+  <td align="center">45～60</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="d_p-kabuto.gif" alt="" class="img01"></td>
+  <td align="center">decorative plate kabuto<br>[装飾兜]</td>
+  <td align="center">70</td>
+  <td align="center">55～70</td>
+  <td align="center">6</td>
+  <td align="center" bgcolor="#d0d0d0" rowspan="3">6</td>
+  <td align="center" bgcolor="#ffc080" rowspan="3">2</td>
+  <td align="center" bgcolor="#80c0ff" rowspan="3">2</td>
+  <td align="center" bgcolor="#80ffc0" rowspan="3">2</td>
+  <td align="center" bgcolor="#ffc0ff" rowspan="3">3</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="p_b-kabuto.gif" alt="" class="img01"></td>
+  <td align="center">platemail battle kabuto<br>[野戦兜]</td>
+  <td align="center">70</td>
+  <td align="center">55～70</td>
+  <td align="center">6</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="s_p-kabuto.gif" alt="" class="img01"></td>
+  <td align="center">standard plate kabuto<br>[鉄兜]</td>
+  <td align="center">70</td>
+  <td align="center">55～70</td>
+  <td align="center">6</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="circlet.gif" alt="" class="img01"></td>
+  <td align="center">circlet<br>[サークレット]</td>
+  <td align="center">10</td>
+  <td align="center">20～30</td>
+  <td align="center">2</td>
+  <td align="center" bgcolor="#d0d0d0" rowspan="3">1</td>
+  <td align="center" bgcolor="#ffc080" rowspan="3">5</td>
+  <td align="center" bgcolor="#80c0ff" rowspan="3">2</td>
+  <td align="center" bgcolor="#80ffc0" rowspan="3">2</td>
+  <td align="center" bgcolor="#ffc0ff" rowspan="3">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="r-circlet.gif" alt="" class="img01"></td>
+  <td align="center">royal circlet<br>[ロイヤルサークレット]</td>
+  <td align="center">10</td>
+  <td align="center">20～30</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="g-circlet.gif" alt="" class="img01"></td>
+  <td align="center">gemmed circlet<br>[宝玉のサークレット]</td>
+  <td align="center">10</td>
+  <td align="center">20～30</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="ravenhelm.gif" alt="" class="img01"></td>
+  <td align="center">raven helm<br>[レイブンヘルム]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">5</td>
+  <td align="center" bgcolor="#d0d0d0" rowspan="3">5</td>
+  <td align="center" bgcolor="#ffc080" rowspan="3">1</td>
+  <td align="center" bgcolor="#80c0ff" rowspan="3">2</td>
+  <td align="center" bgcolor="#80ffc0" rowspan="3">2</td>
+  <td align="center" bgcolor="#ffc0ff" rowspan="3">5</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="vulturehelm.gif" alt="" class="img01"></td>
+  <td align="center">vulture helm<br>[ワシ羽ヘルム]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="wingedhelm.gif" alt="" class="img01"></td>
+  <td align="center">winged helm<br>[ウイングヘルム]</td>
+  <td align="center">25</td>
+  <td align="center">35～45</td>
+  <td align="center">5</td>
+ </tr>
+</table>
+ 
+ 
+特殊素材を使用した場合、表の数値だけ抵抗値が加算されます。
+ 
+<table class="table01">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="80">ingot</td>
+  <td align="center" bgcolor="#d0d0d0" width="30">AR</td>
+  <td align="center" bgcolor="#ffc080" width="30">FR</td>
+  <td align="center" bgcolor="#80c0ff" width="30">CR</td>
+  <td align="center" bgcolor="#80ffc0" width="30">PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="30">ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#c0c0a0">Dull</td>
+  <td align="center" bgcolor="#d0d0d0">10</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#202020"><font color="#ffff00">Shadow</font></td>
+  <td align="center" bgcolor="#d0d0d0">3</td>
+  <td align="center" bgcolor="#ffc080">2</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">7</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0a040">Copper</td>
+  <td align="center" bgcolor="#d0d0d0">2</td>
+  <td align="center" bgcolor="#ffc080">2</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">7</td>
+  <td align="center" bgcolor="#ffc0ff">2</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#604000"><font color="#ffff00">Bronze</font></td>
+  <td align="center" bgcolor="#d0d0d0">3</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">7</td>
+  <td align="center" bgcolor="#80ffc0">2</td>
+  <td align="center" bgcolor="#ffc0ff">2</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffe080">Gold</td>
+  <td align="center" bgcolor="#d0d0d0">2</td>
+  <td align="center" bgcolor="#ffc080">2</td>
+  <td align="center" bgcolor="#80c0ff">3</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">3</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffa0a0">Agapite</td>
+  <td align="center" bgcolor="#d0d0d0">2</td>
+  <td align="center" bgcolor="#ffc080">7</td>
+  <td align="center" bgcolor="#80c0ff">2</td>
+  <td align="center" bgcolor="#80ffc0">2</td>
+  <td align="center" bgcolor="#ffc0ff">2</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ff80">Verite</td>
+  <td align="center" bgcolor="#d0d0d0">4</td>
+  <td align="center" bgcolor="#ffc080">4</td>
+  <td align="center" bgcolor="#80c0ff">3</td>
+  <td align="center" bgcolor="#80ffc0">4</td>
+  <td align="center" bgcolor="#ffc0ff">1</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">Valorite</td>
+  <td align="center" bgcolor="#d0d0d0">5</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">4</td>
+  <td align="center" bgcolor="#80ffc0">4</td>
+  <td align="center" bgcolor="#ffc0ff">4</td>
+ </tr>
+</table>
+ 
+<table class="table01">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="80">wood</td>
+  <td align="center" bgcolor="#d0d0d0" width="30">AR</td>
+  <td align="center" bgcolor="#ffc080" width="30">FR</td>
+  <td align="center" bgcolor="#80c0ff" width="30">CR</td>
+  <td align="center" bgcolor="#80ffc0" width="30">PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="30">ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#a58429">Oak</td>
+  <td align="center" bgcolor="#d0d0d0">3</td>
+  <td align="center" bgcolor="#ffc080">3</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">2</td>
+  <td align="center" bgcolor="#ffc0ff">3</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#acac7c">Ash</td>
+  <td align="center" bgcolor="#d0d0d0">2</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">4</td>
+  <td align="center" bgcolor="#80ffc0">1</td>
+  <td align="center" bgcolor="#ffc0ff">6</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#cc8800">Yew</td>
+  <td align="center" bgcolor="#d0d0d0">6</td>
+  <td align="center" bgcolor="#ffc080">3</td>
+  <td align="center" bgcolor="#80c0ff">3</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">3</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#104a10"><font color="#ccff00">Heartwood</font></td>
+  <td align="center" bgcolor="#d0d0d0">2</td>
+  <td align="center" bgcolor="#ffc080">3</td>
+  <td align="center" bgcolor="#80c0ff">2</td>
+  <td align="center" bgcolor="#80ffc0">7</td>
+  <td align="center" bgcolor="#ffc0ff">2</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#941818"><font color="#ccff00">Bloodwood</font></td>
+  <td align="center" bgcolor="#d0d0d0">3</td>
+  <td align="center" bgcolor="#ffc080">8</td>
+  <td align="center" bgcolor="#80c0ff">1</td>
+  <td align="center" bgcolor="#80ffc0">3</td>
+  <td align="center" bgcolor="#ffc0ff">3</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#94cccc">Frostwood</td>
+  <td align="center" bgcolor="#d0d0d0">2</td>
+  <td align="center" bgcolor="#ffc080">1</td>
+  <td align="center" bgcolor="#80c0ff">8</td>
+  <td align="center" bgcolor="#80ffc0">3</td>
+  <td align="center" bgcolor="#ffc0ff">4</td>
+ </tr>
+</table>
+ 
+<br class="cle">
+ 
+</div>
+ 
+<div id="cat_19" style="display: none">
+ 
+<h3>帽子・マスク</h3>
+
+瞑想障害なし
+<br>スタミナ減少抵抗2.0
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="160">防具名</td>
+  <td align="center" width="50">装備<br>STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="30">重量</td>
+  <td align="center" bgcolor="#d0d0d0" width="30">AR</td>
+  <td align="center" bgcolor="#ffc080" width="30">FR</td>
+  <td align="center" bgcolor="#80c0ff" width="30">CR</td>
+  <td align="center" bgcolor="#80ffc0" width="30">PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="30">ER</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="bandana.gif" alt="" class="img01"></td>
+  <td align="center">bandana<br>[バンダナ]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">1</td>
+  <td align="center" bgcolor="#d0d0d0" rowspan="3">0</td>
+  <td align="center" bgcolor="#ffc080" rowspan="3">3</td>
+  <td align="center" bgcolor="#80c0ff" rowspan="3">5</td>
+  <td align="center" bgcolor="#80ffc0" rowspan="3">8</td>
+  <td align="center" bgcolor="#ffc0ff" rowspan="3">8</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="garland.gif" alt="" class="img01"></td>
+  <td align="center">flower garland<br>[花の冠]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="skullcap.gif" alt="" class="img01"></td>
+  <td align="center">skullcap<br>[スカルキャップ]</td>
+  <td align="center">10</td>
+  <td align="center">6～10</td>
+  <td align="center">1</td>
+ </tr>
+ 
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="floppy.gif" alt="" class="img01"></td>
+  <td align="center">floppy hat<br>[フロッピーハット]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">1</td>
+  <td align="center" bgcolor="#d0d0d0" rowspan="12">0</td>
+  <td align="center" bgcolor="#ffc080" rowspan="12">5</td>
+  <td align="center" bgcolor="#80c0ff" rowspan="12">9</td>
+  <td align="center" bgcolor="#80ffc0" rowspan="12">5</td>
+  <td align="center" bgcolor="#ffc0ff" rowspan="12">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="cap.gif" alt="" class="img01"></td>
+  <td align="center">cap<br>[キャップ]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="widebrim.gif" alt="" class="img01"></td>
+  <td align="center">wide-brim ha<br>[つば広帽子]t</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="strawhat.gif" alt="" class="img01"></td>
+  <td align="center">straw hat<br>[麦わら帽子]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="tshat.gif" alt="" class="img01"></td>
+  <td align="center">tall straw hat<br>[とんがりわら帽子]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="wizhat.gif" alt="" class="img01"></td>
+  <td align="center">wizard's hat<br>[ウィザードハット]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="bonnet.gif" alt="" class="img01"></td>
+  <td align="center">bonnet<br>[ボンネット]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="featherhat.gif" alt="" class="img01"></td>
+  <td align="center">feathered hat<br>[羽飾りの帽子]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="tricorn.gif" alt="" class="img01"></td>
+  <td align="center">tricorn hat<br>[トリコルヌ]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="jesterhat.gif" alt="" class="img01"></td>
+  <td align="center">jester hat<br>[道化帽]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="clothninja-h.gif" alt="" class="img01"></td>
+  <td align="center">cloth ninja hood<br>[忍者布頭巾]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">2</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="kasa.gif" alt="" class="img01"></td>
+  <td align="center">kasa<br>[笠]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">3</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="b-mask.gif" alt="" class="img01"></td>
+  <td align="center">bear mask<br>[熊マスク]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">5</td>
+  <td align="center" bgcolor="#d0d0d0">5</td>
+  <td align="center" bgcolor="#ffc080">3</td>
+  <td align="center" bgcolor="#80c0ff">8</td>
+  <td align="center" bgcolor="#80ffc0">4</td>
+  <td align="center" bgcolor="#ffc0ff">4</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="d-mask.gif" alt="" class="img01"></td>
+  <td align="center">deer mask<br>[鹿マスク]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">4</td>
+  <td align="center" bgcolor="#d0d0d0">2</td>
+  <td align="center" bgcolor="#ffc080">6</td>
+  <td align="center" bgcolor="#80c0ff">8</td>
+  <td align="center" bgcolor="#80ffc0">1</td>
+  <td align="center" bgcolor="#ffc0ff">7</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="orcmask.gif" alt="" class="img01"></td>
+  <td align="center">orc mask<br>[オークマスク]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">4</td>
+  <td align="center" bgcolor="#d0d0d0">1</td>
+  <td align="center" bgcolor="#ffc080">1</td>
+  <td align="center" bgcolor="#80c0ff">7</td>
+  <td align="center" bgcolor="#80ffc0">7</td>
+  <td align="center" bgcolor="#ffc0ff">8</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="tribal1.gif" alt="" class="img01"></td>
+  <td align="center">tribal mask<br>[部族マスク]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">2</td>
+  <td align="center" bgcolor="#d0d0d0">3</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">6</td>
+  <td align="center" bgcolor="#80ffc0">10</td>
+  <td align="center" bgcolor="#ffc0ff">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="tribal2.gif" alt="" class="img01"></td>
+  <td align="center">tribal mask<br>[部族マスク]</td>
+  <td align="center">10</td>
+  <td align="center">20～25</td>
+  <td align="center">2</td>
+  <td align="center" bgcolor="#d0d0d0">6</td>
+  <td align="center" bgcolor="#ffc080">9</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">4</td>
+  <td align="center" bgcolor="#ffc0ff">5</td>
+ </tr>
+</table>
+ 
+</div>
+ 
+<div id="cat_20" style="display: none">
+ 
+<h3>盾</h3>
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="160">防具名</td>
+  <td align="center" width="50">装備<br>STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="30">重量</td>
+  <td align="center" bgcolor="#d0d0d0" width="30">AR</td>
+  <td align="center" bgcolor="#ffc080" width="30">FR</td>
+  <td align="center" bgcolor="#80c0ff" width="30">CR</td>
+  <td align="center" bgcolor="#80ffc0" width="30">PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="30">ER</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="shield08.gif" alt="" class="img01"></td>
+  <td align="center">chaos shield<br>[カオスシールド]</td>
+  <td align="center">95</td>
+  <td align="center">100～125</td>
+  <td align="center">5</td>
+  <td align="center" bgcolor="#d0d0d0" rowspan="2">1</td>
+  <td align="center" bgcolor="#ffc080" rowspan="2">0</td>
+  <td align="center" bgcolor="#80c0ff" rowspan="2">0</td>
+  <td align="center" bgcolor="#80ffc0" rowspan="2">0</td>
+  <td align="center" bgcolor="#ffc0ff" rowspan="2">0</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="shield07.gif" alt="" class="img01"></td>
+  <td align="center">order shield<br>[オーダーシールド]</td>
+  <td align="center">95</td>
+  <td align="center">100～125</td>
+  <td align="center">7</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="shield06.gif" alt="" class="img01"></td>
+  <td align="center">heater shield<br>[ヒーターシールド]</td>
+  <td align="center">90</td>
+  <td align="center">50～65</td>
+  <td align="center">8</td>
+  <td align="center" bgcolor="#d0d0d0" rowspan="2">0</td>
+  <td align="center" bgcolor="#ffc080" rowspan="2">1</td>
+  <td align="center" bgcolor="#80c0ff" rowspan="2">0</td>
+  <td align="center" bgcolor="#80ffc0" rowspan="2">0</td>
+  <td align="center" bgcolor="#ffc0ff" rowspan="2">0</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="shield03.gif" alt="" class="img01"></td>
+  <td align="center">metal shield<br>[メタルシールド]</td>
+  <td align="center">45</td>
+  <td align="center">50～65</td>
+  <td align="center">6</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="shield02.gif" alt="" class="img01"></td>
+  <td align="center">bronze shield<br>[ブロンズシールド]</td>
+  <td align="center">35</td>
+  <td align="center">25～30</td>
+  <td align="center">8</td>
+  <td align="center" bgcolor="#d0d0d0">0</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">1</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">0</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="shield01.gif" alt="" class="img01"></td>
+  <td align="center">buckler<br>[バックラー]</td>
+  <td align="center">20</td>
+  <td align="center">40～50</td>
+  <td align="center">5</td>
+  <td align="center" bgcolor="#d0d0d0">0</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">1</td>
+  <td align="center" bgcolor="#ffc0ff">0</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="shield05.gif" alt="" class="img01"></td>
+  <td align="center">metal kite shield<br>[メタルカイト]</td>
+  <td align="center">45</td>
+  <td align="center">45～60</td>
+  <td align="center">7</td>
+  <td align="center" bgcolor="#d0d0d0" rowspan="3">0</td>
+  <td align="center" bgcolor="#ffc080" rowspan="3">0</td>
+  <td align="center" bgcolor="#80c0ff" rowspan="3">0</td>
+  <td align="center" bgcolor="#80ffc0" rowspan="3">0</td>
+  <td align="center" bgcolor="#ffc0ff" rowspan="3">1</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="shield04.gif" alt="" class="img01"></td>
+  <td align="center">tear kite shield<br>[ティアカイト]</td>
+  <td align="center">20</td>
+  <td align="center">50～65</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="shield09.gif" alt="" class="img01"></td>
+  <td align="center">wooden shield<br>[ウッドシールド]</td>
+  <td align="center">20</td>
+  <td align="center">20～25</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_chaos_shield.gif" alt="" class="img01"></td>
+  <td align="center">gargish chaos shield<br>[ガーグカオスシールド]</td>
+  <td align="center">95</td>
+  <td align="center">100～125</td>
+  <td align="center">5</td>
+  <td align="center" bgcolor="#d0d0d0" rowspan="2">1</td>
+  <td align="center" bgcolor="#ffc080" rowspan="2">0</td>
+  <td align="center" bgcolor="#80c0ff" rowspan="2">0</td>
+  <td align="center" bgcolor="#80ffc0" rowspan="2">0</td>
+  <td align="center" bgcolor="#ffc0ff" rowspan="2">0</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_order_shield.gif" alt="" class="img01"></td>
+  <td align="center">gargish order shield<br>[ガーグオーダーシールド]</td>
+  <td align="center">95</td>
+  <td align="center">100～125</td>
+  <td align="center">7</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="small_plate_shield.gif" alt="" class="img01"></td>
+  <td align="center">small plate shield<br>[スモールプレート]</td>
+  <td align="center">35</td>
+  <td align="center">25～30</td>
+  <td align="center">6</td>
+  <td align="center" bgcolor="#d0d0d0">0</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">1</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">0</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="large_plate_shield.gif" alt="" class="img01"></td>
+  <td align="center">large plate shield<br>[ラージプレート]</td>
+  <td align="center">90</td>
+  <td align="center">50～65</td>
+  <td align="center">8</td>
+  <td align="center" bgcolor="#d0d0d0" rowspan="2">0</td>
+  <td align="center" bgcolor="#ffc080" rowspan="2">1</td>
+  <td align="center" bgcolor="#80c0ff" rowspan="2">0</td>
+  <td align="center" bgcolor="#80ffc0" rowspan="2">0</td>
+  <td align="center" bgcolor="#ffc0ff" rowspan="2">0</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="medium_plate_shield.gif" alt="" class="img01"></td>
+  <td align="center">medium plate shield<br>[ミディアムプレート]</td>
+  <td align="center">45</td>
+  <td align="center">50～65</td>
+  <td align="center">6</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_kite_shield.gif" alt="" class="img01"></td>
+  <td align="center">gargish kite shield<br>[ガーゴイルカイト]</td>
+  <td align="center">45</td>
+  <td align="center">50～65</td>
+  <td align="center">7</td>
+  <td align="center" bgcolor="#d0d0d0" rowspan="2">0</td>
+  <td align="center" bgcolor="#ffc080" rowspan="2">0</td>
+  <td align="center" bgcolor="#80c0ff" rowspan="2">0</td>
+  <td align="center" bgcolor="#80ffc0" rowspan="2">0</td>
+  <td align="center" bgcolor="#ffc0ff" rowspan="2">1</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_wooden_shield.gif" alt="" class="img01"></td>
+  <td align="center">gargish wooden shield<br>[ガーグウッドシールド]</td>
+  <td align="center">20</td>
+  <td align="center">25～30</td>
+  <td align="center">5</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="large_stone_shield.gif" alt="" class="img01"></td>
+  <td align="center">large stone shield<br>[ストーンシールド]</td>
+  <td align="center">45</td>
+  <td align="center">100～125</td>
+  <td align="center">7</td>
+  <td align="center" bgcolor="#d0d0d0">0</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">1</td>
+  <td align="center" bgcolor="#ffc0ff">0</td>
+ </tr>
+</table>
+ 
+特殊素材を使用した場合、表の数値だけ抵抗値が加算されます。
+ 
+<table class="table01">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="80">ingot<br>stone</td>
+  <td align="center" bgcolor="#d0d0d0" width="30">AR</td>
+  <td align="center" bgcolor="#ffc080" width="30">FR</td>
+  <td align="center" bgcolor="#80c0ff" width="30">CR</td>
+  <td align="center" bgcolor="#80ffc0" width="30">PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="30">ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#c0c0a0">Dull</td>
+  <td align="center" bgcolor="#d0d0d0">10</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#202020"><font color="#ffff00">Shadow</font></td>
+  <td align="center" bgcolor="#d0d0d0">3</td>
+  <td align="center" bgcolor="#ffc080">2</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">7</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#d0a040">Copper</td>
+  <td align="center" bgcolor="#d0d0d0">2</td>
+  <td align="center" bgcolor="#ffc080">2</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">7</td>
+  <td align="center" bgcolor="#ffc0ff">2</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#604000"><font color="#ffff00">Bronze</font></td>
+  <td align="center" bgcolor="#d0d0d0">3</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">7</td>
+  <td align="center" bgcolor="#80ffc0">2</td>
+  <td align="center" bgcolor="#ffc0ff">2</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffe080">Gold</td>
+  <td align="center" bgcolor="#d0d0d0">2</td>
+  <td align="center" bgcolor="#ffc080">2</td>
+  <td align="center" bgcolor="#80c0ff">3</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">3</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#ffa0a0">Agapite</td>
+  <td align="center" bgcolor="#d0d0d0">2</td>
+  <td align="center" bgcolor="#ffc080">7</td>
+  <td align="center" bgcolor="#80c0ff">2</td>
+  <td align="center" bgcolor="#80ffc0">2</td>
+  <td align="center" bgcolor="#ffc0ff">2</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80ff80">Verite</td>
+  <td align="center" bgcolor="#d0d0d0">4</td>
+  <td align="center" bgcolor="#ffc080">4</td>
+  <td align="center" bgcolor="#80c0ff">3</td>
+  <td align="center" bgcolor="#80ffc0">4</td>
+  <td align="center" bgcolor="#ffc0ff">1</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#80c0ff">Valorite</td>
+  <td align="center" bgcolor="#d0d0d0">5</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">4</td>
+  <td align="center" bgcolor="#80ffc0">4</td>
+  <td align="center" bgcolor="#ffc0ff">4</td>
+ </tr>
+</table>
+ 
+ 
+<table class="table01">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="80">wood</td>
+  <td align="center" bgcolor="#d0d0d0" width="30">AR</td>
+  <td align="center" bgcolor="#ffc080" width="30">FR</td>
+  <td align="center" bgcolor="#80c0ff" width="30">CR</td>
+  <td align="center" bgcolor="#80ffc0" width="30">PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="30">ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#a58429">Oak</td>
+  <td align="center" bgcolor="#d0d0d0">1</td>
+  <td align="center" bgcolor="#ffc080">1</td>
+  <td align="center" bgcolor="#80c0ff">1</td>
+  <td align="center" bgcolor="#80ffc0">1</td>
+  <td align="center" bgcolor="#ffc0ff">1</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#acac7c">Ash</td>
+  <td align="center" bgcolor="#d0d0d0">0</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">3</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#cc8800">Yew</td>
+  <td align="center" bgcolor="#d0d0d0">3</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#104a10"><font color="#ccff00">Heartwood</font></td>
+  <td align="center" bgcolor="#d0d0d0">0</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#941818"><font color="#ccff00">Bloodwood</font></td>
+  <td align="center" bgcolor="#d0d0d0">0</td>
+  <td align="center" bgcolor="#ffc080">3</td>
+  <td align="center" bgcolor="#80c0ff">0</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">0</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#94cccc">Frostwood</td>
+  <td align="center" bgcolor="#d0d0d0">0</td>
+  <td align="center" bgcolor="#ffc080">0</td>
+  <td align="center" bgcolor="#80c0ff">3</td>
+  <td align="center" bgcolor="#80ffc0">0</td>
+  <td align="center" bgcolor="#ffc0ff">0</td>
+ </tr>
+</table>
+ 
+<br class="cle">
+ 
+</div>
+ 
+<div id="cat_21" style="display: none">
+ 
+<h3>ガーゴイル専用頭・首防具</h3>
+ 
+ガーゴイルは兜や首あてのような防具を装備することはできませんが、基本抵抗値を持つイヤリングとネックレスは装備することができます。
+<br>これらは細工スキルで作成することができますが、特殊素材（インゴット）の効果は得られません。
+<br>また、これらは瞑想の障害とはなりません。
+<br>スタミナ減少抵抗2.0
+ 
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="60">画像</td>
+  <td align="center" width="140">防具名</td>
+  <td align="center" width="70">装備STR</td>
+  <td align="center" width="70">耐久値</td>
+  <td align="center" width="70">重量</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td align="center"><img src="gargish_earring.gif" alt="" class="img01"></td>
+  <td align="center">gargish earring<br>[ガーゴイルイヤリング]</td>
+  <td align="center">--</td>
+  <td align="center">31～70</td>
+  <td align="center">1</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td align="center"><img src="gargish_necklace.gif" alt="" class="img01"></td>
+  <td align="center">gargish necklace<br>[ガーゴイルネックレス]</td>
+  <td align="center">--</td>
+  <td align="center">31～70</td>
+  <td align="center">1</td>
+ </tr>
+ 
+</table>
+ 
+<table class="table02">
+ 
+ <tr>
+  <td align="center" bgcolor="#f0f0f0" width="110">素材</td>
+  <td align="center" bgcolor="#d0d0d0" width="70">物理抵抗<br>AR</td>
+  <td align="center" bgcolor="#ffc080" width="70">炎抵抗<br>FR</td>
+  <td align="center" bgcolor="#80c0ff" width="70">冷気抵抗<br>CR</td>
+  <td align="center" bgcolor="#80ffc0" width="70">毒抵抗<br>PR</td>
+  <td align="center" bgcolor="#ffc0ff" width="70">エネ抵抗<br>ER</td>
+ </tr>
+ <tr>
+  <td align="center" bgcolor="#f0f0f0">全種類</td>
+  <td align="center" bgcolor="#d0d0d0">１％</td>
+  <td align="center" bgcolor="#ffc080">２％</td>
+  <td align="center" bgcolor="#80c0ff">２％</td>
+  <td align="center" bgcolor="#80ffc0">２％</td>
+  <td align="center" bgcolor="#ffc0ff">３％</td>
+ </tr>
+ 
+</table>
+ 
+ 
+</div>
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

@@ -1,0 +1,661 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>釣りスキル(Fishing)</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898698</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<!--以下本文-->
+
+<h2>釣りスキル(Fishing)</h2>
+<hr>
+
+<h3>１．釣りの道具</h3>
+
+釣りをするための道具は、fishing pole[釣り竿]とlobster's trap[ロブスター用の罠]の2種類です。
+
+<h4>（１）<img src="fishingpole.gif" alt="" class="img01">fishing pole[釣り竿]</h4>
+
+<ul class="list02">
+  <li>NPCのfisherから購入（大抵は港の近くにいます）</li>
+  <li>大工スキルで作成（木材×5＋布×5、大工68.4、裁縫が40以上）</li>
+  <li>アクアリウム報酬品（Captain Blackheart's Fishing Pole）</li>
+</ul>
+
+<h4>（２）<img src="lobster_trap.gif" alt="" class="img01">lobster's trap[ロブスター用の罠]</h4>
+
+UOHS（未踏の航路）より追加された釣り用の道具です。浮かぶ市場にいるcrab fisherが販売しています。
+<br>これを使って、lobster[ロブスター]やcrab[カニ]を捕まえることができます。要UOHS
+
+<h4>（３）特殊アイテム</h4>
+
+fish mongerの配送クエストの報酬として、入手できるアイテムです（要UOHS）。
+
+<ul class="list03">
+  <li><img src="lava_fishing_pole.gif" alt="" class="img01"> lava fishing pole [溶岩用の釣り竿] 　：　溶岩地帯に釣り糸をたらすことができます。100回使うと普通の釣り竿に戻ります。</li>
+  <li><img src="lava_lobster_trap.gif" alt="" class="img01"> lava lobster trap [ロブスター用耐熱罠]  　：　溶岩地帯に罠を仕掛けることができます。</li>
+  <li><img src="mug_golden_tuna.gif" alt="" class="img01"> ～ bait [～のエサ] 　：　釣り竿や罠に使うことで、レアな魚介類を釣り上げやすくします。</li>
+  <li><img src="junk_proof_hook.gif" alt="" class="img01"> ～ hook [～のつり針] 　：　釣り竿に使うことで、特殊な効果を付与します。Publish71より、追加される予定です。</li>
+</ul>
+
+<h3>２．釣りを行う</h3>
+
+<h4>（１）釣りができる場所</h4>
+
+フィールドや洞窟内のほぼ全ての水場に対し、釣りをすることができます。
+
+<h4>（２）釣りの方法</h4>
+
+<p>釣り竿による釣り</p>
+<ul class="list04">
+  <li>騎乗生物から降りた状態で、fishing pole [釣り竿] をダブルクリックする</li>
+  <li>川、海などの水場をターゲットに指定する</li>
+  <li>釣りに成功すると、鞄に魚などのアイテムが入る</li>
+</ul>
+
+釣りのできる範囲はキャラクターから4マス四方となっていて、それ以上離れた位置を指定することはできません。
+
+<p>ロブスター用の罠による採取</p>
+<ul class="list04">
+  <li>騎乗生物から降りた状態で、lobster's trap[ロブスター用の罠]をダブルクリックする</li>
+  <li>罠を仕掛けるのに適した水場をターゲットに指定する</li>
+  <li>一定時間経過すると、罠に何かがかかる（＊ピクッ＊と表示され罠が動く）</li>
+  <li>仕掛けた罠をダブルクリックして回収する</li>
+  <li>回収した罠をダブルクリックすると、ロブスターやカニが取り出される。罠は再利用可能。</li>
+</ul>
+
+罠を仕掛けるのに適した水場
+<ul class="list02">
+  <li>罠は、自キャラクターから3マス以内で視界内の場所に設置可能</li>
+  <li>陸から5マス以上はなれた水場に設置可能。洞窟では水場ぎりぎりにも設置可能。</li>
+  <li>罠同士は1マス以上間を空ける必要あり。</li>
+</ul>
+
+<img src="lobster_trap_00.jpg" alt="" class="img01" width="300" height="250">
+<img src="lobster_trap_01.jpg" alt="" class="img01" width="300" height="250">
+
+<h4>（３）<img src="mug_golden_tuna.gif" alt="" class="img01">エサの使い方</h4>
+
+<ul class="list04">
+  <li>エサをダブルクリックする</li>
+  <li>釣り竿または罠をターゲットに指定する</li>
+<br>つけたエサの種類は、装備してからバックに戻すなどすることで、プロパティ表示されるようになります
+<br>(表示されない状態でも、エサの効果は有効です)
+</ul>
+
+釣り道具により、つけたエサが失われるタイミングが変わります。
+<ul class="list02">
+  <li>普通の釣り竿　：　何かを釣り上げたとき</li>
+  <li>溶岩用の釣り竿　：　釣果の判定が行われるとき（釣れなくても消費される）</li>
+  <li>ロブスターの罠（普通・耐熱）　：　罠を引き上げたとき（中に何も入っていない状態でも消費される）</li>
+</ul>
+
+<img src="fishing_bait_01.gif" alt="" class="img01"">
+<img src="fishing_bait_02.gif" alt="" class="img01"">
+
+<h4>（４）<img src="junk_proof_hook.gif" alt="" class="img01">つり針の使い方</h4>
+
+<ul class="list04">
+  <li>つり針をダブルクリックする</li>
+  <li>釣り竿をターゲットに指定する
+<br>つり針の色が釣り竿に反映され、特殊効果が有効となります。特殊効果は、そのつり竿で50回釣りを行うと失われます。
+<br>ただし、つけたつり針は取り外すことができません。
+<br>下の画像は、左からゴミよけつり針、探索つり針、溶岩用つり針をつけたときの釣り竿です。</li>
+</ul>
+
+<p>つり針の効果
+<ul class="list03">
+  <li>ゴミよけつり針　：　靴類を釣り上げなくなる</li>
+  <li>探索つり針　：　SOSサルベージで釣れるアイテムやマジックアイテムが釣れることがある。ただし、それらは"フジツボがついた○○"や"深海海綿"の表記となる。</li>
+  <li>溶岩用つり針　：　以前の溶岩用つり竿と同じ効果</li>
+</ul>
+</p>
+<img src="fishing_pole_junk_proof.gif" alt="" class="img01"><img src="fishing_pole_dredging.gif" alt="" class="img01"><img src="lava_fishing_pole.gif" alt="" class="img01">
+<br><img src="fishing_hook_02.gif" alt="" class="img01">
+
+<h3>３．採取できるアイテム</h3>
+
+釣りで様々なアイテムを釣り上げることができます。
+
+<h4>（１）魚介類</h4>
+
+<h4>UOHS未導入</h4>
+UOHSを導入していない場合、普通の魚しか釣り上げられません。
+
+<br><img src="fish01.gif" alt="" class="img02"><img src="fish02.gif" alt="" class="img02"><img src="fish03.gif" alt="" class="img02"><img src="fish04.gif" alt="" class="img02">
+
+<h4>UOHS導入済</h4>
+
+<br>釣りスキルにより、釣り上げる魚の種類が変わります。
+
+<ul class="list02">
+  <li>スキル60未満　：　普通の魚がほとんどで、UOHSで追加された魚はたまに釣れる程度</li>
+  <li>スキル60～90未満　：　UOHSで追加された魚ほとんどで、普通の魚はたまに釣れる程度</li>
+  <li>スキル90以上　：　UOHSで追加された魚のみ釣り上げることができる。</li>
+</ul>
+
+<h4>浅瀬で釣れる魚</h4>
+
+<table class="table02">
+ <tr bgcolor="#ccccff">
+  <td width="140"><img src="fish01.gif" alt="" class="img01"><br>uncommon shiner<br>[変わり銀魚]</td>
+  <td width="140"><img src="fish02.gif" alt="" class="img01"><br>brook trout<br>[カワマス]</td>
+  <td width="140"><img src="fish03.gif" alt="" class="img01"><br>smallmouse bass<br>[コクチバス]</td>
+  <td width="140"><img src="fish04.gif" alt="" class="img01"><br>walleye<br>[ウォールアイ]</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td><img src="green_catfish_01.gif" alt="" class="img01"><br>green catfish<br>[ミドリナマズ]</td>
+  <td><img src="pike_01.gif" alt="" class="img01"><br>pike<br>[パイク]</td>
+  <td><img src="kokanee_salmon_01.gif" alt="" class="img01"><br>kokanee salmon<br>[コカニーマス]</td>
+  <td><img src="kokanee_salmon_01.gif" alt="" class="img01"><br>yellow perch<br>[イエローパーチ]</td>
+ <tr bgcolor="#ccccff">
+  <td><img src="kokanee_salmon_02.gif" alt="" class="img01"><br>rainbow trout<br>[ニジマス]</td>
+  <td><img src="redbelly_bream_01.gif" alt="" class="img01"><br>redbelly breamt<br>[レッドベリーブリーム]</td>
+  <td><img src="redbelly_bream_01.gif" alt="" class="img01"><br>pumpkinseed sunfish<br>[パンプキンシード]</td>
+  <td><img src="redbelly_bream_02.gif" alt="" class="img01"><br>bluegill sunfish<br>[ブルーギル]</td>
+ </tr>
+</table>
+
+<h4>深海で釣れる魚</h4>
+
+<table class="table02">
+ <tr bgcolor="#ccccff">
+  <td width="140"><img src="fish01.gif" alt="" class="img01"><br>black seabass<br>[ブラックシーバス]</td>
+  <td width="140"><img src="fish02.gif" alt="" class="img01"><br>haddock<br>[ハドック]</td>
+  <td width="140"><img src="fish02.gif" alt="" class="img01"><br>bluefish<br>[ブルーフィッシュ]</td>
+  <td width="140"><img src="fish03.gif" alt="" class="img01"><br>red snook<br>[レッドスヌーク]</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td><img src="green_catfish_02.gif" alt="" class="img01"><br>mahi-mahi<br>[マヒマヒ]</td>
+  <td><img src="green_catfish_02.gif" alt="" class="img01"><br>captain snook<br>[キャプテンスヌーク]</td>
+  <td><img src="green_catfish_01.gif" alt="" class="img01"><br>amberjack<br>[アンバージャック]</td>
+  <td><img src="pike_01.gif" alt="" class="img01"><br>yellowfin tuna<br>[キハダマグロ]</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td><img src="pike_02.gif" alt="" class="img01"><br>bonefish<br>[ボーンフィッシュ]</td>
+  <td><img src="pike_02.gif" alt="" class="img01"><br>tarpon<br>[ターポン]</td>
+  <td><img src="kokanee_salmon_01.gif" alt="" class="img01"><br>cobia<br>[コビア]</td>
+  <td><img src="kokanee_salmon_01.gif" alt="" class="img01"><br>bonito<br>[カツオ]</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td><img src="kokanee_salmon_02.gif" alt="" class="img01"><br>shad<br>[シャド]</td>
+  <td><img src="kokanee_salmon_02.gif" alt="" class="img01"><br>red drum<br>[レッドドラム]</td>
+  <td><img src="kokanee_salmon_02.gif" alt="" class="img01"><br>gray snapper<br>[ネズミフエダイ]</td>
+  <td><img src="redbelly_bream_02.gif" alt="" class="img01"><br>blue grouper<br>[ブルーグルーパー]</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td><img src="redbelly_bream_01.gif" alt="" class="img01"><br>red grouper<br>[レッドグルーパー]</td>
+  <td><img src="redbelly_bream_02.gif" alt="" class="img01"><br>cape cod<br>[ミサキタラ]</td>
+  <td></td>
+  <td></td>
+ </tr>
+</table>
+
+<h4>ダンジョンで釣れる魚</h4>
+
+<table class="table02">
+ <tr bgcolor="#ccccff">
+  <td width="140"><img src="fish01.gif" alt="" class="img01"><br>lurker fish<br>[マチブセウオ]</td>
+  <td width="140"><img src="fish02.gif" alt="" class="img01"><br>orc bass<br>[オークバス]</td>
+  <td width="140"><img src="fish04.gif" alt="" class="img01"><br>snaggletooth bass<br>[ラングイバス]</td>
+  <td width="140"><img src="green_catfish_02.gif" alt="" class="img01"><br>drake fish<br>[ドレイクフィッシュ]</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td><img src="pike_02.gif" alt="" class="img01"><br>grim cisco<br>[グリムシスコ]</td>
+  <td><img src="pike_02.gif" alt="" class="img01"><br>tormented pike<br>[アワレナパイク]</td>
+  <td><img src="pike_01.gif" alt="" class="img01"><br>crag snapper<br>[イワフエダイ]</td>
+  <td><img src="kokanee_salmon_02.gif" alt="" class="img01"><br>demon trout<br>[デーモンマス]</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td><img src="kokanee_salmon_01.gif" alt="" class="img01"><br>cutthroat trout<br>[カットスロート]</td>
+  <td><img src="kokanee_salmon_02.gif" alt="" class="img01"><br>infernal tuna<br>[ジゴクマグロ]</td>
+  <td><img src="redbelly_bream_01.gif" alt="" class="img01"><br>darkfish<br>[ダークフィッシュ]</td>
+  <td><img src="redbelly_bream_02.gif" alt="" class="img01"><br>dungeon chub<br>[ダンジョンチャブ]</td>
+ </tr>
+</table>
+
+<h4><img src="lobster_trap.gif" alt="" class="img01">lobster's trap[ロブスター用の罠]で捕れるもの</h4>
+
+
+<table class="table02">
+ <tr bgcolor="#ccccff">
+  <td width="140"><img src="crab.gif" alt="" class="img01"><br>crab<br>[カニ]</td>
+  <td width="140"><img src="crab.gif" alt="" class="img01"><br>applecrab<br>[アップルクラブ]</td>
+  <td width="140"><img src="crab.gif" alt="" class="img01"><br>blue crab<br>[ブルークラブ]</td>
+  <td width="140"><img src="crab.gif" alt="" class="img01"><br>dungeness crab<br>[ダンジョンクラブ]</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td><img src="crab.gif" alt="" class="img01"><br>king crab<br>[キングクラブ]</td>
+  <td><img src="crab.gif" alt="" class="img01"><br>rock crab<br>[ロッククラブ]</td>
+  <td><img src="crab.gif" alt="" class="img01"><br>snow crab<br>[スノークラブ]</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ccccff">
+  <td><img src="lobster.gif" alt="" class="img01"><br>lobster<br>[ロブスター]</td>
+  <td><img src="lobster.gif" alt="" class="img01"><br>crusty lobster<br>[クラストロブスター]</td>
+  <td><img src="lobster.gif" alt="" class="img01"><br>fred lobster<br>[フレッドロブスター]</td>
+  <td><img src="lobster.gif" alt="" class="img01"><br>hummer lobster<br>[ハンマーロブスター]</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td><img src="lobster.gif" alt="" class="img01"><br>rock lobster<br>[ロックロブスター]</td>
+  <td><img src="lobster.gif" alt="" class="img01"><br>shovel-nose lobster<br>[シャベルロブスター]</td>
+  <td><img src="lobster.gif" alt="" class="img01"><br>spiny lobster<br>[スパインロブスター]</td>
+  <td>&nbsp;</td>
+ </tr>
+</table>
+
+<h4>（２）溶岩地帯限定品</h4>
+
+Publish71より、溶岩地帯を対象とした釣りで、以下のアイテムを釣り上げることが可能となります。
+<ul class="list03">
+ <li><img src="cracked_lava_rock.gif" alt="" class="img01">　Cracked Lava Rock[ひび割れた溶岩石]　：　中にアイテムが入っており、斧を使って破壊することで入手</li>
+ <li><img src="stone_pavers_01.gif" alt="" class="img01"><img src="stone_pavers_02.gif" alt="" class="img01">
+<img src="stone_pavers_03.gif" alt="" class="img01"><img src="stone_pavers_04.gif" alt="" class="img01">
+<img src="stone_pavers_05.gif" alt="" class="img01"><img src="stone_pavers_06.gif" alt="" class="img01">
+<img src="stone_pavers_07.gif" alt="" class="img01"><img src="stone_pavers_08.gif" alt="" class="img01">　Stone Pavers[敷石]</li>
+ <li>石の靴類　：　履くと動けなくなる。稀に鉱石色がついていることがある</li>
+ <li>lava infused "weapon"[焼けただれた"武器"]　：　焼灼攻撃、補強不可が付加されており、耐久値200。練成可能（NPC品相当）　
+<br><img src="lava_infused_crescent_blade.gif" alt="" class="img01"><img src="lava_infused_crossbow.gif" alt="" class="img01"><img src="lava_infused_cyclone.gif" alt="" class="img01"><img src="lava_infused_shortblade.gif" alt="" class="img01">
+<br><img src="lava_infused_crescent_blade2.gif" alt="" class="img01"><img src="lava_infused_crossbow2.gif" alt="" class="img01"><img src="lava_infused_cyclone2.gif" alt="" class="img01"> PD上で武器をクリックし、点火/消火の切り替えが可能</li>
+</ul>
+
+ひび割れた溶岩石の中身
+<ul class="list03">
+<li><img src="lava_rock_01.gif" alt="" class="img01"><img src="lava_rock_02.gif" alt="" class="img01">　lava rock [溶岩石]</li>
+<li><img src="geode_shard_01.gif" alt="" class="img01"><img src="geode_shard_02.gif" alt="" class="img01"><img src="geode_shard_03.gif" alt="" class="img01">　geode shard [晶洞石のかけら]</li>
+<li><img src="geode_01.gif" alt="" class="img01"><img src="geode_02.gif" alt="" class="img01"><img src="geode_05.gif" alt="" class="img01"><img src="geode_07.gif" alt="" class="img01">　geode [晶洞石]</li>
+</ul>
+
+<h4>（３）靴類</h4>
+
+釣りをした場所に関わらず、釣り上げる可能性があります。
+<br>靴自体に特別な効果はありません。
+<br><img src="thighboots.gif" alt="" class="img01">　<img src="boots.gif" alt="" class="img01">　<img src="shoes.gif" alt="" class="img01">　<img src="sandal.gif" alt="" class="img01">
+
+
+<h4>（４）魔法の小魚</h4>
+
+水場を対象とした釣りで、釣り上げる可能性があります。
+<br>これらは直接食べることができ、魚の種類による特殊効果が得られます。
+<br>highly peculiar fish [粘り強い魚]以外は、釣り上げたキャラクターの釣りスキルが効果に影響します。
+
+<ul class="list03">
+  <li><img src="fishs01.gif" alt="" class="img01"> prized fish [知恵ある魚]　：　INT+1～12％、18～150秒</li>
+  <li><img src="fishs02.gif" alt="" class="img01"> wonderous fish [すばやい魚]　：　DEX+1～12％、18～150秒</li>
+  <li><img src="fishs03.gif" alt="" class="img01"> truly rare fish [力強い魚]　：　STR+1～12％、18～150秒</li>
+  <li><img src="fishs04.gif" alt="" class="img01"> highly peculiar fish [粘り強い魚]　：　スタミナが10回復</li>
+</ul>
+
+<h4>（５）Sea Serpent</h4>
+
+スキル80以上のキャラクターが、深海でのみ釣り上げる可能性があります。
+<br>釣り上げたとき、戦利品として所持しているものが表示されます。
+
+<ul class="list02">
+  <li>特に何も持っていない</li>
+  <li>宝の地図（レベル1）</li>
+  <li>投げ網</li>
+  <li>SOSボトル</li>
+</ul>
+
+
+<h4>（６）<img src="whitepearl.gif" alt="" class="img01">white pearl [白真珠]</h4>
+
+何かを釣り上げたときに付いてくるもので、釣りをした場所に関わらず入手できます。
+<br>白真珠は、マジックアクセサリ、レシピ装備品、練成の希少材料として使用します。
+
+
+<h4>（７）<img src="delicate_scales.gif" alt="delicate scales&#10;[精密天秤]" class="img01">delicate scales [精密天秤]</h4>
+
+何かを釣り上げたときに付いてくるもので、釣りをした場所に関わらず入手できます。
+<br>精密天秤は練成の希少材料として使用します。
+
+<h4>（８）big fish [ビッグフィッシュ]</h4>
+
+スキル80以上のキャラクターが、深海でのみ釣り上げる可能性があります。Publish71より、釣り上げる確率が上がっているようです。
+<br>重量20以上の場合、釣ったキャラクター名と釣り上げた日付も表記されます。
+<br>似たようなものとして、underworldではmud puppy [ナマズ]またはred herring [レッドへリング]を釣り上げることができます。
+<br>これらの魚はtaxidermy kit[剥製キット]を使い、剥製にすることができます。
+
+<ul class="list03">
+  <li><img src="bigfish01.gif" alt="" class="img01">　<img src="bigfish02.gif" alt="" class="img01">　big fish</li>
+  <li><img src="mudpuppy.gif" alt="" class="img01">　mud puppy [ナマズ]</li>
+  <li><img src="red_herring.gif" alt="" class="img01">　red herring [レッドへリング]</li>
+</ul>
+
+<h4>（９）魔法の海洋生物</h4>
+
+魔法の海洋生物は、特定のファセットまたは水域でしか存在せず、釣り上げるのに一定以上のスキルが必要となります（要UOHS）。
+<br>釣れる確率は低いですが、エサを使用することで釣り上げやすくなります。
+<br>刃物を使って切り身にすると、魔法のフィッシュパイの材料となります。
+
+<p><b>切り身の数量 ＝ [（魚の重量）/ 5 ]× 2 － 4</b>　（[ ]内は端数切捨、カニ・ロブスター類は重量に関わらず1つのみ）</p>
+
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="90">画像</td>
+  <td width="180">名称</td>
+  <td width="130">採取地域</td>
+  <td width="50">水域</td>
+  <td width="80">スキル</td>
+  <td width="50">エサ</td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="great_barracuda.gif" alt="" class="img01"></td>
+  <td>great barracuda<br>[グレートバラクーダ]</td>
+  <td>Felucca</td>
+  <td>深海</td>
+  <td>81.0</td>
+  <td><img src="mug_great_barracuda.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="yellowtail_barracuda.gif" alt="" class="img01"></td>
+  <td>yellow barracuda<br>[イエローバラクーダ]</td>
+  <td>Trammel</td>
+  <td>深海</td>
+  <td>81.0</td>
+  <td><img src="mug_yellow_barracuda.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="autumn_dragonfish.gif" alt="" class="img01"></td>
+  <td>autumn dragonfish<br>[秋竜魚]</td>
+  <td>Ilshenar</td>
+  <td>浅瀬</td>
+  <td>81.0</td>
+  <td><img src="mug_autumn_dragonfish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="holy_mackerel.gif" alt="" class="img01"></td>
+  <td>holy mackerel<br>[ギョギョ]</td>
+  <td>Malas</td>
+  <td>浅瀬</td>
+  <td>81.0</td>
+  <td><img src="mug_holy_mackerel.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="giant_koi.gif" alt="" class="img01"></td>
+  <td>giant koi<br>[コイ]</td>
+  <td>Tokuno</td>
+  <td>深海</td>
+  <td>81.0</td>
+  <td><img src="mug_giant_koi.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="fairy_salmon.gif" alt="" class="img01"></td>
+  <td>fairy salmon<br>[フェアリーサーモン]</td>
+  <td>Ter Mur</td>
+  <td>浅瀬<br>深海</td>
+  <td>81.0</td>
+  <td><img src="mug_fairy_salmon.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="stone_crab.gif" alt="" class="img01"></td>
+  <td>stone crab<br>[ストーンクラブ]</td>
+  <td>Lostland</td>
+  <td>深海</td>
+  <td>81.0</td>
+  <td><img src="mug_stone_crab.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="fire_fish.gif" alt="" class="img01"></td>
+  <td>fire fish<br>[ファイアフィッシュ]</td>
+  <td>Shame</td>
+  <td>洞窟</td>
+  <td>81.0</td>
+  <td><img src="mug_fire_fish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="summer_dragonfish.gif" alt="" class="img01"></td>
+  <td>summer dragonfish<br>[夏竜魚]</td>
+  <td>Destard</td>
+  <td>洞窟</td>
+  <td>100</td>
+  <td><img src="mug_summer_dragonfish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="reaper_fish.gif" alt="" class="img01"></td>
+  <td>reaper fish<br>[リーパーフィッシュ]</td>
+  <td>Doom</td>
+  <td>洞窟</td>
+  <td>81.0</td>
+  <td><img src="mug_reaper_fish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="bull_fish.gif" alt="" class="img01"></td>
+  <td>bull fish<br>[ブルフィッシュ]</td>
+  <td>Labyrinth</td>
+  <td>洞窟</td>
+  <td>81.0</td>
+  <td><img src="mug_bull_fish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="unicorn_fish.gif" alt="" class="img01"></td>
+  <td>unicorn fish<br>[ユニコーンフィッシュ]</td>
+  <td>Twisted wield</td>
+  <td>洞窟</td>
+  <td>81.0</td>
+  <td><img src="mug_unicorn_fish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="crystal_fish.gif" alt="" class="img01"></td>
+  <td>crystal fish<br>[クリスタルフィッシュ]</td>
+  <td>Prism of light</td>
+  <td>洞窟</td>
+  <td>100</td>
+  <td><img src="mug_crystal_fish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="lava_fish.gif" alt="" class="img01"></td>
+  <td>lava fish<br>[ラヴァフィッシュ]</td>
+  <td>Abyss溶岩</td>
+  <td>洞窟</td>
+  <td>105</td>
+  <td><img src="mug_lava_fish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="spider_crab.gif" alt="" class="img01"></td>
+  <td>spider crab<br>[スパイダークラブ]</td>
+  <td>Terathan keep地下</td>
+  <td>洞窟</td>
+  <td>80.5</td>
+  <td><img src="mug_spider_crab.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="blue_lobster.gif" alt="" class="img01"></td>
+  <td>blue lobster<br>[ブルーロブスター]</td>
+  <td>Ice</td>
+  <td>洞窟</td>
+  <td>81.0</td>
+  <td><img src="mug_blue_lobster.gif" alt="" class="img01"></td>
+ </tr>
+</table>
+この項目の魚介類は、スキル80～81程度から釣れる可能性があります。
+
+<h4>（10）伝説の海洋生物</h4>
+
+伝説の海洋生物も特定のファセットまたは水域でしか存在せず、釣り上げるのに一定以上のスキルが必要となります（要UOHS）。
+<br>釣れる確率は魔法の海洋生物よりさらに低く、エサを使用しても釣り上げるのは難しいです。
+<br>（９）および（10）に示す魚介類の一部は、taxidermy kit[剥製キット]を使って剥製にすることができます。
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="90">画像</td>
+  <td width="180">名称</td>
+  <td width="130">採取地域</td>
+  <td width="50">水域</td>
+  <td width="80">スキル</td>
+  <td width="50">エサ</td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="blue_marlin.gif" alt="" class="img01"></td>
+  <td>blue marlin<br>[ブルーマーリン]</td>
+  <td>Trammel</td>
+  <td>深海</td>
+  <td>100</td>
+  <td><img src="mug_blue_marlin.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="kingfish.gif" alt="" class="img01"></td>
+  <td>kingfish<br>[キングフィッシュ]</td>
+  <td>Trammel<br>Felucca</td>
+  <td>深海</td>
+  <td>100</td>
+  <td><img src="mug_kingfish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="black_marlin.gif" alt="" class="img01"></td>
+  <td>black marlin<br>[ブラックマーリン]</td>
+  <td>Felucca</td>
+  <td>深海</td>
+  <td>＜110</td>
+  <td><img src="mug_black_marlin.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="zombie_fish.gif" alt="" class="img01"></td>
+  <td>zombie fish<br>[ゾンビフィッシュ]</td>
+  <td>Malas</td>
+  <td>浅瀬</td>
+  <td>120</td>
+  <td><img src="mug_zombie_fish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="giant_samurai_fish.gif" alt="" class="img01"></td>
+  <td>giant samurai fish<br>[ジャイアントサムライ]</td>
+  <td>Tokuno</td>
+  <td>深海</td>
+  <td>120</td>
+  <td><img src="mug_giant_samurai.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="golden_tuna.gif" alt="" class="img01"></td>
+  <td>golden tuna<br>[黄金マグロ]</td>
+  <td>Tokuno</td>
+  <td>深海</td>
+  <td>120</td>
+  <td><img src="mug_golden_tuna.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="stone_fish.gif" alt="" class="img01"></td>
+  <td>stone fish<br>[ストーンフィッシュ]</td>
+  <td>Lostland</td>
+  <td>深海</td>
+  <td>110+餌</td>
+  <td><img src="mug_stone_fish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="spring_dragonfish.gif" alt="" class="img01"></td>
+  <td>spring dragonfish<br>[春竜魚]</td>
+  <td>Ilshenar</td>
+  <td>浅瀬</td>
+  <td>120</td>
+  <td><img src="mug_spring_dragonfish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="winter_dragonfish.gif" alt="" class="img01"></td>
+  <td>winter dragonfish<br>[冬竜魚]</td>
+  <td>Ice</td>
+  <td>洞窟</td>
+  <td>120</td>
+  <td></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="abyssal_dragonfish.gif" alt="" class="img01"</td>
+  <td>abyssal dragonfish<br>[アビス竜魚]</td>
+  <td>Destard</td>
+  <td>洞窟</td>
+  <td>120</td>
+  <td><img src="mug_abyssal_dragonfish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="rainbow_fish.gif" alt="" class="img01"></td>
+  <td>rainbow fish<br>[レインボーフィッシュ]</td>
+  <td>Twisted wield</td>
+  <td>洞窟</td>
+  <td>120</td>
+  <td><img src="mug_rainbow_fish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="lantern_fish.gif" alt="" class="img01"></td>
+  <td>lantern fish<br>[ランタンフィッシュ]</td>
+  <td>Prism of light</td>
+  <td>洞窟</td>
+  <td>120</td>
+  <td><img src="mug_lantern_fish.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="dungeon_pike.gif" alt="" class="img01"></td>
+  <td>dungeon pike<br>[ダンジョンパイク]</td>
+  <td>Terathan keep地下</td>
+  <td>洞窟</td>
+  <td>120</td>
+  <td></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="seeker_fish.gif" alt="" class="img01"></td>
+  <td>seeker fish<br>[シーカーフィッシュ]</td>
+  <td>Labyrinth</td>
+  <td>洞窟</td>
+  <td>120</td>
+  <td></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="tunnel_crab.gif" alt="" class="img01"></td>
+  <td>tunnel crab<br>[トンネルクラブ]</td>
+  <td>Underworld</td>
+  <td>洞窟</td>
+  <td>120</td>
+  <td><img src="mug_tunnel_crab.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="void_crab.gif" alt="" class="img01"></td>
+  <td>void crab<br>[ボイドクラブ]</td>
+  <td>Ter Mur</td>
+  <td>浅瀬<br>深海</td>
+  <td>110+餌</td>
+  <td><img src="mug_void_crab.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="void_lobster.gif" alt="" class="img01"></td>
+  <td>void lobster<br>[ボイドロブスター]</td>
+  <td>Abyss溶岩</td>
+  <td>洞窟</td>
+  <td>120</td>
+  <td><img src="mug_void_lobster.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td><img src="blood_lobster.gif" alt="" class="img01"></td>
+  <td>blood lobster<br>[ブラッドロブスター]</td>
+  <td>Shame</td>
+  <td>洞窟</td>
+  <td>120</td>
+  <td></td>
+ </tr>
+ <tr bgcolor="#ccffff">
+  <td><img src="dread_lobster.gif" alt="" class="img01"></td>
+  <td>dread lobster<br>[ドレッドロブスター]</td>
+  <td>Doom</td>
+  <td>洞窟</td>
+  <td>120</td>
+  <td></td>
+ </tr>
+
+</table>
+
+<h3>４．資源の復活</h3>
+
+<h4>復活までの時間</h4>
+
+プレイヤーが区画内の資源（魚）を採取し尽くすと、一時的に枯渇した状態となります。
+<br>枯渇した資源は時間の経過により復活しますが、要する時間は一定ではありません。
+<br>復活までの時間は、その区画で最初に資源を採取したときが起点となり、グラフのようにある範囲をとります。
+<br>グラフ横軸の単位は、採掘や伐採と異なり、全種族で60秒となります。
+
+<br><img src="resource_recharge.gif" alt="" class="img01">
+<br>採掘などと同じ仕様のため、採掘と同じグラフを使用
+
+
+</BODY>
+</HTML>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

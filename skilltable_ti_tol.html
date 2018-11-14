@@ -1,0 +1,1982 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>細工作成難易度表</TITLE>
+</HEAD>
+<body><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898548</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+
+<!--以下本文-->
+
+<h2>細工作成難易度表</h2>
+<HR>
+
+<script language="javascript">
+<!--
+//Soubi
+var soubi;
+soubi=new Array(142);
+soubi[0] = 700002;
+soubi[1] = 2;
+soubi[2] = 2;
+soubi[3] = 2;
+soubi[4] = 2;
+soubi[5] = 502;
+soubi[6] = 2;
+soubi[7] = 750502;
+soubi[8] = 750502;
+soubi[9] = 750502;
+soubi[10] = 750502;
+soubi[11] = 750502;
+soubi[12] = 750502;
+soubi[13] = 750502;
+soubi[14] = 750502;
+soubi[15] = 750502;
+soubi[16] = 750502;
+soubi[17] = 750502;
+soubi[18] = 750502;
+soubi[19] = 50002;
+soubi[20] = 200002;
+soubi[21] = 300002;
+soubi[22] = 100002;
+soubi[23] = 300002;
+soubi[24] = 300002;
+soubi[25] = 100002;
+soubi[26] = 300002;
+soubi[27] = 300002;
+soubi[28] = 300002;
+soubi[29] = 400002;
+soubi[30] = 300002;
+soubi[31] = 350002;
+soubi[32] = 400002;
+soubi[33] = 400002;
+soubi[34] = 300002;
+soubi[35] = 400002;
+soubi[36] = 450002;
+soubi[37] = 300002;
+soubi[38] = 500002;
+soubi[39] = 350002;
+soubi[40] = 250002;
+soubi[41] = 250002;
+soubi[42] = 500502;
+soubi[43] = 750502;
+soubi[44] = 50002;
+soubi[45] = 250002;
+soubi[46] = 350002;
+soubi[47] = 50002;
+soubi[48] = 300002;
+soubi[49] = 302;
+soubi[50] = 50002;
+soubi[51] = 450002;
+soubi[52] = 700202;
+soubi[53] = 250002;
+soubi[54] = 102;
+soubi[55] = 102;
+soubi[56] = 102;
+soubi[57] = 200002;
+soubi[58] = 502;
+soubi[59] = 100002;
+soubi[60] = 100002;
+soubi[61] = 250002;
+soubi[62] = 100002;
+soubi[63] = 550002;
+soubi[64] = 600002;
+soubi[65] = 200002;
+soubi[66] = 550002;
+soubi[67] = 600002;
+soubi[68] = 300002;
+soubi[69] = 600002;
+soubi[70] = 650002;
+soubi[71] = 650002;
+soubi[72] = 650002;
+soubi[73] = 800002;
+soubi[74] = 800002;
+soubi[75] = 550002;
+soubi[76] = 900502;
+soubi[77] = 500502;
+soubi[78] = 650002;
+soubi[79] = 550002;
+soubi[80] = 600002;
+soubi[81] = 550002;
+soubi[82] = 650002;
+soubi[83] = 550002;
+soubi[84] = 400002;
+soubi[85] = 400002;
+soubi[86] = 400002;
+soubi[87] = 400002;
+soubi[88] = 400002;
+soubi[89] = 400002;
+soubi[90] = 502;
+soubi[91] = 502;
+soubi[92] = 502;
+soubi[93] = 502;
+soubi[94] = 502;
+soubi[95] = 600005;
+soubi[96] = 750502;
+soubi[97] = 900502;
+soubi[98] = 900502;
+soubi[99] = 900502;
+soubi[100] = 600502;
+soubi[101] = 900502;
+soubi[102] = 900502;
+soubi[103] = 900502;
+soubi[104] = 300002;
+soubi[105] = 300002;
+soubi[106] = 550002;
+soubi[107] = 650002;
+soubi[108] = 650002;
+soubi[109] = 650002;
+soubi[110] = 650002;
+soubi[111] = 900502;
+soubi[112] = 750002;
+soubi[113] = 750002;
+soubi[114] = 750002;
+soubi[115] = 750002;
+soubi[116] = 750002;
+soubi[117] = 750002;
+soubi[118] = 750002;
+soubi[119] = 750002;
+soubi[120] = 1000502;
+soubi[121] = 1000502;
+soubi[122] = 1000502;
+soubi[123] = 500002;
+soubi[124] = 200002;
+soubi[125] = 250002;
+soubi[126] = 2;
+soubi[127] = 2;
+soubi[128] = 150002;
+soubi[129] = 900302;
+soubi[130] = 900302;
+soubi[131] = 800002;
+soubi[132] = 850005;
+soubi[133] = 850005;
+soubi[134] = 850005;
+
+soubi[135] = 400002;
+soubi[136] = 400002;
+soubi[137] = 400002;
+soubi[138] = 400002;
+soubi[139] = 850005;
+soubi[140] = 850005;
+soubi[141] = -50002;
+
+//初期化
+function keisan0(form)
+{
+var form = document.form_keisan;
+  form.skill.value = 0.0;
+  exb1 = 0.0;
+  crb1 = 0.0;
+
+return true;
+}
+
+//計算
+
+function keisan1(form)
+{
+var form = document.form_keisan;
+  skill = form.skill.value;
+  exb1 = form.exb1.options[form.exb1.selectedIndex].value;
+  crb1 = form.crb1.options[form.crb1.selectedIndex].value;
+
+  pmt1 = new Array(142);
+
+    for (i=0; i<142; i++)
+    {
+    pmt1[i] = parseInt(soubi[i]/1000) / 10.0;
+    }
+
+  pmt2 = new Array(142);
+
+    for (i=0; i<142; i++)
+    {
+    pmt2[i] = Math.floor(Math.abs((soubi[i] % 1000)) / 10.0);
+    }
+
+  pmt3 = new Array(142);
+
+    for (i=0; i<142; i++)
+    {
+    pmt3[i] = Math.abs((soubi[i] % 10)) / 1.0;
+    }
+
+  rate = new Array(284);
+
+    for (i=0; i<142; i++)
+    {
+    rate[2*i] = Math.round(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] + 1.0 * crb1)) * 10 ) / 10;
+    rate[2*i+1] = Math.round(Math.min(100.0 , Math.max(0.0, (skill - pmt1[i]) * pmt3[i] + pmt2[i] - 60.0 + 1.0 * exb1
+                + Math.min(15.0 , Math.max(0.0 , (skill - 95.0) * 3.0)))) * 10 ) / 10;
+    if(skill - pmt1[i]<0)
+    {
+    rate[2*i] = 0.0;
+    rate[2*i+1] = 0.0;
+    }
+    }
+
+    form.rate000.value = rate[0];
+    form.rate001.value = rate[1];
+    form.rate002.value = rate[2];
+    form.rate003.value = rate[3];
+    form.rate004.value = rate[4];
+    form.rate005.value = rate[5];
+    form.rate006.value = rate[6];
+    form.rate007.value = rate[7];
+    form.rate008.value = rate[8];
+    form.rate009.value = rate[9];
+    form.rate010.value = rate[10];
+    form.rate012.value = rate[12];
+    form.rate013.value = rate[13];
+    form.rate014.value = rate[14];
+    form.rate016.value = rate[16];
+    form.rate018.value = rate[18];
+    form.rate020.value = rate[20];
+    form.rate022.value = rate[22];
+    form.rate024.value = rate[24];
+    form.rate026.value = rate[26];
+    form.rate028.value = rate[28];
+    form.rate030.value = rate[30];
+    form.rate032.value = rate[32];
+    form.rate034.value = rate[34];
+    form.rate036.value = rate[36];
+    form.rate038.value = rate[38];
+    form.rate039.value = rate[39];
+    form.rate040.value = rate[40];
+    form.rate041.value = rate[41];
+    form.rate042.value = rate[42];
+    form.rate043.value = rate[43];
+    form.rate044.value = rate[44];
+    form.rate045.value = rate[45];
+    form.rate046.value = rate[46];
+    form.rate047.value = rate[47];
+    form.rate048.value = rate[48];
+    form.rate049.value = rate[49];
+    form.rate050.value = rate[50];
+    form.rate051.value = rate[51];
+    form.rate052.value = rate[52];
+    form.rate053.value = rate[53];
+    form.rate054.value = rate[54];
+    form.rate055.value = rate[55];
+    form.rate056.value = rate[56];
+    form.rate057.value = rate[57];
+    form.rate058.value = rate[58];
+    form.rate059.value = rate[59];
+    form.rate060.value = rate[60];
+    form.rate061.value = rate[61];
+    form.rate062.value = rate[62];
+    form.rate063.value = rate[63];
+    form.rate064.value = rate[64];
+    form.rate065.value = rate[65];
+    form.rate066.value = rate[66];
+    form.rate067.value = rate[67];
+    form.rate068.value = rate[68];
+    form.rate069.value = rate[69];
+    form.rate070.value = rate[70];
+    form.rate071.value = rate[71];
+    form.rate072.value = rate[72];
+    form.rate074.value = rate[74];
+    form.rate075.value = rate[75];
+    form.rate076.value = rate[76];
+    form.rate077.value = rate[77];
+    form.rate078.value = rate[78];
+    form.rate079.value = rate[79];
+    form.rate080.value = rate[80];
+    form.rate081.value = rate[81];
+    form.rate082.value = rate[82];
+    form.rate083.value = rate[83];
+    form.rate084.value = rate[84];
+    form.rate085.value = rate[85];
+    form.rate086.value = rate[86];
+    form.rate088.value = rate[88];
+    form.rate090.value = rate[90];
+    form.rate092.value = rate[92];
+    form.rate093.value = rate[93];
+    form.rate094.value = rate[94];
+    form.rate096.value = rate[96];
+    form.rate098.value = rate[98];
+    form.rate099.value = rate[99];
+    form.rate100.value = rate[100];
+    form.rate102.value = rate[102];
+    form.rate104.value = rate[104];
+    form.rate106.value = rate[106];
+    form.rate107.value = rate[107];
+    form.rate108.value = rate[108];
+    form.rate109.value = rate[109];
+    form.rate110.value = rate[110];
+    form.rate111.value = rate[111];
+    form.rate112.value = rate[112];
+    form.rate113.value = rate[113];
+    form.rate114.value = rate[114];
+    form.rate115.value = rate[115];
+    form.rate116.value = rate[116];
+    form.rate117.value = rate[117];
+    form.rate118.value = rate[118];
+    form.rate119.value = rate[119];
+    form.rate120.value = rate[120];
+    form.rate121.value = rate[121];
+    form.rate122.value = rate[122];
+    form.rate123.value = rate[123];
+    form.rate124.value = rate[124];
+    form.rate125.value = rate[125];
+    form.rate126.value = rate[126];
+    form.rate127.value = rate[127];
+    form.rate128.value = rate[128];
+    form.rate129.value = rate[129];
+    form.rate130.value = rate[130];
+    form.rate131.value = rate[131];
+    form.rate132.value = rate[132];
+    form.rate133.value = rate[133];
+    form.rate134.value = rate[134];
+    form.rate135.value = rate[135];
+    form.rate136.value = rate[136];
+    form.rate137.value = rate[137];
+    form.rate138.value = rate[138];
+    form.rate139.value = rate[139];
+    form.rate140.value = rate[140];
+    form.rate141.value = rate[141];
+    form.rate142.value = rate[142];
+    form.rate143.value = rate[143];
+    form.rate144.value = rate[144];
+    form.rate145.value = rate[145];
+    form.rate146.value = rate[146];
+    form.rate147.value = rate[147];
+    form.rate148.value = rate[148];
+    form.rate149.value = rate[149];
+    form.rate150.value = rate[150];
+    form.rate151.value = rate[151];
+    form.rate152.value = rate[152];
+    form.rate154.value = rate[154];
+    form.rate156.value = rate[156];
+    form.rate157.value = rate[157];
+    form.rate158.value = rate[158];
+    form.rate159.value = rate[159];
+    form.rate160.value = rate[160];
+    form.rate161.value = rate[161];
+    form.rate162.value = rate[162];
+    form.rate163.value = rate[163];
+    form.rate164.value = rate[164];
+    form.rate165.value = rate[165];
+    form.rate166.value = rate[166];
+    form.rate167.value = rate[167];
+    form.rate168.value = rate[168];
+    form.rate170.value = rate[170];
+    form.rate172.value = rate[172];
+    form.rate174.value = rate[174];
+    form.rate176.value = rate[176];
+    form.rate178.value = rate[178];
+    form.rate180.value = rate[180];
+    form.rate182.value = rate[182];
+    form.rate184.value = rate[184];
+    form.rate186.value = rate[186];
+    form.rate188.value = rate[188];
+    form.rate190.value = rate[190];
+    form.rate192.value = rate[192];
+    form.rate194.value = rate[194];
+    form.rate196.value = rate[196];
+    form.rate198.value = rate[198];
+    form.rate200.value = rate[200];
+    form.rate202.value = rate[202];
+    form.rate204.value = rate[204];
+    form.rate206.value = rate[206];
+    form.rate208.value = rate[208];
+    form.rate210.value = rate[210];
+    form.rate212.value = rate[212];
+    form.rate214.value = rate[214];
+    form.rate216.value = rate[216];
+    form.rate218.value = rate[218];
+    form.rate220.value = rate[220];
+    form.rate222.value = rate[222];
+    form.rate224.value = rate[224];
+    form.rate225.value = rate[225];
+    form.rate226.value = rate[226];
+    form.rate227.value = rate[227];
+    form.rate228.value = rate[228];
+    form.rate229.value = rate[229];
+    form.rate230.value = rate[230];
+    form.rate231.value = rate[231];
+    form.rate232.value = rate[232];
+    form.rate233.value = rate[233];
+    form.rate234.value = rate[234];
+    form.rate235.value = rate[235];
+    form.rate236.value = rate[236];
+    form.rate237.value = rate[237];
+    form.rate238.value = rate[238];
+    form.rate239.value = rate[239];
+    form.rate240.value = rate[240];
+    form.rate242.value = rate[242];
+    form.rate244.value = rate[244];
+    form.rate246.value = rate[246];
+    form.rate247.value = rate[247];
+    form.rate248.value = rate[248];
+    form.rate249.value = rate[249];
+    form.rate250.value = rate[250];
+    form.rate251.value = rate[251];
+    form.rate252.value = rate[252];
+    form.rate253.value = rate[253];
+    form.rate254.value = rate[254];
+    form.rate255.value = rate[255];
+    form.rate256.value = rate[256];
+    form.rate257.value = rate[257];
+    form.rate258.value = rate[258];
+    form.rate260.value = rate[260];
+    form.rate262.value = rate[262];
+    form.rate263.value = rate[263];
+    form.rate264.value = rate[264];
+    form.rate266.value = rate[266];
+    form.rate268.value = rate[268];
+    form.rate270.value = rate[270];
+    form.rate272.value = rate[272];
+    form.rate274.value = rate[274];
+    form.rate276.value = rate[276];
+    form.rate278.value = rate[278];
+    form.rate280.value = rate[280];
+    form.rate282.value = rate[282];
+    form.sk0.value = skill;
+    form.sk1.value = skill;
+    form.sk2.value = skill;
+    form.sk3.value = skill;
+    form.sk4.value = skill;
+    form.sk5.value = skill;
+    form.sk6.value = skill;
+    form.sk7.value = skill;
+    form.sk8.value = skill;
+return true;
+}
+//-->
+</script>
+
+<script language="JavaScript" type ="text/javascript">
+<!--
+function showHide(targetID)
+
+ {//functionの宣言。受けとったIDは変数targetIDに格納。
+  if( document.getElementById(targetID))
+   { //指定のIDのついたオブジェクトがあったら処理する
+     //指定されたIDのstyle.displayがnoneなら
+    for (i=1; i<10; i++)
+     {
+      document.getElementById("cat_"+ i).style.display = "none";
+     }
+     if( document.getElementById(targetID).style.display == "none")
+      {//blockに変更する
+      document.getElementById(targetID).style.display = "block";
+      }
+   }
+}
+// -->
+ </script>
+
+<form name="form_keisan">
+<p>細工スキルで作ることができるアイテムの作成難易度表です。下のカテゴリ画像をクリックすると、そのカテゴリが表示／非表示されます。</p>
+<p>スキル　：　<INPUT TYPE="text" NAME="skill" SIZE="4" value="100">（手入力）
+<br>成功率補正のタリスマンを装備している場合は、こちらも選択してください。
+<br>
+細工　：　高品質成功率ボーナス
+<select name="exb1" size="1">
+<option value="0">----
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+</select>
+％、
+成功率ボーナス
+<select name="crb1" size="1">
+<option value="0">----
+<option value="11">11
+<option value="12">12
+<option value="13">13
+<option value="14">14
+<option value="15">15
+<option value="16">16
+<option value="17">17
+<option value="18">18
+<option value="19">19
+<option value="20">20
+<option value="21">21
+<option value="22">22
+<option value="23">23
+<option value="24">24
+<option value="25">25
+<option value="26">26
+<option value="27">27
+<option value="28">28
+<option value="29">29
+<option value="30">30
+</select>
+％
+
+<br><input type="button" value="高品質および作成成功率計算" onclick="keisan1(form)">
+
+
+<table class="table03">
+  <tr>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_1');return false;"><img src="board.gif" alt="木製品" class="img01"></a><br>木製品</td>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_2');return false;"><img src="tinkertool.gif" alt="道具" class="img01"></a><br>道具</td>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_3');return false;"><img src="sextantparts.gif" alt="部品" class="img01"></a><br>部品</td>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_4');return false;"><img src="plate.gif" alt="器具" class="img01"></a><br>器具</td>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_5');return false;"><img src="candlabra.gif" alt="その他" class="img01"></a><br>その他</td>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_6');return false;"><img src="necklace3.gif" alt="宝飾品" class="img01"></a><br>宝飾品</td>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_7');return false;"><img src="potkeg.gif" alt="組立部品" class="img01"></a><br>組立品</td>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_8');return false;"><img src="blight.gif" alt="トラップ" class="img01"></a><br>罠</td>
+    <td align="center" width="65"><a href="#" onClick="showHide('cat_9');return false;"><img src="pendantmagi.gif" alt="マジックアクセサリ" class="img01"><font size=1"><br>マジック<br>アクセサリ</font></a></td>
+  </tr>
+</table>
+
+
+<div id="cat_1" style="display: none">
+
+<h4>（１）木製品</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk0" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="nunchaku.gif" alt="" class="img01"><br>nunchaku<br>[ヌンチャク]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3
+<br><img src="board.gif" alt="board" class="img01">board×8</td>
+   <td align="center">70.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate000" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate001" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="jointplane.gif" alt="" class="img01"><br>jointing plane<br>[際かんな]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×4</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate002" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate003" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="mouldplane.gif" alt="" class="img01"><br>moulding planes<br>[丸かんな]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×4</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate004" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate005" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="smoothplane.gif" alt="" class="img01"><br>smoothing plane<br>[仕上げかんな]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×4</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate006" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate007" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="clockframe.gif" alt="" class="img01"><br>clock frame<br>[時計枠]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×6</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate008" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate009" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="axle.gif" alt="" class="img01"><br>axle<br>[心棒]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×1</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate010" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="rollingpin.gif" alt="" class="img01"><br>rolling pin<br>[めん棒]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×5</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate012" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate013" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="ramrod.gif" alt="" class="img01"><br>ramrod<br>[装填棒]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×8</td>
+   <td align="center">0.0<br>HS</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate252" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate253" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="swab.gif" alt="" class="img01"><br>swab<br>[モップ]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×4
+<br><img src="cloth5.gif" alt="cloth" class="img01">cloth×4</td>
+   <td align="center">0.0<br>HS</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate254" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate255" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="soften_reed.gif" alt="" class="img01"><br>softened reeds<br>[柔らかい茎]</td>
+   <td align="center"><img src="reed.gif" alt="乾いた茎" class="img01">reed×2
+<br><img src="scouring_toxin.gif" alt="毒洗浄液" class="img01">scouring toxin×1</td>
+   <td align="center">75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate014" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="basket.gif" alt="" class="img01"><br>round basket<br>[丸バスケット]</td>
+   <td align="center"><img src="shaft.gif" alt="shaft" class="img01">shaft×3
+<br><img src="soften_reed.gif" alt="軟らかい茎" class="img01">softened reeds×2</td>
+   <td align="center">75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate016" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="bushel.gif" alt="" class="img01"><br>bushel<br>[丸バスケット]</td>
+   <td align="center"><img src="shaft.gif" alt="shaft" class="img01">shaft×3
+<br><img src="soften_reed.gif" alt="軟らかい茎" class="img01">softened reeds×2</td>
+   <td align="center">75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate018" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="small_bushel.gif" alt="" class="img01"><br>small bushel<br>[小型ブッシェル枡]</td>
+   <td align="center"><img src="shaft.gif" alt="shaft" class="img01">shaft×2
+<br><img src="soften_reed.gif" alt="軟らかい茎" class="img01">softened reeds×1</td>
+   <td align="center">75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate020" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="picnic_basket.gif" alt="" class="img01"><br>picnic basket<br>[ピクニックバスケット]</td>
+   <td align="center"><img src="shaft.gif" alt="shaft" class="img01">shaft×2
+<br><img src="soften_reed.gif" alt="軟らかい茎" class="img01">softened reeds×1</td>
+   <td align="center">75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate022" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="winnowing_basket.gif" alt="" class="img01"><br>winnowing basket<br>[穀物ふるい]</td>
+   <td align="center"><img src="shaft.gif" alt="shaft" class="img01">shaft×3
+<br><img src="soften_reed.gif" alt="軟らかい茎" class="img01">softened reeds×2</td>
+   <td align="center">75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate024" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="square_basket.gif" alt="" class="img01"><br>square basket<br>[角型バスケット]</td>
+   <td align="center"><img src="shaft.gif" alt="shaft" class="img01">shaft×3
+<br><img src="soften_reed.gif" alt="軟らかい茎" class="img01">softened reeds×2</td>
+   <td align="center">75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate026" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="round_basket_01.gif" alt="" class="img01"><br>basket<br>[かご]</td>
+   <td align="center"><img src="shaft.gif" alt="shaft" class="img01">shaft×3
+<br><img src="soften_reed.gif" alt="軟らかい茎" class="img01">softened reeds×2</td>
+   <td align="center">75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate028" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="tall_basket_01.gif" alt="" class="img01"><br>tall round basket<br>[つぼ型バスケット]</td>
+   <td align="center"><img src="shaft.gif" alt="shaft" class="img01">shaft×4
+<br><img src="soften_reed.gif" alt="軟らかい茎" class="img01">softened reeds×3</td>
+   <td align="center">75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate030" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="small_square_basket.gif" alt="" class="img01"><br>small square basket<br>[小型角バスケット]</td>
+   <td align="center"><img src="shaft.gif" alt="shaft" class="img01">shaft×2
+<br><img src="soften_reed.gif" alt="軟らかい茎" class="img01">softened reeds×1</td>
+   <td align="center">75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate032" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="tall_basket_02.gif" alt="" class="img01"><br>tall basket<br>[縦型バスケット]</td>
+   <td align="center"><img src="shaft.gif" alt="shaft" class="img01">shaft×4
+<br><img src="soften_reed.gif" alt="軟らかい茎" class="img01">softened reeds×3</td>
+   <td align="center">75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate034" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="round_basket_02.gif" alt="" class="img01"><br>small round basket<br>[小型丸バスケット]</td>
+   <td align="center"><img src="shaft.gif" alt="shaft" class="img01">shaft×2
+<br><img src="soften_reed.gif" alt="軟らかい茎" class="img01">softened reeds×1</td>
+   <td align="center">75.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate036" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_2" style="display: none">
+
+<h4>（２）道具</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk1" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="scissors.gif" alt="" class="img01"><br>scissors<br>[ハサミ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">5.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate038" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate039" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="mortar.gif" alt="" class="img01"><br>mortar and pestlet<br>[乳鉢]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3</td>
+   <td align="center">20.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate040" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate041" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="scorp.gif" alt="" class="img01"><br>scorp<br>[彫刻刀]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate042" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate043" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="tinkertool.gif" alt="" class="img01"><br>tinker's tools<br>[細工道具]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">10.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate044" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate045" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="hatchet.gif" alt="" class="img01"><br>hatchet<br>[手斧]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate046" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate047" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="drawknife.gif" alt="" class="img01"><br>draw knife<br>[ドローナイフ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate048" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate049" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="sawingkit.gif" alt="" class="img01"><br>sewing kit<br>[裁縫道具]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">10.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate050" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate051" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="saw.gif" alt="" class="img01"><br>saw<br>[ノコギリ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate052" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate053" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="dove-saw.gif" alt="" class="img01"><br>dovetail saw<br>[ほぞ挽き鋸]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate054" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate055" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="froe.gif" alt="" class="img01"><br>froe<br>[木工なた]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate056" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate057" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="shovel.gif" alt="" class="img01"><br>shovel<br>[シャベル]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">40.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate058" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate059" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="hammer.gif" alt="" class="img01"><br>hammer<br>[ハンマー]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×1</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate060" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate061" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="tong.gif" alt="" class="img01"><br>tong<br>[やっとこ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×1</td>
+   <td align="center">35.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate062" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate063" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="wep42.gif" alt="" class="img01"><br>smith's hammer<br>[鍛冶ハンマー]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">40.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate064" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate065" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="wep41.gif" alt="" class="img01"><br>sledge hammer<br>[スレッジハンマー]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">40.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate066" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate067" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="inshave.gif" alt="" class="img01"><br>inshave<br>[U字かんな]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate068" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate069" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="wep24.gif" alt="" class="img01"><br>pickaxe<br>[ツルハシ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">40.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate070" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate071" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="lockpick.gif" alt="" class="img01"><br>lockpick<br>[ロックピック]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×1</td>
+   <td align="center">45.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate072" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="skillet.gif" alt="" class="img01"><br>skillet<br>[フライパン]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate074" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate075" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="floursifter.gif" alt="" class="img01"><br>flour sifter<br>[粉ふるい]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3</td>
+   <td align="center">50.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate076" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate077" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="fletchtool.gif" alt="" class="img01"><br>fletcher's tools<br>[弓矢作成ツール]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3</td>
+   <td align="center">35.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate078" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate079" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="mappen.gif" alt="" class="img01"><br>mapmaker's pen<br>[地図作成ペン]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×1</td>
+   <td align="center">25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate080" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate081" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="scribepen.gif" alt="" class="img01"><br>scribe's pen<br>[書写ペン]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×1</td>
+   <td align="center">25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate082" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate083" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="clippers.gif" alt="" class="img01"><br>clippers<br>[剪定バサミ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">50.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate084" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate085" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="metalengrave.gif" alt="" class="img01"><br>metal container engraving tool<br>[金属容器刻印ツール]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4
+<br><img src="spring.gif" alt="" class="img01">springs×1
+<br><img src="gear.gif" alt="" class="img01">gears×2
+<br><img src="diamond.gif" alt="" class="img01">diamond×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate086" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="wep33.gif" alt="" class="img01"><br>pitchfork<br>[くまで]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×8</td>
+   <td align="center">50.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate246" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate247" SIZE="4"></td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_3" style="display: none">
+
+<h4>（３）部品</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk2" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gear.gif" alt="" class="img01"><br>gears<br>[歯車]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">5.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate088" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="clockparts.gif" alt="" class="img01"><br>clock parts<br>[時計部品]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×1</td>
+   <td align="center">25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate090" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="barreltap.gif" alt="" class="img01"><br>barrel tap<br>[蛇口]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">35.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate092" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate093" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="spring.gif" alt="" class="img01"><br>springs<br>[バネ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">5.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate094" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="sextantparts.gif" alt="" class="img01"><br>sextant parts<br>[六分儀の部品]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate096" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="barrelhoop.gif" alt="" class="img01"><br>barrel hoop<br>[樽のたが]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×5</td>
+   <td align="center">0.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate098" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate099" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="hinge.gif" alt="" class="img01"><br>hinge<br>[ちょうつがい]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">5.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate100" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="bolaball.gif" alt="" class="img01"><br>bola balls<br>[ボーラボール]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×10</td>
+   <td align="center">45.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate102" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="jeweledfiligree.gif" alt="" class="img01"><br>jeweled filigree<br>[宝石細工の飾り]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2
+<br><img src="starsapphire.gif" alt="" class="img01">star sapphire×1
+<br><img src="ruby.gif" alt="" class="img01">ruby×1</td>
+   <td align="center">70.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate104" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_4" style="display: none">
+
+<h4>（４）器具</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk3" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="wep20.gif" alt="" class="img01"><br>butcher knife<br>[肉切り包丁]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate106" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate107" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="spoon.gif" alt="" class="img01"><br>spoon (left/right)<br>[スプーン (左/右)]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×1</td>
+   <td align="center">-5.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate108" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate109" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="plate.gif" alt="" class="img01"><br>plate<br>[皿]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">-5.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate110" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate111" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="fork.gif" alt="" class="img01"><br>fork (left/right)<br>[フォーク(左/右)]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×1</td>
+   <td align="center">-5.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate112" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate113" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="cleaver_w.gif" alt="" class="img01"><br>cleaver<br>[包丁]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3</td>
+   <td align="center">20.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate114" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate115" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="knife.gif" alt="" class="img01"><br>knife (left/right)<br>[ナイフ(左/右)]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×1</td>
+   <td align="center">-25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate116" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate117" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="goblet.gif" alt="" class="img01"><br>goblet<br>[ゴブレット]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">10.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate118" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate119" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="pewtermug.gif" alt="" class="img01"><br>pewter mug<br>[ピューターマグ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">10.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate120" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate121" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="wep22.gif" alt="" class="img01"><br>skinning knife<br>[皮はぎナイフ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate122" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate123" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="gargish_cleaver.gif" alt="" class="img01"><br>gargish cleaver<br>[ガーグクリーバー]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3</td>
+   <td align="center">20.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate248" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate249" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gargish_butcher_knife.gif" alt="" class="img01"><br>gargish butcher's knife<br>[ガーグ肉切り包丁]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">25.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate250" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate251" SIZE="4"></td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_5" style="display: none">
+
+<h4>（５）その他</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk4" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="keyring.gif" alt="" class="img01"><br>key ring<br>[キーリング]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2</td>
+   <td align="center">10.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate124" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate125" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="candlabra.gif" alt="" class="img01"><br>candlabra<br>[枝付き燭台]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate126" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate127" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="scales.gif" alt="" class="img01"><br>scales<br>[天秤]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate128" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate129" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="ironkey.gif" alt="" class="img01"><br>iron key<br>[金属のカギ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3</td>
+   <td align="center">20.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate130" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate131" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="globe.gif" alt="" class="img01"><br>globe<br>[世界儀]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate132" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate133" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="spyglass.gif" alt="" class="img01"><br>spyglass<br>[遠眼鏡]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate134" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate135" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="lantern.gif" alt="" class="img01"><br>lantern<br>[ランタン]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate136" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate137" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="heatstand.gif" alt="" class="img01"><br>heating stand<br>[加熱スタンド]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate138" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate139" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="shojilantern.gif" alt="" class="img01"><br>shoji lantern<br>[格子行灯]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×10
+<br><img src="board.gif" alt="board" class="img01">board×5</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate140" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate141" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="paperlantern.gif" alt="" class="img01"><br>paper lantern<br>[行灯]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×10
+<br><img src="board.gif" alt="board" class="img01">board×5</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate142" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate143" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="roundlantern.gif" alt="" class="img01"><br>round paper lantern<br>[丸行灯]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×10
+<br><img src="board.gif" alt="board" class="img01">board×5</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate144" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate145" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="windchime01.gif" alt="" class="img01"><br>wind chimes<br>[風鈴]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×15</td>
+   <td align="center">80.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate146" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate147" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="windchime02.gif" alt="" class="img01"><br>fancy wind chimes<br>[装飾風鈴]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×15</td>
+   <td align="center">80.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate148" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate149" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="termur_candelabra.gif" alt="" class="img01"><br>Ter-Mur style candleabra<br>[テルマー枝付き燭台]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×4</td>
+   <td align="center">55.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate150" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate151" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="match.gif" alt="" class="img01"><br>match<br>[点火棒]</td>
+   <td align="center"><img src="board.gif" alt="board" class="img01">board×4
+<br><img src="match_cord.gif" alt="match cord&#10;錬金" class="img01">火縄×10</td>
+   <td align="center">15.0<br>HS</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate256" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate257" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="farspeaker.gif" alt="" class="img01"><br>Farspeaker<br>[遠距離スピーカー]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×20
+<br><img src="emerald.gif" alt="" class="img01">emerald×10
+<br><img src="ruby.gif" alt="" class="img01">ruby×10
+<br><img src="copper_wire.gif" alt="copper wire" class="img01">copper wire×1
+</td>
+   <td align="center">80.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate262" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate263" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gorgon_lens.gif" alt="" class="img01"><br>Gorgon Lens<br>[ゴーゴンレンズ]</td>
+   <td align="center"><img src="crystal_dust.gif" alt="" class="img01">crystal dust×3
+<br><img src="bluscale.gif" alt="" class="img01">scale×2</td>
+   <td align="center">90.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate152" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="scale_collar.gif" alt="" class="img01"><br>scale collar<br>[鱗の首輪]</td>
+   <td align="center"><img src="bluscale.gif" alt="" class="img01">scale×4
+<br><img src="scourge.gif" alt="" class="img01">scourge×1</td>
+   <td align="center">50.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate154" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="dragon_lamp.gif" alt="" class="img01"><br>dragon lamp<br>[ドラゴンランプ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×8
+<br><img src="candlabra.gif" alt="" title="枝付き燭台" class="img01">candlabra×1
+<br><img src="workable_glass.gif" alt="" title="加工用ガラス" class="img01">workable glass×1</td>
+   <td align="center">85.0<br>KCTP</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate264" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="stained_glass_lamp.gif" alt="" class="img01"><br>stained glass lamp<br>[ステンドグラスのランプ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×8
+<br><img src="candlabra.gif" alt="" title="枝付き燭台" class="img01">candlabra×1
+<br><img src="workable_glass.gif" alt="" title="加工用ガラス" class="img01">workable glass×1</td>
+   <td align="center">85.0<br>KCTP</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate266" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="tall_double_lamp.gif" alt="" class="img01"><br>tall double lamp<br>[トールダブルランプ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×8
+<br><img src="candlabra.gif" alt="" title="枝付き燭台" class="img01">candlabra×1
+<br><img src="workable_glass.gif" alt="" title="加工用ガラス" class="img01">workable glass×1</td>
+   <td align="center">85.0<br>KCTP</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate268" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="curled_metal_sign_hanger.gif" alt="" class="img01"><br>Curled Metal Sign Hanger<br>[カールメタルサインハンガー]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×8
+</td>
+   <td align="center">40.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate270" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="flourished_metal_sign_hanger.gif" alt="" class="img01"><br>Flourished Metal Sign Hanger<br>[唐草メタルサインハンガー]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×8
+</td>
+   <td align="center">40.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate272" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="inward_curled_metal_sign_hanger.gif" alt="" class="img01"><br>Inward Curled Metal Sign Hanger<br>[内巻きカールメタルサインハンガー]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×8
+</td>
+   <td align="center">40.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate274" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="end_curled_metal_sign_hanger.gif" alt="" class="img01"><br>End Curled Metal Sign Hanger<br>[エンドカールメタルサインハンガー]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×8
+</td>
+   <td align="center">40.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate276" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="left_metal_door_s.gif" alt="" class="img01"> 　 <img src="right_metal_door_s.gif" alt="" class="img01"><br>Left/Right Metal Door(S)<br>[メタルドア左右(S)]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×50
+</td>
+   <td align="center">85.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate278" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="left_metal_door_e.gif" alt="" class="img01"> 　 <img src="right_metal_door_e.gif" alt="" class="img01"><br>Left/Right Metal Door(E)<br>[メタルドア左右(E)]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×50
+</td>
+   <td align="center">85.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate280" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="deed.gif" alt="" class="img01"> → <img src="currency_wall_safe.gif" alt="" class="img01"><br>Currency Wall Safe<br>[金庫]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×20
+</td>
+   <td align="center">-5.0<br>ToL</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate282" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_6" style="display: none">
+
+<h4>（６）宝飾品</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk5" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="ring.gif" alt="" class="img01"><br>ring<br>[指輪]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate156" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate157" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="acce.gif" alt="" class="img01"><br>bracelet<br>[ブレスレット]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate158" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate159" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gargish_necklace.gif" alt="" class="img01"><br>gargish necklace<br>[ガーゴイルネックレス]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3</td>
+   <td align="center">60.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate160" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate161" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="gargish_bracelet.gif" alt="" class="img01"><br>gargish bracelet<br>[ガーゴイルブレスレット]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3</td>
+   <td align="center">55.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate162" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate163" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="gargish_ring.gif" alt="" class="img01"><br>gargish ring<br>[ガーゴイルリング]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3</td>
+   <td align="center">65.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate164" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate165" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="gargish_earring.gif" alt="" class="img01"><br>gargish earring<br>[ガーゴイルイヤリング]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×3</td>
+   <td align="center">55.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate166" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate167" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="ring.gif" alt="" class="img01"><br>宝石名 ring<br>["宝石名"の指輪]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2
+<br>各種宝石×1</td>
+   <td align="center">40.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate168" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="necklace1.gif" alt="" class="img01"><br>宝石名 necklace (silver)<br>["宝石名"の首飾り(銀)]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2
+<br>各種宝石×1</td>
+   <td align="center">40.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate170" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="necklace2.gif" alt="" class="img01"><br>宝石名 necklace (jewelled)<br>["宝石名"の首飾り(宝石)]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2
+<br>各種宝石×1</td>
+   <td align="center">40.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate172" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="earring.gif" alt="" class="img01"><br>宝石名 earring<br>["宝石名"のイヤリング]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2
+<br>各種宝石×1</td>
+   <td align="center">40.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate174" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="necklace3.gif" alt="" class="img01"><br>宝石名 necklace (golden)<br>["宝石名"の首飾り(金)]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2
+<br>各種宝石×1</td>
+   <td align="center">40.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate176" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="acce.gif" alt="" class="img01"><br>宝石名 bracelet<br>["宝石名"の腕輪]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2
+<br>各種宝石×1</td>
+   <td align="center">40.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate178" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_7" style="display: none">
+
+<h4>（７）組立部品</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk6" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="axlegear.gif" alt="" class="img01"><br>axle and gears<br>[歯車付き心棒]</td>
+   <td align="center"><img src="axle.gif" alt="" class="img01">axle×1
+<br><img src="gear.gif" alt="" class="img01">gears×1</td>
+   <td align="center">-25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate180" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="clockparts.gif" alt="" class="img01"><br>clock parts<br>[時計部品]</td>
+   <td align="center"><img src="spring.gif" alt="" class="img01">springs×1
+<br><img src="axlegear.gif" alt="" class="img01">axle and gears×1</td>
+   <td align="center">-25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate182" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="sextantparts.gif" alt="" class="img01"><br>sextant parts<br>[六分儀の部品]</td>
+   <td align="center"><img src="hinge.gif" alt="" class="img01">hinge×1
+<br><img src="axlegear.gif" alt="" class="img01">axle and gears×1</td>
+   <td align="center">-25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate184" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="clock.gif" alt="" class="img01"><br>clock (left/right)<br>[時計(左/右)]</td>
+   <td align="center"><img src="clockparts.gif" alt="" class="img01">clock parts×1
+<br><img src="clockframe.gif" alt="" class="img01">clock frame×1</td>
+   <td align="center">-25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate186" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="sextant.gif" alt="" class="img01"><br>sextant<br>[六分儀]</td>
+   <td align="center"><img src="sextantparts.gif" alt="" class="img01">sextant parts×1</td>
+   <td align="center">-25.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate188" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="bola.gif" alt="" class="img01"><br>bola<br>[ボーラ]</td>
+   <td align="center"><img src="bolaball.gif" alt="" class="img01">bola balls×4
+<br><img src="leather-n2.gif" alt="leather" class="img01">leather×3</td>
+   <td align="center">60.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate190" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="potkeg.gif" alt="" class="img01"><br>potion keg<br>[ポーション樽]</td>
+   <td align="center"><img src="keg.gif" alt="" class="img01"> keg×1
+<br><img src="empbottle.gif" alt="" class="img01"> empty bottle×10
+<br><img src="barrellid.gif" alt="" class="img01"> barrel lid×1
+<br><img src="barreltap.gif" alt="" class="img01"> barrel tap×1</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate192" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="clockwork.gif" alt="" class="img01"><br>leather wolf assembly<br>[leather wolfの組立部品]</td>
+   <td align="center"><img src="cl_assembly.gif" alt="clockwork assembly" class="img01"> ×1
+<br><img src="p_crystal.gif" alt="" class="img01">power crystal×1
+<br><img src="void_essence.gif" alt="" class="img01">void essence×2</td>
+   <td align="center">90.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate194" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="clockwork.gif" alt="" class="img01"><br>clockwork scorpion assembly<br>[clockwork scorpionの組立部品]</td>
+   <td align="center"><img src="cl_assembly.gif" alt="clockwork assembly" class="img01"> ×1
+<br><img src="p_crystal.gif" alt="" class="img01">power crystal×1
+<br><img src="void_essence.gif" alt="" class="img01">void essence×1</td>
+   <td align="center">90.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate196" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="clockwork.gif" alt="" class="img01"><br>vollem assembly<br>[vollemの組立部品]</td>
+   <td align="center"><img src="cl_assembly.gif" alt="clockwork assembly" class="img01"> ×1
+<br><img src="p_crystal.gif" alt="" class="img01">power crystal×1
+<br><img src="void_essence.gif" alt="" class="img01">void essence×3</td>
+   <td align="center">90.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate198" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="hitching_rope.gif" alt="" class="img01"><br>hitching rope<br>[つなぎ縄]</td>
+   <td align="center"><img src="rope.gif" alt="" class="img01"> rope×1<br><img src="resolves_bridle.gif" alt="" class="img01">resolve's bridle×1</td>
+   <td align="center">60.0<br>動物学15.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate200" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="hitching_post_rep.gif" alt="" class="img01"><br>hitching post [Replica]<br>[つなぎ柱(レプリカ)]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×5
+<br><img src="animal_pheromone.gif" alt="" class="img01">animal pheromone×1
+<br><img src="hitching_rope.gif" alt="" class="img01"> hitching rope×2
+<br>Philip's Wooden Steed×1</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate202" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="arcanic_rune_stone.gif" alt="arcanic rune stone" class="img01"><br>arcanic rune stone<br>[アーケインルーン]</td>
+   <td align="center"><img src="crystal_shards.gif" alt="crystal shards" class="img01">crystal shards×1
+<br><img src="p_crystal.gif" alt="power crystal" class="img01">power crystal×5</td>
+   <td align="center">90.0<br>魔法80.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate204" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="void_orb.gif" alt="void orb" class="img01"><br>void orb<br>[虚無のオーブ]</td>
+   <td align="center"><img src="darksapphire.gif" alt="dark sapphire" class="img01">dark sapphire×1
+<br><img src="blackpearl.gif" alt="blackpearl" class="img01">black pearl×50</td>
+   <td align="center">90.0<br>魔法80.0<br>SA</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate206" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="advanced_training_dummy.gif" alt="advanced training dummy" class="img01"><br>advanced training dummy<br>[万能訓練ダミー]</td>
+   <td align="center"><img src="deed.gif" alt="deed" class="img01">training dummy×1
+<br><img src="plate05.gif" alt="plate tunic" class="img01">platemail tunic×1
+<br><img src="helm02.gif" alt="close helmet" class="img01">close helmet×1
+<br><img src="wep02.gif" alt="broadsword" class="img01">broadsword×1
+
+</td>
+   <td align="center">90.0<br>GTP<img src="book02.gif" alt="" title="training dummyの向きと&#10;同じ向きを選択する&#10;装備品にはプロパティが付いてないこと" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate258" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="distillery.gif" alt="distillery" class="img01"><br>distillery<br>[蒸留釜]</td>
+   <td align="center"><img src="metal_keg.gif" alt="metal keg" class="img01">metal keg×2
+<br><img src="heatstand.gif" alt="heating stand" class="img01">heating stand×4
+<br><img src="copper_wire.gif" alt="copper wire" class="img01">copper wire×1</td>
+   <td align="center">90.0<br>RTP</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate260" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_8" style="display: none">
+
+<h4>（８）トラップ</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk7" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center">dart trap<br>[仕掛け矢の罠]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×1
+<br><img src="bowbolt.gif" alt="crossbow bolt" class="img01">crossbow bolt×1</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate208" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center">poison trap<br>[毒の罠]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×1
+<br><img src="poipot.gif" alt="poison pot" class="img01">poison potion×1</td>
+   <td align="center">30.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate210" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center">explosion trap<br>[爆発トラップ]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×1
+<br><img src="exppot.gif" alt="exppot" class="img01">explosion potion×1</td>
+   <td align="center">55.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate212" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center">faction gas trap<br>[ガスの派閥罠]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×10
+<br><img src="poipot.gif" alt="poisonpot" class="img01">poison potion×1
+<br><img src="silvercoin.gif" alt="silver coin" class="img01">派閥銀×250</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate214" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center">faction explosion trap<br>[爆発の派閥罠]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×10
+<br><img src="exppot.gif" alt="exppot" class="img01">explosion potion×1
+<br><img src="silvercoin.gif" alt="silver coin" class="img01">派閥銀×250</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate216" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center">faction saw trap<br>[ノコギリの派閥罠]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×50
+<br><img src="gear.gif" alt="gear" class="img01">gears×1
+<br><img src="silvercoin.gif" alt="silver coin" class="img01">派閥銀×250</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate218" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center">faction spike trap<br>[スパイクの派閥罠]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×50
+<br><img src="spring.gif" alt="spring" class="img01">springs×1
+<br><img src="silvercoin.gif" alt="silver coin" class="img01">派閥銀×250</td>
+   <td align="center">65.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate220" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center">faction trap removal kit<br>[派閥罠解除ツール]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×10
+<br><img src="silvercoin.gif" alt="silver coin" class="img01">派閥銀×500</td>
+   <td align="center">90.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate222" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+<div id="cat_9" style="display: none">
+
+<h4>（９）マジックアクセサリ</h4>
+
+<table class="table02">
+ <tr bgcolor="#ffe0d0">
+   <td align="center" width="160" rowspan="2">製品名</td>
+   <td align="center" width="180" rowspan="2">必要材料</td>
+   <td align="center" width="210" colspan="3">作成に関する情報、スキル<INPUT readonly TYPE="text" NAME="sk8" SIZE="4"></td>
+ </tr>
+ <tr bgcolor="#ffe0d0">
+   <td align="center">作成<br>難易度</td>
+   <td align="center">作成<br>成功率</td>
+   <td align="center">高品質<br>成功率</td>
+ </tr>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="acce.gif" alt="" class="img01"><br>brilliant amber bracelet<br>[輝琥珀の腕輪]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×5
+<br><img src="amber.gif" alt="" class="img01">amber×20
+<br><img src="brilliantamber.gif" alt="" class="img01">brilliant amber×10</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate224" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate225" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="acce.gif" alt="" class="img01"><br>fire ruby bracelet<br>[ファイアルビーの腕輪]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×5
+<br><img src="ruby.gif" alt="" class="img01">ruby×20
+<br><img src="fireruby.gif" alt="" class="img01">fire ruby×10</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate226" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate227" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="acce.gif" alt="" class="img01"><br>dark sapphire bracelet<br>[ダークサファイアの腕輪]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×5
+<br><img src="sapphire.gif" alt="" class="img01">sapphire×20
+<br><img src="darksapphire.gif" alt="" class="img01">dark sapphire×10</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate228" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate229" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="acce.gif" alt="" class="img01"><br>white pearl bracelet<br>[白真珠の腕輪]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×5
+<br><img src="tourmaline.gif" alt="" class="img01">tourmaline×20
+<br><img src="whitepearl.gif" alt="" class="img01">white pearl×10</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate230" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate231" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="ring.gif" alt="" class="img01"><br>ecru citrine ring<br>[エクルーシトリンの指輪]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×5
+<br><img src="citrine.gif" alt="" class="img01">citrine×20
+<br><img src="ecrucirtine.gif" alt="" class="img01">ecru citrine×10</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate232" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate233" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="ring.gif" alt="" class="img01"><br>blue diamond ring<br>[ブルーダイヤの指輪]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×5
+<br><img src="diamond.gif" alt="" class="img01">diamond×20
+<br><img src="bluediamond.gif" alt="" class="img01">blue diamond×10</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate234" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate235" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="ring.gif" alt="" class="img01"><br>perfect emerald ring<br>[ピュアエメラルドの指輪]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×5
+<br><img src="emerald.gif" alt="" class="img01">emerald×20
+<br><img src="perfectemerald.gif" alt="" class="img01">perfect emerald×10</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate236" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate237" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="ring.gif" alt="" class="img01"><br>turquoise ring<br>[ターコイズの指輪]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×5
+<br><img src="amethyst.gif" alt="" class="img01">amethyst×20
+<br><img src="turquoise.gif" alt="" class="img01">turquoise×10</td>
+   <td align="center">75.0</td>
+   <td align="center"><INPUT readonly type="text" NAME="rate238" SIZE="4"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate239" SIZE="4"></td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="res_bracer.gif" alt="" class="img01"><br>Resillient Bracer<br>[回復の腕輪]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2
+<br><img src="essence.gif" alt="" class="img01"> Captured essence×1
+<br><img src="bluediamond.gif" alt="" class="img01">blue diamond×5
+<br><img src="diamond.gif" alt="" class="img01">diamond×50</td>
+   <td align="center">100.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate240" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ddffff">
+   <td align="center"><img src="ess_battle.gif" alt="" class="img01"><br>Essence of Battle<br>[バトルエッセンス]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2
+<br><img src="essence.gif" alt="" class="img01"> Captured essence×1
+<br><img src="fireruby.gif" alt="" class="img01">fire ruby×5
+<br><img src="ruby.gif" alt="" class="img01">ruby×50</td>
+   <td align="center">100.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate242" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+ <tr bgcolor="#ccffff">
+   <td align="center"><img src="pendantmagi.gif" alt="" class="img01"><br>Pendant of the Magi<br>[魔術師のペンダント]</td>
+   <td align="center"><img src="iron-ingot.gif" alt="ingot" class="img01">ingot×2
+<br><img src="eye_travesty.gif" alt="" class="img01"> Eye of the travesty×1
+<br><img src="whitepearl.gif" alt="" class="img01">white pearl×5
+<br><img src="starsapphire.gif" alt="" class="img01">star sapphire×50</td>
+   <td align="center">100.0<br><img src="recipescroll.gif" alt="recipe" class="img01"></td>
+   <td align="center"><INPUT readonly type="text" NAME="rate244" SIZE="4"></td>
+   <td align="center">―</td>
+   </tr>
+
+</table>
+<br class="cle">
+
+</div>
+</form>
+
+</BODY>
+</HTML>
+
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

@@ -1,0 +1,916 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD>
+<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-style-type" content="text/css">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<meta http-equiv="content-script-type" content="text/javascript">
+<TITLE>Runic toolの効果 （アイテム改良）</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541900950</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+
+<h2>Runic toolの効果（アイテム改良）</h2>
+
+<hr>
+
+<h3>使用Toolと予算ポイント</h3>
+
+アイテムを改良したとき、使用したRunic toolおよびオプションにより、予算ポイントが設定されます。
+<br>下の表はtool毎の予算ポイントをまとめたもので、改良結果から推測した数値です。
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="100" rowspan="5">プロパティ</td>
+  <td width="60"><img src="du-runic.gif" alt="" class="img01"></td>
+  <td width="60"><img src="sh-runic.gif" alt="" class="img01"></td>
+  <td width="60"><img src="co-runic.gif" alt="" class="img01"></td>
+  <td width="60"><img src="br-runic.gif" alt="" class="img01"></td>
+  <td width="60"><img src="go-runic.gif" alt="" class="img01"></td>
+  <td width="60"><img src="ag-runic.gif" alt="" class="img01"></td>
+  <td width="60"><img src="ve-runic.gif" alt="" class="img01"></td>
+  <td width="60"><img src="va-runic.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td><img src="dul_mallet.gif" alt="" class="img01"></td>
+  <td><img src="sha_mallet.gif" alt="" class="img01"></td>
+  <td><img src="cop_mallet.gif" alt="" class="img01"></td>
+  <td><img src="bro_mallet.gif" alt="" class="img01"></td>
+  <td><img src="gol_mallet.gif" alt="" class="img01"></td>
+  <td><img src="aga_mallet.gif" alt="" class="img01"></td>
+  <td><img src="verite_mallet.gif" alt="" class="img01"></td>
+  <td><img src="valorite_mallet.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td></td>
+  <td><img src="sp-runic.gif" alt="" class="img01"></td>
+  <td></td>
+  <td></td>
+  <td><img src="ho-runic.gif" alt="" class="img01"></td>
+  <td></td>
+  <td></td>
+  <td><img src="ba-runic.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td></td>
+  <td><img src="oak-runic.gif" alt="" class="img01"></td>
+  <td></td>
+  <td><img src="ash-runic.gif" alt="" class="img01"></td>
+  <td></td>
+  <td><img src="yew-runic.gif" alt="" class="img01"></td>
+  <td></td>
+  <td><img src="heartwood-runic.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#f0f0f0">
+  <td></td>
+  <td><img src="oak-flet.gif" alt="" class="img01"></td>
+  <td></td>
+  <td><img src="ash-flet.gif" alt="" class="img01"></td>
+  <td></td>
+  <td><img src="yew-flet.gif" alt="" class="img01"></td>
+  <td></td>
+  <td><img src="heartwood-flet.gif" alt="" class="img01"></td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>1</td>
+  <td>60</td>
+  <td>100</td>
+  <td>140</td>
+  <td>180</td>
+  <td>220</td>
+  <td>260</td>
+  <td>300</td>
+  <td>340</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>2</td>
+  <td>100</td>
+  <td>140</td>
+  <td>180</td>
+  <td>220</td>
+  <td>260</td>
+  <td>300</td>
+  <td>340</td>
+  <td>380</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>3</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>220</td>
+  <td>260</td>
+  <td>300</td>
+  <td>340</td>
+  <td>380</td>
+  <td>420</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>4</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>300</td>
+  <td>340</td>
+  <td>380</td>
+  <td>420</td>
+  <td>460</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>5</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>420</td>
+  <td>460</td>
+  <td>500</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>6</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>540</td>
+ </tr>
+</table>
+
+オプションによる予算ポイントボーナス
+<ul class="list02">
+<li>パワフル製造　：　予算ポイント＋20</li>
+<li>補強不可　：　予算ポイント＋40</li>
+<li>修理不可　：　予算ポイント＋60</li>
+</ul>
+
+
+<h3>プロパティ強度と予算ポイント</h3>
+
+プロパティが付加されるとき、強度に応じて予算ポイントが消費されます。
+<br>また、武器ダメージ、回避低下など最大値が同じプロパティでも、同じ強度を付加するために
+必要な予算ポイントが異なる場合もあります。
+
+
+<h4>武器</h4>
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="140">プロパティ</td>
+  <td width="540" colspan="12">プロパティ表示値または強度<br>[予算ポイント]</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>STR</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[50]</td>
+  <td>3<br>[70]</td>
+  <td>4<br>[80]</td>
+  <td>5<br>[140]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>DEX<br>INT</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[50]</td>
+  <td>3<br>[60]</td>
+  <td>4<br>[80]</td>
+  <td>5<br>[140]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>HP</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[60]</td>
+  <td>3<br>[80]</td>
+  <td>4<br>[140]</td>
+  <td colspan="8">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>Stamina<br>Mana</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[60]</td>
+  <td>3<br>[70]</td>
+  <td>4<br>[80]</td>
+  <td>5<br>[140]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>HP回復<br>Stamina回復<br>Mana回復</td>
+  <td>3<br>[50]</td>
+  <td>6<br>[120]</td>
+  <td>9<br>[220]</td>
+  <td colspan="9">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>マナコスト</td>
+  <td>-1<br>[40]</td>
+  <td>-2<br>[60]</td>
+  <td>-3<br>[70]</td>
+  <td>-4<br>[80]</td>
+  <td>-5<br>[140]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>武器ダメージ</td>
+  <td>10<br>[]</td>
+  <td>20<br>[40]</td>
+  <td>30<br>[50]</td>
+  <td>40<br>[60]</td>
+  <td>50<br>[80]</td>
+  <td>60<br>[120]</td>
+  <td>70<br>[140]</td>
+  <td colspan="5">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>速度</td>
+  <td>5<br>[]</td>
+  <td>10<br>[40]</td>
+  <td>15<br>[50]</td>
+  <td>20<br>[60]</td>
+  <td>25<br>[70]</td>
+  <td>30<br>[80]</td>
+  <td>35<br>[120]</td>
+  <td>40<br>[140]</td>
+  <td colspan="4">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>命中</td>
+  <td>5<br>[40]</td>
+  <td>10<br>[80]</td>
+  <td>15<br>[100]</td>
+  <td>20<br>[160]</td>
+  <td colspan="8">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>命中(投擲,弓)</td>
+  <td>5<br>[]</td>
+  <td>10<br>[]</td>
+  <td>15<br>[60]</td>
+  <td>20<br>[80]</td>
+  <td>25<br>[100]</td>
+  <td>30<br>[140]</td>
+  <td>35<br>[160]</td>
+  <td colspan="5">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>回避<br>属性抵抗<br>物理ダメージ反射</td>
+  <td>5<br>[40]</td>
+  <td>10<br>[60]</td>
+  <td>15<br>[80]</td>
+  <td>20<br>[140]</td>
+  <td colspan="8">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>回避(投擲,弓)</td>
+  <td>5<br>[]</td>
+  <td>10<br>[]</td>
+  <td>15<br>[60]</td>
+  <td>20<br>[70]</td>
+  <td>25<br>[80]</td>
+  <td>30<br>[120]</td>
+  <td>35<br>[140]</td>
+  <td colspan="5">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>追加魔法<br>エリア攻撃<br>命中低下<br>スタミナリーチ</td>
+  <td>10<br>[]</td>
+  <td>20<br>[40]</td>
+  <td>30<br>[50]</td>
+  <td>40<br>[60]</td>
+  <td>50<br>[80]</td>
+  <td>60<br>[120]</td>
+  <td>70<br>[140]</td>
+  <td colspan="5">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>マナリーチ<br>ライフリーチ</td>
+  <td>10<br>[]</td>
+  <td>20<br>[40]</td>
+  <td>30<br>[50]</td>
+  <td>40<br>[70]</td>
+  <td>50<br>[80]</td>
+  <td>60<br>[120]</td>
+  <td>70<br>[140]</td>
+  <td colspan="5">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>回避低下<br>スタミナダウン<br>マナダウン</td>
+  <td>10<br>[]</td>
+  <td>20<br>[50]</td>
+  <td>30<br>[60]</td>
+  <td>40<br>[80]</td>
+  <td>50<br>[90]</td>
+  <td>60<br>[140]</td>
+  <td>70<br>[160]</td>
+  <td colspan="5">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>魔道武器</td>
+  <td>-25<br>[40]</td>
+  <td>-20<br>[80]</td>
+  <td>-15<br>[160]</td>
+  <td colspan="9">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>ポーション強化</td>
+  <td>5<br>[40]</td>
+  <td>10<br>[80]</td>
+  <td>15<br>[160]</td>
+  <td colspan="9">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>幸運</td>
+  <td>40<br>[]</td>
+  <td>50<br>[40]</td>
+  <td>60<br>[50]</td>
+  <td>70<br>[50]</td>
+  <td>80<br>[60]</td>
+  <td>90<br>[70]</td>
+  <td>100<br>[80]</td>
+  <td>110<br>[]</td>
+  <td>120<br>[120]</td>
+  <td>130<br>[140]</td>
+  <td>140<br>[140]</td>
+  <td>150<br>[160]</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>幸運(投擲,弓)</td>
+  <td>60<br>[40]</td>
+  <td>70<br>[40]</td>
+  <td>80<br>[50]</td>
+  <td>90<br>[60]</td>
+  <td>100<br>[60]</td>
+  <td>110<br>[70]</td>
+  <td>120<br>[80]</td>
+  <td>130<br>[]</td>
+  <td>140<br>[120]</td>
+  <td>150<br>[140]</td>
+  <td>160<br>[140]</td>
+  <td>170<br>[160]</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>属性攻撃</td>
+  <td>10<br>[]</td>
+  <td>20<br>[]</td>
+  <td>30<br>[]</td>
+  <td>40<br>[40]</td>
+  <td>50<br>[50]</td>
+  <td>60<br>[60]</td>
+  <td>70<br>[80]</td>
+  <td>80<br>[100]</td>
+  <td>90<br>[120]</td>
+  <td>100<br>[120]</td>
+  <td colspan="2">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>装備条件</td>
+  <td>-10<br>[]</td>
+  <td>-20<br>[]</td>
+  <td>-30<br>[]</td>
+  <td>-40<br>[40]</td>
+  <td>-50<br>[50]</td>
+  <td>-60<br>[60]</td>
+  <td>-70<br>[80]</td>
+  <td>-80<br>[100]</td>
+  <td>-90<br>[120]</td>
+  <td>-100<br>[120]</td>
+  <td colspan="2">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>遠距離ボーナス</td>
+  <td>5<br>[]</td>
+  <td>10<br>[]</td>
+  <td>15<br>[]</td>
+  <td>20<br>[50]</td>
+  <td>25<br>[60]</td>
+  <td>30<br>[70]</td>
+  <td>35<br>[80]</td>
+  <td>40<br>[100]</td>
+  <td>45<br>[160]</td>
+  <td>50<br>[180]</td>
+  <td colspan="2">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>耐久性</td>
+  <td>40<br>[]</td>
+  <td>50<br>[40]</td>
+  <td>60<br>[40]</td>
+  <td>70<br>[50]</td>
+  <td>80<br>[60]</td>
+  <td>90<br>[60]</td>
+  <td>100<br>[80]</td>
+  <td>110<br>[100]</td>
+  <td>120<br>[100]</td>
+  <td>130<br>[120]</td>
+  <td>140<br>[120]</td>
+  <td>150<br>[140]</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>自己修復</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[50]</td>
+  <td>3<br>[60]</td>
+  <td>4<br>[80]</td>
+  <td>5<br>[80]</td>
+  <td>6<br>[120]</td>
+  <td>7<br>[140]</td>
+  <td colspan="5">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>ファストキャスト</td>
+  <td>[120]</td>
+  <td colspan="11">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>詠唱可</td>
+  <td>[80]</td>
+  <td colspan="11">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>特効</td>
+  <td>[90]</td>
+  <td colspan="11">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>好戦</td>
+  <td>[90]</td>
+  <td colspan="11">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>片手使用可</td>
+  <td>[]</td>
+  <td colspan="11">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>吸血<sup>2)</sup></td>
+  <td>[100]</td>
+  <td colspan="11">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>ベストウェポンスキル</td>
+  <td>[]</td>
+  <td colspan="11">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>麻痺カウンター</td>
+  <td>[100]</td>
+  <td colspan="11">&nbsp;</td>
+ </tr>
+</table>
+
+<h4>防具</h4>
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="140">プロパティ</td>
+  <td width="540" colspan="12">プロパティ表示値または強度<br>[予算ポイント]</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>STR<br>DEX<br>INT</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[50]</td>
+  <td>3<br>[60]</td>
+  <td>4<br>[80]</td>
+  <td>5<br>[140]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>HP</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[50]</td>
+  <td>3<br>[60]</td>
+  <td>4<br>[70]</td>
+  <td>5<br>[80]</td>
+  <td>6<br>[120]</td>
+  <td>7<br>[140]</td>
+  <td colspan="5">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>Stamina<br>Mana</td>
+  <td>2<br>[40]</td>
+  <td>4<br>[60]</td>
+  <td>6<br>[70]</td>
+  <td>8<br>[80]</td>
+  <td>10<br>[140]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>HP回復<br>Stamina回復<br>Mana回復</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[60]</td>
+  <td>3<br>[80]</td>
+  <td>4<br>[140]</td>
+  <td colspan="8">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>HP変換</td>
+  <td>3<br>[40]</td>
+  <td>6<br>[50]</td>
+  <td>9<br>[60]</td>
+  <td>12<br>[80]</td>
+  <td>15<br>[120]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>マナコスト</td>
+  <td>-2<br>[40]</td>
+  <td>-4<br>[60]</td>
+  <td>-6<br>[70]</td>
+  <td>-8<br>[80]</td>
+  <td>-10<br>[140]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>秘薬コスト</td>
+  <td>-5<br>[40]</td>
+  <td>-10<br>[60]</td>
+  <td>-15<br>[70]</td>
+  <td>-20<br>[80]</td>
+  <td>-25<br>[140]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>命中<br>回避</td>
+  <td>1<br>[]</td>
+  <td>2<br>[40]</td>
+  <td>3<br>[50]</td>
+  <td>4<br>[60]</td>
+  <td>5<br>[100]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>属性抵抗<br>物理ダメージ反射</td>
+  <td>5<br>[40]</td>
+  <td>10<br>[60]</td>
+  <td>15<br>[80]</td>
+  <td>20<br>[140]</td>
+  <td colspan="8">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>ポーション強化</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[70]</td>
+  <td>3<br>[100]</td>
+  <td colspan="9">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>詠唱集中</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[80]</td>
+  <td>3<br>[140]</td>
+  <td colspan="9">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>幸運</td>
+  <td>40<br>[]</td>
+  <td>50<br>[40]</td>
+  <td>60<br>[50]</td>
+  <td>70<br>[50]</td>
+  <td>80<br>[60]</td>
+  <td>90<br>[70]</td>
+  <td>100<br>[80]</td>
+  <td>110<br>[]</td>
+  <td>120<br>[120]</td>
+  <td>130<br>[140]</td>
+  <td>140<br>[140]</td>
+  <td>150<br>[160]</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>装備条件</td>
+  <td>-10<br>[]</td>
+  <td>-20<br>[]</td>
+  <td>-30<br>[]</td>
+  <td>-40<br>[40]</td>
+  <td>-50<br>[50]</td>
+  <td>-60<br>[60]</td>
+  <td>-70<br>[80]</td>
+  <td>-80<br>[100]</td>
+  <td>-90<br>[120]</td>
+  <td>-100<br>[120]</td>
+  <td colspan="2">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>耐久性</td>
+  <td>40<br>[]</td>
+  <td>50<br>[40]</td>
+  <td>60<br>[40]</td>
+  <td>70<br>[50]</td>
+  <td>80<br>[60]</td>
+  <td>90<br>[60]</td>
+  <td>100<br>[80]</td>
+  <td>110<br>[100]</td>
+  <td>120<br>[100]</td>
+  <td>130<br>[120]</td>
+  <td>140<br>[120]</td>
+  <td>150<br>[140]</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>自己修復</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[50]</td>
+  <td>3<br>[60]</td>
+  <td>4<br>[80]</td>
+  <td>5<br>[80]</td>
+  <td>6<br>[120]</td>
+  <td>7<br>[140]</td>
+  <td colspan="5">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>瞑想可</td>
+  <td>[80]</td>
+  <td colspan="11">&nbsp;</td>
+ </tr>
+</table>
+
+<h4>盾</h4>
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="140">プロパティ</td>
+  <td width="540" colspan="12">プロパティ表示値または強度<br>[予算ポイント]</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>STR<br>DEX<br>INT</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[50]</td>
+  <td>3<br>[60]</td>
+  <td>4<br>[80]</td>
+  <td>5<br>[140]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>HP</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[50]</td>
+  <td>3<br>[60]</td>
+  <td>4<br>[70]</td>
+  <td>5<br>[80]</td>
+  <td>6<br>[120]</td>
+  <td>7<br>[140]</td>
+  <td colspan="5">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>Stamina<br>Mana</td>
+  <td>2<br>[40]</td>
+  <td>4<br>[60]</td>
+  <td>6<br>[70]</td>
+  <td>8<br>[80]</td>
+  <td>10<br>[140]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>HP回復<br>Stamina回復<br>Mana回復</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[60]</td>
+  <td>3<br>[80]</td>
+  <td>4<br>[140]</td>
+  <td colspan="8">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>HP変換</td>
+  <td>3<br>[40]</td>
+  <td>6<br>[50]</td>
+  <td>9<br>[60]</td>
+  <td>12<br>[80]</td>
+  <td>15<br>[120]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>マナ変換</td>
+  <td>5<br>[]</td>
+  <td>10<br>[50]</td>
+  <td>15<br>[60]</td>
+  <td>20<br>[80]</td>
+  <td>25<br>[140]</td>
+  <td>30<br>[160]</td>
+  <td colspan="6">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>マナコスト</td>
+  <td>-1<br>[40]</td>
+  <td>-2<br>[60]</td>
+  <td>-3<br>[70]</td>
+  <td>-4<br>[80]</td>
+  <td>-5<br>[140]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>武器ダメージ</td>
+  <td>5<br>[]</td>
+  <td>10<br>[40]</td>
+  <td>15<br>[50]</td>
+  <td>20<br>[60]</td>
+  <td>25<br>[80]</td>
+  <td>30<br>[120]</td>
+  <td>35<br>[140]</td>
+  <td colspan="5">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>速度</td>
+  <td>5<br>[60]</td>
+  <td>10<br>[140]</td>
+  <td colspan="10">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>命中<br>回避</td>
+  <td>1<br>[]</td>
+  <td>2<br>[40]</td>
+  <td>3<br>[50]</td>
+  <td>4<br>[60]</td>
+  <td>5<br>[100]</td>
+  <td colspan="7">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>属性抵抗<br>物理ダメージ反射</td>
+  <td>5<br>[40]</td>
+  <td>10<br>[60]</td>
+  <td>15<br>[80]</td>
+  <td>20<br>[140]</td>
+  <td colspan="8">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>幸運</td>
+  <td>40<br>[]</td>
+  <td>50<br>[40]</td>
+  <td>60<br>[50]</td>
+  <td>70<br>[50]</td>
+  <td>80<br>[60]</td>
+  <td>90<br>[70]</td>
+  <td>100<br>[80]</td>
+  <td>110<br>[]</td>
+  <td>120<br>[120]</td>
+  <td>130<br>[140]</td>
+  <td>140<br>[140]</td>
+  <td>150<br>[160]</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>装備条件</td>
+  <td>-10<br>[]</td>
+  <td>-20<br>[]</td>
+  <td>-30<br>[]</td>
+  <td>-40<br>[40]</td>
+  <td>-50<br>[50]</td>
+  <td>-60<br>[60]</td>
+  <td>-70<br>[80]</td>
+  <td>-80<br>[100]</td>
+  <td>-90<br>[120]</td>
+  <td>-100<br>[120]</td>
+  <td colspan="2">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>耐久性</td>
+  <td>40<br>[]</td>
+  <td>50<br>[40]</td>
+  <td>60<br>[40]</td>
+  <td>70<br>[50]</td>
+  <td>80<br>[60]</td>
+  <td>90<br>[60]</td>
+  <td>100<br>[80]</td>
+  <td>110<br>[100]</td>
+  <td>120<br>[100]</td>
+  <td>130<br>[120]</td>
+  <td>140<br>[120]</td>
+  <td>150<br>[140]</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>自己修復</td>
+  <td>1<br>[40]</td>
+  <td>2<br>[50]</td>
+  <td>3<br>[60]</td>
+  <td>4<br>[80]</td>
+  <td>5<br>[80]</td>
+  <td>6<br>[120]</td>
+  <td>7<br>[140]</td>
+  <td colspan="5">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>ファストキャスト</td>
+  <td>[120]</td>
+  <td colspan="11">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>詠唱可</td>
+  <td>[80]</td>
+  <td colspan="11">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>麻痺カウンター</td>
+  <td>[100]</td>
+  <td colspan="11">&nbsp;</td>
+ </tr>
+</table>
+
+<h3>プロパティワードと付加プロパティ</h3>
+
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="150">プロパティワード</td>
+  <td width="150">近接武器</td>
+  <td width="150">遠距離武器</td>
+  <td width="150">防具</td>
+  <td width="150">盾</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>Mighty/Vitality<br>[豪傑の/剛力]</td>
+  <td>STR<br>ヒットポイント<br>ヒットポイント回復<br>ライフリーチ</td>
+  <td>STR<br>ヒットポイント<br>ヒットポイント回復<br>ライフリーチ</td>
+  <td>STR<br>ヒットポイント<br>ヒットポイント回復<br>ヒットポイント変換</td>
+  <td>STR<br>ヒットポイント<br>ヒットポイント回復<br>ヒットポイント変換</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>Mystic/Sorcery<br>[悟りの/魔力]</td>
+  <td>INT<br>マナ<br>マナコスト<br>マナ回復<br>マナリーチ</td>
+  <td>INT<br>マナ<br>マナコスト<br>マナ回復<br>マナリーチ</td>
+  <td>INT<br>マナ<br>マナコスト<br>マナ回復<br>瞑想可</td>
+  <td>INT<br>マナ<br>マナコスト<br>マナ回復<br>マナ変換</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>Animated/Haste<br>[疾風の/速攻]</td>
+  <td>DEX<br>スタミナ<br>スタミナ回復<br>速度<br>スタミナリーチ</td>
+  <td>DEX<br>スタミナ<br>スタミナ回復<br>速度<br>スタミナリーチ</td>
+  <td>DEX<br>スタミナ<br>スタミナ回復</td>
+  <td>DEX<br>スタミナ<br>スタミナ回復<br>速度</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>Arcane/Wizardry<br>[言霊の/魔術]</td>
+  <td>INT<br>マナ<br>マナコスト<br>マナ回復<br>マナリーチ<br>マナダウン<br>ファストキャスト<br>詠唱可<br>魔道武器</td>
+  <td>INT<br>マナ<br>マナコスト<br>マナ回復<br>マナリーチ<br>マナダウン<br>ファストキャスト<br>詠唱可</td>
+  <td>INT<br>マナ<br>マナコスト<br>秘薬コスト<br>マナ回復<br>瞑想可<br>詠唱集中</td>
+  <td>INT<br>マナ<br>マナコスト<br>マナ回復<br>ファストキャスト<br>詠唱可</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>Exquisite/Quality<br>[匠の/上質]</td>
+  <td>自己修復<br>耐久性<br>装備条件<br>属性攻撃<br>魔道武器<br>特効<br>詠唱可</td>
+  <td>自己修復<br>耐久性<br>装備条件<br>属性攻撃<br>遠距離ボーナス<br>特効<br>詠唱可<br>片手使用可</td>
+  <td>自己修復<br>耐久性<br>装備条件<br>瞑想可</td>
+  <td>自己修復<br>耐久性<br>装備条件<br>詠唱可</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>Vampiric/the Vampire<br>[夢魔の/吸血]</td>
+  <td>ライフリーチ<br>スタミナリーチ<br>マナリーチ<br>スタミナダウン<br>マナダウン<br>吸血</td>
+  <td>ライフリーチ<br>スタミナリーチ<br>マナリーチ<br>スタミナダウン<br>マナダウン</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>Invigorating/Restoration<br>[息吹の/再生]</td>
+  <td>ヒットポイント回復<br>スタミナ回復<br>マナ回復</td>
+  <td>ヒットポイント回復<br>スタミナ回復<br>マナ回復</td>
+  <td>ヒットポイント回復<br>スタミナ回復<br>マナ回復<br>ヒットポイント変換</td>
+  <td>ヒットポイント回復<br>スタミナ回復<br>マナ回復<br>ヒットポイント変換<br>マナ変換</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>Fortified/Defense<br>[見切りの/護身]</td>
+  <td>物理抵抗<br>炎抵抗<br>冷気抵抗<br>毒抵抗<br>エネルギー抵抗</td>
+  <td>物理抵抗<br>炎抵抗<br>冷気抵抗<br>毒抵抗<br>エネルギー抵抗</td>
+  <td>物理抵抗<br>炎抵抗<br>冷気抵抗<br>毒抵抗<br>エネルギー抵抗</td>
+  <td>物理抵抗<br>炎抵抗<br>冷気抵抗<br>毒抵抗<br>エネルギー抵抗</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>Auspicious/Fortune<br>[強運の/開運]</td>
+  <td>幸運</td>
+  <td>幸運</td>
+  <td>幸運</td>
+  <td>幸運</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>Charmed/Alchemy<br>[薬師の/錬金]</td>
+  <td>ポーション強化<br>片手武器のみ</td>
+  <td>片手使用可</td>
+  <td>ポーション強化</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr bgcolor="#ddddff">
+  <td>Vicious/Slaughter<br>[流血の/殲滅]</td>
+  <td>追加魔法<br>エリア攻撃<br>命中<br>武器ダメージ<br>好戦</td>
+  <td>命中<br>武器ダメージ</td>
+  <td>命中</td>
+  <td>命中<br>武器ダメージ</td>
+ </tr>
+ <tr bgcolor="#eeeeff">
+  <td>Towering/Aegis<br>[堅牢なる/イージス]</td>
+  <td>命中低下<br>回避<br>麻痺カウンター</td>
+  <td>命中低下<br>回避<br>麻痺カウンター</td>
+  <td>回避<br>詠唱集中</td>
+  <td>回避<br>麻痺カウンター<br>マナ変換</td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td>ワードに含まれない</td>
+  <td>ベストウェポンスキル<br>物理ダメージ反射<br>回避低下</td>
+  <td>物理ダメージ反射<br>回避低下</td>
+  <td>物理ダメージ反射</td>
+  <td>物理ダメージ反射</td>
+ </tr>
+</table>
+
+<br class="cle">
+吸血は、bleed attackのスペシャルムーブを持つ武器に付加されます。
+<br>防具以外の属性抵抗は、1種類しか付加されません。
+<br>近接武器の麻痺カウンターおよび物理ダメージ反射は、両手武器に付加されます。
+<br>近接武器のポーション強化は、片手武器に付加されます。
+
+</body>
+</html>
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>

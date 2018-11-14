@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
+<HTML lang="ja">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<link href="style_2.css" type="text/css" rel="stylesheet">
+<TITLE>fish monger[魚商人]のクエスト</TITLE>
+</HEAD>
+<BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898789</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
+<h2>fish monger[魚商人]のクエスト</h2>
+
+<hr>
+<h3>１．クエストの内容</h3>
+
+UOHS（未踏の航路）を導入することで、Britanniaの各地にいるfish monger[魚商人]からクエストを受けることができるようになります。
+<br>クエストを受けるためには、荷物を入れることができる船を近くに接岸しておく必要があります。
+
+
+<p>fish mongerがいる町</p>
+<ul class="list03">
+ <li>Sea Market 浮かぶ市場</li>
+ <li>Britain</li>
+ <li>Jhelom</li>
+ <li>Moonglow</li>
+ <li>Papua</li>
+ <li>Skara Brae</li>
+ <li>Trinsic</li>
+ <li>Vesper</li>
+</ul>
+
+クエストを受けると船倉に運んで欲しい魚介類とその場所が示された木箱 <img src="s-crate.gif" alt="" class="img01"> が入るので、
+指示された魚を入手して、目的の場所に船で輸送します。
+<br>なお、木箱を取り出すことはできません。
+<br><img src="fishbulk_1kind.gif" alt="" class="img02">
+<br>魚を箱に詰めて目的地に運び、そこにいるfish mongerをダブルクリックすると、クエストは完了し、報酬品が鞄に入ります。
+<br>クエストを繰り返し完了すると、魚商人ギルドでの地位が上がり、
+2種類以上（最大6種類）の魚介類を運ぶクエストも依頼されるようになります。
+<br>ただし、クエストを受けてからそれを破棄（船が失われても同様）すると、魚商人ギルドでの地位が下がってしまいます。
+<br><img src="fishbulk_00.jpg" alt="" class="img02" width="280" height="305">
+<img src="fishbulk_01.jpg" alt="" class="img02" width="280" height="240">
+
+<h4><font color="#ff0000">注意</font></h4>
+UOHS（未踏の航路）以前の船でも、依頼を受けることはできますが、依頼される魚介類の種類は1種類に限定されます。
+
+
+<h4>Publish68.2修正</h4>
+2010/10/16に導入された修正パブリッシュにより、依頼される魚介類の種類がキャラクターの釣りスキルに依存するようになりました。
+<br>スキルが高い場合でも、難易度の低い魚介類の配送を依頼される場合があります。
+
+<ul class="list02">
+ <li>カニ・ロブスター　：　スキル制限なし</li>
+ <li>浅瀬で釣れる魚　：　スキル制限なし</li>
+ <li>深海で釣れる魚　：　スキル80以上</li>
+ <li>洞窟で釣れる魚　：　スキル106以上</li>
+</ul>
+
+<h4>Publish72修正</h4>
+依頼される魚介類の数量は、その種類ごとに配送した（破棄した）数量により決まっていましたが、
+<br>このパブリッシュ以降、依頼数量は、種類ごとに10→15→20→20→・・・・となります。
+<br>修正前は、依頼を完了し続けても、10→15→20→10→15→20→・・・・・となっていました。
+
+
+
+<h3>２．報酬ポイントの計算</h3>
+
+魚介類の配送を完了したときにもらえる報酬は、配送した魚介類の種類および数量から計算できるポイント（下表）により、
+決まっています。
+<br><font color="#ff0000">端数をなくすため、報酬ポイントはTCのときの倍にしています。</font>
+
+<table class="table02">
+ <tr bgcolor="#f0f0f0">
+  <td width="150">数量<br>＼<br>魚の種類</td>
+  <td width="70">5</td>
+  <td width="70">10</td>
+  <td width="70">15</td>
+  <td width="70">20</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td>カニ・ロブスター</td>
+  <td>10</td>
+  <td>20</td>
+  <td>30</td>
+  <td>40</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td>浅瀬で釣れる魚</td>
+  <td>5</td>
+  <td>10</td>
+  <td>15</td>
+  <td>20</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td>深海で釣れる魚</td>
+  <td>10</td>
+  <td>20</td>
+  <td>30</td>
+  <td>40</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td>洞窟で釣れる魚</td>
+  <td>15</td>
+  <td>30</td>
+  <td>45</td>
+  <td>60</td>
+ </tr>
+
+</table>
+
+Publish70より、カニ・ロブスターの報酬ポイントは、深海で釣れる魚と同じになりました（以前は浅瀬で釣れる魚と同じ）。
+
+<p>例1) Green Catfish[ミドリナマズ] 15匹の配送</p>
+
+ミドリナマズは浅瀬で釣れる魚のため、この配送の報酬ポイントは、15となります。
+
+<p>例2) Green Catfish[ミドリナマズ] 15匹、Orc Bass [オークバス] 15匹の配送</p>
+
+オークバスは洞窟で釣れる魚のため、この配送の報酬ポイントは、60(= 15 + 45)となります。
+<br>3種類以上の場合も、単純に足し合わせをするだけです。
+
+<h3>３．報酬ポイントと報酬品</h3>
+
+配送を完了させたときにもらえる報酬品は、２．で示した報酬ポイント毎に数ランクに分けられています。
+
+
+<table class="table01">
+ <tr bgcolor="#f0f0f0">
+  <td align="center" width="120">報酬ポイント</td>
+  <td align="center" width="400">報酬品</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td align="center">0～50未満</td>
+  <td><img src="book02.gif" alt="" class="img01">魚、カニ、ロブスターの種類が書かれた本（1, 2, 4）
+<br><img src="lava_lobster_trap.gif" alt="" class="img01">lava lobster trap [ロブスター用耐熱罠]
+<br><img src="junk_proof_hook.gif" alt="" class="img01"> junk proof hook [ゴミよけのつり針]
+<br><img src="dredging_hook.gif" alt="" class="img01"> dredging hook [探索つり針]
+<br><img src="lava_proof_hook.gif" alt="" class="img01"> lava proof hook [溶岩用つり針]
+<br>ランク1のエサ(下記7種類)
+<br><img src="mug_yellow_barracuda.gif" alt="" class="img01"> yellow barracudaのエサ
+<br><img src="mug_great_barracuda.gif" alt="" class="img01"> great barracudaのエサ
+<br><img src="mug_autumn_dragonfish.gif" alt="" class="img01"> autumn dragonfishのエサ
+<br><img src="mug_holy_mackerel.gif" alt="" class="img01"> holy mackerelのエサ
+<br><img src="mug_giant_koi.gif" alt="" class="img01"> giant koiのエサ
+<br><img src="mug_fairy_salmon.gif" alt="" class="img01"> fairy salmonのエサ
+<br><img src="mug_stone_crab.gif" alt="" class="img01"> stone crabのエサ
+<br>エサの数量は報酬ポイントの1/2（端数切捨）
+</td>
+ </tr>
+
+ <tr bgcolor="#ddffff">
+  <td align="center">50～100未満</td>
+  <td>0～50未満の報酬（釣り針、罠、エサ、本）
+<br><img src="p-scroll.gif" alt="" class="img01">power scroll 105[パワースクロール(釣り)105]
+<br>エサの数量は報酬ポイントの1/2（端数切捨）
+</td>
+ </tr>
+
+ <tr bgcolor="#ccffff">
+  <td align="center">100～200未満</td>
+  <td><img src="book02.gif" alt="" class="img01">魚の種類が書かれた本（3）。
+<br><img src="lava_lobster_trap.gif" alt="" class="img01">lava lobster trap [ロブスター用耐熱罠]
+<br><img src="junk_proof_hook.gif" alt="" class="img01"> junk proof hook [ゴミよけのつり針]
+<br><img src="dredging_hook.gif" alt="" class="img01"> dredging hook [探索つり針]
+<br><img src="lava_proof_hook.gif" alt="" class="img01"> lava proof hook [溶岩用つり針]
+<br>ランク1のエサ
+<br>ランク2のエサ(下記9種類)
+<br><img src="mug_summer_dragonfish.gif" alt="" class="img01"> summer dragonfishのエサ
+<br><img src="mug_fire_fish.gif" alt="" class="img01"> fire fishのエサ
+<br><img src="mug_reaper_fish.gif" alt="" class="img01"> reaper fishのエサ
+<br><img src="mug_bull_fish.gif" alt="" class="img01"> bull fishのエサ
+<br><img src="mug_unicorn_fish.gif" alt="" class="img01"> unicorn fishのエサ
+<br><img src="mug_crystal_fish.gif" alt="" class="img01"> crystal fishのエサ
+<br><img src="mug_blue_lobster.gif" alt="" class="img01"> blue lobsterのエサ
+<br><img src="mug_spider_crab.gif" alt="" class="img01"> spider crabのエサ
+<br><img src="mug_lava_fish.gif" alt="" class="img01"> lava fishのエサ
+<br><img src="p-scroll.gif" alt="" class="img01">power scroll 105～110[パワースクロール(釣り)105～110]
+<br>エサの数量は報酬ポイントの1/2（端数切捨）
+</td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td align="center">200～250未満</td>
+  <td><img src="book02.gif" alt="" class="img01">魚の種類が書かれた本（3, 5）。5は魔法の海洋生物編
+<br><img src="lava_lobster_trap.gif" alt="" class="img01">lava lobster trap [ロブスター用耐熱罠]
+<br><img src="junk_proof_hook.gif" alt="" class="img01"> junk proof hook [ゴミよけのつり針]
+<br><img src="dredging_hook.gif" alt="" class="img01"> dredging hook [探索つり針]
+<br><img src="lava_proof_hook.gif" alt="" class="img01"> lava proof hook [溶岩用つり針]
+<br>ランク3のエサ(下記9種類)
+<br><img src="mug_black_marlin.gif" alt="" class="img01"> black marlinのエサ 100ch
+<br><img src="mug_blue_marlin.gif" alt="" class="img01"> blue marlinのエサ 100ch
+<br><img src="mug_spring_dragonfish.gif" alt="" class="img01"> spring dragonfishのエサ 100ch
+<br><img src="mug_stone_fish.gif" alt="" class="img01"> stone fishのエサ 100ch
+<br><img src="mug_giant_samurai.gif" alt="" class="img01"> giant samuraiのエサ 100ch
+<br><img src="mug_void_crab.gif" alt="" class="img01"> void crabのエサ 100ch
+<br><img src="mug_kingfish.gif" alt="" class="img01"> kingfishのエサ 100ch
+<br><img src="mug_golden_tuna.gif" alt="" class="img01"> golden tunaのエサ 100ch
+<br><img src="mug_zombie_fish.gif" alt="" class="img01"> zombie fishのエサ 100ch
+<br><img src="p-scroll.gif" alt="" class="img01">power scroll 105～120[パワースクロール(釣り)105～120]
+<br><img src="mug_charybdis.gif" alt="" class="img01"> charybdis bait 5ch[カリュブディスのエサ]
+</td>
+ </tr>
+ <tr bgcolor="#ddffff">
+  <td align="center">250～</td>
+  <td><img src="book02.gif" alt="" class="img01">魚の種類が書かれた本（6）。伝説の海洋生物編
+<br><img src="lava_lobster_trap.gif" alt="" class="img01">lava lobster trap [ロブスター用耐熱罠]
+<br><img src="junk_proof_hook.gif" alt="" class="img01"> junk proof hook [ゴミよけのつり針]
+<br><img src="dredging_hook.gif" alt="" class="img01"> dredging hook [探索つり針]
+<br><img src="lava_proof_hook.gif" alt="" class="img01"> lava proof hook [溶岩用つり針]
+<br>ランク1～3のエサ 100ch
+<br>ランク4のエサ(下記10種類)
+<br><img src="mug_abyssal_dragonfish.gif" alt="" class="img01"> abyssal dragonfishのエサ 100ch
+<br><img src="mug_void_lobster.gif" alt="" class="img01"> void lobsterのエサ 100ch
+<br><img src="mug_lantern_fish.gif" alt="" class="img01"> lantern fishのエサ 100ch
+<br> winter dragonfishのエサ 100ch
+<br><img src="mug_rainbow_fish.gif" alt="" class="img01"> rainbow fishのエサ 100ch
+<br> dungeon pikeのエサ 100ch
+<br> seeker fishのエサ 100ch
+<br><img src="mug_tunnel_crab.gif" alt="" class="img01"> tunnel crabのエサ 100ch
+<br> blood lobsterのエサ 100ch
+<br> dread lobsterのエサ 100ch
+<br><img src="p-scroll.gif" alt="" class="img01">power scroll 105～120[パワースクロール(釣り)105～120]
+
+<br><img src="oracle_of_the_sea.gif" alt="" class="img01"> oracle of the sea [海のオラクル]
+</td>
+ </tr>
+
+</table>
+
+<br class="cle">
+<img src="lava_fishing_pole.gif" alt="" class="img01">lava fishing pole [溶岩用の釣り竿]はPublish71以降出現しなくなります。
+<br>使用回数は以前と変わらず100回のままで、使い切ると普通の釣り竿に戻ります。
+<br>魚介類のエサの中には、"臭う"または"強く臭う"と表記されたものもあり、通常のエサよりも高い効果が得られます。
+
+
+</BODY>
+</HTML>
+
+
+
+<!-- text below generated by geocities.jp --></object></layer></div></span></style></noscript></table></script></applet><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/geov2.js"></script><script language="javascript">geovisit();</script>
