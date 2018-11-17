@@ -1,87 +1,87 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
 <HTML lang="ja">
-<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=utf-8">
 <link href="style_2.css" type="text/css" rel="stylesheet">
-<TITLE>Imbuing�i�����j�X�L�� �F ���o</TITLE>
+<TITLE>Imbuing（練成）スキル ： 抽出</TITLE>
 </HEAD>
 <BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898800</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
 
-<!--�ȉ��{��-->
+<!--以下本文-->
 
-<h2>Imbuing�i�����j�X�L�� �F ���o</h2>
+<h2>Imbuing（練成）スキル ： 抽出</h2>
 <HR>
 
-Imbuing�i�����j�X�L���ɂ��āA�����_�ł̎d�l���܂Ƃ߂Ă��܂��B�X�L���̊�{�̒��́AUnravel�i���o�j��Imbuing�i�����j�ł��B
-<br>���̃X�L���ɂ́A���Y����͕K�v����܂���B
+Imbuing（練成）スキルについて、現時点での仕様をまとめています。スキルの基本の柱は、Unravel（抽出）とImbuing（練成）です。
+<br>このスキルには、生産道具は必要ありません。
 
-<h3>Imbuing�i�����j�X�L���Ɋւ��p��</h3>
+<h3>Imbuing（練成）スキルに関わる用語</h3>
 
 <ul class="list02">
-  <li>���x�� �F �����i�ɕt�����ꂽ�A����}�W�b�N���ʂ̋��x��0�`100���ŕ\�킵������</li>
-  <li>�����x�� �F �����i�ɕt�����ꂽ�A�S�Ẵ}�W�b�N���ʂ̋��x�������Z�������B</li>
-  <li>���o�]���l �F �����x���ɁA�푰�A�\�E���t�H�[�W�Ȃǂ̕␳�i�����|�Z�j���s������̒l�B���o����閂�@�f�ނ̔����ƂȂ�</li>
-  <li>������������{�l �F ������̑����x���Ɨ����X�L���Ō��܂鐬����</li>
-  <li>���������� �F �������j���[�ɕ\������Ă��鐬�����B�\�E���t�H�[�W�A�푰�A�i���ɂ��␳���܂ށi�������m���j</li>
-  <li>�s����W�� �F ����}�W�b�N���ʂ̋��x���Ɋ|�����鐔�l�B1.0�`1.5�͈̔́i���␳���j</li>
-  <li>�s����x �F �}�W�b�N���x���ɕs����W�����|�������̂����v�������l�B�����i�̎��ɂ�������ݒ肳��Ă���A����𒴂�������͍s���Ȃ�</li>
+  <li>強度率 ： 装備品に付加された、あるマジック効果の強度を0〜100％で表わしたもの</li>
+  <li>総強度率 ： 装備品に付加された、全てのマジック効果の強度率を合算したも。</li>
+  <li>抽出評価値 ： 総強度率に、種族、ソウルフォージなどの補正（加減掛算）を行った後の値。抽出される魔法素材の判定基準となる</li>
+  <li>練成成功率基本値 ： 練成後の総強度率と練成スキルで決まる成功率</li>
+  <li>練成成功率 ： 練成メニューに表示されている成功率。ソウルフォージ、種族、品質による補正を含む（＝成功確率）</li>
+  <li>不安定係数 ： あるマジック効果の強度率に掛けられる数値。1.0〜1.5の範囲（＝補正率）</li>
+  <li>不安定度 ： マジック強度率に不安定係数を掛けたものを合計した数値。装備品の質により上限が設定されており、それを超える練成は行えない</li>
 </ul>
 
 
-<h3>�P�DUnravel�i���o�j</h3>
+<h3>１．Unravel（抽出）</h3>
 
-<h4>�i�P�j�T�v</h4>
+<h4>（１）概要</h4>
 
-���o�́A�}�W�b�N�A�C�e�����疂�@�f�ށiMagical Ingredient�j�����o�����Ƃ������܂��B
-<br>���̍�Ƃ��s���ɂ̓}�W�b�N�A�C�e����Soul Forge���K�v�ŁA���@�f�ނ����o���ꂽ�}�W�b�N�A�C�e���͏��ł��܂��B
-<br>�͎��}�Ƃ��Ă͉��̂悤�Ȋ����ł��B
+抽出は、マジックアイテムから魔法素材（Magical Ingredient）を取り出すことをいいます。
+<br>この作業を行うにはマジックアイテムとSoul Forgeが必要で、魔法素材が抽出されたマジックアイテムは消滅します。
+<br>模式図としては下のような感じです。
 
-<br><img src="fire-viking1.gif" alt="" class="img02">+<img src="soul_forge.gif" alt="soul forge" class="img02" width="134" height="152">��<img src="magical_residue.gif" alt="magical residue" class="img02">/<img src="enchanted_essence.gif" alt="enchanted essence" class="img02">/<img src="relic_fragment.gif" alt="relic fragment" class="img02">
+<br><img src="fire-viking1.gif" alt="" class="img02">+<img src="soul_forge.gif" alt="soul forge" class="img02" width="134" height="152">→<img src="magical_residue.gif" alt="magical residue" class="img02">/<img src="enchanted_essence.gif" alt="enchanted essence" class="img02">/<img src="relic_fragment.gif" alt="relic fragment" class="img02">
 
 <br class="cle">
 
-<h4>�i�Q�j���o�̕��@</h4>
+<h4>（２）抽出の方法</h4>
 
-Imbuing�X�L�����g�p����ƁA���̂悤�ȃ��j���[���o������̂ŁA"���͂𒊏o"�܂���"�e����S���o"��I�����܂��B
+Imbuingスキルを使用すると、下のようなメニューが出現するので、"魔力を抽出"または"容器内全抽出"を選択します。
 <br><img src="imbuing_menu_pub63.gif" alt="" class="img02" width=313" height="187">
 
-<br class="cle">�Â��āA���o�������A�C�e���i"�e����S���o"��I�������ꍇ�A�A�C�e���̓����Ă���o�b�O�j��I�����܂��B���o�ł���A�C�e���͕���A�h��A���A�A�N�Z�T���Ɍ����Ă��܂��B
-<br>�Ȃ��A���o�����������i��Artifact�ɑ���������̂��邢�͓���f�ސ��̏ꍇ�A���̊m�F��ʂ��o�����܂��B
+<br class="cle">つづいて、抽出したいアイテム（"容器内全抽出"を選択した場合、アイテムの入っているバッグ）を選択します。抽出できるアイテムは武器、防具、盾、アクセサリに限られています。
+<br>なお、抽出したい装備品がArtifactに相当するものあるいは特殊素材製の場合、下の確認画面が出現します。
 <br><img src="imbuing_warning.gif" alt="" class="img02" width=313" height="151">
 
 <br class="cle">
-���o�]���l�ɏ]���A���Ɏ���3��ނ̖��@�f�ނ̂ǂꂩ������ł��܂��i���o�]���l�̌v�Z���@�́i�T�j�Ő����j�B
-<br>�Ȃ��Aenchanted essence[���͉��G�L�X]��relic fragment[�����b�N�̔j��]�𒊏o���邽�߂ɂ́A���ȏ��Imbuing�X�L�����K�v�ł��B
-<br>�X�L�����\���łȂ��ꍇ�A"<font color="#ff0000">���̃A�C�e���̖��͂𒊏o����ɂ̓X�L��������܂���B</font>"�ƕ\������A
-���@�f�ނ���肷�邱�Ƃ͂ł��܂���i�A�C�e���������Ȃ��j�B
+抽出評価値に従い、下に示す3種類の魔法素材のどれかが入手できます（抽出評価値の計算方法は（５）で説明）。
+<br>なお、enchanted essence[魔力化エキス]とrelic fragment[レリックの破片]を抽出するためには、一定以上のImbuingスキルが必要です。
+<br>スキルが十分でない場合、"<font color="#ff0000">このアイテムの魔力を抽出するにはスキルが足りません。</font>"と表示され、
+魔法素材を入手することはできません（アイテムも失われない）。
 
-<h4>Imbuing�X�L���ƒ��o�ł��閂�@�f��</h4>
-<font color="#ff0000">Publish63�ȍ~�AGargoyle�͎푰�����iMaster Artisan�j�ɂ��A���o�ɕK�v��Imbuing�X�L�������̎푰�Ɣ�ׂ�5.0�����Ⴍ�Ȃ�܂��B
-<br>�s��@�F�@���݁A��L�̎d�l���S�Ă̎푰�ɑ΂��K�p����Ă��܂��B</font>
+<h4>Imbuingスキルと抽出できる魔法素材</h4>
+<font color="#ff0000">Publish63以降、Gargoyleは種族特性（Master Artisan）により、抽出に必要なImbuingスキルが他の種族と比べて5.0だけ低くなります。
+<br>不具合　：　現在、上記の仕様が全ての種族に対し適用されています。</font>
 
 <table class="table02">
   <tr bgcolor="#f0f0f0">
     <td align="center" width="100">Unravel</td>
-    <td align="center" width="150">���o�]���l<br>��200��</td>
-    <td align="center" width="150">���o�]���l<br>��451��</td>
-    <td align="center" width="150">���o�]���l<br>��451��</td>
+    <td align="center" width="150">抽出評価値<br>＜200％</td>
+    <td align="center" width="150">抽出評価値<br>＜451％</td>
+    <td align="center" width="150">抽出評価値<br>≧451％</td>
   </tr>
 
   <tr>
-    <td align="center" bgcolor="#f0f0f0">Imbuing<br>��50.0</td>
+    <td align="center" bgcolor="#f0f0f0">Imbuing<br>≦50.0</td>
     <td align="center" bgcolor="#ffcccc">Magical Residue</td>
-    <td align="center" bgcolor="#f0f0f0">���o�ł��Ȃ�</td>
-    <td align="center" bgcolor="#f0f0f0">���o�ł��Ȃ�</td>
+    <td align="center" bgcolor="#f0f0f0">抽出できない</td>
+    <td align="center" bgcolor="#f0f0f0">抽出できない</td>
   </tr>
 
   <tr>
-    <td align="center" bgcolor="#f0f0f0">Imbuing<br>��95.0</td>
+    <td align="center" bgcolor="#f0f0f0">Imbuing<br>≦95.0</td>
     <td align="center" bgcolor="#ffcccc">Magical Residue</td>
     <td align="center" bgcolor="#ccffcc">Enchanted Essence</td>
-    <td align="center" bgcolor="#f0f0f0">���o�ł��Ȃ�</td>
+    <td align="center" bgcolor="#f0f0f0">抽出できない</td>
   </tr>
 
   <tr>
-    <td align="center" bgcolor="#f0f0f0">Imbuing<br>��95.1</td>
+    <td align="center" bgcolor="#f0f0f0">Imbuing<br>＞95.1</td>
     <td align="center" bgcolor="#ffcccc">Magical Residue</td>
     <td align="center" bgcolor="#ccffcc">Enchanted Essence</td>
     <td align="center" bgcolor="#ddddff">Relic Fragments</td>
@@ -89,121 +89,121 @@ Imbuing�X�L�����g�p����ƁA���̂悤�ȃ��j���[���o������̂ŁA"���͂𒊏o"�܂���"
 
 </table>
 
-<h4>���o����閂�@�f�ނ̐���</h4>
+<h4>抽出される魔法素材の数量</h4>
 
-���o�]���l�v�Z�\ Publish63�Ή��Ł@
-�i<a href="imbuing_unravel_weapon_pub63.html">����</a>�E<a href="imbuing_unravel_armor_pub63.html">�h��</a>
-�E<a href="imbuing_unravel_shield_pub63.html">��</a>�E<a href="imbuing_unravel_accessory.html">�A�N�Z�T��</a>�j
-<br><a href="imbuing_unravel_artifact.html">���ʂȑ����i���璊�o�ł��閂�@�f�ވꗗ</a>
+抽出評価値計算表 Publish63対応版　
+（<a href="imbuing_unravel_weapon_pub63.html">武器</a>・<a href="imbuing_unravel_armor_pub63.html">防具</a>
+・<a href="imbuing_unravel_shield_pub63.html">盾</a>・<a href="imbuing_unravel_accessory.html">アクセサリ</a>）
+<br><a href="imbuing_unravel_artifact.html">特別な装備品から抽出できる魔法素材一覧</a>
 
 <table class="table02">
   <tr bgcolor="#f0f0f0">
-    <td align="center" width="150">���o�]���l</td>
+    <td align="center" width="150">抽出評価値</td>
     <td align="center" width="120">Pub62.3</td>
     <td align="center" width="120">Pub63</td>
   </tr>
 
   <tr bgcolor="#ddffff">
-    <td align="center">1�`50����</td>
-    <td align="center"><img src="magical_residue.gif" alt="magical residue" class="img01">�~1</td>
-    <td align="center"><img src="magical_residue.gif" alt="magical residue" class="img01">�~1</td>
+    <td align="center">1〜50未満</td>
+    <td align="center"><img src="magical_residue.gif" alt="magical residue" class="img01">×1</td>
+    <td align="center"><img src="magical_residue.gif" alt="magical residue" class="img01">×1</td>
   </tr>
 
   <tr bgcolor="#eeffff">
-    <td align="center">50�`100����</td>
-    <td align="center" rowspan="3"><img src="magical_residue.gif" alt="magical residue" class="img01">�~1�`3</td>
-    <td align="center"><img src="magical_residue.gif" alt="magical residue" class="img01">�~2�`3</td>
+    <td align="center">50〜100未満</td>
+    <td align="center" rowspan="3"><img src="magical_residue.gif" alt="magical residue" class="img01">×1〜3</td>
+    <td align="center"><img src="magical_residue.gif" alt="magical residue" class="img01">×2〜3</td>
   </tr>
 
   <tr bgcolor="#ddffff">
-    <td align="center">100�`150����</td>
-    <td align="center"><img src="magical_residue.gif" alt="magical residue" class="img01">�~3�`4</td>
+    <td align="center">100〜150未満</td>
+    <td align="center"><img src="magical_residue.gif" alt="magical residue" class="img01">×3〜4</td>
   </tr>
 
   <tr bgcolor="#eeffff">
-    <td align="center">150�`200����</td>
-    <td align="center"><img src="magical_residue.gif" alt="magical residue" class="img01">�~4�`5</td>
+    <td align="center">150〜200未満</td>
+    <td align="center"><img src="magical_residue.gif" alt="magical residue" class="img01">×4〜5</td>
   </tr>
 
   <tr bgcolor="#ddffff">
-    <td align="center">200�`300����</td>
-    <td align="center" rowspan="3"><img src="enchanted_essence.gif" alt="enchanted essence" class="img01">�~1�`2</td>
-    <td align="center"><img src="enchanted_essence.gif" alt="enchanted essence" class="img01">�~1�`2</td>
+    <td align="center">200〜300未満</td>
+    <td align="center" rowspan="3"><img src="enchanted_essence.gif" alt="enchanted essence" class="img01">×1〜2</td>
+    <td align="center"><img src="enchanted_essence.gif" alt="enchanted essence" class="img01">×1〜2</td>
   </tr>
 
   <tr bgcolor="#eeffff">
-    <td align="center">300�`400����</td>
-    <td align="center"><img src="enchanted_essence.gif" alt="enchanted essence" class="img01">�~2�`3</td>
+    <td align="center">300〜400未満</td>
+    <td align="center"><img src="enchanted_essence.gif" alt="enchanted essence" class="img01">×2〜3</td>
   </tr>
 
   <tr bgcolor="#ddffff">
-    <td align="center">400�`450</td>
-    <td align="center"><img src="enchanted_essence.gif" alt="enchanted essence" class="img01">�~3�`4</td>
+    <td align="center">400〜450</td>
+    <td align="center"><img src="enchanted_essence.gif" alt="enchanted essence" class="img01">×3〜4</td>
   </tr>
 
   <tr bgcolor="#eeffff">
-    <td align="center">451�`</td>
-    <td align="center"><img src="relic_fragment.gif" alt="relic fragment" class="img01">�~1</td>
-    <td align="center"><img src="relic_fragment.gif" alt="relic fragment" class="img01">�~1�`2</td>
+    <td align="center">451〜</td>
+    <td align="center"><img src="relic_fragment.gif" alt="relic fragment" class="img01">×1</td>
+    <td align="center"><img src="relic_fragment.gif" alt="relic fragment" class="img01">×1〜2</td>
   </tr>
 
 </table>
 
 <br class="cle">
-�]���l50�ȏ�ŁA�i�W���̐��l�j�Ɓi�W���̐��l+1�j�̊����͂����悻���̂悤�ɂȂ��Ă���A��ʂ̑f�ނł́i�W���̐��l+1�j���o�ɂ����Ȃ��Ă��܂��B
+評価値50以上で、（標準の数値）と（標準の数値+1）の割合はおおよそ下のようになっており、上位の素材では（標準の数値+1）が出にくくなっています。
 <ul class="list02">
-  <li><img src="magical_residue.gif" alt="magical residue" class="img01">�@Magical Residue --- 1�F1</li>
-  <li><img src="enchanted_essence.gif" alt="enchanted essence" class="img01">�@Enchanted Essence --- 2�F1</li>
-  <li><img src="relic_fragment.gif" alt="relic fragment" class="img01">�@Relic Fragment --- 3�F1</li>
+  <li><img src="magical_residue.gif" alt="magical residue" class="img01">　Magical Residue --- 1：1</li>
+  <li><img src="enchanted_essence.gif" alt="enchanted essence" class="img01">　Enchanted Essence --- 2：1</li>
+  <li><img src="relic_fragment.gif" alt="relic fragment" class="img01">　Relic Fragment --- 3：1</li>
 </ul>
 
 
 
-<h4>�i�S�j�A�C�e���Ӓ�iitem identification�j�X�L��</h4>
+<h4>（４）アイテム鑑定（item identification）スキル</h4>
 
-�A�C�e���Ӓ�X�L�����g���}�W�b�N�A�C�e�����Ӓ肷��ƁA���o�����Ƃ��ɓ����閂�@�f�ނ̎�ނ��m�F�ł��܂��B
-<br>���̂Ƃ��A�Ӓ�҂̎푰�␳���l������A����ɕ␳�̂���{�݁i�\�E���t�H�[�W�j�̗L���͈͂ɂ���ꍇ�A������l�����ꂽ���̂ƂȂ�܂��B
-<br>�������A���@�f�ނ𒊏o�ł��邾����Imbuing�X�L�����K�v�ƂȂ�܂��B
-<br><font color="#ff0000">���݁A�Ӓ莞�̔���ƒ��o���̔���Ő��������Ă��܂���B</font>
+アイテム鑑定スキルを使いマジックアイテムを鑑定すると、抽出したときに得られる魔法素材の種類も確認できます。
+<br>このとき、鑑定者の種族補正が考慮され、さらに補正のある施設（ソウルフォージ）の有効範囲にいる場合、それも考慮されたものとなります。
+<br>ただし、魔法素材を抽出できるだけのImbuingスキルが必要となります。
+<br><font color="#ff0000">現在、鑑定時の判定と抽出時の判定で整合が取れていません。</font>
 
 <br><img src="imbuing_itemid.gif" alt="" class="img02">
 
-<h4>�i�T�j���o�]���l�̌v�Z</h4>
+<h4>（５）抽出評価値の計算</h4>
 
-���o�]���l�͈ȉ��̗v�f���l�����ĎZ�o����܂��B
-<br>Publish73�ȍ~�ɓ�������Ă���V�}�W�b�N�V�X�e���ł́A<b>�U�j�ϋv�l�̕␳</b>���]���̃}�W�b�N�V�X�e���ƈقȂ��Ă��܂��B
-<br>Publish74�ł́A�A�C�e���̃����N�����o�]���ɉe����^���Ȃ��Ȃ�܂����B
+抽出評価値は以下の要素を考慮して算出されます。
+<br>Publish73以降に導入されている新マジックシステムでは、<b>６）耐久値の補正</b>が従来のマジックシステムと異なっています。
+<br>Publish74では、アイテムのランクが抽出評価に影響を与えなくなりました。
 
-<h4>�P�j�}�W�b�N����ѓ���f�ރv���p�e�B�̋��x��</h4>
+<h4>１）マジックおよび特殊素材プロパティの強度率</h4>
 
-�����i�ɕt�����ꂽ�}�W�b�N����ѓ���f�ރv���p�e�B�̋��x�́A�v���p�e�B����0�`100���i100���𒴂���ꍇ������j�ŕ\�킳��܂��B
-<br>���������v���A�����i�̃}�W�b�N�����x�����Z�o����܂��B
-<br>���̃}�W�b�N������Ƀv���p�e�B�̋��x�����v�Z���܂��B�Ȃ��A���V�s�i�̓��ʂȌ��ʂ��}�W�b�N���ʂƂ��ċ��x���ɔ��f����܂��B
-<br>����ɁA�i�����ʂ��}�W�b�N�v���p�e�B�܂��͑f�ތ��ʂƍ��Z����Ă���ꍇ�A���������v���ċ��x�����v�Z���܂��B
-<br>�������A<font color="#ff0000">���x���̍��v��0���ȉ��̏ꍇ�A�Q�j�ȍ~�̕␳�͖����ƂȂ�A���o�ł��܂���̂Œ��ӂ��Ă��������B
-<br>�s��@�F�@�Ў�g�p�i���o�����X�h�j�̓v���p�e�B�̋��x����0���ƂȂ��Ă��܂��B</font>
+装備品に付加されたマジックおよび特殊素材プロパティの強度は、プロパティ毎に0〜100％（100％を超える場合もある）で表わされます。
+<br>それらを合計し、装備品のマジック総強度率が算出されます。
+<br>下のマジック武器を例にプロパティの強度率を計算します。なお、レシピ品の特別な効果もマジック効果として強度率に反映されます。
+<br>さらに、品質効果がマジックプロパティまたは素材効果と合算されている場合、それらを合計して強度率を計算します。
+<br>ただし、<font color="#ff0000">強度率の合計が0％以下の場合、２）以降の補正は無効となり、抽出できませんので注意してください。
+<br>不具合　：　片手使用可（旧バランスド）はプロパティの強度率が0％となっています。</font>
 <ul class="list02">
-  <li>Lightning 48�� --- ���x��96��</li>
-  <li>����_���[�W 40�� --- ���x��80���i�i�����ʂ݂̂̏ꍇ�A���x���ɉ��Z����Ȃ��j</li>
-  <li>���x 25�� --- ���x��83��</li>
-  <li>���C�t���[�` 33�� --- ���x��88��
-<br>���x �F {33 / [2.00 / (1 + 0.25)]} = 22 �@{ }�͒[���؏�A[ ]��0.25�P�ʂŐ؎�
-<br>���x�� �F 100 * 22 / 25 = 88%
+  <li>Lightning 48％ --- 強度率96％</li>
+  <li>武器ダメージ 40％ --- 強度率80％（品質効果のみの場合、強度率に加算されない）</li>
+  <li>速度 25％ --- 強度率83％</li>
+  <li>ライフリーチ 33％ --- 強度率88％
+<br>強度 ： {33 / [2.00 / (1 + 0.25)]} = 22 　{ }は端数切上、[ ]は0.25単位で切捨
+<br>強度率 ： 100 * 22 / 25 = 88%
 </li>
-  <li>�����x�� --- 347��
+  <li>総強度率 --- 347％
 </ul>
 <img src="unravel_value01.gif" alt="" class="img02">
 
-<h4>�Q�j����f�ނ̕␳</h4>
+<h4>２）特殊素材の補正</h4>
 
-�����i�ɓ���f�ނ��g�p����Ă���ꍇ�A�f�ނ̎�ނɉ����ĂP�j�̑����x���Ɋ|���Z�̕␳���s���܂��B
-<br>Granite[�ԛ���]�́Aingot�̕␳�Ɠ����ł��B
-<br>�Ӓ莞�̔���͉��Z�̕␳�ishadow�ł�+3���Ȃǁj�ƂȂ��Ă���A�Ӓ�ƒ��o�Ő��������Ă��Ȃ���Ԃł��B
+装備品に特殊素材が使用されている場合、素材の種類に応じて１）の総強度率に掛け算の補正が行われます。
+<br>Granite[花崗岩]は、ingotの補正と同じです。
+<br>鑑定時の判定は加算の補正（shadowでは+3％など）となっており、鑑定と抽出で整合が取れていない状態です。
 
 <table class="table01">
   <tr bgcolor="#f0f0f0">
-    <td align="center" width="90">�f��</td>
-    <td align="center" width="80">�␳<br>(�~N)</td>
+    <td align="center" width="90">素材</td>
+    <td align="center" width="80">補正<br>(×N)</td>
   </tr>
 
   <tr bgcolor="#ddffff">
@@ -250,8 +250,8 @@ Imbuing�X�L�����g�p����ƁA���̂悤�ȃ��j���[���o������̂ŁA"���͂𒊏o"�܂���"
 
 <table class="table01">
   <tr bgcolor="#f0f0f0">
-    <td align="center" width="90">�f��</td>
-    <td align="center" width="80">�␳<br>(�~N)</td>
+    <td align="center" width="90">素材</td>
+    <td align="center" width="80">補正<br>(×N)</td>
   </tr>
 
   <tr bgcolor="#ddffff">
@@ -273,8 +273,8 @@ Imbuing�X�L�����g�p����ƁA���̂悤�ȃ��j���[���o������̂ŁA"���͂𒊏o"�܂���"
 
 <table class="table01">
   <tr bgcolor="#f0f0f0">
-    <td align="center" width="90">�f��</td>
-    <td align="center" width="80">�␳<br>(�~N)</td>
+    <td align="center" width="90">素材</td>
+    <td align="center" width="80">補正<br>(×N)</td>
   </tr>
 
   <tr bgcolor="#eeffff">
@@ -310,124 +310,124 @@ Imbuing�X�L�����g�p����ƁA���̂悤�ȃ��j���[���o������̂ŁA"���͂𒊏o"�܂���"
 </table>
 
 <br class="cle">
-<h4>�R�j�푰�̕␳</h4>
+<h4>３）種族の補正</h4>
 
-���o�҂��K�[�S�C���̏ꍇ�A�Q�j�܂łŎZ�o���ꂽ�}�W�b�N�̑����x����20�������Z����܂��B
+抽出者がガーゴイルの場合、２）までで算出されたマジックの総強度率に20％が加算されます。
 
-<h4>�S�j�{�݁i�\�E���t�H�[�W�j�̕␳</h4>
+<h4>４）施設（ソウルフォージ）の補正</h4>
 
-���o�Ɏg�p����\�E���t�H�[�W�ɂ́A�}�W�b�N�̑����x���Ɉ��l���Z��������̂�����܂��B
-<br>�����̃\�E���t�H�[�W���g�p���邽�߂ɂ͒����x���K�v�ł����A���o����ѕϐ��̍ۂɂ́A���̐������K�p����܂���B�B
+抽出に使用するソウルフォージには、マジックの総強度率に一定値加算させるものがあります。
+<br>女王のソウルフォージを使用するためには忠誠度が必要ですが、抽出および変成の際には、この制限が適用されません。。
 <ul class="list02">
-<li>Royal City�̃\�E���t�H�[�W�iRoyal City��s���ɂ���j �F +10��</li>
-<li>�����̃\�E���t�H�[�W�iRoyal City�k�̋{�a���ɂ���j �F +30��</li>
-<li>��L�ȊO�̃\�E���t�H�[�W �F +0��</li>
+<li>Royal Cityのソウルフォージ（Royal City銀行西にある） ： +10％</li>
+<li>女王のソウルフォージ（Royal City北の宮殿内にある） ： +30％</li>
+<li>上記以外のソウルフォージ ： +0％</li>
 </ul>
 
-<h4>�T�j�����i�̕␳</h4>
+<h4>５）練成品の補正</h4>
 
-�T�j�ȍ~�̕␳�͂P�j�`�S�j�̍��v�l�ɑ΂��čs���܂��B
-<br>�����i�������i�̏ꍇ�A�}�W�b�N�̑����x����30���ጸ���܂��B
-<br>�Ȃ��AStygian Abyss��������5���ጸ�APublish62�`63�ł�20���ጸ�ł����B
-
-
-<h4>�U�j�ϋv�l�̕␳</h4>
-�����i�̑ϋv�l��50��������Ă���ꍇ�A1���Ƃɑ����x����2�����ጸ���܂��B
-<br>�V�}�W�b�N�V�X�e���ł́A<font color="#ff0000">�ϋv�l��25��������Ă���ꍇ�A1���Ƃɑ����x����4�����ጸ���܂��B</font>
+５）以降の補正は１）〜４）の合計値に対して行われます。
+<br>装備品が練成品の場合、マジックの総強度率を30％低減します。
+<br>なお、Stygian Abyss導入時は5％低減、Publish62〜63では20％低減でした。
 
 
+<h4>６）耐久値の補正</h4>
+装備品の耐久値が50を下回っている場合、1ごとに総強度率を2％ずつ低減します。
+<br>新マジックシステムでは、<font color="#ff0000">耐久値が25を下回っている場合、1ごとに総強度率を4％ずつ低減します。</font>
 
-<h4>�V�j���o�]���l�̌v�Z</h4>
-�P�j�`�U�j���A���@�f�ޒ��o�̔���Ɏg���钊�o�]���l���Z�o����܂��B
-<br>���Ƃ��āA���̃}�W�b�N����̃v���p�e�B���g���A���o�]���l���v�Z���܂��B
-<br>���o�҂̓K�[�S�C���A�\�E���t�H�[�W��Royal City�ɂ�����̂��g�p���܂��B
 
-<h4>Publish64�̎d�l</h4>
+
+<h4>７）抽出評価値の計算</h4>
+１）〜６）より、魔法素材抽出の判定に使われる抽出評価値が算出されます。
+<br>例題として、下のマジック武器のプロパティを使い、抽出評価値を計算します。
+<br>抽出者はガーゴイル、ソウルフォージはRoyal Cityにあるものを使用します。
+
+<h4>Publish64の仕様</h4>
 
 <ul class="list03">
-  <li>�}�W�b�N�����x�� �F 288��</li>
-  <li>�f�ޕ␳ �F  �~1.05</li>
-  <li>�푰�␳ �F +20��</li>
-  <li>�{�ݕ␳ �F +10��</li>
-  <li>�����i�␳ �F -30��</li>
-  <li>�ϋv�l�␳ �F -38��</li>
-  <li>���o�]���l �F �i288 * 1.05 + 20 + 10�j�~ �i1.00 - 0.30 - 0.38�j�� 106��
-<br>Magical Residue [���@�̎c�[]��3�`4���o�����B
+  <li>マジック総強度率 ： 288％</li>
+  <li>素材補正 ：  ×1.05</li>
+  <li>種族補正 ： +20％</li>
+  <li>施設補正 ： +10％</li>
+  <li>練成品補正 ： -30％</li>
+  <li>耐久値補正 ： -38％</li>
+  <li>抽出評価値 ： （288 * 1.05 + 20 + 10）× （1.00 - 0.30 - 0.38）＝ 106％
+<br>Magical Residue [魔法の残骸]が3〜4個抽出される。
 </ul>
 
 <img src="unravel_value02.gif" alt="" class="img02">
 
-<h3>�P�f�DUnravel�i���o�j�ז�</h3>
+<h3>１’．Unravel（抽出）細目</h3>
 
-�A�C�e�����疂�@�f�ނ𒊏o����Ƃ��̉��p�m�����Љ�܂��B
+アイテムから魔法素材を抽出するときの応用知識を紹介します。
 
-<h4>�i�P�j�험�i�œ���ł����|����ѓ����n����̒��o�]���l</h4>
+<h4>（１）戦利品で入手できた弓および投擲系武器の抽出評価値</h4>
 
-�|����ѓ�������ɕt������閽���{�A����{�A�K�^�A�����ȊO�̑�����R�l�̃}�W�b�N���x���́A
-<br>�험�i�������łȂ����ŏ���l���قȂ邽�߁A�\���l�������ł����x���͓����ɂȂ�܂���B
-<br>�Ȃ��A�험�i�ɏ�L�̃v���p�e�B��������Ȃ�����A�}�W�b�N���x���̌v�Z�͐험�i�ɏ��������̂ƂȂ�܂��B
-
-<ul class="list02">
-  <li>�험�i�̏ꍇ�@�F�@��������щ����1�`15���A�K�^��1�`100�A��R�l��1�`15��</li>
-  <li>�쐬�܂��͗����̏ꍇ�@�F�@��������щ����1�`25���A�K�^��1�`120�A��R�l��1�`18��</li>
-</ul>
-
-<h4>�i�Q�jJuka lord�Y��Bow�̒���</h4>
-
-Juka Lord�̐험�i�ɓ����Ă���Bow[�|]�́Agear[����]���g�����Ƃœ������ʂ��ǉ�����܂����A
-<br>���̌��ʂ��}�W�b�N�̋��x��100���Ƃ��Ĕ��f����܂��B
-
-
-<h4>�i�R�jBloodwood�̃��C�t���[�`</h4>
-
-�ؐ������Bloodwood�ŋ��������Ƃ��A���Ƃ��Ƃ̃��C�t���[�`�̗L���ɂ��ȉ��̂悤�ȏ������s���܂����A
-<br>�ǂ̏ꍇ�ł����C�t���[�`�̋��x����32���Ƃ��Čv�Z����܂��B
-<br><font color="#ff0000">�����x�̃��C�t���[�`���t�����ꂽ�����Bloodwood�ŋ�������͓̂��ł͂���܂���B</font>
+弓および投擲武器に付加される命中＋、回避＋、幸運、物理以外の属性抵抗値のマジック強度率は、
+<br>戦利品かそうでないかで上限値が異なるため、表示値が同じでも強度率は同じになりません。
+<br>なお、戦利品に上記のプロパティを練成しない限り、マジック強度率の計算は戦利品に準じたものとなります。
 
 <ul class="list02">
-  <li>���C�t���[�`�����łɕt������Ă���ꍇ�E�E�E���C�t���[�`�̕\���l�͕ς��Ȃ��B</li>
-  <li>���C�t���[�`���t������Ă��Ȃ��ꍇ�E�E�E���C�t���[�`���x8���ǉ������B</li>
+  <li>戦利品の場合　：　命中および回避は1〜15％、幸運は1〜100、抵抗値は1〜15％</li>
+  <li>作成または練成の場合　：　命中および回避は1〜25％、幸運は1〜120、抵抗値は1〜18％</li>
 </ul>
 
-<h4>�i�S�j����̕i������</h4>
+<h4>（２）Juka lord産のBowの調整</h4>
 
-����̕i�����ʂƂ��ĕt������镐��_���[�W�{�́A�P�̂ł̓}�W�b�N�̋��x���ɔ��f����܂��񂪁A
-<br>���V�s����ѓ���f�ނŕt������镐��_���[�W�{�ƍ��Z�����ꍇ�A�܂Ƃ߂ă}�W�b�N�̋��x���ɔ��f�����悤�ɂȂ�܂��B
-
-<h4>�i�T�j����f�ނ̌���</h4>
-
-Publish63�ȍ~�A����f�ނ̌��ʂŕt�����ꂽ�v���p�e�B���}�W�b�N�̋��x���Ƃ��Ĕ��f�����悤�ɂȂ�܂��B
+Juka Lordの戦利品に入っているBow[弓]は、gear[歯車]を使うことで特効効果が追加されますが、
+<br>その効果もマジックの強度率100％として反映されます。
 
 
-<h4>�i�U�j6�v���p�e�B�ȏ�ł̕␳</h4>
+<h4>（３）Bloodwoodのライフリーチ</h4>
 
-���V�s�����f�ނ̌��ʂɂ��A���x�����v�Z����}�W�b�N���ʂ�6�ȏ�ƂȂ����ꍇ�A�ȉ��̂悤�ȕ␳���s���܂��B
-<br><font color="#ff0000">�}�W�b�N�̋��x����P���ɍ��v�������̂��m���ɏ������Ȃ�܂��B</font>
+木製武器をBloodwoodで強化したとき、もともとのライフリーチの有無により以下のような処理が行われますが、
+<br>どの場合でもライフリーチの強度率が32％として計算されます。
+<br><font color="#ff0000">高強度のライフリーチが付加された武器をBloodwoodで強化するのは得ではありません。</font>
+
+<ul class="list02">
+  <li>ライフリーチがすでに付加されている場合・・・ライフリーチの表示値は変わらない。</li>
+  <li>ライフリーチが付加されていない場合・・・ライフリーチ強度8が追加される。</li>
+</ul>
+
+<h4>（４）武器の品質効果</h4>
+
+武器の品質効果として付加される武器ダメージ＋は、単体ではマジックの強度率に反映されませんが、
+<br>レシピおよび特殊素材で付加される武器ダメージ＋と合算した場合、まとめてマジックの強度率に反映されるようになります。
+
+<h4>（５）特殊素材の効果</h4>
+
+Publish63以降、特殊素材の効果で付加されたプロパティもマジックの強度率として反映されるようになります。
+
+
+<h4>（６）6プロパティ以上での補正</h4>
+
+レシピや特殊素材の効果により、強度率を計算するマジック効果が6つ以上となった場合、以下のような補正が行われます。
+<br><font color="#ff0000">マジックの強度率を単純に合計したものより確実に小さくなります。</font>
 
 <ul class="list04">
-  <li>�S�Ẵ}�W�b�N���ʂ̋��x�������Z����B</li>
-  <li>1. �ŎZ�o���������x�����v���p�e�B���i6�ȏ�j�ŏ��Z���A�[���͐؂�̂Ă�B</li>
-  <li>2. �ŎZ�o�������l��5���|����B</li>
-  <li>3. �ŎZ�o�������l�ɁA����f�ށA�푰�A�{�݁A�����i����ёϋv�l�␳���s���B</li>
-  <li>4. �ŎZ�o���ꂽ���l�����o�]���l�ƂȂ�A�ǂ̖��@�f�ނ����o����邩���肳���B</li>
+  <li>全てのマジック効果の強度率を合算する。</li>
+  <li>1. で算出した総強度率をプロパティ数（6以上）で除算し、端数は切り捨てる。</li>
+  <li>2. で算出した数値に5を掛ける。</li>
+  <li>3. で算出した数値に、特殊素材、種族、施設、練成品および耐久値補正を行う。</li>
+  <li>4. で算出された数値が抽出評価値となり、どの魔法素材が抽出されるか決定される。</li>
 </ul>
 
-��jGardian Axe [�K�[�f�B�A���A�b�N�X]
-<br>Iron��, �ϋv�l50�ȏ�, Gargoyle, ���C�����V�e�B�̃\�E���t�H�[�W�Œ��o
-<br>�v���p�e�B�@�F�@�\���l (���x��)
-<br>��������@�F�@-21 (90%)
-<br>�������ʁ@�F�@�X�l�[�N (100%)
-<br>�q�b�g�|�C���g�@�F�@+4 (80%)
-<br>�q�b�g�|�C���g�񕜁@�F�@1 (50%)
-<br>�����@�F�@+14% (93%)
-<br>����_���[�W�@�F�@+46% (92%)
+例）Gardian Axe [ガーディアンアックス]
+<br>Iron製, 耐久値50以上, Gargoyle, ロイヤルシティのソウルフォージで抽出
+<br>プロパティ　：　表示値 (強度率)
+<br>魔道武器　：　-21 (90%)
+<br>特効効果　：　スネーク (100%)
+<br>ヒットポイント　：　+4 (80%)
+<br>ヒットポイント回復　：　1 (50%)
+<br>命中　：　+14% (93%)
+<br>武器ダメージ　：　+46% (92%)
 
-<p>���o�]���l�Z�o</p>
+<p>抽出評価値算出</p>
 
-�S�Ẵ}�W�b�N���ʂ̋��x�����v���p�e�B���ŏ��Z�@�F�@(90+100+80+50+93+92)/6 = 84
-<br>��L��5���|����@�F�@84 * 5 = 420
-<br>�푰�A�{�݂̕␳�����Z����@�F�@420 + 20 + 10 = 450
-<br>���o�]���l��450%�Ȃ̂ŁA���͉��G�L�X�����o�����B
+全てのマジック効果の強度率をプロパティ数で除算　：　(90+100+80+50+93+92)/6 = 84
+<br>上記に5を掛ける　：　84 * 5 = 420
+<br>種族、施設の補正を加算する　：　420 + 20 + 10 = 450
+<br>抽出評価値が450%なので、魔力化エキスが抽出される。
 
 </BODY>
 </HTML>

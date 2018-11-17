@@ -1,18 +1,18 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
 <HTML lang="ja">
 <HEAD>
-<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta http-equiv="content-style-type" content="text/css">
 <link href="style_2.css" type="text/css" rel="stylesheet">
 <meta http-equiv="content-script-type" content="text/javascript">
-<TITLE>�}�i�񕜌v�Z</TITLE>
+<TITLE>マナ回復計算</TITLE>
 </HEAD>
 <BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898951</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
 
 
-<!--�ȉ��{��-->
+<!--以下本文-->
 
-<h2>�}�i�񕜌v�Z</h2>
+<h2>マナ回復計算</h2>
 <HR>
 
 
@@ -81,68 +81,68 @@ return true;
 
 <table class="table02">
  <tr bgcolor="#f0f0f0">
-  <td align="center" width="220">�}�i�񕜂Ɋւ��鍀��</td>
-  <td align="center" width="140">�X�e�[�^�X</td>
-  <td align="center" width="100">�񕜑��x<br>�i�}�i/10sec�j</td>
+  <td align="center" width="220">マナ回復に関する項目</td>
+  <td align="center" width="140">ステータス</td>
+  <td align="center" width="100">回復速度<br>（マナ/10sec）</td>
  </tr>
 
  <tr bgcolor="#ddddff">
-  <td align="center">�푰</td>
+  <td align="center">種族</td>
   <td align="center">
 <select name="rac" size="1">
-<option value="200">�l��
-<option value="0">�G���t
-<option value="2">�K�[�S�C��
+<option value="200">人間
+<option value="0">エルフ
+<option value="2">ガーゴイル
 </select>
 </td>
-  <td align="center">2(�Œ�)</td>
+  <td align="center">2(固定)</td>
  </tr>
 
  <tr bgcolor="#ccccff">
-  <td align="center">Focus �X�L��</td>
+  <td align="center">Focus スキル</td>
   <td align="center"><input type="text" name="sk1" size="3" value="100"></td>
   <td align="center"><input class="readtext" readonly type="text" name="rege1" size="4" value="0"></td>
  </tr>
 
  <tr bgcolor="#ddddff">
-  <td align="center">Meditation �X�L��</td>
+  <td align="center">Meditation スキル</td>
   <td align="center"><input type="text" name="sk2" size="3" value="100"></td>
   <td align="center" rowspan="3"><input class="readtext" readonly type="text" name="rege2" size="4" value="0"></td>
  </tr>
 
  <tr bgcolor="#ddddff">
-  <td align="center">INT �X�e�[�^�X</td>
+  <td align="center">INT ステータス</td>
   <td align="center"><input type="text" name="sk3" size="3" value="100"></td>
  </tr>
  <tr bgcolor="#ddddff">
-  <td align="center">�\���ґz�^�s��</td>
+  <td align="center">能動瞑想可／不可</td>
   <td align="center">
 <select name="acti" size="1">
-<option value="1">�ґz�� [������]
-<option value="2">�ґz�� [�ґz��]
-<option value="0">�ґz�s��
+<option value="1">瞑想可 [平穏時]
+<option value="2">瞑想可 [瞑想時]
+<option value="0">瞑想不可
 </select>
 </td>
  </tr>
 
  <tr bgcolor="#ccccff">
-  <td align="center">�푰�������}�i��</td>
+  <td align="center">種族特性よるマナ回復</td>
   <td align="center"><input class="readtext" readonly type="text" name="sk7" size="3" value="0"></td>
   <td align="center" rowspan="2"><input class="readtext" readonly type="text" name="rege3" size="4" value="0"></td>
  </tr>
 
  <tr bgcolor="#ccccff">
-  <td align="center">�����i�{�A�r���e�B�ɂ��}�i��</td>
+  <td align="center">装備品＋アビリティによるマナ回復</td>
   <td align="center"><input type="text" name="sk4" size="3" value="0"></td>
  </tr>
 
  <tr bgcolor="#ffffdd">
-  <td align="center" colspan="2">�L�����N�^�[�̃}�i�񕜍��v�@<input type="button" value="�v�Z" onclick="sim1(form)"></td>
+  <td align="center" colspan="2">キャラクターのマナ回復合計　<input type="button" value="計算" onclick="sim1(form)"></td>
   <td align="center"><input class="readtext" readonly type="text" name="rege4" size="4" value="0"></td>
  </tr>
 
  <tr bgcolor="#ffe0cc">
-  <td align="center" colspan="2"><input type="text" name="mana" size="3" value="100">�}�i�񕜂ɗv���鎞�ԁ@<input type="button" value="�v�Z" onclick="sim1(form)"></td>
+  <td align="center" colspan="2"><input type="text" name="mana" size="3" value="100">マナ回復に要する時間　<input type="button" value="計算" onclick="sim1(form)"></td>
   <td align="center"><input class="readtext" readonly type="text" name="rege5" size="5" value="0">sec</td>
  </tr>
 
@@ -150,47 +150,47 @@ return true;
 </form>
 
 <br class="cle">
-<h4>�e���ڂ̐���</h4>
+<h4>各項目の説明</h4>
 <ul class="list01">
-  <li>�푰�@�F�@�l�ԁA�G���t�܂��̓K�[�S�C�����I�����܂��B�l�Ԃ̏ꍇ�A���̓X�L����0.0�ł�20.0�Ƃ��Čv�Z����܂��B</li>
-  <li>Focus�@�F�@Focus�i�W���j�X�L���l����͂��܂��B</li>
-  <li>Meditation�@�F�@Meditation�i�ґz�j�X�L���l����͂��܂��B</li>
-  <li>INT�@�F�@INT�X�e�[�^�X�l����͂��܂��BMana�ł͂���܂���̂Œ��ӂ��Ă��������B</li>
-  <li>�\���ґz�^�s�@�F�@�ґz�X�L�����g���ґz��Ԃɓ��邱�Ƃ��ł��邩�ǂ����I�����܂��B</li>
-  <li>�푰�������}�i�񕜁@�F�@�K�[�S�C����I�����Ă���ꍇ�A�}�W�b�N�v���p�e�B�ɑ�������}�i��2�����Z����܂��B</li>
-  <li>�����i����уA�r���e�B���v�@�F�@�����i����уA�r���e�B�ɕt�������u�}�i�񕜁v�̍��v����͂��܂��B</li>
-  <li>�S�}�i�񕜍��v�@�F�@�L�����N�^�[�̏����l��Focus�AMeditation����ё����i���ɂ��␳��}�i�񕜂̍��v�l���\������܂��B
-<br><font color="#ff0000">�����ŏ����ȉ��̒[���͐؎̂ƂȂ�悤�C�����܂����B</font></li>
-  <li>�}�i�񕜂ɗv���鎞�ԁ@�F�@��L�̑S�}�i�񕜍��v���g���A�C�ӂ̃}�i���񕜂����邽�߂̎��ԁi0.01sec�P�ʐ؏�j���v�Z���܂��B</li>
+  <li>種族　：　人間、エルフまたはガーゴイルより選択します。人間の場合、入力スキル＝0.0でも20.0として計算されます。</li>
+  <li>Focus　：　Focus（集中）スキル値を入力します。</li>
+  <li>Meditation　：　Meditation（瞑想）スキル値を入力します。</li>
+  <li>INT　：　INTステータス値を入力します。Manaではありませんので注意してください。</li>
+  <li>能動瞑想可／不可　：　瞑想スキルを使い瞑想状態に入ることができるかどうか選択します。</li>
+  <li>種族特性よるマナ回復　：　ガーゴイルを選択している場合、マジックプロパティに相当するマナ回復2が加算されます。</li>
+  <li>装備品およびアビリティ合計　：　装備品およびアビリティに付加される「マナ回復」の合計を入力します。</li>
+  <li>全マナ回復合計　：　キャラクターの初期値にFocus、Meditationおよび装備品等による補正後マナ回復の合計値が表示されます。
+<br><font color="#ff0000">ここで小数以下の端数は切捨となるよう修正しました。</font></li>
+  <li>マナ回復に要する時間　：　上記の全マナ回復合計を使い、任意のマナを回復させるための時間（0.01sec単位切上）を計算します。</li>
 </ul>
 
-<h4>�}�i�񕜒l�̎Z�o�i�ŏI�Łj</h4>
+<h4>マナ回復値の算出（最終版）</h4>
 
 <ul class="list01">
-  <li>�푰�Ɋ֌W�Ȃ��A�}�i��2���^�����Ă���B</li>
-  <li>Focus�ɂ��}�i�񕜒l</li>
-<br>�}�i�񕜒l��(Focus) / 20
-  <li>Meditation, INT�ɂ��}�i�񕜒l</li>
-<br>�}�i�񕜒l��A�~B�~{3�~(Meditation)�{(INT)} / 40
-<br>A�@�F�@�L�����N�^�[�̑�������я�Ԃɂ��W��
+  <li>種族に関係なく、マナ回復2が与えられている。</li>
+  <li>Focusによるマナ回復値</li>
+<br>マナ回復値＝(Focus) / 20
+  <li>Meditation, INTによるマナ回復値</li>
+<br>マナ回復値＝A×B×{3×(Meditation)＋(INT)} / 40
+<br>A　：　キャラクターの装備および状態による係数
   <ul class="list02">
-<li>�ґz�s�@�F�@A��0</li>
-<li>�ґz�i�������j�@�F�@A��1</li>
-<li>�ґz�i�ґz���j�@�F�@A��2</li>
+<li>瞑想不可　：　A＝0</li>
+<li>瞑想可（平穏時）　：　A＝1</li>
+<li>瞑想可（瞑想時）　：　A＝2</li>
   </ul>
-B�@�F�@Meditation�X�L���ɂ��W��
+B　：　Meditationスキルによる係数
   <ul class="list02">
-<li>Meditation�X�L����100�����@�F�@B��1.0</li>
-<li>Meditation�X�L����100�ȏ�@�F�@B��1.1</li>
+<li>Meditationスキルが100未満　：　B＝1.0</li>
+<li>Meditationスキルが100以上　：　B＝1.1</li>
   </ul>
-  <li>�����i����уA�r���e�B�ɂ��␳��̃}�i�񕜒l</li>
-<br>�␳��}�i�񕜒l��(2.35�{0.65�~C)�~sqrt(�␳�O�}�i�񕜒l)�|(1.35�{0.65�~C)
-<br>C�@�F�@{2�~(Meditation)�{(Focus)}/360
-<br>�C���O�́A(7/3�{2/3�~C)�~sqrt(�␳�O�}�i�񕜒l)�|(4/3�{2/3�~C)�Ƃ��Ă��܂����B
+  <li>装備品およびアビリティによる補正後のマナ回復値</li>
+<br>補正後マナ回復値＝(2.35＋0.65×C)×sqrt(補正前マナ回復値)−(1.35＋0.65×C)
+<br>C　：　{2×(Meditation)＋(Focus)}/360
+<br>修正前は、(7/3＋2/3×C)×sqrt(補正前マナ回復値)−(4/3＋2/3×C)としていました。
 </ul>
 
 <img src="mana_regene_compare.gif" alt="" class="img02">
-<br>2�~(Meditation)�{(Focus)�̒l�ɂ���ĕ␳��̃}�i�񕜒l���O���t�̂悤�ɕω����܂��B
+<br>2×(Meditation)＋(Focus)の値によって補正後のマナ回復値がグラフのように変化します。
 
 
 </body>

@@ -1,86 +1,86 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
 <HTML lang="ja">
-<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=utf-8">
 <link href="style_2.css" type="text/css" rel="stylesheet">
-<TITLE>fish monger�̃N�G�X�g����</TITLE>
+<TITLE>fish mongerのクエスト資料</TITLE>
 </HEAD>
 <BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898794</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
-<h2>fish monger�̃N�G�X�g����</h2>
+<h2>fish mongerのクエスト資料</h2>
 
 <hr>
-<h3>�z�����鋛��ނ̐���</h3>
+<h3>配送する魚介類の数量</h3>
 
-�ȑO�A���[���Ŋ񂹂�ꂽ�������ƂɊm�F���s���܂����B
-<br>�z�����鋛��ނ̐��ʂ͎�ނ��Ƃɐݒ肳��Ă���A���̂悤�ɕω����Ă����܂��B
-<br>�ǂ̈˗����A��������z��������̂Ƃ��܂��B
+以前、メールで寄せられた情報をもとに確認を行いました。
+<br>配送する魚介類の数量は種類ごとに設定されており、次のように変化していきます。
+<br>どの依頼も、同じ魚を配送するものとします。
 
-<p>��{</p>
+<p>基本</p>
 <ul class="list02">
- <li>�z�����ʂ̏����l��10�C�B�ŏ��l��5�C�A�ő�l��20�C</li>
- <li>�z�������������Ƃ��A����̔z�����ʂ�5�C���ƂȂ�</li>
- <li>�z����j�������Ƃ��A����̔z�����ʂ�5�C���ƂȂ�</li>
- <li>�������������ꍇ�̔z�����ʂ́A10��15��20��10���E�E�E�E�ƂȂ�</li>
- <li>�j�����������ꍇ�̔z�����ʂ́A20��15��10��5��5�E�E�E�E�ƂȂ�</li>
+ <li>配送数量の初期値は10匹。最小値は5匹、最大値は20匹</li>
+ <li>配送を完了したとき、次回の配送数量は5匹増となる</li>
+ <li>配送を破棄したとき、次回の配送数量は5匹減となる</li>
+ <li>完了し続けた場合の配送数量は、10→15→20→10→・・・・となる</li>
+ <li>破棄し続けた場合の配送数量は、20↓15↓10↓5↓5・・・・となる</li>
 </ul>
 
-<font color="#ff0000">Publish72���A�������������ꍇ�̔z�����ʂ�20��10�ɖ߂邱�Ƃ͂Ȃ��Ȃ�܂����B
-<br>�˗����󂯂Ă���̃L�����Z�������Ȃ���΁A�ŏI�I�ɁA�S�Ă̋��̔z�����ʂ�20�C�ƂȂ�܂�</font>
+<font color="#ff0000">Publish72より、完了し続けた場合の配送数量が20→10に戻ることはなくなりました。
+<br>依頼を受けてからのキャンセルをしなければ、最終的に、全ての魚の配送数量が20匹となります</font>
 
-<p>����</p>
+<p>特殊</p>
 <ul class="list02">
- <li>20�C�̔z��������������Ɏ󂯂�10�C�̔z����j������ƁA���̔z�����ʂ�20�C�ƂȂ�
-<br>20��10��20</li>
- <li>�z��A��ێ����Ă���ԂŔz��B���󂯂��Ƃ��A�z��B�̐��ʂ͔z��A�̐��ʂƓ����ƂȂ�</li>
- <li>��L�̔z��A�Ɣz��B���������Ă���z��C���󂯂��Ƃ��A�z��C�̐��ʂ͔z��A�܂���B����1�i�K�i5�C�j�i�񂾐��ʂƂȂ�</li>
- <li>�z��A�Ɣz��B��j�����Ă���z��C���󂯂��Ƃ��A�z��C�̐��ʂ͔z��A�܂���B����2�i�K�i10�C�j���������ʂƂȂ�</li>
- <li>�z��A���������Ă���z��B��j�����A���̌�z��C���󂯂��Ƃ��A�z��C�̐��ʂ͔z��A�܂���B�Ɠ����ɂȂ�</li>
- <li>�z��A��j�����Ă���z��B���������A���̌�z��C���󂯂��Ƃ��A�z��C�̐��ʂ͔z��A�܂���B����1�i�K�i5�C�j�i�񂾐��ʂƂȂ�</li>
+ <li>20匹の配送を完了した後に受けた10匹の配送を破棄すると、次の配送数量は20匹となる
+<br>20→10↓20</li>
+ <li>配送Aを保持してた状態で配送Bを受けたとき、配送Bの数量は配送Aの数量と同じとなる</li>
+ <li>上記の配送Aと配送Bを完了してから配送Cを受けたとき、配送Cの数量は配送AまたはBから1段階（5匹）進んだ数量となる</li>
+ <li>配送Aと配送Bを破棄してから配送Cを受けたとき、配送Cの数量は配送AまたはBから2段階（10匹）減った数量となる</li>
+ <li>配送Aを完了してから配送Bを破棄し、その後配送Cを受けたとき、配送Cの数量は配送AまたはBと同じになる</li>
+ <li>配送Aを破棄してから配送Bを完了し、その後配送Cを受けたとき、配送Cの数量は配送AまたはBから1段階（5匹）進んだ数量となる</li>
 </ul>
 
-<p>����1</p>
-�z���˗����󂯂�A�˗���j������܂��͊�������̂�1�s���Ƃ��A�N�G�X�g���ʂɊւ�邱�Ƃ𔲂��o���܂����B
+<p>実例1</p>
+配送依頼を受ける、依頼を破棄するまたは完了するのを1行動とし、クエスト数量に関わることを抜き出しました。
 
 <ul class="list02">
- <li>�s��3 �@�F�@�A�b�v���N���u10���܂ޔz���˗�A���󂯂�</li>
- <li>�s��10�@�F�@�z���˗�B���󂯂�B�s��3�ł̈˗���ێ����Ă��邽�߁A�A�b�v���N���u�̐��ʂ�10</li>
- <li>�s��11�@�F�@�z���˗�B��j��</li>
- <li>�s��17�@�F�@�z���˗�C���󂯂�B�A�b�v���N���u�̐��ʂ�20�B
-<br>�s��3�ȑO�ɃA�b�v���N���u20���܂ޔz�����������Ă������߁A10����20�ƂȂ����B</li>
- <li>�s��18�@�F�@ �z���˗�A��j���B</li>
- <li>�s��26�@�F�@�z���˗�D���󂯂�B�A�b�v���N���u�̐��ʂ�15</li>
- <li>�s��27�@�F�@�z���˗�D��j���B</li>
- <li>�s��41�@�F�@�z���˗�C��j���B</li>
- <li>�s��61�@�F�@�z���˗�E���󂯂�B�s��26�ȍ~2��j�����Ă������߁A�A�b�v���N���u�̐��ʂ�5</li>
+ <li>行動3 　：　アップルクラブ10を含む配送依頼Aを受ける</li>
+ <li>行動10　：　配送依頼Bを受ける。行動3での依頼を保持しているため、アップルクラブの数量は10</li>
+ <li>行動11　：　配送依頼Bを破棄</li>
+ <li>行動17　：　配送依頼Cを受ける。アップルクラブの数量は20。
+<br>行動3以前にアップルクラブ20を含む配送を完了していたため、10から20となった。</li>
+ <li>行動18　：　 配送依頼Aを破棄。</li>
+ <li>行動26　：　配送依頼Dを受ける。アップルクラブの数量は15</li>
+ <li>行動27　：　配送依頼Dを破棄。</li>
+ <li>行動41　：　配送依頼Cを破棄。</li>
+ <li>行動61　：　配送依頼Eを受ける。行動26以降2回破棄していたため、アップルクラブの数量は5</li>
 </ul>
 
-<p>����2</p>
+<p>実例2</p>
 
 <ul class="list02">
- <li>�s��153 �@�F�@�n���}�[���u�X�^�[15���܂ޔz���˗�A���󂯂�</li>
- <li>�s��157�@�F�@�z���˗�B���󂯂�B�s��153�ł̈˗���ێ����Ă��邽�߁A�n���}�[���u�X�^�[�̐��ʂ�15</li>
- <li>�s��159�@�F�@�z���˗�B��j��</li>
- <li>�s��160�@�F�@�z���˗�A������</li>
- <li>�s��169�@�F�@�z���˗�C���󂯂�B�n���}�[���u�X�^�[�̐��ʂ�20</li>
+ <li>行動153 　：　ハンマーロブスター15を含む配送依頼Aを受ける</li>
+ <li>行動157　：　配送依頼Bを受ける。行動153での依頼を保持しているため、ハンマーロブスターの数量は15</li>
+ <li>行動159　：　配送依頼Bを破棄</li>
+ <li>行動160　：　配送依頼Aを完了</li>
+ <li>行動169　：　配送依頼Cを受ける。ハンマーロブスターの数量は20</li>
 </ul>
 
-<p>����3</p>
+<p>実例3</p>
 
 <ul class="list02">
- <li>�s��158�@�F�@���b�N���u�X�^�[20���܂ޔz���˗�A���󂯂�</li>
- <li>�s��161�@�F�@�z���˗�B���󂯂�B�s��158�ł̈˗���ێ����Ă��邽�߁A���b�N���u�X�^�[�̐��ʂ�20</li>
- <li>�s��162�@�F�@�z���˗�B������</li>
- <li>�s��166�@�F�@�z���˗�A��j��</li>
- <li>�s��184�@�F�@�z���˗�C���󂯂�B���b�N���u�X�^�[�̐��ʂ�20</li>
+ <li>行動158　：　ロックロブスター20を含む配送依頼Aを受ける</li>
+ <li>行動161　：　配送依頼Bを受ける。行動158での依頼を保持しているため、ロックロブスターの数量は20</li>
+ <li>行動162　：　配送依頼Bを完了</li>
+ <li>行動166　：　配送依頼Aを破棄</li>
+ <li>行動184　：　配送依頼Cを受ける。ロックロブスターの数量は20</li>
 </ul>
 
-<p>����4</p>
+<p>実例4</p>
 
 <ul class="list02">
- <li>�s��137�@�F�@�A�����i�p�C�N10���܂ޔz���˗�A���󂯂�</li>
- <li>�s��140�@�F�@�z���˗�B���󂯂�B�s��137�ł̈˗���ێ����Ă��邽�߁A�A�����i�p�C�N�̐��ʂ�10</li>
- <li>�s��142�@�F�@�z���˗�A������</li>
- <li>�s��148�@�F�@�z���˗�B������</li>
- <li>�s��155�@�F�@�z���˗�C���󂯂�B�A�����i�p�C�N�̐��ʂ�15</li>
+ <li>行動137　：　アワレナパイク10を含む配送依頼Aを受ける</li>
+ <li>行動140　：　配送依頼Bを受ける。行動137での依頼を保持しているため、アワレナパイクの数量は10</li>
+ <li>行動142　：　配送依頼Aを完了</li>
+ <li>行動148　：　配送依頼Bを完了</li>
+ <li>行動155　：　配送依頼Cを受ける。アワレナパイクの数量は15</li>
 </ul>
 
 <br><img src="fishbulk_note_01.gif" alt="" class="img01">

@@ -1,17 +1,17 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
 <HTML lang="ja">
 <HEAD>
-<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta http-equiv="content-style-type" content="text/css">
 <link href="style_2.css" type="text/css" rel="stylesheet">
 <meta http-equiv="content-script-type" content="text/javascript">
-<TITLE>Publish71 ����</TITLE>
+<TITLE>Publish71 メモ</TITLE>
 </HEAD>
 <BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899141</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
 <script language="javascript"> 
 <!--
 
-//������
+//初期化
 function keisan0(form)
 {
 var form = document.form_keisan;
@@ -43,7 +43,7 @@ var form = document.form_keisan;
   return true;
 }
  
-//�v�Z
+//計算
  
 function keisan1(form)
 {
@@ -168,23 +168,23 @@ var form = document.form_keisan;
 //-->
 </script>
 
-<h2>Publish71 ����</h2>
+<h2>Publish71 メモ</h2>
 <HR>
 
-<h3>�P�DChivalry</h3>
+<h3>１．Chivalry</h3>
 
-Publish71�ɂ�����AChivalry�̕ύX�_���܂Ƃ߂܂��B
-<br>Chivalry�X�L���ƃJ���}����͂���ƁAPublish70��71�ł̌��ʂ��r���邱�Ƃ��ł��܂��B
+Publish71における、Chivalryの変更点をまとめます。
+<br>Chivalryスキルとカルマを入力すると、Publish70と71での効果を比較することができます。
 <form name="form_keisan">
-Chivalry�X�L���@�F�@<input type="text" name="skill" size="5" value="0" onchange="keisan1(form)">�@�X�L���͈̔͂�0�`120�ł��B
-<br>�J���}�@�F�@<input type="text" name="karma" size="6" value="0" onchange="keisan1(form)">�@-20000�ȉ���-20000�A20000�ȏ��20000�Ƃ��Čv�Z����܂��B
+Chivalryスキル　：　<input type="text" name="skill" size="5" value="0" onchange="keisan1(form)">　スキルの範囲は0〜120です。
+<br>カルマ　：　<input type="text" name="karma" size="6" value="0" onchange="keisan1(form)">　-20000以下は-20000、20000以上は20000として計算されます。
 
 
-<h4>�i�P�jEnemy of One</h4>
+<h4>（１）Enemy of One</h4>
 
-�g�p���A������x�r�����邱�Ƃɂ��A���@�̌��ʂ��������邱�Ƃ��ł���悤�ɂȂ�܂����B
-<br>�΃����X�^�[�����łȂ��΃v���C���[�ɂ��_���[�W�{�[�i�X���K�p�����悤�ɂȂ�܂����B
-<br>�΃v���C���[�ɂ�����_���[�W�{�[�i�X�́A��Z�ł͂Ȃ����Z�iSTR��Tactics�̂悤�ȕ␳�j�ŋ@�\���Ă���悤�ł��i�s����ǂ����͕s���j�B
+使用中、もう一度詠唱することにより、魔法の効果を解除することができるようになりました。
+<br>対モンスターだけでなく対プレイヤーにもダメージボーナスが適用されるようになりました。
+<br>対プレイヤーにおけるダメージボーナスは、乗算ではなく加算（STRやTacticsのような補正）で機能しているようです（不具合かどうかは不明）。
 
 <table class="table02">
  <tr bgcolor="#f0f0f0">
@@ -193,26 +193,26 @@ Chivalry�X�L���@�F�@<input type="text" name="skill" size="5" value="0" onchange=
   <td width="150">Publish71</td>
  </tr>
  <tr bgcolor="#ccccff">
-  <td>�L������</td>
+  <td>有効時間</td>
   <td><input class="readtext" readonly type="text" name="para01" size="4" value="0">sec</td>
   <td><input class="readtext" readonly type="text" name="para03" size="4" value="0">sec</td>
  </tr>
  <tr bgcolor="#ddddff">
-  <td>�_���[�W�{�[�i�X�iPvM�j</td>
-  <td><input class="readtext" readonly type="text" name="para02" size="4" value="0">��</td>
-  <td><input class="readtext" readonly type="text" name="para04" size="4" value="0">��</td>
+  <td>ダメージボーナス（PvM）</td>
+  <td><input class="readtext" readonly type="text" name="para02" size="4" value="0">％</td>
+  <td><input class="readtext" readonly type="text" name="para04" size="4" value="0">％</td>
  </tr>
  <tr bgcolor="#ccccff">
-  <td>�_���[�W�{�[�i�X�iPvP�j</td>
-  <td>�Ȃ�</td>
-  <td><input class="readtext" readonly type="text" name="para24" size="4" value="0">��</td>
+  <td>ダメージボーナス（PvP）</td>
+  <td>なし</td>
+  <td><input class="readtext" readonly type="text" name="para24" size="4" value="0">％</td>
  </tr>
 </table>
 
-<h4>�i�Q�jConsecrate Weapon</h4>
+<h4>（２）Consecrate Weapon</h4>
 
-��_�����ɑ΂���U�������m�����X�L���Ɉˑ�����悤�ɂȂ�܂����B
-<br>�����R�m�X�L���ł́A�_���[�W�{�[�i�X�i��Z�j���������܂��B
+弱点属性に対する攻撃成功確率がスキルに依存するようになりました。
+<br>高い騎士スキルでは、ダメージボーナス（乗算）も発生します。
 
 <table class="table02">
  <tr bgcolor="#f0f0f0">
@@ -221,26 +221,26 @@ Chivalry�X�L���@�F�@<input type="text" name="skill" size="5" value="0" onchange=
   <td width="150">Publish71</td>
  </tr>
  <tr bgcolor="#ccccff">
-  <td>�L������</td>
+  <td>有効時間</td>
   <td><input class="readtext" readonly type="text" name="para05" size="4" value="0">sec</td>
   <td><input class="readtext" readonly type="text" name="para08" size="4" value="0">sec</td>
  </tr>
  <tr bgcolor="#ddddff">
-  <td>��_�����U���m��</td>
-  <td><input class="readtext" readonly type="text" name="para06" size="4" value="0">��</td>
-  <td><input class="readtext" readonly type="text" name="para09" size="4" value="0">��</td>
+  <td>弱点属性攻撃確率</td>
+  <td><input class="readtext" readonly type="text" name="para06" size="4" value="0">％</td>
+  <td><input class="readtext" readonly type="text" name="para09" size="4" value="0">％</td>
  </tr>
  <tr bgcolor="#ccccff">
-  <td>�_���[�W�{�[�i�X</td>
-  <td><input class="readtext" readonly type="text" name="para07" size="4" value="0">��</td>
-  <td><input class="readtext" readonly type="text" name="para10" size="4" value="0">��</td>
+  <td>ダメージボーナス</td>
+  <td><input class="readtext" readonly type="text" name="para07" size="4" value="0">％</td>
+  <td><input class="readtext" readonly type="text" name="para10" size="4" value="0">％</td>
  </tr>
 </table>
 
-<h4>�i�R�jDivine Fury</h4>
+<h4>（３）Divine Fury</h4>
 
-����_���[�W�Ȃǂ̌��ʂ��X�L������уJ���}�Ɉˑ�����悤�ɂȂ�܂����B
-<br>�X�^�~�i�͑S�񕜂ł͂Ȃ��A���ʂ̉񕜂ƂȂ�܂��B
+武器ダメージなどの効果がスキルおよびカルマに依存するようになりました。
+<br>スタミナは全回復ではなく、一定量の回復となります。
 
 <table class="table02">
  <tr bgcolor="#f0f0f0">
@@ -249,38 +249,38 @@ Chivalry�X�L���@�F�@<input type="text" name="skill" size="5" value="0" onchange=
   <td width="150">Publish71</td>
  </tr>
  <tr bgcolor="#ccccff">
-  <td>�L������</td>
+  <td>有効時間</td>
   <td><input class="readtext" readonly type="text" name="para11" size="4" value="0">sec</td>
   <td><input class="readtext" readonly type="text" name="para16" size="4" value="0">sec</td>
  </tr>
  <tr bgcolor="#ddddff">
-  <td>����_���[�W</td>
-  <td><input class="readtext" readonly type="text" name="para12" size="4" value="0">��</td>
-  <td><input class="readtext" readonly type="text" name="para17" size="4" value="0">��</td>
+  <td>武器ダメージ</td>
+  <td><input class="readtext" readonly type="text" name="para12" size="4" value="0">％</td>
+  <td><input class="readtext" readonly type="text" name="para17" size="4" value="0">％</td>
  </tr>
  <tr bgcolor="#ccccff">
-  <td>����</td>
-  <td><input class="readtext" readonly type="text" name="para13" size="4" value="0">��</td>
-  <td><input class="readtext" readonly type="text" name="para18" size="4" value="0">��</td>
+  <td>命中</td>
+  <td><input class="readtext" readonly type="text" name="para13" size="4" value="0">％</td>
+  <td><input class="readtext" readonly type="text" name="para18" size="4" value="0">％</td>
  </tr>
  <tr bgcolor="#ddddff">
-  <td>���x</td>
-  <td><input class="readtext" readonly type="text" name="para14" size="4" value="0">��</td>
-  <td><input class="readtext" readonly type="text" name="para19" size="4" value="0">��</td>
+  <td>速度</td>
+  <td><input class="readtext" readonly type="text" name="para14" size="4" value="0">％</td>
+  <td><input class="readtext" readonly type="text" name="para19" size="4" value="0">％</td>
  </tr>
  <tr bgcolor="#ccccff">
-  <td>���</td>
-  <td><input class="readtext" readonly type="text" name="para15" size="4" value="0">��</td>
-  <td><input class="readtext" readonly type="text" name="para20" size="4" value="0">��</td>
+  <td>回避</td>
+  <td><input class="readtext" readonly type="text" name="para15" size="4" value="0">％</td>
+  <td><input class="readtext" readonly type="text" name="para20" size="4" value="0">％</td>
  </tr>
  <tr bgcolor="#ddddff">
-  <td>�X�^�~�i�񕜗�</td>
-  <td>�S��</td>
+  <td>スタミナ回復量</td>
+  <td>全快</td>
   <td><input class="readtext" readonly type="text" name="para21" size="4" value="0"></td>
  </tr>
 </table>
 
-<h4>�i�S�jCleanse by Fire</h4>
+<h4>（４）Cleanse by Fire</h4>
 
 
 <table class="table02">
@@ -290,7 +290,7 @@ Chivalry�X�L���@�F�@<input type="text" name="skill" size="5" value="0" onchange=
   <td width="150">Publish71</td>
  </tr>
  <tr bgcolor="#ccccff">
-  <td>��Ŏ��_���[�W</td>
+  <td>解毒時ダメージ</td>
   <td><input class="readtext" readonly type="text" name="para22" size="4" value="0"></td>
   <td><input class="readtext" readonly type="text" name="para23" size="4" value="0"></td>
  </tr>
@@ -299,77 +299,77 @@ Chivalry�X�L���@�F�@<input type="text" name="skill" size="5" value="0" onchange=
 </form>
 
 
-<h3>�Q�D��тɂ���</h3>
+<h3>２．包帯による回復</h3>
 
-<h4>�i�P�j�񕜂ɗv���鎞�Ԃ̕ύX</h4>
+<h4>（１）回復に要する時間の変更</h4>
 
 <table class="table02">
  <tr bgcolor="#f0f0f0">
   <td width="150">DEX</td>
-  <td width="150">�����̉�</td>
-  <td width="150">���l�̉�</td>
+  <td width="150">自分の回復</td>
+  <td width="150">他人の回復</td>
  </tr>
  <tr bgcolor="#ddddff">
-  <td>140�`</td>
+  <td>140〜</td>
   <td>4 sec</td>
   <td>1 sec</td>
  </tr>
  <tr bgcolor="#eeeeff">
-  <td>120�`139</td>
+  <td>120〜139</td>
   <td>5 sec</td>
   <td>2 sec</td>
  </tr>
  <tr bgcolor="#ddddff">
-  <td>100�`119</td>
+  <td>100〜119</td>
   <td>6 sec</td>
   <td>2 sec</td>
  </tr>
  <tr bgcolor="#eeeeff">
-  <td>80�`99</td>
+  <td>80〜99</td>
   <td>7 sec</td>
   <td>2 sec</td>
  </tr>
  <tr bgcolor="#ddddff">
-  <td>�`79</td>
+  <td>〜79</td>
   <td>8 sec</td>
   <td>3 sec</td>
  </tr>
 </table>
 
-<h4>�i�Q�j��щ�ł̃`�F�b�N�񐔒ǉ�</h4>
+<h4>（２）包帯解毒のチェック回数追加</h4>
 
-�����̕�тœł��񕜂��Ă���Ƃ��A�v���鎞�Ԃ̔������o�߂����i�K�ŁA
-��łł������ǂ����̃`�F�b�N���s���܂��B
-<br>��łɐ��������Ƃ��A2��ڂ̃`�F�b�N��HP���񕜂��܂����A�񕜗ʂ́A��ł����ł̃��x�������DEX�ɉ����Ĉ��̊����Ō������܂��B
-<br>��łɐ������Ȃ������ꍇ�A2��ڂ̃`�F�b�N�ōĂщ�ł̃`�F�b�N���s���܂��i�]���̎d�l�Ɠ����j
+自分の包帯で毒を回復しているとき、要する時間の半分を経過した段階で、
+解毒できたかどうかのチェックが行われます。
+<br>解毒に成功したとき、2回目のチェックでHPも回復しますが、回復量は、解毒した毒のレベルおよびDEXに応じて一定の割合で減少します。
+<br>解毒に成功しなかった場合、2回目のチェックで再び解毒のチェックが行われます（従来の仕様と同じ）
 
-<p>���ԃ`�F�b�N�ł̉�Ŋm��</p>
-�ianatomy + healing - 120) * 25 / (20 * �Ń��x��)
+<p>中間チェックでの解毒確率</p>
+（anatomy + healing - 120) * 25 / (20 * 毒レベル)
 
-<p>��Ő������HP�񕜗�</p>
+<p>解毒成功後のHP回復量</p>
 
- (�ʏ�񕜗�)�~(1 - 0.25 - 0.01 * (150 - DEX) / 5)^(�Ń��x�� - 1)
+ (通常回復量)×(1 - 0.25 - 0.01 * (150 - DEX) / 5)^(毒レベル - 1)
 
-<h4>�i�R�j�_���[�W�ɂ��X���b�v�̕ύX</h4>
+<h4>（３）ダメージによるスリップの変更</h4>
 
-��тł̉񕜒��ɉ��L�ȏ�̃_���[�W���󂯂�ƁA"�w��������"�ƕ\������A�񕜗ʂ��ቺ���܂��B
-<br>�ΐl �F 14+(DEX-20)/20�@DEX�ɂ��14�`21
-<br>�΃����X�^�[ �F 21+(DEX-20)/20�@DEX�ɂ��21�`28
+包帯での回復中に下記以上のダメージを受けると、"指が滑った"と表示され、回復量が低下します。
+<br>対人 ： 14+(DEX-20)/20　DEXにより14〜21
+<br>対モンスター ： 21+(DEX-20)/20　DEXにより21〜28
 
-<p>�X���b�v���HP�񕜗�</p>
+<p>スリップ後のHP回復量</p>
 
- (�ʏ�񕜗�)�~(1 - 0.25 - 0.01 * (150 - DEX) / 5)^(�X���b�v��)
+ (通常回復量)×(1 - 0.25 - 0.01 * (150 - DEX) / 5)^(スリップ回数)
 
 
-<h3>�R�D��Ń|�[�V�����̌���</h3>
+<h3>３．解毒ポーションの効果</h3>
 
-��Ń|�[�V�����ɂ���Ŋm�����ύX�ɂȂ�܂����B
-<br>Test Center�ł́A��Ŋm���͂����悻���\�̂悤�ɂȂ��Ă��܂����iPotion����0���AAlchemy=0�j�B
-<br>Potion����������ꍇ�A��Ŋm���͉��\�̊m���ɑ΂��ā��������������܂��B
+解毒ポーションによる解毒確率が変更になりました。
+<br>Test Centerでは、解毒確率はおおよそ下表のようになっていました（Potion強化0％、Alchemy=0）。
+<br>Potion強化がある場合、解毒確率は下表の確率に対して○％だけ増加します。
 
 <table class="table02">
  <tr bgcolor="#f0f0f0">
-  <td width="180">�|�[�V�����̋���</td>
+  <td width="180">ポーションの強さ</td>
   <td width="50">Lv1</td>
   <td width="50">Lv2</td>
   <td width="50">Lv3</td>
@@ -377,7 +377,7 @@ Chivalry�X�L���@�F�@<input type="text" name="skill" size="5" value="0" onchange=
   <td width="50">Lv5</td>
  </tr>
  <tr bgcolor="#ffddbb">
-  <td>lesser cure potion<br>[��� - ��]</td>
+  <td>lesser cure potion<br>[解毒 - 弱]</td>
   <td>100%</td>
   <td>25%</td>
   <td>7%</td>
@@ -385,7 +385,7 @@ Chivalry�X�L���@�F�@<input type="text" name="skill" size="5" value="0" onchange=
   <td><5%</td>
  </tr>
  <tr bgcolor="#ffddbb">
-  <td>cure potion<br>[���]</td>
+  <td>cure potion<br>[解毒]</td>
   <td>100%</td>
   <td>70%</td>
   <td>30%</td>
@@ -393,7 +393,7 @@ Chivalry�X�L���@�F�@<input type="text" name="skill" size="5" value="0" onchange=
   <td>10%</td>
  </tr>
  <tr bgcolor="#ffddbb">
-  <td>greater cure potion<br>[��� - ��]</td>
+  <td>greater cure potion<br>[解毒 - 強]</td>
   <td>100%</td>
   <td>100%</td>
   <td>55%</td>

@@ -1,42 +1,42 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
 <HTML lang="ja">
 <HEAD>
-<meta http-equiv="content-type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta http-equiv="content-style-type" content="text/css">
 <link href="style_2.css" type="text/css" rel="stylesheet">
 <meta http-equiv="content-script-type" content="text/javascript">
-<TITLE>���풊�o�v�Z</TITLE>
+<TITLE>武器抽出計算</TITLE>
 </HEAD>
 <BODY><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541898825</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
 
-<!--�ȉ��{��-->
+<!--以下本文-->
 
-<h2>���풊�o�v�Z</h2>
+<h2>武器抽出計算</h2>
 <HR>
 
-Imbuing�X�L���ŃA�C�e���𒊏o�iunravel�j����Ƃ��̎Q�l�ɍ쐬���܂����B
-<br>�L�����N�^�[�A���o�Ɏg�p����{�݁A�t�������}�W�b�N���ʂ�I�𗓂��I�����܂��B
-<br>����̌��ݑϋv�l����͂��A"�����i"�ł���΁A�������`�F�b�N���܂��B
-<br>�S���x�v�Z�{�^���������ƁA���ɕ]�����x����ђ��o����閂�@�f�ނ��\������܂��B
+Imbuingスキルでアイテムを抽出（unravel）するときの参考に作成しました。
+<br>キャラクター、抽出に使用する施設、付加されるマジック効果を選択欄より選択します。
+<br>武器の現在耐久値を入力し、"練成品"であれば、そこをチェックします。
+<br>全強度計算ボタンを押すと、下に評価強度および抽出される魔法素材が表示されます。
 
-<h4>���o�Ɋւ���d�l</h4>
+<h4>抽出に関する仕様</h4>
 <ul class="list02">
-  <li>�i�����ʂ݂̂ɂ�镐��_���[�W+ �͒��o���̃}�W�b�N���x�ɍl������܂���B</li>
-  <li>�}�i����у��C�t���[�`�̕\���l�͕���̊�{���x����ё��x�{�v���p�e�B�ɂ��ω����邽�߁A1�`25�ɕϊ��������x�œ��͂��܂��B
-<br>�\���l���狭�x�ւ́A���̃��C�t���[�`�E�}�i���[�`���x�ϊ��Ōv�Z���邱�Ƃ��ł��܂��B</li>
-  <li>�u�K�^�v�A�u����_���[�W�v�Ȃǃ}�W�b�N���ʂƑf�ތ��ʂ��d������ꍇ�A���̍��v�l���}�W�b�N���x�Ƃ��ĕ]�����܂��B
-<br><font color="#ff0000">�����̃v���p�e�B�̓v���p�e�B��I�����A������̐��l����͂��܂��B</font></li>
-  <li>�u���������v�A�uHP�񕜁v�f�ތ��ʂł��������Ȃ��v���p�e�B���}�W�b�N���ʂƂ݂Ȃ���A���̋��x��]�����܂��B
-<br><font color="#ff0000">�����̃v���p�e�B�͑f�ނ�I�����邱�Ƃŋ��x�v�Z�ɔ��f����܂��B</font></li>
-  <li>���C�t���[�`���t������Ă���ؐ������bloodwood�ŋ��������Ƃ��A�\���l�͕ς��܂��񂪁A���C�t���[�`���x8�Ƃ��ċ��x�����v�Z���܂��B</li>
-  <li>���x�����v�Z�����v���p�e�B��6�ȏ�ƂȂ����ꍇ�A������5�v���p�e�B������̋��x���ɕ␳���܂��B</li>
+  <li>品質効果のみによる武器ダメージ+ は抽出時のマジック強度に考慮されません。</li>
+  <li>マナおよびライフリーチの表示値は武器の基本速度および速度＋プロパティにより変化するため、1〜25に変換した強度で入力します。
+<br>表示値から強度へは、下のライフリーチ・マナリーチ強度変換で計算することができます。</li>
+  <li>「幸運」、「武器ダメージ」などマジック効果と素材効果が重複する場合、その合計値をマジック強度として評価します。
+<br><font color="#ff0000">これらのプロパティはプロパティを選択し、強化後の数値を入力します。</font></li>
+  <li>「装備条件」、「HP回復」素材効果でしか得られないプロパティもマジック効果とみなされ、その強度を評価します。
+<br><font color="#ff0000">これらのプロパティは素材を選択することで強度計算に反映されます。</font></li>
+  <li>ライフリーチが付加されている木製武器をbloodwoodで強化したとき、表示値は変わりませんが、ライフリーチ強度8として強度率を計算します。</li>
+  <li>強度率を計算したプロパティが6以上となった場合、それらを5プロパティあたりの強度率に補正します。</li>
 </ul>
 
 
 <script language="JavaScript" type ="text/javascript">
 <!--
 
-//�v�Z
+//計算
 function keisan1(form)
 {
 var form = document.form_keisan;
@@ -465,39 +465,39 @@ rat = Math.floor(rat * hose / 100.0);
 
  if(rat<1)
 {
-  document.zai = "���o�s��";
+  document.zai = "抽出不可";
 }
  else if(rat<50)
 {
-  document.zai = "Magical Residue �~ 1";
+  document.zai = "Magical Residue × 1";
 }
  else if(rat<100)
 {
-  document.zai = "Magical Residue �~ 2�`3";
+  document.zai = "Magical Residue × 2〜3";
 }
  else if(rat<150)
 {
-  document.zai = "Magical Residue �~ 3�`4";
+  document.zai = "Magical Residue × 3〜4";
 }
  else if(rat<200)
 {
-  document.zai = "Magical Residue �~ 4�`5";
+  document.zai = "Magical Residue × 4〜5";
 }
  else if(rat<300)
 {
-  document.zai = "Enchanted Essence �~ 1�`2";
+  document.zai = "Enchanted Essence × 1〜2";
 }
  else if(rat<400)
 {
-  document.zai = "Enchanted Essence �~ 2�`3";
+  document.zai = "Enchanted Essence × 2〜3";
 }
  else if(rat<451)
 {
-  document.zai = "Enchanted Essence �~ 3�`4";
+  document.zai = "Enchanted Essence × 3〜4";
 }
  else
 {
-  document.zai = "Relic Fragment �~ 1�`2";
+  document.zai = "Relic Fragment × 1〜2";
 }
 
   form.zai.value = document.zai;
@@ -543,13 +543,13 @@ form.lestr.value = lestr;
 
 <form name="form_keisan">
 
-<h4>�L�����N�^�[�E�{�݂̓���</h4>
+<h4>キャラクター・施設の特性</h4>
 
 <table class="table02">
 
   <tr bgcolor="#f0f0f0">
-    <td align="center" width="280">�L�����N�^�[�E�{��</td>
-    <td align="center" width="120">���x�����Z�i���j</td>
+    <td align="center" width="280">キャラクター・施設</td>
+    <td align="center" width="120">強度率加算（％）</td>
   </tr>
 
   <tr bgcolor="#f0f0f0">
@@ -559,359 +559,359 @@ form.lestr.value = lestr;
 <option value="20">Gargoyle
 </select>
 </td>
-    <td align="center"><INPUT class="readtext" readonly type="text" name="rat9" size="4" value="0">��</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat9" size="4" value="0">％</td>
   </tr>
 
   <tr bgcolor="#f0f0f0">
     <td align="center"><select name="prop0" size="1">
-<option value="0">���ʂ�Soul Forge
-<option value="10">Royal City��Soul Forge
+<option value="0">普通のSoul Forge
+<option value="10">Royal CityのSoul Forge
 <option value="30">Queen's Soul Forge
 </select>
 </td>
-    <td align="center"><INPUT class="readtext" readonly type="text" name="rat0" size="4" value="0">��</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat0" size="4" value="0">％</td>
   </tr>
 
 </table>
 
 
-<h4>�A�C�e���̓���</h4>
+<h4>アイテムの特性</h4>
 
 <table class="table02">
 
   <tr bgcolor="#f0f0f0">
-    <td align="center" width="280">�v���p�e�B�I��</td>
-    <td align="center" width="120">�\���l or ���x</td>
-    <td align="center" width="120">���x���i���j</td>
+    <td align="center" width="280">プロパティ選択</td>
+    <td align="center" width="120">表示値 or 強度</td>
+    <td align="center" width="120">強度率（％）</td>
   </tr>
 
   <tr bgcolor="#ccccff">
     <td align="center">
 <select name="prop1" SIZE="1">
 <option value="0">---------------
-<option value="5">�ǉ����ʁF���@
-<option value="5">�ǉ����ʁF�G���A�U��
-<option value="6">�ǉ����ʁF���C�t���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�X�^�~�i���[�`
-<option value="6">�ǉ����ʁF�}�i���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�����ቺ
-<option value="5">�ǉ����ʁF���ቺ
-<option value="7">�ǉ����ʁF���F���V�e�B
-<option value="4">���� (����x1�`15)
-<option value="4">��� (����x1�`15)
-<option value="2">���x
-<option value="8">����_���[�W
-<option value="3">�������� (�|�͏ȗ�)
-<option value="4">������R
-<option value="4">����R (����x1�`15)
-<option value="4">��C��R (����x1�`15)
-<option value="4">�Œ�R (����x1�`15)
-<option value="4">�G�l���M�[��R (����x1�`15)
-<option value="9">�K�^ (����x1�`100)
-<option value="1">���� (���x�ȗ�)
-<option value="1">�r���{FC-1 (���x�ȗ�)
-<option value="1">�t�@�X�g�L���X�g1 (���x�ȗ�)
-<option value="1">�o�����X�h (���x�ȗ�)
-<option value="1">�x�X�g�E�F�|���X�L�� (���x�ȗ�)
-<option value="0">�U�������ϊ� (���x�ȗ�)
-<option value="0">���ȉ��A�����܂��͍쐬�̋|�E�������큄
-<option value="6">���� (����x1�`25)
-<option value="6">��� (����x1�`25)
-<option value="11">�K�^ (����x1�`120)
-<option value="10">����R (����x1�`18)
-<option value="10">��C��R (����x1�`18)
-<option value="10">�Œ�R (����x1�`18)
-<option value="10">�G�l���M�[��R (����x1�`18)
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1〜25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1〜25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1〜15)
+<option value="4">回避 (基準強度1〜15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (−は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1〜15)
+<option value="4">冷気抵抗 (基準強度1〜15)
+<option value="4">毒抵抗 (基準強度1〜15)
+<option value="4">エネルギー抵抗 (基準強度1〜15)
+<option value="9">幸運 (基準強度1〜100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1〜25)
+<option value="6">回避 (基準強度1〜25)
+<option value="11">幸運 (基準強度1〜120)
+<option value="10">炎抵抗 (基準強度1〜18)
+<option value="10">冷気抵抗 (基準強度1〜18)
+<option value="10">毒抵抗 (基準強度1〜18)
+<option value="10">エネルギー抵抗 (基準強度1〜18)
 
 </select>
     </td>
     <td align="center"><INPUT type="text" name="kyo1" size="4" value="0"></td>
-    <td align="center"><INPUT class="readtext" readonly type="text" name="rat1" size="4" value="0">��</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat1" size="4" value="0">％</td>
   </tr>
 
   <tr bgcolor="#ddddff">
     <td align="center">
 <select name="prop2" SIZE="1">
 <option value="0">---------------
-<option value="5">�ǉ����ʁF���@
-<option value="5">�ǉ����ʁF�G���A�U��
-<option value="6">�ǉ����ʁF���C�t���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�X�^�~�i���[�`
-<option value="6">�ǉ����ʁF�}�i���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�����ቺ
-<option value="5">�ǉ����ʁF���ቺ
-<option value="7">�ǉ����ʁF���F���V�e�B
-<option value="4">���� (����x1�`15)
-<option value="4">��� (����x1�`15)
-<option value="2">���x
-<option value="8">����_���[�W
-<option value="3">�������� (�|�͏ȗ�)
-<option value="4">������R
-<option value="4">����R (����x1�`15)
-<option value="4">��C��R (����x1�`15)
-<option value="4">�Œ�R (����x1�`15)
-<option value="4">�G�l���M�[��R (����x1�`15)
-<option value="9">�K�^ (����x1�`100)
-<option value="1">���� (���x�ȗ�)
-<option value="1">�r���{FC-1 (���x�ȗ�)
-<option value="1">�t�@�X�g�L���X�g1 (���x�ȗ�)
-<option value="1">�o�����X�h (���x�ȗ�)
-<option value="1">�x�X�g�E�F�|���X�L�� (���x�ȗ�)
-<option value="0">�U�������ϊ� (���x�ȗ�)
-<option value="0">���ȉ��A�����܂��͍쐬�̋|�E�������큄
-<option value="6">���� (����x1�`25)
-<option value="6">��� (����x1�`25)
-<option value="11">�K�^ (����x1�`120)
-<option value="10">����R (����x1�`18)
-<option value="10">��C��R (����x1�`18)
-<option value="10">�Œ�R (����x1�`18)
-<option value="10">�G�l���M�[��R (����x1�`18)
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1〜25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1〜25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1〜15)
+<option value="4">回避 (基準強度1〜15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (−は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1〜15)
+<option value="4">冷気抵抗 (基準強度1〜15)
+<option value="4">毒抵抗 (基準強度1〜15)
+<option value="4">エネルギー抵抗 (基準強度1〜15)
+<option value="9">幸運 (基準強度1〜100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1〜25)
+<option value="6">回避 (基準強度1〜25)
+<option value="11">幸運 (基準強度1〜120)
+<option value="10">炎抵抗 (基準強度1〜18)
+<option value="10">冷気抵抗 (基準強度1〜18)
+<option value="10">毒抵抗 (基準強度1〜18)
+<option value="10">エネルギー抵抗 (基準強度1〜18)
 </select>
     </td>
     <td align="center"><INPUT type="text" name="kyo2" size="4" value="0"></td>
-    <td align="center"><INPUT class="readtext" readonly type="text" name="rat2" size="4" value="0">��</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat2" size="4" value="0">％</td>
   </tr>
 
   <tr bgcolor="#ccccff">
     <td align="center">
 <select name="prop3" SIZE="1">
 <option value="0">---------------
-<option value="5">�ǉ����ʁF���@
-<option value="5">�ǉ����ʁF�G���A�U��
-<option value="6">�ǉ����ʁF���C�t���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�X�^�~�i���[�`
-<option value="6">�ǉ����ʁF�}�i���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�����ቺ
-<option value="5">�ǉ����ʁF���ቺ
-<option value="7">�ǉ����ʁF���F���V�e�B
-<option value="4">���� (����x1�`15)
-<option value="4">��� (����x1�`15)
-<option value="2">���x
-<option value="8">����_���[�W
-<option value="3">�������� (�|�͏ȗ�)
-<option value="4">������R
-<option value="4">����R (����x1�`15)
-<option value="4">��C��R (����x1�`15)
-<option value="4">�Œ�R (����x1�`15)
-<option value="4">�G�l���M�[��R (����x1�`15)
-<option value="9">�K�^ (����x1�`100)
-<option value="1">���� (���x�ȗ�)
-<option value="1">�r���{FC-1 (���x�ȗ�)
-<option value="1">�t�@�X�g�L���X�g1 (���x�ȗ�)
-<option value="1">�o�����X�h (���x�ȗ�)
-<option value="1">�x�X�g�E�F�|���X�L�� (���x�ȗ�)
-<option value="0">�U�������ϊ� (���x�ȗ�)
-<option value="0">���ȉ��A�����܂��͍쐬�̋|�E�������큄
-<option value="6">���� (����x1�`25)
-<option value="6">��� (����x1�`25)
-<option value="11">�K�^ (����x1�`120)
-<option value="10">����R (����x1�`18)
-<option value="10">��C��R (����x1�`18)
-<option value="10">�Œ�R (����x1�`18)
-<option value="10">�G�l���M�[��R (����x1�`18)
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1〜25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1〜25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1〜15)
+<option value="4">回避 (基準強度1〜15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (−は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1〜15)
+<option value="4">冷気抵抗 (基準強度1〜15)
+<option value="4">毒抵抗 (基準強度1〜15)
+<option value="4">エネルギー抵抗 (基準強度1〜15)
+<option value="9">幸運 (基準強度1〜100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1〜25)
+<option value="6">回避 (基準強度1〜25)
+<option value="11">幸運 (基準強度1〜120)
+<option value="10">炎抵抗 (基準強度1〜18)
+<option value="10">冷気抵抗 (基準強度1〜18)
+<option value="10">毒抵抗 (基準強度1〜18)
+<option value="10">エネルギー抵抗 (基準強度1〜18)
 </select>
     </td>
     <td align="center"><INPUT type="text" name="kyo3" size="4" value="0"></td>
-    <td align="center"><INPUT class="readtext" readonly type="text" name="rat3" size="4" value="0">��</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat3" size="4" value="0">％</td>
   </tr>
 
   <tr bgcolor="#ddddff">
     <td align="center">
 <select name="prop4" SIZE="1">
 <option value="0">---------------
-<option value="5">�ǉ����ʁF���@
-<option value="5">�ǉ����ʁF�G���A�U��
-<option value="6">�ǉ����ʁF���C�t���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�X�^�~�i���[�`
-<option value="6">�ǉ����ʁF�}�i���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�����ቺ
-<option value="5">�ǉ����ʁF���ቺ
-<option value="7">�ǉ����ʁF���F���V�e�B
-<option value="4">���� (����x1�`15)
-<option value="4">��� (����x1�`15)
-<option value="2">���x
-<option value="8">����_���[�W
-<option value="3">�������� (�|�͏ȗ�)
-<option value="4">������R
-<option value="4">����R (����x1�`15)
-<option value="4">��C��R (����x1�`15)
-<option value="4">�Œ�R (����x1�`15)
-<option value="4">�G�l���M�[��R (����x1�`15)
-<option value="9">�K�^ (����x1�`100)
-<option value="1">���� (���x�ȗ�)
-<option value="1">�r���{FC-1 (���x�ȗ�)
-<option value="1">�t�@�X�g�L���X�g1 (���x�ȗ�)
-<option value="1">�o�����X�h (���x�ȗ�)
-<option value="1">�x�X�g�E�F�|���X�L�� (���x�ȗ�)
-<option value="0">�U�������ϊ� (���x�ȗ�)
-<option value="0">���ȉ��A�����܂��͍쐬�̋|�E�������큄
-<option value="6">���� (����x1�`25)
-<option value="6">��� (����x1�`25)
-<option value="11">�K�^ (����x1�`120)
-<option value="10">����R (����x1�`18)
-<option value="10">��C��R (����x1�`18)
-<option value="10">�Œ�R (����x1�`18)
-<option value="10">�G�l���M�[��R (����x1�`18)
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1〜25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1〜25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1〜15)
+<option value="4">回避 (基準強度1〜15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (−は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1〜15)
+<option value="4">冷気抵抗 (基準強度1〜15)
+<option value="4">毒抵抗 (基準強度1〜15)
+<option value="4">エネルギー抵抗 (基準強度1〜15)
+<option value="9">幸運 (基準強度1〜100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1〜25)
+<option value="6">回避 (基準強度1〜25)
+<option value="11">幸運 (基準強度1〜120)
+<option value="10">炎抵抗 (基準強度1〜18)
+<option value="10">冷気抵抗 (基準強度1〜18)
+<option value="10">毒抵抗 (基準強度1〜18)
+<option value="10">エネルギー抵抗 (基準強度1〜18)
 </select>
     </td>
     <td align="center"><INPUT type="text" name="kyo4" size="4" value="0"></td>
-    <td align="center"><INPUT class="readtext" readonly type="text" name="rat4" size="4" value="0">��</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat4" size="4" value="0">％</td>
   </tr>
 
   <tr bgcolor="#ccccff">
     <td align="center">
 <select name="prop5" SIZE="1">
 <option value="0">---------------
-<option value="5">�ǉ����ʁF���@
-<option value="5">�ǉ����ʁF�G���A�U��
-<option value="6">�ǉ����ʁF���C�t���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�X�^�~�i���[�`
-<option value="6">�ǉ����ʁF�}�i���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�����ቺ
-<option value="5">�ǉ����ʁF���ቺ
-<option value="7">�ǉ����ʁF���F���V�e�B
-<option value="4">���� (����x1�`15)
-<option value="4">��� (����x1�`15)
-<option value="2">���x
-<option value="8">����_���[�W
-<option value="3">�������� (�|�͏ȗ�)
-<option value="4">������R
-<option value="4">����R (����x1�`15)
-<option value="4">��C��R (����x1�`15)
-<option value="4">�Œ�R (����x1�`15)
-<option value="4">�G�l���M�[��R (����x1�`15)
-<option value="9">�K�^ (����x1�`100)
-<option value="1">���� (���x�ȗ�)
-<option value="1">�r���{FC-1 (���x�ȗ�)
-<option value="1">�t�@�X�g�L���X�g1 (���x�ȗ�)
-<option value="1">�o�����X�h (���x�ȗ�)
-<option value="1">�x�X�g�E�F�|���X�L�� (���x�ȗ�)
-<option value="0">�U�������ϊ� (���x�ȗ�)
-<option value="0">���ȉ��A�����܂��͍쐬�̋|�E�������큄
-<option value="6">���� (����x1�`25)
-<option value="6">��� (����x1�`25)
-<option value="11">�K�^ (����x1�`120)
-<option value="10">����R (����x1�`18)
-<option value="10">��C��R (����x1�`18)
-<option value="10">�Œ�R (����x1�`18)
-<option value="10">�G�l���M�[��R (����x1�`18)
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1〜25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1〜25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1〜15)
+<option value="4">回避 (基準強度1〜15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (−は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1〜15)
+<option value="4">冷気抵抗 (基準強度1〜15)
+<option value="4">毒抵抗 (基準強度1〜15)
+<option value="4">エネルギー抵抗 (基準強度1〜15)
+<option value="9">幸運 (基準強度1〜100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1〜25)
+<option value="6">回避 (基準強度1〜25)
+<option value="11">幸運 (基準強度1〜120)
+<option value="10">炎抵抗 (基準強度1〜18)
+<option value="10">冷気抵抗 (基準強度1〜18)
+<option value="10">毒抵抗 (基準強度1〜18)
+<option value="10">エネルギー抵抗 (基準強度1〜18)
 </select>
     </td>
     <td align="center"><INPUT type="text" name="kyo5" size="4" value="0"></td>
-    <td align="center"><INPUT class="readtext" readonly type="text" name="rat5" size="4" value="0">��</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat5" size="4" value="0">％</td>
   </tr>
 
   <tr bgcolor="#ddddff">
     <td align="center">
 <select name="prop6" SIZE="1">
 <option value="0">---------------
-<option value="5">�ǉ����ʁF���@
-<option value="5">�ǉ����ʁF�G���A�U��
-<option value="6">�ǉ����ʁF���C�t���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�X�^�~�i���[�`
-<option value="6">�ǉ����ʁF�}�i���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�����ቺ
-<option value="5">�ǉ����ʁF���ቺ
-<option value="7">�ǉ����ʁF���F���V�e�B
-<option value="4">���� (����x1�`15)
-<option value="4">��� (����x1�`15)
-<option value="2">���x
-<option value="8">����_���[�W
-<option value="3">�������� (�|�͏ȗ�)
-<option value="4">������R
-<option value="4">����R (����x1�`15)
-<option value="4">��C��R (����x1�`15)
-<option value="4">�Œ�R (����x1�`15)
-<option value="4">�G�l���M�[��R (����x1�`15)
-<option value="9">�K�^ (����x1�`100)
-<option value="1">���� (���x�ȗ�)
-<option value="1">�r���{FC-1 (���x�ȗ�)
-<option value="1">�t�@�X�g�L���X�g1 (���x�ȗ�)
-<option value="1">�o�����X�h (���x�ȗ�)
-<option value="1">�x�X�g�E�F�|���X�L�� (���x�ȗ�)
-<option value="0">�U�������ϊ� (���x�ȗ�)
-<option value="0">���ȉ��A�����܂��͍쐬�̋|�E�������큄
-<option value="6">���� (����x1�`25)
-<option value="6">��� (����x1�`25)
-<option value="11">�K�^ (����x1�`120)
-<option value="10">����R (����x1�`18)
-<option value="10">��C��R (����x1�`18)
-<option value="10">�Œ�R (����x1�`18)
-<option value="10">�G�l���M�[��R (����x1�`18)
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1〜25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1〜25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1〜15)
+<option value="4">回避 (基準強度1〜15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (−は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1〜15)
+<option value="4">冷気抵抗 (基準強度1〜15)
+<option value="4">毒抵抗 (基準強度1〜15)
+<option value="4">エネルギー抵抗 (基準強度1〜15)
+<option value="9">幸運 (基準強度1〜100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1〜25)
+<option value="6">回避 (基準強度1〜25)
+<option value="11">幸運 (基準強度1〜120)
+<option value="10">炎抵抗 (基準強度1〜18)
+<option value="10">冷気抵抗 (基準強度1〜18)
+<option value="10">毒抵抗 (基準強度1〜18)
+<option value="10">エネルギー抵抗 (基準強度1〜18)
 </select>
     </td>
     <td align="center"><INPUT type="text" name="kyo6" size="4" value="0"></td>
-    <td align="center"><INPUT class="readtext" readonly type="text" name="rat6" size="4" value="0">��</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat6" size="4" value="0">％</td>
   </tr>
 
   <tr bgcolor="#ccccff">
     <td align="center">
 <select name="prop7" SIZE="1">
 <option value="0">---------------
-<option value="5">�ǉ����ʁF���@
-<option value="5">�ǉ����ʁF�G���A�U��
-<option value="6">�ǉ����ʁF���C�t���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�X�^�~�i���[�`
-<option value="6">�ǉ����ʁF�}�i���[�` (���x1�`25)
-<option value="5">�ǉ����ʁF�����ቺ
-<option value="5">�ǉ����ʁF���ቺ
-<option value="7">�ǉ����ʁF���F���V�e�B
-<option value="4">���� (����x1�`15)
-<option value="4">��� (����x1�`15)
-<option value="2">���x
-<option value="8">����_���[�W
-<option value="3">�������� (�|�͏ȗ�)
-<option value="4">������R
-<option value="4">����R (����x1�`15)
-<option value="4">��C��R (����x1�`15)
-<option value="4">�Œ�R (����x1�`15)
-<option value="4">�G�l���M�[��R (����x1�`15)
-<option value="9">�K�^ (����x1�`100)
-<option value="1">���� (���x�ȗ�)
-<option value="1">�r���{FC-1 (���x�ȗ�)
-<option value="1">�t�@�X�g�L���X�g1 (���x�ȗ�)
-<option value="1">�o�����X�h (���x�ȗ�)
-<option value="1">�x�X�g�E�F�|���X�L�� (���x�ȗ�)
-<option value="0">�U�������ϊ� (���x�ȗ�)
-<option value="0">���ȉ��A�����܂��͍쐬�̋|�E�������큄
-<option value="6">���� (����x1�`25)
-<option value="6">��� (����x1�`25)
-<option value="11">�K�^ (����x1�`120)
-<option value="10">����R (����x1�`18)
-<option value="10">��C��R (����x1�`18)
-<option value="10">�Œ�R (����x1�`18)
-<option value="10">�G�l���M�[��R (����x1�`18)
+<option value="5">追加効果：魔法
+<option value="5">追加効果：エリア攻撃
+<option value="6">追加効果：ライフリーチ (強度1〜25)
+<option value="5">追加効果：スタミナリーチ
+<option value="6">追加効果：マナリーチ (強度1〜25)
+<option value="5">追加効果：命中低下
+<option value="5">追加効果：回避低下
+<option value="7">追加効果：ヴェロシティ
+<option value="4">命中 (基準強度1〜15)
+<option value="4">回避 (基準強度1〜15)
+<option value="2">速度
+<option value="8">武器ダメージ
+<option value="3">魔道武器 (−は省略)
+<option value="4">物理抵抗
+<option value="4">炎抵抗 (基準強度1〜15)
+<option value="4">冷気抵抗 (基準強度1〜15)
+<option value="4">毒抵抗 (基準強度1〜15)
+<option value="4">エネルギー抵抗 (基準強度1〜15)
+<option value="9">幸運 (基準強度1〜100)
+<option value="1">特効 (強度省略)
+<option value="1">詠唱可＋FC-1 (強度省略)
+<option value="1">ファストキャスト1 (強度省略)
+<option value="1">バランスド (強度省略)
+<option value="1">ベストウェポンスキル (強度省略)
+<option value="0">攻撃属性変換 (強度省略)
+<option value="0">＜以下、練成または作成の弓・投擲武器＞
+<option value="6">命中 (基準強度1〜25)
+<option value="6">回避 (基準強度1〜25)
+<option value="11">幸運 (基準強度1〜120)
+<option value="10">炎抵抗 (基準強度1〜18)
+<option value="10">冷気抵抗 (基準強度1〜18)
+<option value="10">毒抵抗 (基準強度1〜18)
+<option value="10">エネルギー抵抗 (基準強度1〜18)
 </select>
     </td>
     <td align="center"><INPUT type="text" name="kyo7" size="4" value="0"></td>
-    <td align="center"><INPUT class="readtext" readonly type="text" name="rat7" size="4" value="0">��</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat7" size="4" value="0">％</td>
   </tr>
 
   <tr bgcolor="#ffffcc">
     <td align="center" colspan="2">
 <select name="prop8" SIZE="1">
-<option value="0">���V�s�������v���p�e�B
-<option value="1501">knight's war cleaver : HP�� 3
-<option value="1001">true war cleaver : HP�� 2
+<option value="0">レシピ武器特殊プロパティ
+<option value="1501">knight's war cleaver : HP回復 3
+<option value="1001">true war cleaver : HP回復 2
 <option value="-621">Orcish Machete : INT-5
 <option value="331">runesabre : resistance+5
-<option value="431">rune blade of knowledge : ���@�_���[�W+5%
+<option value="431">rune blade of knowledge : 魔法ダメージ+5%
 <option value="1001">true radient scimitar : Night Sight
-<option value="1302">guardian axe : HP+4, HP�� 1
+<option value="1302">guardian axe : HP+4, HP回復 1
 <option value="331">singing axe : musicianship+5
-<option value="371">arcanist's wild staff : �}�i+3
-<option value="801">thorned wild staff : �����_���[�W���� 12%
-<option value="801">barbed longbow : �����_���[�W���� 12%
+<option value="371">arcanist's wild staff : マナ+3
+<option value="801">thorned wild staff : 物理ダメージ反射 12%
+<option value="801">barbed longbow : 物理ダメージ反射 12%
 </select>
     </td>
-    <td align="center"><INPUT class="readtext" readonly type="text" name="rat8" size="4" value="0">��</td>
+    <td align="center"><INPUT class="readtext" readonly type="text" name="rat8" size="4" value="0">％</td>
   </tr>
 
   <tr bgcolor="#ffffcc">
     <td align="center" colspan="2">
 <select name="propa" SIZE="1">
-<option value="0">---- �f�ނ̎�� ----
-<option value="0">���ʑf��
+<option value="0">---- 素材の種類 ----
+<option value="0">普通素材
 <option value="5002">Dull copper
 <option value="3">Shadow iron
 <option value="4">Copper
@@ -924,36 +924,36 @@ form.lestr.value = lestr;
 <option value="2003">Ash
 <option value="7">Yew
 <option value="10">Heartwood
-<option value="2010">Heartwood[+��������]
+<option value="2010">Heartwood[+装備条件]
 <option value="10015">Bloodwood
 <option value="20">Frostwood
 </select>
     </td>
-    <td align="center">�~<INPUT class="readtext" readonly type="text" name="rata" size="4" value="0"></td>
+    <td align="center">×<INPUT class="readtext" readonly type="text" name="rata" size="4" value="0"></td>
   </tr>
 
   <tr bgcolor="#ffffcc">
-    <td align="center">�ϋv�l�@�F�@<INPUT type="text" name="dur" size="4" value="50"></td>
-    <td align="center"><INPUT Type="checkbox" name="imb" value="yes">�����i</td>
-    <td align="center">�~<INPUT class="readtext" readonly type="text" name="hose" size="4" value="0">��</td>
+    <td align="center">耐久値　：　<INPUT type="text" name="dur" size="4" value="50"></td>
+    <td align="center"><INPUT Type="checkbox" name="imb" value="yes">練成品</td>
+    <td align="center">×<INPUT class="readtext" readonly type="text" name="hose" size="4" value="0">％</td>
   </tr>
 
 </table>
 
-<input type="button" value="�v���p�e�B�E�S���x�v�Z" onclick="keisan1(form)">�@<INPUT TYPE="reset" value="���Z�b�g">
+<input type="button" value="プロパティ・全強度計算" onclick="keisan1(form)">　<INPUT TYPE="reset" value="リセット">
 
-<h4>���o���ʂ̐���</h4>
+<h4>抽出結果の推定</h4>
 
 <ul class="list03">
-  <li>���o�]���l�@�F�@<INPUT class="readtext" readonly type="text" name="rat" size="4" value="0">��</li>
-  <li>���@�f�ށ@�F�@<INPUT class="readtext" readonly type="text" name="zai" size="35"></li>
+  <li>抽出評価値　：　<INPUT class="readtext" readonly type="text" name="rat" size="4" value="0">％</li>
+  <li>魔法素材　：　<INPUT class="readtext" readonly type="text" name="zai" size="35"></li>
 </ul>
 
-<h4>���C�t���[�`�E�}�i���[�`���x�ϊ��i�T�Z�j</h4>
+<h4>ライフリーチ・マナリーチ強度変換（概算）</h4>
 
 <p>
 
-�����{���x
+武器基本速度
 <select name="bspd" SIZE="1">
 <option value="8">2.00sec
 <option value="9">2.25sec
@@ -969,23 +969,23 @@ form.lestr.value = lestr;
 <option value="19">4.75sec
 <option value="20">5.00sec
 </select>
-�@���x�{<select name="ssi" SIZE="1">
-<option value="0">0��
-<option value="5">5��
-<option value="10">10��
-<option value="15">15��
-<option value="20">20��
-<option value="25">25��
-<option value="30">30��
-<option value="35">35��
-<option value="40">40��
+　速度＋<select name="ssi" SIZE="1">
+<option value="0">0％
+<option value="5">5％
+<option value="10">10％
+<option value="15">15％
+<option value="20">20％
+<option value="25">25％
+<option value="30">30％
+<option value="35">35％
+<option value="40">40％
 </select>
-�@���[�`�\���l<INPUT type="text" name="leech" size="4" value="0">��
+　リーチ表示値<INPUT type="text" name="leech" size="4" value="0">％
 
-�@<INPUT Type="checkbox" name="range" value="yes">�����E�|�n
+　<INPUT Type="checkbox" name="range" value="yes">投擲・弓系
 
-<br><input type="button" value="���[�`���x�֕ϊ�" onclick="keisan2(form)">
-<br>���x�i1�`25�j�@�F�@<INPUT class="readtext" readonly type="text" name="lestr" size="4" value="0">
+<br><input type="button" value="リーチ強度へ変換" onclick="keisan2(form)">
+<br>強度（1〜25）　：　<INPUT class="readtext" readonly type="text" name="lestr" size="4" value="0">
 </form>
 
 

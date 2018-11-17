@@ -1,32 +1,32 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
 <HTML lang="ja">
-<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=utf-8">
 <link href="style.css" type="text/css" rel="stylesheet">
-<TITLE>�ø�����ѵ���¬��</TITLE>
+<TITLE>特効武器耐久値測定</TITLE>
 </HEAD>
 <body><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899167</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
 
 
-<!--�ʲ���ʸ-->
+<!--以下本文-->
 
 <div class="block02">
 <font size="3">
-<br><center><font size="5"><b>�ø�����ѵ���¬��</b></font>��AoS������</center>
+<br><center><font size="5"><b>特効武器耐久値測定</b></font>（AoS以前）</center>
 <HR>
 
 
-�ø����̤��ղä���Ƥ�������Vendorɾ���ۤ�Ĵ�١��ºݤ˻��Ѥ����Ȥ������ѵ��ͤ��礭�ʤФ�Ĥ������뤳�Ȥ��狼��ޤ�����
-<br>���η׻�ɽ�ˤ���ø������ѵ��ͤ�ۤ����ꤹ�뤳�Ȥ��Ǥ��ޤ���
+特効効果が付加されている武器のVendor評価額を調べ、実際に使用したところ、耐久値に大きなばらつきがあることがわかりました。
+<br>下の計算表により特効武器の耐久値をほぼ特定することができます。
 <p>
  <ul class="list01">
-�������λ��͡�
-  <li>�����ѵ��ͤ�1��255�ޤǤδ֤Ǥ���</li>
-  <li>�ѵ��ͤ���ꤹ�뤿���ɬ�פʾ��ϡ����μ����Vendorɾ���ۤǤ���</li>
-  <li>Vendorɾ���ۤϡ�Grand Master��Item Identification���������Ĥ�Τ����ꤷ���Ȥ���������ɾ���ۤǤ���
-<br>Ʊ�ͤθ��̤ϡ�PC�����Ĥ���Vendor�˲��ʤ�Ĥ����������֤����Ȥ������ޤ���
-<br><font color="ff0000">NPC��Vendor�����Ȥ��β��ʤ�Vendorɾ���ۤȤϰۤʤ�ޤ��Τ����դ��Ƥ���������</font></li>
-  <li>�ø����̼��Τ�Vendorɾ���ۤ˱ƶ���Ϳ���ޤ���Ʊ�����ǰ㤦�ø����̤Ǥ�Vendorɾ���ۤ�Ʊ���Ǥ���С������Ϥۤ�Ʊ���٤��ѵ��ͤ��äƤ��뤳�Ȥˤʤ�ޤ���</li>
-  <li>���̤�������֤Ǥ������Ȥ���Vendorɾ���ۤ���ž��֤��ѵ��ͤ�ȿ�Ǥ��Ƥޤ���</li>
+―当時の仕様―
+  <li>推定耐久値は1〜255までの間です。</li>
+  <li>耐久値を推定するために必要な条件は、武器の種類とVendor評価額です。</li>
+  <li>Vendor評価額は、Grand MasterのItem Identificationスキルを持つものが鑑定したときに得られる評価額です。
+<br>同様の効果は、PCが運営するVendorに価格をつけずに武器を置くことで得られます。
+<br><font color="ff0000">NPCのVendorに売るときの価格はVendor評価額とは異なりますので注意してください。</font></li>
+  <li>特効効果自体はVendor評価額に影響を与えません。同じ武器で違う特効効果でもVendor評価額が同じであれば、それらはほぼ同程度の耐久値をもっていることになります。</li>
+  <li>中古未修理状態でおいたときのVendor評価額は中古状態の耐久値を反映してます。</li>
  </ul>
 </p>
 <script language="javascript">
@@ -67,35 +67,35 @@ durb[26] = 48; //Bow
 var bas;
 bas = new Array(27);
 bas[0] = "-----------------------------";   //None
-bas[1] = "ɾ����45��56gp , �ѵ���31��100";  //Broad sword
-bas[2] = "ɾ����32��38gp , �ѵ���31��70";  //Cutlass
-bas[3] = "ɾ����38��48gp , �ѵ���31��90";  //katana
-bas[4] = "ɾ����56��69gp , �ѵ���31��110";  //Long sword
-bas[5] = "ɾ����43��53gp , �ѵ���31��90";  //Scimitar
-bas[6] = "ɾ����51��62gp , �ѵ���31��100";  //Viking sword
-bas[7] = "ɾ����74��85gp , �ѵ���31��100";  //Bardiche
-bas[8] = "ɾ����63��71gp , �ѵ���31��80";  //Halberd
-bas[9] = "ɾ����52��65gp , �ѵ���31��110";  //Axe
-bas[10] = "ɾ����48��54gp , �ѵ���31��70"; //Battle axe
-bas[11] = "ɾ����42��55gp , �ѵ���31��110"; //Double axe
-bas[12] = "ɾ����52��65gp , �ѵ���31��110"; //Executioner's axe
-bas[13] = "ɾ����41��47gp , �ѵ���31��70"; //Large battel axe
-bas[14] = "ɾ����47��57gp , �ѵ���31��90"; //Two handed axe
-bas[15] = "ɾ����27��28gp , �ѵ���31��40"; //Dagger
-bas[16] = "ɾ����36��46gp , �ѵ���31��90"; //Kryss
-bas[17] = "ɾ����42��55gp , �ѵ���31��110"; //War fork
-bas[18] = "ɾ����30��36gp , �ѵ���31��70"; //Short spear
-bas[19] = "ɾ����48��56gp , �ѵ���31��80"; //Spear
-bas[20] = "ɾ����51��57gp , �ѵ���31��70"; //Hammer pick
-bas[21] = "ɾ����29��35gp , �ѵ���31��70"; //Mace
-bas[22] = "ɾ����35��41gp , �ѵ���31��70"; //Maul
-bas[23] = "ɾ����55��63gp , �ѵ���31��80"; //War axe
-bas[24] = "ɾ����48��61gp , �ѵ���31��110"; //War mace
-bas[25] = "ɾ����48��61gp , �ѵ���31��110"; //War hammer
-bas[26] = "ɾ����53��58gp , �ѵ���31��60"; //Bow
+bas[1] = "評価額45〜56gp , 耐久値31〜100";  //Broad sword
+bas[2] = "評価額32〜38gp , 耐久値31〜70";  //Cutlass
+bas[3] = "評価額38〜48gp , 耐久値31〜90";  //katana
+bas[4] = "評価額56〜69gp , 耐久値31〜110";  //Long sword
+bas[5] = "評価額43〜53gp , 耐久値31〜90";  //Scimitar
+bas[6] = "評価額51〜62gp , 耐久値31〜100";  //Viking sword
+bas[7] = "評価額74〜85gp , 耐久値31〜100";  //Bardiche
+bas[8] = "評価額63〜71gp , 耐久値31〜80";  //Halberd
+bas[9] = "評価額52〜65gp , 耐久値31〜110";  //Axe
+bas[10] = "評価額48〜54gp , 耐久値31〜70"; //Battle axe
+bas[11] = "評価額42〜55gp , 耐久値31〜110"; //Double axe
+bas[12] = "評価額52〜65gp , 耐久値31〜110"; //Executioner's axe
+bas[13] = "評価額41〜47gp , 耐久値31〜70"; //Large battel axe
+bas[14] = "評価額47〜57gp , 耐久値31〜90"; //Two handed axe
+bas[15] = "評価額27〜28gp , 耐久値31〜40"; //Dagger
+bas[16] = "評価額36〜46gp , 耐久値31〜90"; //Kryss
+bas[17] = "評価額42〜55gp , 耐久値31〜110"; //War fork
+bas[18] = "評価額30〜36gp , 耐久値31〜70"; //Short spear
+bas[19] = "評価額48〜56gp , 耐久値31〜80"; //Spear
+bas[20] = "評価額51〜57gp , 耐久値31〜70"; //Hammer pick
+bas[21] = "評価額29〜35gp , 耐久値31〜70"; //Mace
+bas[22] = "評価額35〜41gp , 耐久値31〜70"; //Maul
+bas[23] = "評価額55〜63gp , 耐久値31〜80"; //War axe
+bas[24] = "評価額48〜61gp , 耐久値31〜110"; //War mace
+bas[25] = "評価額48〜61gp , 耐久値31〜110"; //War hammer
+bas[26] = "評価額53〜58gp , 耐久値31〜60"; //Bow
 //base1
 
-//�����
+//初期化
 function keisan0(form)
 {
 var form = document.form_keisan;
@@ -107,7 +107,7 @@ var form = document.form_keisan;
   return true;
 }
 
-//�׻�
+//計算
 function keisan1(form)
 {
 var form = document.form_keisan;
@@ -144,17 +144,17 @@ if(dura==0){
 
 <table align="center" class="table04">
   <tr>
-    <td align="center" width="150"><font size="4">���</font>(����)</td>
+    <td align="center" width="150"><font size="4">武器</font>(選択)</td>
     <td align="center" width="250">
       <select name="durb" size="1" onchange="keisan1(form)">
-<option value="0">---Sword��(�Ҽ�)---
+<option value="0">---Sword系(片手)---
 <option value="1">Broad sword
 <option value="2">Cutlass
 <option value="3">Katana
 <option value="4">Long sword
 <option value="5">Scimitar
 <option value="6">Viking sword
-<option value="0">---Sword��(ξ��)---
+<option value="0">---Sword系(両手)---
 <option value="7">Bardiche
 <option value="8">Halberd
 <option value="9">Axe
@@ -163,39 +163,39 @@ if(dura==0){
 <option value="12">Executioner's axe
 <option value="13">Large battle axe
 <option value="14">Two handed axe
-<option value="0">----Fencing��----
+<option value="0">----Fencing系----
 <option value="15">Dagger
 <option value="16">Kryss
 <option value="17">War fork
 <option value="18">Short spear
 <option value="19">Spear
-<option value="0">------Mace��------
+<option value="0">------Mace系------
 <option value="20">Hammer pick
 <option value="21">Mace
 <option value="22">Maul
 <option value="23">War axe
 <option value="24">War mace
 <option value="25">War hammer
-<option value="0">----Archery��----
+<option value="0">----Archery系----
 <option value="26">Bow(by Juka Lord)
       </select>
     </td>
   </tr>
   <tr>
-    <td align="center" width="150"><font size="4">ɾ����</font>(����)</td>
+    <td align="center" width="150"><font size="4">評価額</font>(入力)</td>
     <td align="center" width="250">
       <INPUT TYPE="text" NAME="hyouka" SIZE="6" value="0" onchange="keisan1(form)">
     </td>
   </tr>
   <tr>
-    <td align="center" bgcolor="ffe0c0" width="150"><font size="4">�����ѵ���</font></td>
+    <td align="center" bgcolor="ffe0c0" width="150"><font size="4">推定耐久値</font></td>
     <td align="center" bgcolor="ffe0c0" width="250">
-      <input readonly type="text" name="dur1" size="5" value="0">������
+      <input readonly type="text" name="dur1" size="5" value="0">　〜　
       <input readonly type="text" name="dur2" size="5" value="0">
     </td>
   </tr>
   <tr>
-    <td align="center" bgcolor="c0e0ff" width="150"><font size="4">�����ѵץǡ���</font></td>
+    <td align="center" bgcolor="c0e0ff" width="150"><font size="4">基礎耐久データ</font></td>
     <td align="center" bgcolor="c0e0ff" width="250">
       <INPUT readonly TYPE="text" NAME="base" SIZE="40" value="-----------------------------">
     </td>

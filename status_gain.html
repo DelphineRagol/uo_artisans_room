@@ -1,41 +1,41 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> 
 <HTML lang="ja">
-<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=shift_jis">
+<HEAD><META HTTP-EQUIV="Content-style-Type" CONTENT="text/html;charset=utf-8">
 <link href="style_2.css" type="text/css" rel="stylesheet">
-<TITLE>�X�L���㏸���̃X�e�[�^�X����</TITLE>
+<TITLE>スキル上昇時のステータス増加</TITLE>
 </HEAD>
 <body><!-- geoguide start --><div align=center><script language="javascript">var jps=382116062;var jpt=1541899015</script><script language="javascript" src="//bc-geocities.yahoo.co.jp/js/gg.js"></script></div><!-- geoguide end -->
 
 
-<!--�ȉ��{��-->
+<!--以下本文-->
 
 <div class="block02">
-<h2>�X�L���㏸���̃X�e�[�^�X�iStatus�j����</h2>
+<h2>スキル上昇時のステータス（Status）増加</h2>
 <HR>
-Publish45���A��bStatus�̏㏸�Ɋւ���d�l���ύX����܂����B
+Publish45より、基礎Statusの上昇に関する仕様が変更されました。
 
-<h3>�d�l</h3>
+<h3>仕様</h3>
 
 <ul class="list01">
-  <li>�X�L�����㏸�����Ƃ��A5���̊m���Ŋ�bStatus�iSTR�^DEX�^INT�j���㏸����悤�ɂȂ�܂��B</li>
-  <li>�㏸�����bStatus�́A�X�L�����ɐݒ肳��Ă���"Primary status"�����"Secondary status"�̂ǂ��炩���I�΂�܂��B</li>
-  <li>�I�΂��m���́A"Primary status"��75���A"Secondary status"��25���̊m���ł��B</li>
-  <li>1���̊�bStatus�iSTR�^DEX�^INT�j�㏸�ʂɐ������Ȃ��Ȃ�܂��B</li>
-  <li>��bStatus���㏸�ȊO�̐ݒ�ɂ��Ă���Ƃ��A�Y�������bStatus�̏㏸���肪�����Ă��A���̊�bStatus�͏㏸���܂���B</li>
-  <li><font color="#ff0000">100.0�iGM�j�ȏ�ƂȂ��Ă���X�L���ɂ��ẮA���i�㏸�j�̏�ԂŃX�L���𐬌��������Ƃ��Ɋ�bStatus�̏㏸���肪�s���܂��B</font>
-<br>��jFocus 100�ȏ�̏�ԂŁAStamina�܂���Mana�����R�񕜁B
-<br>Blacksmith 100�ȏ�̏�ԂŁA�X�L���㏸�̑ΏۂƂȂ�Ȃ�Dagger���쐬�B
+  <li>スキルが上昇したとき、5％の確率で基礎Status（STR／DEX／INT）も上昇するようになります。</li>
+  <li>上昇する基礎Statusは、スキル毎に設定されている"Primary status"および"Secondary status"のどちらかが選ばれます。</li>
+  <li>選ばれる確率は、"Primary status"が75％、"Secondary status"が25％の確率です。</li>
+  <li>1日の基礎Status（STR／DEX／INT）上昇量に制限がなくなります。</li>
+  <li>基礎Statusを上昇以外の設定にしているとき、該当する基礎Statusの上昇判定があっても、その基礎Statusは上昇しません。</li>
+  <li><font color="#ff0000">100.0（GM）以上となっているスキルについては、▲（上昇）の状態でスキルを成功させたときに基礎Statusの上昇判定が行われます。</font>
+<br>例）Focus 100以上の状態で、StaminaまたはManaを自然回復。
+<br>Blacksmith 100以上の状態で、スキル上昇の対象とならないDaggerを作成。
 </li>
-  <li>�X�L�����v�l������ƂȂ��Ă���ꍇ�A���i�㏸�j�ݒ�̃X�L�����㏸�����Ƃ݂Ȃ��ꂽ�Ƃ��ɃX�e�[�^�X�̏㏸���肪�s���邱�ƂɂȂ�܂��B</li>
+  <li>スキル合計値が上限となっている場合、▲（上昇）設定のスキルが上昇したとみなされたときにステータスの上昇判定が行われることになります。</li>
 </ul>
 
-<h4>�����_�̕s�</h4>
+<h4>現時点の不具合</h4>
 
 <ul class="list01">
-  <li>Focus�͌����_��<font color="#ff0000">Primary�FINT �{ Secondary�FDEX</font>�ƂȂ��Ă���AUOSS�̔��\�Ƌt�ɂȂ��Ă��܂��B</li>
+  <li>Focusは現時点で<font color="#ff0000">Primary：INT ＋ Secondary：DEX</font>となっており、UOSSの発表と逆になっています。</li>
 </ul>
 
-<h3>�P�DSTR�����DEX���㏸����X�L��</h3>
+<h3>１．STRおよびDEXが上昇するスキル</h3>
 
 <table class="table01">
   <tr>
@@ -51,7 +51,7 @@ Publish45���A��bStatus�̏㏸�Ɋւ���d�l���ύX����܂����B
  </tr>
 
   <tr>
-   <td align="center" bgcolor="#f0f0f0" width="100">�Y���X�L��</td>
+   <td align="center" bgcolor="#f0f0f0" width="100">該当スキル</td>
    <td  align="left" valign="top" bgcolor="#ffddcc" width="160">
 <ul class="list01">
 <b>Miscellaneous</b>
@@ -83,7 +83,7 @@ Publish45���A��bStatus�̏㏸�Ɋւ���d�l���ύX����܂����B
 </table>
 <br class="cle">
 
-<h3>�Q�DDEX�����INT���㏸����X�L��</h3>
+<h3>２．DEXおよびINTが上昇するスキル</h3>
 
 <p>
 <table class="table01">
@@ -100,7 +100,7 @@ Publish45���A��bStatus�̏㏸�Ɋւ���d�l���ύX����܂����B
  </tr>
 
   <tr>
-   <td align="center" bgcolor="#f0f0f0" width="100">�Y���X�L��</td>
+   <td align="center" bgcolor="#f0f0f0" width="100">該当スキル</td>
    <td align="left" valign="top" bgcolor="#ccffdd">
 <ul class="list01">
 <b>Miscellaneous</b>
@@ -146,7 +146,7 @@ Publish45���A��bStatus�̏㏸�Ɋւ���d�l���ύX����܂����B
 </table>
 <br class="cle">
 
-<h3>�R�DINT�����STR���㏸����X�L��</h3>
+<h3>３．INTおよびSTRが上昇するスキル</h3>
 
 <table class="table01">
   <tr>
@@ -162,7 +162,7 @@ Publish45���A��bStatus�̏㏸�Ɋւ���d�l���ύX����܂����B
  </tr>
 
   <tr>
-   <td align="center" bgcolor="#f0f0f0">�Y���X�L��</td>
+   <td align="center" bgcolor="#f0f0f0">該当スキル</td>
    <td align="left" valign="top" bgcolor="#ddccff">
 <ul class="list01">
 <b>Miscellaneous</b>
